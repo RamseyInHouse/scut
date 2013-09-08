@@ -5,9 +5,9 @@
 ## What is SCUT?
 
 Some definitions of the word:
-- A short, stubby, erect tail, as of a rabbit or dear.
-- Routine, tedious, distasteful, menial labor; drudgery.
-- A contemptible, despicable person.
+- *A short, stubby, erect tail, as of a rabbit or dear.*
+- *Routine, tedious, distasteful, menial labor; drudgery.*
+- *A contemptible, despicable person.*
 
 Now you understand, right?
 

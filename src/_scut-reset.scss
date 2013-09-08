@@ -1,3 +1,5 @@
+// Make everything a border-box, because why not?
+
 * {
   box-sizing: border-box;
 }
