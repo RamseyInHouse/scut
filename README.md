@@ -11,7 +11,7 @@ Some relevant definitions of the word:
 
 It's also an acronym for **SC**SS **Ut**itilies.
 
-What we have here is collection of SCSS mixins and placeholders -- utilities. The contents of this collection are determined by what I've needed for the projects I've been working on &mdash; what I've been able to figure out for the situations I (repeatedly) encounter.
+What we have here is collection of SCSS mixins and placeholders &mdash; utilities. The contents of this collection are determined by what I've needed for the projects I've been working on &mdash; what I've been able to figure out for the situations I (repeatedly) encounter.
 
 ## How SCUT differs from other preprocessor libraries
 

@@ -6,12 +6,12 @@ module.exports = (grunt) ->
     sass:
       test:
         files:
-          "test/test-style.css": "test/scss/all.scss"
+          "test-style.css": "scss/all.scss"
 
     autoprefixer:
       test:
         files:
-          "test/test-style.css": "test/test-style.css"
+          "test-style.css": "test-style.css"
 
     jade:
       test:
@@ -19,9 +19,9 @@ module.exports = (grunt) ->
           pretty: true
         files: [
           expand: true
-          cwd: "test/jade"
+          cwd: "jade"
           src: ["*.jade"]
-          dest: "test"
+          dest: "./"
           ext: ".html"
         ]
 
@@ -36,14 +36,14 @@ module.exports = (grunt) ->
         options:
           livereload: true
         files: [
-          "test/*.css"
-          "test/*.html"
+          "*.css"
+          "*.html"
         ]
       style:
         files: [
-          "test/scss/*.scss"
-          "src/*.scss"
-          "src/**/*.scss"
+          "scss/*.scss"
+          "../src/*.scss"
+          "../src/**/*.scss"
         ]
         tasks: [
           "sass:test"
@@ -51,8 +51,8 @@ module.exports = (grunt) ->
         ]
       markup:
         files: [
-          "test/jade/*.jade"
-          "test/jade/includes/*.jade"
+          "jade/*.jade"
+          "jade/includes/*.jade"
         ]
         tasks: ["jade:test"]
 
