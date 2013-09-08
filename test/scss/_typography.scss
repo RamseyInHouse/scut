@@ -1,0 +1,19 @@
+.scut-link-bd {
+  @extend %scut-link-bd;
+}
+
+.scut-link-bd-dotted {
+  @include scut-link-bd(dotted);
+}
+
+.scut-link-inherit {
+  @include scut-link-inherit(pink);
+}
+
+.reverse-italics {
+  @extend %scut-reverse-italics;
+}
+
+.indented-ps {
+  @extend %scut-indented-ps;
+}

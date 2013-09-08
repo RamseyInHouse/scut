@@ -1,0 +1,12 @@
+{
+  "name": "my-sass-mixins",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jade": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.1",
+    "grunt-autoprefixer": "~0.2.20130806",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-sass": "~0.5.0"
+  }
+}

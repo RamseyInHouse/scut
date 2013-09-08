@@ -1,0 +1,9 @@
+@mixin scut-bp (
+  $query
+) {
+
+  @media (#{$query}) {
+    @content;
+  }
+
+}

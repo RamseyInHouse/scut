@@ -1,0 +1,11 @@
+@mixin scut-hide-text {
+
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+%scut-hide-text {
+  @include scut-hide-text;
+}

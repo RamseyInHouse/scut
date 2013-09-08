@@ -1,0 +1,44 @@
+.c {
+  background: gray;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 1em;
+}
+
+.absolute {
+  @include scut-absolute(5px 10px a a);
+  background: red;
+  height: 50px;
+}
+
+.relative {
+  @include scut-relative(50px n n 50px);
+  background: white;
+  height: 50px;
+}
+
+.fixed {
+  @include scut-fixed(n n 20px 40%);
+  background: red;
+  height: 50px;
+  z-index: 10;
+}
+
+.vcenter-lh {
+  @include scut-vcenter-lh(3em);
+}
+
+.vcenter-ib {
+  @extend %scut-vcenter-ib;
+}
+
+.vcenter-tb {
+  @include scut-vcenter-tb(".scut-test-inner");
+}
+
+@include scut-bp("max-width: 700px") {
+  body {
+    color: blue;
+  }
+};

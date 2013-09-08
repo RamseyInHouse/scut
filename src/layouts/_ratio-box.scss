@@ -1,0 +1,19 @@
+@mixin scut-ratio-box (
+  $ratio: 100%,
+  $inner: ".scut-inner"
+) {
+
+  height: 0;
+  overflow: hidden;
+  padding-top: $ratio;
+  position: relative;
+
+  & > #{$inner} {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+}

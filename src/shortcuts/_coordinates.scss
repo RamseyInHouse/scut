@@ -1,0 +1,68 @@
+@function scut-autoOrValue ($val) {
+  @if $val == a or $val == auto {
+    @return auto;
+  }
+  @else {
+    @return $val;
+  }
+}
+
+@mixin scut-coordinates (
+  $coordinates: n n n n
+) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  @if $top != n {
+    top: scut-autoOrValue($top);
+  }
+  @if $right != n {
+    right: scut-autoOrValue($right);
+  }
+  @if $bottom != n {
+    bottom: scut-autoOrValue($bottom);
+  }
+  @if $left != n {
+    left: scut-autoOrValue($left);
+  }
+
+}
+
+
+// ABSOLUTELY POSITIONED
+
+@mixin scut-absolute (
+  $coordinates: n n n n
+) {
+
+  position: absolute;
+  @include scut-coordinates($coordinates);
+
+}
+
+
+// RELATIVELY POSITIONED
+
+@mixin scut-relative (
+  $coordinates: n n n n
+) {
+
+  position: relative;
+  @include scut-coordinates($coordinates);
+
+}
+
+
+// FIXEDLY POSITIONED
+
+@mixin scut-fixed (
+  $coordinates: n n n n
+) {
+
+  position: fixed;
+  @include scut-coordinates($coordinates);
+
+}
