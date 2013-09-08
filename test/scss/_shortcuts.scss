@@ -42,18 +42,3 @@
     color: blue;
   }
 };
-
-@include scut-font-face("Old Standard", "../fonts/oldstandard-regular-webfont");
-@include scut-font-face("Old Standard", "../fonts/oldstandard-italic-webfont", normal, italic);
-@include scut-font-face("Old Standard", "../fonts/oldstandard-bold-webfont", bold);
-
-.font-face {
-  font-family: "Old Standard";
-  font-size: 2em;
-}
-
-@include scut-hd-bp {
-  body {
-    background: #f4f4f4;
-  }
-}
