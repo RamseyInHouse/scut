@@ -47,15 +47,6 @@ p:last-of-type {
   display: table;
   clear: both; }
 
-.vcenter-ib:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle; }
-.vcenter-ib > .scut-inner {
-  display: inline-block;
-  vertical-align: middle; }
-
 .triangle-default {
   display: inline-block;
   height: 0;
@@ -92,6 +83,15 @@ p:last-of-type {
   content: "/";
   margin-left: 0.5em;
   margin-right: 0.5em; }
+
+.vcenter-ib:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+.vcenter-ib > .scut-inner {
+  display: inline-block;
+  vertical-align: middle; }
 
 .scut-link-bd {
   border-bottom: 1px solid;
