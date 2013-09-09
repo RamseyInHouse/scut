@@ -1,0 +1,55 @@
+// VERTICAL CENTERING VIA LINE HEIGHT
+
+@mixin scut-vcenter-lh (
+  $y
+) {
+
+  height: $y;
+  line-height: $y;
+
+}
+
+
+// VERTICAL CENTERING VIA INLINE BLOCK
+
+@mixin scut-vcenter-ib (
+  $inner: ".scut-inner"
+) {
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+
+  & > #{$inner} {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+%scut-vcenter-ib {
+  @include scut-vcenter-ib;
+}
+
+
+// VERTICAL CENTERING VIA TABLE DISPLAY
+
+@mixin scut-vcenter-tb (
+  $inner: ".scut-inner"
+) {
+
+  display: table;
+
+  & > #{$inner} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+%scut-vcenter-tb {
+  @include scut-vcenter-tb;
+}

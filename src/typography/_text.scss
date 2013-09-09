@@ -1,0 +1,49 @@
+// INDENTED PARAGRAPHS
+
+@mixin scut-indented-ps(
+  $indent: 1.5em,
+  $no-first-indent: true
+) {
+
+  p {
+    margin: 0;
+    text-indent: $indent;
+  }
+
+  @if $no-first-indent {
+    p:first-child {
+      text-indent: 0;
+    }
+  }
+
+}
+
+%scut-indented-ps {
+  @include scut-indented-ps;
+}
+
+
+// REVERSE ITALICS
+
+@mixin scut-reverse-italics (
+  $elements: false
+) {
+
+  font-style: italic;
+  em,
+  cite,
+  i {
+    font-style: normal;
+  }
+
+  @if $elements {
+    #{$elements} {
+      font-style: normal;
+    }
+  }
+
+}
+
+%scut-reverse-italics {
+  @include scut-reverse-italics;
+}

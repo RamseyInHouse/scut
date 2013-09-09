@@ -1,0 +1,13 @@
+@mixin scut-clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+%scut-clearfix {
+  @include scut-clearfix;
+}

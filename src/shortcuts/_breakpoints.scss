@@ -1,0 +1,21 @@
+@mixin scut-bp (
+  $query
+) {
+
+  @media only screen and (#{$query}) {
+    @content;
+  }
+
+}
+
+@mixin scut-hd-bp (
+  $ratio: 1.3
+) {
+
+  @media (-o-min-device-pixel-ratio: #{$ratio}/1),
+         (-webkit-min-device-pixel-ratio: #{$ratio}),
+         (min-resolution: #{round(96*$ratio)}dpi) {
+    @content;
+  }
+
+}

@@ -1,0 +1,23 @@
+@mixin scut-circle (
+  $size: 0.5em,
+  $color: inherit
+) {
+
+  border-radius: 50%;
+  display: inline-block;
+  height: $size;
+  width: $size;
+
+  @if $color == inherit {
+    border-width: $size;
+    border-style: solid;
+  }
+  @else {
+    background-color: $color;
+  }
+
+}
+
+%scut-circle {
+  @include scut-circle;
+}

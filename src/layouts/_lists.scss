@@ -1,0 +1,126 @@
+// UNSTYLED LIST
+
+@mixin scut-list-unstyled {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+%scut-list-unstyled {
+  @include scut-list-unstyled;
+}
+
+
+// FLOAT LIST
+
+@mixin scut-list-float (
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+    @include scut-clearfix;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+    @extend %scut-clearfix;
+  }
+
+  & > li {
+    float: left;
+  }
+
+}
+
+%scut-list-float {
+  @include scut-list-float;
+}
+
+
+// INLINE LIST
+
+@mixin scut-list-inline (
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+  }
+
+  & > li {
+    display: inline-block;
+  }
+
+}
+
+%scut-list-inline {
+  @include scut-list-inline;
+}
+
+
+// PUNCTUATED LIST
+
+@mixin scut-list-punctuated (
+  $divider: ", ",
+  $display: inline,
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+  }
+
+  & > li {
+    display: $display;
+    &:not(:last-child):after {
+      content: $divider;
+    }
+  }
+
+}
+
+%scut-list-comma {
+  @include scut-list-punctuated;
+}
+
+
+// DIVIDED LIST
+
+@mixin scut-list-divided (
+  $divider: "|",
+  $gap: 0.5em,
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-float;
+  }
+  @else {
+    @extend %scut-list-float;
+  }
+
+  & > li {
+    &:not(:last-child):after {
+      content: $divider;
+      margin-left: $gap;
+      margin-right: $gap;
+    }
+  }
+
+}
+
+%scut-list-bar {
+  @include scut-list-divided;
+}
+
+%scut-list-breadcrumb {
+  @include scut-list-divided("/");
+}
