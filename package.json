@@ -1,6 +1,9 @@
 {
   "name": "scut-gh-pages",
   "version": "0.0.0",
+  "scripts": {
+    "prepublish": "bower install"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-sass": "~0.5.0",
@@ -9,6 +12,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-cssmin": "~0.6.1",
-    "grunt-shell": "~0.3.1"
+    "grunt-shell": "~0.3.1",
+    "grunt-contrib-clean": "~0.5.0"
   }
 }

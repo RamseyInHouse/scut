@@ -56,19 +56,24 @@ module.exports = (grunt) ->
         files:
           "dist/main.css": "dist/main.css"
 
+    clean:
+      clearSrc:
+        src: ["src"]
+
     shell:
       updateSrc:
-        command: "git checkout master -- src"
+        command: "git checkout remotes/origin/master -- src"
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
+  grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
 
-  grunt.registerTask "src", ["shell:updateSrc"]
+  grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
   grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
   grunt.registerTask "dev", ["connect", "watch"]
   grunt.registerTask "dist", [
