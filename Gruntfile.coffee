@@ -63,6 +63,18 @@ module.exports = (grunt) ->
     shell:
       updateSrc:
         command: "git checkout remotes/origin/master -- src"
+      jekyll:
+        command: "jekyll build"
+
+    replace:
+      frontMatter:
+        src: ["index.html"]
+        overwrite: true
+        replacements: [
+          from: "<!DOCTYPE html>"
+          to: "---\n---\n<!DOCTYPE html>"
+        ]
+
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-jade"
@@ -72,12 +84,15 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
+  grunt.loadNpmTasks "grunt-text-replace"
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
   grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
   grunt.registerTask "dev", ["connect", "watch"]
   grunt.registerTask "dist", [
     "jade:dist"
+    "replace:frontMatter"
     "style"
     "cssmin:dist"
+    "shell:jekyll"
   ]
