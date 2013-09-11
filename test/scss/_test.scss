@@ -1,0 +1,259 @@
+// LISTS
+.list-unstyled {
+  @extend %scut-list-unstyled;
+}
+.list-float {
+  @extend %scut-list-floated;
+}
+.list-inline {
+  @extend %scut-list-inline;
+}
+.list-comma {
+  @extend %scut-list-comma;
+}
+.list-bar {
+  @extend %scut-list-bar;
+}
+.list-dash {
+  @include scut-list-divided("-");
+}
+.list-semicolon {
+  @include scut-list-punctuated(";");
+}
+.list-breadcrumb {
+  @extend %scut-list-breadcrumb;
+}
+
+// RATIO-BOX
+.ratio-box--c {
+  max-width: 400px;
+}
+.ratio-box {
+  @include scut-ratio-box(percentage(9/16));
+  & > .scut-inner {
+    background: gray;
+  }
+}
+
+// CIRCLE
+.circle-1 {
+  @include scut-circle;
+}
+.circle-2 {
+  @include scut-circle(3em, red);
+  border: 5px solid orange;
+}
+
+// FOURSQUARE
+.foursquare-1 {
+  @include scut-foursquare;
+}
+.foursquare-2 {
+  @include scut-foursquare(false, 2em, 0.5em, red, orange);
+}
+
+// TRIANGLE
+.triangle-default {
+  @extend %scut-triangle;
+  margin-left: 1em;
+}
+.triangle-up {
+  @include scut-triangle(up, 20px 40px, black);
+  margin: 5px;
+}
+.triangle-down {
+  @include scut-triangle(down, 20px 40px, black);
+  margin: 5px;
+}
+.triangle-right {
+  @include scut-triangle(right, 30px 20px, red);
+  margin: 5px;
+}
+.triangle-left {
+  @include scut-triangle(left, 30px 20px, red);
+  margin: 5px;
+}
+.triangle-sized {
+  @include scut-triangle(right, 80px 30px, blue);
+}
+.triangle-inline-up {
+  @include scut-triangle(up-left, 20px, orange);
+  margin: 0 2px;
+}
+.triangle-inline-down {
+  @include scut-triangle(down-left, 20px, orange);
+  margin: 0 2px;
+}
+.triangle-inline-left {
+  @include scut-triangle(up-right, 50px 20px, black);
+  margin: 0 2px;
+}
+.triangle-inline-right {
+  @include scut-triangle(up-left, 50px 20px, black);
+  margin: 0 2px;
+}
+.triangle-pseudo {
+  @include scut-triangle(up, 30px 75px, red, true);
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+// POSITIONING
+.absolute {
+  @include scut-absolute(5px 10px a a);
+  background: red;
+  height: 50px;
+}
+.relative {
+  @include scut-relative(50px n n 50px);
+  background: white;
+  height: 50px;
+}
+.fixed {
+  @include scut-fixed(10px 10px n n);
+  background: red;
+  height: 50px;
+  z-index: 10;
+}
+
+// VERTICALLY CENTER
+.vcenter-lh {
+  @include scut-vcenter-lh(100px);
+}
+.vcenter-ib {
+  @include scut-vcenter-ib(100px);
+}
+.vcenter-tb {
+  @include scut-vcenter-tb(".scut-test-inner");
+}
+
+// BREAKPOINTS
+.breakpoint {
+  color: red;
+  @include scut-bp("min-width: 700px") {
+    color: blue;
+  }
+}
+.hd-breakpoint {
+  color: gray;
+  @include scut-hd-bp {
+    color: green;
+  }
+}
+
+// HIDE-TEXT
+.hide-text {
+  background: gray;
+  display: inline-block;
+  margin-left: 1em;
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+  @extend %scut-hide-text;
+}
+
+// LINKS
+.scut-link-bd {
+  @extend %scut-link-bd;
+}
+.scut-link-bd-dotted {
+  @include scut-link-bd(dotted);
+}
+.scut-link-inherit {
+  @include scut-link-inherit(pink);
+}
+
+// REVERSE-ITALICS
+.reverse-italics {
+  @extend %scut-reverse-italics;
+}
+
+// INDENTED PARAGRAPHS
+.indented-ps {
+  @extend %scut-indented-ps;
+}
+
+// FONT-FACE
+@include scut-font-face("Old Standard", "fonts/oldstandard-regular-webfont");
+@include scut-font-face("Old Standard", "fonts/oldstandard-italic-webfont", normal, italic);
+@include scut-font-face("Old Standard", "fonts/oldstandard-bold-webfont", bold);
+.font-face {
+  font-family: "Old Standard";
+  font-size: 2em;
+}
+
+// CLEARFIX
+.clearfix {
+  background: lightgray;
+  margin-bottom: 1em;
+  @extend %scut-clearfix;
+}
+.clearfix-inner {
+  float: left;
+  background: gray;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+// SIZE
+.size-1 {
+  background: gray;
+  @include size(100px);
+  margin-bottom: 1em;
+}
+.size-2 {
+  background: gray;
+  @include size(200px 100px);
+}
+
+// FILL
+.fill--c {
+  border: 5px solid black;
+  position: relative;
+  width: 200px;
+  height: 100px;
+}
+.fill {
+  background: lightgray;
+  @extend %scut-fill;
+}
+
+/*==========================
+EXTRAS
+==========================*/
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h1 {
+  font-size: 3em;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.c {
+  background: gray;
+  width: 300px;
+  min-height: 100px;
+  position: relative;
+  margin: 1em;
+}

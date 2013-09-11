@@ -11,6 +11,12 @@ body {
   min-height: 100%;
 }
 
+// Antialias!
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 // Make headers and <b> semantic, not presentational.
 
 h1,

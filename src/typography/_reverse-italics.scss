@@ -1,0 +1,22 @@
+@mixin scut-reverse-italics (
+  $elements: false
+) {
+
+  font-style: italic;
+  em,
+  cite,
+  i {
+    font-style: normal;
+  }
+
+  @if $elements {
+    #{$elements} {
+      font-style: normal;
+    }
+  }
+
+}
+
+%scut-reverse-italics {
+  @include scut-reverse-italics;
+}

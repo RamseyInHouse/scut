@@ -6,7 +6,7 @@ module.exports = (grunt) ->
     sass:
       test:
         files:
-          "test-style.css": "scss/all.scss"
+          "test-style.css": "scss/main.scss"
 
     autoprefixer:
       test:

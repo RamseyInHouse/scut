@@ -1,9 +1,16 @@
 * {
-  box-sizing: border-box; }
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 html,
 body {
-  min-height: 100%; }
+  min-height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
 
 h1,
 h2,
@@ -13,10 +20,12 @@ h5,
 h6 {
   font-size: 1em;
   font-weight: normal;
-  margin: 0; }
+  margin: 0;
+}
 
 b {
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 label,
 input,
@@ -24,7 +33,8 @@ textarea,
 select,
 option,
 button {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 button {
   background: transparent;
@@ -34,18 +44,84 @@ button {
   outline: none;
   padding: 0;
   width: auto;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+}
 
 p:first-of-type {
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 p:last-of-type {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 
-.list-bar:after, .list-breadcrumb:after, .list-float:after, .list-dash:after {
+.hide-text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.list-bar:after,
+.list-breadcrumb:after,
+.list-float:after,
+.list-dash:after,
+.clearfix:after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
+
+.fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.list-bar,
+.list-breadcrumb,
+.list-float,
+.list-dash,
+.list-inline,
+.list-comma,
+.list-unstyled,
+.list-semicolon {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-bar > li,
+.list-breadcrumb > li,
+.list-float > li,
+.list-dash > li {
+  float: left;
+}
+
+.list-inline > li {
+  display: inline-block;
+}
+
+.list-comma > li {
+  display: inline;
+}
+
+.list-comma > li:not(:last-child):after {
+  content: ", ";
+}
+
+.list-bar > li:not(:last-child):after {
+  content: "|";
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.list-breadcrumb > li:not(:last-child):after {
+  content: "/";
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
 
 .triangle-default {
   display: inline-block;
@@ -56,83 +132,69 @@ p:last-of-type {
   border-style: solid;
   border-color: transparent;
   border-left-color: inherit;
-  border-right-width: 0; }
-
-.list-bar, .list-breadcrumb, .list-float, .list-dash, .list-inline, .list-comma, .list-unstyled, .list-semicolon {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-
-.list-bar > li, .list-breadcrumb > li, .list-float > li, .list-dash > li {
-  float: left; }
-
-.list-inline > li {
-  display: inline-block; }
-
-.list-comma > li {
-  display: inline; }
-  .list-comma > li:not(:last-child):after {
-    content: ", "; }
-
-.list-bar > li:not(:last-child):after {
-  content: "|";
-  margin-left: 0.5em;
-  margin-right: 0.5em; }
-
-.list-breadcrumb > li:not(:last-child):after {
-  content: "/";
-  margin-left: 0.5em;
-  margin-right: 0.5em; }
-
-.vcenter-ib:before {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle; }
-.vcenter-ib > .scut-inner {
-  display: inline-block;
-  vertical-align: middle; }
-
-.scut-link-bd {
-  border-bottom: 1px solid;
-  text-decoration: none; }
+  border-right-width: 0;
+}
 
 .indented-ps p {
   margin: 0;
-  text-indent: 1.5em; }
+  text-indent: 1.5em;
+}
+
 .indented-ps p:first-child {
-  text-indent: 0; }
+  text-indent: 0;
+}
+
+.scut-link-bd {
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
 
 .reverse-italics {
-  font-style: italic; }
-  .reverse-italics em,
-  .reverse-italics cite,
-  .reverse-italics i {
-    font-style: normal; }
+  font-style: italic;
+}
+
+.reverse-italics em,
+.reverse-italics cite,
+.reverse-italics i {
+  font-style: normal;
+}
 
 .list-dash > li:not(:last-child):after {
   content: "-";
   margin-left: 0.5em;
-  margin-right: 0.5em; }
+  margin-right: 0.5em;
+}
 
 .list-semicolon > li {
-  display: inline; }
-  .list-semicolon > li:not(:last-child):after {
-    content: ";"; }
+  display: inline;
+}
+
+.list-semicolon > li:not(:last-child):after {
+  content: ";";
+}
+
+.ratio-box--c {
+  max-width: 400px;
+}
 
 .ratio-box {
   height: 0;
   overflow: hidden;
   padding-top: 56.25%;
-  position: relative; }
-  .ratio-box > .scut-inner {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0; }
-  .ratio-box > .scut-inner {
-    background: gray; }
+  position: relative;
+}
+
+.ratio-box > .scut-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.ratio-box > .scut-inner {
+  background: gray;
+}
 
 .circle-1 {
   border-radius: 50%;
@@ -140,7 +202,8 @@ p:last-of-type {
   height: 0.5em;
   width: 0.5em;
   border-width: 0.5em;
-  border-style: solid; }
+  border-style: solid;
+}
 
 .circle-2 {
   border-radius: 50%;
@@ -148,7 +211,8 @@ p:last-of-type {
   height: 3em;
   width: 3em;
   background-color: red;
-  border: 5px solid orange; }
+  border: 5px solid orange;
+}
 
 .foursquare-1 {
   background-color: black;
@@ -156,47 +220,66 @@ p:last-of-type {
   height: 11px;
   width: 11px;
   position: relative;
-  transform: rotate(45deg); }
-  .foursquare-1:before, .foursquare-1:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-color: white;
-    border-style: solid; }
-  .foursquare-1:before {
-    height: 5px;
-    right: 0;
-    border-width: 0 0 1px; }
-  .foursquare-1:after {
-    width: 5px;
-    bottom: 0;
-    border-width: 0 1px 0 0; }
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.foursquare-1:before,
+.foursquare-1:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: white;
+  border-style: solid;
+}
+
+.foursquare-1:before {
+  height: 5px;
+  right: 0;
+  border-width: 0 0 1px;
+}
+
+.foursquare-1:after {
+  width: 5px;
+  bottom: 0;
+  border-width: 0 1px 0 0;
+}
 
 .foursquare-2 {
   background-color: red;
   display: inline-block;
   height: 2.5em;
   width: 2.5em;
-  position: relative; }
-  .foursquare-2:before, .foursquare-2:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-color: orange;
-    border-style: solid; }
-  .foursquare-2:before {
-    height: 1em;
-    right: 0;
-    border-width: 0 0 0.5em; }
-  .foursquare-2:after {
-    width: 1em;
-    bottom: 0;
-    border-width: 0 0.5em 0 0; }
+  position: relative;
+}
+
+.foursquare-2:before,
+.foursquare-2:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: orange;
+  border-style: solid;
+}
+
+.foursquare-2:before {
+  height: 1em;
+  right: 0;
+  border-width: 0 0 0.5em;
+}
+
+.foursquare-2:after {
+  width: 1em;
+  bottom: 0;
+  border-width: 0 0.5em 0 0;
+}
 
 .triangle-default {
-  margin-left: 1em; }
+  margin-left: 1em;
+}
 
 .triangle-up {
   display: inline-block;
@@ -208,7 +291,8 @@ p:last-of-type {
   border-color: transparent;
   border-bottom-color: black;
   border-top-width: 0;
-  margin: 5px; }
+  margin: 5px;
+}
 
 .triangle-down {
   display: inline-block;
@@ -220,7 +304,8 @@ p:last-of-type {
   border-color: transparent;
   border-top-color: black;
   border-bottom-width: 0;
-  margin: 5px; }
+  margin: 5px;
+}
 
 .triangle-right {
   display: inline-block;
@@ -232,7 +317,8 @@ p:last-of-type {
   border-color: transparent;
   border-left-color: red;
   border-right-width: 0;
-  margin: 5px; }
+  margin: 5px;
+}
 
 .triangle-left {
   display: inline-block;
@@ -244,7 +330,8 @@ p:last-of-type {
   border-color: transparent;
   border-right-color: red;
   border-left-width: 0;
-  margin: 5px; }
+  margin: 5px;
+}
 
 .triangle-sized {
   display: inline-block;
@@ -255,7 +342,8 @@ p:last-of-type {
   border-style: solid;
   border-color: transparent;
   border-left-color: blue;
-  border-right-width: 0; }
+  border-right-width: 0;
+}
 
 .triangle-inline-up {
   display: inline-block;
@@ -268,7 +356,8 @@ p:last-of-type {
   border-bottom-color: transparent;
   border-left-color: orange;
   border-right-color: transparent;
-  margin: 0 2px; }
+  margin: 0 2px;
+}
 
 .triangle-inline-down {
   display: inline-block;
@@ -281,7 +370,8 @@ p:last-of-type {
   border-bottom-color: orange;
   border-left-color: orange;
   border-right-color: transparent;
-  margin: 0 2px; }
+  margin: 0 2px;
+}
 
 .triangle-inline-left {
   display: inline-block;
@@ -294,7 +384,8 @@ p:last-of-type {
   border-bottom-color: transparent;
   border-left-color: transparent;
   border-right-color: black;
-  margin: 0 2px; }
+  margin: 0 2px;
+}
 
 .triangle-inline-right {
   display: inline-block;
@@ -307,7 +398,8 @@ p:last-of-type {
   border-bottom-color: transparent;
   border-left-color: black;
   border-right-color: transparent;
-  margin: 0 2px; }
+  margin: 0 2px;
+}
 
 .triangle-pseudo {
   display: inline-block;
@@ -321,14 +413,8 @@ p:last-of-type {
   border-bottom-color: red;
   border-top-width: 0;
   vertical-align: middle;
-  margin: 0 5px; }
-
-.c {
-  background: gray;
-  width: 200px;
-  height: 200px;
-  position: relative;
-  margin: 1em; }
+  margin: 0 5px;
+}
 
 .absolute {
   position: absolute;
@@ -337,75 +423,172 @@ p:last-of-type {
   bottom: auto;
   left: auto;
   background: red;
-  height: 50px; }
+  height: 50px;
+}
 
 .relative {
   position: relative;
   top: 50px;
   left: 50px;
   background: white;
-  height: 50px; }
+  height: 50px;
+}
 
 .fixed {
   position: fixed;
-  bottom: 20px;
-  left: 40%;
+  top: 10px;
+  right: 10px;
   background: red;
   height: 50px;
-  z-index: 10; }
+  z-index: 10;
+}
 
 .vcenter-lh {
-  height: 3em;
-  line-height: 3em; }
+  height: 100px;
+  line-height: 100px;
+}
+
+.vcenter-ib {
+  height: 100px;
+}
+
+.vcenter-ib:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.vcenter-ib > .scut-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
 
 .vcenter-tb {
-  display: table; }
-  .vcenter-tb > .scut-test-inner {
-    display: table-cell;
-    vertical-align: middle; }
+  display: table;
+}
 
-@media only screen and (max-width: 700px) {
-  body {
-    color: blue; } }
+.vcenter-tb > .scut-test-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.breakpoint {
+  color: red;
+}
+
+@media (min-width: 700px) {
+  .breakpoint {
+    color: blue;
+  }
+}
+
+.hd-breakpoint {
+  color: gray;
+}
+
+@media (-o-min-device-pixel-ratio: 1.3 / 1), (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi) {
+  .hd-breakpoint {
+    color: green;
+  }
+}
+
+.hide-text {
+  background: gray;
+  display: inline-block;
+  margin-left: 1em;
+  vertical-align: middle;
+  height: 50px;
+  width: 50px;
+}
+
 .scut-link-bd-dotted {
   border-bottom: 1px dotted;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 .scut-link-inherit {
-  color: inherit; }
-  .scut-link-inherit:hover, .scut-link-inherit:active {
-    color: pink; }
+  color: inherit;
+}
+
+.scut-link-inherit:hover,
+.scut-link-inherit:active {
+  color: pink;
+}
 
 @font-face {
   font-family: "Old Standard";
   font-weight: normal;
   font-style: normal;
   src: url("fonts/oldstandard-regular-webfont.eot");
-  src: url("fonts/oldstandard-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-regular-webfont.woff") format("woff"), url("fonts/oldstandard-regular-webfont.ttf") format("truetype"), url("fonts/oldstandard-regular-webfont.svg#Old Standard") format("svg"); }
+  src: url("fonts/oldstandard-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-regular-webfont.woff") format("woff"), url("fonts/oldstandard-regular-webfont.ttf") format("truetype"), url("fonts/oldstandard-regular-webfont.svg#Old Standard") format("svg");
+}
 
 @font-face {
   font-family: "Old Standard";
   font-weight: normal;
   font-style: italic;
   src: url("fonts/oldstandard-italic-webfont.eot");
-  src: url("fonts/oldstandard-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-italic-webfont.woff") format("woff"), url("fonts/oldstandard-italic-webfont.ttf") format("truetype"), url("fonts/oldstandard-italic-webfont.svg#Old Standard") format("svg"); }
+  src: url("fonts/oldstandard-italic-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-italic-webfont.woff") format("woff"), url("fonts/oldstandard-italic-webfont.ttf") format("truetype"), url("fonts/oldstandard-italic-webfont.svg#Old Standard") format("svg");
+}
 
 @font-face {
   font-family: "Old Standard";
   font-weight: bold;
   font-style: normal;
   src: url("fonts/oldstandard-bold-webfont.eot");
-  src: url("fonts/oldstandard-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-bold-webfont.woff") format("woff"), url("fonts/oldstandard-bold-webfont.ttf") format("truetype"), url("fonts/oldstandard-bold-webfont.svg#Old Standard") format("svg"); }
+  src: url("fonts/oldstandard-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oldstandard-bold-webfont.woff") format("woff"), url("fonts/oldstandard-bold-webfont.ttf") format("truetype"), url("fonts/oldstandard-bold-webfont.svg#Old Standard") format("svg");
+}
 
 .font-face {
   font-family: "Old Standard";
-  font-size: 2em; }
+  font-size: 2em;
+}
 
-@media (-o-min-device-pixel-ratio: 1.3 / 1), (-webkit-min-device-pixel-ratio: 1.3), (min-resolution: 125dpi) {
-  body {
-    background: #f4f4f4; } }
+.clearfix {
+  background: lightgray;
+  margin-bottom: 1em;
+}
+
+.clearfix-inner {
+  float: left;
+  background: gray;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.size-1 {
+  background: gray;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1em;
+}
+
+.size-2 {
+  background: gray;
+  width: 200px;
+  height: 100px;
+}
+
+.fill--c {
+  border: 5px solid black;
+  position: relative;
+  width: 200px;
+  height: 100px;
+}
+
+.fill {
+  background: lightgray;
+}
+
+/*==========================
+EXTRAS
+==========================*/
+
 body {
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+}
 
 h1,
 h2,
@@ -414,14 +597,26 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  margin: 1em 0; }
+  margin: 1em 0;
+}
 
 h1 {
   font-size: 3em;
-  margin-top: 0; }
+  margin-top: 0;
+}
 
 h2 {
-  font-size: 2em; }
+  font-size: 2em;
+}
 
 h3 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+}
+
+.c {
+  background: gray;
+  width: 300px;
+  min-height: 100px;
+  position: relative;
+  margin: 1em;
+}
