@@ -23,6 +23,10 @@ LAYOUT
 TYPE
 ==========================*/
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 .list {
   color: white;
 }

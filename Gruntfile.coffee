@@ -21,6 +21,7 @@ module.exports = (grunt) ->
 
     assemble:
       options:
+        data: ["dev/data/*.{json,yml}"]
         partials: ["dev/partials/*.hbs"]
       dev:
         options:
@@ -48,6 +49,7 @@ module.exports = (grunt) ->
         files: [
           "content/*.md"
           "dev/partials/*.hbs"
+          "dev/data/*.yml"
           "dev/index.hbs"
         ]
         tasks: ["assemble:dev"]
@@ -77,8 +79,7 @@ module.exports = (grunt) ->
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
   grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
-  grunt.registerTask "go", ["connect", "watch"]
-  grunt.registerTask "dev", ["replace:deleteFrontMatter", "go"]
+  grunt.registerTask "dev", ["connect", "watch"]
   grunt.registerTask "build", [
     "style"
     "cssmin:dist"
