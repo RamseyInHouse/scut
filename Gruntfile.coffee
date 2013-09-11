@@ -13,25 +13,25 @@ module.exports = (grunt) ->
         files:
           "dist/main.css": "dist/main.css"
 
-    jade:
-      dev:
-        options:
-          data:
-            dist: false
-          pretty: true
-        files:
-          "index.html": "dev/jade/index.jade"
-      dist:
-        options:
-          dist: true
-        files:
-          "index.html": "dev/jade/index.jade"
-
     connect:
       server:
         options:
           port: 9000
           base: "./"
+
+    assemble:
+      options:
+        partials: ["dev/partials/*.hbs"]
+      dev:
+        options:
+          dist: false
+        files:
+          "index.html": ["dev/index.hbs"]
+      dist:
+        options:
+          dist: true
+        files:
+          "index.html": ["dev/index.hbs"]
 
     watch:
       livereload:
@@ -44,12 +44,13 @@ module.exports = (grunt) ->
       style:
         files: ["dev/scss/*.scss"]
         tasks: ["style"]
-      markup:
+      assemble:
         files: [
-          "dev/jade/*.jade"
-          "dev/jade/includes/*.jade"
+          "content/*.md"
+          "dev/partials/*.hbs"
+          "dev/index.hbs"
         ]
-        tasks: ["jade:dev"]
+        tasks: ["assemble:dev"]
 
     cssmin:
       dist:
@@ -63,36 +64,23 @@ module.exports = (grunt) ->
     shell:
       updateSrc:
         command: "git checkout remotes/origin/master -- src"
-      jekyll:
-        command: "jekyll build"
-
-    replace:
-      frontMatter:
-        src: ["index.html"]
-        overwrite: true
-        replacements: [
-          from: "<!DOCTYPE html>"
-          to: "---\n---\n<!DOCTYPE html>"
-        ]
 
 
   grunt.loadNpmTasks "grunt-contrib-sass"
-  grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
-  grunt.loadNpmTasks "grunt-text-replace"
+  grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
   grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
-  grunt.registerTask "dev", ["connect", "watch"]
-  grunt.registerTask "dist", [
-    "jade:dist"
-    "replace:frontMatter"
+  grunt.registerTask "go", ["connect", "watch"]
+  grunt.registerTask "dev", ["replace:deleteFrontMatter", "go"]
+  grunt.registerTask "build", [
     "style"
     "cssmin:dist"
-    "shell:jekyll"
+    "assemble:dist"
   ]

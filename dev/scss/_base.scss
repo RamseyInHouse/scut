@@ -1,0 +1,33 @@
+/*==========================
+LAYOUT
+==========================*/
+
+.list,
+.main {
+  padding: 1.3em;
+}
+
+.list {
+  @include scut-absolute(0 n 0 0);
+  width: $list-x;
+  background-color: $c-list;
+}
+
+.main {
+  @include scut-absolute(0 0 0 $list-x);
+  background-color: $c-main;
+}
+
+
+/*==========================
+TYPE
+==========================*/
+
+.list {
+  color: white;
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+}
