@@ -1,1 +1,33 @@
-<aside class="list">list here!</aside>
+<nav class="list" role="navigation">
+
+  <ul class="index-1">
+    {{#each categories}}
+    <li>
+      <a href="#{{name}}" class="index-1--i">
+        {{slugToWords name}}
+      </a>
+      <ul class="index-2">
+        {{#each items}}
+        <li>
+          <a href="#{{name}}" class="index-2--i">
+            {{slugToWords name}}
+          </a>
+          {{#if items}}
+          <ul class="index-3">
+            {{#each items}}
+            <li>
+              <a href="#{{name}}" class="index-3--i">
+                {{slugToWords name}}
+              </a>
+            </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+
+</nav>

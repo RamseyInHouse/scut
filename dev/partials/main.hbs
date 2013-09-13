@@ -1,4 +1,27 @@
 <article class="main">
-  <h1 class="title">SCUT Documentation</h1>
-  <p>{{md file}}</p>
+
+  <header>
+    <h1 class="title">SCUT Documentation</h1>
+    {{md "content/intro.md"}}
+  </header>
+
+  <!-- HOW TO READ OBJECT'S PROPERTIES? -->
+  {{content.categories}}
+
+  {{#each content.categories}}
+  <p>cat</p>
+  {{/each}}
+
+  {{#each categories}}
+  <h2 id="{{id}}" class="category">
+    {{slugToWords name}}
+  </h2>
+  {{#each items}}
+  <h3 id="{{name}}" class="util">
+    {{slugToWords name}}
+  </h3>
+  {{getContent name}}
+  {{/each}}
+  {{/each}}
+
 </article>

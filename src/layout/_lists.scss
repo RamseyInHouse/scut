@@ -13,9 +13,9 @@
 }
 
 
-// FLOAT LIST
+// FLOATED LIST
 
-@mixin scut-list-float (
+@mixin scut-list-floated (
   $in-media: false
 ) {
 
@@ -34,8 +34,8 @@
 
 }
 
-%scut-list-float {
-  @include scut-list-float;
+%scut-list-floated {
+  @include scut-list-floated;
 }
 
 
@@ -101,10 +101,10 @@
 ) {
 
   @if $in-media {
-    @include scut-list-float;
+    @include scut-list-floated;
   }
   @else {
-    @extend %scut-list-float;
+    @extend %scut-list-floated;
   }
 
   & > li {

@@ -1,0 +1,44 @@
+categories:
+
+  - name: general
+    items:
+      - name: breakpoints
+      - name: hide-text
+
+  - name: layout
+    items:
+      - name: clearfix
+      - name: fill
+      - name: lists
+        items:
+          - name: unstyled-list
+          - name: floated-list
+          - name: inline-list
+          - name: punctuated-list
+            items:
+              - name: comma-list
+          - name: divided list
+            items:
+              - name: breadcrumb
+      - name: positioning
+        items:
+          - name: coordinates
+          - name: absolute positioning
+          - name: relative positioning
+          - name: fixed positioning
+      - name: ratio-box
+      - name: size
+      - name: vertically-center
+
+  - name: shapes
+    items:
+      - name: circle
+      - name: foursquare
+      - name: triangle
+
+  - name: typography
+    items:
+      - name: font-face
+      - name: indented-paragraphs
+      - name: link-styles
+

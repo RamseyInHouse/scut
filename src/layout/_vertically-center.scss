@@ -13,8 +13,11 @@
 // VERTICAL CENTERING VIA INLINE BLOCK
 
 @mixin scut-vcenter-ib (
+  $y,
   $inner: ".scut-inner"
 ) {
+
+  height: $y;
 
   &:before {
     content: "";
@@ -28,10 +31,6 @@
     vertical-align: middle;
   }
 
-}
-
-%scut-vcenter-ib {
-  @include scut-vcenter-ib;
 }
 
 

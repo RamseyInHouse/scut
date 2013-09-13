@@ -1,3 +1,5 @@
+// COORDINATES
+
 @function scut-autoOrValue ($val) {
   @if $val == a or $val == auto {
     @return auto;
@@ -7,7 +9,7 @@
   }
 }
 
-@mixin scut-coordinates (
+@mixin scut-coords (
   $coordinates: n n n n
 ) {
 
@@ -39,7 +41,7 @@
 ) {
 
   position: absolute;
-  @include scut-coordinates($coordinates);
+  @include scut-coords($coordinates);
 
 }
 
@@ -51,7 +53,7 @@
 ) {
 
   position: relative;
-  @include scut-coordinates($coordinates);
+  @include scut-coords($coordinates);
 
 }
 
@@ -63,6 +65,6 @@
 ) {
 
   position: fixed;
-  @include scut-coordinates($coordinates);
+  @include scut-coords($coordinates);
 
 }

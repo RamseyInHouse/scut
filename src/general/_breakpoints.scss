@@ -1,12 +1,17 @@
+// BREAKPOINT
+
 @mixin scut-bp (
   $query
 ) {
 
-  @media only screen and (#{$query}) {
+  @media (#{$query}) {
     @content;
   }
 
 }
+
+
+// HD BREAKPOINT
 
 @mixin scut-hd-bp (
   $ratio: 1.3

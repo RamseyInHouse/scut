@@ -1,0 +1,22 @@
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $c-link;
+  text-decoration: none;
+}
+
+.list {
+  color: white;
+
+  ul {
+    @extend %scut-list-unstyled;
+  }
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

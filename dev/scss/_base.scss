@@ -4,6 +4,7 @@ LAYOUT
 
 .list,
 .main {
+  overflow: scroll;
   padding: 1.3em;
 }
 
@@ -16,22 +17,4 @@ LAYOUT
 .main {
   @include scut-absolute(0 0 0 $list-x);
   background-color: $c-main;
-}
-
-
-/*==========================
-TYPE
-==========================*/
-
-body {
-  -webkit-font-smoothing: antialiased;
-}
-
-.list {
-  color: white;
-}
-
-.title {
-  font-size: 2em;
-  font-weight: bold;
 }
