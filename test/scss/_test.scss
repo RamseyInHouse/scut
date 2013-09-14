@@ -127,13 +127,7 @@
   @include scut-vcenter-tb(".scut-test-inner");
 }
 
-// BREAKPOINTS
-.breakpoint {
-  color: red;
-  @include scut-bp("min-width: 700px") {
-    color: blue;
-  }
-}
+// HD BREAKPOINT
 .hd-breakpoint {
   color: gray;
   @include scut-hd-bp {
@@ -218,6 +212,21 @@
   background: lightgray;
   @extend %scut-fill;
 }
+
+// SELECTED
+
+.selected {
+  @include selected {
+    color: blue;
+  }
+  &.m-not-active {
+    @include selected(false) {
+      color: red;
+    }
+  }
+}
+
+
 
 /*==========================
 EXTRAS

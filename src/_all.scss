@@ -1,7 +1,8 @@
 // GENERAL
 
-@import "general/breakpoints";
+@import "general/hd-breakpoint";
 @import "general/hide-text";
+@import "general/selected";
 
 
 // LAYOUT
@@ -26,5 +27,5 @@
 
 @import "typography/font-face";
 @import "typography/indented-paragraphs";
-@import "typography/links";
+@import "typography/link-styles";
 @import "typography/reverse-italics";

@@ -473,16 +473,6 @@ p:last-of-type {
   vertical-align: middle;
 }
 
-.breakpoint {
-  color: red;
-}
-
-@media (min-width: 700px) {
-  .breakpoint {
-    color: blue;
-  }
-}
-
 .hd-breakpoint {
   color: gray;
 }
@@ -512,7 +502,8 @@ p:last-of-type {
 }
 
 .scut-link-inherit:hover,
-.scut-link-inherit:active {
+.scut-link-inherit:active,
+.scut-link-inherit:focus {
   color: pink;
 }
 
@@ -580,6 +571,17 @@ p:last-of-type {
 
 .fill {
   background: lightgray;
+}
+
+.selected:hover,
+.selected:focus,
+.selected:active {
+  color: blue;
+}
+
+.selected.m-not-active:hover,
+.selected.m-not-active:focus {
+  color: red;
 }
 
 /*==========================

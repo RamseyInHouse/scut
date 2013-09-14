@@ -22,7 +22,8 @@
 
   color: inherit;
   &:hover,
-  &:active {
+  &:active,
+  &:focus {
     color: $c-hover;
   }
 
