@@ -50,7 +50,6 @@ module.exports = (grunt) ->
         tasks: ["style"]
       assemble:
         files: [
-          "content/*.md"
           "dev/partials/*.hbs"
           "dev/data.yml"
           "dev/index.hbs"
@@ -70,15 +69,6 @@ module.exports = (grunt) ->
       updateSrc:
         command: "git checkout remotes/origin/master -- src"
 
-    replace:
-      data:
-        src: ["dev/data/data.yml"]
-        overwrite: true
-        replacements: [
-          from: /name: ([a-z,-]*)(\s*)content:\n/g
-          to: "name: $1$2content: content/$1.md\n"
-        ]
-
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -87,7 +77,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
-  grunt.loadNpmTasks "grunt-text-replace"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]

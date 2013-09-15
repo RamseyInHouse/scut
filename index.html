@@ -19,195 +19,8 @@
       <ul class="index-2">
         
         <li>
-          <a href="#breakpoints" class="index-2--i">
-            breakpoints
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#hide-text" class="index-2--i">
-            hide text
-          </a>
-          
-        </li>
-        
-      </ul>
-    </li>
-    
-    <li>
-      <a href="#layout" class="index-1--i">
-        layout
-      </a>
-      <ul class="index-2">
-        
-        <li>
-          <a href="#clearfix" class="index-2--i">
-            clearfix
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#fill" class="index-2--i">
-            fill
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#lists" class="index-2--i">
-            lists
-          </a>
-          
-          <ul class="index-3">
-            
-            <li>
-              <a href="#unstyled-list" class="index-3--i">
-                unstyled list
-              </a>
-            </li>
-            
-            <li>
-              <a href="#floated-list" class="index-3--i">
-                floated list
-              </a>
-            </li>
-            
-            <li>
-              <a href="#inline-list" class="index-3--i">
-                inline list
-              </a>
-            </li>
-            
-            <li>
-              <a href="#punctuated-list" class="index-3--i">
-                punctuated list
-              </a>
-            </li>
-            
-            <li>
-              <a href="#divided list" class="index-3--i">
-                divided list
-              </a>
-            </li>
-            
-          </ul>
-          
-        </li>
-        
-        <li>
-          <a href="#positioning" class="index-2--i">
-            positioning
-          </a>
-          
-          <ul class="index-3">
-            
-            <li>
-              <a href="#coordinates" class="index-3--i">
-                coordinates
-              </a>
-            </li>
-            
-            <li>
-              <a href="#absolute positioning" class="index-3--i">
-                absolute positioning
-              </a>
-            </li>
-            
-            <li>
-              <a href="#relative positioning" class="index-3--i">
-                relative positioning
-              </a>
-            </li>
-            
-            <li>
-              <a href="#fixed positioning" class="index-3--i">
-                fixed positioning
-              </a>
-            </li>
-            
-          </ul>
-          
-        </li>
-        
-        <li>
-          <a href="#ratio-box" class="index-2--i">
-            ratio box
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#size" class="index-2--i">
-            size
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#vertically-center" class="index-2--i">
-            vertically center
-          </a>
-          
-        </li>
-        
-      </ul>
-    </li>
-    
-    <li>
-      <a href="#shapes" class="index-1--i">
-        shapes
-      </a>
-      <ul class="index-2">
-        
-        <li>
-          <a href="#circle" class="index-2--i">
-            circle
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#foursquare" class="index-2--i">
-            foursquare
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#triangle" class="index-2--i">
-            triangle
-          </a>
-          
-        </li>
-        
-      </ul>
-    </li>
-    
-    <li>
-      <a href="#typography" class="index-1--i">
-        typography
-      </a>
-      <ul class="index-2">
-        
-        <li>
-          <a href="#font-face" class="index-2--i">
-            font face
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#indented-paragraphs" class="index-2--i">
-            indented paragraphs
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#link-styles" class="index-2--i">
-            link styles
+          <a href="#hd-breakpoint" class="index-2--i">
+            hd breakpoint
           </a>
           
         </li>
@@ -219,115 +32,85 @@
 
 </nav>
     <article class="main">
-
   <header>
-    <h1 class="title">SCUT Documentation</h1>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>
-
+    <h1>SCUT Documentation</h1>
+    <p>You will be happy.</p>
   </header>
+  
+  <section>
+    <h2 id="">general</h2>
+    
+    <section>
+      <header>
+        <h3 id="hd-breakpoint">hd breakpoint</h3>
+        <section class="info">
+          <h4 class="info--label">type</h4>
+          <span class="info--value">mixin only</span>
+          <h4 class="info--label">use-name</h4>
+          <code class="info--value">scut-hd-bp</code>
+          
+          <h4 class="info--label">arguments</h4>
+          <ol class="args">
+            
+            <li>
+              <code class="args--name">$ratio</code>
+              [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.3</code>&nbsp;]
+              
+            </li>
+            
+          </ol>
+          
+        </section>
+      </header>
+      <section class="description">
+        <p>This simple mixin provides simple means to write effective resolution-based <code>@media</code>-queries.</p>
 
-  <!-- HOW TO READ OBJECT'S PROPERTIES? -->
+      </section>
+      
+      
+      <section class="example">
+        <h4>Example Usage</h4>
+        <div class="example--code">
+          
+          <h5>SCSS</h5>
+          <code><pre>.example-hd-bp {
+  color: gray;
+  @include scut-hd-bp(2.0) {
+    color: blue;
+  }
+}</pre></code>
+        </div>
+        <div class="example--disp">
+          <h5>Result</h5>
+          <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>
+        </div>
+      </section>
+      
+      
+      
+      <footer>
+        <h4>References</h4>
+        <ul class="refs">
+          
+          <li>
+            <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" target="_blank" class="refs--i">
+              The involved Github discussion that resulted in HTML5 Boilerplate&#x27;s HiDPI breakpoint.
+            </a>
+          </li>
+          
+          <li>
+            <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" target="_blank" class="refs--i">
+              Matt Thomas&#x27;s post about Wordpress&#x27;s HiDPI breakpoint (implemented in WordPress core 3.5).
+            </a>
+          </li>
+          
+        </ul>
+      </footer>
+      
+    </section>
+    
+  </section>
   
-
-  
-
-  
-  <h2 id="" class="category">
-    general
-  </h2>
-  
-  <h3 id="breakpoints" class="util">
-    breakpoints
-  </h3>
-  Breakpoints documentation!
-  
-  <h3 id="hide-text" class="util">
-    hide text
-  </h3>
-  Hide-text documentation!
-  
-  
-  <h2 id="" class="category">
-    layout
-  </h2>
-  
-  <h3 id="clearfix" class="util">
-    clearfix
-  </h3>
-  Clearfix documentation!
-  
-  <h3 id="fill" class="util">
-    fill
-  </h3>
-  
-  
-  <h3 id="lists" class="util">
-    lists
-  </h3>
-  
-  
-  <h3 id="positioning" class="util">
-    positioning
-  </h3>
-  
-  
-  <h3 id="ratio-box" class="util">
-    ratio box
-  </h3>
-  
-  
-  <h3 id="size" class="util">
-    size
-  </h3>
-  
-  
-  <h3 id="vertically-center" class="util">
-    vertically center
-  </h3>
-  
-  
-  
-  <h2 id="" class="category">
-    shapes
-  </h2>
-  
-  <h3 id="circle" class="util">
-    circle
-  </h3>
-  
-  
-  <h3 id="foursquare" class="util">
-    foursquare
-  </h3>
-  
-  
-  <h3 id="triangle" class="util">
-    triangle
-  </h3>
-  
-  
-  
-  <h2 id="" class="category">
-    typography
-  </h2>
-  
-  <h3 id="font-face" class="util">
-    font face
-  </h3>
-  
-  
-  <h3 id="indented-paragraphs" class="util">
-    indented paragraphs
-  </h3>
-  
-  
-  <h3 id="link-styles" class="util">
-    link styles
-  </h3>
-  
-  
-  
-
 </article>
   </body>
 </html>

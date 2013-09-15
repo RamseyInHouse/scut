@@ -1,27 +1,74 @@
 <article class="main">
-
   <header>
-    <h1 class="title">SCUT Documentation</h1>
-    {{md "content/intro.md"}}
+    <h1>SCUT Documentation</h1>
+    <p>You will be happy.</p>
   </header>
-
-  <!-- HOW TO READ OBJECT'S PROPERTIES? -->
-  {{content.categories}}
-
-  {{#each content.categories}}
-  <p>cat</p>
-  {{/each}}
-
   {{#each categories}}
-  <h2 id="{{id}}" class="category">
-    {{slugToWords name}}
-  </h2>
-  {{#each items}}
-  <h3 id="{{name}}" class="util">
-    {{slugToWords name}}
-  </h3>
-  {{getContent name}}
+  <section>
+    <h2 id="{{id}}">{{slugToWords name}}</h2>
+    {{#each items}}
+    <section>
+      <header>
+        <h3 id="{{name}}">{{slugToWords name}}</h3>
+        <section class="info">
+          <h4 class="info--label">type</h4>
+          <span class="info--value">{{type}}</span>
+          <h4 class="info--label">use-name</h4>
+          <code class="info--value">{{use-name}}</code>
+          {{#if args}}
+          <h4 class="info--label">arguments</h4>
+          <ol class="args">
+            {{#each args}}
+            <li>
+              <code class="args--name">{{this.name}}</code>
+              [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+              {{#if this.comment}}
+              <span class="args--comment">{{this.comment}}</span>
+              {{/if}}
+            </li>
+            {{/each}}
+          </ol>
+          {{/if}}
+        </section>
+      </header>
+      <section class="description">
+        {{#markdown}}{{{text}}}{{/markdown}}
+      </section>
+      {{#if examples}}
+      {{#each examples}}
+      <section class="example">
+        <h4>Example Usage</h4>
+        <div class="example--code">
+          {{#if show-html}}
+          <h5>HTML</h5>
+          <code><pre>{{html}}</pre></code>
+          {{/if}}
+          <h5>SCSS</h5>
+          <code><pre>{{getExampleScss scss}}</pre></code>
+        </div>
+        <div class="example--disp">
+          <h5>Result</h5>
+          {{{html}}}
+        </div>
+      </section>
+      {{/each}}
+      {{/if}}
+      {{#if references}}
+      <footer>
+        <h4>References</h4>
+        <ul class="refs">
+          {{#each references}}
+          <li>
+            <a href="{{this.url}}" target="_blank" class="refs--i">
+              {{this.description}}
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </footer>
+      {{/if}}
+    </section>
+    {{/each}}
+  </section>
   {{/each}}
-  {{/each}}
-
 </article>

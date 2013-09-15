@@ -2,43 +2,58 @@ categories:
 
   - name: general
     items:
-      - name: breakpoints
-      - name: hide-text
+      - name: hd-breakpoint
+        type: mixin only
+        use-name: scut-hd-bp
+        args:
+          - name: $ratio
+            default: 1.3
+        references:
+          - description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint.
+            url: https://github.com/h5bp/html5-boilerplate/issues/1127
+          - description: Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5).
+            url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
+        text: This simple mixin provides simple means to write effective resolution-based `@media`-queries.
+        examples:
+          - html: '<p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>'
+            show-html: false
+            scss: hd-breakpoint
+  #     - name: hide-text
+  #     - name: selected
+  # - name: layout
+  #   items:
+  #     - name: clearfix
+  #     - name: fill
+  #     - name: lists
+  #       items:
+  #         - name: unstyled-list
+  #         - name: floated-list
+  #         - name: inline-list
+  #         - name: punctuated-list
+  #           items:
+  #             - name: comma-list
+  #         - name: divided list
+  #           items:
+  #             - name: breadcrumb
+  #     - name: positioning
+  #       items:
+  #         - name: coordinates
+  #         - name: absolute positioning
+  #         - name: relative positioning
+  #         - name: fixed positioning
+  #     - name: ratio-box
+  #     - name: size
+  #     - name: vertically-center
 
-  - name: layout
-    items:
-      - name: clearfix
-      - name: fill
-      - name: lists
-        items:
-          - name: unstyled-list
-          - name: floated-list
-          - name: inline-list
-          - name: punctuated-list
-            items:
-              - name: comma-list
-          - name: divided list
-            items:
-              - name: breadcrumb
-      - name: positioning
-        items:
-          - name: coordinates
-          - name: absolute positioning
-          - name: relative positioning
-          - name: fixed positioning
-      - name: ratio-box
-      - name: size
-      - name: vertically-center
+  # - name: shapes
+  #   items:
+  #     - name: circle
+  #     - name: foursquare
+  #     - name: triangle
 
-  - name: shapes
-    items:
-      - name: circle
-      - name: foursquare
-      - name: triangle
-
-  - name: typography
-    items:
-      - name: font-face
-      - name: indented-paragraphs
-      - name: link-styles
+  # - name: typography
+  #   items:
+  #     - name: font-face
+  #     - name: indented-paragraphs
+  #     - name: link-styles
 

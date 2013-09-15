@@ -4,15 +4,16 @@ module.exports.register = function(Handlebars, options) {
 
   Handlebars.registerHelper('slugToWords', function(str) {
     var noDash = str.replace('-', ' ');
-    //var newStr = noDash.replace(/\w\S*/g, function (txt) {
-    //  return txt.charAt(0).toUpperCase() + txt.substr(1);
-    //});
-    //return newStr;
     return noDash;
   });
 
-  Handlebars.registerHelper('getContent', function(path) {
-    var file = grunt.file.read('content/' + path + '.md');
+  Handlebars.registerHelper('getContent', function(name) {
+    var file = grunt.file.read('content/' + name + '.md');
+    return file;
+  });
+
+  Handlebars.registerHelper('getExampleScss', function(name) {
+    var file = grunt.file.read('dev/scss/examples/_' + name + '.scss');
     return file;
   });
 

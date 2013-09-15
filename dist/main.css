@@ -494,6 +494,12 @@ p:last-of-type {
   margin-bottom: 0;
 }
 
+.example:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .list ul {
   list-style-type: none;
   margin: 0;
@@ -521,7 +527,7 @@ LAYOUT
 
 .list,
 .main {
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 1.3em;
 }
 
@@ -556,10 +562,50 @@ a {
   color: white;
 }
 
-.title {
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-bottom: 0.5em;
+}
+
+h2,
+h4,
+h5 {
+  margin-top: 1em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+h2 {
   font-size: 2em;
   font-weight: bold;
-  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.5em;
+  padding-top: 1em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.3em;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.info--label {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 0 1em 0 0;
+  text-transform: uppercase;
 }
 
 .list {
@@ -583,17 +629,42 @@ a {
   margin-left: 1em;
 }
 
-.category {
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 0.5em;
-  margin-top: 1em;
-  text-transform: uppercase;
+.info--label {
+  clear: left;
+  float: left;
+  width: 8em;
 }
 
-.util {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
+.args {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.args--name {
+  margin-right: 1em;
+}
+
+.args--default {
+  font-style: italic;
+}
+
+.description {
+  margin-bottom: 1em;
   margin-top: 1em;
-  text-transform: capitalize;
+}
+
+.refs {
+  padding-left: 0;
+  list-style-position: inside;
+}
+
+.example-hd-bp {
+  color: gray;
+}
+
+@media (-o-min-device-pixel-ratio: 2 / 1), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .example-hd-bp {
+    color: blue;
+  }
 }

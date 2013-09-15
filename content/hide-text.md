@@ -1,1 +1,0 @@
-Hide-text documentation!
