@@ -1,8 +1,11 @@
 .info--label {
   @extend %label;
-  clear: left;
   float: left;
   width: $label-x;
+}
+
+.info--value {
+  margin: 0.3em 0;
 }
 
 .args {
@@ -17,6 +20,10 @@
 
 .args--default {
   font-style: italic;
+}
+
+.args--comment {
+  font-size: 0.9em;
 }
 
 .description {

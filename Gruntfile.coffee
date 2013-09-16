@@ -47,14 +47,20 @@ module.exports = (grunt) ->
         ]
       style:
         files: ["dev/scss/*.scss"]
-        tasks: ["style"]
+        tasks: [
+          "style"
+          "shell:jekyll"
+        ]
       assemble:
         files: [
           "dev/partials/*.hbs"
           "dev/data.yml"
           "dev/index.hbs"
         ]
-        tasks: ["assemble:dev"]
+        tasks: [
+          "assemble:dev"
+          "shell:jekyll"
+        ]
 
     cssmin:
       dist:
@@ -68,6 +74,8 @@ module.exports = (grunt) ->
     shell:
       updateSrc:
         command: "git checkout remotes/origin/master -- src"
+      jekyll:
+        command: "jekyll build"
 
 
   grunt.loadNpmTasks "grunt-contrib-sass"
@@ -86,4 +94,5 @@ module.exports = (grunt) ->
     "style"
     "cssmin:dist"
     "assemble:dist"
+    "shell:jekyll"
   ]

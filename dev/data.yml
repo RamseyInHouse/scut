@@ -8,12 +8,13 @@ categories:
         args:
           - name: $ratio
             default: 1.3
+            comment: "A *minimum* resolution."
         references:
-          - description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint.
+          - description: "The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint."
             url: https://github.com/h5bp/html5-boilerplate/issues/1127
-          - description: Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5).
+          - description: "Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5)."
             url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
-        text: This simple mixin provides simple means to write effective resolution-based `@media`-queries.
+        text: "This simple mixin provides simple means to write effective resolution-based `@media`-queries."
         examples:
           - html: '<p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>'
             show-html: false

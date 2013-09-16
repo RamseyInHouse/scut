@@ -1,0 +1,14 @@
+exclude: [
+  bower.json,
+  Gruntfile.coffee,
+  package.json,
+  README.md,
+  src,
+  node_modules,
+  bower_components,
+  .sass-cache,
+  dev
+]
+include: [
+  index.html
+]

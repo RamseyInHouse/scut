@@ -5,31 +5,35 @@
   </header>
   {{#each categories}}
   <section>
-    <h2 id="{{id}}">{{slugToWords name}}</h2>
+    <h2 id="{{name}}">{{slugToWords name}}</h2>
     {{#each items}}
     <section>
       <header>
         <h3 id="{{name}}">{{slugToWords name}}</h3>
-        <section class="info">
-          <h4 class="info--label">type</h4>
-          <span class="info--value">{{type}}</span>
-          <h4 class="info--label">use-name</h4>
-          <code class="info--value">{{use-name}}</code>
+        <dl class="info">
+          <dt class="info--label">type</dt>
+          <dd class="info--value">{{type}}</dd>
+          <dt class="info--label">use-name</dt>
+          <dd class="info--value">
+            <code>{{use-name}}</code>
+          </dd>
           {{#if args}}
-          <h4 class="info--label">arguments</h4>
-          <ol class="args">
-            {{#each args}}
-            <li>
-              <code class="args--name">{{this.name}}</code>
-              [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
-              {{#if this.comment}}
-              <span class="args--comment">{{this.comment}}</span>
-              {{/if}}
-            </li>
-            {{/each}}
-          </ol>
+          <dt class="info--label">arguments</dt>
+          <dd class="info--value">
+            <ol class="args">
+              {{#each args}}
+              <li>
+                <code class="args--name">{{this.name}}</code>
+                [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+                {{#if this.comment}}
+                <span class="args--comment">{{#markdown}}{{this.comment}}{{/markdown}}</span>
+                {{/if}}
+              </li>
+              {{/each}}
+            </ol>
+          </dd>
           {{/if}}
-        </section>
+        </dl>
       </header>
       <section class="description">
         {{#markdown}}{{{text}}}{{/markdown}}
@@ -37,14 +41,14 @@
       {{#if examples}}
       {{#each examples}}
       <section class="example">
-        <h4>Example Usage</h4>
+        <h4>Example</h4>
         <div class="example--code">
           {{#if show-html}}
           <h5>HTML</h5>
           <code><pre>{{html}}</pre></code>
           {{/if}}
           <h5>SCSS</h5>
-          <code><pre>{{getExampleScss scss}}</pre></code>
+          {% highlight scss %}{{getExampleScss scss}}{% endhighlight %}
         </div>
         <div class="example--disp">
           <h5>Result</h5>
@@ -60,7 +64,7 @@
           {{#each references}}
           <li>
             <a href="{{this.url}}" target="_blank" class="refs--i">
-              {{this.description}}
+              {{#markdown}}{{{this.description}}}{{/markdown}}
             </a>
           </li>
           {{/each}}

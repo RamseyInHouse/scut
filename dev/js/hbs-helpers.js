@@ -7,14 +7,13 @@ module.exports.register = function(Handlebars, options) {
     return noDash;
   });
 
-  Handlebars.registerHelper('getContent', function(name) {
-    var file = grunt.file.read('content/' + name + '.md');
-    return file;
-  });
-
   Handlebars.registerHelper('getExampleScss', function(name) {
     var file = grunt.file.read('dev/scss/examples/_' + name + '.scss');
     return file;
+  });
+
+  Handlebars.registerHelper('addEmptyFrontMatter', function() {
+    return '---\n---\n';
   });
 
 };
