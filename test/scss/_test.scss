@@ -216,11 +216,11 @@
 // SELECTED
 
 .selected {
-  @include selected {
+  @include scut-selected {
     color: blue;
   }
   &.m-not-active {
-    @include selected(false) {
+    @include scut-selected(false) {
       color: red;
     }
   }
