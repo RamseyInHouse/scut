@@ -6,10 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Dummy!</title>
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="dist/main.css">
   </head>
   <body>
     {{>list}}
     {{>main}}
   </body>
+  {{#if dist}}
+  <script src="dist/js-built.min.js"></script>
+  {{else}}
+  <script src="dev/js/lib/prism.js"></script>
+  {{/if}}
 </html>

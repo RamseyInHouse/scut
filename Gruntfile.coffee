@@ -37,6 +37,23 @@ module.exports = (grunt) ->
         files:
           "index.html": ["dev/index.hbs"]
 
+    svgmin:
+      images:
+        files: [
+          expand: true
+          cwd: "dev/images/raw"
+          src: ["*.svg"]
+          dest: "dev/images/opt"
+        ]
+
+    grunticon:
+      images:
+        options:
+          cssprefix: "",
+          datasvgcss: "_svg-data.scss"
+          src: "dev/images/opt"
+          dest: "dev/scss/grunticon"
+
     watch:
       livereload:
         options:
@@ -61,6 +78,16 @@ module.exports = (grunt) ->
           "assemble:dev"
           "shell:jekyll"
         ]
+      exampleSCSS:
+        files: ["dev/scss/examples/*.scss"]
+        tasks: [
+          "assemble:dev"
+          "shell:jekyll"
+          "style"
+        ]
+      svg:
+        files: ["dev/images/raw"]
+        tasks: ["svg"]
 
     cssmin:
       dist:
@@ -70,6 +97,8 @@ module.exports = (grunt) ->
     clean:
       clearSrc:
         src: ["src"]
+      images:
+        src: ["dev/images/opt"]
 
     shell:
       updateSrc:
@@ -77,22 +106,35 @@ module.exports = (grunt) ->
       jekyll:
         command: "jekyll build"
 
+    uglify:
+      all:
+        files:
+          "dist/js-built.min.js": [
+            "dev/js/lib/prism.js"
+          ]
+
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
+  grunt.loadNpmTasks "grunt-contrib-uglify"
+  grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
+  grunt.loadNpmTasks "grunt-grunticon"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
   grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
   grunt.registerTask "dev", ["connect", "watch"]
+  grunt.registerTask "svg", ["svgmin:images", "grunticon:images"]
+  grunt.registerTask "reImage", ["clean:images", "svg"]
   grunt.registerTask "build", [
     "style"
     "cssmin:dist"
     "assemble:dist"
     "shell:jekyll"
+    "uglify:all"
   ]

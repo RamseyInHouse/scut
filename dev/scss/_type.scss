@@ -1,15 +1,19 @@
 body {
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
-a {
+a,
+a:visited {
   color: $c-link;
   text-decoration: none;
+  @include scut-selected {
+    color: $c-link-active;
+  }
 }
 
 .list {
   color: white;
-
   ul {
     @extend %scut-list-unstyled;
   }
@@ -24,6 +28,7 @@ h5 {
 }
 
 h2,
+h3,
 h4,
 h5 {
   margin-top: 1em;
@@ -41,20 +46,33 @@ h2 {
 }
 
 h3 {
+  background-color: $c-zing;
   font-size: 1.5em;
-  padding-top: 1em;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding: 0.2em 1em;
   text-transform: uppercase;
+  font-weight: bold;
+  color: $c-list;
 }
 
 h4 {
   font-size: 1.3em;
+  font-weight: bold;
 }
 
 h5 {
   font-weight: bold;
 }
 
+code {
+  color: #FF5A40;
+  font-family: "Droid Sans Mono", "Courier New", "Courier New", monospace;
+}
 
+p {
+  line-height: 1.4;
+}
 
 %label {
   font-size: 0.9em;

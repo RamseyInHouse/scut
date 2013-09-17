@@ -45,10 +45,10 @@
         <div class="example--code">
           {{#if show-html}}
           <h5>HTML</h5>
-          <code><pre>{{html}}</pre></code>
+          <pre><code class="language-markup">{{html}}</code></pre>
           {{/if}}
           <h5>SCSS</h5>
-          {% highlight scss %}{{getExampleScss scss}}{% endhighlight %}
+          <pre><code class="language-scss">{{getExampleScss scss}}</code></pre>
         </div>
         <div class="example--disp">
           <h5>Result</h5>

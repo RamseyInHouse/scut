@@ -1,0 +1,8 @@
+.example-hide-text {
+  @extend %scut-hide-text;
+  background: blue;
+  display: inline-block;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}

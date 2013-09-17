@@ -2,6 +2,7 @@ categories:
 
   - name: general
     items:
+
       - name: hd-breakpoint
         type: mixin only
         use-name: scut-hd-bp
@@ -19,6 +20,18 @@ categories:
           - html: '<p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>'
             show-html: false
             scss: hd-breakpoint
+
+      - name: hide-text
+        type: mixin and placeholder
+        use-name: scut-hide-text
+        references:
+          - description: "L. Jeffrey Zeldman's post \"Replacing the -9999px Hack (New Image Replacement)\"."
+            url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+        text: "Include text on the page while hiding it from view. Most commonly used to provide text (semantic, accessible, SEO-friendly, etc.) that will be (visually) replaced with an image."
+        examples:
+          - html: '<p>The following block is hiding text <span class="example-hide-text">This text is hidden</span></p>'
+            show-html: true
+            scss: hide-text
   #     - name: hide-text
   #     - name: selected
   # - name: layout

@@ -36,6 +36,18 @@
 }
 
 .refs {
-  padding-left: 0;
-  list-style-position: inside;
+  @extend %scut-list-unstyled;
+  li {
+    margin-bottom: 0.3em;
+    padding-left: 1.3em;
+    position: relative;
+    &:before {
+      @extend .new-tab;
+      background-size: contain;
+      content: "";
+      display: block;
+      @include scut-size(1em);
+      @include scut-absolute(0.2em n n 0);
+    }
+  }
 }
