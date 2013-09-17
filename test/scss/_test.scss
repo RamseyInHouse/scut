@@ -198,7 +198,7 @@
 }
 .size-2 {
   background: gray;
-  @include size(200px 100px);
+  @include scut-size(200px 100px);
 }
 
 // FILL
