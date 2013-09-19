@@ -1,0 +1,7 @@
+.example-floated-list {
+  @extend %scut-list-floated;
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+}

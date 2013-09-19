@@ -41,9 +41,18 @@ module.exports = (grunt) ->
       images:
         files: [
           expand: true
-          cwd: "dev/images/raw"
+          cwd: "dev/images/svg-assets/raw"
           src: ["*.svg"]
-          dest: "dev/images/opt"
+          dest: "dev/images/svg-assets/opt"
+        ]
+
+    imagemin:
+      images:
+        files: [
+          expand: true
+          cwd: "dev/images/raw"
+          src: ["*.{jpg,png}"]
+          dest: "dist/images"
         ]
 
     grunticon:
@@ -51,7 +60,7 @@ module.exports = (grunt) ->
         options:
           cssprefix: "",
           datasvgcss: "_svg-data.scss"
-          src: "dev/images/opt"
+          src: "dev/images/svg-assets/opt"
           dest: "dev/scss/grunticon"
 
     watch:
@@ -64,30 +73,26 @@ module.exports = (grunt) ->
         ]
       style:
         files: ["dev/scss/*.scss"]
-        tasks: [
-          "style"
-          "shell:jekyll"
-        ]
+        tasks: ["style"]
       assemble:
         files: [
           "dev/partials/*.hbs"
           "dev/data.yml"
           "dev/index.hbs"
         ]
-        tasks: [
-          "assemble:dev"
-          "shell:jekyll"
-        ]
+        tasks: ["assemble:dev"]
       exampleSCSS:
         files: ["dev/scss/examples/*.scss"]
         tasks: [
           "assemble:dev"
-          "shell:jekyll"
           "style"
         ]
       svg:
-        files: ["dev/images/raw"]
+        files: ["dev/images/svg-assets/raw/*"]
         tasks: ["svg"]
+      images:
+        files: ["dev/images/raw/*"]
+        tasks: ["imagemin:images"]
 
     cssmin:
       dist:
@@ -120,6 +125,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-uglify"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
   grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"

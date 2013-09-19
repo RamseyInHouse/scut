@@ -1,0 +1,9 @@
+.example-clearfix--container {
+  @extend %scut-clearfix;
+  background: blue;
+}
+.example-clearfix--float {
+  float: left;
+  margin: 1em;
+  background: white;
+}

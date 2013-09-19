@@ -10,35 +10,7 @@
     <link rel="stylesheet" href="dist/main.css">
   </head>
   <body>
-    <nav class="list" role="navigation">
-  <ul class="index-1">
     
-    <li>
-      <a href="#general" class="index-1--i">
-        general
-      </a>
-      <ul class="index-2">
-        
-        <li>
-          <a href="#hd-breakpoint" class="index-2--i">
-            hd breakpoint
-          </a>
-          
-        </li>
-        
-        <li>
-          <a href="#hide-text" class="index-2--i">
-            hide text
-          </a>
-          
-        </li>
-        
-      </ul>
-    </li>
-    
-  </ul>
-
-</nav>
     <article class="main">
   <header>
     <h1>SCUT Documentation</h1>
@@ -48,7 +20,7 @@
   <section>
     <h2 id="general">general</h2>
     
-    <section>
+    <section class="doc-i">
       <header>
         <h3 id="hd-breakpoint">hd breakpoint</h3>
         <dl class="info">
@@ -65,7 +37,7 @@
               
               <li>
                 <code class="args--name">$ratio</code>
-                [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.3</code>&nbsp;]
+                [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">[object Object]</code>&nbsp;]
                 
                 <span class="args--comment"><p>A <em>minimum</em> resolution.</p>
 </span>
@@ -78,7 +50,7 @@
         </dl>
       </header>
       <section class="description">
-        <p>This simple mixin provides simple means to write effective resolution-based <code>@media</code>-queries.</p>
+        <p>Simple means to write effective resolution-based <code>@media</code>-queries, using <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>.</p>
 
       </section>
       
@@ -98,6 +70,7 @@
         <div class="example--disp">
           <h5>Result</h5>
           <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>
+
         </div>
       </section>
       
@@ -109,74 +82,14 @@
           
           <li>
             <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" target="_blank" class="refs--i">
-              <p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint.</p>
+              <p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint</p>
 
             </a>
           </li>
           
           <li>
             <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" target="_blank" class="refs--i">
-              <p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5).</p>
-
-            </a>
-          </li>
-          
-        </ul>
-      </footer>
-      
-    </section>
-    
-    <section>
-      <header>
-        <h3 id="hide-text">hide text</h3>
-        <dl class="info">
-          <dt class="info--label">type</dt>
-          <dd class="info--value">mixin and placeholder</dd>
-          <dt class="info--label">use-name</dt>
-          <dd class="info--value">
-            <code>scut-hide-text</code>
-          </dd>
-          
-        </dl>
-      </header>
-      <section class="description">
-        <p>Include text on the page while hiding it from view. Most commonly used to provide text (semantic, accessible, SEO-friendly, etc.) that will be (visually) replaced with an image.</p>
-
-      </section>
-      
-      
-      <section class="example">
-        <h4>Example</h4>
-        <div class="example--code">
-          
-          <h5>HTML</h5>
-          <pre><code class="language-markup">&lt;p&gt;The following block is hiding text &lt;span class=&quot;example-hide-text&quot;&gt;This text is hidden&lt;/span&gt;&lt;/p&gt;</code></pre>
-          
-          <h5>SCSS</h5>
-          <pre><code class="language-scss">.example-hide-text {
-  @extend %scut-hide-text;
-  background: blue;
-  display: inline-block;
-  height: 1em;
-  vertical-align: middle;
-  width: 1em;
-}</code></pre>
-        </div>
-        <div class="example--disp">
-          <h5>Result</h5>
-          <p>The following block is hiding text <span class="example-hide-text">This text is hidden</span></p>
-        </div>
-      </section>
-      
-      
-      
-      <footer>
-        <h4>References</h4>
-        <ul class="refs">
-          
-          <li>
-            <a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" target="_blank" class="refs--i">
-              <p>L. Jeffrey Zeldman&#39;s post &quot;Replacing the -9999px Hack (New Image Replacement)&quot;.</p>
+              <p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5)</p>
 
             </a>
           </li>
@@ -191,6 +104,6 @@
 </article>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
   
 </html>

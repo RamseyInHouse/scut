@@ -1,3 +1,41 @@
+.doc-i {
+  margin-bottom: 4em;
+  max-width: ($code-x * 2) + 2em;
+}
+
+.doc-i--h {
+  @include scut-vcenter-lh(2.5em);
+  background-color: $c-zing;
+  padding: 0 0 0 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: -2em;
+  margin-right: -2em;
+  @media ($wide-enough) {
+    margin-right: 0;
+  }
+}
+
+.sub--h {
+  border-bottom: 1px solid;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  text-transform: capitalize;
+}
+
+.source {
+  @include scut-vcenter-lh(2.5em);
+  color: $c-zing;
+  float: right;
+  background: $c-list;
+  padding: 0 2em;
+  position: relative;
+  &:before {
+    @include scut-triangle(left, 2.5em, $c-list, true);
+    @include scut-absolute(0 n n -1.25em);
+  }
+}
+
 .info--label {
   @extend %label;
   float: left;
@@ -5,7 +43,7 @@
 }
 
 .info--value {
-  margin: 0.3em 0;
+  margin: 0.1em 0;
 }
 
 .args {
@@ -33,6 +71,26 @@
 
 .example {
   @extend %scut-clearfix;
+}
+
+.example--html {
+  max-width: ($code-x * 2) + 1em;
+}
+
+.example--scss,
+.example--disp {
+  @media ($wide-enough) {
+    float: left;
+    margin-right: 1em;
+    width: $code-x;
+  }
+}
+
+.example--disp--inner {
+  background: white;
+  border: 1px solid $c-list;
+  border-radius: 5px;
+  padding: 1em;
 }
 
 .refs {

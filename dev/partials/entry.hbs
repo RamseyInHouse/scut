@@ -1,0 +1,78 @@
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        {{type}}
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>{{use-name}}</code>
+      </td>
+    </tr>
+    {{#if args}}
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          {{#each args}}
+          <li>
+            <code class="args--name">{{variable}}</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+            {{#if comment}}
+            <span class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</span>
+            {{/if}}
+          </li>
+          {{/each}}
+        </ol>
+      </td>
+    </tr>
+    {{/if}}
+  </tbody>
+</table>
+<section class="description">
+  {{#markdown}}{{{text}}}{{/markdown}}
+</section>
+{{#if examples}}
+{{#each examples}}
+<section class="example">
+  <h4>Example</h4>
+  {{#if show-html}}
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">{{html}}</code></pre>
+  </div>
+  {{/if}}
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">{{getExampleScss ../name}}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner">{{{html}}}</div>
+  </div>
+</section>
+{{/each}}
+{{/if}}
+{{#if references}}
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    {{#each references}}
+    <li>
+      <a href="{{url}}" target="_blank" class="refs--i">
+        {{#markdown}}{{{description}}}{{/markdown}}
+      </a>
+    </li>
+    {{/each}}
+  </ul>
+</footer>
+{{/if}}

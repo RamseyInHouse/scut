@@ -1,0 +1,10 @@
+.example-divided-list {
+  @include scut-list-divided;
+  // or @extend %scut-list-bar;
+}
+.example-breadcrumb-list {
+  @extend %scut-list-breadcrumb;
+}
+.example-adding-list {
+  @include scut-list-divided("+", 1em);
+}

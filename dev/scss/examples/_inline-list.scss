@@ -1,0 +1,7 @@
+.example-inline-list {
+  @extend %scut-list-inline;
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+}

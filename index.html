@@ -33,6 +33,112 @@
           
         </li>
         
+        <li>
+          <a href="#selected" class="index-2--i">
+            selected
+          </a>
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li>
+      <a href="#layout" class="index-1--i">
+        layout
+      </a>
+      <ul class="index-2">
+        
+        <li>
+          <a href="#clearfix" class="index-2--i">
+            clearfix
+          </a>
+          
+        </li>
+        
+        <li>
+          <a href="#fill" class="index-2--i">
+            fill
+          </a>
+          
+        </li>
+        
+        <li>
+          <a href="#lists" class="index-2--i">
+            lists
+          </a>
+          
+          <ul class="index-3">
+            
+            <li>
+              <a href="#unstyled-list" class="index-3--i">
+                unstyled list
+              </a>
+            </li>
+            
+            <li>
+              <a href="#floated-list" class="index-3--i">
+                floated list
+              </a>
+            </li>
+            
+            <li>
+              <a href="#inline-list" class="index-3--i">
+                inline list
+              </a>
+            </li>
+            
+            <li>
+              <a href="#punctuated-list" class="index-3--i">
+                punctuated list
+              </a>
+            </li>
+            
+            <li>
+              <a href="#divided-list" class="index-3--i">
+                divided list
+              </a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a href="#positioning" class="index-2--i">
+            positioning
+          </a>
+          
+          <ul class="index-3">
+            
+            <li>
+              <a href="#coordinates" class="index-3--i">
+                coordinates
+              </a>
+            </li>
+            
+            <li>
+              <a href="#absolute-positioning" class="index-3--i">
+                absolute positioning
+              </a>
+            </li>
+            
+            <li>
+              <a href="#relative-positioning" class="index-3--i">
+                relative positioning
+              </a>
+            </li>
+            
+            <li>
+              <a href="#fixed positioning" class="index-3--i">
+                fixed positioning
+              </a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
       </ul>
     </li>
     
@@ -46,143 +152,1245 @@
   </header>
   
   <section>
-    <h2 id="general">general</h2>
+    <h2>
+      <a href="#general" id="general" class="inner-anchor">
+        general
+      </a>
+    </h2>
     
-    <section>
-      <header>
-        <h3 id="hd-breakpoint">hd breakpoint</h3>
-        <dl class="info">
-          <dt class="info--label">type</dt>
-          <dd class="info--value">mixin only</dd>
-          <dt class="info--label">use-name</dt>
-          <dd class="info--value">
-            <code>scut-hd-bp</code>
-          </dd>
-          
-          <dt class="info--label">arguments</dt>
-          <dd class="info--value">
-            <ol class="args">
-              
-              <li>
-                <code class="args--name">$ratio</code>
-                [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.3</code>&nbsp;]
-                
-                <span class="args--comment"><p>A <em>minimum</em> resolution.</p>
-</span>
-                
-              </li>
-              
-            </ol>
-          </dd>
-          
-        </dl>
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd-breakpoint.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#hd-breakpoint" id="hd-breakpoint" class="inner-anchor">
+            hd breakpoint
+          </a>
+        </h3>
       </header>
-      <section class="description">
-        <p>This simple mixin provides simple means to write effective resolution-based <code>@media</code>-queries.</p>
 
-      </section>
       
-      
-      <section class="example">
-        <h4>Example</h4>
-        <div class="example--code">
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-hd-bp</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
           
-          <h5>SCSS</h5>
-          <pre><code class="language-scss">.example-hd-bp {
+          <li>
+            <code class="args--name">$ratio</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.3</code>&nbsp;]
+            
+            <span class="args--comment"><p>A <em>minimum</em> resolution.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Simple means to write effective resolution-based <code>@media</code>-queries, using <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-hd-bp {
   color: gray;
   @include scut-hd-bp(2.0) {
     color: blue;
   }
 }</code></pre>
-        </div>
-        <div class="example--disp">
-          <h5>Result</h5>
-          <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>
-        </div>
-      </section>
-      
-      
-      
-      <footer>
-        <h4>References</h4>
-        <ul class="refs">
-          
-          <li>
-            <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" target="_blank" class="refs--i">
-              <p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint.</p>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
+</div>
+  </div>
+</section>
 
-            </a>
-          </li>
-          
-          <li>
-            <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" target="_blank" class="refs--i">
-              <p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5).</p>
 
-            </a>
-          </li>
-          
-        </ul>
-      </footer>
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" target="_blank" class="refs--i">
+        <p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint</p>
+
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" target="_blank" class="refs--i">
+        <p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5)</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
+
       
     </section>
     
-    <section>
-      <header>
-        <h3 id="hide-text">hide text</h3>
-        <dl class="info">
-          <dt class="info--label">type</dt>
-          <dd class="info--value">mixin and placeholder</dd>
-          <dt class="info--label">use-name</dt>
-          <dd class="info--value">
-            <code>scut-hide-text</code>
-          </dd>
-          
-        </dl>
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hide-text.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#hide-text" id="hide-text" class="inner-anchor">
+            hide text
+          </a>
+        </h3>
       </header>
-      <section class="description">
-        <p>Include text on the page while hiding it from view. Most commonly used to provide text (semantic, accessible, SEO-friendly, etc.) that will be (visually) replaced with an image.</p>
 
-      </section>
       
-      
-      <section class="example">
-        <h4>Example</h4>
-        <div class="example--code">
-          
-          <h5>HTML</h5>
-          <pre><code class="language-markup">&lt;p&gt;The following block is hiding text &lt;span class=&quot;example-hide-text&quot;&gt;This text is hidden&lt;/span&gt;&lt;/p&gt;</code></pre>
-          
-          <h5>SCSS</h5>
-          <pre><code class="language-scss">.example-hide-text {
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-hide-text</code>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Include text in the markup while hiding it from view.</p>
+<p>This technique is most commonly used to provide (semantic, accessible, SEO-friendly, etc.) text that will be (visually) replaced with an image.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;p&gt;The following image is hiding text:&lt;/p&gt;
+&lt;div class=&quot;example-hide-text&quot;&gt;This text is hidden&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-hide-text {
   @extend %scut-hide-text;
-  background: blue;
-  display: inline-block;
-  height: 1em;
-  vertical-align: middle;
-  width: 1em;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 100px;
 }</code></pre>
-        </div>
-        <div class="example--disp">
-          <h5>Result</h5>
-          <p>The following block is hiding text <span class="example-hide-text">This text is hidden</span></p>
-        </div>
-      </section>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p>The following image is hiding text:</p>
+<div class="example-hide-text">This text is hidden</div>
+</div>
+  </div>
+</section>
+
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" target="_blank" class="refs--i">
+        <p>L. Jeffrey Zeldman: &quot;Replacing the -9999px Hack (New Image Replacement)&quot;</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
+
       
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_selected.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#selected" id="selected" class="inner-anchor">
+            selected
+          </a>
+        </h3>
+      </header>
+
       
-      
-      <footer>
-        <h4>References</h4>
-        <ul class="refs">
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-selected</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
           
           <li>
-            <a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" target="_blank" class="refs--i">
-              <p>L. Jeffrey Zeldman&#39;s post &quot;Replacing the -9999px Hack (New Image Replacement)&quot;.</p>
-
-            </a>
+            <code class="args--name"></code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">true</code>&nbsp;]
+            
+            <span class="args--comment"><p>Will the rules apply to the <code>:active</code> state?</p>
+</span>
+            
           </li>
           
-        </ul>
-      </footer>
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Apply rules to <code>:hover</code>, <code>:focus</code>, and (optionally) <code>:active</code> states at the same time.</p>
+<p><em>Don&#39;t forget to add a <code>tabindex</code> to any element that will need it for <code>:focus</code>.</em></p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-selected {
+  background-color: gray;
+  padding: 3px 10px;
+  @include scut-selected {
+    background-color: blue;
+    color: white;
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p>The following button turns blue in all three states<p>
+<p><button class="example-selected">Inspect Me!</button></p>
+</div>
+  </div>
+</section>
+
+
+
+      
+    </section>
+    
+  </section>
+  
+  <section>
+    <h2>
+      <a href="#layout" id="layout" class="inner-anchor">
+        layout
+      </a>
+    </h2>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_clearfix.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#clearfix" id="clearfix" class="inner-anchor">
+            clearfix
+          </a>
+        </h3>
+      </header>
+
+      
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-clearfix</code>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Make an element adapt its height to fit floated children.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;example-clearfix--container&quot;&gt;
+  &lt;div class=&quot;example-clearfix--float&quot;&gt;floated&lt;/div&gt;
+  &lt;div class=&quot;example-clearfix--float&quot;&gt;floated&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-clearfix--container {
+  @extend %scut-clearfix;
+  background: blue;
+}
+.example-clearfix--float {
+  float: left;
+  margin: 1em;
+  background: white;
+}
+</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-clearfix--container">
+  <div class="example-clearfix--float">floated</div>
+  <div class="example-clearfix--float">floated</div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://blog.teamtreehouse.com/a-better-clearfix-with-sass" target="_blank" class="refs--i">
+        <p>Treehouse blog: &quot;CSS Tip: A Better Clearfix with Sass&quot;</p>
+
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://css-tricks.com/snippets/css/clear-fix/" target="_blank" class="refs--i">
+        <p>CSS-Tricks catalogs various clearfix hacks</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
+
+      
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_fill.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#fill" id="fill" class="inner-anchor">
+            fill
+          </a>
+        </h3>
+      </header>
+
+      
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-fill</code>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Make an element fill its parent.</p>
+<p><em>Note: The parent-to-be-filled must be <strong>positioned</strong> &mdash; so add <code>position: relative</code> if the parent&#39;s position is not already <code>absolute</code> or <code>fixed</code>.</em></p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;example-fill--parent&quot;&gt;
+  Parent provides the border
+  &lt;div class=&quot;example-fill--child&quot;&gt;
+    Child provides the background
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-fill--parent {
+  border: 3px solid black;
+  color: red;
+  height: 100px;
+  padding: 1em;
+  position: relative;
+}
+
+.example-fill--child {
+  @extend %scut-fill;
+  background: rgba(0,0,0,0.4);
+  padding: 2.5em 1em 0;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-fill--parent">
+  Parent provides the border
+  <div class="example-fill--child">
+    Child provides the background
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+      
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_lists.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#lists" id="lists" class="inner-anchor">
+            lists
+          </a>
+        </h3>
+      </header>
+
+      
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#unstyled-list" id="unstyled-list" class="inner-anchor">
+      unstyled list
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-list-unstyled</code>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Remove styling (<code>margin</code>, <code>padding</code>, and <code>list-style-type</code>) from a list.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-unstyled-list {
+  @extend %scut-list-unstyled;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><ul class="example-unstyled-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#floated-list" id="floated-list" class="inner-anchor">
+      floated list
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-list-floated</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$in-media</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]
+            
+            <span class="args--comment"><p>Go with <code>true</code> if using the mixin within a <code>@media</code>-query, to avoid a futile attempt to <code>@extend</code> within it.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Float the items of an unstyled list, to the left.</p>
+<p>Use a floated list instead of an inline list when you want your list items snuggled right next to each other.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-floated-list {
+  @extend %scut-list-floated;
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><ul class="example-floated-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#inline-list" id="inline-list" class="inner-anchor">
+      inline list
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin and placeholder
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-list-inline</code>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Inline the items of an unstyled list.</p>
+<p>Use an inline list if you don&#39;t mind your list items spaced out a little, like inline words.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-inline-list {
+  @extend %scut-list-inline;
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><ul class="example-inline-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#punctuated-list" id="punctuated-list" class="inner-anchor">
+      punctuated list
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin with extension placeholders
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-list-punctuated</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$divider</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;, &quot;</code>&nbsp;]
+            
+            <span class="args--comment"><p>Choose your punctuation.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$display</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inline</code>&nbsp;]
+            
+            <span class="args--comment"><p>Change to <code>inline-block</code> if you don&#39;t want your list items spanning lines.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$in-media</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]
+            
+            <span class="args--comment"><p>Go with <code>true</code> if using the mixin within a <code>@media</code>-query, to avoid a futile attempt to <code>@extend</code> within it.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Keep your HTML semantic and your punctuation traditional.</p>
+<p>Since the most common punctuated list uses commas, commas are default and the comma list is available as its own placeholder:</p>
+<ul>
+<li><strong><code>%scut-list-comma</code></strong></li>
+</ul>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-punctuated-list {
+  @include scut-list-punctuated;
+  // or @extend %scut-list-comma;
+}
+.example-semicolon-list {
+  @include scut-list-punctuated(&quot;; &quot;);
+}
+.example-avant-garde-list {
+  @include scut-list-punctuated(&quot; . &quot;);
+  text-transform: lowercase;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><ul class="example-punctuated-list">
+  <strong>Comma list: </strong>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+<ul class="example-semicolon-list">
+  <strong>Semicolon list: </strong>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+<ul class="example-avant-garde-list">
+  <strong>Avant-garde list: </strong>
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#divided-list" id="divided-list" class="inner-anchor">
+      divided list
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin with extension placeholders
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-list-divided</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$divider</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;|&quot;</code>&nbsp;]
+            
+            <span class="args--comment"><p>Choose your punctuation.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$gap</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.5em</code>&nbsp;]
+            
+            <span class="args--comment"><p>The space separating your dividers from the your list items.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$in-media</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]
+            
+            <span class="args--comment"><p>Go with <code>true</code> if using the mixin within a <code>@media</code>-query, to avoid a futile attempt to <code>@extend</code> within it.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>A floated list with punctuation between each list item.</p>
+<p>The two most common variations each have their own placeholders:</p>
+<ul>
+<li><strong><code>%scut-list-bar</code></strong></li>
+<li><strong><code>%scut-list-breadcrumb</code></strong></li>
+</ul>
+<p>But, of course, all things are possible.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-divided-list {
+  @include scut-list-divided;
+  // or @extend %scut-list-bar;
+}
+.example-breadcrumb-list {
+  @extend %scut-list-breadcrumb;
+}
+.example-adding-list {
+  @include scut-list-divided(&quot;+&quot;, 1em);
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><ul class="example-divided-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+<ul class="example-breadcrumb-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+<ul class="example-adding-list">
+  <li>List item</li>
+  <li>List item</li>
+  <li>List item</li>
+</ul>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+      
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#positioning" id="positioning" class="inner-anchor">
+            positioning
+          </a>
+        </h3>
+      </header>
+
+      
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#coordinates" id="coordinates" class="inner-anchor">
+      coordinates
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-coordinates</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$coordinates</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]
+            
+            <span class="args--comment"><p>A list: <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> coordinates.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>A shortcut for assigning coordinates.</p>
+<p>You may want to use this mixin on its own &mdash; but you probably want to use one of the extensions below, which will pair your coordinates with a <code>position</code> value.</p>
+<p>Some guidlines: <strong><code>n</code> (the default value) indicates &quot;nothing&quot;</strong> &mdash; so the coordinate is ignored, no rule is created. <strong><code>a</code> can abbreviate <code>auto</code></strong> (both will work). <strong>All four values must be passed</strong>: so use <code>n</code> as needed. See the examples below.</p>
+
+</section>
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#absolute-positioning" id="absolute-positioning" class="inner-anchor">
+      absolute positioning
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-absolute</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$coordinates</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]
+            
+            <span class="args--comment"><p><a href="#coordinates">See information about <code>coordinates</code> above.</a></p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Absolutely position an element and assign its coordinates, all in one line of SCSS. You&#39;ll save years of your life.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-absolute {
+  border: 5px solid black;
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+.example-absolute--i {
+  background: blue;
+  color: white;
+  &amp;.m-left {
+    @include scut-absolute(0.5em n n 0.5em);
+  }
+  &amp;.m-right {
+    @include scut-absolute(n 0.5em 0.5em n);
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-absolute">
+  <div class="example-absolute--i m-left">Top left</div>
+  <div class="example-absolute--i m-right">Bottom right</div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#relative-positioning" id="relative-positioning" class="inner-anchor">
+      relative positioning
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-relative</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$coordinates</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]
+            
+            <span class="args--comment"><p><a href="#coordinates">See information about <code>coordinates</code> above.</a></p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Relatively position an element and assign its coordinates, all in one line of SCSS.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-relative--1 {
+  @include scut-relative(0.2em 0.2em n n);
+}
+.example-relative--2 {
+  @include scut-relative(a a 1em n);
+}
+.example-relative--3 {
+  @include scut-relative(n n n 1em);
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#fixed positioning" id="fixed positioning" class="inner-anchor">
+      fixed positioning
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-fixed</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$coordinates</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]
+            
+            <span class="args--comment"><p><a href="#coordinates">See information about <code>coordinates</code> above.</a></p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Fixedly (<em>fix-ed-lee</em>) position an element and assign its coordinates.</p>
+<p>I won&#39;t provide an example because it would spoil the documentation. Look at those above: you&#39;ll get the picture.</p>
+
+</section>
+
+
+        </section>
+        
       
     </section>
     
@@ -191,6 +1399,6 @@
 </article>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
   
 </html>

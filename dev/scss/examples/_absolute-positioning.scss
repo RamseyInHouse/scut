@@ -1,0 +1,16 @@
+.example-absolute {
+  border: 5px solid black;
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+.example-absolute--i {
+  background: blue;
+  color: white;
+  &.m-left {
+    @include scut-absolute(0.5em n n 0.5em);
+  }
+  &.m-right {
+    @include scut-absolute(n 0.5em 0.5em n);
+  }
+}

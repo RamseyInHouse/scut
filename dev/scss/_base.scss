@@ -17,4 +17,8 @@ LAYOUT
 .main {
   @include scut-absolute(0 0 0 $list-x);
   background-color: $c-main;
+  overflow-x: hidden;
+
+  // remove if things get responsive
+  min-width: 30em;
 }

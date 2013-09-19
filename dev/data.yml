@@ -1,63 +1,360 @@
+github-url: "https://github.com/davidtheclark/scut/blob/master/src"
+
 categories:
 
-  - name: general
+  -
+    category: general
     items:
 
-      - name: hd-breakpoint
-        type: mixin only
+      -
+        name: hd-breakpoint
+        type: &MO mixin only
         use-name: scut-hd-bp
-        args:
-          - name: $ratio
-            default: 1.3
-            comment: "A *minimum* resolution."
-        references:
-          - description: "The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint."
-            url: https://github.com/h5bp/html5-boilerplate/issues/1127
-          - description: "Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5)."
-            url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
-        text: "This simple mixin provides simple means to write effective resolution-based `@media`-queries."
-        examples:
-          - html: '<p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue. Otherwise, you will see a sad gray.</p>'
-            show-html: false
-            scss: hd-breakpoint
+        text: |
+          Simple means to write effective resolution-based `@media`-queries, using `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`.
 
-      - name: hide-text
-        type: mixin and placeholder
+        args:
+          -
+            variable: $ratio
+            default: 1.3
+            comment: A *minimum* resolution.
+
+        references:
+          -
+            description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint
+            url: https://github.com/h5bp/html5-boilerplate/issues/1127
+          -
+            description: Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5)
+            url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
+        examples:
+          -
+            html: |
+              <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
+            show-html: false
+
+      -
+        name: hide-text
+        type: &MP mixin and placeholder
         use-name: scut-hide-text
         references:
-          - description: "L. Jeffrey Zeldman's post \"Replacing the -9999px Hack (New Image Replacement)\"."
+          -
+            description: "L. Jeffrey Zeldman: \"Replacing the -9999px Hack (New Image Replacement)\""
             url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-        text: "Include text on the page while hiding it from view. Most commonly used to provide text (semantic, accessible, SEO-friendly, etc.) that will be (visually) replaced with an image."
+
+        text: |
+          Include text in the markup while hiding it from view.
+
+          This technique is most commonly used to provide (semantic, accessible, SEO-friendly, etc.) text that will be (visually) replaced with an image.
+
         examples:
-          - html: '<p>The following block is hiding text <span class="example-hide-text">This text is hidden</span></p>'
+          -
+            html: |
+              <p>The following image is hiding text:</p>
+              <div class="example-hide-text">This text is hidden</div>
             show-html: true
             scss: hide-text
-  #     - name: hide-text
-  #     - name: selected
-  # - name: layout
-  #   items:
-  #     - name: clearfix
-  #     - name: fill
-  #     - name: lists
-  #       items:
-  #         - name: unstyled-list
-  #         - name: floated-list
-  #         - name: inline-list
-  #         - name: punctuated-list
-  #           items:
-  #             - name: comma-list
-  #         - name: divided list
-  #           items:
-  #             - name: breadcrumb
-  #     - name: positioning
-  #       items:
-  #         - name: coordinates
-  #         - name: absolute positioning
-  #         - name: relative positioning
-  #         - name: fixed positioning
-  #     - name: ratio-box
-  #     - name: size
-  #     - name: vertically-center
+
+      -
+        name: selected
+        type: *MO
+        use-name: scut-selected
+        args:
+          -
+            name: $active
+            default: true
+            comment: Will the rules apply to the `:active` state?
+        text: |
+          Apply rules to `:hover`, `:focus`, and (optionally) `:active` states at the same time.
+
+          *Don't forget to add a `tabindex` to any element that will need it for `:focus`.*
+        examples:
+          -
+            html: |
+              <p>The following button turns blue in all three states<p>
+              <p><button class="example-selected">Inspect Me!</button></p>
+            show-html: false
+            scss: selected
+
+
+  -
+    category: layout
+    items:
+
+      -
+        name: clearfix
+        type: *MP
+        use-name: scut-clearfix
+        text: |
+          Make an element adapt its height to fit floated children.
+        references:
+          -
+            description: "Treehouse blog: \"CSS Tip: A Better Clearfix with Sass\""
+            url: http://blog.teamtreehouse.com/a-better-clearfix-with-sass
+          -
+            description: "CSS-Tricks catalogs various clearfix hacks"
+            url: http://css-tricks.com/snippets/css/clear-fix/
+        examples:
+          -
+            html: |
+              <div class="example-clearfix--container">
+                <div class="example-clearfix--float">floated</div>
+                <div class="example-clearfix--float">floated</div>
+              </div>
+            show-html: truer
+            scss: clearfix
+
+      -
+        name: fill
+        type: *MP
+        use-name: scut-fill
+        text: |
+          Make an element fill its parent.
+
+          *Note: The parent-to-be-filled must be **positioned** &mdash; so add `position: relative` if the parent's position is not already `absolute` or `fixed`.*
+        examples:
+          -
+            html: |
+              <div class="example-fill--parent">
+                Parent provides the border
+                <div class="example-fill--child">
+                  Child provides the background
+                </div>
+              </div>
+            show-html: true
+            scss: fill
+
+      -
+        name: lists
+        items:
+
+          -
+            name: unstyled-list
+            type: *MP
+            use-name: scut-list-unstyled
+            text: |
+              Remove styling (`margin`, `padding`, and `list-style-type`) from a list.
+            examples:
+              -
+                html: |
+                  <ul class="example-unstyled-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                show-html: false
+
+          -
+            name: floated-list
+            type: *MP
+            use-name: scut-list-floated
+            args:
+              -
+                variable: $in-media
+                default: "false"
+                comment: &IM Go with `true` if using the mixin within a `@media`-query, to avoid a futile attempt to `@extend` within it.
+            text: |
+              Float the items of an unstyled list, to the left.
+
+              Use a floated list instead of an inline list when you want your list items snuggled right next to each other.
+            examples:
+              -
+                html: |
+                  <ul class="example-floated-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                show-html: false
+
+          -
+            name: inline-list
+            type: *MP
+            use-name: scut-list-inline
+            text: |
+              Inline the items of an unstyled list.
+
+              Use an inline list if you don't mind your list items spaced out a little, like inline words.
+
+            examples:
+              -
+                html: |
+                  <ul class="example-inline-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                show-html: false
+
+          -
+            name: punctuated-list
+            type: &MOP mixin with extension placeholders
+            use-name: scut-list-punctuated
+            args:
+              -
+                variable: $divider
+                default: "\", \""
+                comment: Choose your punctuation.
+              -
+                variable: $display
+                default: inline
+                comment: Change to `inline-block` if you don't want your list items spanning lines.
+              -
+                variable: $in-media
+                default: "false"
+                comment: *IM
+            text: |
+              Keep your HTML semantic and your punctuation traditional.
+
+              Since the most common punctuated list uses commas, commas are default and the comma list is available as its own placeholder:
+
+              - **`%scut-list-comma`**
+
+            examples:
+              -
+                html: |
+                  <ul class="example-punctuated-list">
+                    <strong>Comma list: </strong>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                  <ul class="example-semicolon-list">
+                    <strong>Semicolon list: </strong>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                  <ul class="example-avant-garde-list">
+                    <strong>Avant-garde list: </strong>
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                show-html: false
+
+          -
+            name: divided-list
+            type: *MOP
+            use-name: scut-list-divided
+            args:
+              -
+                variable: $divider
+                default: "\"|\""
+                comment: Choose your punctuation.
+              -
+                variable: $gap
+                default: 0.5em
+                comment: The space separating your dividers from the your list items.
+              -
+                variable: $in-media
+                default: "false"
+                comment: *IM
+            text: |
+              A floated list with punctuation between each list item.
+
+              The two most common variations each have their own placeholders:
+
+              - **`%scut-list-bar`**
+              - **`%scut-list-breadcrumb`**
+
+              But, of course, all things are possible.
+
+            examples:
+              -
+                html: |
+                  <ul class="example-divided-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                  <ul class="example-breadcrumb-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                  <ul class="example-adding-list">
+                    <li>List item</li>
+                    <li>List item</li>
+                    <li>List item</li>
+                  </ul>
+                show-html: false
+
+      -
+        name: positioning
+        items:
+
+          -
+            name: coordinates
+            type: *MO
+            use-name: scut-coordinates
+            args:
+              -
+                variable: $coordinates
+                default: [n n n n]
+                comment: |
+                  A list: `top`, `right`, `bottom`, and `left` coordinates.
+            text: |
+              A shortcut for assigning coordinates.
+
+              You may want to use this mixin on its own &mdash; but you probably want to use one of the extensions below, which will pair your coordinates with a `position` value.
+
+              Some guidlines: **`n` (the default value) indicates "nothing"** &mdash; so the coordinate is ignored, no rule is created. **`a` can abbreviate `auto`** (both will work). **All four values must be passed**: so use `n` as needed. See the examples below.
+
+
+          -
+            name: absolute-positioning
+            type: *MO
+            use-name: scut-absolute
+            args:
+              -
+                variable: $coordinates
+                default: [n n n n]
+                comment: &SEEC "<a href=\"#coordinates\">See information about `coordinates` above.</a>"
+            text: |
+              Absolutely position an element and assign its coordinates, all in one line of SCSS. You'll save years of your life.
+            examples:
+              -
+                html: |
+                  <div class="example-absolute">
+                    <div class="example-absolute--i m-left">Top left</div>
+                    <div class="example-absolute--i m-right">Bottom right</div>
+                  </div>
+                show-html: false
+
+          -
+            name: relative-positioning
+            type: *MO
+            use-name: scut-relative
+            args:
+              -
+                variable: $coordinates
+                default: [n n n n]
+                comment: *SEEC
+            text: |
+              Relatively position an element and assign its coordinates, all in one line of SCSS.
+            examples:
+              -
+                html: |
+                  <p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
+                show-html: false
+
+          -
+            name: fixed positioning
+            type: *MO
+            use-name: scut-fixed
+            args:
+              -
+                variable: $coordinates
+                default: [n n n n]
+                comment: *SEEC
+            text: |
+              Fixedly (*fix-ed-lee*) position an element and assign its coordinates.
+
+              I won't provide an example because it would spoil the documentation. Look at those above: you'll get the picture.
+
+      # - name: ratio-box
+      # - name: size
+      # - name: vertically-center
 
   # - name: shapes
   #   items:
