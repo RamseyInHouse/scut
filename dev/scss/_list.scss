@@ -2,7 +2,7 @@
   line-height: 1.3;
 }
 
-a.index-1--i {
+.index-1--i {
   color: white;
   display: block;
   font-size: 1.3em;
@@ -11,11 +11,10 @@ a.index-1--i {
   @extend %scut-link-bd;
 }
 
-a.index-2--i {
+.index-2--i {
   color: $c-link-2;
 }
 
-a.index-3--i {
-  font-size: 0.8em;
+.index-3--i {
   margin-left: 1em;
 }

@@ -1,6 +1,5 @@
 .doc-i {
   margin-bottom: 4em;
-  max-width: ($code-x * 2) + 2em;
 }
 
 .doc-i--h {
@@ -11,9 +10,7 @@
   font-weight: bold;
   margin-left: -2em;
   margin-right: -2em;
-  @media ($wide-enough) {
-    margin-right: 0;
-  }
+  margin-bottom: 1em;
 }
 
 .sub--h {
@@ -77,13 +74,16 @@
   max-width: ($code-x * 2) + 1em;
 }
 
-.example--scss,
-.example--disp {
-  @media ($wide-enough) {
+@media ($wide-enough) {
+  .example--scss,
+  .example--disp {
     float: left;
-    margin-right: 1em;
     width: $code-x;
   }
+  .example--scss {
+    margin-right: 1em;
+  }
+
 }
 
 .example--disp--inner {

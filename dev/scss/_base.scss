@@ -2,6 +2,10 @@
 LAYOUT
 ==========================*/
 
+body {
+  background-color: $c-list;
+}
+
 .list,
 .main {
   overflow-y: scroll;
@@ -11,7 +15,6 @@ LAYOUT
 .list {
   @include scut-absolute(0 n 0 0);
   width: $list-x;
-  background-color: $c-list;
 }
 
 .main {
@@ -21,4 +24,5 @@ LAYOUT
 
   // remove if things get responsive
   min-width: 30em;
+  max-width: $main-max-x;
 }

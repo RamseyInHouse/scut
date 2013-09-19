@@ -52,7 +52,6 @@ categories:
               <p>The following image is hiding text:</p>
               <div class="example-hide-text">This text is hidden</div>
             show-html: true
-            scss: hide-text
 
       -
         name: selected
@@ -60,8 +59,8 @@ categories:
         use-name: scut-selected
         args:
           -
-            name: $active
-            default: true
+            variable: $active
+            default: "true"
             comment: Will the rules apply to the `:active` state?
         text: |
           Apply rules to `:hover`, `:focus`, and (optionally) `:active` states at the same time.
@@ -73,7 +72,6 @@ categories:
               <p>The following button turns blue in all three states<p>
               <p><button class="example-selected">Inspect Me!</button></p>
             show-html: false
-            scss: selected
 
 
   -
@@ -101,7 +99,6 @@ categories:
                 <div class="example-clearfix--float">floated</div>
               </div>
             show-html: truer
-            scss: clearfix
 
       -
         name: fill
@@ -121,7 +118,6 @@ categories:
                 </div>
               </div>
             show-html: true
-            scss: fill
 
       -
         name: lists
