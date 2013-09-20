@@ -141,6 +141,5 @@ module.exports = (grunt) ->
     "style"
     "cssmin:dist"
     "assemble:dist"
-    "shell:jekyll"
     "uglify:all"
   ]
