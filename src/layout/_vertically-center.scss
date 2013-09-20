@@ -1,11 +1,11 @@
 // VERTICAL CENTERING VIA LINE HEIGHT
 
 @mixin scut-vcenter-lh (
-  $y
+  $height
 ) {
 
-  height: $y;
-  line-height: $y;
+  height: $height;
+  line-height: $height;
 
 }
 
@@ -13,11 +13,8 @@
 // VERTICAL CENTERING VIA INLINE BLOCK
 
 @mixin scut-vcenter-ib (
-  $y,
   $inner: ".scut-inner"
 ) {
-
-  height: $y;
 
   &:before {
     content: "";
@@ -36,7 +33,7 @@
 
 // VERTICAL CENTERING VIA DISPLAY: TABLE
 
-@mixin scut-vcenter-tb (
+@mixin scut-vcenter-td (
   $inner: ".scut-inner"
 ) {
 
@@ -47,8 +44,4 @@
     vertical-align: middle;
   }
 
-}
-
-%scut-vcenter-tb {
-  @include scut-vcenter-tb;
 }

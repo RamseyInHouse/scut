@@ -50,12 +50,14 @@ button {
 button {
   background: transparent;
   border: 0;
+  color: inherit;
   font: inherit;
   margin: 0;
   outline: none;
   padding: 0;
   width: auto;
   -webkit-appearance: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 // Some paragraph margins just get in the way.

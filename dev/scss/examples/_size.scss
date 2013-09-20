@@ -1,0 +1,10 @@
+.example-size {
+  background: gray;
+  &.m-square {
+    @include scut-size(75px);
+    margin-bottom: 1em;
+  }
+  &.m-rectangle {
+    @include scut-size(150px 50px);
+  }
+}

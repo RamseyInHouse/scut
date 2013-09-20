@@ -11,6 +11,12 @@
   @extend %scut-link-bd;
 }
 
+.index-2--i,
+.index-3--i {
+  display: block;
+  margin-bottom: 0.3em;
+}
+
 .index-2--i {
   color: $c-link-2;
 }

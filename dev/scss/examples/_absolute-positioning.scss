@@ -5,8 +5,7 @@
   position: relative;
 }
 .example-absolute--i {
-  background: blue;
-  color: white;
+  background: gray;
   &.m-left {
     @include scut-absolute(0.5em n n 0.5em);
   }

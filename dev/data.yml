@@ -69,7 +69,7 @@ categories:
         examples:
           -
             html: |
-              <p>The following button turns blue in all three states<p>
+              <p>The following button turns blue in all three states:<p>
               <p><button class="example-selected">Inspect Me!</button></p>
             show-html: false
 
@@ -335,7 +335,7 @@ categories:
                 show-html: false
 
           -
-            name: fixed positioning
+            name: fixed-positioning
             type: *MO
             use-name: scut-fixed
             args:
@@ -348,8 +348,165 @@ categories:
 
               I won't provide an example because it would spoil the documentation. Look at those above: you'll get the picture.
 
-      # - name: ratio-box
-      # - name: size
+      -
+        name: ratio-box
+        type: *MO
+        use-name: scut-ratio-box
+        args:
+          -
+            variable: $ratio
+            default: 100%
+            comment: Height as a percentage of width.
+          -
+            variable: $inner
+            default: ".scut-inner"
+            comment: &IE CSS selector for the inner element. See below.
+        text: |
+          Give an element with unknown or fluid width a fixed aspect ratio.
+
+          Implementation involves a few prerequisite elements &mdash; here's what you need:
+
+          - **A container element**, whose width (which may be fluid) will determine the width of your ratio-box.
+          - **The ratio-box's outer element**, to which the mixin applies.
+          - **The ratio-box's inner element**, whose selector must be passed to the mixin as the `$inner` (second) argument, and whose content will show the styling.
+
+          The examples should demonstrate.
+        examples:
+          -
+            html: |
+              <p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
+              <div class="example-ratio--c m-1">
+                <div class="example-ratio--outer">
+                  <div class="example-ratio--inner">
+                    <!-- Content! -->
+                  </div>
+                </div>
+              </div>
+              <div class="example-ratio--c m-2">
+                <div class="example-ratio--outer">
+                  <div class="example-ratio--inner">
+                    <!-- Content! -->
+                  </div>
+                </div>
+              </div>
+            show-html: true
+
+      -
+        name: size
+        type: *MO
+        use-name: scut-size
+        args:
+          -
+            variable: $size
+            default: &ND no default
+            comment: A single value will make a square; a list of two (`width` then `height`) will make a rectangle.
+        text: |
+          Define both of an element's dimensions in one fell swoop.
+
+          If a single value is passed, it will be applied to both `width` and `height`, producing a square. To make a rectangle, pass a two-value list: `width` then `height`.
+        examples:
+          -
+            html: |
+              <div class="example-size m-square">A square</div>
+              <div class="example-size m-rectangle">A rectangle</div>
+            show-html: false
+
+      -
+        name: vertically-center
+        items:
+
+          -
+            name: vertically-center-via-line-height
+            type: *MO
+            use-name: scut-vcenter-lh
+            args:
+              -
+                variable: $height
+                default: *ND
+            text: |
+              Vertically center text by equalizing an element's `height` and `line-height`.
+
+              Although this method is nice and simple, requiring no extra `<div>`s, it is limited: **it only works for inline content (i.e. text) that will not exceed a single line.** So it's good for buttons and headings with backgrounds and things like that.
+
+              If you need to vertically center something else, try one of the mixins below.
+
+            examples:
+              -
+                html: |
+                  <p class="example-vcenter-lh">
+                    Vertically centered text.
+                  </p>
+                show-html: false
+
+          -
+            name: vertically-center-via-inline-block
+            type: *MO
+            use-name: scut-vcenter-ib
+            args:
+              -
+                variable: $inner
+                default: ".scut-inner"
+                comment: *IE
+            text: |
+              Vertically center *an inner element* with the `inline-block` method.
+
+              **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
+
+              *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't work well if you require exactitude* (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having `display: table`, try that method (below).
+
+            examples:
+              -
+                html: |
+                  <div class="example-vcenter-ib">
+                    <p class="example-vcenter-ib--inner">
+                      A vertically centered element.
+                    </p>
+                  </div>
+                show-html: true
+            references:
+              -
+                description: "CSS-Tricks: \"Centering in the Unknown\""
+                url: http://css-tricks.com/centering-in-the-unknown/
+
+          -
+            name: vertically-center-via-table-display
+            type: *MO
+            use-name: scut-vcenter-td
+            args:
+              -
+                variable: $inner
+                default: ".scut-inner"
+                comment: *IE
+            text: |
+              Vertically center *the content of an inner element* with the `display: table` method.
+
+              **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
+
+              Whatever goes into the inner container, whether text or blocks, will be vertically centered.
+
+            examples:
+              -
+                html: |
+                  <div class="example-vcenter-td">
+                    <p class="example-vcenter-td--inner">
+                      Text.
+                    </p>
+                  </div>
+                  <div class="example-vcenter-td">
+                    <div class="example-vcenter-td--inner">
+                      <div class="example-vcenter-td--box">Box</div>
+                    </div>
+                  </div>
+                show-html: true
+            references:
+              -
+                description: "CSS-Tricks: \"Centering in the Unknown\""
+                url: http://css-tricks.com/centering-in-the-unknown/
+
+
+
+
+
       # - name: vertically-center
 
   # - name: shapes

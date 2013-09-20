@@ -130,8 +130,51 @@
             </li>
             
             <li>
-              <a href="#fixed positioning" class="index-3--i">
+              <a href="#fixed-positioning" class="index-3--i">
                 fixed positioning
+              </a>
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a href="#ratio-box" class="index-2--i">
+            ratio box
+          </a>
+          
+        </li>
+        
+        <li>
+          <a href="#size" class="index-2--i">
+            size
+          </a>
+          
+        </li>
+        
+        <li>
+          <a href="#vertically-center" class="index-2--i">
+            vertically center
+          </a>
+          
+          <ul class="index-3">
+            
+            <li>
+              <a href="#vertically-center-via-line-height" class="index-3--i">
+                vertically center via line height
+              </a>
+            </li>
+            
+            <li>
+              <a href="#vertically-center-via-inline-block" class="index-3--i">
+                vertically center via inline block
+              </a>
+            </li>
+            
+            <li>
+              <a href="#vertically-center-via-table-display" class="index-3--i">
+                vertically center via table display
               </a>
             </li>
             
@@ -421,7 +464,7 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p>The following button turns blue in all three states<p>
+    <div class="example--disp--inner"><p>The following button turns blue in all three states:<p>
 <p><button class="example-selected">Inspect Me!</button></p>
 </div>
   </div>
@@ -495,7 +538,7 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.example-clearfix--container {
   @extend %scut-clearfix;
-  background: blue;
+  background: gray;
 }
 .example-clearfix--float {
   float: left;
@@ -1228,8 +1271,7 @@
   position: relative;
 }
 .example-absolute--i {
-  background: blue;
-  color: white;
+  background: gray;
   &amp;.m-left {
     @include scut-absolute(0.5em n n 0.5em);
   }
@@ -1336,7 +1378,7 @@
         <section class="doc-i-sub">
           <header class="sub--h">
   <h3>
-    <a href="#fixed positioning" id="fixed positioning" class="inner-anchor">
+    <a href="#fixed-positioning" id="fixed-positioning" class="inner-anchor">
       fixed positioning
     </a>
   </h3>
@@ -1394,11 +1436,574 @@
       
     </section>
     
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_ratio-box.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#ratio-box" id="ratio-box" class="inner-anchor">
+            ratio box
+          </a>
+        </h3>
+      </header>
+
+      
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-ratio-box</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$ratio</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">100%</code>&nbsp;]
+            
+            <span class="args--comment"><p>Height as a percentage of width.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$inner</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
+            
+            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Give an element with unknown or fluid width a fixed aspect ratio.</p>
+<p>Implementation involves a few prerequisite elements &mdash; here&#39;s what you need:</p>
+<ul>
+<li><strong>A container element</strong>, whose width (which may be fluid) will determine the width of your ratio-box.</li>
+<li><strong>The ratio-box&#39;s outer element</strong>, to which the mixin applies.</li>
+<li><strong>The ratio-box&#39;s inner element</strong>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument, and whose content will show the styling.</li>
+</ul>
+<p>The examples should demonstrate.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;p&gt;The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.&lt;/p&gt;
+&lt;div class=&quot;example-ratio--c m-1&quot;&gt;
+  &lt;div class=&quot;example-ratio--outer&quot;&gt;
+    &lt;div class=&quot;example-ratio--inner&quot;&gt;
+      &lt;!-- Content! --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;example-ratio--c m-2&quot;&gt;
+  &lt;div class=&quot;example-ratio--outer&quot;&gt;
+    &lt;div class=&quot;example-ratio--inner&quot;&gt;
+      &lt;!-- Content! --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-ratio--outer {
+  // 9 / 16 * 100 = 56.25%
+  @include scut-ratio-box(56.25%, &quot;.example-ratio--inner&quot;);
+}
+.example-ratio--inner {
+  background: gray;
+}
+.example-ratio--c {
+  margin-top: 1em;
+  &amp;.m-1 {
+    width: 200px;
+  }
+  &amp;.m-2 {
+    width: 100px;
+  }
+}
+</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
+<div class="example-ratio--c m-1">
+  <div class="example-ratio--outer">
+    <div class="example-ratio--inner">
+      <!-- Content! -->
+    </div>
+  </div>
+</div>
+<div class="example-ratio--c m-2">
+  <div class="example-ratio--outer">
+    <div class="example-ratio--inner">
+      <!-- Content! -->
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+      
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_size.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#size" id="size" class="inner-anchor">
+            size
+          </a>
+        </h3>
+      </header>
+
+      
+      <table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-size</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$size</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">no default</code>&nbsp;]
+            
+            <span class="args--comment"><p>A single value will make a square; a list of two (<code>width</code> then <code>height</code>) will make a rectangle.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Define both of an element&#39;s dimensions in one fell swoop.</p>
+<p>If a single value is passed, it will be applied to both <code>width</code> and <code>height</code>, producing a square. To make a rectangle, pass a two-value list: <code>width</code> then <code>height</code>.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-size {
+  background: gray;
+  &amp;.m-square {
+    @include scut-size(75px);
+    margin-bottom: 1em;
+  }
+  &amp;.m-rectangle {
+    @include scut-size(150px 50px);
+  }
+}
+</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-size m-square">A square</div>
+<div class="example-size m-rectangle">A rectangle</div>
+</div>
+  </div>
+</section>
+
+
+
+      
+    </section>
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_vertically-center.scss" target="_blank" class="source">view source</a>
+        <h3>
+          <a href="#vertically-center" id="vertically-center" class="inner-anchor">
+            vertically center
+          </a>
+        </h3>
+      </header>
+
+      
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#vertically-center-via-line-height" id="vertically-center-via-line-height" class="inner-anchor">
+      vertically center via line height
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-vcenter-lh</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$height</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">no default</code>&nbsp;]
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Vertically center text by equalizing an element&#39;s <code>height</code> and <code>line-height</code>.</p>
+<p>Although this method is nice and simple, requiring no extra <code>&lt;div&gt;</code>s, it is limited: <strong>it only works for inline content (i.e. text) that will not exceed a single line.</strong> So it&#39;s good for buttons and headings with backgrounds and things like that.</p>
+<p>If you need to vertically center something else, try one of the mixins below.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-vcenter-lh {
+  @include scut-vcenter-lh(3em);
+  background: gray;
+  display: inline-block;
+  padding: 0 1em;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p class="example-vcenter-lh">
+  Vertically centered text.
+</p>
+</div>
+  </div>
+</section>
+
+
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#vertically-center-via-inline-block" id="vertically-center-via-inline-block" class="inner-anchor">
+      vertically center via inline block
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-vcenter-ib</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$inner</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
+            
+            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Vertically center <em>an inner element</em> with the <code>inline-block</code> method.</p>
+<p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
+<p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t work well if you require exactitude</em> (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having <code>display: table</code>, try that method (below).</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;example-vcenter-ib&quot;&gt;
+  &lt;p class=&quot;example-vcenter-ib--inner&quot;&gt;
+    A vertically centered element.
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-vcenter-ib {
+  @include scut-vcenter-ib(&quot;.example-vcenter-ib--inner&quot;);
+  border: 5px solid black;
+  height: 100px;
+}
+.example-vcenter-ib--inner {
+  background: gray;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-vcenter-ib">
+  <p class="example-vcenter-ib--inner">
+    A vertically centered element.
+  </p>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://css-tricks.com/centering-in-the-unknown/" target="_blank" class="refs--i">
+        <p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
+
+        </section>
+        
+        <section class="doc-i-sub">
+          <header class="sub--h">
+  <h3>
+    <a href="#vertically-center-via-table-display" id="vertically-center-via-table-display" class="inner-anchor">
+      vertically center via table display
+    </a>
+  </h3>
+</header>
+<table class="info">
+  <tbody>
+    <tr>
+      <td class="info--label">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    <tr>
+      <td class="info--label">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-vcenter-td</code>
+      </td>
+    </tr>
+    
+    <tr>
+      <td class="info--label">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$inner</code>
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
+            
+            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Vertically center <em>the content of an inner element</em> with the <code>display: table</code> method.</p>
+<p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
+<p>Whatever goes into the inner container, whether text or blocks, will be vertically centered.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;example-vcenter-td&quot;&gt;
+  &lt;p class=&quot;example-vcenter-td--inner&quot;&gt;
+    Text.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;example-vcenter-td&quot;&gt;
+  &lt;div class=&quot;example-vcenter-td--inner&quot;&gt;
+    &lt;div class=&quot;example-vcenter-td--box&quot;&gt;Box&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.example-vcenter-td {
+  @include scut-vcenter-td(&quot;.example-vcenter-td--inner&quot;);
+  border: 5px solid black;
+  height: 100px;
+}
+.example-vcenter-td--inner {
+  background: gray;
+  padding: 0 1em;
+}
+.example-vcenter-td--box {
+  background: blue;
+  display: inline-block;
+  height: 70px;
+  width: 70px;
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="example-vcenter-td">
+  <p class="example-vcenter-td--inner">
+    Text.
+  </p>
+</div>
+<div class="example-vcenter-td">
+  <div class="example-vcenter-td--inner">
+    <div class="example-vcenter-td--box">Box</div>
+  </div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://css-tricks.com/centering-in-the-unknown/" target="_blank" class="refs--i">
+        <p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
+
+        </section>
+        
+      
+    </section>
+    
   </section>
   
 </article>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
   
 </html>
