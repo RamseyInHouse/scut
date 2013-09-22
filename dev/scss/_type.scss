@@ -12,7 +12,7 @@ a {
 }
 
 .inner-anchor {
-  @extend %scut-link-inherit;
+  color: inherit;
   cursor: pointer;
   &:hover {
     color: $c-link;

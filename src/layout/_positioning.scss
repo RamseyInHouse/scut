@@ -37,12 +37,16 @@
 // ABSOLUTELY POSITIONED
 
 @mixin scut-absolute (
-  $coordinates: n n n n
+  $coordinates: 0 n n 0
 ) {
 
   position: absolute;
   @include scut-coords($coordinates);
 
+}
+
+%scut-absolute {
+  @include scut-absolute;
 }
 
 
@@ -61,10 +65,14 @@
 // FIXEDLY POSITIONED
 
 @mixin scut-fixed (
-  $coordinates: n n n n
+  $coordinates: 0 n n 0
 ) {
 
   position: fixed;
   @include scut-coords($coordinates);
 
+}
+
+%scut-fixed {
+  @include scut-fixed;
 }

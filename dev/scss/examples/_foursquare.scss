@@ -1,0 +1,10 @@
+.eg-foursquare-1 {
+  @extend %scut-foursquare;
+}
+.eg-foursquare-2 {
+  @include scut-foursquare(true, 1em, 0.2em, red, blue);
+  margin: 0 0.5em;
+}
+.eg-foursquare-3 {
+  @include scut-foursquare(false, 20px, 4px, white, black);
+}

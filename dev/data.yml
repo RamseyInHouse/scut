@@ -12,13 +12,14 @@ categories:
         use-name: scut-hd-bp
         text: |
           Simple means to write effective resolution-based `@media`-queries, using `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`.
-
         args:
           -
             variable: $ratio
             default: 1.3
             comment: A *minimum* resolution.
-
+        example:
+          html: |
+            <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
         references:
           -
             description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint
@@ -26,32 +27,24 @@ categories:
           -
             description: Matt Thomas's post about Wordpress's HiDPI breakpoint (implemented in WordPress core 3.5)
             url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
-        examples:
-          -
-            html: |
-              <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
-            show-html: false
 
       -
         name: hide-text
-        type: &MP mixin and placeholder
+        type: &MP mixin and placeholder (same)
         use-name: scut-hide-text
-        references:
-          -
-            description: "L. Jeffrey Zeldman: \"Replacing the -9999px Hack (New Image Replacement)\""
-            url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-
         text: |
           Include text in the markup while hiding it from view.
 
           This technique is most commonly used to provide (semantic, accessible, SEO-friendly, etc.) text that will be (visually) replaced with an image.
-
-        examples:
+        example:
+          html: |
+            <p>The following image is hiding text:</p>
+            <div class="example-hide-text">This text is hidden</div>
+          show-html: true
+        references:
           -
-            html: |
-              <p>The following image is hiding text:</p>
-              <div class="example-hide-text">This text is hidden</div>
-            show-html: true
+            description: "L. Jeffrey Zeldman: \"Replacing the -9999px Hack (New Image Replacement)\""
+            url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 
       -
         name: selected
@@ -66,13 +59,10 @@ categories:
           Apply rules to `:hover`, `:focus`, and (optionally) `:active` states at the same time.
 
           *Don't forget to add a `tabindex` to any element that will need it for `:focus`.*
-        examples:
-          -
-            html: |
-              <p>The following button turns blue in all three states:<p>
-              <p><button class="example-selected">Inspect Me!</button></p>
-            show-html: false
-
+        example:
+          html: |
+            <p>The following button turns blue in all three states:<p>
+            <p><button class="example-selected">Inspect Me!</button></p>
 
   -
     category: layout
@@ -91,14 +81,13 @@ categories:
           -
             description: "CSS-Tricks catalogs various clearfix hacks"
             url: http://css-tricks.com/snippets/css/clear-fix/
-        examples:
-          -
-            html: |
-              <div class="example-clearfix--container">
-                <div class="example-clearfix--float">floated</div>
-                <div class="example-clearfix--float">floated</div>
-              </div>
-            show-html: truer
+        example:
+          html: |
+            <div class="example-clearfix--container">
+              <div class="example-clearfix--float">floated</div>
+              <div class="example-clearfix--float">floated</div>
+            </div>
+          show-html: true
 
       -
         name: fill
@@ -108,16 +97,15 @@ categories:
           Make an element fill its parent.
 
           *Note: The parent-to-be-filled must be **positioned** &mdash; so add `position: relative` if the parent's position is not already `absolute` or `fixed`.*
-        examples:
-          -
-            html: |
-              <div class="example-fill--parent">
-                Parent provides the border
-                <div class="example-fill--child">
-                  Child provides the background
-                </div>
+        example:
+          html: |
+            <div class="example-fill--parent">
+              Parent provides the border
+              <div class="example-fill--child">
+                Child provides the background
               </div>
-            show-html: true
+            </div>
+          show-html: true
 
       -
         name: lists
@@ -129,15 +117,13 @@ categories:
             use-name: scut-list-unstyled
             text: |
               Remove styling (`margin`, `padding`, and `list-style-type`) from a list.
-            examples:
-              -
-                html: |
-                  <ul class="example-unstyled-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                show-html: false
+            example:
+              html: |
+                <ul class="example-unstyled-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
 
           -
             name: floated-list
@@ -152,15 +138,13 @@ categories:
               Float the items of an unstyled list, to the left.
 
               Use a floated list instead of an inline list when you want your list items snuggled right next to each other.
-            examples:
-              -
-                html: |
-                  <ul class="example-floated-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                show-html: false
+            example:
+              html: |
+                <ul class="example-floated-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
 
           -
             name: inline-list
@@ -170,20 +154,17 @@ categories:
               Inline the items of an unstyled list.
 
               Use an inline list if you don't mind your list items spaced out a little, like inline words.
-
-            examples:
-              -
-                html: |
-                  <ul class="example-inline-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                show-html: false
+            example:
+              html: |
+                <ul class="example-inline-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
 
           -
             name: punctuated-list
-            type: &MOP mixin with extension placeholders
+            type: &MOP mixin, with extension placeholder(s)
             use-name: scut-list-punctuated
             args:
               -
@@ -204,29 +185,26 @@ categories:
               Since the most common punctuated list uses commas, commas are default and the comma list is available as its own placeholder:
 
               - **`%scut-list-comma`**
-
-            examples:
-              -
-                html: |
-                  <ul class="example-punctuated-list">
-                    <strong>Comma list: </strong>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                  <ul class="example-semicolon-list">
-                    <strong>Semicolon list: </strong>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                  <ul class="example-avant-garde-list">
-                    <strong>Avant-garde list: </strong>
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                show-html: false
+            example:
+              html: |
+                <ul class="example-punctuated-list">
+                  <strong>Comma list: </strong>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+                <ul class="example-semicolon-list">
+                  <strong>Semicolon list: </strong>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+                <ul class="example-avant-garde-list">
+                  <strong>Avant-garde list: </strong>
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
 
           -
             name: divided-list
@@ -254,26 +232,23 @@ categories:
               - **`%scut-list-breadcrumb`**
 
               But, of course, all things are possible.
-
-            examples:
-              -
-                html: |
-                  <ul class="example-divided-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                  <ul class="example-breadcrumb-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                  <ul class="example-adding-list">
-                    <li>List item</li>
-                    <li>List item</li>
-                    <li>List item</li>
-                  </ul>
-                show-html: false
+            example:
+              html: |
+                <ul class="example-divided-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+                <ul class="example-breadcrumb-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
+                <ul class="example-adding-list">
+                  <li>List item</li>
+                  <li>List item</li>
+                  <li>List item</li>
+                </ul>
 
       -
         name: positioning
@@ -299,23 +274,21 @@ categories:
 
           -
             name: absolute-positioning
-            type: *MO
+            type: &MDP mixin, with default-values placeholder
             use-name: scut-absolute
             args:
               -
                 variable: $coordinates
-                default: [n n n n]
+                default: [0 n n 0]
                 comment: &SEEC "<a href=\"#coordinates\">See information about `coordinates` above.</a>"
             text: |
               Absolutely position an element and assign its coordinates, all in one line of SCSS. You'll save years of your life.
-            examples:
-              -
-                html: |
-                  <div class="example-absolute">
-                    <div class="example-absolute--i m-left">Top left</div>
-                    <div class="example-absolute--i m-right">Bottom right</div>
-                  </div>
-                show-html: false
+            example:
+              html: |
+                <div class="example-absolute">
+                  <div class="example-absolute--i m-left">Top left</div>
+                  <div class="example-absolute--i m-right">Bottom right</div>
+                </div>
 
           -
             name: relative-positioning
@@ -328,15 +301,13 @@ categories:
                 comment: *SEEC
             text: |
               Relatively position an element and assign its coordinates, all in one line of SCSS.
-            examples:
-              -
-                html: |
-                  <p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
-                show-html: false
+            example:
+              html: |
+                <p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
 
           -
             name: fixed-positioning
-            type: *MO
+            type: *MDP
             use-name: scut-fixed
             args:
               -
@@ -350,7 +321,7 @@ categories:
 
       -
         name: ratio-box
-        type: *MO
+        type: *MDP
         use-name: scut-ratio-box
         args:
           -
@@ -371,25 +342,24 @@ categories:
           - **The ratio-box's inner element**, whose selector must be passed to the mixin as the `$inner` (second) argument, and whose content will show the styling.
 
           The examples should demonstrate.
-        examples:
-          -
-            html: |
-              <p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
-              <div class="example-ratio--c m-1">
-                <div class="example-ratio--outer">
-                  <div class="example-ratio--inner">
-                    <!-- Content! -->
-                  </div>
+        example:
+          html: |
+            <p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
+            <div class="example-ratio--c m-1">
+              <div class="example-ratio--outer">
+                <div class="example-ratio--inner">
+                  <!-- Content! -->
                 </div>
               </div>
-              <div class="example-ratio--c m-2">
-                <div class="example-ratio--outer">
-                  <div class="example-ratio--inner">
-                    <!-- Content! -->
-                  </div>
+            </div>
+            <div class="example-ratio--c m-2">
+              <div class="example-ratio--outer">
+                <div class="example-ratio--inner">
+                  <!-- Content! -->
                 </div>
               </div>
-            show-html: true
+            </div>
+          show-html: true
 
       -
         name: size
@@ -398,18 +368,15 @@ categories:
         args:
           -
             variable: $size
-            default: &ND no default
             comment: A single value will make a square; a list of two (`width` then `height`) will make a rectangle.
         text: |
           Define both of an element's dimensions in one fell swoop.
 
           If a single value is passed, it will be applied to both `width` and `height`, producing a square. To make a rectangle, pass a two-value list: `width` then `height`.
-        examples:
-          -
-            html: |
-              <div class="example-size m-square">A square</div>
-              <div class="example-size m-rectangle">A rectangle</div>
-            show-html: false
+        example:
+          html: |
+            <div class="example-size m-square">A square</div>
+            <div class="example-size m-rectangle">A rectangle</div>
 
       -
         name: vertically-center
@@ -422,25 +389,21 @@ categories:
             args:
               -
                 variable: $height
-                default: *ND
             text: |
               Vertically center text by equalizing an element's `height` and `line-height`.
 
               Although this method is nice and simple, requiring no extra `<div>`s, it is limited: **it only works for inline content (i.e. text) that will not exceed a single line.** So it's good for buttons and headings with backgrounds and things like that.
 
               If you need to vertically center something else, try one of the mixins below.
-
-            examples:
-              -
-                html: |
-                  <p class="example-vcenter-lh">
-                    Vertically centered text.
-                  </p>
-                show-html: false
+            example:
+              html: |
+                <p class="example-vcenter-lh">
+                  Vertically centered text.
+                </p>
 
           -
             name: vertically-center-via-inline-block
-            type: *MO
+            type: *MDP
             use-name: scut-vcenter-ib
             args:
               -
@@ -453,16 +416,15 @@ categories:
               **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
               *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't work well if you require exactitude* (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having `display: table`, try that method (below).
+            example:
+              html: |
+                <div class="example-vcenter-ib">
+                  <p class="example-vcenter-ib--inner">
+                    A vertically centered element.
+                  </p>
+                </div>
+              show-html: true
 
-            examples:
-              -
-                html: |
-                  <div class="example-vcenter-ib">
-                    <p class="example-vcenter-ib--inner">
-                      A vertically centered element.
-                    </p>
-                  </div>
-                show-html: true
             references:
               -
                 description: "CSS-Tricks: \"Centering in the Unknown\""
@@ -470,7 +432,7 @@ categories:
 
           -
             name: vertically-center-via-table-display
-            type: *MO
+            type: *MDP
             use-name: scut-vcenter-td
             args:
               -
@@ -483,41 +445,257 @@ categories:
               **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
               Whatever goes into the inner container, whether text or blocks, will be vertically centered.
+            example:
+              html: |
+                <div class="example-vcenter-td">
+                  <p class="example-vcenter-td--inner">
+                    Text.
+                  </p>
+                </div>
+                <div class="example-vcenter-td">
+                  <div class="example-vcenter-td--inner">
+                    <div class="example-vcenter-td--box">Box</div>
+                  </div>
+                </div>
+              show-html: true
 
-            examples:
-              -
-                html: |
-                  <div class="example-vcenter-td">
-                    <p class="example-vcenter-td--inner">
-                      Text.
-                    </p>
-                  </div>
-                  <div class="example-vcenter-td">
-                    <div class="example-vcenter-td--inner">
-                      <div class="example-vcenter-td--box">Box</div>
-                    </div>
-                  </div>
-                show-html: true
             references:
               -
                 description: "CSS-Tricks: \"Centering in the Unknown\""
                 url: http://css-tricks.com/centering-in-the-unknown/
 
+  -
+    category: shapes
+    items:
 
+      -
+        name: circle
+        type: *MO
+        use-name: scut-circle
+        args:
+          -
+            variable: $size
+            comment: One value becomes both `width` and `height`.
+          -
+            variable: $color
+            default: inherit
+        text: |
+          Create a CSS circle.
 
+          By default, the circle will inherit the color of its parent's text. Or you can designate a color yourself.
 
+          *If you want to add a border to your circle, you have to declare a color.*
+        example:
+          html: |
+            <div class="eg-circle-default"></div>
+            <div class="eg-circle-colored"></div>
+            <div class="eg-circle-bordered"></div>
 
-      # - name: vertically-center
+      -
+        name: foursquare
+        type: *MDP
+        use-name: scut-foursquare
+        args:
+          -
+            variable: $rotate
+            default: "true"
+            comment: Rotate the shape 45 degrees.
+          -
+            variable: $side
+            default: 10px
+            comment: The length of a side of the foursquare shape.
+          -
+            variable: $line-x
+            default: 1px
+            comment: The width of the inner lines.
+          -
+            variable: $color
+            default: black
+          -
+            variable: $line
+            default: white
+            comment: The color of the inner line.
+        text: |
+          Create a foursquare shape &mdash; a customizable diamond-minus-x.
 
-  # - name: shapes
-  #   items:
-  #     - name: circle
-  #     - name: foursquare
-  #     - name: triangle
+          By default, the shape is rotated 45 degrees. Essentially, it reproduces [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070); but through the power of CSS, the Scut foursquare is customizable.
+        example:
+          html: |
+            <div class="eg-foursquare-1"></div>
+            <div class="eg-foursquare-2"></div>
+            <div class="eg-foursquare-3"></div>
 
-  # - name: typography
-  #   items:
-  #     - name: font-face
-  #     - name: indented-paragraphs
-  #     - name: link-styles
+      -
+        name: triangle
+        type: *MDP
+        use-name: scut-triangle
+        args:
+          -
+            variable: $direction
+            default: right
+            comment: "The direction that the triangle points: `up`, `down`, `right`, `left`. Or, for right triangles, the corner of the right angle: `up-right`, `up-left`, `down-right` or `down-left`."
+          -
+            variable: $size
+            default: 1.4em 0.75em
+            comment: One or two values determining the size of the triangle. To make a 45-45-90 triangle, provide one value. Otherwise, provide two, translating to `width` and `height`.
+          -
+            variable: $color
+            default: inherit
+          -
+            variable: $pseudo
+            default: "false"
+            comment: "Make the triangle a pseudo-element by adding the rule `content: \"\"`."
+        text: |
+          A flexible mixin to create a variety of CSS triangles. (And a defult placeholder extension pointing right.)
 
+          The mixin can produce equilateral and isosceles triangles pointing up, down, left, and right; or right triangles with their right angles in the upper right, upper left, lower right, and lower left corners.
+
+          When choosing `width` and `height` values, consider how their proportion will determine the form. For example, to create an equilateral triangle, you'll want your `height` value to be ~140% of your `width` value (`width` * &radic;2). Anybody remember high school geometry?
+        example:
+          html: |
+            <p>
+              <span class="eg-triangle m-default"></span>
+              <span class="eg-triangle m-equilateral"></span>
+              <span class="eg-triangle m-corner-1"></span>
+              <span class="eg-triangle m-corner-2"></span>
+            </p>
+            <p>
+              <span class="eg-triangle-button m-down">Dropdown</span>
+              <span class="eg-triangle-button m-up">Dropdown</span>
+              <span class="eg-triangle-button m-more">Read more</span>
+            </p>
+
+  -
+    category: typography
+    items:
+
+      -
+        name: font-face
+        type: *MO
+        use-name: scut-font-face
+        args:
+          -
+            variable: $font-family
+            comment: A name for the font.
+          -
+            variable: $file-path
+            comment: The relative path to the font's files, *including the files' names (which should be the same) and excluding their extensions*.
+          -
+            variable: $weight
+            default: normal
+            comment: A `font-weight` value.
+          -
+            variable: $style
+            default: normal
+            comment: A `font-style` value.
+        text: |
+          Implement `font-face` best practices with the greatest of ease.
+        example:
+          html: |
+            <div class="eg-font-face">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo ligula eget dolor.</strong> Aenean massa. <em>Cum sociis natoque penatibus et magnis dis parturient montes, <strong>nascetur ridiculus mus</strong>.</em>
+            </div>
+
+        references:
+          -
+            description: "Fontspring: \"The New Bulletproof @Font-Face Syntax\""
+            url: http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
+
+      -
+        name: indented-paragraphs
+        type: *MDP
+        use-name: scut-indented-ps
+        args:
+          -
+            variable: $indent
+            default: 1.5em
+          -
+            variable: $no-first-indent
+            default: "true"
+            comment: It is common printing practice to leave the first paragraph un-indented.
+        text: |
+          Indent paragraphs, as in those "books" and "magazines" that old people read.
+        example:
+          html: |
+            <div class="eg-indented-ps m-default">
+              <div><strong>Default</strong></div>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+              <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+              <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+            </div>
+            <div class="eg-indented-ps m-variant">
+              <div><strong>Variant</strong></div>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+              <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
+              <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+            </div>
+
+      -
+        name: link-styles
+        items:
+
+          -
+            name: link-with-bottom-border
+            type: *MDP
+            use-name: scut-link-bd
+            args:
+              -
+                variable: $color
+                default: inherit
+                comment: A `border-bottom-color` value.
+              -
+                variable: $style
+                default: solid
+                comment: A `border-bottom-style` value.
+              -
+                variable: $width
+                default: 1px
+                comment: A `border-bottom-width` value.
+            text: |
+              Replace standard link underlining with a bottom border.
+
+              The default styling simply provides a little extra space between the text and the line. More customization is possible by passing arguments.
+
+              Further manipulation is possible by adding your own rules. For example, if you want to define a special color for the bottom-border on hover, just do it (see example below).
+            example:
+              html: |
+                <p class="eg-link-bd m-default">Default values: <a href="#link-with-bottom-border">Link text</a></p>
+                <p class="eg-link-bd m-styled">Variant values: <a href="#link-with-bottom-border">Link text</a></p>
+
+      -
+        name: reverse-italics
+        type: *MDP
+        use-name: scut-reverse-italics
+        args:
+          -
+            variable: $elements
+            default: "false"
+            comment: "A list (not comma separated) of CSS selectors for elements that you do not want italicized (`<em>`, `<cite>`, and `<i>` are already taken care of: see below)."
+        text: |
+          Italicize a section of text while de-italicizing those elements that would normally be italicized.
+
+          This is a common typographical practice: in non-italicized text, italics provide mild stress; but in italicized text, it is the non-italicized text that is stressed.
+
+          The elements `<em>`, `<cite>`, and `<i>`, which browsers typically render as italicized, are by default de-italicized. To de-italicize more elements, just include selectors in a list that you pass to the mixin.
+
+        example:
+          html: |
+            <p class="eg-reverse-italics m-default">DEFAULT:
+              <em>Some &lt;em&gt; text</em> sit amet, consectetuer adipiscing elit.
+              <cite>Some &lt;cite&gt; text</cite>, aenean commodo ligula eget dolor.
+              <strong>Some &lt;strong&gt; text</strong> Cum sociis natoque penatibus
+              <i>some &lt;i&gt; text</i> et magnis dis parturient montes, nascetur ridiculus mus
+              <b>some &lt;b&gt; text</b>.
+              <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span>
+            </p>
+            <p class="eg-reverse-italics m-variant">VARIANT:
+              <em>Some &lt;em&gt; text</em> sit amet, consectetuer adipiscing elit.
+              <cite>Some &lt;cite&gt; text</cite>, aenean commodo ligula eget dolor.
+              <strong>Some &lt;strong&gt; text</strong> Cum sociis natoque penatibus
+              <i>some &lt;i&gt; text</i> et magnis dis parturient montes, nascetur ridiculus mus
+              <b>some &lt;b&gt; text</b>.
+              <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span>
+            </p>
+          show-html: true

@@ -2,17 +2,15 @@
   $elements: false
 ) {
 
-  font-style: italic;
-  em,
-  cite,
-  i {
-    font-style: normal;
+  $element-list: em, cite, i;
+  @each $el in $elements {
+    $unquoted-value: unquote($el);
+    $element-list: append($element-list, unquote($el), comma)
   }
 
-  @if $elements {
-    #{$elements} {
-      font-style: normal;
-    }
+  font-style: italic;
+  #{$element-list} {
+    font-style: normal;
   }
 
 }

@@ -9,7 +9,7 @@
   }
 
   @if $no-first-indent {
-    p:first-child {
+    p:first-of-type {
       text-indent: 0;
     }
   }

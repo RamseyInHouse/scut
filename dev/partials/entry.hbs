@@ -26,7 +26,9 @@
           {{#each args}}
           <li>
             <code class="args--name">{{variable}}</code>
+            {{#if this.default}}
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+            {{/if}}
             {{#if comment}}
             <span class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</span>
             {{/if}}
@@ -41,8 +43,8 @@
 <section class="description">
   {{#markdown}}{{{text}}}{{/markdown}}
 </section>
-{{#if examples}}
-{{#each examples}}
+{{#if example}}
+{{#with example}}
 <section class="example">
   <h4>Example</h4>
   {{#if show-html}}
@@ -60,7 +62,7 @@
     <div class="example--disp--inner">{{{html}}}</div>
   </div>
 </section>
-{{/each}}
+{{/with}}
 {{/if}}
 {{#if references}}
 <footer>

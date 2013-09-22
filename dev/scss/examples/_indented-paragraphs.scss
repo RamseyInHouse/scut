@@ -1,0 +1,9 @@
+.eg-indented-ps {
+  &.m-default {
+    @extend %scut-indented-ps;
+    margin-bottom: 1em;
+  }
+  &.m-variant {
+    @include scut-indented-ps(3em, false);
+  }
+}

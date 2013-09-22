@@ -1,34 +1,21 @@
 // LINK WITH BOTTOM BORDER
 
 @mixin scut-link-bd(
-  $bd-style: solid
+  $color: inherit,
+  $style: solid,
+  $width: 1px
 ) {
 
-  border-bottom: 1px $bd-style;
   text-decoration: none;
+
+  border-bottom-width: $width;
+  border-bottom-style: $style;
+  @if $color != inherit {
+    border-bottom-color: $color;
+  }
 
 }
 
 %scut-link-bd {
   @include scut-link-bd;
-}
-
-
-// LINK WITH INHERITED COLOR
-
-@mixin scut-link-inherit(
-  $c-hover: inherit
-) {
-
-  color: inherit;
-  &:hover,
-  &:active,
-  &:focus {
-    color: $c-hover;
-  }
-
-}
-
-%scut-link-inherit {
-  @include scut-link-inherit;
 }
