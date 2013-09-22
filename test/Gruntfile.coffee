@@ -6,12 +6,12 @@ module.exports = (grunt) ->
     sass:
       test:
         files:
-          "test-style.css": "scss/main.scss"
+          "main.css": "scss/main.scss"
 
     autoprefixer:
       test:
         files:
-          "test-style.css": "test-style.css"
+          "main.css": "test-style.css"
 
     jade:
       test:
@@ -45,10 +45,7 @@ module.exports = (grunt) ->
           "../src/*.scss"
           "../src/**/*.scss"
         ]
-        tasks: [
-          "sass:test"
-          "autoprefixer:test"
-        ]
+        tasks: ["style"]
       markup:
         files: [
           "jade/*.jade"
@@ -63,3 +60,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-autoprefixer"
 
   grunt.registerTask "dev", ["connect", "watch"]
+  grunt.registerTask "style", ["sass:test", "autoprefixer:test"]
+  grunt.registerTask "test", [
+    "jade:test"
+    "style"
+  ]
