@@ -1,8 +1,8 @@
-.example-clearfix--container {
+.eg-clearfix--container {
   @extend %scut-clearfix;
   background: gray;
 }
-.example-clearfix--float {
+.eg-clearfix--float {
   float: left;
   margin: 1em;
   background: white;

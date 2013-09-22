@@ -1,4 +1,4 @@
-.example-size {
+.eg-size {
   background: gray;
   &.m-square {
     @include scut-size(75px);

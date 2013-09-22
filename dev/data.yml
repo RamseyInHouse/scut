@@ -19,7 +19,7 @@ categories:
             comment: A *minimum* resolution.
         example:
           html: |
-            <p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
+            <p class="eg-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
         references:
           -
             description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint
@@ -39,7 +39,7 @@ categories:
         example:
           html: |
             <p>The following image is hiding text:</p>
-            <div class="example-hide-text">This text is hidden</div>
+            <div class="eg-hide-text">This text is hidden</div>
           show-html: true
         references:
           -
@@ -62,7 +62,7 @@ categories:
         example:
           html: |
             <p>The following button turns blue in all three states:<p>
-            <p><button class="example-selected">Inspect Me!</button></p>
+            <p><button class="eg-selected">Inspect Me!</button></p>
 
   -
     category: layout
@@ -83,9 +83,9 @@ categories:
             url: http://css-tricks.com/snippets/css/clear-fix/
         example:
           html: |
-            <div class="example-clearfix--container">
-              <div class="example-clearfix--float">floated</div>
-              <div class="example-clearfix--float">floated</div>
+            <div class="eg-clearfix--container">
+              <div class="eg-clearfix--float">floated</div>
+              <div class="eg-clearfix--float">floated</div>
             </div>
           show-html: true
 
@@ -99,9 +99,9 @@ categories:
           *Note: The parent-to-be-filled must be **positioned** &mdash; so add `position: relative` if the parent's position is not already `absolute` or `fixed`.*
         example:
           html: |
-            <div class="example-fill--parent">
+            <div class="eg-fill--parent">
               Parent provides the border
-              <div class="example-fill--child">
+              <div class="eg-fill--child">
                 Child provides the background
               </div>
             </div>
@@ -119,7 +119,7 @@ categories:
               Remove styling (`margin`, `padding`, and `list-style-type`) from a list.
             example:
               html: |
-                <ul class="example-unstyled-list">
+                <ul class="eg-unstyled-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
@@ -140,7 +140,7 @@ categories:
               Use a floated list instead of an inline list when you want your list items snuggled right next to each other.
             example:
               html: |
-                <ul class="example-floated-list">
+                <ul class="eg-floated-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
@@ -156,7 +156,7 @@ categories:
               Use an inline list if you don't mind your list items spaced out a little, like inline words.
             example:
               html: |
-                <ul class="example-inline-list">
+                <ul class="eg-inline-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
@@ -187,19 +187,19 @@ categories:
               - **`%scut-list-comma`**
             example:
               html: |
-                <ul class="example-punctuated-list">
+                <ul class="eg-punctuated-list">
                   <strong>Comma list: </strong>
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
                 </ul>
-                <ul class="example-semicolon-list">
+                <ul class="eg-semicolon-list">
                   <strong>Semicolon list: </strong>
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
                 </ul>
-                <ul class="example-avant-garde-list">
+                <ul class="eg-avant-garde-list">
                   <strong>Avant-garde list: </strong>
                   <li>List item</li>
                   <li>List item</li>
@@ -234,17 +234,17 @@ categories:
               But, of course, all things are possible.
             example:
               html: |
-                <ul class="example-divided-list">
+                <ul class="eg-divided-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
                 </ul>
-                <ul class="example-breadcrumb-list">
+                <ul class="eg-breadcrumb-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
                 </ul>
-                <ul class="example-adding-list">
+                <ul class="eg-adding-list">
                   <li>List item</li>
                   <li>List item</li>
                   <li>List item</li>
@@ -285,9 +285,9 @@ categories:
               Absolutely position an element and assign its coordinates, all in one line of SCSS. You'll save years of your life.
             example:
               html: |
-                <div class="example-absolute">
-                  <div class="example-absolute--i m-left">Top left</div>
-                  <div class="example-absolute--i m-right">Bottom right</div>
+                <div class="eg-absolute">
+                  <div class="eg-absolute--i m-left">Top left</div>
+                  <div class="eg-absolute--i m-right">Bottom right</div>
                 </div>
 
           -
@@ -303,7 +303,7 @@ categories:
               Relatively position an element and assign its coordinates, all in one line of SCSS.
             example:
               html: |
-                <p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
+                <p>Some of <span class="eg-relative--1">these</span> words <span class="eg-relative--2">are</span> positioned in <span class="eg-relative--3">strange</span> ways.</p>
 
           -
             name: fixed-positioning
@@ -345,16 +345,16 @@ categories:
         example:
           html: |
             <p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
-            <div class="example-ratio--c m-1">
-              <div class="example-ratio--outer">
-                <div class="example-ratio--inner">
+            <div class="eg-ratio--c m-1">
+              <div class="eg-ratio--outer">
+                <div class="eg-ratio--inner">
                   <!-- Content! -->
                 </div>
               </div>
             </div>
-            <div class="example-ratio--c m-2">
-              <div class="example-ratio--outer">
-                <div class="example-ratio--inner">
+            <div class="eg-ratio--c m-2">
+              <div class="eg-ratio--outer">
+                <div class="eg-ratio--inner">
                   <!-- Content! -->
                 </div>
               </div>
@@ -375,8 +375,8 @@ categories:
           If a single value is passed, it will be applied to both `width` and `height`, producing a square. To make a rectangle, pass a two-value list: `width` then `height`.
         example:
           html: |
-            <div class="example-size m-square">A square</div>
-            <div class="example-size m-rectangle">A rectangle</div>
+            <div class="eg-size m-square">A square</div>
+            <div class="eg-size m-rectangle">A rectangle</div>
 
       -
         name: vertically-center
@@ -397,7 +397,7 @@ categories:
               If you need to vertically center something else, try one of the mixins below.
             example:
               html: |
-                <p class="example-vcenter-lh">
+                <p class="eg-vcenter-lh">
                   Vertically centered text.
                 </p>
 
@@ -418,8 +418,8 @@ categories:
               *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't work well if you require exactitude* (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having `display: table`, try that method (below).
             example:
               html: |
-                <div class="example-vcenter-ib">
-                  <p class="example-vcenter-ib--inner">
+                <div class="eg-vcenter-ib">
+                  <p class="eg-vcenter-ib--inner">
                     A vertically centered element.
                   </p>
                 </div>
@@ -447,14 +447,14 @@ categories:
               Whatever goes into the inner container, whether text or blocks, will be vertically centered.
             example:
               html: |
-                <div class="example-vcenter-td">
-                  <p class="example-vcenter-td--inner">
+                <div class="eg-vcenter-td">
+                  <p class="eg-vcenter-td--inner">
                     Text.
                   </p>
                 </div>
-                <div class="example-vcenter-td">
-                  <div class="example-vcenter-td--inner">
-                    <div class="example-vcenter-td--box">Box</div>
+                <div class="eg-vcenter-td">
+                  <div class="eg-vcenter-td--inner">
+                    <div class="eg-vcenter-td--box">Box</div>
                   </div>
                 </div>
               show-html: true

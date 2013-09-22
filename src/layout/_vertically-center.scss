@@ -30,6 +30,10 @@
 
 }
 
+%scut-vcenter-ib {
+  @include scut-vcenter-ib;
+}
+
 
 // VERTICAL CENTERING VIA DISPLAY: TABLE
 
@@ -44,4 +48,9 @@
     vertical-align: middle;
   }
 
+}
+
+
+%scut-vcenter-td {
+  @include scut-vcenter-td;
 }

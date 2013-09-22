@@ -1,11 +1,11 @@
-.example-ratio--outer {
+.eg-ratio--outer {
   // 9 / 16 * 100 = 56.25%
-  @include scut-ratio-box(56.25%, ".example-ratio--inner");
+  @include scut-ratio-box(56.25%, ".eg-ratio--inner");
 }
-.example-ratio--inner {
+.eg-ratio--inner {
   background: gray;
 }
-.example-ratio--c {
+.eg-ratio--c {
   margin-top: 1em;
   &.m-1 {
     width: 200px;

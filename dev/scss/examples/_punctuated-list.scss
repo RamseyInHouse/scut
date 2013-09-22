@@ -1,11 +1,11 @@
-.example-punctuated-list {
+.eg-punctuated-list {
   @include scut-list-punctuated;
   // or @extend %scut-list-comma;
 }
-.example-semicolon-list {
+.eg-semicolon-list {
   @include scut-list-punctuated("; ");
 }
-.example-avant-garde-list {
+.eg-avant-garde-list {
   @include scut-list-punctuated(" . ");
   text-transform: lowercase;
 }

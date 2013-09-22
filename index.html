@@ -343,7 +343,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-hd-bp {
+    <pre><code class="language-scss">.eg-hd-bp {
   color: gray;
   @include scut-hd-bp(2.0) {
     color: blue;
@@ -352,7 +352,7 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p class="example-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
+    <div class="example--disp--inner"><p class="eg-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
 </div>
   </div>
 </section>
@@ -428,13 +428,13 @@
   <div class="example--html">
     <h5>HTML</h5>
     <pre><code class="language-markup">&lt;p&gt;The following image is hiding text:&lt;/p&gt;
-&lt;div class=&quot;example-hide-text&quot;&gt;This text is hidden&lt;/div&gt;
+&lt;div class=&quot;eg-hide-text&quot;&gt;This text is hidden&lt;/div&gt;
 </code></pre>
   </div>
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-hide-text {
+    <pre><code class="language-scss">.eg-hide-text {
   @extend %scut-hide-text;
   background: url(images/bird.jpg) no-repeat;
   background-size: contain;
@@ -444,7 +444,7 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>The following image is hiding text:</p>
-<div class="example-hide-text">This text is hidden</div>
+<div class="eg-hide-text">This text is hidden</div>
 </div>
   </div>
 </section>
@@ -534,7 +534,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-selected {
+    <pre><code class="language-scss">.eg-selected {
   background-color: gray;
   padding: 3px 10px;
   @include scut-selected {
@@ -546,7 +546,7 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>The following button turns blue in all three states:<p>
-<p><button class="example-selected">Inspect Me!</button></p>
+<p><button class="eg-selected">Inspect Me!</button></p>
 </div>
   </div>
 </section>
@@ -608,20 +608,20 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;example-clearfix--container&quot;&gt;
-  &lt;div class=&quot;example-clearfix--float&quot;&gt;floated&lt;/div&gt;
-  &lt;div class=&quot;example-clearfix--float&quot;&gt;floated&lt;/div&gt;
+    <pre><code class="language-markup">&lt;div class=&quot;eg-clearfix--container&quot;&gt;
+  &lt;div class=&quot;eg-clearfix--float&quot;&gt;floated&lt;/div&gt;
+  &lt;div class=&quot;eg-clearfix--float&quot;&gt;floated&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
   </div>
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-clearfix--container {
+    <pre><code class="language-scss">.eg-clearfix--container {
   @extend %scut-clearfix;
   background: gray;
 }
-.example-clearfix--float {
+.eg-clearfix--float {
   float: left;
   margin: 1em;
   background: white;
@@ -630,9 +630,9 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-clearfix--container">
-  <div class="example-clearfix--float">floated</div>
-  <div class="example-clearfix--float">floated</div>
+    <div class="example--disp--inner"><div class="eg-clearfix--container">
+  <div class="eg-clearfix--float">floated</div>
+  <div class="eg-clearfix--float">floated</div>
 </div>
 </div>
   </div>
@@ -708,9 +708,9 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;example-fill--parent&quot;&gt;
+    <pre><code class="language-markup">&lt;div class=&quot;eg-fill--parent&quot;&gt;
   Parent provides the border
-  &lt;div class=&quot;example-fill--child&quot;&gt;
+  &lt;div class=&quot;eg-fill--child&quot;&gt;
     Child provides the background
   &lt;/div&gt;
 &lt;/div&gt;
@@ -719,7 +719,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-fill--parent {
+    <pre><code class="language-scss">.eg-fill--parent {
   border: 3px solid black;
   color: red;
   height: 100px;
@@ -727,7 +727,7 @@
   position: relative;
 }
 
-.example-fill--child {
+.eg-fill--child {
   @extend %scut-fill;
   background: rgba(0,0,0,0.4);
   padding: 2.5em 1em 0;
@@ -735,9 +735,9 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-fill--parent">
+    <div class="example--disp--inner"><div class="eg-fill--parent">
   Parent provides the border
-  <div class="example-fill--child">
+  <div class="eg-fill--child">
     Child provides the background
   </div>
 </div>
@@ -802,13 +802,13 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-unstyled-list {
+    <pre><code class="language-scss">.eg-unstyled-list {
   @extend %scut-list-unstyled;
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><ul class="example-unstyled-list">
+    <div class="example--disp--inner"><ul class="eg-unstyled-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
@@ -884,7 +884,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-floated-list {
+    <pre><code class="language-scss">.eg-floated-list {
   @extend %scut-list-floated;
   li {
     border: 1px solid;
@@ -894,7 +894,7 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><ul class="example-floated-list">
+    <div class="example--disp--inner"><ul class="eg-floated-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
@@ -948,7 +948,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-inline-list {
+    <pre><code class="language-scss">.eg-inline-list {
   @extend %scut-list-inline;
   li {
     border: 1px solid;
@@ -958,7 +958,7 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><ul class="example-inline-list">
+    <div class="example--disp--inner"><ul class="eg-inline-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
@@ -1059,33 +1059,33 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-punctuated-list {
+    <pre><code class="language-scss">.eg-punctuated-list {
   @include scut-list-punctuated;
   // or @extend %scut-list-comma;
 }
-.example-semicolon-list {
+.eg-semicolon-list {
   @include scut-list-punctuated(&quot;; &quot;);
 }
-.example-avant-garde-list {
+.eg-avant-garde-list {
   @include scut-list-punctuated(&quot; . &quot;);
   text-transform: lowercase;
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><ul class="example-punctuated-list">
+    <div class="example--disp--inner"><ul class="eg-punctuated-list">
   <strong>Comma list: </strong>
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
 </ul>
-<ul class="example-semicolon-list">
+<ul class="eg-semicolon-list">
   <strong>Semicolon list: </strong>
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
 </ul>
-<ul class="example-avant-garde-list">
+<ul class="eg-avant-garde-list">
   <strong>Avant-garde list: </strong>
   <li>List item</li>
   <li>List item</li>
@@ -1189,30 +1189,30 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-divided-list {
+    <pre><code class="language-scss">.eg-divided-list {
   @include scut-list-divided;
   // or @extend %scut-list-bar;
 }
-.example-breadcrumb-list {
+.eg-breadcrumb-list {
   @extend %scut-list-breadcrumb;
 }
-.example-adding-list {
+.eg-adding-list {
   @include scut-list-divided(&quot;+&quot;, 1em);
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><ul class="example-divided-list">
+    <div class="example--disp--inner"><ul class="eg-divided-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
 </ul>
-<ul class="example-breadcrumb-list">
+<ul class="eg-breadcrumb-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
 </ul>
-<ul class="example-adding-list">
+<ul class="eg-adding-list">
   <li>List item</li>
   <li>List item</li>
   <li>List item</li>
@@ -1363,13 +1363,13 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-absolute {
+    <pre><code class="language-scss">.eg-absolute {
   border: 5px solid black;
   height: 150px;
   width: 150px;
   position: relative;
 }
-.example-absolute--i {
+.eg-absolute--i {
   background: gray;
   &amp;.m-left {
     @include scut-absolute(0.5em n n 0.5em);
@@ -1381,9 +1381,9 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-absolute">
-  <div class="example-absolute--i m-left">Top left</div>
-  <div class="example-absolute--i m-right">Bottom right</div>
+    <div class="example--disp--inner"><div class="eg-absolute">
+  <div class="eg-absolute--i m-left">Top left</div>
+  <div class="eg-absolute--i m-right">Bottom right</div>
 </div>
 </div>
   </div>
@@ -1455,19 +1455,19 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-relative--1 {
+    <pre><code class="language-scss">.eg-relative--1 {
   @include scut-relative(0.2em 0.2em n n);
 }
-.example-relative--2 {
+.eg-relative--2 {
   @include scut-relative(a a 1em n);
 }
-.example-relative--3 {
+.eg-relative--3 {
   @include scut-relative(n n n 1em);
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p>Some of <span class="example-relative--1">these</span> words <span class="example-relative--2">are</span> positioned in <span class="example-relative--3">strange</span> ways.</p>
+    <div class="example--disp--inner"><p>Some of <span class="eg-relative--1">these</span> words <span class="eg-relative--2">are</span> positioned in <span class="eg-relative--3">strange</span> ways.</p>
 </div>
   </div>
 </section>
@@ -1623,16 +1623,16 @@
   <div class="example--html">
     <h5>HTML</h5>
     <pre><code class="language-markup">&lt;p&gt;The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.&lt;/p&gt;
-&lt;div class=&quot;example-ratio--c m-1&quot;&gt;
-  &lt;div class=&quot;example-ratio--outer&quot;&gt;
-    &lt;div class=&quot;example-ratio--inner&quot;&gt;
+&lt;div class=&quot;eg-ratio--c m-1&quot;&gt;
+  &lt;div class=&quot;eg-ratio--outer&quot;&gt;
+    &lt;div class=&quot;eg-ratio--inner&quot;&gt;
       &lt;!-- Content! --&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example-ratio--c m-2&quot;&gt;
-  &lt;div class=&quot;example-ratio--outer&quot;&gt;
-    &lt;div class=&quot;example-ratio--inner&quot;&gt;
+&lt;div class=&quot;eg-ratio--c m-2&quot;&gt;
+  &lt;div class=&quot;eg-ratio--outer&quot;&gt;
+    &lt;div class=&quot;eg-ratio--inner&quot;&gt;
       &lt;!-- Content! --&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1642,14 +1642,14 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-ratio--outer {
+    <pre><code class="language-scss">.eg-ratio--outer {
   // 9 / 16 * 100 = 56.25%
-  @include scut-ratio-box(56.25%, &quot;.example-ratio--inner&quot;);
+  @include scut-ratio-box(56.25%, &quot;.eg-ratio--inner&quot;);
 }
-.example-ratio--inner {
+.eg-ratio--inner {
   background: gray;
 }
-.example-ratio--c {
+.eg-ratio--c {
   margin-top: 1em;
   &amp;.m-1 {
     width: 200px;
@@ -1663,16 +1663,16 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
-<div class="example-ratio--c m-1">
-  <div class="example-ratio--outer">
-    <div class="example-ratio--inner">
+<div class="eg-ratio--c m-1">
+  <div class="eg-ratio--outer">
+    <div class="eg-ratio--inner">
       <!-- Content! -->
     </div>
   </div>
 </div>
-<div class="example-ratio--c m-2">
-  <div class="example-ratio--outer">
-    <div class="example-ratio--inner">
+<div class="eg-ratio--c m-2">
+  <div class="eg-ratio--outer">
+    <div class="eg-ratio--inner">
       <!-- Content! -->
     </div>
   </div>
@@ -1750,7 +1750,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-size {
+    <pre><code class="language-scss">.eg-size {
   background: gray;
   &amp;.m-square {
     @include scut-size(75px);
@@ -1764,8 +1764,8 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-size m-square">A square</div>
-<div class="example-size m-rectangle">A rectangle</div>
+    <div class="example--disp--inner"><div class="eg-size m-square">A square</div>
+<div class="eg-size m-rectangle">A rectangle</div>
 </div>
   </div>
 </section>
@@ -1846,7 +1846,7 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-vcenter-lh {
+    <pre><code class="language-scss">.eg-vcenter-lh {
   @include scut-vcenter-lh(3em);
   background: gray;
   display: inline-block;
@@ -1855,7 +1855,7 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p class="example-vcenter-lh">
+    <div class="example--disp--inner"><p class="eg-vcenter-lh">
   Vertically centered text.
 </p>
 </div>
@@ -1930,8 +1930,8 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;example-vcenter-ib&quot;&gt;
-  &lt;p class=&quot;example-vcenter-ib--inner&quot;&gt;
+    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-ib&quot;&gt;
+  &lt;p class=&quot;eg-vcenter-ib--inner&quot;&gt;
     A vertically centered element.
   &lt;/p&gt;
 &lt;/div&gt;
@@ -1940,19 +1940,19 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-vcenter-ib {
-  @include scut-vcenter-ib(&quot;.example-vcenter-ib--inner&quot;);
+    <pre><code class="language-scss">.eg-vcenter-ib {
+  @include scut-vcenter-ib(&quot;.eg-vcenter-ib--inner&quot;);
   border: 5px solid black;
   height: 100px;
 }
-.example-vcenter-ib--inner {
+.eg-vcenter-ib--inner {
   background: gray;
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-vcenter-ib">
-  <p class="example-vcenter-ib--inner">
+    <div class="example--disp--inner"><div class="eg-vcenter-ib">
+  <p class="eg-vcenter-ib--inner">
     A vertically centered element.
   </p>
 </div>
@@ -2042,14 +2042,14 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;example-vcenter-td&quot;&gt;
-  &lt;p class=&quot;example-vcenter-td--inner&quot;&gt;
+    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-td&quot;&gt;
+  &lt;p class=&quot;eg-vcenter-td--inner&quot;&gt;
     Text.
   &lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;example-vcenter-td&quot;&gt;
-  &lt;div class=&quot;example-vcenter-td--inner&quot;&gt;
-    &lt;div class=&quot;example-vcenter-td--box&quot;&gt;Box&lt;/div&gt;
+&lt;div class=&quot;eg-vcenter-td&quot;&gt;
+  &lt;div class=&quot;eg-vcenter-td--inner&quot;&gt;
+    &lt;div class=&quot;eg-vcenter-td--box&quot;&gt;Box&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -2057,16 +2057,16 @@
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.example-vcenter-td {
-  @include scut-vcenter-td(&quot;.example-vcenter-td--inner&quot;);
+    <pre><code class="language-scss">.eg-vcenter-td {
+  @include scut-vcenter-td(&quot;.eg-vcenter-td--inner&quot;);
   border: 5px solid black;
   height: 100px;
 }
-.example-vcenter-td--inner {
+.eg-vcenter-td--inner {
   background: gray;
   padding: 0 1em;
 }
-.example-vcenter-td--box {
+.eg-vcenter-td--box {
   background: blue;
   display: inline-block;
   height: 70px;
@@ -2075,14 +2075,14 @@
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="example-vcenter-td">
-  <p class="example-vcenter-td--inner">
+    <div class="example--disp--inner"><div class="eg-vcenter-td">
+  <p class="eg-vcenter-td--inner">
     Text.
   </p>
 </div>
-<div class="example-vcenter-td">
-  <div class="example-vcenter-td--inner">
-    <div class="example-vcenter-td--box">Box</div>
+<div class="eg-vcenter-td">
+  <div class="eg-vcenter-td--inner">
+    <div class="eg-vcenter-td--box">Box</div>
   </div>
 </div>
 </div>
@@ -3014,6 +3014,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </article>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
   
 </html>

@@ -1,13 +1,13 @@
-.example-vcenter-td {
-  @include scut-vcenter-td(".example-vcenter-td--inner");
+.eg-vcenter-td {
+  @include scut-vcenter-td(".eg-vcenter-td--inner");
   border: 5px solid black;
   height: 100px;
 }
-.example-vcenter-td--inner {
+.eg-vcenter-td--inner {
   background: gray;
   padding: 0 1em;
 }
-.example-vcenter-td--box {
+.eg-vcenter-td--box {
   background: blue;
   display: inline-block;
   height: 70px;

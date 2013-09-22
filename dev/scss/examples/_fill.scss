@@ -1,4 +1,4 @@
-.example-fill--parent {
+.eg-fill--parent {
   border: 3px solid black;
   color: red;
   height: 100px;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.example-fill--child {
+.eg-fill--child {
   @extend %scut-fill;
   background: rgba(0,0,0,0.4);
   padding: 2.5em 1em 0;

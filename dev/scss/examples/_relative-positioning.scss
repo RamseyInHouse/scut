@@ -1,9 +1,9 @@
-.example-relative--1 {
+.eg-relative--1 {
   @include scut-relative(0.2em 0.2em n n);
 }
-.example-relative--2 {
+.eg-relative--2 {
   @include scut-relative(a a 1em n);
 }
-.example-relative--3 {
+.eg-relative--3 {
   @include scut-relative(n n n 1em);
 }

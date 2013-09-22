@@ -1,8 +1,8 @@
-.example-vcenter-ib {
-  @include scut-vcenter-ib(".example-vcenter-ib--inner");
+.eg-vcenter-ib {
+  @include scut-vcenter-ib(".eg-vcenter-ib--inner");
   border: 5px solid black;
   height: 100px;
 }
-.example-vcenter-ib--inner {
+.eg-vcenter-ib--inner {
   background: gray;
 }
