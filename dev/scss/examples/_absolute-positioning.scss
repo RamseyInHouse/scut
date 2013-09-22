@@ -7,7 +7,8 @@
 .eg-absolute--i {
   background: gray;
   &.m-left {
-    @include scut-absolute(0.5em n n 0.5em);
+    // Default-values placeholder
+    @extend %scut-absolute;
   }
   &.m-right {
     @include scut-absolute(n 0.5em 0.5em n);

@@ -1,5 +1,6 @@
 .eg-reverse-italics {
   &.m-default {
+    // Default-values placeholder
     @extend %scut-reverse-italics;
   }
   &.m-variant {

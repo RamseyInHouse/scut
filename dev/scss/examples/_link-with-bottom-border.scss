@@ -1,5 +1,6 @@
 .eg-link-bd {
   &.m-default a {
+    // Default-values placeholder
     @extend %scut-link-bd;
   }
   &.m-styled a {

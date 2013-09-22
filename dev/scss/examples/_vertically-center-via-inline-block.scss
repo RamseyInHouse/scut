@@ -1,8 +1,14 @@
 .eg-vcenter-ib {
-  @include scut-vcenter-ib(".eg-vcenter-ib--inner");
   border: 5px solid black;
-  height: 100px;
-}
-.eg-vcenter-ib--inner {
-  background: gray;
+  padding: 0 1em;
+  &.m-default {
+    // Default-values placeholder
+    @extend %scut-vcenter-ib;
+    height: 120px;
+  }
+  &.m-variant {
+    @include scut-vcenter-ib(".eg-vcenter-ib--inner");
+    height: 200px;
+    margin-top: 1em;
+  }
 }

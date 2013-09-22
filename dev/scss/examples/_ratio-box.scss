@@ -7,10 +7,19 @@
 }
 .eg-ratio--c {
   margin-top: 1em;
-  &.m-1 {
+  &.m-1,
+  &.m-3 {
     width: 200px;
   }
-  &.m-2 {
+  &.m-2,
+  &.m-4 {
     width: 100px;
+  }
+}
+.eg-ratio--square {
+  // Default-values placeholder
+  @extend %scut-ratio-box;
+  .scut-inner {
+    background: gray;
   }
 }

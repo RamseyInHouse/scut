@@ -1372,7 +1372,8 @@
 .eg-absolute--i {
   background: gray;
   &amp;.m-left {
-    @include scut-absolute(0.5em n n 0.5em);
+    // Default-values placeholder
+    @extend %scut-absolute;
   }
   &amp;.m-right {
     @include scut-absolute(n 0.5em 0.5em n);
@@ -1622,7 +1623,7 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;p&gt;The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.&lt;/p&gt;
+    <pre><code class="language-markup">&lt;p&gt;These containers are different widths, but the ratio-boxes maintain a 16:9 ratio.&lt;/p&gt;
 &lt;div class=&quot;eg-ratio--c m-1&quot;&gt;
   &lt;div class=&quot;eg-ratio--outer&quot;&gt;
     &lt;div class=&quot;eg-ratio--inner&quot;&gt;
@@ -1633,6 +1634,21 @@
 &lt;div class=&quot;eg-ratio--c m-2&quot;&gt;
   &lt;div class=&quot;eg-ratio--outer&quot;&gt;
     &lt;div class=&quot;eg-ratio--inner&quot;&gt;
+      &lt;!-- Content! --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;And as a square:&lt;/p&gt;
+&lt;div class=&quot;eg-ratio--c m-3&quot;&gt;
+  &lt;div class=&quot;eg-ratio--square&quot;&gt;
+    &lt;div class=&quot;scut-inner&quot;&gt;
+      &lt;!-- Content! --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-ratio--c m-4&quot;&gt;
+  &lt;div class=&quot;eg-ratio--square&quot;&gt;
+    &lt;div class=&quot;scut-inner&quot;&gt;
       &lt;!-- Content! --&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -1651,18 +1667,27 @@
 }
 .eg-ratio--c {
   margin-top: 1em;
-  &amp;.m-1 {
+  &amp;.m-1,
+  &amp;.m-3 {
     width: 200px;
   }
-  &amp;.m-2 {
+  &amp;.m-2,
+  &amp;.m-4 {
     width: 100px;
+  }
+}
+.eg-ratio--square {
+  // Default-values placeholder
+  @extend %scut-ratio-box;
+  .scut-inner {
+    background: gray;
   }
 }
 </code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
+    <div class="example--disp--inner"><p>These containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
 <div class="eg-ratio--c m-1">
   <div class="eg-ratio--outer">
     <div class="eg-ratio--inner">
@@ -1673,6 +1698,21 @@
 <div class="eg-ratio--c m-2">
   <div class="eg-ratio--outer">
     <div class="eg-ratio--inner">
+      <!-- Content! -->
+    </div>
+  </div>
+</div>
+<p>And as a square:</p>
+<div class="eg-ratio--c m-3">
+  <div class="eg-ratio--square">
+    <div class="scut-inner">
+      <!-- Content! -->
+    </div>
+  </div>
+</div>
+<div class="eg-ratio--c m-4">
+  <div class="eg-ratio--square">
+    <div class="scut-inner">
       <!-- Content! -->
     </div>
   </div>
@@ -1920,7 +1960,7 @@
 <section class="description">
   <p>Vertically center <em>an inner element</em> with the <code>inline-block</code> method.</p>
 <p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
-<p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t work well if you require exactitude</em> (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having <code>display: table</code>, try that method (below).</p>
+<p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t always work well if you require very exact widths</em> (or if your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having <code>display: table</code>, try that method (below).</p>
 
 </section>
 
@@ -1930,9 +1970,14 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-ib&quot;&gt;
+    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-ib m-default&quot;&gt;
+  &lt;p class=&quot;scut-inner&quot;&gt;
+    A vertically centered element, with the default classname &quot;scut-inner&quot;.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-vcenter-ib m-variant&quot;&gt;
   &lt;p class=&quot;eg-vcenter-ib--inner&quot;&gt;
-    A vertically centered element.
+    A vertically centered element, with its own special classname.
   &lt;/p&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1941,19 +1986,30 @@
   <div class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-ib {
-  @include scut-vcenter-ib(&quot;.eg-vcenter-ib--inner&quot;);
   border: 5px solid black;
-  height: 100px;
-}
-.eg-vcenter-ib--inner {
-  background: gray;
+  padding: 0 1em;
+  &amp;.m-default {
+    // Default-values placeholder
+    @extend %scut-vcenter-ib;
+    height: 120px;
+  }
+  &amp;.m-variant {
+    @include scut-vcenter-ib(&quot;.eg-vcenter-ib--inner&quot;);
+    height: 200px;
+    margin-top: 1em;
+  }
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="eg-vcenter-ib">
+    <div class="example--disp--inner"><div class="eg-vcenter-ib m-default">
+  <p class="scut-inner">
+    A vertically centered element, with the default classname "scut-inner".
+  </p>
+</div>
+<div class="eg-vcenter-ib m-variant">
   <p class="eg-vcenter-ib--inner">
-    A vertically centered element.
+    A vertically centered element, with its own special classname.
   </p>
 </div>
 </div>
@@ -2042,14 +2098,14 @@
   
   <div class="example--html">
     <h5>HTML</h5>
-    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-td&quot;&gt;
-  &lt;p class=&quot;eg-vcenter-td--inner&quot;&gt;
-    Text.
+    <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-td m-default&quot;&gt;
+  &lt;p class=&quot;scut-inner&quot;&gt;
+    A vertically centered element, with the default classname &quot;scut-inner&quot;.
   &lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;eg-vcenter-td&quot;&gt;
+&lt;div class=&quot;eg-vcenter-td m-variant&quot;&gt;
   &lt;div class=&quot;eg-vcenter-td--inner&quot;&gt;
-    &lt;div class=&quot;eg-vcenter-td--box&quot;&gt;Box&lt;/div&gt;
+    &lt;div class=&quot;eg-vcenter-td--box&quot;&gt;A vertically centered element, with its own special classname.&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -2058,31 +2114,35 @@
   <div class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-td {
-  @include scut-vcenter-td(&quot;.eg-vcenter-td--inner&quot;);
   border: 5px solid black;
-  height: 100px;
-}
-.eg-vcenter-td--inner {
-  background: gray;
   padding: 0 1em;
+  &amp;.m-default {
+    // Default-values placeholder
+    @extend %scut-vcenter-td;
+    height: 120px;
+  }
+  &amp;.m-variant {
+    @include scut-vcenter-td(&quot;.eg-vcenter-td--inner&quot;);
+    height: 200px;
+  }
 }
 .eg-vcenter-td--box {
   background: blue;
   display: inline-block;
   height: 70px;
-  width: 70px;
+  width: 200px;
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><div class="eg-vcenter-td">
-  <p class="eg-vcenter-td--inner">
-    Text.
+    <div class="example--disp--inner"><div class="eg-vcenter-td m-default">
+  <p class="scut-inner">
+    A vertically centered element, with the default classname "scut-inner".
   </p>
 </div>
-<div class="eg-vcenter-td">
+<div class="eg-vcenter-td m-variant">
   <div class="eg-vcenter-td--inner">
-    <div class="eg-vcenter-td--box">Box</div>
+    <div class="eg-vcenter-td--box">A vertically centered element, with its own special classname.</div>
   </div>
 </div>
 </div>
@@ -2325,6 +2385,7 @@
   <div class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-foursquare-1 {
+  // Default-values placeholder
   @extend %scut-foursquare;
 }
 .eg-foursquare-2 {
@@ -2449,6 +2510,7 @@
     <pre><code class="language-scss">.eg-triangle {
   margin-right: 1em;
   &amp;.m-default {
+    // Default-values placeholder
     @extend %scut-triangle;
   }
   &amp;.m-equilateral {
@@ -2725,6 +2787,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-indented-ps {
   &amp;.m-default {
+    // Default-values placeholder
     @extend %scut-indented-ps;
     margin-bottom: 1em;
   }
@@ -2858,6 +2921,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-link-bd {
   &amp;.m-default a {
+    // Default-values placeholder
     @extend %scut-link-bd;
   }
   &amp;.m-styled a {
@@ -2975,6 +3039,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-reverse-italics {
   &amp;.m-default {
+    // Default-values placeholder
     @extend %scut-reverse-italics;
   }
   &amp;.m-variant {

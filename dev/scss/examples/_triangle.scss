@@ -1,6 +1,7 @@
 .eg-triangle {
   margin-right: 1em;
   &.m-default {
+    // Default-values placeholder
     @extend %scut-triangle;
   }
   &.m-equilateral {

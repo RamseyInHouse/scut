@@ -513,6 +513,12 @@ p:last-of-type {
   clear: both;
 }
 
+.eg-absolute--i.m-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .eg-fill--child {
   position: absolute;
   left: 0;
@@ -552,6 +558,43 @@ p:last-of-type {
   content: "/";
   margin-left: 0.5em;
   margin-right: 0.5em;
+}
+
+.eg-ratio--square {
+  height: 0;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+}
+
+.eg-ratio--square > .scut-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.eg-vcenter-ib.m-default:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.eg-vcenter-ib.m-default > .scut-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eg-vcenter-td.m-default {
+  display: table;
+}
+
+.eg-vcenter-td.m-default > .scut-inner {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .eg-foursquare-1 {
@@ -1135,12 +1178,6 @@ pre[class*="language-"] {
   background: gray;
 }
 
-.eg-absolute--i.m-left {
-  position: absolute;
-  top: 0.5em;
-  left: 0.5em;
-}
-
 .eg-absolute--i.m-right {
   position: absolute;
   right: 0.5em;
@@ -1188,12 +1225,18 @@ pre[class*="language-"] {
   margin-top: 1em;
 }
 
-.eg-ratio--c.m-1 {
+.eg-ratio--c.m-1,
+.eg-ratio--c.m-3 {
   width: 200px;
 }
 
-.eg-ratio--c.m-2 {
+.eg-ratio--c.m-2,
+.eg-ratio--c.m-4 {
   width: 100px;
+}
+
+.eg-ratio--square .scut-inner {
+  background: gray;
 }
 
 .eg-size {
@@ -1221,46 +1264,55 @@ pre[class*="language-"] {
 
 .eg-vcenter-ib {
   border: 5px solid black;
-  height: 100px;
+  padding: 0 1em;
 }
 
-.eg-vcenter-ib:before {
+.eg-vcenter-ib.m-default {
+  height: 120px;
+}
+
+.eg-vcenter-ib.m-variant {
+  height: 200px;
+  margin-top: 1em;
+}
+
+.eg-vcenter-ib.m-variant:before {
   content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+  margin-right: -0.25em;
 }
 
-.eg-vcenter-ib > .eg-vcenter-ib--inner {
+.eg-vcenter-ib.m-variant > .eg-vcenter-ib--inner {
   display: inline-block;
   vertical-align: middle;
 }
 
-.eg-vcenter-ib--inner {
-  background: gray;
-}
-
 .eg-vcenter-td {
-  display: table;
   border: 5px solid black;
-  height: 100px;
+  padding: 0 1em;
 }
 
-.eg-vcenter-td > .eg-vcenter-td--inner {
+.eg-vcenter-td.m-default {
+  height: 120px;
+}
+
+.eg-vcenter-td.m-variant {
+  display: table;
+  height: 200px;
+}
+
+.eg-vcenter-td.m-variant > .eg-vcenter-td--inner {
   display: table-cell;
   vertical-align: middle;
-}
-
-.eg-vcenter-td--inner {
-  background: gray;
-  padding: 0 1em;
 }
 
 .eg-vcenter-td--box {
   background: blue;
   display: inline-block;
   height: 70px;
-  width: 70px;
+  width: 200px;
 }
 
 .eg-circle-default {

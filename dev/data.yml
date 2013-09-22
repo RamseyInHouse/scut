@@ -344,7 +344,7 @@ categories:
           The examples should demonstrate.
         example:
           html: |
-            <p>The containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
+            <p>These containers are different widths, but the ratio-boxes maintain a 16:9 ratio.</p>
             <div class="eg-ratio--c m-1">
               <div class="eg-ratio--outer">
                 <div class="eg-ratio--inner">
@@ -355,6 +355,21 @@ categories:
             <div class="eg-ratio--c m-2">
               <div class="eg-ratio--outer">
                 <div class="eg-ratio--inner">
+                  <!-- Content! -->
+                </div>
+              </div>
+            </div>
+            <p>And as a square:</p>
+            <div class="eg-ratio--c m-3">
+              <div class="eg-ratio--square">
+                <div class="scut-inner">
+                  <!-- Content! -->
+                </div>
+              </div>
+            </div>
+            <div class="eg-ratio--c m-4">
+              <div class="eg-ratio--square">
+                <div class="scut-inner">
                   <!-- Content! -->
                 </div>
               </div>
@@ -415,12 +430,17 @@ categories:
 
               **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
-              *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't work well if you require exactitude* (e.g. your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having `display: table`, try that method (below).
+              *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't always work well if you require very exact widths* (or if your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having `display: table`, try that method (below).
             example:
               html: |
-                <div class="eg-vcenter-ib">
+                <div class="eg-vcenter-ib m-default">
+                  <p class="scut-inner">
+                    A vertically centered element, with the default classname "scut-inner".
+                  </p>
+                </div>
+                <div class="eg-vcenter-ib m-variant">
                   <p class="eg-vcenter-ib--inner">
-                    A vertically centered element.
+                    A vertically centered element, with its own special classname.
                   </p>
                 </div>
               show-html: true
@@ -447,14 +467,14 @@ categories:
               Whatever goes into the inner container, whether text or blocks, will be vertically centered.
             example:
               html: |
-                <div class="eg-vcenter-td">
-                  <p class="eg-vcenter-td--inner">
-                    Text.
+                <div class="eg-vcenter-td m-default">
+                  <p class="scut-inner">
+                    A vertically centered element, with the default classname "scut-inner".
                   </p>
                 </div>
-                <div class="eg-vcenter-td">
+                <div class="eg-vcenter-td m-variant">
                   <div class="eg-vcenter-td--inner">
-                    <div class="eg-vcenter-td--box">Box</div>
+                    <div class="eg-vcenter-td--box">A vertically centered element, with its own special classname.</div>
                   </div>
                 </div>
               show-html: true
