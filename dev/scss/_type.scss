@@ -32,19 +32,28 @@ a {
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
 h4,
 h5 {
   margin-bottom: 0.5em;
 }
 
 h2,
-h4,
-h5 {
+h4 {
   margin-top: 1em;
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 4em;
   font-weight: bold;
 }
 
@@ -61,11 +70,12 @@ h3 {
 }
 
 h4 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 h5 {
+  font-size: 0.9em;
   font-weight: bold;
 }
 
@@ -81,8 +91,6 @@ p {
 }
 
 %label {
-  font-size: 0.9em;
-  font-weight: bold;
-  margin: 0 1em 0 0;
-  text-transform: uppercase;
+  @extend h5;
+  margin: 0.1em 1em 0 0;
 }

@@ -1,17 +1,16 @@
 /**
- * okaidia theme for JavaScript, CSS and HTML
- * Loosely based on Monokai textmate theme by http://www.monokai.nl/
- * @author ocodia
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
  */
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #f8f8f2;
-  text-shadow: 0 1px rgba(0,0,0,0.3);
+  color: black;
   direction: ltr;
   text-align: left;
-  word-spacing: normal;
   white-space: pre;
+  word-spacing: normal;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -23,17 +22,35 @@ pre[class*="language-"] {
   hyphens: none;
 }
 
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
-  border-radius: 0.3em;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #272822;
+  background: #f5f2f0;
 }
 
 /* Inline code */
@@ -50,7 +67,7 @@ pre[class*="language-"] {
 }
 
 .token.punctuation {
-  color: #f8f8f2;
+  color: #999;
 }
 
 .namespace {
@@ -58,44 +75,37 @@ pre[class*="language-"] {
 }
 
 .token.property,
-.token.tag {
-  color: #f92672;
-}
-
+.token.tag,
 .token.boolean,
-.token.number{
-  color: #ae81ff;
+.token.number {
+  color: #905;
 }
 
 .token.selector,
 .token.attr-name,
 .token.string {
-  color: #a6e22e;
+  color: #690;
 }
-
 
 .token.operator,
 .token.entity,
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #f8f8f2;
+  color: #a67f59;
+  background: hsla(0,0%,100%,.5);
 }
 
 .token.atrule,
-.token.attr-value
-{
-  color: #e6db74;
+.token.attr-value,
+.token.keyword {
+  color: #07a;
 }
 
-
-.token.keyword{
-color: #66d9ef;
-}
 
 .token.regex,
 .token.important {
-  color: #fd971f;
+  color: #e90;
 }
 
 .token.important {

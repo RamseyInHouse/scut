@@ -3,7 +3,7 @@
 }
 
 .index-1--i {
-  color: white;
+  color: $c-zing;
   display: block;
   font-size: 1.3em;
   margin-bottom: 0.3em;
@@ -13,14 +13,15 @@
 
 .index-2--i,
 .index-3--i {
+  color: $c-main;
   display: block;
   margin-bottom: 0.3em;
 }
 
-.index-2--i {
-  color: $c-link-2;
-}
-
 .index-3--i {
-  margin-left: 1em;
+  margin-left: 0.5em;
+  &:before {
+    content: "-";
+    margin-left: 0.2em;
+  }
 }

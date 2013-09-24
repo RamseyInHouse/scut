@@ -70,26 +70,8 @@
   @extend %scut-clearfix;
 }
 
-.example--html {
-  max-width: ($code-x * 2) + 1em;
-}
-
-@media ($wide-enough) {
-  .example--scss,
-  .example--disp {
-    float: left;
-    width: $code-x;
-  }
-  .example--scss {
-    margin-right: 1em;
-  }
-
-}
-
 .example--disp--inner {
-  background: white;
-  border: 1px solid $c-list;
-  border-radius: 5px;
+  background: #F5F2F0;
   padding: 1em;
 }
 
