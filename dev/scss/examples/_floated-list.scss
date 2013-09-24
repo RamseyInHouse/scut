@@ -1,5 +1,6 @@
 .eg-floated-list {
   @extend %scut-list-floated;
+  // or @include scut-list-floated;
   li {
     border: 1px solid;
     padding: 0 5px;

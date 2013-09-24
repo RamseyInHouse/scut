@@ -1,5 +1,6 @@
 .eg-inline-list {
   @extend %scut-list-inline;
+  // or @include scut-list-inline;
   li {
     border: 1px solid;
     padding: 0 5px;

@@ -6,5 +6,5 @@
 }
 .eg-circle-bordered {
   @include scut-circle(2em, black);
-  border: 5px solid blue;
+  border: 5px solid red;
 }

@@ -8,6 +8,7 @@
 
 .eg-fill--child {
   @extend %scut-fill;
+  // or @include scut-fill;
   background: rgba(0,0,0,0.4);
   padding: 2.5em 1em 0;
 }

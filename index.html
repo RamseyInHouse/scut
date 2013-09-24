@@ -333,7 +333,8 @@
   </tbody>
 </table>
 <section class="description">
-  <p>Simple means to write effective resolution-based <code>@media</code>-queries, using <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>.</p>
+  <p>Write effective resolution-based <code>@media</code>-queries, without trying very hard.</p>
+<p>This mixin uses <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>. If you&#39;re curious about the choices, try reading the References below.</p>
 
 </section>
 
@@ -436,6 +437,7 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-hide-text {
   @extend %scut-hide-text;
+  // or @include scut-hide-text;
   background: url(images/bird.jpg) no-repeat;
   background-size: contain;
   height: 100px;
@@ -511,7 +513,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">true</code>&nbsp;]
             
             
-            <span class="args--comment"><p>Will the rules apply to the <code>:active</code> state?</p>
+            <span class="args--comment"><p>Declare whether or not to target the <code>:active</code> state (in addition to <code>:hover</code> and <code>:focus</code>).</p>
 </span>
             
           </li>
@@ -523,7 +525,7 @@
   </tbody>
 </table>
 <section class="description">
-  <p>Apply rules to <code>:hover</code>, <code>:focus</code>, and (optionally) <code>:active</code> states at the same time.</p>
+  <p>Apply rules to <code>:hover</code>, <code>:focus</code>, and (optionally) <code>:active</code> states at the same time. Make your site more friendly for touchscreens, keyboard navigators, etc.</p>
 <p><em>Don&#39;t forget to add a <code>tabindex</code> to any element that will need it for <code>:focus</code>.</em></p>
 
 </section>
@@ -619,11 +621,13 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-clearfix--container {
   @extend %scut-clearfix;
+  // or @include scut-clearfix;
   background: gray;
 }
 .eg-clearfix--float {
   float: left;
   margin: 1em;
+  padding: 0 1em;
   background: white;
 }
 </code></pre>
@@ -698,7 +702,7 @@
 </table>
 <section class="description">
   <p>Make an element fill its parent.</p>
-<p><em>Note: The parent-to-be-filled must be <strong>positioned</strong> &mdash; so add <code>position: relative</code> if the parent&#39;s position is not already <code>absolute</code> or <code>fixed</code>.</em></p>
+<p>This mixin positions the element absolutely, so <em>the parent-to-be-filled must be <strong>positioned</strong></em>. You must assign <code>position: relative</code> to the parent if its position is not already <code>absolute</code> or <code>fixed</code>.</p>
 
 </section>
 
@@ -729,6 +733,7 @@
 
 .eg-fill--child {
   @extend %scut-fill;
+  // or @include scut-fill;
   background: rgba(0,0,0,0.4);
   padding: 2.5em 1em 0;
 }</code></pre>
@@ -804,14 +809,15 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-unstyled-list {
   @extend %scut-list-unstyled;
+  // or @include scut-list-unstyled;
 }</code></pre>
   </div>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-unstyled-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 </div>
   </div>
@@ -873,7 +879,7 @@
   </tbody>
 </table>
 <section class="description">
-  <p>Float the items of an unstyled list, to the left.</p>
+  <p>Float the items of an unstyled list (to the left).</p>
 <p>Use a floated list instead of an inline list when you want your list items snuggled right next to each other.</p>
 
 </section>
@@ -886,6 +892,7 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-floated-list {
   @extend %scut-list-floated;
+  // or @include scut-list-floated;
   li {
     border: 1px solid;
     padding: 0 5px;
@@ -895,9 +902,9 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-floated-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 </div>
   </div>
@@ -938,7 +945,7 @@
 </table>
 <section class="description">
   <p>Inline the items of an unstyled list.</p>
-<p>Use an inline list if you don&#39;t mind your list items spaced out a little, like inline words.</p>
+<p>Use an inline list if you don&#39;t mind your list items spaced out a little, like inline words. If you need them flush, without any intervening space, try a <a href="#floated-list">floated list</a>.</p>
 
 </section>
 
@@ -950,6 +957,7 @@
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-inline-list {
   @extend %scut-list-inline;
+  // or @include scut-list-inline;
   li {
     border: 1px solid;
     padding: 0 5px;
@@ -959,9 +967,9 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-inline-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 </div>
   </div>
@@ -1046,7 +1054,7 @@
 </table>
 <section class="description">
   <p>Keep your HTML semantic and your punctuation traditional.</p>
-<p>Since the most common punctuated list uses commas, commas are default and the comma list is available as its own placeholder:</p>
+<p>Since the most common punctuated list uses commas, commas are the default punctuation and the comma list is available as its own placeholder:</p>
 <ul>
 <li><strong><code>%scut-list-comma</code></strong></li>
 </ul>
@@ -1075,21 +1083,21 @@
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-punctuated-list">
   <strong>Comma list: </strong>
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 <ul class="eg-semicolon-list">
   <strong>Semicolon list: </strong>
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 <ul class="eg-avant-garde-list">
   <strong>Avant-garde list: </strong>
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 </div>
   </div>
@@ -1174,7 +1182,7 @@
 </table>
 <section class="description">
   <p>A floated list with punctuation between each list item.</p>
-<p>The two most common variations each have their own placeholders:</p>
+<p>A couple of common variations have their own placeholders:</p>
 <ul>
 <li><strong><code>%scut-list-bar</code></strong></li>
 <li><strong><code>%scut-list-breadcrumb</code></strong></li>
@@ -1203,19 +1211,19 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-divided-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 <ul class="eg-breadcrumb-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 <ul class="eg-adding-list">
-  <li>List item</li>
-  <li>List item</li>
-  <li>List item</li>
+  <li>list item</li>
+  <li>list item</li>
+  <li>list item</li>
 </ul>
 </div>
   </div>
@@ -1280,7 +1288,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]
             
             
-            <span class="args--comment"><p>A list: <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> coordinates.</p>
+            <span class="args--comment"><p>A list: <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> coordinates. <code>n</code> means &quot;nothing&quot;. <code>a</code> is interchangeable with <code>auto</code>. See below.</p>
 </span>
             
           </li>
@@ -1293,8 +1301,14 @@
 </table>
 <section class="description">
   <p>A shortcut for assigning coordinates.</p>
-<p>You may want to use this mixin on its own &mdash; but you probably want to use one of the extensions below, which will pair your coordinates with a <code>position</code> value.</p>
-<p>Some guidlines: <strong><code>n</code> (the default value) indicates &quot;nothing&quot;</strong> &mdash; so the coordinate is ignored, no rule is created. <strong><code>a</code> can abbreviate <code>auto</code></strong> (both will work). <strong>All four values must be passed</strong>: so use <code>n</code> as needed. See the examples below.</p>
+<p>You may want to use this mixin on its own &mdash; but <strong>this mixin&#39;s primary purpose is to facilitate those below</strong>, which will pair your coordinates with a <code>position</code> value.</p>
+<p>Some guidlines for this mixin and its followers:</p>
+<ul>
+<li><strong><code>n</code> (the default value) signifies &quot;nothing&quot;</strong> (like life) &mdash; so any coordinate assigned <code>n</code> is simply ignored, creating no rule in compiled CSS.</li>
+<li><strong><code>a</code> can abbreviate <code>auto</code></strong> (both will work).</li>
+<li><strong>All four values must be passed</strong>: so use <code>n</code> as needed.</li>
+</ul>
+<p>See the examples below.</p>
 
 </section>
 
@@ -1316,7 +1330,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -1353,13 +1367,22 @@
   </tbody>
 </table>
 <section class="description">
-  <p>Absolutely position an element and assign its coordinates, all in one line of SCSS. You&#39;ll save years of your life.</p>
+  <p>Absolutely position an element and assign its coordinates, all in one line of SCSS. You&#39;ll save years of your life, and probably lose weight.</p>
 
 </section>
 
 
 <section class="example">
   <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;eg-absolute&quot;&gt;
+  &lt;div class=&quot;eg-absolute--i m-left&quot;&gt;Top left&lt;/div&gt;
+  &lt;div class=&quot;eg-absolute--i m-right&quot;&gt;Bottom right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  </div>
   
   <div class="example--scss">
     <h5>SCSS</h5>
@@ -1492,7 +1515,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -1530,7 +1553,7 @@
 </table>
 <section class="description">
   <p>Fixedly (<em>fix-ed-lee</em>) position an element and assign its coordinates.</p>
-<p>I won&#39;t provide an example because it would spoil the documentation. Look at those above: you&#39;ll get the picture.</p>
+<p>No example is provided because it would spoil this nice documentation. Check out the examples above: you&#39;ll get the picture.</p>
 
 </section>
 
@@ -1558,7 +1581,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -1591,7 +1614,7 @@
           <li>
             <code class="args--name">$inner</code>
             
-            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-inner&quot;</code>&nbsp;]
             
             
             <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
@@ -1611,7 +1634,7 @@
 <ul>
 <li><strong>A container element</strong>, whose width (which may be fluid) will determine the width of your ratio-box.</li>
 <li><strong>The ratio-box&#39;s outer element</strong>, to which the mixin applies.</li>
-<li><strong>The ratio-box&#39;s inner element</strong>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument, and whose content will show the styling.</li>
+<li><strong>The ratio-box&#39;s inner element</strong>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument, and whose content will manifest our special styling.</li>
 </ul>
 <p>The examples should demonstrate.</p>
 
@@ -1638,7 +1661,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;And as a square:&lt;/p&gt;
+&lt;p&gt;And the same principle applies to these squares:&lt;/p&gt;
 &lt;div class=&quot;eg-ratio--c m-3&quot;&gt;
   &lt;div class=&quot;eg-ratio--square&quot;&gt;
     &lt;div class=&quot;scut-inner&quot;&gt;
@@ -1702,7 +1725,7 @@
     </div>
   </div>
 </div>
-<p>And as a square:</p>
+<p>And the same principle applies to these squares:</p>
 <div class="eg-ratio--c m-3">
   <div class="eg-ratio--square">
     <div class="scut-inner">
@@ -1780,6 +1803,7 @@
 </table>
 <section class="description">
   <p>Define both of an element&#39;s dimensions in one fell swoop.</p>
+<p><a href="http://www.straightdope.com/columns/read/1698/whats-the-origin-of-one-fell-swoop">(Read about the origin of the phrase &quot;one fell swoop.&quot;)</a></p>
 <p>If a single value is passed, it will be applied to both <code>width</code> and <code>height</code>, producing a square. To make a rectangle, pass a two-value list: <code>width</code> then <code>height</code>.</p>
 
 </section>
@@ -1875,7 +1899,7 @@
 </table>
 <section class="description">
   <p>Vertically center text by equalizing an element&#39;s <code>height</code> and <code>line-height</code>.</p>
-<p>Although this method is nice and simple, requiring no extra <code>&lt;div&gt;</code>s, it is limited: <strong>it only works for inline content (i.e. text) that will not exceed a single line.</strong> So it&#39;s good for buttons and headings with backgrounds and things like that.</p>
+<p>Although this method is soothingly, reassuringly simple, requiring none of the extra <code>&lt;div&gt;</code>&#39;s that make us all second-guess ourselves, it is also limited. <strong>This method only works for inline content (usually text) that will not exceed a single line.</strong> So it&#39;s good for buttons and headings with backgrounds and things like that.</p>
 <p>If you need to vertically center something else, try one of the mixins below.</p>
 
 </section>
@@ -1896,7 +1920,7 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p class="eg-vcenter-lh">
-  Vertically centered text.
+  Vertically centered text
 </p>
 </div>
   </div>
@@ -1921,7 +1945,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -1960,7 +1984,7 @@
 <section class="description">
   <p>Vertically center <em>an inner element</em> with the <code>inline-block</code> method.</p>
 <p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
-<p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t always work well if you require very exact widths</em> (or if your inner element has a 100% width).* If you require exactitude and nothing stands in the way of your container element having <code>display: table</code>, try that method (below).</p>
+<p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t always work well if you require exact widths (or if your inner element has a 100% width).</em> If you require exactitude and nothing stands in the way of giving your container <code>display: table</code>, try that <a href="#vertically-center-via-table-display">vertically centering via table display</a>.</p>
 
 </section>
 
@@ -2049,7 +2073,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -2088,7 +2112,7 @@
 <section class="description">
   <p>Vertically center <em>the content of an inner element</em> with the <code>display: table</code> method.</p>
 <p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
-<p>Whatever goes into the inner container, whether text or blocks, will be vertically centered.</p>
+<p>Whatever goes into the inner container, whether text or block, will be vertically centered.</p>
 
 </section>
 
@@ -2099,13 +2123,13 @@
   <div class="example--html">
     <h5>HTML</h5>
     <pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-td m-default&quot;&gt;
-  &lt;p class=&quot;scut-inner&quot;&gt;
-    A vertically centered element, with the default classname &quot;scut-inner&quot;.
-  &lt;/p&gt;
+  &lt;span class=&quot;scut-inner&quot;&gt;
+    A vertically centered span, with the default classname &quot;scut-inner&quot;.
+  &lt;/span&gt;
 &lt;/div&gt;
 &lt;div class=&quot;eg-vcenter-td m-variant&quot;&gt;
   &lt;div class=&quot;eg-vcenter-td--inner&quot;&gt;
-    &lt;div class=&quot;eg-vcenter-td--box&quot;&gt;A vertically centered element, with its own special classname.&lt;/div&gt;
+    &lt;div class=&quot;eg-vcenter-td--box&quot;&gt;A vertically centered box, with its own special classname.&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -2128,6 +2152,7 @@
 }
 .eg-vcenter-td--box {
   background: blue;
+  color: white;
   display: inline-block;
   height: 70px;
   width: 200px;
@@ -2136,13 +2161,13 @@
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-vcenter-td m-default">
-  <p class="scut-inner">
-    A vertically centered element, with the default classname "scut-inner".
-  </p>
+  <span class="scut-inner">
+    A vertically centered span, with the default classname "scut-inner".
+  </span>
 </div>
 <div class="eg-vcenter-td m-variant">
   <div class="eg-vcenter-td--inner">
-    <div class="eg-vcenter-td--box">A vertically centered element, with its own special classname.</div>
+    <div class="eg-vcenter-td--box">A vertically centered box, with its own special classname.</div>
   </div>
 </div>
 </div>
@@ -2260,7 +2285,7 @@
 }
 .eg-circle-bordered {
   @include scut-circle(2em, black);
-  border: 5px solid blue;
+  border: 5px solid red;
 }</code></pre>
   </div>
   <div class="example--disp">
@@ -2295,7 +2320,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -2361,7 +2386,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">white</code>&nbsp;]
             
             
-            <span class="args--comment"><p>The color of the inner line.</p>
+            <span class="args--comment"><p>The color of the inner lines.</p>
 </span>
             
           </li>
@@ -2428,7 +2453,7 @@
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -2495,7 +2520,8 @@
   </tbody>
 </table>
 <section class="description">
-  <p>A flexible mixin to create a variety of CSS triangles. (And a defult placeholder extension pointing right.)</p>
+  <p>Create a wide variety of CSS triangles.</p>
+<p>(The defult placeholder extension points right.)</p>
 <p>The mixin can produce equilateral and isosceles triangles pointing up, down, left, and right; or right triangles with their right angles in the upper right, upper left, lower right, and lower left corners.</p>
 <p>When choosing <code>width</code> and <code>height</code> values, consider how their proportion will determine the form. For example, to create an equilateral triangle, you&#39;ll want your <code>height</code> value to be ~140% of your <code>width</code> value (<code>width</code> * &radic;2). Anybody remember high school geometry?</p>
 
@@ -2504,6 +2530,22 @@
 
 <section class="example">
   <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;p&gt;
+  &lt;span class=&quot;eg-triangle m-default&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-equilateral&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-corner-1&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-corner-2&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;span class=&quot;eg-triangle-button m-down&quot;&gt;Dropdown&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle-button m-up&quot;&gt;Dropdown&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle-button m-more&quot;&gt;Read more&lt;/span&gt;
+&lt;/p&gt;
+</code></pre>
+  </div>
   
   <div class="example--scss">
     <h5>SCSS</h5>
@@ -2682,6 +2724,7 @@
 
 .eg-font-face {
   font-family: &quot;Arvo&quot;;
+  font-size: 1.3em;
 }</code></pre>
   </div>
   <div class="example--disp">
@@ -2730,7 +2773,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -2848,7 +2891,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -2908,8 +2951,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </table>
 <section class="description">
   <p>Replace standard link underlining with a bottom border.</p>
-<p>The default styling simply provides a little extra space between the text and the line. More customization is possible by passing arguments.</p>
-<p>Further manipulation is possible by adding your own rules. For example, if you want to define a special color for the bottom-border on hover, just do it (see example below).</p>
+<p>People like this, at least some people, because it provides a little extra space between the text and the line. Other pleasing effects are also possible by passing arguments.</p>
+<p>Of course, as always, further manipulation is possible by adding your own rules. For example, if you want to define a special color for the bottom-border on hover, just do it (see the example below).</p>
 
 </section>
 
@@ -2967,7 +3010,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
         type
       </td>
       <td class="info--value">
-        mixin, with default-values placeholder
+        mixin, with a default-values placeholder
       </td>
     </tr>
     <tr>
@@ -3004,9 +3047,9 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
   </tbody>
 </table>
 <section class="description">
-  <p>Italicize a section of text while de-italicizing those elements that would normally be italicized.</p>
+  <p>Italicize a section of text while de-italicizing those elements that would normally be italicized. Stand the world on its head.</p>
 <p>This is a common typographical practice: in non-italicized text, italics provide mild stress; but in italicized text, it is the non-italicized text that is stressed.</p>
-<p>The elements <code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code>, which browsers typically render as italicized, are by default de-italicized. To de-italicize more elements, just include selectors in a list that you pass to the mixin.</p>
+<p>The elements <code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code>, which browsers typically italicize, are by default de-italicized. To de-italicize more elements, include some selectors in a list that you pass to the mixin.</p>
 
 </section>
 
@@ -3079,6 +3122,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </article>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
   
 </html>
