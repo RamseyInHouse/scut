@@ -8,7 +8,10 @@
 // LAYOUT
 
 @import "layout/clearfix";
-@import "layout/positioning";
+@import "layout/positioning-coordinates";
+@import "layout/positioning-absolute";
+@import "layout/positioning-relative";
+@import "layout/positioning-fixed";
 @import "layout/fill";
 @import "layout/list-unstyled";
 @import "layout/list-divided";

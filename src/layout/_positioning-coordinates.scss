@@ -1,5 +1,3 @@
-// COORDINATES
-
 @function scut-autoOrValue ($val) {
   @if $val == a or $val == auto {
     @return auto;
@@ -31,48 +29,4 @@
     left: scut-autoOrValue($left);
   }
 
-}
-
-
-// ABSOLUTELY POSITIONED
-
-@mixin scut-absolute (
-  $coordinates: 0 n n 0
-) {
-
-  position: absolute;
-  @include scut-coords($coordinates);
-
-}
-
-%scut-absolute {
-  @include scut-absolute;
-}
-
-
-// RELATIVELY POSITIONED
-
-@mixin scut-relative (
-  $coordinates: n n n n
-) {
-
-  position: relative;
-  @include scut-coords($coordinates);
-
-}
-
-
-// FIXEDLY POSITIONED
-
-@mixin scut-fixed (
-  $coordinates: 0 n n 0
-) {
-
-  position: fixed;
-  @include scut-coords($coordinates);
-
-}
-
-%scut-fixed {
-  @include scut-fixed;
 }
