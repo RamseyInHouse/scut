@@ -1,0 +1,22 @@
+@mixin scut-list-floated (
+  $in-media: true
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+    @include scut-clearfix;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+    @extend %scut-clearfix;
+  }
+
+  & > li {
+    float: left;
+  }
+
+}
+
+%scut-list-floated {
+  @include scut-list-floated(false);
+}
