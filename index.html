@@ -224,7 +224,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd_breakpoint.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd-breakpoint.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#hd_breakpoint" id="hd_breakpoint" class="inner-anchor">
             hd breakpoint
@@ -328,7 +328,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hide_text.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hide-text.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#hide_text" id="hide_text" class="inner-anchor">
             hide text
@@ -697,7 +697,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list_unstyled.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-unstyled.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#list_unstyled" id="list_unstyled" class="inner-anchor">
             list: unstyled
@@ -759,7 +759,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list_floated.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-floated.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#list_floated" id="list_floated" class="inner-anchor">
             list: floated
@@ -812,6 +812,7 @@
 <section class="description">
   <p>Float the items of an unstyled list (to the left).</p>
 <p>Use a floated list instead of an inline list when you want your list items snuggled right next to each other.</p>
+<p>Only the list&#39;s immediate children are floated (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p>
 
 </section>
 
@@ -848,7 +849,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list_inline.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-inline.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#list_inline" id="list_inline" class="inner-anchor">
             list: inline
@@ -879,6 +880,7 @@
 <section class="description">
   <p>Inline the items of an unstyled list.</p>
 <p>Use an inline list if you don&#39;t mind your list items spaced out a little, like inline words. If you need them flush, without any intervening space, try a <a href="#floated-list">floated list</a>.</p>
+<p>Only the list&#39;s immediate children are inlined (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p>
 
 </section>
 
@@ -915,7 +917,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list_punctuated.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-punctuated.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#list_punctuated" id="list_punctuated" class="inner-anchor">
             list: punctuated
@@ -993,6 +995,7 @@
 <ul>
 <li><strong><code>%scut-list-comma</code></strong></li>
 </ul>
+<p>Only the list&#39;s immediate children are punctuated (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p>
 
 </section>
 
@@ -1045,7 +1048,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list_divided.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-divided.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#list_divided" id="list_divided" class="inner-anchor">
             list: divided
@@ -1125,6 +1128,7 @@
 <li><strong><code>%scut-list-breadcrumb</code></strong></li>
 </ul>
 <p>But, of course, all things are possible.</p>
+<p>Only the list&#39;s immediate children are divided (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p>
 
 </section>
 
@@ -1173,13 +1177,13 @@
     
     <h3 class="group--h">
       <a href="#positioning" id="positioning" class="inner-anchor">
-        positioning:
+        positioning
       </a>
     </h3>
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning_coordinates.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-coordinates.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#positioning_coordinates" id="positioning_coordinates" class="inner-anchor">
             positioning: coordinates
@@ -1248,7 +1252,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning_absolute.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-absolute.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#positioning_absolute" id="positioning_absolute" class="inner-anchor">
             positioning: absolute
@@ -1352,7 +1356,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning_relative.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-relative.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#positioning_relative" id="positioning_relative" class="inner-anchor">
             positioning: relative
@@ -1437,7 +1441,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning_fixed.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-fixed.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#positioning_fixed" id="positioning_fixed" class="inner-anchor">
             positioning: fixed
@@ -1566,7 +1570,7 @@
 <ul>
 <li><strong>A container element</strong>, whose width (which may be fluid) will determine the width of your ratio-box.</li>
 <li><strong>The ratio-box&#39;s outer element</strong>, to which the mixin applies.</li>
-<li><strong>The ratio-box&#39;s inner element</strong>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument, and whose content will manifest our special styling.</li>
+<li><strong>The ratio-box&#39;s inner element</strong>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument, and whose content will manifest our special styling. The inner element should be an <em>immediate child</em> of the outer element (CSS selector <code>&gt;</code>, the &quot;child combinator&quot;).</li>
 </ul>
 <p>The examples should demonstrate.</p>
 
@@ -1777,7 +1781,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center_line-height.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-line-height.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#v-center_line-height" id="v-center_line-height" class="inner-anchor">
             v-center: line-height
@@ -1858,7 +1862,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center_inline-block.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-inline-block.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#v-center_inline-block" id="v-center_inline-block" class="inner-anchor">
             v-center: inline-block
@@ -1911,6 +1915,7 @@
 <section class="description">
   <p>Vertically center <em>an inner element</em> with the <code>inline-block</code> method.</p>
 <p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
+<p>Any to-be-centered element should be an <em>immediate child</em> of the container (<code>container &gt; inner</code>).</p>
 <p><em>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t always work well if you require exact widths (or if your inner element has a 100% width).</em> If you require exactitude and nothing stands in the way of giving your container <code>display: table</code>, try that <a href="#vertically-center-via-table-display">vertically centering via table display</a>.</p>
 
 </section>
@@ -1988,7 +1993,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center_table_display.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-table-display.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#v-center_table_display" id="v-center_table_display" class="inner-anchor">
             v-center: table display
@@ -2042,6 +2047,7 @@
   <p>Vertically center <em>the content of an inner element</em> with the <code>display: table</code> method.</p>
 <p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p>
 <p>Whatever goes into the inner container, whether text or block, will be vertically centered.</p>
+<p>Any to-be-centered element should be an <em>immediate child</em> of the container (<code>container &gt; inner</code>).</p>
 
 </section>
 
@@ -2676,7 +2682,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_indented_paragraphs.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_indented-paragraphs.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#indented_paragraphs" id="indented_paragraphs" class="inner-anchor">
             indented paragraphs
@@ -2783,7 +2789,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_link_bottom-bordered.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_link-bottom-bordered.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#link_bottom-bordered" id="link_bottom-bordered" class="inner-anchor">
             link: bottom-bordered
@@ -2898,7 +2904,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_reverse_italics.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_reverse-italics.scss" target="_blank" class="source">view source</a>
         <h3>
           <a href="#reverse_italics" id="reverse_italics" class="inner-anchor">
             reverse italics

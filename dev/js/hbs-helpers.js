@@ -12,7 +12,7 @@ module.exports.register = function(Handlebars, options) {
           'link'
         ];
 
-    if (grunt.util._.contains(specialWords, words[0])) {
+    if (words.length > 1 && grunt.util._.contains(specialWords, words[0])) {
       var start = words.shift() + ':';
       words.unshift(start);
       return words.join(' ');
@@ -20,6 +20,10 @@ module.exports.register = function(Handlebars, options) {
       return noHyphens;
     }
 
+  });
+
+  Handlebars.registerHelper('underscoresToHyphens', function(str) {
+    return str.replace(/_/g, '-');
   });
 
   Handlebars.registerHelper('getExampleScss', function(name) {

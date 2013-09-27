@@ -137,6 +137,8 @@ categories:
           Float the items of an unstyled list (to the left).
 
           Use a floated list instead of an inline list when you want your list items snuggled right next to each other.
+
+          Only the list's immediate children are floated (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
             <ul class="eg-floated-list">
@@ -153,6 +155,8 @@ categories:
           Inline the items of an unstyled list.
 
           Use an inline list if you don't mind your list items spaced out a little, like inline words. If you need them flush, without any intervening space, try a [floated list](#floated-list).
+
+          Only the list's immediate children are inlined (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
             <ul class="eg-inline-list">
@@ -184,6 +188,8 @@ categories:
           Since the most common punctuated list uses commas, commas are the default punctuation and the comma list is available as its own placeholder:
 
           - **`%scut-list-comma`**
+
+          Only the list's immediate children are punctuated (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
             <ul class="eg-punctuated-list">
@@ -231,6 +237,8 @@ categories:
           - **`%scut-list-breadcrumb`**
 
           But, of course, all things are possible.
+
+          Only the list's immediate children are divided (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
             <ul class="eg-divided-list">
@@ -342,7 +350,7 @@ categories:
 
           - **A container element**, whose width (which may be fluid) will determine the width of your ratio-box.
           - **The ratio-box's outer element**, to which the mixin applies.
-          - **The ratio-box's inner element**, whose selector must be passed to the mixin as the `$inner` (second) argument, and whose content will manifest our special styling.
+          - **The ratio-box's inner element**, whose selector must be passed to the mixin as the `$inner` (second) argument, and whose content will manifest our special styling. The inner element should be an *immediate child* of the outer element (CSS selector `>`, the "child combinator").
 
           The examples should demonstrate.
         example:
@@ -432,6 +440,8 @@ categories:
 
           **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
+          Any to-be-centered element should be an *immediate child* of the container (`container > inner`).
+
           *A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't always work well if you require exact widths (or if your inner element has a 100% width).* If you require exactitude and nothing stands in the way of giving your container `display: table`, try that [vertically centering via table display](#vertically-center-via-table-display).
         example:
           html: |
@@ -467,6 +477,9 @@ categories:
           **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
           Whatever goes into the inner container, whether text or block, will be vertically centered.
+
+          Any to-be-centered element should be an *immediate child* of the container (`container > inner`).
+
         example:
           html: |
             <div class="eg-vcenter-td m-default">
