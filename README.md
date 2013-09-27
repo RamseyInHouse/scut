@@ -6,6 +6,8 @@ You can think of the word as **an acronym for *SC*SS *Ut*itilies.**
 
 Or you can think of the word in other ways: Scut will do your scut work; let Scut be your scut monkey. (Be careful how you use this word in polite company. To learn its many and colorful connotations, [have a look at Wiktionary](http://en.wiktionary.org/wiki/scut)).
 
+> [Full documentation available here!](http://davidtheclark.github.io/scut/)
+
 ### Differences from other pre-processor libraries
 
 Like Compass, Bourbon, etc.
