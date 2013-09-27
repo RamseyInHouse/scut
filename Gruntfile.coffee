@@ -76,7 +76,7 @@ module.exports = (grunt) ->
         tasks: ["style"]
       assemble:
         files: [
-          "dev/partials/*.hbs"
+          "dev/partials/*"
           "dev/data.yml"
           "dev/index.hbs"
         ]
@@ -108,8 +108,6 @@ module.exports = (grunt) ->
     shell:
       updateSrc:
         command: "git checkout remotes/origin/master -- src"
-      jekyll:
-        command: "jekyll build"
 
     uglify:
       all:

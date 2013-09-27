@@ -1,3 +1,13 @@
+.intro {
+  &:after {
+    content: "-- DOCS BEGIN --";
+    display: block;
+    font-family: $f-code;
+    text-align: center;
+    margin: 2em 0;
+  }
+}
+
 .group--h {
   font-size: 2.5em;
   margin-bottom: 0.3em;
