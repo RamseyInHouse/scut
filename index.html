@@ -247,7 +247,16 @@
 <h4><code>scut-</code> prefix</h4>
 <p>To avoid naming collisions &mdash; since this collection may be used alongside other libraries and your own rulesets &mdash; all mixins and placeholders are prefixed with <code>scut-</code>.</p>
 <h2><a href="#installation" id="installation" class="inner-anchor">Installation</a></h2>
-<p>Download or clone <a href="https://github.com/davidtheclark/scut">the repository on Github</a>. Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like this: <code>@import &quot;path/to/scut</code>&quot;.</p>
+<ol>
+<li>Get the files. You have the following options:<ul>
+<li><code>bower install scut</code> (recommended)</li>
+<li>Download <a href="https://github.com/davidtheclark/scut">the repository from Github</a>.  </li>
+<li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.</li>
+</ul>
+</li>
+<li>Then, from your own Sass/SCSS files, import <code>src/_scut.scss</code>. Like this: <code>@import &quot;path/to/src/scut</code>&quot;.</li>
+</ol>
+<p>Make sure you import Scut above any imported stylesheets that will rely on Scut.</p>
 <p>Make sure you import Scut above any imported stylesheets that will rely on Scut.</p>
 <p>Also, <em>make sure that you install and use <a href="https://github.com/ai/autoprefixer">Autoprefixer</a></em>. As mentioned above, Scut does not bother with vendor prefixes &mdash; assuming, instead, that you will use Autoprefixer to handle that messy business.</p>
 <h2><a href="#usage" id="usage" class="inner-anchor">Usage</a></h2>
@@ -3076,7 +3085,6 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </article>
   </body>
   
-  <script src="dev/js/lib/prism.js"></script>
-  <script src="dev/js/lib/prism.js"></script>
+  <script src="dist/js-built.min.js"></script>
   
 </html>
