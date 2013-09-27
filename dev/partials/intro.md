@@ -28,7 +28,13 @@ To avoid naming collisions &mdash; since this collection may be used alongside o
 
 ## <a href="#installation" id="installation" class="inner-anchor">Installation</a>
 
-Download or clone [the repository on Github](https://github.com/davidtheclark/scut). Then, from your own Sass/SCSS files, import `_scut.scss`. Like this: `@import "path/to/scut`".
+1. Get the files. You have the following options:
+  - `bower install scut` (recommended)
+  - Download [the repository from Github](https://github.com/davidtheclark/scut).  
+  - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).
+2. Then, from your own Sass/SCSS files, import `src/_scut.scss`. Like this: `@import "path/to/src/scut`".
+
+Make sure you import Scut above any imported stylesheets that will rely on Scut.
 
 Make sure you import Scut above any imported stylesheets that will rely on Scut.
 
