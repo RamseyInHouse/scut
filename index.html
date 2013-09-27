@@ -2803,7 +2803,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
         use-name
       </td>
       <td class="info--value">
-        <code>scut-link-bd</code>
+        <code>scut-link-bb</code>
       </td>
     </tr>
     <tr>
@@ -2874,14 +2874,14 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
   
   <div class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">.eg-link-bd {
+    <pre><code class="language-scss">.eg-link-bb {
   &amp;.m-default a {
     // Default-values placeholder
-    @extend %scut-link-bd;
+    @extend %scut-link-bb;
   }
   &amp;.m-styled a {
     color: blue;
-    @include scut-link-bd(blue, double, 4px);
+    @include scut-link-bb(blue, double, 4px);
     &amp;:hover {
       color: red;
       border-bottom-color: red;
@@ -2891,8 +2891,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
   </div>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p class="eg-link-bd m-default">Default values: <a href="#link-with-bottom-border">Link text</a></p>
-<p class="eg-link-bd m-styled">Variant values: <a href="#link-with-bottom-border">Link text</a></p>
+    <div class="example--disp--inner"><p class="eg-link-bb m-default">Default values: <a href="#link-with-bottom-border">Link text</a></p>
+<p class="eg-link-bb m-styled">Variant values: <a href="#link-with-bottom-border">Link text</a></p>
 </div>
   </div>
 </section>

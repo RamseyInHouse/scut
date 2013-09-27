@@ -653,7 +653,7 @@ p:last-of-type {
 }
 
 .index-1--i,
-.eg-link-bd.m-default a {
+.eg-link-bb.m-default a {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: solid;
@@ -1596,7 +1596,7 @@ pre[class*="language-"] {
   text-indent: 3em;
 }
 
-.eg-link-bd.m-styled a {
+.eg-link-bb.m-styled a {
   color: blue;
   text-decoration: none;
   border-bottom-width: 4px;
@@ -1604,7 +1604,7 @@ pre[class*="language-"] {
   border-bottom-color: blue;
 }
 
-.eg-link-bd.m-styled a:hover {
+.eg-link-bb.m-styled a:hover {
   color: red;
   border-bottom-color: red;
 }
