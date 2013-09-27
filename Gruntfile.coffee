@@ -107,7 +107,7 @@ module.exports = (grunt) ->
 
     shell:
       updateSrc:
-        command: "git checkout remotes/origin/master -- src"
+        command: "git checkout remotes/origin/master -- src _scut.scss _scut-reset.scss"
 
     uglify:
       all:
