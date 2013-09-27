@@ -1,0 +1,23 @@
+{
+  "name": "Scut",
+  "version": "0.1.0",
+  "homepage": "http://davidtheclark.github.io/scut/",
+  "authors": [
+    "David Clark <david.dave.clark@gmail.com>"
+  ],
+  "description": "A collection of SCSS utilities.",
+  "main": "src/_scut.scss",
+  "keywords": [
+    "SCSS",
+    "Sass",
+    "style"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
