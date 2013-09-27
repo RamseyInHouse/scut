@@ -1,0 +1,8 @@
+@mixin scut-vcenter-lh (
+  $height
+) {
+
+  height: $height;
+  line-height: $height;
+
+}

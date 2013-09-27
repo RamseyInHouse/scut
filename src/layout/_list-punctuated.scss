@@ -1,0 +1,25 @@
+@mixin scut-list-punctuated (
+  $divider: ", ",
+  $display: inline,
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+  }
+
+  & > li {
+    display: $display;
+    &:not(:last-child):after {
+      content: $divider;
+    }
+  }
+
+}
+
+%scut-list-comma {
+  @include scut-list-punctuated;
+}

@@ -1,0 +1,17 @@
+@mixin scut-vcenter-td (
+  $inner: ".scut-inner"
+) {
+
+  display: table;
+
+  & > #{$inner} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+
+%scut-vcenter-td {
+  @include scut-vcenter-td;
+}

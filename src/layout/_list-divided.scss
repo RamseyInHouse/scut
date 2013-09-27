@@ -1,0 +1,30 @@
+@mixin scut-list-divided (
+  $divider: "|",
+  $gap: 0.5em,
+  $in-media: false
+) {
+
+  @if $in-media {
+    @include scut-list-floated;
+  }
+  @else {
+    @extend %scut-list-floated;
+  }
+
+  & > li {
+    &:not(:last-child):after {
+      content: $divider;
+      margin-left: $gap;
+      margin-right: $gap;
+    }
+  }
+
+}
+
+%scut-list-bar {
+  @include scut-list-divided;
+}
+
+%scut-list-breadcrumb {
+  @include scut-list-divided("/");
+}

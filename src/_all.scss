@@ -8,12 +8,21 @@
 // LAYOUT
 
 @import "layout/clearfix";
-@import "layout/positioning";
+@import "layout/positioning-coordinates";
+@import "layout/positioning-absolute";
+@import "layout/positioning-relative";
+@import "layout/positioning-fixed";
 @import "layout/fill";
-@import "layout/lists";
+@import "layout/list-unstyled";
+@import "layout/list-divided";
+@import "layout/list-floated";
+@import "layout/list-inline";
+@import "layout/list-punctuated";
 @import "layout/ratio-box";
 @import "layout/size";
-@import "layout/vertically-center";
+@import "layout/vertically-center-via-inline-block";
+@import "layout/vertically-center-via-line-height";
+@import "layout/vertically-center-via-table-display";
 
 
 // SHAPES
@@ -27,5 +36,5 @@
 
 @import "typography/font-face";
 @import "typography/indented-paragraphs";
-@import "typography/link-styles";
+@import "typography/link-bottom-bordered";
 @import "typography/reverse-italics";

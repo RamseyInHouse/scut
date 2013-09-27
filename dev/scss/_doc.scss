@@ -1,3 +1,8 @@
+.group--h {
+  font-size: 2.5em;
+  margin-bottom: 0.3em;
+}
+
 .doc-i {
   margin-bottom: 4em;
 }
@@ -11,6 +16,9 @@
   margin-left: -2em;
   margin-right: -2em;
   margin-bottom: 1em;
+  a {
+    display: block;
+  }
 }
 
 .sub--h {

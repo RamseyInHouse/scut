@@ -11,6 +11,13 @@
       </a>
     </h2>
     {{#each items}}
+    {{#if group-start}}
+    <h3 class="group--h">
+      <a href="#{{group-start}}" id="{{group-start}}" class="inner-anchor">
+        {{slugToWords group-start}}
+      </a>
+    </h3>
+    {{/if}}
     <section class="doc-i">
       <header class="doc-i--h">
         <a href="{{../../github-url}}/{{../category}}/_{{name}}.scss" target="_blank" class="source">view source</a>
@@ -20,16 +27,7 @@
           </a>
         </h3>
       </header>
-
-      {{#if items}}
-        {{#each items}}
-        <section class="doc-i-sub">
-          {{>subentry}}
-        </section>
-        {{/each}}
-      {{else}}
       {{>entry}}
-      {{/if}}
     </section>
     {{/each}}
   </section>

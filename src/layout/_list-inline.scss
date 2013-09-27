@@ -1,0 +1,20 @@
+@mixin scut-list-inline (
+  $in-media: true
+) {
+
+  @if $in-media {
+    @include scut-list-unstyled;
+  }
+  @else {
+    @extend %scut-list-unstyled;
+  }
+
+  & > li {
+    display: inline-block;
+  }
+
+}
+
+%scut-list-inline {
+  @include scut-list-inline(false);
+}

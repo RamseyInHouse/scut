@@ -1,0 +1,12 @@
+@mixin scut-absolute (
+  $coordinates: 0 n n 0
+) {
+
+  position: absolute;
+  @include scut-coords($coordinates);
+
+}
+
+%scut-absolute {
+  @include scut-absolute;
+}
