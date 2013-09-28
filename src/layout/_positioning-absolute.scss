@@ -1,3 +1,10 @@
+/*==========================
+POSITIONING: ABSOLUTE
+http://davidtheclark.github.io/scut/#positioning_absolute
+
+Depends on _positioning-coordinates.scss
+==========================*/
+
 @mixin scut-absolute (
   $coordinates: 0 n n 0
 ) {

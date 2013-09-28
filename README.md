@@ -35,7 +35,7 @@ To avoid naming collisions &mdash; since this collection may be used alongside o
 ## Installation
 
 1. Get the files. You have the following options:
-  - **`bower install scut` (recommended)**
+  - **Use [Bower](http://bower.io/) (*recommended*): `bower install scut --save-dev`**
   - Download [the repository from Github](https://github.com/davidtheclark/scut).  
   - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).
 2. Then, from your own Sass/SCSS files, import `_scut.scss`. Like this: `@import "path/to/scut`".

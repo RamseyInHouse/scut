@@ -1,3 +1,10 @@
+/*==========================
+LIST: PUNCTUATED
+http://davidtheclark.github.io/scut/#list_punctuated
+
+Depends on _list-unstyled.scss
+==========================*/
+
 @mixin scut-list-punctuated (
   $divider: ", ",
   $display: inline,

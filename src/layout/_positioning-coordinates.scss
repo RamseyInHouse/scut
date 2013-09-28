@@ -1,3 +1,8 @@
+/*==========================
+POSITIONING: COORDINATES
+http://davidtheclark.github.io/scut/#positioning_coordinates
+==========================*/
+
 @function scut-autoOrValue ($val) {
   @if $val == a or $val == auto {
     @return auto;

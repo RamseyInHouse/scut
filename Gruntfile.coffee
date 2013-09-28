@@ -6,12 +6,12 @@ module.exports = (grunt) ->
     sass:
       test:
         files:
-          "main.css": "scss/main.scss"
+          "test/main.css": "test/scss/main.scss"
 
     autoprefixer:
       test:
         files:
-          "main.css": "test-style.css"
+          "test/main.css": "test/test-style.css"
 
     jade:
       test:
@@ -19,9 +19,9 @@ module.exports = (grunt) ->
           pretty: true
         files: [
           expand: true
-          cwd: "jade"
+          cwd: "test/jade"
           src: ["*.jade"]
-          dest: "./"
+          dest: "test/"
           ext: ".html"
         ]
 
@@ -29,27 +29,39 @@ module.exports = (grunt) ->
       server:
         options:
           port: 9000
-          base: "./"
+          base: "test/"
+
+    concat:
+      all:
+        options:
+          separator: grunt.util.linefeed + grunt.util.linefeed
+        src: [
+          "src/layout/_list-unstyled.scss"
+          "src/layout/_list-floated.scss"
+          "src/layout/_positioning-coordinates.scss"
+          "src/**/*.scss"
+        ]
+        dest: "_scut-all.scss"
 
     watch:
       livereload:
         options:
           livereload: true
         files: [
-          "*.css"
-          "*.html"
+          "test/*.css"
+          "test/*.html"
         ]
-      style:
+      testStyle:
         files: [
-          "scss/*.scss"
-          "../src/*.scss"
-          "../src/**/*.scss"
+          "test/scss/*.scss"
+          "test/../src/*.scss"
+          "test/../src/**/*.scss"
         ]
         tasks: ["style"]
-      markup:
+      testMarkup:
         files: [
-          "jade/*.jade"
-          "jade/includes/*.jade"
+          "test/jade/*.jade"
+          "test/jade/includes/*.jade"
         ]
         tasks: ["jade:test"]
 
@@ -57,6 +69,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
+  grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-autoprefixer"
 
   grunt.registerTask "dev", ["connect", "watch"]
