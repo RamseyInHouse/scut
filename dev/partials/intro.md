@@ -2,7 +2,7 @@
 
 **&mdash; a collection of Sass (SCSS) mixins and placeholders for common styling patterns.**
 
-You can think of the word Scut as an acronym for *SC*SS *Ut*itilies.
+You can think of the word Scut as an acronym for ***SC***SS ***Ut***itilies.
 
 (Or you can think of the word in other ways: Scut will do your *scut work*; let Scut be your *scut monkey*. (Be careful how you use this word in polite company. To learn its many and colorful connotations, [have a look at Wiktionary](http://en.wiktionary.org/wiki/scut).))
 
@@ -32,10 +32,10 @@ To avoid naming collisions &mdash; since this collection may be used alongside o
 
 ## <a href="#installation" id="installation" class="inner-anchor">Installation</a>
 
-1. Get the files. You have the following options:
-  - **With [Bower](http://bower.io/): `bower install scut` (recommended)**
+1. Get the files. You have the following options:<div class="install-list">
+  - **Use [Bower](http://bower.io/) (*recommended*): `bower install scut --save-dev`**
   - Download [the repository from Github](https://github.com/davidtheclark/scut).  
-  - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).
+  - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).</div>
 2. Then, from your own Sass/SCSS files, import `_scut.scss`. Like this: `@import "path/to/scut`".
 
 Make sure you import Scut *above* any other imports that will rely on Scut.

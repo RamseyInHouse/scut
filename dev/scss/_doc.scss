@@ -8,6 +8,30 @@
   }
 }
 
+.install-list {
+  ul {
+    @extend %scut-list-unstyled;
+  }
+  li {
+    margin: 0.5em 0;
+    position: relative;
+    &:before {
+      @include scut-triangle($pseudo: true);
+      @include scut-absolute(0.35em n n -1.5em);
+    }
+  }
+  background: $c-list;
+  color: $c-main;
+  margin: 1em 1em 1em -2em;
+  padding: 0.5em 1em 0.5em 3em;
+  a { color: $c-zing; }
+  code {
+    background-color: $c-bg-light;
+    margin-left: 0.5em;
+    padding: 0 0.5em;
+  }
+}
+
 .group--h {
   font-size: 2.5em;
   margin-bottom: 0.3em;
@@ -132,16 +156,13 @@
 }
 
 .help-content {
-  $help-x: 30em;
-  $help-y: 15em;
   background: $c-bg-light;
-  @include scut-absolute(50% 50% n n);
-  margin-top: -($help-y / 2);
-  margin-right: -($help-x / 2);
-  @include scut-size($help-x $help-y);
-  padding: 0 1em;
+  @include scut-absolute(20% 50% n n);
+  margin-right: -15em;
+  width: 30em;
+  padding: 2em;
   border: 5px solid $c-list;
-  @include scut-vcenter-td;
+  @extend %scut-vcenter-ib;
 
   transition-property: opacity, transform;
   transition-duration: 0.3s;

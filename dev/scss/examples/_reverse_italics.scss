@@ -4,6 +4,6 @@
     @extend %scut-reverse-italics;
   }
   &.m-variant {
-    @include scut-reverse-italics(strong b ".no-italics");
+    @include scut-reverse-italics("strong" "b" ".no-italics");
   }
 }

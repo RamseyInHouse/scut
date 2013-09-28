@@ -342,7 +342,7 @@ categories:
           -
             variable: $inner
             default: "\".scut-inner\""
-            comment: &IE CSS selector for the inner element. See below.
+            comment: &IE CSS selector for the inner element. **Include quotation marks around your selector.** See below.
         text: |
           Give an element with unknown or fluid width a fixed aspect ratio.
 
@@ -706,7 +706,7 @@ categories:
           -
             variable: $elements
             default: "false"
-            comment: "A list (not comma separated) of CSS selectors for elements that you do not want italicized (`<em>`, `<cite>`, and `<i>` are already taken care of: see below)."
+            comment: "A list (not comma separated) of CSS selectors for elements that you do not want italicized (`<em>`, `<cite>`, and `<i>` are already taken care of: see below). **Include quotation marks around your selectors.**"
         text: |
           Italicize a section of text while de-italicizing those elements that would normally be italicized. Stand the world on its head.
 

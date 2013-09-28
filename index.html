@@ -235,7 +235,7 @@
   <header class="container intro" id="main">
     <h1>Scut</h1>
 <p><strong>&mdash; a collection of Sass (SCSS) mixins and placeholders for common styling patterns.</strong></p>
-<p>You can think of the word Scut as an acronym for <em>SC</em>SS <em>Ut</em>itilies.</p>
+<p>You can think of the word Scut as an acronym for <strong><em>SC</em></strong>SS <strong><em>Ut</em></strong>itilies.</p>
 <p>(Or you can think of the word in other ways: Scut will do your <em>scut work</em>; let Scut be your <em>scut monkey</em>. (Be careful how you use this word in polite company. To learn its many and colorful connotations, <a href="http://en.wiktionary.org/wiki/scut">have a look at Wiktionary</a>.))</p>
 <h3>What makes Scut unique?</h3>
 <h4>Flexible abstractions of common patterns</h4>
@@ -251,10 +251,10 @@
 <p>To avoid naming collisions &mdash; since this collection may be used alongside other libraries, certianly alongside your own rulesets &mdash; all mixins and placeholders are prefixed with <code>scut-</code>.</p>
 <h2><a href="#installation" id="installation" class="inner-anchor">Installation</a></h2>
 <ol>
-<li>Get the files. You have the following options:<ul>
-<li><strong>With <a href="http://bower.io/">Bower</a>: <code>bower install scut</code> (recommended)</strong></li>
+<li>Get the files. You have the following options:<div class="install-list"><ul>
+<li><strong>Use <a href="http://bower.io/">Bower</a> (<em>recommended</em>): <code>bower install scut --save-dev</code></strong></li>
 <li>Download <a href="https://github.com/davidtheclark/scut">the repository from Github</a>.  </li>
-<li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.</li>
+<li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.</div></li>
 </ul>
 </li>
 <li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like this: <code>@import &quot;path/to/scut</code>&quot;.</li>
@@ -1651,7 +1651,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-inner&quot;</code>&nbsp;]
             
             
-            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+            <span class="args--comment"><p>CSS selector for the inner element. <strong>Include quotation marks around your selector.</strong> See below.</p>
 </span>
             
           </li>
@@ -2008,7 +2008,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
             
             
-            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+            <span class="args--comment"><p>CSS selector for the inner element. <strong>Include quotation marks around your selector.</strong> See below.</p>
 </span>
             
           </li>
@@ -2142,7 +2142,7 @@
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">.scut-inner</code>&nbsp;]
             
             
-            <span class="args--comment"><p>CSS selector for the inner element. See below.</p>
+            <span class="args--comment"><p>CSS selector for the inner element. <strong>Include quotation marks around your selector.</strong> See below.</p>
 </span>
             
           </li>
@@ -3074,7 +3074,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
             [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]
             
             
-            <span class="args--comment"><p>A list (not comma separated) of CSS selectors for elements that you do not want italicized (<code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code> are already taken care of: see below).</p>
+            <span class="args--comment"><p>A list (not comma separated) of CSS selectors for elements that you do not want italicized (<code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code> are already taken care of: see below). <strong>Include quotation marks around your selectors.</strong></p>
 </span>
             
           </li>
@@ -3125,7 +3125,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     @extend %scut-reverse-italics;
   }
   &amp;.m-variant {
-    @include scut-reverse-italics(strong b &quot;.no-italics&quot;);
+    @include scut-reverse-italics(&quot;strong&quot; &quot;b&quot; &quot;.no-italics&quot;);
   }
 }</code></pre>
   </div>

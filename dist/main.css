@@ -534,6 +534,7 @@ p:last-of-type {
 .eg-adding-list,
 .eg-inline-list,
 .list ul,
+.install-list ul,
 .refs,
 .eg-unstyled-list,
 .eg-punctuated-list,
@@ -576,6 +577,7 @@ p:last-of-type {
   bottom: 0;
 }
 
+.help-content:before,
 .eg-vcenter-ib.m-default:before {
   content: "";
   display: inline-block;
@@ -584,6 +586,7 @@ p:last-of-type {
   margin-right: -0.25em;
 }
 
+.help-content > .scut-inner,
 .eg-vcenter-ib.m-default > .scut-inner {
   display: inline-block;
   vertical-align: middle;
@@ -752,8 +755,10 @@ h4 {
 }
 
 h1 {
+  color: #002834;
   font-size: 4em;
   font-weight: bold;
+  border-bottom: 10px double;
 }
 
 h2 {
@@ -989,10 +994,9 @@ pre[class*="language-"] {
 .github-link {
   background: #edf0ff;
   color: #002834;
-  border-radius: 3px;
   display: inline-block;
   float: right;
-  padding: 0.1em 0.4em;
+  padding: 0.1em 0.5em;
   margin-top: 0.4em;
   font-size: 0.9em;
 }
@@ -1027,6 +1031,44 @@ pre[class*="language-"] {
   font-family: "Droid Sans Mono", "Courier New", "Courier New", monospace;
   text-align: center;
   margin: 2em 0;
+}
+
+.install-list {
+  background: #002834;
+  color: white;
+  margin: 1em 1em 1em -2em;
+  padding: 0.5em 1em 0.5em 3em;
+}
+
+.install-list li {
+  margin: 0.5em 0;
+  position: relative;
+}
+
+.install-list li:before {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  content: "";
+  border-width: 0.375em 0.7em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: inherit;
+  border-right-width: 0;
+  position: absolute;
+  top: 0.35em;
+  left: -1.5em;
+}
+
+.install-list a {
+  color: #9ae9ff;
+}
+
+.install-list code {
+  background-color: #edf0ff;
+  margin-left: 0.5em;
+  padding: 0 0.5em;
 }
 
 .group--h {
@@ -1177,15 +1219,12 @@ pre[class*="language-"] {
 .help-content {
   background: #edf0ff;
   position: absolute;
-  top: 50%;
+  top: 20%;
   right: 50%;
-  margin-top: -7.5em;
   margin-right: -15em;
   width: 30em;
-  height: 15em;
-  padding: 0 1em;
+  padding: 2em;
   border: 5px solid #002834;
-  display: table;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
   -webkit-transition-duration: 0.3s;
@@ -1194,11 +1233,6 @@ pre[class*="language-"] {
   -webkit-transform: scale(1.3);
   -ms-transform: scale(1.3);
   transform: scale(1.3);
-}
-
-.help-content > .scut-inner {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .help-content.is-active {
