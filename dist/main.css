@@ -813,6 +813,7 @@ body {
 
 .list,
 .main {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -826,7 +827,7 @@ body {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 15em;
+  width: 16em;
 }
 
 .main {
@@ -834,7 +835,7 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  left: 15em;
+  left: 16em;
   min-width: 30em;
 }
 
@@ -987,10 +988,11 @@ pre[class*="language-"] {
 
 .github-link {
   background: #edf0ff;
-  border-radius: 5px;
+  color: #002834;
+  border-radius: 3px;
   display: inline-block;
   float: right;
-  padding: 0.1em 0.3em;
+  padding: 0.1em 0.4em;
   margin-top: 0.4em;
   font-size: 0.9em;
 }
@@ -1087,7 +1089,7 @@ pre[class*="language-"] {
 
 .info--label {
   float: left;
-  width: 8em;
+  width: 9em;
 }
 
 .info--value {
@@ -1138,6 +1140,88 @@ pre[class*="language-"] {
   position: absolute;
   top: 0.2em;
   left: 0;
+}
+
+.help {
+  color: gray;
+  font-weight: normal;
+  font-size: 0.75em;
+  position: relative;
+  bottom: 2px;
+}
+
+.help:hover {
+  color: #23c655;
+}
+
+.help-content-c {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.help-content-c.is-active {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.help-content {
+  background: #edf0ff;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  margin-top: -7.5em;
+  margin-right: -15em;
+  width: 30em;
+  height: 15em;
+  padding: 0 1em;
+  border: 5px solid #002834;
+  display: table;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  opacity: 0;
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.help-content > .scut-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.help-content.is-active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  z-index: 10;
+}
+
+.help-close {
+  background: #2f96b3;
+  display: block;
+  margin: 1em auto 0;
+  width: 5em;
+  text-align: center;
+  padding: 0.2em 0;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.help-close:hover {
+  color: white;
 }
 
 .eg-hd-bp {

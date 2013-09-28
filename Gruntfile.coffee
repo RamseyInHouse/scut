@@ -70,6 +70,7 @@ module.exports = (grunt) ->
         files: [
           "dist/*"
           "index.html"
+          "dev/js/*.js"
         ]
       style:
         files: ["dev/scss/*.scss"]
@@ -101,7 +102,7 @@ module.exports = (grunt) ->
 
     clean:
       clearSrc:
-        src: ["src"]
+        src: ["src", "_scut.scss", "_scut-reset.scss"]
       images:
         src: ["dev/images/opt"]
 

@@ -733,3 +733,20 @@ categories:
               <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span>
             </p>
           show-html: true
+
+
+help:
+  -
+    term: use-name
+    content: |
+      **use-name** is the name of the utility's mixin and placeholder, including the `scut-` prefix, as they should appear in your Sass/SCSS. This should be illustrated in the examples.
+  -
+    term: type
+    content: |
+      **type** tells you how you can invoke the utility. Is it only available as a mixin (e.g. HD breakpoint)? Or as a mixin and a placeholder that always do the same thing (e.g. clearfix)? Or as a mixin and a placeholder that passes default values (e.g. indented paragraphs)? Or as a mixin with some extension placeholders for common variations (e.g. punctuated list)?
+  -
+    term: arguments
+    content: |
+      **arguments** lists the arguments, in order, that you can pass to the utility's mixin. To learn more about Sass/SCSS mixin arguments [have a look at the Sass documentation](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixin-arguments).
+
+      If no default value is listed, that means there is no default value, so you'll have to provide a value every time you use the mixin.

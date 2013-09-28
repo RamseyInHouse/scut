@@ -20,10 +20,11 @@
 
 .github-link {
   background: $c-bg-light;
-  border-radius: 5px;
+  color: $c-list;
+  border-radius: 3px;
   display: inline-block;
   float: right;
-  padding: 0.1em 0.3em;
+  padding: 0.1em 0.4em;
   margin-top: 0.4em;
   font-size: 0.9em;
 }
