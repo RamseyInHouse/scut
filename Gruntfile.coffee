@@ -78,3 +78,4 @@ module.exports = (grunt) ->
     "jade:test"
     "style"
   ]
+  grunt.registerTask "build", ["concat:all"]
