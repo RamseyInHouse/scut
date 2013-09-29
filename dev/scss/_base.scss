@@ -15,12 +15,6 @@ body {
 }
 
 .list,
-.main {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.list,
 .container {
   padding: 1.3em;
 }
@@ -41,4 +35,11 @@ body {
   background-color: $c-main;
   overflow-x: hidden;
   max-width: 45em;
+}
+
+/* Overthrow CSS:
+   Enable overflow: auto on elements with overthrow class when html element has overthrow-enabled class too */
+.overthrow-enabled .overthrow {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }

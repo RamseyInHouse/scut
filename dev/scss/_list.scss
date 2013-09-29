@@ -37,17 +37,8 @@
   @extend %scut-link-bb;
 }
 
-.index-2--i,
-.index-3--i {
+.index-2--i {
   color: $c-main;
-  display: block;
+  display: inline-block;
   margin-bottom: 0.3em;
-}
-
-.index-3--i {
-  margin-left: 0.5em;
-  &:before {
-    content: "-";
-    margin-left: 0.2em;
-  }
 }

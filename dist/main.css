@@ -831,12 +831,6 @@ body {
 }
 
 .list,
-.main {
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
-
-.list,
 .container {
   padding: 1.3em;
 }
@@ -862,6 +856,14 @@ body {
   background-color: white;
   overflow-x: hidden;
   max-width: 45em;
+}
+
+/* Overthrow CSS:
+   Enable overflow: auto on elements with overthrow class when html element has overthrow-enabled class too */
+
+.overthrow-enabled .overthrow {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /**
@@ -1023,20 +1025,10 @@ pre[class*="language-"] {
   margin-top: 0.5em;
 }
 
-.index-2--i,
-.index-3--i {
+.index-2--i {
   color: white;
-  display: block;
+  display: inline-block;
   margin-bottom: 0.3em;
-}
-
-.index-3--i {
-  margin-left: 0.5em;
-}
-
-.index-3--i:before {
-  content: "-";
-  margin-left: 0.2em;
 }
 
 .intro:after {
