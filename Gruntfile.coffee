@@ -116,6 +116,7 @@ module.exports = (grunt) ->
           "dist/js-built.min.js": [
             "dev/js/lib/prism.js"
             "bower_components/overthrow/dist/overthrow.js"
+            "dev/js/modals.js"
           ]
 
 
