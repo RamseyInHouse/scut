@@ -8,22 +8,15 @@
     <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="dist/main.css">
-    <script src="dist/modernizr-custom.min.js"></script>
   </head>
   <body class="preload" onload="document.body.className=''">
     {{>list}}
     {{>main}}
   </body>
-
-  <script>
-    Modernizr.load({
-      test: Modernizr.touch,
-      yep: 'dist/overthrow.min.js'
-    });
-  </script>
   {{#if dist}}
   <script src="dist/js-built.min.js"></script>
   {{else}}
+  <script src="bower_components/overthrow/dist/overthrow.js"></script>
   <script src="dev/js/lib/prism.js"></script>
   <script src="dev/js/modals.js"></script>
   {{/if}}
