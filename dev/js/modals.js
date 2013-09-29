@@ -5,6 +5,7 @@ var helpBtns = document.getElementsByClassName('js-help-btn'),
 
 function openModal (targetModal) {
   helpC.classList.add('is-active');
+  targetModal.style.display = 'block';
   setTimeout(function () {
     targetModal.classList.add('is-active');
   }, transTime);
@@ -13,6 +14,7 @@ function openModal (targetModal) {
 function closeModal (targetModal) {
   targetModal.classList.remove('is-active');
   setTimeout(function () {
+    targetModal.style.display = 'none';
     helpC.classList.remove('is-active');
   }, transTime);
 }

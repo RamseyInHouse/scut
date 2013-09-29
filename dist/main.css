@@ -656,6 +656,7 @@ p:last-of-type {
 }
 
 .index-1--i,
+.intro a:not(.inner-anchor),
 .eg-link-bb.m-default a {
   text-decoration: none;
   border-bottom-width: 1px;
@@ -704,7 +705,7 @@ a {
 a:hover,
 a:focus,
 a:active {
-  color: #23c655;
+  color: #05a536;
 }
 
 .inner-anchor {
@@ -719,7 +720,7 @@ a:active {
 }
 
 .inner-anchor:hover {
-  color: #23c655;
+  color: #05a536;
 }
 
 .inner-anchor:hover:after {
@@ -814,6 +815,19 @@ LAYOUT
 body {
   background-color: #002834;
   color: #222222;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1100px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 .list,
@@ -1036,7 +1050,7 @@ pre[class*="language-"] {
 .install-list {
   background: #002834;
   color: white;
-  margin: 1em 1em 1em -2em;
+  margin: 1em -1.3em 1em -3em;
   padding: 0.5em 1em 0.5em 3em;
 }
 
@@ -1065,10 +1079,8 @@ pre[class*="language-"] {
   color: #9ae9ff;
 }
 
-.install-list code {
-  background-color: #edf0ff;
-  margin-left: 0.5em;
-  padding: 0 0.5em;
+.install-list a:hover {
+  color: #05a536;
 }
 
 .group--h {
@@ -1108,8 +1120,6 @@ pre[class*="language-"] {
   line-height: 2.5em;
   color: #9ae9ff;
   float: right;
-  background: #002834;
-  padding: 0 2em;
   position: relative;
 }
 
@@ -1124,9 +1134,13 @@ pre[class*="language-"] {
   border-color: transparent;
   border-right-color: #002834;
   border-left-width: 0;
-  position: absolute;
-  top: 0;
-  left: -1.25em;
+  float: left;
+}
+
+.source .scut-inner {
+  background: #002834;
+  float: left;
+  padding: 0 2em;
 }
 
 .info--label {
@@ -1184,6 +1198,10 @@ pre[class*="language-"] {
   left: 0;
 }
 
+/*==========================
+HELP
+==========================*/
+
 .help {
   color: gray;
   font-weight: normal;
@@ -1193,7 +1211,7 @@ pre[class*="language-"] {
 }
 
 .help:hover {
-  color: #23c655;
+  color: #05a536;
 }
 
 .help-content-c {
@@ -1208,6 +1226,11 @@ pre[class*="language-"] {
   -webkit-transform: translateX(100%);
   -ms-transform: translateX(100%);
   transform: translateX(100%);
+}
+
+.preload .help-content-c {
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 .help-content-c.is-active {
@@ -1225,6 +1248,7 @@ pre[class*="language-"] {
   width: 30em;
   padding: 2em;
   border: 5px solid #002834;
+  display: none;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
   -webkit-transition-duration: 0.3s;
@@ -1240,7 +1264,6 @@ pre[class*="language-"] {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
-  z-index: 10;
 }
 
 .help-close {

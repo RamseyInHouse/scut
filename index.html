@@ -9,7 +9,7 @@
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="dist/main.css">
   </head>
-  <body>
+  <body class="preload" onload="document.body.className=''">
     <nav class="list" role="navigation">
   <ul class="index-1">
     <li>
@@ -252,12 +252,12 @@
 <h2><a href="#installation" id="installation" class="inner-anchor">Installation</a></h2>
 <ol>
 <li>Get the files. You have the following options:<div class="install-list"><ul>
-<li><strong>Use <a href="http://bower.io/">Bower</a> (<em>recommended</em>): <code>bower install scut --save-dev</code></strong></li>
-<li>Download <a href="https://github.com/davidtheclark/scut">the repository from Github</a>.  </li>
-<li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.</div></li>
+<li><strong>Use <a href="http://bower.io/">Bower</a> (<em>recommended</em>): <pre class="language-bash"><code>bower install scut --save-dev</code></pre></strong> This will get you the latest release without superfluous files.</li>
+<li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.</li>
+<li>Download <a href="https://github.com/davidtheclark/scut">the repository from Github</a>.</div></li>
 </ul>
 </li>
-<li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like this: <code>@import &quot;path/to/scut</code>&quot;.</li>
+<li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like this: <pre class="language-scss"><code>@import &quot;path/to/scut&quot;;</code></pre></li>
 </ol>
 <p>Make sure you import Scut <em>above</em> any other imports that will rely on Scut.</p>
 <p>Also, <em>make sure that you install and use <a href="https://github.com/ai/autoprefixer">Autoprefixer</a></em>. As mentioned above, Scut does not bother with vendor prefixes &mdash; assuming, instead, that you will use Autoprefixer to handle that messy business.</p>
@@ -282,7 +282,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd-breakpoint.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd-breakpoint.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#hd_breakpoint" id="hd_breakpoint" class="inner-anchor">
             hd breakpoint
@@ -368,14 +368,14 @@
   <ul class="refs">
     
     <li>
-      <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" target="_blank" class="refs--i">
+      <a href="https://github.com/h5bp/html5-boilerplate/issues/1127" class="refs--i">
         <p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint</p>
 
       </a>
     </li>
     
     <li>
-      <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" target="_blank" class="refs--i">
+      <a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" class="refs--i">
         <p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5)</p>
 
       </a>
@@ -389,7 +389,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hide-text.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hide-text.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#hide_text" id="hide_text" class="inner-anchor">
             hide text
@@ -461,7 +461,7 @@
   <ul class="refs">
     
     <li>
-      <a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" target="_blank" class="refs--i">
+      <a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" class="refs--i">
         <p>L. Jeffrey Zeldman: &quot;Replacing the -9999px Hack (New Image Replacement)&quot;</p>
 
       </a>
@@ -475,7 +475,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_selected.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_selected.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#selected" id="selected" class="inner-anchor">
             selected
@@ -573,7 +573,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_clearfix.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_clearfix.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#clearfix" id="clearfix" class="inner-anchor">
             clearfix
@@ -653,14 +653,14 @@
   <ul class="refs">
     
     <li>
-      <a href="http://blog.teamtreehouse.com/a-better-clearfix-with-sass" target="_blank" class="refs--i">
+      <a href="http://blog.teamtreehouse.com/a-better-clearfix-with-sass" class="refs--i">
         <p>Treehouse blog: &quot;CSS Tip: A Better Clearfix with Sass&quot;</p>
 
       </a>
     </li>
     
     <li>
-      <a href="http://css-tricks.com/snippets/css/clear-fix/" target="_blank" class="refs--i">
+      <a href="http://css-tricks.com/snippets/css/clear-fix/" class="refs--i">
         <p>CSS-Tricks catalogs various clearfix hacks</p>
 
       </a>
@@ -674,7 +674,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_fill.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_fill.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#fill" id="fill" class="inner-anchor">
             fill
@@ -767,7 +767,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-unstyled.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-unstyled.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#list_unstyled" id="list_unstyled" class="inner-anchor">
             list: unstyled
@@ -831,7 +831,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-floated.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-floated.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#list_floated" id="list_floated" class="inner-anchor">
             list: floated
@@ -924,7 +924,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-inline.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-inline.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#list_inline" id="list_inline" class="inner-anchor">
             list: inline
@@ -994,7 +994,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-punctuated.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-punctuated.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#list_punctuated" id="list_punctuated" class="inner-anchor">
             list: punctuated
@@ -1128,7 +1128,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-divided.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_list-divided.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#list_divided" id="list_divided" class="inner-anchor">
             list: divided
@@ -1266,7 +1266,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-coordinates.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-coordinates.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#positioning_coordinates" id="positioning_coordinates" class="inner-anchor">
             positioning: coordinates
@@ -1338,7 +1338,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-absolute.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-absolute.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#positioning_absolute" id="positioning_absolute" class="inner-anchor">
             positioning: absolute
@@ -1445,7 +1445,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-relative.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-relative.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#positioning_relative" id="positioning_relative" class="inner-anchor">
             positioning: relative
@@ -1533,7 +1533,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-fixed.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_positioning-fixed.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#positioning_fixed" id="positioning_fixed" class="inner-anchor">
             positioning: fixed
@@ -1598,7 +1598,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_ratio-box.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_ratio-box.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#ratio-box" id="ratio-box" class="inner-anchor">
             ratio-box
@@ -1785,7 +1785,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_size.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_size.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#size" id="size" class="inner-anchor">
             size
@@ -1882,7 +1882,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-line-height.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-line-height.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#v-center_line-height" id="v-center_line-height" class="inner-anchor">
             v-center: line-height
@@ -1966,7 +1966,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-inline-block.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-inline-block.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#v-center_inline-block" id="v-center_inline-block" class="inner-anchor">
             v-center: inline-block
@@ -2086,7 +2086,7 @@
   <ul class="refs">
     
     <li>
-      <a href="http://css-tricks.com/centering-in-the-unknown/" target="_blank" class="refs--i">
+      <a href="http://css-tricks.com/centering-in-the-unknown/" class="refs--i">
         <p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p>
 
       </a>
@@ -2100,7 +2100,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-table-display.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_v-center-table-display.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#v-center_table_display" id="v-center_table_display" class="inner-anchor">
             v-center: table display
@@ -2226,7 +2226,7 @@
   <ul class="refs">
     
     <li>
-      <a href="http://css-tricks.com/centering-in-the-unknown/" target="_blank" class="refs--i">
+      <a href="http://css-tricks.com/centering-in-the-unknown/" class="refs--i">
         <p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p>
 
       </a>
@@ -2249,7 +2249,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_circle.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_circle.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#circle" id="circle" class="inner-anchor">
             circle
@@ -2348,7 +2348,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_foursquare.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_foursquare.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#foursquare" id="foursquare" class="inner-anchor">
             foursquare
@@ -2482,7 +2482,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_triangle.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/shapes/_triangle.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#triangle" id="triangle" class="inner-anchor">
             triangle
@@ -2567,7 +2567,7 @@
 </table>
 <section class="description">
   <p>Create a wide variety of CSS triangles.</p>
-<p>(The defult placeholder extension points right.)</p>
+<p>(The default placeholder extension points right.)</p>
 <p>The mixin can produce equilateral and isosceles triangles pointing up, down, left, and right; or right triangles with their right angles in the upper right, upper left, lower right, and lower left corners.</p>
 <p>When choosing <code>width</code> and <code>height</code> values, consider how their proportion will determine the form. For example, to create an equilateral triangle, you&#39;ll want your <code>height</code> value to be ~140% of your <code>width</code> value (<code>width</code> * &radic;2). Anybody remember high school geometry?</p>
 
@@ -2671,7 +2671,7 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_font-face.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_font-face.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#font-face" id="font-face" class="inner-anchor">
             font-face
@@ -2790,7 +2790,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
   <ul class="refs">
     
     <li>
-      <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax" target="_blank" class="refs--i">
+      <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax" class="refs--i">
         <p>Fontspring: &quot;The New Bulletproof @Font-Face Syntax&quot;</p>
 
       </a>
@@ -2804,7 +2804,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_indented-paragraphs.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_indented-paragraphs.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#indented_paragraphs" id="indented_paragraphs" class="inner-anchor">
             indented paragraphs
@@ -2914,7 +2914,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_link-bottom-bordered.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_link-bottom-bordered.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#link_bottom-bordered" id="link_bottom-bordered" class="inner-anchor">
             link: bottom-bordered
@@ -3032,7 +3032,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
     <section class="doc-i">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_reverse-italics.scss" target="_blank" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_reverse-italics.scss" class="source"><span class="scut-inner">view source</span></a>
         <h3>
           <a href="#reverse_italics" id="reverse_italics" class="inner-anchor">
             reverse italics

@@ -33,10 +33,10 @@ To avoid naming collisions &mdash; since this collection may be used alongside o
 ## <a href="#installation" id="installation" class="inner-anchor">Installation</a>
 
 1. Get the files. You have the following options:<div class="install-list">
-  - **Use [Bower](http://bower.io/) (*recommended*): `bower install scut --save-dev`**
-  - Download [the repository from Github](https://github.com/davidtheclark/scut).  
-  - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).</div>
-2. Then, from your own Sass/SCSS files, import `_scut.scss`. Like this: `@import "path/to/scut`".
+  - **Use [Bower](http://bower.io/) (*recommended*): <pre class="language-bash"><code>bower install scut --save-dev</code></pre>** This will get you the latest release without superfluous files.
+   - Download [the latest release from Github](https://github.com/davidtheclark/scut/releases).
+   - Download [the repository from Github](https://github.com/davidtheclark/scut).</div>
+2. Then, from your own Sass/SCSS files, import `_scut.scss`. Like this: <pre class="language-scss"><code>@import "path/to/scut";</code></pre>
 
 Make sure you import Scut *above* any other imports that will rely on Scut.
 

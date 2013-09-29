@@ -583,7 +583,7 @@ categories:
         text: |
           Create a wide variety of CSS triangles.
 
-          (The defult placeholder extension points right.)
+          (The default placeholder extension points right.)
 
           The mixin can produce equilateral and isosceles triangles pointing up, down, left, and right; or right triangles with their right angles in the upper right, upper left, lower right, and lower left corners.
 

@@ -5,6 +5,13 @@ LAYOUT
 body {
   background-color: $c-list;
   color: $c-f-1;
+  font-size: 12px;
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  @media (min-width: 1100px) {
+    font-size: 16px;
+  }
 }
 
 .list,

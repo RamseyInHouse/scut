@@ -6,6 +6,9 @@
     text-align: center;
     margin: 2em 0;
   }
+  a:not(.inner-anchor) {
+    @extend %scut-link-bb;
+  }
 }
 
 .install-list {
@@ -22,13 +25,13 @@
   }
   background: $c-list;
   color: $c-main;
-  margin: 1em 1em 1em -2em;
+  margin: 1em -1.3em 1em -3em;
   padding: 0.5em 1em 0.5em 3em;
-  a { color: $c-zing; }
-  code {
-    background-color: $c-bg-light;
-    margin-left: 0.5em;
-    padding: 0 0.5em;
+  a {
+    color: $c-zing;
+    &:hover {
+      color: $c-link-active;
+    }
   }
 }
 
@@ -66,12 +69,15 @@
   @include scut-vcenter-lh(2.5em);
   color: $c-zing;
   float: right;
-  background: $c-list;
-  padding: 0 2em;
   position: relative;
   &:before {
     @include scut-triangle(left, 2.5em, $c-list, true);
-    @include scut-absolute(0 n n -1.25em);
+    float: left;
+  }
+  .scut-inner {
+    background: $c-list;
+    float: left;
+    padding: 0 2em;
   }
 }
 
@@ -134,6 +140,10 @@
   }
 }
 
+/*==========================
+HELP
+==========================*/
+
 .help {
   color: gray;
   &:hover {
@@ -149,6 +159,9 @@
   background: rgba(0,0,0,0.7);
 
   transition: transform 0.3s linear;
+  .preload & {
+    transition: none !important;
+  }
   transform: translateX(100%);
   &.is-active {
     transform: translateX(0);
@@ -164,6 +177,7 @@
   border: 5px solid $c-list;
   @extend %scut-vcenter-ib;
 
+  display: none;
   transition-property: opacity, transform;
   transition-duration: 0.3s;
   opacity: 0;
@@ -171,7 +185,6 @@
   &.is-active {
     opacity: 1;
     transform: scale(1);
-    z-index: 10;
   }
 }
 
