@@ -34,7 +34,7 @@ module.exports = (grunt) ->
     concat:
       all:
         options:
-          separator: grunt.util.linefeed + grunt.util.linefeed
+          stripBanners: true
         src: [
           "src/layout/_list-unstyled.scss"
           "src/layout/_list-floated.scss"
