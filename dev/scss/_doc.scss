@@ -82,9 +82,25 @@
 }
 
 .info--label {
+  cursor: pointer;
+  &:hover {
+    color: $c-link-active;
+  }
   @extend %label;
   float: left;
   width: $label-x;
+
+  &:after {
+    content: "[?]";
+    margin-left: 0.2em;
+    color: gray;
+    &:hover {
+      color: $c-link-active;
+    }
+    font-weight: normal;
+    font-size: 0.8em;
+    @include scut-relative(n n 2px n);
+  }
 }
 
 .info--value {
@@ -143,16 +159,6 @@
 /*==========================
 HELP
 ==========================*/
-
-.help {
-  color: gray;
-  &:hover {
-    color: $c-link-active;
-  }
-  font-weight: normal;
-  font-size: 0.75em;
-  @include scut-relative(n n 2px n);
-}
 
 .help-content-c {
   @include scut-fixed(0 0 0 0);
