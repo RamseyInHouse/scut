@@ -1,5 +1,6 @@
 <table class="info">
   <tbody>
+    {{#if use-name}}
     <tr>
       <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
         use-name
@@ -8,6 +9,8 @@
         <code>{{use-name}}</code>
       </td>
     </tr>
+    {{/if}}
+    {{#if type}}
     <tr>
       <td class="info--label js-help-btn" data-term="type" data-dir="open">
         type
@@ -16,6 +19,7 @@
         {{type}}
       </td>
     </tr>
+    {{/if}}
     {{#if args}}
     <tr>
       <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
