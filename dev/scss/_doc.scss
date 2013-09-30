@@ -69,15 +69,14 @@
   @include scut-vcenter-lh(2.5em);
   color: $c-zing;
   float: right;
+  overflow: hidden;
+  padding: 0 2em 0 2.5em;
   position: relative;
+  z-index: 2;
   &:before {
-    @include scut-triangle(left, 2.5em, $c-list, true);
-    float: left;
-  }
-  .scut-inner {
-    background: $c-list;
-    float: left;
-    padding: 0 2em;
+    @include scut-triangle(left, 22em, $c-list, true);
+    @include scut-absolute(-9.75em 0 n n);
+    z-index: -1;
   }
 }
 
