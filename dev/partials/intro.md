@@ -6,13 +6,15 @@ You can think of the word Scut as an acronym for ***SC***SS ***Ut***itilies.
 
 (Or you can think of the word in other ways: Scut will do your *scut work*; let Scut be your *scut monkey*. (Be careful how you use this word in polite company. To learn its many and colorful connotations, [have a look at Wiktionary](http://en.wiktionary.org/wiki/scut).))
 
+**BE AWARE:** *Scut is in early stages, under active development, **unstable** &mdash; still in SemVer v0. **Scut is wide, wide open to contributions**, and I will be building on it myself. New features will be added and old features might change. So if a part of Scut that you had been using suddenly doesn't work, please check this documentation to see what changed.*
+
 ### What makes Scut unique?
 
-#### Flexible abstractions of common patterns
+#### Flexible abstractions of common patterns &mdash; nothing more
 
-Scut doesn't apply any default colors, sizes, spacing, etc. It strives to be as un-opinionated as possible, offering abstract patterns that you can work into your own design without overriding anything or setting any site-wide parameters.
+Scut doesn't require additional setup and processessing, doesn't apply any default sizes, spacing, colors, etc. It strives to be as simple and un-opinionated as possible, offering abstract patterns that you can work into your own design without having to worry about overriding anything or setting-up any site-wide parameters.
 
-The only goal is to save you from typing the same few lines of code over and over again to achieve the same effect in different places.
+Scut's primary goal is to save you from typing the same few lines of styling code over and over again to achieve the same effect in different places.
 
 #### No vendor prefixes
 
@@ -48,12 +50,16 @@ Having imported `_scut.scss`, use the mixins and placeholders described below in
 
 If you have any questions about how to use Sass/SCSS, refer to [the thorough Sass documentation](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html).
 
-If the Scut documentation below is inadequate and/or upsetting, please [file an issue](https://github.com/davidtheclark/scut/issues) or [drop me a line](https://github.com/davidtheclark).
+If the Scut documentation below is inadequate and/or upsetting, please [file an issue](https://github.com/davidtheclark/scut/issues) or [contact me](https://github.com/davidtheclark).
 
-Again, *make sure that you install and use [Autoprefixer](https://github.com/ai/autoprefixer)* if you want vendor prefixes (which you do). Otherwise your compiled CSS will have none.
+If you have been using Scut, you get a new version and something breaks, please check the documentation again to see if you utility has changed slightly. **Scut is still in the unstable stages of v0**, so things might change.
+
+And again, *make sure that you install and use [Autoprefixer](https://github.com/ai/autoprefixer)* if you want vendor prefixes (which you do). Otherwise your compiled CSS will have none.
 
 ## <a href="#contributing" id="contributing" class="inner-anchor">Contributing</a>
 
-Please do. [Visit the repository on Github](https://github.com/davidtheclark/scut) and contribute according to the usual Github methods.
+Please do!
 
-If you have any questions, please [file an issue](https://github.com/davidtheclark/scut/issues) or [drop me a line](https://github.com/davidtheclark).
+Just [visit the repository on Github](https://github.com/davidtheclark/scut) and contribute according to the usual Github methods.
+
+If you have any questions, please [file an issue](https://github.com/davidtheclark/scut/issues) or [contact me](https://github.com/davidtheclark).
