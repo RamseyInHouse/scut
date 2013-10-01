@@ -8,6 +8,10 @@ You can think of the word Scut as an acronym for ***SC***SS ***Ut***itilies.
 
 **BE AWARE:** *Scut is in early stages, under active development, **unstable** &mdash; still in SemVer v0. **Scut is wide, wide open to contributions**, and I will be building on it myself. New features will be added and old features might change. So if a part of Scut that you had been using suddenly doesn't work, please check this documentation to see what changed.*
 
+<a href="https://github.com/davidtheclark/scut/" class="intro-btn">Visit the Github repository</a>
+
+<a href="http://codepen.io/davidtheclark/pen/yCadJ" target="_blank" class="intro-btn">Try out Scut at the Scut Playground on Codepen</a>
+
 ### What makes Scut unique?
 
 #### Flexible abstractions of common patterns &mdash; nothing more
