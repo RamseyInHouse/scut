@@ -2,7 +2,7 @@
 
 **&mdash; a collection of Sass (SCSS) mixins and placeholders for common styling patterns.**
 
-> [Please visit the complete documentation here.](http://davidtheclark.github.io/scut/)
+> [Please visit the complete documentation here:<br>http://davidtheclark.github.io/scut/](http://davidtheclark.github.io/scut/)
 
 Everything is explained there.
 
