@@ -3,14 +3,14 @@ HIDE TEXT
 http://davidtheclark.github.io/scut/#hide_text
 ==========================*/
 
-@mixin scut-hide-text {
+  @mixin scut-hide-text {
 
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
 
-}
+  }
 
-%scut-hide-text {
-  @include scut-hide-text;
-}
+  %scut-hide-text {
+    @include scut-hide-text;
+  }

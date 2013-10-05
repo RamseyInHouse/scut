@@ -11,18 +11,18 @@ module.exports = (grunt) ->
     autoprefixer:
       test:
         files:
-          "test/main.css": "test/test-style.css"
+          "test/main.css": "test/main.css"
 
-    jade:
+    assemble:
       test:
         options:
-          pretty: true
+          partials: ["test/templates/partials/*.hbs"]
+          layout: "test/templates/layouts/base.hbs"
         files: [
           expand: true
-          cwd: "test/jade"
-          src: ["*.jade"]
+          cwd: "test/templates/pages/"
+          src: ["*.hbs"]
           dest: "test/"
-          ext: ".html"
         ]
 
     connect:
@@ -54,28 +54,28 @@ module.exports = (grunt) ->
       testStyle:
         files: [
           "test/scss/*.scss"
-          "test/../src/*.scss"
-          "test/../src/**/*.scss"
+          "test/scss/**/*.scss"
+          "src/**/*.scss"
         ]
         tasks: ["style"]
       testMarkup:
         files: [
-          "test/jade/*.jade"
-          "test/jade/includes/*.jade"
+          "test/templates/**/*.hbs"
         ]
-        tasks: ["jade:test"]
+        tasks: ["assemble:test"]
+
 
   grunt.loadNpmTasks "grunt-contrib-sass"
-  grunt.loadNpmTasks "grunt-contrib-jade"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-autoprefixer"
+  grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", ["connect", "watch"]
   grunt.registerTask "style", ["sass:test", "autoprefixer:test"]
   grunt.registerTask "test", [
-    "jade:test"
+    "assemble:test"
     "style"
   ]
   grunt.registerTask "build", ["concat:all"]

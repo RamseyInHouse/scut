@@ -1,0 +1,19 @@
+.hanging-indent {
+  margin: 1em 0;
+  p {
+    width: 10em;
+  }
+
+  &.m-1 {
+    p {
+      @extend %scut-hanging-indent;
+    }
+  }
+
+  &.m-2 {
+    p {
+      @include scut-hanging-indent(2em);
+    }
+  }
+
+}

@@ -2,7 +2,7 @@
 LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
-Depends on _list-floated.scss
+Depends on `list-floated`, which depends in turn on `list-unstyled`.
 ==========================*/
 
 @mixin scut-list-divided (

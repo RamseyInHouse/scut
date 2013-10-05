@@ -1,5 +1,20 @@
+// Scut files
 @import "../../scut-reset";
 @import "../../scut";
 
-@import "test-sheet-styles";
-@import "test";
+// Base styles for the test docs
+@import "test-doc-styles";
+
+
+/*==========================
+
+@import test stylesheets below.
+
+Add yours to the bottom of the list.
+
+They should all be located within the "tests" subdirectory, like this:
+`test/scss/tests/_your-test-stylesheet.scss`.
+
+==========================*/
+
+@import "tests/hanging-indent";

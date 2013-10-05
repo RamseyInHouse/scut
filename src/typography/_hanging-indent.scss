@@ -1,0 +1,17 @@
+/*==========================
+HANGING INDENT
+
+==========================*/
+
+@mixin scut-hanging-indent (
+  $indent: 1em
+) {
+
+  text-indent: -$indent;
+  padding-left: $indent;
+
+}
+
+%scut-hanging-indent {
+  @include scut-hanging-indent;
+}
