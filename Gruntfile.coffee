@@ -56,6 +56,7 @@ module.exports = (grunt) ->
           "test/scss/*.scss"
           "test/scss/**/*.scss"
           "src/**/*.scss"
+          "*.scss"
         ]
         tasks: ["style"]
       testMarkup:
@@ -72,10 +73,18 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "assemble"
 
-  grunt.registerTask "dev", ["connect", "watch"]
-  grunt.registerTask "style", ["sass:test", "autoprefixer:test"]
+  grunt.registerTask "dev", [
+    "connect"
+    "watch"
+  ]
+  grunt.registerTask "style", [
+    "sass:test"
+    "autoprefixer:test"
+  ]
   grunt.registerTask "test", [
     "assemble:test"
     "style"
   ]
-  grunt.registerTask "build", ["concat:all"]
+  grunt.registerTask "build", [
+    "concat:all"
+  ]

@@ -202,6 +202,32 @@ HANGING INDENT
   padding-left: 1em;
 }
 
+.header-lined.m-1 {
+  overflow: hidden;
+  text-align: center;
+}
+
+.header-lined.m-1:before,
+.header-lined.m-1:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.header-lined.m-1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.header-lined.m-1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
 /*==========================
 INDENTED PARAGRAPHS
 http://davidtheclark.github.io/scut/#indented_paragraphs
@@ -283,4 +309,78 @@ They should all be located within the "tests" subdirectory, like this:
 .hanging-indent.m-2 p {
   text-indent: -2em;
   padding-left: 2em;
+}
+
+.header-lined {
+  background: #eee;
+  margin-bottom: 1em;
+}
+
+.header-lined.m-1 {
+  font-size: 3em;
+}
+
+.header-lined.m-2 {
+  overflow: hidden;
+  text-align: center;
+  font-size: 2em;
+  width: 20em;
+}
+
+.header-lined.m-2:before,
+.header-lined.m-2:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: double;
+  border-top-width: 5px;
+  border-top-color: blue;
+  bottom: 2px;
+}
+
+.header-lined.m-2:before {
+  right: 20px;
+  margin-left: -50%;
+}
+
+.header-lined.m-2:after {
+  left: 20px;
+  margin-right: -50%;
+}
+
+.header-lined.m-3 {
+  overflow: hidden;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2;
+  width: 10em;
+}
+
+.header-lined.m-3:before,
+.header-lined.m-3:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: double;
+  border-top-width: 4px;
+  border-top-color: blue;
+  bottom: 3px;
+  height: 10px;
+  border-bottom-style: double;
+  border-bottom-width: 4px;
+  border-bottom-color: blue;
+}
+
+.header-lined.m-3:before {
+  right: 30px;
+  margin-left: -50%;
+}
+
+.header-lined.m-3:after {
+  left: 30px;
+  margin-right: -50%;
 }
