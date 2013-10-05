@@ -1,29 +1,18 @@
 ---
-layout: false
-do-not-collect: true
+title: Test Index
+index: true
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Scut Test Index</title>
-    <link rel="stylesheet" href="main.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <h1>The Scut Test Index</h1>
-      <ul class="pages">
-        {{#each pages}}
-        {{#if data.do-not-collect}}
-        {{else}}
-        <li>
-          <a href="{{this.basename}}.html" class="pages-i">
-            {{data.title}}
-          </a>
-        </li>
-        {{/if}}
-        {{/each}}
-      </ul>
-    </div>
-  </body>
-</html>
+
+<h1>The Scut Test Index</h1>
+<ul class="pages">
+  {{#each pages}}
+  {{#unless data.index}}
+  <li>
+    <a href="{{this.basename}}.html" class="pages-i">
+      {{data.title}}
+    </a>
+  </li>
+  {{/unless}}
+  {{/each}}
+</ul>

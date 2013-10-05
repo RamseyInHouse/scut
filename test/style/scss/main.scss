@@ -1,0 +1,20 @@
+// Scut files
+@import "../../../scut-reset";
+@import "../../../scut";
+
+// Base styles for the test docs
+@import "test-doc-styles";
+
+
+/*==========================
+
+Test SCSS files should all be located within the "tests" subdirectory,
+like this:
+`test/style/scss/tests/_your-test-stylesheet.scss`.
+
+These are automatically concatenated into `_tests.scss`,
+which is imported below. (You do not need to import new tests.)
+
+==========================*/
+
+@import "tests.scss";

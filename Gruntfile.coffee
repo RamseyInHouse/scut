@@ -3,15 +3,45 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON "package.json"
 
+
+    concat:
+      options:
+        separator: grunt.util.linefeed + grunt.util.linefeed
+
+# This one builds Scut!
+
+      all:
+        src: [
+          # Utilities that are dependencies for others
+          "src/layout/_list-unstyled.scss"
+          "src/layout/_list-floated.scss"
+          "src/layout/_positioning-coordinates.scss"
+
+          # The rest of them
+          "src/**/*.scss"
+        ]
+        dest: "_scut.scss"
+
+
+# Everything else below (except watch:scut) is for testing.
+
+      test:
+        options:
+          banner: "/*==========================#{grunt.util.linefeed}DO NOT ALTER THIS DOCUMENT!#{grunt.util.linefeed}#{grunt.util.linefeed}It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)#{grunt.util.linefeed}==========================*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+        src: ["test/style/scss/tests/*.scss"]
+        dest: "test/style/scss/_tests.scss"
+
     sass:
       test:
+        options:
+          loadPath: ["test/style/scss/test/*.scss"]
         files:
-          "test/main.css": "test/scss/main.scss"
+          "test/style/css/main.css": "test/style/scss/main.scss"
 
     autoprefixer:
       test:
         files:
-          "test/main.css": "test/main.css"
+          "test/style/css/main.css": "test/style/css/main.css"
 
     assemble:
       test:
@@ -25,38 +55,24 @@ module.exports = (grunt) ->
           dest: "test/"
         ]
 
-    connect:
-      server:
-        options:
-          port: 9000
-          base: "test/"
-
-    concat:
-      all:
-        options:
-          stripBanners: true
-        src: [
-          "src/layout/_list-unstyled.scss"
-          "src/layout/_list-floated.scss"
-          "src/layout/_positioning-coordinates.scss"
-          "src/**/*.scss"
-        ]
-        dest: "_scut-all.scss"
-
     watch:
       livereload:
         options:
           livereload: true
         files: [
-          "test/*.css"
+          "test/style/css/*.css"
           "test/*.html"
         ]
+      scut:
+        files: [
+          "src/**/*.scss"
+          "_scut-reset.scss"
+        ]
+        tasks: ["build", "test"]
       testStyle:
         files: [
-          "test/scss/*.scss"
-          "test/scss/**/*.scss"
-          "src/**/*.scss"
-          "*.scss"
+          "test/style/scss/*.scss"
+          "test/style/scss/**/*.scss"
         ]
         tasks: ["style"]
       testMarkup:
@@ -65,6 +81,11 @@ module.exports = (grunt) ->
         ]
         tasks: ["assemble:test"]
 
+    connect:
+      server:
+        options:
+          port: 9000
+          base: "test/"
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -78,6 +99,7 @@ module.exports = (grunt) ->
     "watch"
   ]
   grunt.registerTask "style", [
+    "concat:test"
     "sass:test"
     "autoprefixer:test"
   ]

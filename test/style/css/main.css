@@ -58,6 +58,29 @@ p:last-of-type {
 }
 
 /*==========================
+LIST: UNSTYLED
+http://davidtheclark.github.io/scut/#list_unstyled
+==========================*/
+
+.pages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*==========================
+LIST: FLOATED
+http://davidtheclark.github.io/scut/#list_floated
+
+Depends on `list-unstyled`.
+==========================*/
+
+/*==========================
+POSITIONING: COORDINATES
+http://davidtheclark.github.io/scut/#positioning_coordinates
+==========================*/
+
+/*==========================
 HD BREAKPOINT
 http://davidtheclark.github.io/scut/#hd_breakpoint
 ==========================*/
@@ -78,59 +101,15 @@ http://davidtheclark.github.io/scut/#clearfix
 ==========================*/
 
 /*==========================
-POSITIONING: COORDINATES
-http://davidtheclark.github.io/scut/#positioning_coordinates
-==========================*/
-
-/*==========================
-POSITIONING: ABSOLUTE
-http://davidtheclark.github.io/scut/#positioning_absolute
-
-Depends on `positioning-coordinates`.
-==========================*/
-
-/*==========================
-POSITIONING: RELATIVE
-http://davidtheclark.github.io/scut/#positioning_relative
-
-Depends on `positioning-coordinates`.
-==========================*/
-
-/*==========================
-POSITIONING: FIXED
-http://davidtheclark.github.io/scut/#positioning_fixed
-
-Depends on `positioning-coordinates`.
-==========================*/
-
-/*==========================
 FILL
 http://davidtheclark.github.io/scut/#fill
 ==========================*/
-
-/*==========================
-LIST: UNSTYLED
-http://davidtheclark.github.io/scut/#list_unstyled
-==========================*/
-
-.pages {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
 
 /*==========================
 LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
 Depends on `list-floated`, which depends in turn on `list-unstyled`.
-==========================*/
-
-/*==========================
-LIST: FLOATED
-http://davidtheclark.github.io/scut/#list_floated
-
-Depends on `list-unstyled`.
 ==========================*/
 
 /*==========================
@@ -145,6 +124,27 @@ LIST: PUNCTUATED
 http://davidtheclark.github.io/scut/#list_punctuated
 
 Depends on `list-unstyled`.
+==========================*/
+
+/*==========================
+POSITIONING: ABSOLUTE
+http://davidtheclark.github.io/scut/#positioning_absolute
+
+Depends on `positioning-coordinates`.
+==========================*/
+
+/*==========================
+POSITIONING: FIXED
+http://davidtheclark.github.io/scut/#positioning_fixed
+
+Depends on `positioning-coordinates`.
+==========================*/
+
+/*==========================
+POSITIONING: RELATIVE
+http://davidtheclark.github.io/scut/#positioning_relative
+
+Depends on `positioning-coordinates`.
 ==========================*/
 
 /*==========================
@@ -289,13 +289,19 @@ h3 {
 
 /*==========================
 
-@import test stylesheets below.
+Test SCSS files should all be located within the "tests" subdirectory,
+like this:
+`test/style/scss/tests/_your-test-stylesheet.scss`.
 
-Add yours to the bottom of the list.
+These are automatically concatenated into `_tests.scss`,
+which is imported below. (You do not need to import new tests.)
 
-They should all be located within the "tests" subdirectory, like this:
-`test/scss/tests/_your-test-stylesheet.scss`.
+==========================*/
 
+/*==========================
+DO NOT ALTER THIS DOCUMENT!
+
+It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)
 ==========================*/
 
 .hanging-indent {
