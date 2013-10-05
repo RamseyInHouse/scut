@@ -1,3 +1,6 @@
 node_modules
 .sass-cache
 _scut-all.scss
+
+style/css/main.css
+style/scss/_tests.scss

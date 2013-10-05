@@ -1,0 +1,19 @@
+.key-val {
+  width: 400px;
+
+  &.m-1 {
+    @include scut-key-val;
+  }
+
+  &.m-2 {
+    @include scut-key-val("\2014", 1em, 2em, 1em, 1em);
+  }
+
+  &.m-3 {
+    @include scut-key-val($indent: 4em, $spacing: 0.3em);
+    dt {
+      font-weight: bold;
+    }
+  }
+
+}

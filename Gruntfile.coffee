@@ -10,7 +10,7 @@ module.exports = (grunt) ->
 
 # This one builds Scut!
 
-      all:
+      scut:
         src: [
           # Utilities that are dependencies for others
           "src/layout/_list-unstyled.scss"
@@ -69,7 +69,10 @@ module.exports = (grunt) ->
           "src/**/*.scss"
           "_scut-reset.scss"
         ]
-        tasks: ["build", "test"]
+        tasks: [
+          "build"
+          "test"
+        ]
       testStyle:
         files: [
           "test/style/scss/*.scss"
@@ -108,3 +111,4 @@ module.exports = (grunt) ->
     "assemble:test"
     "style"
   ]
+  grunt.registerTask "build", ["concat:scut"]
