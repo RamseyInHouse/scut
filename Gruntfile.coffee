@@ -16,6 +16,7 @@ module.exports = (grunt) ->
           "src/layout/_list-unstyled.scss"
           "src/layout/_list-floated.scss"
           "src/layout/_positioning-coordinates.scss"
+          "src/functions/_strip-unit.scss"
 
           # The rest of them
           "src/**/*.scss"
@@ -106,7 +107,4 @@ module.exports = (grunt) ->
   grunt.registerTask "test", [
     "assemble:test"
     "style"
-  ]
-  grunt.registerTask "build", [
-    "concat:all"
   ]

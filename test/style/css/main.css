@@ -81,6 +81,17 @@ http://davidtheclark.github.io/scut/#positioning_coordinates
 ==========================*/
 
 /*==========================
+STRIP UNIT
+
+==========================*/
+
+/*==========================
+PIXELS TO EMS
+
+Depends on the function `scut-strip-unit`.
+==========================*/
+
+/*==========================
 HD BREAKPOINT
 http://davidtheclark.github.io/scut/#hd_breakpoint
 ==========================*/
@@ -389,4 +400,43 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .header-lined.m-3:after {
   left: 30px;
   margin-right: -50%;
+}
+
+.pixels-ems {
+  background: gray;
+  margin-bottom: 1em;
+}
+
+.pixels-ems.m-1 {
+  width: 18.75em;
+}
+
+.pixels-ems.m-2 {
+  width: 300px;
+}
+
+.pixels-ems.m-3,
+.pixels-ems.m-4 {
+  font-size: 20px;
+}
+
+.pixels-ems.m-3 {
+  width: 20em;
+}
+
+.pixels-ems.m-4 {
+  width: 400px;
+}
+
+.pixels-ems.m-5,
+.pixels-ems.m-6 {
+  font-size: 2em;
+}
+
+.pixels-ems.m-5 {
+  width: 15.625em;
+}
+
+.pixels-ems.m-6 {
+  width: 500px;
 }

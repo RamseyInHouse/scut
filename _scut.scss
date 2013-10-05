@@ -85,6 +85,42 @@ http://davidtheclark.github.io/scut/#positioning_coordinates
 }
 
 /*==========================
+STRIP UNIT
+
+==========================*/
+
+@function scut-strip-unit(
+  $num
+) {
+
+  @return $num / ($num * 0 + 1);
+
+}
+
+/*==========================
+PIXELS TO EMS
+
+Depends on the function `scut-strip-unit`.
+==========================*/
+
+@function scut-em (
+  $pixels,
+  $base: 16
+) {
+
+  $divisor: null;
+
+  @if unit($base) == em {
+    $divisor: scut-strip-unit($base) * 16;
+  } @else {
+    $divisor: scut-strip-unit($base);
+  }
+
+  @return ($pixels / $divisor) * 1em;
+
+}
+
+/*==========================
 HD BREAKPOINT
 http://davidtheclark.github.io/scut/#hd_breakpoint
 ==========================*/
