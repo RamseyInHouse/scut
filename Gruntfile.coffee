@@ -3,7 +3,6 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON "package.json"
 
-
     concat:
       options:
         separator: grunt.util.linefeed + grunt.util.linefeed
@@ -111,4 +110,5 @@ module.exports = (grunt) ->
     "assemble:test"
     "style"
   ]
-  grunt.registerTask "build", ["concat:scut"]
+  grunt.registerTask "build", ["concat:scut", "test"]
+  grunt.registerTask "default", [""]

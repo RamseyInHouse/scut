@@ -1,7 +1,8 @@
 {
   "name": "scut",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "SCSS utilities",
+  "keywords": [],
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.2.20130806",

@@ -121,6 +121,63 @@ Depends on the function `scut-strip-unit`.
 }
 
 /*==========================
+COLOR HOVER
+
+
+==========================*/
+
+@mixin scut-color-hover (
+  $non-hover,
+  $hover,
+  $duration: 0,
+  $bg: false
+) {
+
+  $props: null;
+  $non-hover-list: type-of($non-hover) == list;
+
+  @if $non-hover-list {
+    color: nth($non-hover, 1);
+    background-color: nth($non-hover, 2);
+    $props: background-color, color;
+  }
+
+  @else if $bg and not $non-hover-list {
+    background-color: $non-hover;
+    $props: background-color;
+  }
+
+  @else {
+    color: $non-hover;
+    $props: color;
+  }
+
+  @if $duration != 0 {
+    transition-property: $props;
+    transition-duration: $duration;
+  }
+
+  &:hover {
+
+   $hover-list: type-of($hover) == list;
+
+    @if $hover-list {
+      color: nth($hover, 1);
+      background-color: nth($hover, 2);
+    }
+
+    @else if $bg and not $hover-list {
+      background-color: $hover;
+    }
+
+    @else {
+      color: $hover;
+    }
+  }
+
+}
+
+/*==========================
 HD BREAKPOINT
 http://davidtheclark.github.io/scut/#hd_breakpoint
 ==========================*/
@@ -153,6 +210,23 @@ http://davidtheclark.github.io/scut/#hide_text
   %scut-hide-text {
     @include scut-hide-text;
   }
+
+/*==========================
+OPACITY
+
+http://css-tricks.com/snippets/css/cross-browser-opacity/
+==========================*/
+
+@mixin scut-opacity (
+  $decimal
+) {
+
+  $ms-value: $decimal * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
+  opacity: $decimal;
+
+}
+
 
 /*==========================
 SELECTED
