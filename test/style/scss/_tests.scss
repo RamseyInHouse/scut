@@ -31,6 +31,43 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 
 }
 
+.css-char {
+
+margin-bottom: 1em;
+
+&:after {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+// insert list here, then
+// replace ^(\$scut-)(.*?)(:.*;)$
+// with &.m-$2:after { content: $scut-$2; }
+
+&.m-amp:after { content: $scut-amp; }
+&.m-gt:after { content: $scut-gt; }
+&.m-lt:after { content: $scut-lt; }
+&.m-nbsp:after { content: $scut-nbsp; }
+&.m-quot:after { content: $scut-quot; }
+&.m-sect:after { content: $scut-sect; }
+&.m-laquo:after { content: $scut-laquo; }
+&.m-raquo:after { content: $scut-raquo; }
+&.m-para:after { content: $scut-para; }
+&.m-middot:after { content: $scut-middot; }
+&.m-oslash:after { content: $scut-oslash; }
+&.m-mdash:after { content: $scut-mdash; }
+&.m-ndash:after { content: $scut-ndash; }
+&.m-lsquo:after { content: $scut-lsquo; }
+&.m-rsquo:after { content: $scut-rsquo; }
+&.m-lsaquo:after { content: $scut-lsaquo; }
+&.m-rsaquo:after { content: $scut-rsaquo; }
+&.m-ldquo:after { content: $scut-ldquo; }
+&.m-rdquo:after { content: $scut-rdquo; }
+&.m-bull:after { content: $scut-bull; }
+&.m-hellip:after { content: $scut-hellip; }
+
+}
+
 .hanging-indent {
   margin: 1em 0;
   p {
