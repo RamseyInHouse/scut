@@ -253,6 +253,29 @@ http://davidtheclark.github.io/scut/#selected
 
 }
 
+@mixin scut-center-absolutely (
+  $dimensions
+) {
+
+  $width: nth($dimensions, 1);
+  $height: nth($dimensions, 2);
+
+  position: absolute;
+
+  @if $width != n {
+    width: $width;
+    left: 50%;
+    margin-left: (-$width / 2);
+  }
+
+  @if $height != n {
+    height: $height;
+    top: 50%;
+    margin-top: (-$height / 2);
+  }
+
+}
+
 /*==========================
 CLEARFIX
 http://davidtheclark.github.io/scut/#clearfix
@@ -524,18 +547,6 @@ http://css-tricks.com/snippets/css/sticky-footer/
   #{$footer} {
     height: $height;
   }
-
-}
-
-@mixin scut-vcenter-abs (
-  $height
-) {
-
-  height: $height;
-
-  position: absolute;
-  top: 50%;
-  margin-top: (-$height / 2);
 
 }
 

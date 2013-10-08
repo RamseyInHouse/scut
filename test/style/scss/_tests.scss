@@ -4,6 +4,17 @@ DO NOT ALTER THIS DOCUMENT!
 It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)
 ==========================*/
 
+.vcenter-abs-c {
+  border: 5px solid;
+  @include scut-size(20em);
+  position: relative;
+}
+
+.vcenter-abs {
+  @include scut-center-absolutely(7em 30px);
+  background: gray;
+}
+
 .color-hover {
   display: inline-block;
   padding: 1em 2em;
@@ -147,17 +158,6 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .scut-sticky {
   background: black;
   color: white;
-}
-
-.vcenter-abs-c {
-  border: 5px solid;
-  @include scut-size(20em);
-  position: relative;
-}
-
-.vcenter-abs {
-  @include scut-vcenter-abs(10em);
-  background: gray;
 }
 
 .css-char {

@@ -112,4 +112,4 @@ module.exports = (grunt) ->
     "style"
   ]
   grunt.registerTask "build", ["concat:scut", "test"]
-  grunt.registerTask "default", [""]
+  grunt.registerTask "default", ["build"]
