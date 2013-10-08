@@ -12,8 +12,16 @@
       <h1>A Scut Test: {{title}}</h1>
       {{/unless}}
 
+      {{#if footer}}
+      <!-- Sticky footer needs to be placed outside the .wrapper. -->
+      </div>
+      {{/if}}
+
       {{>body}}
 
+    {{#unless footer}}
     </div>
+    {{/unless}}
+
   </body>
 </html>

@@ -82,7 +82,7 @@ module.exports = (grunt) ->
         files: [
           "test/templates/**/*.hbs"
         ]
-        tasks: ["assemble:test"]
+        tasks: ["newer:assemble:test"]
 
     connect:
       server:
@@ -95,6 +95,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-autoprefixer"
+  grunt.loadNpmTasks "grunt-newer"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", [
@@ -107,7 +108,7 @@ module.exports = (grunt) ->
     "autoprefixer:test"
   ]
   grunt.registerTask "test", [
-    "assemble:test"
+    "newer:assemble:test"
     "style"
   ]
   grunt.registerTask "build", ["concat:scut", "test"]
