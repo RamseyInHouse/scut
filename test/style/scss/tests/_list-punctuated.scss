@@ -1,0 +1,7 @@
+.list-punctuated {
+
+  &.v-1 {
+    @extend %scut-list-comma;
+  }
+
+}

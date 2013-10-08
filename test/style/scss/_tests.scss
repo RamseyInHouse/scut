@@ -106,6 +106,46 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 
 }
 
+.list-divided {
+
+  &.v-1 {
+    @extend %scut-list-bar;
+  }
+
+  &.v-2 {
+    @include scut-list-divided("+", 2em, right);
+  }
+
+  &.v-3 {
+    @include scut-list-divided("//", 10px, right);
+  }
+
+}
+
+.list-floated {
+
+  &.v-1 {
+    @include scut-list-floated(1em);
+  }
+
+  &.v-2 {
+    @include scut-list-floated(30px);
+  }
+
+  &.v-3 {
+    @include scut-list-floated(10px, right);
+  }
+
+}
+
+.list-punctuated {
+
+  &.v-1 {
+    @extend %scut-list-comma;
+  }
+
+}
+
 .opacity-container {
   @include scut-size(10em);
   border: 5px solid;

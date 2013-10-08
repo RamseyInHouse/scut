@@ -1,0 +1,15 @@
+.list-floated {
+
+  &.v-1 {
+    @include scut-list-floated(1em);
+  }
+
+  &.v-2 {
+    @include scut-list-floated(30px);
+  }
+
+  &.v-3 {
+    @include scut-list-floated(10px, right);
+  }
+
+}

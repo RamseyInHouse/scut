@@ -90,8 +90,13 @@ module.exports = (grunt) ->
           port: 9000
           base: "test/"
 
+    clean:
+      html:
+        src: ["test/*.html"]
+
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
+  grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-autoprefixer"
@@ -111,5 +116,9 @@ module.exports = (grunt) ->
     "newer:assemble:test"
     "style"
   ]
-  grunt.registerTask "build", ["concat:scut", "test"]
+  grunt.registerTask "build", [
+    "clean:html"
+    "concat:scut"
+    "test"
+  ]
   grunt.registerTask "default", ["build"]

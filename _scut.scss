@@ -19,10 +19,12 @@ http://davidtheclark.github.io/scut/#list_unstyled
 LIST: FLOATED
 http://davidtheclark.github.io/scut/#list_floated
 
-Depends on `list-unstyled`.
+Depends on `list-unstyled` and `clearfix`.
 ==========================*/
 
 @mixin scut-list-floated (
+  $margin: false,
+  $dir: left,
   $in-media: true
 ) {
 
@@ -36,13 +38,19 @@ Depends on `list-unstyled`.
   }
 
   & > li {
-    float: left;
+    float: $dir;
+  }
+
+  @if $margin {
+    & > li + li {
+      margin-#{$dir}: $margin;
+    }
   }
 
 }
 
 %scut-list-floated {
-  @include scut-list-floated(false);
+  @include scut-list-floated($in-media: false);
 }
 
 
@@ -108,13 +116,8 @@ Depends on the function `scut-strip-unit`.
   $base: 16
 ) {
 
-  $divisor: null;
-
-  @if unit($base) == em {
-    $divisor: scut-strip-unit($base) * 16;
-  } @else {
-    $divisor: scut-strip-unit($base);
-  }
+  $multiplier: if(unit($base) == em, 16, 1);
+  $divisor: scut-strip-unit($base) * $multiplier;
 
   @return ($pixels / $divisor) * 1em;
 
@@ -318,28 +321,23 @@ http://davidtheclark.github.io/scut/#fill
 LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
-Depends on `list-floated`, which depends in turn on `list-unstyled`.
+Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
 ==========================*/
 
 @mixin scut-list-divided (
   $divider: "|",
   $gap: 0.5em,
-  $in-media: false
+  $dir: left
 ) {
 
-  @if $in-media {
-    @include scut-list-floated;
-  }
-  @else {
-    @extend %scut-list-floated;
-  }
+  @include scut-list-floated($dir: $dir);
 
-  & > li {
-    &:not(:last-child):after {
-      content: $divider;
-      margin-left: $gap;
-      margin-right: $gap;
-    }
+  $psuedo: if($dir == left, 'before', 'after');
+
+  & > li + li:#{$psuedo} {
+    content: $divider;
+    margin-left: $gap;
+    margin-right: $gap;
   }
 
 }

@@ -62,7 +62,8 @@ LIST: UNSTYLED
 http://davidtheclark.github.io/scut/#list_unstyled
 ==========================*/
 
-.pages {
+.pages,
+.list-punctuated.v-1 {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -72,7 +73,7 @@ http://davidtheclark.github.io/scut/#list_unstyled
 LIST: FLOATED
 http://davidtheclark.github.io/scut/#list_floated
 
-Depends on `list-unstyled`.
+Depends on `list-unstyled` and `clearfix`.
 ==========================*/
 
 /*==========================
@@ -140,8 +141,30 @@ http://davidtheclark.github.io/scut/#fill
 LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
-Depends on `list-floated`, which depends in turn on `list-unstyled`.
+Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
 ==========================*/
+
+.list-divided.v-1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-divided.v-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-divided.v-1 > li {
+  float: left;
+}
+
+.list-divided.v-1 > li + li:before {
+  content: "|";
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
 
 /*==========================
 LIST: INLINE
@@ -160,6 +183,14 @@ http://davidtheclark.github.io/scut/#list_punctuated
 
 Depends on `list-unstyled`.
 ==========================*/
+
+.list-punctuated.v-1 > li {
+  display: inline;
+}
+
+.list-punctuated.v-1 > li:not(:last-child):after {
+  content: ", ";
+}
 
 /*==========================
 POSITIONING: ABSOLUTE
@@ -567,6 +598,110 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 
 .key-val.m-3 dt {
   font-weight: bold;
+}
+
+.list-divided.v-2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-divided.v-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-divided.v-2 > li {
+  float: right;
+}
+
+.list-divided.v-2 > li + li:after {
+  content: "+";
+  margin-left: 2em;
+  margin-right: 2em;
+}
+
+.list-divided.v-3 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-divided.v-3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-divided.v-3 > li {
+  float: right;
+}
+
+.list-divided.v-3 > li + li:after {
+  content: "//";
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.list-floated.v-1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-floated.v-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-floated.v-1 > li {
+  float: left;
+}
+
+.list-floated.v-1 > li + li {
+  margin-left: 1em;
+}
+
+.list-floated.v-2 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-floated.v-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-floated.v-2 > li {
+  float: left;
+}
+
+.list-floated.v-2 > li + li {
+  margin-left: 30px;
+}
+
+.list-floated.v-3 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.list-floated.v-3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.list-floated.v-3 > li {
+  float: right;
+}
+
+.list-floated.v-3 > li + li {
+  margin-right: 10px;
 }
 
 .opacity-container {

@@ -1,0 +1,15 @@
+.list-divided {
+
+  &.v-1 {
+    @extend %scut-list-bar;
+  }
+
+  &.v-2 {
+    @include scut-list-divided("+", 2em, right);
+  }
+
+  &.v-3 {
+    @include scut-list-divided("//", 10px, right);
+  }
+
+}

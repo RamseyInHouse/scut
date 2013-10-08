@@ -9,13 +9,8 @@ Depends on the function `scut-strip-unit`.
   $base: 16
 ) {
 
-  $divisor: null;
-
-  @if unit($base) == em {
-    $divisor: scut-strip-unit($base) * 16;
-  } @else {
-    $divisor: scut-strip-unit($base);
-  }
+  $multiplier: if(unit($base) == em, 16, 1);
+  $divisor: scut-strip-unit($base) * $multiplier;
 
   @return ($pixels / $divisor) * 1em;
 
