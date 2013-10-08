@@ -527,6 +527,18 @@ http://css-tricks.com/snippets/css/sticky-footer/
 
 }
 
+@mixin scut-vcenter-abs (
+  $height
+) {
+
+  height: $height;
+
+  position: absolute;
+  top: 50%;
+  margin-top: (-$height / 2);
+
+}
+
 /*==========================
 V-CENTER: INLINE-BLOCK
 http://davidtheclark.github.io/scut/#v-center_inline-block

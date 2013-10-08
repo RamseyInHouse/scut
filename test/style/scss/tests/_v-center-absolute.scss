@@ -1,0 +1,10 @@
+.vcenter-abs-c {
+  border: 5px solid;
+  @include scut-size(20em);
+  position: relative;
+}
+
+.vcenter-abs {
+  @include scut-vcenter-abs(10em);
+  background: gray;
+}

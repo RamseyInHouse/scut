@@ -1,0 +1,11 @@
+@mixin scut-vcenter-abs (
+  $height
+) {
+
+  height: $height;
+
+  position: absolute;
+  top: 50%;
+  margin-top: (-$height / 2);
+
+}

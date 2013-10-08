@@ -628,6 +628,21 @@ body {
   color: white;
 }
 
+.vcenter-abs-c {
+  border: 5px solid;
+  width: 20em;
+  height: 20em;
+  position: relative;
+}
+
+.vcenter-abs {
+  height: 10em;
+  position: absolute;
+  top: 50%;
+  margin-top: -5em;
+  background: gray;
+}
+
 .css-char {
   margin-bottom: 1em;
 }
