@@ -91,6 +91,12 @@
       <ul class="index-2">
         
         <li>
+          <a href="#center_absolutely" class="index-2--i">
+            center absolutely
+          </a>
+        </li>
+        
+        <li>
           <a href="#clearfix" class="index-2--i">
             clearfix
           </a>
@@ -839,6 +845,113 @@ You should find it in the root directory, alongside <code>_scut.scss</code>.</p>
         layout
       </a>
     </h2>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_center-absolutely.scss" class="source">view source</a>
+        <h3>
+          <a href="#center_absolutely" id="center_absolutely" class="inner-anchor">
+            center absolutely
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-center-absolutely</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$dimensions</code>
+            
+            
+            <span class="args--comment"><p>The <code>width</code> and <code>height</code> of the element-to-be-centered. To bypass either and avoid centering in that dimension, pass <code>n</code> (for <code>null</code>). See below.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Center an absolutely positioned element: horizontally, vertically, or both ways.</p>
+<p>This method only works if the element-to-be-centered has fixed dimensions &mdash; fixed width if you want it centered horizontally, fixed height if you want it centered vertically.</p>
+<p>If you do not want to center horizontally &mdash; only vertically &mdash; pass <code>n</code> (short for <code>null</code>) for the <code>width</code> value. Same goes for height, if you do not want to center vertically.</p>
+<p>See the examples below for clarification.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-center-absolutely-c {
+  border: 5px solid;
+  height: 6em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.eg-center-absolutely {
+  background: gray;
+  &amp;.v-1 {
+    @include scut-center-absolutely(20em 3em);
+  }
+  &amp;.v-2 {
+    @include scut-center-absolutely(20em n);
+  }
+  &amp;.v-3 {
+    @include scut-center-absolutely(n 3em);
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="eg-center-absolutely-c">
+  <div class="eg-center-absolutely v-1">Centered both horizontally and vertically</div>
+</div>
+<div class="eg-center-absolutely-c">
+  <div class="eg-center-absolutely v-2">Centered only horizontally</div>
+</div>
+<div class="eg-center-absolutely-c">
+  <div class="eg-center-absolutely v-3">Centered only vertically</div>
+</div>
+</div>
+  </div>
+</section>
+
+
+
+    </section>
     
     
     <section class="doc-i">

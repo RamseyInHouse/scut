@@ -131,6 +131,36 @@ categories:
     items:
 
       -
+        name: center_absolutely
+        type: *MO
+        use-name: scut-center-absolutely
+        args:
+          -
+            variable: $dimensions
+            comment: The `width` and `height` of the element-to-be-centered. To bypass either and avoid centering in that dimension, pass `n` (for `null`). See below.
+        text: |
+          Center an absolutely positioned element: horizontally, vertically, or both ways.
+
+          This method only works if the element-to-be-centered has fixed dimensions &mdash; fixed width if you want it centered horizontally, fixed height if you want it centered vertically.
+
+          If you do not want to center horizontally &mdash; only vertically &mdash; pass `n` (short for `null`) for the `width` value. Same goes for height, if you do not want to center vertically.
+
+          See the examples below for clarification.
+        example:
+          html: |
+            <div class="eg-center-absolutely-c">
+              <div class="eg-center-absolutely v-1">Centered both horizontally and vertically</div>
+            </div>
+            <div class="eg-center-absolutely-c">
+              <div class="eg-center-absolutely v-2">Centered only horizontally</div>
+            </div>
+            <div class="eg-center-absolutely-c">
+              <div class="eg-center-absolutely v-3">Centered only vertically</div>
+            </div>
+
+
+
+      -
         name: clearfix
         type: *MP
         use-name: scut-clearfix
