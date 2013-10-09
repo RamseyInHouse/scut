@@ -93,7 +93,7 @@ Depends on the function `scut-strip-unit`.
 ==========================*/
 
 /*==========================
-COLOR HOVER
+COLOR SWAP
 
 
 ==========================*/
@@ -400,14 +400,14 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   background: gray;
 }
 
-.color-hover {
+.color-swap {
   display: inline-block;
   padding: 1em 2em;
   border: 2px solid;
   margin: 0 2em 2em 0;
 }
 
-.color-hover.m-1 {
+.color-swap.m-1 {
   color: blue;
   -webkit-transition-property: color;
   transition-property: color;
@@ -417,11 +417,13 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   font-weight: bold;
 }
 
-.color-hover.m-1:hover {
+.color-swap.m-1:hover,
+.color-swap.m-1:focus,
+.color-swap.m-1:active {
   color: red;
 }
 
-.color-hover.m-2 {
+.color-swap.m-2 {
   color: red;
   background-color: blue;
   -webkit-transition-property: background-color, color;
@@ -430,12 +432,14 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   transition-duration: 0.5s;
 }
 
-.color-hover.m-2:hover {
+.color-swap.m-2:hover,
+.color-swap.m-2:focus,
+.color-swap.m-2:active {
   color: black;
   background-color: yellow;
 }
 
-.color-hover.m-3 {
+.color-swap.m-3 {
   background-color: blue;
   -webkit-transition-property: background-color;
   transition-property: background-color;
@@ -444,11 +448,13 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   color: white;
 }
 
-.color-hover.m-3:hover {
+.color-swap.m-3:hover,
+.color-swap.m-3:focus,
+.color-swap.m-3:active {
   background-color: red;
 }
 
-.color-hover.m-4 {
+.color-swap.m-4 {
   background-color: blue;
   -webkit-transition-property: background-color;
   transition-property: background-color;
@@ -456,7 +462,9 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   transition-duration: false;
 }
 
-.color-hover.m-4:hover {
+.color-swap.m-4:hover,
+.color-swap.m-4:focus,
+.color-swap.m-4:active {
   background-color: black;
 }
 

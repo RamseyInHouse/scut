@@ -15,29 +15,29 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   background: gray;
 }
 
-.color-hover {
+.color-swap {
   display: inline-block;
   padding: 1em 2em;
   border: 2px solid;
   margin: 0 2em 2em 0;
 
   &.m-1 {
-    @include scut-color-hover(blue, red, 1s);
+    @include scut-color-swap(blue, red, 1s);
     font-size: 2em;
     font-weight: bold;
   }
 
   &.m-2 {
-    @include scut-color-hover(red blue, black yellow, 0.5s);
+    @include scut-color-swap(red blue, black yellow, 0.5s);
   }
 
   &.m-3 {
-    @include scut-color-hover(blue, red, 0.3s, true);
+    @include scut-color-swap(blue, red, 0.3s, true);
     color: white;
   }
 
   &.m-4 {
-    @include scut-color-hover(blue, black, false, true);
+    @include scut-color-swap(blue, black, false, true);
   }
 
 }
