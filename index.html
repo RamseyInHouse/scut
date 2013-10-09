@@ -175,6 +175,12 @@
         </li>
         
         <li>
+          <a href="#sticky_footer" class="index-2--i">
+            sticky footer
+          </a>
+        </li>
+        
+        <li>
           <a href="#v-center_line-height" class="index-2--i">
             v-center: line-height
           </a>
@@ -2270,6 +2276,112 @@ You should find it in the root directory, alongside <code>_scut.scss</code>.</p>
 </section>
 
 
+
+    </section>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/layout/_sticky-footer.scss" class="source">view source</a>
+        <h3>
+          <a href="#sticky_footer" id="sticky_footer" class="inner-anchor">
+            sticky footer
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-sticky-footer</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$height</code>
+            
+            
+            <span class="args--comment"><p>The height of the footer</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$wrapper</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.wrapper&quot;</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>A CSS selector for the page-wrapper element.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$footer</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-sticky&quot;</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>A CSS selector for the footer.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Ensure that your footer stays down at the bottom of the viewport, where God intended it to be, even if your content is too short to keep it down naturally. Avoid the weird look people give you when they see your footer in the middle of their browser window.</p>
+<p>This one takes some commitment &mdash; but nothing you can&#39;t handle:</p>
+<ul>
+<li>Your sticky footer must have a fixed height.</li>
+<li>Your stuff above the footer must be wrapped in a wrapper element. (The footer itself remains outside of this wrapper.)</li>
+</ul>
+<p><strong>This mixin should not be called from within a selector.</strong> It needs to add rules for a number of elements &mdash; <code>html</code>, <code>body</code>, the wrapper, and the footer &mdash; so don&#39;t nest it.</p>
+<p><strong>For an example of the Scut sticky footer in action, <a href="http://codepen.io/davidtheclark/pen/ExjiF">have a look at this Codepen</a></strong>. Play around with it.</p>
+
+</section>
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://css-tricks.com/snippets/css/sticky-footer/" class="refs--i">
+        <p>CSS-Tricks: &quot;Sticky Footer&quot;</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
 
     </section>
     

@@ -495,6 +495,39 @@ categories:
           html: |
             <div class="eg-size m-square">A square</div>
             <div class="eg-size m-rectangle">A rectangle</div>
+      -
+        name: sticky_footer
+        type: *MO
+        use-name: scut-sticky-footer
+        args:
+          -
+            variable: $height
+            comment: The height of the footer
+          -
+            variable: $wrapper
+            default: "\".wrapper\""
+            comment: A CSS selector for the page-wrapper element.
+          -
+            variable: $footer
+            default: "\".scut-sticky\""
+            comment: A CSS selector for the footer.
+        text: |
+          Ensure that your footer stays down at the bottom of the viewport, where God intended it to be, even if your content is too short to keep it down naturally. Avoid the weird look people give you when they see your footer in the middle of their browser window.
+
+          This one takes some commitment &mdash; but nothing you can't handle:
+
+          - Your sticky footer must have a fixed height.
+          - Your stuff above the footer must be wrapped in a wrapper element. (The footer itself remains outside of this wrapper.)
+
+          **This mixin should not be called from within a selector.** It needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so don't nest it.
+
+          **For an example of the Scut sticky footer in action, [have a look at this Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**. Play around with it.
+
+
+        references:
+          -
+            description: "CSS-Tricks: \"Sticky Footer\""
+            url: http://css-tricks.com/snippets/css/sticky-footer/
 
       -
         group-start: vertically_center
