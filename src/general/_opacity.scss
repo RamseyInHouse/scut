@@ -1,15 +1,14 @@
 /*==========================
 OPACITY
-
-http://css-tricks.com/snippets/css/cross-browser-opacity/
+http://davidtheclark.github.io/scut/#opacity
 ==========================*/
 
 @mixin scut-opacity (
-  $decimal
+  $opacity
 ) {
 
-  $ms-value: $decimal * 100;
+  $ms-value: $opacity * 100;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
-  opacity: $decimal;
+  opacity: $opacity;
 
 }
