@@ -9,13 +9,42 @@ categories:
     items:
 
       -
-        name: hd_breakpoint
+        name: color_swap
         type: &MO mixin only
+        use-name: scut-color-swap
+        args:
+          -
+            variable: $inactive
+            comment: Color(s) for the inactive state. One value will be interpreted as `color`, unless the `$bg` argument, below, is set to `true` &mdash; then it will be `background-color`. A list of two will be `color` and `background-color`.
+          -
+            variable: $active
+            comment: Color(s) for the active state. One value will be interpreted as `color`, unless the `$bg` argument, below, is set to `true` &mdash; then it will be `background-color`. A list of two will be `color` and `background-color`.
+          -
+            variable: $duration
+            default: 0
+            comment: The transition-duration between inactive and active states.
+          -
+            variable: $bg
+            default: false
+            comment: Set to `true` if you want to pass one color value as the `$inactive` and `$active` arguments and you want that color interpreted as `background-color`. (By default, a single value will be intepreted as `color`.)
+        text: |
+          A shortcut for setting an element's inactive and active colors &mdash; text `color` and `background-color` &mdash; with the option of adding a transition.
+
+          The "active state" includes `:hover`, `:focus`, and `:active`.
+        example:
+          html: |
+            <button class="eg-color-swap v-1">Example 1</button>
+            <button class="eg-color-swap v-2">Example 2</button>
+            <button class="eg-color-swap v-3">Example 3</button>
+
+      -
+        name: hd_breakpoint
+        type: *MO
         use-name: scut-hd-bp
         text: |
-          Write effective resolution-based `@media`-queries, without trying very hard.
+          Write effective resolution-based `@media`-queries, without trying too hard.
 
-          This mixin uses `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`. If you're curious about the choices, try reading the References below.
+          This mixin uses `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`. If you're curious about the choices, read the References below.
         args:
           -
             variable: $ratio

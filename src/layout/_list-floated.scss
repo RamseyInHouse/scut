@@ -1,4 +1,13 @@
+/*==========================
+LIST: FLOATED
+http://davidtheclark.github.io/scut/#list_floated
+
+Depends on `list-unstyled` and `clearfix`.
+==========================*/
+
 @mixin scut-list-floated (
+  $margin: false,
+  $dir: left,
   $in-media: true
 ) {
 
@@ -12,11 +21,17 @@
   }
 
   & > li {
-    float: left;
+    float: $dir;
+  }
+
+  @if $margin {
+    & > li + li {
+      margin-#{$dir}: $margin;
+    }
   }
 
 }
 
 %scut-list-floated {
-  @include scut-list-floated(false);
+  @include scut-list-floated($in-media: false);
 }

@@ -1,0 +1,15 @@
+.eg-color-swap {
+  border: 1px solid;
+  padding: 0.3em 0.5em;
+  margin-right: 0.5em;
+  &.v-1 {
+    @include scut-color-swap(blue, red, 1s);
+  }
+  &.v-2 {
+    @include scut-color-swap(white black, black white);
+  }
+  &.v-3 {
+    color: white;
+    @include scut-color-swap(blue, red, 0.5s, true);
+  }
+}

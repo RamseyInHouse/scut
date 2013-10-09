@@ -1,0 +1,55 @@
+@mixin scut-header-lined (
+  $height: 1px,
+  $pad: 0.5em,
+  $color: inherit,
+  $style: solid,
+  $v-adjust: false,
+  $double: false
+) {
+
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 50%;
+
+    border-top-style: $style;
+    border-top-width: $height;
+
+    @if $color != inherit {
+      border-top-color: $color;
+    }
+
+    @if $v-adjust != false {
+      bottom: $v-adjust;
+    }
+
+    @if $double != false {
+      height: $double;
+      border-bottom-style: $style;
+      border-bottom-width: $height;
+      @if $color != inherit {
+        border-bottom-color: $color;
+      }
+    }
+  }
+
+  &:before {
+    right: $pad;
+    margin-left: -50%;
+  }
+  &:after {
+    left: $pad;
+    margin-right: -50%;
+  }
+
+}
+
+%scut-header-lined {
+  @include scut-header-lined;
+}

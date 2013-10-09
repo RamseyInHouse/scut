@@ -46,6 +46,12 @@
       <ul class="index-2">
         
         <li>
+          <a href="#color_swap" class="index-2--i">
+            color swap
+          </a>
+        </li>
+        
+        <li>
           <a href="#hd_breakpoint" class="index-2--i">
             hd breakpoint
           </a>
@@ -297,6 +303,129 @@
     
     <section class="doc-i">
       <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_color-swap.scss" class="source">view source</a>
+        <h3>
+          <a href="#color_swap" id="color_swap" class="inner-anchor">
+            color swap
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-color-swap</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin only
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$inactive</code>
+            
+            
+            <span class="args--comment"><p>Color(s) for the inactive state. One value will be interpreted as <code>color</code>, unless the <code>$bg</code> argument, below, is set to <code>true</code> &mdash; then it will be <code>background-color</code>. A list of two will be <code>color</code> and <code>background-color</code>.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$active</code>
+            
+            
+            <span class="args--comment"><p>Color(s) for the active state. One value will be interpreted as <code>color</code>, unless the <code>$bg</code> argument, below, is set to <code>true</code> &mdash; then it will be <code>background-color</code>. A list of two will be <code>color</code> and <code>background-color</code>.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$duration</code>
+            
+            
+            <span class="args--comment"><p>The transition-duration between inactive and active states.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$bg</code>
+            
+            
+            <span class="args--comment"><p>Set to <code>true</code> if you want to pass one color value as the <code>$inactive</code> and <code>$active</code> arguments and you want that color interpreted as <code>background-color</code>. (By default, a single value will be intepreted as <code>color</code>.)</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>A shortcut for setting an element&#39;s inactive and active colors &mdash; text <code>color</code> and <code>background-color</code> &mdash; with the option of adding a transition.</p>
+<p>The &quot;active state&quot; includes <code>:hover</code>, <code>:focus</code>, and <code>:active</code>.</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-color-swap {
+  border: 1px solid;
+  padding: 0.3em 0.5em;
+  margin-right: 0.5em;
+  &amp;.v-1 {
+    @include scut-color-swap(blue, red, 1s);
+  }
+  &amp;.v-2 {
+    @include scut-color-swap(white black, black white);
+  }
+  &amp;.v-3 {
+    color: white;
+    @include scut-color-swap(blue, red, 0.5s, true);
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><button class="eg-color-swap v-1">Example 1</button>
+<button class="eg-color-swap v-2">Example 2</button>
+<button class="eg-color-swap v-3">Example 3</button>
+</div>
+  </div>
+</section>
+
+
+
+    </section>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
         <a href="https://github.com/davidtheclark/scut/blob/master/src/general/_hd-breakpoint.scss" class="source">view source</a>
         <h3>
           <a href="#hd_breakpoint" id="hd_breakpoint" class="inner-anchor">
@@ -352,8 +481,8 @@
   </tbody>
 </table>
 <section class="description">
-  <p>Write effective resolution-based <code>@media</code>-queries, without trying very hard.</p>
-<p>This mixin uses <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>. If you&#39;re curious about the choices, try reading the References below.</p>
+  <p>Write effective resolution-based <code>@media</code>-queries, without trying too hard.</p>
+<p>This mixin uses <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>. If you&#39;re curious about the choices, read the References below.</p>
 
 </section>
 
@@ -3274,6 +3403,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </aside>
   </body>
   
-  <script src="dist/js-built.min.js"></script>
+  <script src="bower_components/overthrow/dist/overthrow.js"></script>
+  <script src="dev/js/lib/prism.js"></script>
+  <script src="dev/js/modals.js"></script>
   
 </html>
