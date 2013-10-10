@@ -241,6 +241,12 @@
         </li>
         
         <li>
+          <a href="#hanging_indent" class="index-2--i">
+            hanging indent
+          </a>
+        </li>
+        
+        <li>
           <a href="#indented_paragraphs" class="index-2--i">
             indented paragraphs
           </a>
@@ -3317,6 +3323,98 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
     
   </ul>
 </footer>
+
+    </section>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_hanging-indent.scss" class="source">view source</a>
+        <h3>
+          <a href="#hanging_indent" id="hanging_indent" class="inner-anchor">
+            hanging indent
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-hanging-indent</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin, with a default-values placeholder
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$indent</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1em</code>&nbsp;]
+            
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>The &quot;hanging indent&quot; applies to all lines but the first &mdash; as opposed to the &quot;normal&quot; indent that you&#39;re used to in books, which applies only to the first line.</p>
+<p>My <cite>Chicago Manual of Style</cite> also calls it the <i>flush-and-hang</i> style. I like that.</p>
+<p>Hanging indents are standard for indexes and works cited, and may seem obscure to you (if you&#39;re no scholar) until one day you realize that you need them, and have needed them all along ...</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-hanging-indent {
+  max-width: 25em;
+  &amp;.v-1 {
+    // Default-values placeholder
+    @extend %scut-hanging-indent;
+  }
+  &amp;.v-2 {
+    @include scut-hanging-indent(2em);
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="eg-hanging-indent v-1">Lastname, Firstname. <cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.
+</div>
+<div class="eg-hanging-indent v-2">Lastnameofanotherguy, Firstname. <cite>Title of the Another Work</cite>. City, State: Publisher, YEAR. Print.
+</div>
+</div>
+  </div>
+</section>
+
+
 
     </section>
     

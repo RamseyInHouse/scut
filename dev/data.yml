@@ -763,6 +763,27 @@ categories:
             url: http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax
 
       -
+        name: hanging_indent
+        type: *MDP
+        use-name: scut-hanging-indent
+        args:
+          -
+            variable: $indent
+            default: 1em
+        text: |
+          The "hanging indent" applies to all lines but the first &mdash; as opposed to the "normal" indent that you're used to in books, which applies only to the first line.
+
+          My <cite>Chicago Manual of Style</cite> also calls it the <i>flush-and-hang</i> style. I like that.
+
+          Hanging indents are standard for indexes and works cited, and may seem obscure to you (if you're no scholar) until one day you realize that you need them, and have needed them all along ...
+        example:
+          html: |
+            <div class="eg-hanging-indent v-1">Lastname, Firstname. <cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.
+            </div>
+            <div class="eg-hanging-indent v-2">Lastnameofanotherguy, Firstname. <cite>Title of the Another Work</cite>. City, State: Publisher, YEAR. Print.
+            </div>
+
+      -
         name: indented_paragraphs
         type: *MDP
         use-name: scut-indented-ps

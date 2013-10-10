@@ -1,0 +1,10 @@
+.eg-hanging-indent {
+  max-width: 25em;
+  &.v-1 {
+    // Default-values placeholder
+    @extend %scut-hanging-indent;
+  }
+  &.v-2 {
+    @include scut-hanging-indent(2em);
+  }
+}
