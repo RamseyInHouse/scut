@@ -253,6 +253,12 @@
         </li>
         
         <li>
+          <a href="#key-value" class="index-2--i">
+            key-value
+          </a>
+        </li>
+        
+        <li>
           <a href="#link_bottom-bordered" class="index-2--i">
             link: bottom-bordered
           </a>
@@ -3526,6 +3532,204 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
 </section>
 
 
+
+    </section>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_key-value.scss" class="source">view source</a>
+        <h3>
+          <a href="#key-value" id="key-value" class="inner-anchor">
+            key-value
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-key-val</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin, with a default-values placeholder
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$divider</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">:</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>Content (most likely punctuation) to divide the term from the description.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$pad</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.25em</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>Horizontal space between the <code>$divider</code> and the description.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$indent</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1em</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>Indentation of the description.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$spacing</code>
+            
+            
+            <span class="args--comment"><p>Vertical space between term-description items.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$pad-left</code>
+            
+            
+            <span class="args--comment"><p>Horizontal space between the <code>$divider</code> and the term.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>You&#39;ve probably been wondering how to semantically markup your lists of keys and values &mdash; labelled data. You&#39;ve probably been gnawing your fingernails to nubs, panicked with uncertainty. Well: The answer seems to be <strong>description (or <i>association</i>) lists</strong> &mdash; the <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code> elements. (See the References listed below.)</p>
+<p>WhatWG says &quot;The dl element represents an association list consisting of zero or more name-value groups (a description list).&quot; There you have it.</p>
+<p>One common way of <em>styling</em> such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (a &quot;hanging indent&quot; ... <a href="#hanging_indent">see below</a>).</p>
+<p>This mixin should help make that dream a reality &mdash; with enough flexibility to play around, and really make that assocation list your own.</p>
+<p><strong>Apply the mixin to your <code>&lt;dl&gt;</code> element.</strong></p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;dl class=&quot;eg-key-val v-1&quot;&gt;
+  &lt;dt&gt;Name&lt;/dt&gt;
+  &lt;dd&gt;Lorem Ipsum&lt;/dd&gt;
+  &lt;dt&gt;Occupation&lt;/dt&gt;
+  &lt;dd&gt;Placeholder&lt;/dd&gt;
+  &lt;dt&gt;Children&lt;/dt&gt;
+  &lt;dd&gt;None&lt;/dd&gt;
+  &lt;dt&gt;Excuses&lt;/dt&gt;
+  &lt;dd&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl class=&quot;eg-key-val v-2&quot;&gt;
+  &lt;dt&gt;Consolation&lt;/dt&gt;
+  &lt;dd&gt;Alleviation of misery or distress of mind&lt;/dd&gt;
+  &lt;dt&gt;Depression&lt;/dt&gt;
+  &lt;dd&gt;A sinking of the spirits&lt;/dd&gt;
+  &lt;dt&gt;Equanimity&lt;/dt&gt;
+  &lt;dd&gt;A state of resistance to elation, depression, anger, etc.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+  </div>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-key-val {
+  max-width: 20em;
+  &amp;.v-1 {
+    // Default-values placeholder
+    @extend %scut-key-val;
+  }
+  &amp;.v-2 {
+    @include scut-key-val(&quot;\2014&quot;, 0.5em, 2em, 1em, 0.5em);
+    &amp; &gt; dt {
+      font-weight: bold;
+    }
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><dl class="eg-key-val v-1">
+  <dt>Name</dt>
+  <dd>Lorem Ipsum</dd>
+  <dt>Occupation</dt>
+  <dd>Placeholder</dd>
+  <dt>Children</dt>
+  <dd>None</dd>
+  <dt>Excuses</dt>
+  <dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. </dd>
+</dl>
+<dl class="eg-key-val v-2">
+  <dt>Consolation</dt>
+  <dd>Alleviation of misery or distress of mind</dd>
+  <dt>Depression</dt>
+  <dd>A sinking of the spirits</dd>
+  <dt>Equanimity</dt>
+  <dd>A state of resistance to elation, depression, anger, etc.</dd>
+</dl>
+</div>
+  </div>
+</section>
+
+
+
+<footer>
+  <h4>References</h4>
+  <ul class="refs">
+    
+    <li>
+      <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-dl-element" class="refs--i">
+        <p>WhatWG on the <code>&lt;dl&gt;</code> element</p>
+
+      </a>
+    </li>
+    
+    <li>
+      <a href="http://html5doctor.com/the-dl-element/" class="refs--i">
+        <p>HTML5 Doctor on the <code>&lt;dl&gt;</code> element</p>
+
+      </a>
+    </li>
+    
+  </ul>
+</footer>
 
     </section>
     
