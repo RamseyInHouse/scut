@@ -1,4 +1,4 @@
-@mixin scut-header-lined (
+@mixin scut-side-lined (
   $height: 1px,
   $pad: 0.5em,
   $color: inherit,
@@ -7,6 +7,7 @@
   $double: false
 ) {
 
+  display: block;
   overflow: hidden;
   text-align: center;
 
