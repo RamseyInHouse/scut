@@ -3,7 +3,7 @@
   $pad: 0.25em,
   $indent: 1em,
   $spacing: 0,
-  $pad-left: null
+  $pad-left: 0
 ) {
 
   & > dt {
@@ -12,7 +12,7 @@
     &:after {
       content: $divider;
       margin-right: $pad;
-      @if $pad-left {
+      @if $pad-left != 0 {
         margin-left: $pad-left;
       }
     }
