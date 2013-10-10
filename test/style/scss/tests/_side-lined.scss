@@ -1,0 +1,23 @@
+.side-lined {
+  background: #eee;
+  margin-bottom: 1em;
+
+  &.m-1 {
+    @extend %scut-side-lined;
+    font-size: 3em;
+  }
+
+  &.m-2 {
+    @include scut-side-lined(5px, 20px, blue, double, 2px);
+    font-size: 2em;
+    width: 20em;
+  }
+
+  &.m-3 {
+    @include scut-side-lined(4px, 30px, $color: blue, $style: double, $double: 10px, $v-adjust: 3px);
+    font-size: 2em;
+    line-height: 2;
+    width: 10em;
+  }
+
+}

@@ -125,8 +125,7 @@ Depends on the function `scut-strip-unit`.
 
 /*==========================
 COLOR SWAP
-
-
+http://davidtheclark.github.io/scut/#color_swap
 ==========================*/
 
 @mixin scut-color-swap (
@@ -218,17 +217,16 @@ http://davidtheclark.github.io/scut/#hide_text
 
 /*==========================
 OPACITY
-
-http://css-tricks.com/snippets/css/cross-browser-opacity/
+http://davidtheclark.github.io/scut/#opacity
 ==========================*/
 
 @mixin scut-opacity (
-  $decimal
+  $opacity
 ) {
 
-  $ms-value: $decimal * 100;
+  $ms-value: $opacity * 100;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
-  opacity: $decimal;
+  opacity: $opacity;
 
 }
 
@@ -257,6 +255,11 @@ http://davidtheclark.github.io/scut/#selected
   }
 
 }
+
+/*==========================
+CENTER ABSOLUTELY
+http://davidtheclark.github.io/scut/#center_absolutely
+==========================*/
 
 @mixin scut-center-absolutely (
   $dimensions
@@ -520,8 +523,7 @@ http://davidtheclark.github.io/scut/#size
 
 /*==========================
 STICKY FOOTER
-
-http://css-tricks.com/snippets/css/sticky-footer/
+http://davidtheclark.github.io/scut/#sticky_footer
 ==========================*/
 
 @mixin scut-sticky-footer (
@@ -858,62 +860,6 @@ HANGING INDENT
   @include scut-hanging-indent;
 }
 
-@mixin scut-header-lined (
-  $height: 1px,
-  $pad: 0.5em,
-  $color: inherit,
-  $style: solid,
-  $v-adjust: false,
-  $double: false
-) {
-
-  overflow: hidden;
-  text-align: center;
-
-  &:before,
-  &:after {
-    content: "";
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    width: 50%;
-
-    border-top-style: $style;
-    border-top-width: $height;
-
-    @if $color != inherit {
-      border-top-color: $color;
-    }
-
-    @if $v-adjust != false {
-      bottom: $v-adjust;
-    }
-
-    @if $double != false {
-      height: $double;
-      border-bottom-style: $style;
-      border-bottom-width: $height;
-      @if $color != inherit {
-        border-bottom-color: $color;
-      }
-    }
-  }
-
-  &:before {
-    right: $pad;
-    margin-left: -50%;
-  }
-  &:after {
-    left: $pad;
-    margin-right: -50%;
-  }
-
-}
-
-%scut-header-lined {
-  @include scut-header-lined;
-}
-
 /*==========================
 INDENTED PARAGRAPHS
 http://davidtheclark.github.io/scut/#indented_paragraphs
@@ -946,7 +892,7 @@ http://davidtheclark.github.io/scut/#indented_paragraphs
   $pad: 0.25em,
   $indent: 1em,
   $spacing: 0,
-  $pad-left: null
+  $pad-left: 0
 ) {
 
   & > dt {
@@ -955,7 +901,7 @@ http://davidtheclark.github.io/scut/#indented_paragraphs
     &:after {
       content: $divider;
       margin-right: $pad;
-      @if $pad-left {
+      @if $pad-left != 0 {
         margin-left: $pad-left;
       }
     }
@@ -1023,4 +969,61 @@ http://davidtheclark.github.io/scut/#reverse-italics
 
 %scut-reverse-italics {
   @include scut-reverse-italics;
+}
+
+@mixin scut-side-lined (
+  $height: 1px,
+  $pad: 0.5em,
+  $color: inherit,
+  $style: solid,
+  $v-adjust: false,
+  $double: false
+) {
+
+  display: block;
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 50%;
+
+    border-top-style: $style;
+    border-top-width: $height;
+
+    @if $color != inherit {
+      border-top-color: $color;
+    }
+
+    @if $v-adjust != false {
+      bottom: $v-adjust;
+    }
+
+    @if $double != false {
+      height: $double;
+      border-bottom-style: $style;
+      border-bottom-width: $height;
+      @if $color != inherit {
+        border-bottom-color: $color;
+      }
+    }
+  }
+
+  &:before {
+    right: $pad;
+    margin-left: -50%;
+  }
+  &:after {
+    left: $pad;
+    margin-right: -50%;
+  }
+
+}
+
+%scut-side-lined {
+  @include scut-side-lined;
 }

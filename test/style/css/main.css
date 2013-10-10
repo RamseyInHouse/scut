@@ -94,8 +94,7 @@ Depends on the function `scut-strip-unit`.
 
 /*==========================
 COLOR SWAP
-
-
+http://davidtheclark.github.io/scut/#color_swap
 ==========================*/
 
 /*==========================
@@ -110,13 +109,17 @@ http://davidtheclark.github.io/scut/#hide_text
 
 /*==========================
 OPACITY
-
-http://css-tricks.com/snippets/css/cross-browser-opacity/
+http://davidtheclark.github.io/scut/#opacity
 ==========================*/
 
 /*==========================
 SELECTED
 http://davidtheclark.github.io/scut/#selected
+==========================*/
+
+/*==========================
+CENTER ABSOLUTELY
+http://davidtheclark.github.io/scut/#center_absolutely
 ==========================*/
 
 /*==========================
@@ -225,8 +228,7 @@ http://davidtheclark.github.io/scut/#size
 
 /*==========================
 STICKY FOOTER
-
-http://css-tricks.com/snippets/css/sticky-footer/
+http://davidtheclark.github.io/scut/#sticky_footer
 ==========================*/
 
 /*==========================
@@ -280,32 +282,6 @@ HANGING INDENT
   padding-left: 1em;
 }
 
-.header-lined.m-1 {
-  overflow: hidden;
-  text-align: center;
-}
-
-.header-lined.m-1:before,
-.header-lined.m-1:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 50%;
-  border-top-style: solid;
-  border-top-width: 1px;
-}
-
-.header-lined.m-1:before {
-  right: 0.5em;
-  margin-left: -50%;
-}
-
-.header-lined.m-1:after {
-  left: 0.5em;
-  margin-right: -50%;
-}
-
 /*==========================
 INDENTED PARAGRAPHS
 http://davidtheclark.github.io/scut/#indented_paragraphs
@@ -320,6 +296,33 @@ http://davidtheclark.github.io/scut/#link_bottom-bordered
 REVERSE ITALICS
 http://davidtheclark.github.io/scut/#reverse-italics
 ==========================*/
+
+.side-lined.m-1 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.side-lined.m-1:before,
+.side-lined.m-1:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.side-lined.m-1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.side-lined.m-1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -479,80 +482,6 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .hanging-indent.m-2 p {
   text-indent: -2em;
   padding-left: 2em;
-}
-
-.header-lined {
-  background: #eee;
-  margin-bottom: 1em;
-}
-
-.header-lined.m-1 {
-  font-size: 3em;
-}
-
-.header-lined.m-2 {
-  overflow: hidden;
-  text-align: center;
-  font-size: 2em;
-  width: 20em;
-}
-
-.header-lined.m-2:before,
-.header-lined.m-2:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 50%;
-  border-top-style: double;
-  border-top-width: 5px;
-  border-top-color: blue;
-  bottom: 2px;
-}
-
-.header-lined.m-2:before {
-  right: 20px;
-  margin-left: -50%;
-}
-
-.header-lined.m-2:after {
-  left: 20px;
-  margin-right: -50%;
-}
-
-.header-lined.m-3 {
-  overflow: hidden;
-  text-align: center;
-  font-size: 2em;
-  line-height: 2;
-  width: 10em;
-}
-
-.header-lined.m-3:before,
-.header-lined.m-3:after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 50%;
-  border-top-style: double;
-  border-top-width: 4px;
-  border-top-color: blue;
-  bottom: 3px;
-  height: 10px;
-  border-bottom-style: double;
-  border-bottom-width: 4px;
-  border-bottom-color: blue;
-}
-
-.header-lined.m-3:before {
-  right: 30px;
-  margin-left: -50%;
-}
-
-.header-lined.m-3:after {
-  left: 30px;
-  margin-right: -50%;
 }
 
 .key-val {
@@ -762,6 +691,82 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 
 .pixels-ems.m-6 {
   width: 500px;
+}
+
+.side-lined {
+  background: #eee;
+  margin-bottom: 1em;
+}
+
+.side-lined.m-1 {
+  font-size: 3em;
+}
+
+.side-lined.m-2 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  font-size: 2em;
+  width: 20em;
+}
+
+.side-lined.m-2:before,
+.side-lined.m-2:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: double;
+  border-top-width: 5px;
+  border-top-color: blue;
+  bottom: 2px;
+}
+
+.side-lined.m-2:before {
+  right: 20px;
+  margin-left: -50%;
+}
+
+.side-lined.m-2:after {
+  left: 20px;
+  margin-right: -50%;
+}
+
+.side-lined.m-3 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+  font-size: 2em;
+  line-height: 2;
+  width: 10em;
+}
+
+.side-lined.m-3:before,
+.side-lined.m-3:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: double;
+  border-top-width: 4px;
+  border-top-color: blue;
+  bottom: 3px;
+  height: 10px;
+  border-bottom-style: double;
+  border-bottom-width: 4px;
+  border-bottom-color: blue;
+}
+
+.side-lined.m-3:before {
+  right: 30px;
+  margin-left: -50%;
+}
+
+.side-lined.m-3:after {
+  left: 30px;
+  margin-right: -50%;
 }
 
 html,
