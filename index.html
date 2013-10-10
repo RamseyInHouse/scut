@@ -270,6 +270,12 @@
           </a>
         </li>
         
+        <li>
+          <a href="#side-lined" class="index-2--i">
+            side-lined
+          </a>
+        </li>
+        
       </ul>
     </li>
     
@@ -3972,6 +3978,156 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo
   <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span>
 </p>
 </div>
+  </div>
+</section>
+
+
+
+    </section>
+    
+    
+    <section class="doc-i">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/master/src/typography/_side-lined.scss" class="source">view source</a>
+        <h3>
+          <a href="#side-lined" id="side-lined" class="inner-anchor">
+            side-lined
+          </a>
+        </h3>
+      </header>
+      <table class="info">
+  <tbody>
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+        use-name
+      </td>
+      <td class="info--value">
+        <code>scut-side-lined</code>
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+        type
+      </td>
+      <td class="info--value">
+        mixin, with a default-values placeholder
+      </td>
+    </tr>
+    
+    
+    <tr>
+      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+        arguments
+      </td>
+      <td class="info--value">
+        <ol class="args">
+          
+          <li>
+            <code class="args--name">$height</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1px</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>The height of the lines.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$pad</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.5em</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>Padding between the text and the lines.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$color</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inherit</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>The color of the lines.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$style</code>
+            
+            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">solid</code>&nbsp;]
+            
+            
+            <span class="args--comment"><p>The <code>border-style</code> of the lines.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$v-adjust</code>
+            
+            
+            <span class="args--comment"><p>Vertical adjustment to the lines, from the bottom up. See examples below.</p>
+</span>
+            
+          </li>
+          
+          <li>
+            <code class="args--name">$double</code>
+            
+            
+            <span class="args--comment"><p>Double your lines by adding <em>a value for the distance between the two lines you want</em>.</p>
+</span>
+            
+          </li>
+          
+        </ol>
+      </td>
+    </tr>
+    
+  </tbody>
+</table>
+<section class="description">
+  <p>Everybody loves this flourish: horizontal lines extending from either side of center-aligned text.</p>
+<p>Look at the examples below. You want to do that!</p>
+<p>The lines will be vertically aligned with the text&#39;s center &mdash; but sometimes that will look off, and you&#39;ll want to tweak that vertical position. So add some height to the <code>$v-adjust</code> argument, which will push your lines up, away from the bottom of the element.</p>
+<p>By default, the mixin produces one line; but if you add a height to the <code>$double</code> argument, you&#39;ll get two lines (separated by that height). (You could also use a <code>$style</code> of <code>double</code>, which would act the same as any double border-style.)</p>
+
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  <div class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-side-lined {
+  &amp;.v-1 {
+    // Default-values placeholder
+    @extend %scut-side-lined;
+  }
+  &amp;.v-2 {
+    font-size: 2em;
+    @include scut-side-lined(3px, 1em, red, $v-adjust: 0.1em);
+  }
+  &amp;.v-3 {
+    @include scut-side-lined($double: 0.3em, $color: blue, $v-adjust: 0.05em);
+    text-transform: uppercase;
+  }
+  &amp;.v-4 {
+    @include scut-side-lined($style: dotted);
+  }
+}</code></pre>
+  </div>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><p class="eg-side-lined v-1">Variation 1</p> <p class="eg-side-lined v-2">Variation 2</p> <p class="eg-side-lined v-3">Variation 3</p> <p class="eg-side-lined v-4">Variation 4</p></div>
   </div>
 </section>
 
