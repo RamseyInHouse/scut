@@ -81,13 +81,14 @@ http://davidtheclark.github.io/scut/#positioning_coordinates
 
 /*==========================
 STRIP UNIT
-
+http://davidtheclark.github.io/scut/#strip_unit
 ==========================*/
 
 /*==========================
 SCUT PIXELS TO EMS
+http://davidtheclark.github.io/scut/#pixels-to-ems
 
-Depends on the function `scut-strip-unit`.
+Depends on `scut-strip-unit`.
 ==========================*/
 
 /*==========================
@@ -268,8 +269,7 @@ http://davidtheclark.github.io/scut/#triangle
 
 /*==========================
 CSS CHARACTERS
-
-http://css-tricks.com/snippets/html/glyphs/
+http://davidtheclark.github.io/scut/#characters
 ==========================*/
 
 /*==========================
@@ -279,7 +279,7 @@ http://davidtheclark.github.io/scut/#font-face
 
 /*==========================
 HANGING INDENT
-
+http://davidtheclark.github.io/scut/#hanging_indent
 ==========================*/
 
 .hanging-indent.m-1 p {
@@ -309,7 +309,7 @@ http://davidtheclark.github.io/scut/#reverse-italics
 
 /*==========================
 SCUT SIDE-LINED
-
+http://davidtheclark.github.io/scut/#side-lined
 ==========================*/
 
 .side-lined.m-1 {

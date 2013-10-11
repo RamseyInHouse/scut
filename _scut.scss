@@ -106,10 +106,10 @@ http://davidtheclark.github.io/scut/#positioning_coordinates
 
 /*==========================
 STRIP UNIT
-
+http://davidtheclark.github.io/scut/#strip_unit
 ==========================*/
 
-@function scut-strip-unit(
+@function scut-strip-unit (
   $num
 ) {
 
@@ -119,8 +119,9 @@ STRIP UNIT
 
 /*==========================
 SCUT PIXELS TO EMS
+http://davidtheclark.github.io/scut/#pixels-to-ems
 
-Depends on the function `scut-strip-unit`.
+Depends on `scut-strip-unit`.
 ==========================*/
 
 @function scut-em (
@@ -778,31 +779,61 @@ http://davidtheclark.github.io/scut/#triangle
 
 /*==========================
 CSS CHARACTERS
-
-http://css-tricks.com/snippets/html/glyphs/
+http://davidtheclark.github.io/scut/#characters
 ==========================*/
 
-$scut-amp: "\0026";
-$scut-gt: "\003e";
-$scut-lt: "\003c";
-$scut-nbsp: "\00a0";
+// quotation mark "
 $scut-quot: "\0022";
-$scut-sect: "\00a7";
-$scut-laquo: "\00ab";
-$scut-raquo: "\00bb";
-$scut-para: "\00b6";
-$scut-middot: "\00b7";
-$scut-oslash: "\00f8";
-$scut-mdash: "\2014";
-$scut-ndash: "\2013";
+// left single curly quote ‘
 $scut-lsquo: "\2018";
+// right single curly quote ’
 $scut-rsquo: "\2019";
-$scut-lsaquo: "\2039";
-$scut-rsaquo: "\203A";
+// left double curly quote “
 $scut-ldquo: "\201C";
+// right double curly quote ”
 $scut-rdquo: "\201D";
+// left single angle quote (guillemet) ‹
+$scut-lsaquo: "\2039";
+// right single angle quote (guillemet) ›
+$scut-rsaquo: "\203A";
+// left double angle quote (guillemet) «
+$scut-laquo: "\00ab";
+// right double angle quote (guillemet) »
+$scut-raquo: "\00bb";
+
+// em dash (mutton) — [should look longer]
+$scut-mdash: "\2014";
+// en dash (nut) – [between a hyphen and an em dash in length]
+$scut-ndash: "\2013";
+
+// ampersand &
+$scut-amp: "\0026";
+// greater than >
+$scut-gt: "\003e";
+// less than <
+$scut-lt: "\003c";
+// non-breaking space [nothing to see]
+$scut-nbsp: "\00a0";
+
+// section sign (double S, hurricane, sectional symbol, the legal doughnut, signum sectiōnis) §
+$scut-sect: "\00a7";
+// paragraph symbol (pilcrow) ¶
+$scut-para: "\00b6";
+
+// middot (interpunct, interpoint) ·
+$scut-middot: "\00b7";
+// o-slash (slashed o) Ø
+$scut-oslash: "\00f8";
+// bullet •
 $scut-bull: "\2022";
+// triangular bullet ‣
+$scut-tribull: "\25E6";
+// horizontal ellipsis …
 $scut-hellip: "\2026";
+// vertical ellipsis ⋮
+$scut-vellip: "\22EE";
+// midline horizontal ellipsis ⋯
+$scut-midhellip: "\22EF";
 
 /*==========================
 FONT-FACE
@@ -832,7 +863,7 @@ http://davidtheclark.github.io/scut/#font-face
 
 /*==========================
 HANGING INDENT
-
+http://davidtheclark.github.io/scut/#hanging_indent
 ==========================*/
 
 @mixin scut-hanging-indent (
@@ -966,7 +997,7 @@ http://davidtheclark.github.io/scut/#reverse-italics
 
 /*==========================
 SCUT SIDE-LINED
-
+http://davidtheclark.github.io/scut/#side-lined
 ==========================*/
 
 @mixin scut-side-lined (
