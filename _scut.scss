@@ -1,4 +1,23 @@
 /*==========================
+CLEARFIX
+http://davidtheclark.github.io/scut/#clearfix
+==========================*/
+
+@mixin scut-clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+%scut-clearfix {
+  @include scut-clearfix;
+}
+
+/*==========================
 LIST: UNSTYLED
 http://davidtheclark.github.io/scut/#list_unstyled
 ==========================*/
@@ -24,18 +43,11 @@ Depends on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-floated (
   $margin: false,
-  $dir: left,
-  $in-media: true
+  $dir: left
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-    @include scut-clearfix;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-    @extend %scut-clearfix;
-  }
+  @include scut-list-unstyled;
+  @include scut-clearfix;
 
   & > li {
     float: $dir;
@@ -50,7 +62,7 @@ Depends on `list-unstyled` and `clearfix`.
 }
 
 %scut-list-floated {
-  @include scut-list-floated($in-media: false);
+  @include scut-list-floated;
 }
 
 
@@ -106,7 +118,7 @@ STRIP UNIT
 }
 
 /*==========================
-PIXELS TO EMS
+SCUT PIXELS TO EMS
 
 Depends on the function `scut-strip-unit`.
 ==========================*/
@@ -285,25 +297,6 @@ http://davidtheclark.github.io/scut/#center_absolutely
 }
 
 /*==========================
-CLEARFIX
-http://davidtheclark.github.io/scut/#clearfix
-==========================*/
-
-@mixin scut-clearfix {
-
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-}
-
-%scut-clearfix {
-  @include scut-clearfix;
-}
-
-/*==========================
 FILL
 http://davidtheclark.github.io/scut/#fill
 ==========================*/
@@ -363,24 +356,25 @@ Depends on `list-unstyled`.
 ==========================*/
 
 @mixin scut-list-inline (
-  $in-media: true
+  $margin: false
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-  }
+  @include scut-list-unstyled;
 
   & > li {
     display: inline-block;
   }
 
+  @if $margin {
+    & > li + li {
+      margin-left: $margin;
+    }
+  }
+
 }
 
 %scut-list-inline {
-  @include scut-list-inline(false);
+  @include scut-list-inline;
 }
 
 /*==========================
@@ -392,16 +386,10 @@ Depends on `list-unstyled`.
 
 @mixin scut-list-punctuated (
   $divider: ", ",
-  $display: inline,
-  $in-media: false
+  $display: inline
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-  }
+  @include scut-list-unstyled;
 
   & > li {
     display: $display;
@@ -887,6 +875,11 @@ http://davidtheclark.github.io/scut/#indented_paragraphs
   @include scut-indented-ps;
 }
 
+/*==========================
+SCUT KEY-VALUE
+http://davidtheclark.github.io/scut/#key-value
+==========================*/
+
 @mixin scut-key-val (
   $divider: ":",
   $pad: 0.25em,
@@ -970,6 +963,11 @@ http://davidtheclark.github.io/scut/#reverse-italics
 %scut-reverse-italics {
   @include scut-reverse-italics;
 }
+
+/*==========================
+SCUT SIDE-LINED
+
+==========================*/
 
 @mixin scut-side-lined (
   $height: 1px,

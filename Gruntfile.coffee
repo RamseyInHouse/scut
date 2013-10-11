@@ -12,6 +12,7 @@ module.exports = (grunt) ->
       scut:
         src: [
           # Utilities that are dependencies for others
+          "src/layout/_clearfix.scss"
           "src/layout/_list-unstyled.scss"
           "src/layout/_list-floated.scss"
           "src/layout/_positioning-coordinates.scss"

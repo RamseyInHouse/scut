@@ -58,16 +58,14 @@ p:last-of-type {
 }
 
 /*==========================
+CLEARFIX
+http://davidtheclark.github.io/scut/#clearfix
+==========================*/
+
+/*==========================
 LIST: UNSTYLED
 http://davidtheclark.github.io/scut/#list_unstyled
 ==========================*/
-
-.pages,
-.list-punctuated.v-1 {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
 
 /*==========================
 LIST: FLOATED
@@ -87,7 +85,7 @@ STRIP UNIT
 ==========================*/
 
 /*==========================
-PIXELS TO EMS
+SCUT PIXELS TO EMS
 
 Depends on the function `scut-strip-unit`.
 ==========================*/
@@ -120,11 +118,6 @@ http://davidtheclark.github.io/scut/#selected
 /*==========================
 CENTER ABSOLUTELY
 http://davidtheclark.github.io/scut/#center_absolutely
-==========================*/
-
-/*==========================
-CLEARFIX
-http://davidtheclark.github.io/scut/#clearfix
 ==========================*/
 
 /*==========================
@@ -176,6 +169,12 @@ http://davidtheclark.github.io/scut/#list_inline
 Depends on `list-unstyled`.
 ==========================*/
 
+.pages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .pages > li {
   display: inline-block;
 }
@@ -186,6 +185,12 @@ http://davidtheclark.github.io/scut/#list_punctuated
 
 Depends on `list-unstyled`.
 ==========================*/
+
+.list-punctuated.v-1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 .list-punctuated.v-1 > li {
   display: inline;
@@ -288,6 +293,11 @@ http://davidtheclark.github.io/scut/#indented_paragraphs
 ==========================*/
 
 /*==========================
+SCUT KEY-VALUE
+http://davidtheclark.github.io/scut/#key-value
+==========================*/
+
+/*==========================
 LINK: BOTTOM-BORDERED
 http://davidtheclark.github.io/scut/#link_bottom-bordered
 ==========================*/
@@ -295,6 +305,11 @@ http://davidtheclark.github.io/scut/#link_bottom-bordered
 /*==========================
 REVERSE ITALICS
 http://davidtheclark.github.io/scut/#reverse-italics
+==========================*/
+
+/*==========================
+SCUT SIDE-LINED
+
 ==========================*/
 
 .side-lined.m-1 {

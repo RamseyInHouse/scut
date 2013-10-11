@@ -7,16 +7,10 @@ Depends on `list-unstyled`.
 
 @mixin scut-list-punctuated (
   $divider: ", ",
-  $display: inline,
-  $in-media: false
+  $display: inline
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-  }
+  @include scut-list-unstyled;
 
   & > li {
     display: $display;

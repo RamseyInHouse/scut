@@ -6,22 +6,23 @@ Depends on `list-unstyled`.
 ==========================*/
 
 @mixin scut-list-inline (
-  $in-media: true
+  $margin: false
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-  }
+  @include scut-list-unstyled;
 
   & > li {
     display: inline-block;
   }
 
+  @if $margin {
+    & > li + li {
+      margin-left: $margin;
+    }
+  }
+
 }
 
 %scut-list-inline {
-  @include scut-list-inline(false);
+  @include scut-list-inline;
 }

@@ -7,18 +7,11 @@ Depends on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-floated (
   $margin: false,
-  $dir: left,
-  $in-media: true
+  $dir: left
 ) {
 
-  @if $in-media {
-    @include scut-list-unstyled;
-    @include scut-clearfix;
-  }
-  @else {
-    @extend %scut-list-unstyled;
-    @extend %scut-clearfix;
-  }
+  @include scut-list-unstyled;
+  @include scut-clearfix;
 
   & > li {
     float: $dir;
@@ -33,5 +26,5 @@ Depends on `list-unstyled` and `clearfix`.
 }
 
 %scut-list-floated {
-  @include scut-list-floated($in-media: false);
+  @include scut-list-floated;
 }
