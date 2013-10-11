@@ -337,6 +337,10 @@ categories:
             variable: $gap
             default: 0.5em
             comment: The space separating your dividers from the your list items.
+          -
+            variable: $dir
+            default: left
+            comment: The `float` direction.
 
         text: |
           A floated list with punctuation between each list item.
@@ -351,21 +355,22 @@ categories:
           Only the list's immediate children are divided (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
-            <ul class="eg-divided-list">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
+            <ul class="eg-list-bar">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
             </ul>
-            <ul class="eg-breadcrumb-list">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
+            <ul class="eg-list-breadcrumb">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
             </ul>
-            <ul class="eg-adding-list">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
+            <ul class="eg-list-divided">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
             </ul>
+
 
       -
         group-start: positioning

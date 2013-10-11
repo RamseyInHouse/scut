@@ -1,10 +1,10 @@
-.eg-divided-list {
-  @include scut-list-divided;
-  // or @extend %scut-list-bar;
+.eg-list-bar {
+  @extend %scut-list-bar;
 }
-.eg-breadcrumb-list {
+.eg-list-breadcrumb {
   @extend %scut-list-breadcrumb;
 }
-.eg-adding-list {
-  @include scut-list-divided("+", 1em);
+
+.eg-list-divided {
+  @include scut-list-divided("+", 2em, right);
 }
