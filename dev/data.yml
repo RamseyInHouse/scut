@@ -756,6 +756,19 @@ categories:
     items:
 
       -
+        name: characters
+        type: variables
+        use-name: $scut-[something]
+        text: |
+          A set of variables providing CSS-friendly character-codes for the kinds of typographic glyphs you may find yourself adding to your stylesheets as `content` values.
+
+          Instead of looking them up every time, use a variable.
+
+          The names of these variables correspond with HTML character entity references that you can use in your markup (most of them). For example, `$scut-nbsp` is the same character as `&nbsp;` in HTML.
+
+          Click View Source to see the full list.
+
+      -
         name: font-face
         type: *MO
         use-name: scut-font-face
