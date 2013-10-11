@@ -1065,6 +1065,21 @@ categories:
               </div>
             </div>
 
+      -
+        name: strip_unit
+        type: function
+        use-name: scut-strip-unit
+        args:
+          -
+            variable: $num
+            comment: The number whose units you want to stirp.
+        text: |
+          Strip units from a number.
+
+          This becomes useful when you are building your own mixins and functions and find yourself in an error-littered tangle of units. You can just ditch them, then put them back later.
+
+          No example necessary.
+
 help:
   -
     term: use-name
