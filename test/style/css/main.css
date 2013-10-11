@@ -58,29 +58,29 @@ p:last-of-type {
 }
 
 /*==========================
-CLEARFIX
+SCUT CLEARFIX
 http://davidtheclark.github.io/scut/#clearfix
 ==========================*/
 
 /*==========================
-LIST: UNSTYLED
+SCUT LIST: UNSTYLED
 http://davidtheclark.github.io/scut/#list_unstyled
 ==========================*/
 
 /*==========================
-LIST: FLOATED
+SCUT LIST: FLOATED
 http://davidtheclark.github.io/scut/#list_floated
 
 Depends on `list-unstyled` and `clearfix`.
 ==========================*/
 
 /*==========================
-POSITIONING: COORDINATES
+SCUT POSITIONING: COORDINATES
 http://davidtheclark.github.io/scut/#positioning_coordinates
 ==========================*/
 
 /*==========================
-STRIP UNIT
+SCUT STRIP UNIT
 http://davidtheclark.github.io/scut/#strip_unit
 ==========================*/
 
@@ -92,37 +92,37 @@ Depends on `scut-strip-unit`.
 ==========================*/
 
 /*==========================
-COLOR SWAP
+SCUT COLOR SWAP
 http://davidtheclark.github.io/scut/#color_swap
 ==========================*/
 
 /*==========================
-HD BREAKPOINT
+SCUT HD BREAKPOINT
 http://davidtheclark.github.io/scut/#hd_breakpoint
 ==========================*/
 
 /*==========================
-HIDE TEXT
+SCUT HIDE TEXT
 http://davidtheclark.github.io/scut/#hide_text
 ==========================*/
 
 /*==========================
-OPACITY
+SCUT OPACITY
 http://davidtheclark.github.io/scut/#opacity
 ==========================*/
 
 /*==========================
-SELECTED
+SCUT SELECTED
 http://davidtheclark.github.io/scut/#selected
 ==========================*/
 
 /*==========================
-CENTER ABSOLUTELY
+SCUT CENTER ABSOLUTELY
 http://davidtheclark.github.io/scut/#center_absolutely
 ==========================*/
 
 /*==========================
-FILL
+SCUT FILL
 http://davidtheclark.github.io/scut/#fill
 ==========================*/
 
@@ -135,7 +135,7 @@ http://davidtheclark.github.io/scut/#fill
 }
 
 /*==========================
-LIST: DIVIDED
+SCUT LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
 Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
@@ -164,7 +164,7 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 }
 
 /*==========================
-LIST: INLINE
+SCUT LIST: INLINE
 http://davidtheclark.github.io/scut/#list_inline
 
 Depends on `list-unstyled`.
@@ -181,7 +181,7 @@ Depends on `list-unstyled`.
 }
 
 /*==========================
-LIST: PUNCTUATED
+SCUT LIST: PUNCTUATED
 http://davidtheclark.github.io/scut/#list_punctuated
 
 Depends on `list-unstyled`.
@@ -202,83 +202,83 @@ Depends on `list-unstyled`.
 }
 
 /*==========================
-POSITIONING: ABSOLUTE
+SCUT POSITIONING: ABSOLUTE
 http://davidtheclark.github.io/scut/#positioning_absolute
 
 Depends on `positioning-coordinates`.
 ==========================*/
 
 /*==========================
-POSITIONING: FIXED
+SCUT POSITIONING: FIXED
 http://davidtheclark.github.io/scut/#positioning_fixed
 
 Depends on `positioning-coordinates`.
 ==========================*/
 
 /*==========================
-POSITIONING: RELATIVE
+SCUT POSITIONING: RELATIVE
 http://davidtheclark.github.io/scut/#positioning_relative
 
 Depends on `positioning-coordinates`.
 ==========================*/
 
 /*==========================
-RATIO-BOX
+SCUT RATIO-BOX
 http://davidtheclark.github.io/scut/#ratio-box
 ==========================*/
 
 /*==========================
-SIZE
+SCUT SIZE
 http://davidtheclark.github.io/scut/#size
 ==========================*/
 
 /*==========================
-STICKY FOOTER
+SCUT STICKY FOOTER
 http://davidtheclark.github.io/scut/#sticky_footer
 ==========================*/
 
 /*==========================
-V-CENTER: INLINE-BLOCK
+SCUT V-CENTER: INLINE-BLOCK
 http://davidtheclark.github.io/scut/#v-center_inline-block
 ==========================*/
 
 /*==========================
-V-CENTER: LINE-HEIGHT
+SCUT V-CENTER: LINE-HEIGHT
 http://davidtheclark.github.io/scut/#v-center_line-height
 ==========================*/
 
 /*==========================
-V-CENTER: TABLE DISPLAY
+SCUT V-CENTER: TABLE DISPLAY
 http://davidtheclark.github.io/scut/#v-center_table_display
 ==========================*/
 
 /*==========================
-CIRCLE
+SCUT CIRCLE
 http://davidtheclark.github.io/scut/#circle
 ==========================*/
 
 /*==========================
-FOURSQUARE
+SCUT FOURSQUARE
 http://davidtheclark.github.io/scut/#foursquare
 ==========================*/
 
 /*==========================
-TRIANGLE
+SCUT TRIANGLE
 http://davidtheclark.github.io/scut/#triangle
 ==========================*/
 
 /*==========================
-CSS CHARACTERS
+SCUT CSS CHARACTERS
 http://davidtheclark.github.io/scut/#characters
 ==========================*/
 
 /*==========================
-FONT-FACE
+SCUT FONT-FACE
 http://davidtheclark.github.io/scut/#font-face
 ==========================*/
 
 /*==========================
-HANGING INDENT
+SCUT HANGING INDENT
 http://davidtheclark.github.io/scut/#hanging_indent
 ==========================*/
 
@@ -288,7 +288,7 @@ http://davidtheclark.github.io/scut/#hanging_indent
 }
 
 /*==========================
-INDENTED PARAGRAPHS
+SCUT INDENTED PARAGRAPHS
 http://davidtheclark.github.io/scut/#indented_paragraphs
 ==========================*/
 
@@ -298,12 +298,12 @@ http://davidtheclark.github.io/scut/#key-value
 ==========================*/
 
 /*==========================
-LINK: BOTTOM-BORDERED
+SCUT LINK: BOTTOM-BORDERED
 http://davidtheclark.github.io/scut/#link_bottom-bordered
 ==========================*/
 
 /*==========================
-REVERSE ITALICS
+SCUT REVERSE ITALICS
 http://davidtheclark.github.io/scut/#reverse-italics
 ==========================*/
 
