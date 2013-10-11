@@ -119,6 +119,14 @@ module.exports = (grunt) ->
             "dev/js/modals.js"
           ]
 
+    htmlmin:
+      dist:
+        options:
+          removeComments: true
+          collapseWhitespace: true
+        files:
+          "index.html": "index.html"
+
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -127,6 +135,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-imagemin"
+  grunt.loadNpmTasks "grunt-contrib-htmlmin"
   grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
@@ -143,4 +152,5 @@ module.exports = (grunt) ->
     "cssmin:dist"
     "assemble:dist"
     "uglify:all"
+    "htmlmin:dist"
   ]

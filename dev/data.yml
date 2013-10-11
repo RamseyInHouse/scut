@@ -220,9 +220,13 @@ categories:
         use-name: scut-list-floated
         args:
           -
-            variable: $in-media
+            variable: $margin
             default: "false"
-            comment: &IM Go with `true` if using the mixin within a `@media`-query, to avoid a futile attempt to `@extend` within it.
+            comment: A margin between floated list items.
+          -
+            variable: $dir
+            default: left
+            comment: The `float` direction.
         text: |
           Float the items of an unstyled list (to the left).
 
@@ -231,10 +235,20 @@ categories:
           Only the list's immediate children are floated (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
-            <ul class="eg-floated-list">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
+            <ul class="eg-list-floated v-1">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ul>
+            <ul class="eg-list-floated v-2">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ul>
+            <ul class="eg-list-floated v-3">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
             </ul>
 
       -
@@ -268,10 +282,7 @@ categories:
             variable: $display
             default: inline
             comment: Change to `inline-block` if you don't want your list items spanning lines.
-          -
-            variable: $in-media
-            default: "false"
-            comment: *IM
+
         text: |
           Keep your HTML semantic and your punctuation traditional.
 
@@ -314,10 +325,7 @@ categories:
             variable: $gap
             default: 0.5em
             comment: The space separating your dividers from the your list items.
-          -
-            variable: $in-media
-            default: "false"
-            comment: *IM
+
         text: |
           A floated list with punctuation between each list item.
 
