@@ -253,20 +253,32 @@ categories:
 
       -
         name: list_inline
-        type: *MP
+        type: &MDP mixin, with a default-values placeholder
         use-name: scut-list-inline
+        args:
+          -
+            variable: $margin
+            default: "false"
+            comment: A margin between inline list items.
         text: |
           Inline the items of an unstyled list.
+
+          ("Inline" is a hip new verb.)
 
           Use an inline list if you don't mind your list items spaced out a little, like inline words. If you need them flush, without any intervening space, try a [floated list](#floated-list).
 
           Only the list's immediate children are inlined (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
           html: |
-            <ul class="eg-inline-list">
-              <li>list item</li>
-              <li>list item</li>
-              <li>list item</li>
+            <ul class="eg-list-inline v-1">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
+            </ul>
+            <ul class="eg-list-inline v-2">
+              <li>list item 1</li>
+              <li>list item 2</li>
+              <li>list item 3</li>
             </ul>
 
       -
@@ -382,7 +394,7 @@ categories:
 
       -
         name: positioning_absolute
-        type: &MDP mixin, with a default-values placeholder
+        type: *MDP
         use-name: scut-absolute
         args:
           -
