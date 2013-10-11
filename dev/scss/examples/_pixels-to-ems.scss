@@ -1,0 +1,18 @@
+.eg-em-c {
+  font-size: 16px;
+}
+.eg-em {
+  border: 5px solid;
+  margin-bottom: 1em;
+
+  &.v-1 { width: scut-em(300); }
+  &.v-2 { width: 300px; }
+
+  &.v-3, &.v-4 { font-size: 20px; }
+  &.v-3 { width: scut-em(400, 20px); }
+  &.v-4 { width: 400px; }
+
+  &.v-5, &.v-6 { font-size: 2em; }
+  &.v-5 { width: scut-em(500, 2em); }
+  &.v-6 { width: 500px; }
+}
