@@ -268,6 +268,11 @@ http://davidtheclark.github.io/scut/#triangle
 ==========================*/
 
 /*==========================
+BOOKENDS
+
+==========================*/
+
+/*==========================
 SCUT CSS CHARACTERS
 http://davidtheclark.github.io/scut/#characters
 ==========================*/
@@ -399,6 +404,111 @@ DO NOT ALTER THIS DOCUMENT!
 
 It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)
 ==========================*/
+
+.eg-bookends.v-1:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.v-1:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.v-1:before,
+.eg-bookends.v-1:after {
+  display: inline-block;
+  content: "--";
+}
+
+.eg-bookends.v-2:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.v-2:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.v-2:before,
+.eg-bookends.v-2:after {
+  display: inline-block;
+  content: "--";
+}
+
+.eg-bookends.v-3:before {
+  margin-right: 2em;
+}
+
+.eg-bookends.v-3:after {
+  margin-left: 2em;
+}
+
+.eg-bookends.v-3:before,
+.eg-bookends.v-3:after {
+  display: inline-block;
+  content: "\22EE \22EE \22EE";
+  color: red;
+}
+
+.eg-bookends.v-3:hover:before,
+.eg-bookends.v-3:hover:after {
+  display: inline-block;
+  color: blue;
+}
+
+.eg-bookends.v-4 {
+  font-size: 3em;
+}
+
+.eg-bookends.v-4:before {
+  content: "\00ab";
+}
+
+.eg-bookends.v-4:after {
+  content: "\00bb";
+}
+
+.eg-bookends.v-4:before,
+.eg-bookends.v-4:after {
+  display: inline-block;
+  position: relative;
+  bottom: 0.08em;
+}
+
+.eg-bookends.v-5 {
+  display: inline-block;
+  padding: 1em;
+  border: 1px solid;
+}
+
+.eg-bookends.v-5:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.v-5:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.v-5:before,
+.eg-bookends.v-5:after {
+  display: inline-block;
+  content: "\00a7";
+}
+
+.eg-bookends.v-6:before {
+  content: "\25E6";
+  margin-right: 2em;
+}
+
+.eg-bookends.v-6:after {
+  content: "\2022";
+  margin-left: 2em;
+}
+
+.eg-bookends.v-6:before,
+.eg-bookends.v-6:after {
+  display: inline-block;
+  font-size: 3em;
+  vertical-align: middle;
+}
 
 .vcenter-abs-c {
   border: 5px solid;

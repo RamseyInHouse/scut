@@ -1,0 +1,44 @@
+/*==========================
+BOOKENDS
+
+==========================*/
+
+@mixin scut-bookends (
+  $pad: 0.5em,
+  $content: false
+) {
+
+  $content-list: length($content) == 2 and not $content == false;
+
+  @if $content-list or $pad {
+    &:before {
+      @if $content-list {
+        content: nth($content, 1);
+      }
+      @if $pad {
+        margin-right: $pad;
+      }
+    }
+    &:after {
+      @if $content-list {
+        content: nth($content, 2);
+      }
+      @if $pad {
+        margin-left: $pad;
+      }
+    }
+  }
+
+  &:before,
+  &:after {
+    display: inline-block;
+
+    @if $content and length($content) == 1 {
+      content: $content;
+    }
+
+    @content;
+
+  }
+
+}

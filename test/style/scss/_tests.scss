@@ -4,6 +4,49 @@ DO NOT ALTER THIS DOCUMENT!
 It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)
 ==========================*/
 
+.eg-bookends {
+  &.v-1 {
+    @include scut-bookends {
+      content: "--";
+    }
+  }
+  &.v-2 {
+    @include scut-bookends($content: "--");
+  }
+  &.v-3 {
+    @include scut-bookends (2em) {
+      content: "#{$scut-vellip} #{$scut-vellip} #{$scut-vellip}";
+      color: red;
+    }
+    &:hover {
+      @include scut-bookends (false) {
+        color: blue;
+      }
+    }
+  }
+  &.v-4 {
+    font-size: 3em;
+    @include scut-bookends(false, $scut-laquo $scut-raquo) {
+      position: relative;
+      bottom: 0.08em;
+    }
+  }
+  &.v-5 {
+    display: inline-block;
+    padding: 1em;
+    border: 1px solid;
+    @include scut-bookends {
+      content: $scut-sect;
+    }
+  }
+  &.v-6 {
+    @include scut-bookends(2em, $scut-tribull $scut-bull) {
+      font-size: 3em;
+      vertical-align: middle;
+    }
+  }
+}
+
 .vcenter-abs-c {
   border: 5px solid;
   @include scut-size(20em);
