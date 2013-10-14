@@ -299,6 +299,15 @@ margin-bottom: 1em;
 
 }
 
+.ratio-box {
+  background: gray;
+  width: 20em;
+  &.v-1 {
+    @include scut-ratio-box(3/2);
+  }
+}
+
+
 .side-lined {
   background: #eee;
   margin-bottom: 1em;

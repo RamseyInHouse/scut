@@ -936,6 +936,31 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   width: 500px;
 }
 
+.ratio-box {
+  background: gray;
+  width: 20em;
+}
+
+.ratio-box.v-1 {
+  overflow: hidden;
+  position: relative;
+}
+
+.ratio-box.v-1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 66.66667%;
+}
+
+.ratio-box.v-1 > .scut-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 .side-lined {
   background: #eee;
   margin-bottom: 1em;

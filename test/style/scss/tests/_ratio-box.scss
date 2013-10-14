@@ -1,0 +1,7 @@
+.ratio-box {
+  background: gray;
+  width: 20em;
+  &.v-1 {
+    @include scut-ratio-box(3/2);
+  }
+}
