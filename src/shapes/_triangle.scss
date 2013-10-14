@@ -58,27 +58,27 @@ http://davidtheclark.github.io/scut/#triangle
 
   // CORNER TRIANGLES
 
-  @else if ($direction == up-right) or ($direction == up-left) {
+  @else if ($direction == top-right) or ($direction == top-left) {
     border-top-color: $color;
     border-bottom-color: transparent;
-    @if $direction == up-right {
+    @if $direction == top-right {
       border-left-color: transparent;
       border-right-color: $color;
     }
-    @else if $direction == up-left {
+    @else if $direction == top-left {
       border-left-color: $color;
       border-right-color: transparent;
     }
   }
 
-  @else if ($direction == down-right) or ($direction == down-left) {
+  @else if ($direction == bottom-right) or ($direction == bottom-left) {
     border-top-color: transparent;
     border-bottom-color: $color;
-    @if $direction == down-right {
+    @if $direction == bottom-right {
       border-left-color: transparent;
       border-right-color: $color;
     }
-    @else if $direction == down-left {
+    @else if $direction == bottom-left {
       border-left-color: $color;
       border-right-color: transparent;
     }
