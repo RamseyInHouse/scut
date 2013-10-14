@@ -92,6 +92,10 @@ Depends on `scut-strip-unit`.
 ==========================*/
 
 /*==========================
+SCUT BORDERS
+==========================*/
+
+/*==========================
 SCUT COLOR SWAP
 http://davidtheclark.github.io/scut/#color_swap
 ==========================*/
@@ -510,6 +514,27 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   vertical-align: middle;
 }
 
+.borders {
+  display: inline-block;
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.borders.v-1 {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.borders.v-2 {
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.borders.v-3 {
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
+}
+
 .vcenter-abs-c {
   border: 5px solid;
   width: 20em;
@@ -526,6 +551,99 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   top: 50%;
   margin-top: -15px;
   background: gray;
+}
+
+.css-char {
+  margin-bottom: 1em;
+}
+
+.css-char:after {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.css-char.m-amp:after {
+  content: "\0026";
+}
+
+.css-char.m-gt:after {
+  content: "\003e";
+}
+
+.css-char.m-lt:after {
+  content: "\003c";
+}
+
+.css-char.m-nbsp:after {
+  content: "\00a0";
+}
+
+.css-char.m-quot:after {
+  content: "\0022";
+}
+
+.css-char.m-sect:after {
+  content: "\00a7";
+}
+
+.css-char.m-laquo:after {
+  content: "\00ab";
+}
+
+.css-char.m-raquo:after {
+  content: "\00bb";
+}
+
+.css-char.m-para:after {
+  content: "\00b6";
+}
+
+.css-char.m-middot:after {
+  content: "\00b7";
+}
+
+.css-char.m-oslash:after {
+  content: "\00f8";
+}
+
+.css-char.m-mdash:after {
+  content: "\2014";
+}
+
+.css-char.m-ndash:after {
+  content: "\2013";
+}
+
+.css-char.m-lsquo:after {
+  content: "\2018";
+}
+
+.css-char.m-rsquo:after {
+  content: "\2019";
+}
+
+.css-char.m-lsaquo:after {
+  content: "\2039";
+}
+
+.css-char.m-rsaquo:after {
+  content: "\203A";
+}
+
+.css-char.m-ldquo:after {
+  content: "\201C";
+}
+
+.css-char.m-rdquo:after {
+  content: "\201D";
+}
+
+.css-char.m-bull:after {
+  content: "\2022";
+}
+
+.css-char.m-hellip:after {
+  content: "\2026";
 }
 
 .color-swap {
@@ -917,97 +1035,4 @@ body {
 .scut-sticky {
   background: black;
   color: white;
-}
-
-.css-char {
-  margin-bottom: 1em;
-}
-
-.css-char:after {
-  display: inline-block;
-  margin-left: 1em;
-}
-
-.css-char.m-amp:after {
-  content: "\0026";
-}
-
-.css-char.m-gt:after {
-  content: "\003e";
-}
-
-.css-char.m-lt:after {
-  content: "\003c";
-}
-
-.css-char.m-nbsp:after {
-  content: "\00a0";
-}
-
-.css-char.m-quot:after {
-  content: "\0022";
-}
-
-.css-char.m-sect:after {
-  content: "\00a7";
-}
-
-.css-char.m-laquo:after {
-  content: "\00ab";
-}
-
-.css-char.m-raquo:after {
-  content: "\00bb";
-}
-
-.css-char.m-para:after {
-  content: "\00b6";
-}
-
-.css-char.m-middot:after {
-  content: "\00b7";
-}
-
-.css-char.m-oslash:after {
-  content: "\00f8";
-}
-
-.css-char.m-mdash:after {
-  content: "\2014";
-}
-
-.css-char.m-ndash:after {
-  content: "\2013";
-}
-
-.css-char.m-lsquo:after {
-  content: "\2018";
-}
-
-.css-char.m-rsquo:after {
-  content: "\2019";
-}
-
-.css-char.m-lsaquo:after {
-  content: "\2039";
-}
-
-.css-char.m-rsaquo:after {
-  content: "\203A";
-}
-
-.css-char.m-ldquo:after {
-  content: "\201C";
-}
-
-.css-char.m-rdquo:after {
-  content: "\201D";
-}
-
-.css-char.m-bull:after {
-  content: "\2022";
-}
-
-.css-char.m-hellip:after {
-  content: "\2026";
 }

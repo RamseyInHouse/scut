@@ -47,6 +47,56 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   }
 }
 
+@mixin scut-borders (
+  $border: 1px solid,
+  $sides: y n
+) {
+
+  $top: nth($sides, 1);
+  $right: nth($sides, 2);
+  $bottom: null;
+  $left: null;
+
+  @if length($sides) == 2 {
+    $bottom: nth($sides, 1);
+    $left: nth($sides, 2);
+  }
+  @else if length($sides) == 4 {
+    $bottom: nth($sides, 3);
+    $left: nth($sides, 4);
+  }
+
+
+  @if $top == y {
+    border-top: $border;
+  }
+  @if $right == y {
+    border-right: $border;
+  }
+  @if $bottom == y {
+    border-bottom: $border;
+  }
+  @if $left == y {
+    border-left: $border;
+  }
+
+}
+
+.borders {
+  display: inline-block;
+  margin-bottom: 1em;
+  padding: 1em;
+  &.v-1 {
+    @include scut-borders;
+  }
+  &.v-2 {
+    @include scut-borders($sides: y y n n);
+  }
+  &.v-3 {
+    @include scut-borders(5px solid red);
+  }
+}
+
 .vcenter-abs-c {
   border: 5px solid;
   @include scut-size(20em);
@@ -56,6 +106,43 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .vcenter-abs {
   @include scut-center-absolutely(7em 30px);
   background: gray;
+}
+
+.css-char {
+
+margin-bottom: 1em;
+
+&:after {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+// insert list here, then
+// replace ^(\$scut-)(.*?)(:.*;)$
+// with &.m-$2:after { content: $scut-$2; }
+
+&.m-amp:after { content: $scut-amp; }
+&.m-gt:after { content: $scut-gt; }
+&.m-lt:after { content: $scut-lt; }
+&.m-nbsp:after { content: $scut-nbsp; }
+&.m-quot:after { content: $scut-quot; }
+&.m-sect:after { content: $scut-sect; }
+&.m-laquo:after { content: $scut-laquo; }
+&.m-raquo:after { content: $scut-raquo; }
+&.m-para:after { content: $scut-para; }
+&.m-middot:after { content: $scut-middot; }
+&.m-oslash:after { content: $scut-oslash; }
+&.m-mdash:after { content: $scut-mdash; }
+&.m-ndash:after { content: $scut-ndash; }
+&.m-lsquo:after { content: $scut-lsquo; }
+&.m-rsquo:after { content: $scut-rsquo; }
+&.m-lsaquo:after { content: $scut-lsaquo; }
+&.m-rsaquo:after { content: $scut-rsaquo; }
+&.m-ldquo:after { content: $scut-ldquo; }
+&.m-rdquo:after { content: $scut-rdquo; }
+&.m-bull:after { content: $scut-bull; }
+&.m-hellip:after { content: $scut-hellip; }
+
 }
 
 .color-swap {
@@ -241,41 +328,4 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .scut-sticky {
   background: black;
   color: white;
-}
-
-.css-char {
-
-margin-bottom: 1em;
-
-&:after {
-  display: inline-block;
-  margin-left: 1em;
-}
-
-// insert list here, then
-// replace ^(\$scut-)(.*?)(:.*;)$
-// with &.m-$2:after { content: $scut-$2; }
-
-&.m-amp:after { content: $scut-amp; }
-&.m-gt:after { content: $scut-gt; }
-&.m-lt:after { content: $scut-lt; }
-&.m-nbsp:after { content: $scut-nbsp; }
-&.m-quot:after { content: $scut-quot; }
-&.m-sect:after { content: $scut-sect; }
-&.m-laquo:after { content: $scut-laquo; }
-&.m-raquo:after { content: $scut-raquo; }
-&.m-para:after { content: $scut-para; }
-&.m-middot:after { content: $scut-middot; }
-&.m-oslash:after { content: $scut-oslash; }
-&.m-mdash:after { content: $scut-mdash; }
-&.m-ndash:after { content: $scut-ndash; }
-&.m-lsquo:after { content: $scut-lsquo; }
-&.m-rsquo:after { content: $scut-rsquo; }
-&.m-lsaquo:after { content: $scut-lsaquo; }
-&.m-rsaquo:after { content: $scut-rsaquo; }
-&.m-ldquo:after { content: $scut-ldquo; }
-&.m-rdquo:after { content: $scut-rdquo; }
-&.m-bull:after { content: $scut-bull; }
-&.m-hellip:after { content: $scut-hellip; }
-
 }
