@@ -47,11 +47,36 @@ $scut-middot: "\00b7";
 $scut-oslash: "\00f8";
 // bullet •
 $scut-bull: "\2022";
-// triangular bullet ‣
-$scut-tribull: "\25E6";
+// white bullet ◦
+$scut-whibull: "\25E6";
 // horizontal ellipsis …
 $scut-hellip: "\2026";
 // vertical ellipsis ⋮
 $scut-vellip: "\22EE";
 // midline horizontal ellipsis ⋯
 $scut-midhellip: "\22EF";
+
+// up-pointing triangle ▲
+$scut-utri: "\25b2";
+// down-pointing triangle ▼
+$scut-dtri: "\25bc";
+// left-pointing triangle ◀
+$scut-ltri: "\25c0";
+// right-pointing triangle ▶
+$scut-rtri: "\25b6";
+// up-pointing small triangle ▴
+$scut-ustri: "\25b4";
+// down-pointing small triangle ▾
+$scut-dstri: "\25be";
+// left-pointing small triangle ◂
+$scut-lstri: "\25c2";
+// right-pointing small triangle ▸
+$scut-rstri: "\25b8";
+// diamond ◆
+$scut-diamond: "\25c6";
+// fisheye ◉
+$scut-fisheye: "\25c9";
+// bullseye ◎
+$scut-bullseye: "\25ce";
+// circle ●
+$scut-circle: "\25cf";

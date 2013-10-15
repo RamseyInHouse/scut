@@ -139,6 +139,10 @@ http://davidtheclark.github.io/scut/#fill
 }
 
 /*==========================
+SCUT FONTICON-LABEL
+==========================*/
+
+/*==========================
 SCUT LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
@@ -163,6 +167,7 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
 .list-divided.v-1 > li + li:before {
   content: "|";
+  display: inline-block;
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
@@ -562,88 +567,148 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   margin-left: 1em;
 }
 
-.css-char.m-amp:after {
-  content: "\0026";
-}
-
-.css-char.m-gt:after {
-  content: "\003e";
-}
-
-.css-char.m-lt:after {
-  content: "\003c";
-}
-
-.css-char.m-nbsp:after {
-  content: "\00a0";
-}
-
-.css-char.m-quot:after {
+.css-char.m-scut-quot:after {
   content: "\0022";
 }
 
-.css-char.m-sect:after {
-  content: "\00a7";
-}
-
-.css-char.m-laquo:after {
-  content: "\00ab";
-}
-
-.css-char.m-raquo:after {
-  content: "\00bb";
-}
-
-.css-char.m-para:after {
-  content: "\00b6";
-}
-
-.css-char.m-middot:after {
-  content: "\00b7";
-}
-
-.css-char.m-oslash:after {
-  content: "\00f8";
-}
-
-.css-char.m-mdash:after {
-  content: "\2014";
-}
-
-.css-char.m-ndash:after {
-  content: "\2013";
-}
-
-.css-char.m-lsquo:after {
+.css-char.m-scut-lsquo:after {
   content: "\2018";
 }
 
-.css-char.m-rsquo:after {
+.css-char.m-scut-rsquo:after {
   content: "\2019";
 }
 
-.css-char.m-lsaquo:after {
-  content: "\2039";
-}
-
-.css-char.m-rsaquo:after {
-  content: "\203A";
-}
-
-.css-char.m-ldquo:after {
+.css-char.m-scut-ldquo:after {
   content: "\201C";
 }
 
-.css-char.m-rdquo:after {
+.css-char.m-scut-rdquo:after {
   content: "\201D";
 }
 
-.css-char.m-bull:after {
+.css-char.m-scut-lsaquo:after {
+  content: "\2039";
+}
+
+.css-char.m-scut-rsaquo:after {
+  content: "\203A";
+}
+
+.css-char.m-scut-laquo:after {
+  content: "\00ab";
+}
+
+.css-char.m-scut-raquo:after {
+  content: "\00bb";
+}
+
+.css-char.m-scut-mdash:after {
+  content: "\2014";
+}
+
+.css-char.m-scut-ndash:after {
+  content: "\2013";
+}
+
+.css-char.m-scut-amp:after {
+  content: "\0026";
+}
+
+.css-char.m-scut-gt:after {
+  content: "\003e";
+}
+
+.css-char.m-scut-lt:after {
+  content: "\003c";
+}
+
+.css-char.m-scut-nbsp:after {
+  content: "\00a0";
+}
+
+.css-char.m-scut-sect:after {
+  content: "\00a7";
+}
+
+.css-char.m-scut-para:after {
+  content: "\00b6";
+}
+
+.css-char.m-scut-middot:after {
+  content: "\00b7";
+}
+
+.css-char.m-scut-oslash:after {
+  content: "\00f8";
+}
+
+.css-char.m-scut-bull:after {
   content: "\2022";
 }
 
-.css-char.m-hellip:after {
+.css-char.m-scut-whibull:after {
+  content: "\25E6";
+}
+
+.css-char.m-scut-hellip:after {
   content: "\2026";
+}
+
+.css-char.m-scut-vellip:after {
+  content: "\22EE";
+}
+
+.css-char.m-scut-midhellip:after {
+  content: "\22EF";
+}
+
+.css-char.m-scut-utri:after {
+  content: "\25b2";
+}
+
+.css-char.m-scut-dtri:after {
+  content: "\25bc";
+}
+
+.css-char.m-scut-ltri:after {
+  content: "\25c0";
+}
+
+.css-char.m-scut-rtri:after {
+  content: "\25b6";
+}
+
+.css-char.m-scut-ustri:after {
+  content: "\25b4";
+}
+
+.css-char.m-scut-dstri:after {
+  content: "\25be";
+}
+
+.css-char.m-scut-lstri:after {
+  content: "\25c2";
+}
+
+.css-char.m-scut-rstri:after {
+  content: "\25b8";
+}
+
+.css-char.m-scut-diamond:after {
+  content: "\25c6";
+}
+
+.css-char.m-scut-fisheye:after {
+  content: "\25c9";
+}
+
+.css-char.m-scut-bullseye:after {
+  content: "\25ce";
+}
+
+.css-char.m-scut-circle:after {
+  content: "\25cf";
 }
 
 .color-swap {
@@ -714,6 +779,29 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   background-color: black;
 }
 
+.row {
+  display: table;
+}
+
+.row > .scut-inner {
+  display: table-cell;
+  padding: 2em;
+}
+
+.row .m-1 {
+  background: red;
+  width: 25%;
+}
+
+.row .m-2 {
+  width: 25%;
+}
+
+.row .m-3 {
+  background: blue;
+  width: 50%;
+}
+
 .hanging-indent {
   margin: 1em 0;
 }
@@ -780,6 +868,10 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   font-weight: bold;
 }
 
+.list-divided {
+  margin: 0 0 2em 0 !important;
+}
+
 .list-divided.v-2 {
   list-style-type: none;
   margin: 0;
@@ -796,8 +888,26 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   float: right;
 }
 
+.list-divided.v-2 > li {
+  height: 2em;
+}
+
+.list-divided.v-2 > li:after {
+  height: 2em;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background: red;
+  font-size: 2em;
+  width: 2em;
+}
+
+.list-divided.v-2 > li:first-child:after {
+  width: 0;
+  overflow: hidden;
+}
+
 .list-divided.v-2 > li + li:after {
-  content: "+";
   margin-left: 2em;
   margin-right: 2em;
 }
@@ -820,6 +930,7 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 
 .list-divided.v-3 > li + li:after {
   content: "//";
+  display: inline-block;
   margin-left: 10px;
   margin-right: 10px;
 }

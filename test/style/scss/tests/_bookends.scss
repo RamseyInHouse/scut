@@ -34,7 +34,7 @@
     }
   }
   &.v-6 {
-    @include scut-bookends(2em, $scut-tribull $scut-bull) {
+    @include scut-bookends(2em, $scut-whibull $scut-bull) {
       font-size: 3em;
       vertical-align: middle;
     }

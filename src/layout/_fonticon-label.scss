@@ -1,0 +1,31 @@
+/*==========================
+SCUT FONTICON-LABEL
+==========================*/
+
+@mixin scut-fonticon-label (
+  $font,
+  $glyph,
+  $pad: 0.25em,
+  $side: left
+) {
+
+  $psuedo: if($side == left, "before", "after");
+
+  &:#{$psuedo} {
+    font-family: $font;
+    display: inline-block;
+    vertical-align: middle;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    content: $glyph;
+    @if $side == left and $pad != 0 {
+      margin-right: $pad;
+    }
+    @else if $side == right and $pad != 0 {
+      margin-left: $pad;
+    }
+    @content;
+  }
+
+}

@@ -5,11 +5,18 @@
   }
 
   &.v-2 {
-    @include scut-list-divided("+", 2em, right);
+    @include scut-list-divided("", 2em, right, 2em) {
+      background: red;
+      font-size: 2em;
+      width: 2em;
+    }
   }
 
   &.v-3 {
     @include scut-list-divided("//", 10px, right);
   }
+
+  margin: 0 0 2em 0 !important;
+
 
 }

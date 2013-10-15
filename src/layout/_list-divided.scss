@@ -8,15 +8,37 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 @mixin scut-list-divided (
   $divider: "|",
   $gap: 0.5em,
-  $dir: left
+  $dir: left,
+  $height: false
 ) {
 
   @include scut-list-floated($dir: $dir);
 
   $psuedo: if($dir == left, 'before', 'after');
 
+  @if $height {
+    & > li {
+      height: $height;
+    }
+    & > li:#{$psuedo} {
+      height: $height;
+      content: $divider;
+      display: inline-block;
+      vertical-align: middle;
+      @content;
+    }
+    & > li:first-child:#{$psuedo} {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+
   & > li + li:#{$psuedo} {
-    content: $divider;
+    @if not $height {
+      content: $divider;
+      display: inline-block;
+      @content;
+    }
     margin-left: $gap;
     margin-right: $gap;
   }

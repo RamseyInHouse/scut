@@ -7,30 +7,122 @@ margin-bottom: 1em;
   margin-left: 1em;
 }
 
-// insert list here, then
+// insert list below, then
 // replace ^(\$scut-)(.*?)(:.*;)$
-// with &.m-$2:after { content: $scut-$2; }
+// with &.m-scut-$2:after { content: $scut-$2; }\n
 
-&.m-amp:after { content: $scut-amp; }
-&.m-gt:after { content: $scut-gt; }
-&.m-lt:after { content: $scut-lt; }
-&.m-nbsp:after { content: $scut-nbsp; }
-&.m-quot:after { content: $scut-quot; }
-&.m-sect:after { content: $scut-sect; }
-&.m-laquo:after { content: $scut-laquo; }
-&.m-raquo:after { content: $scut-raquo; }
-&.m-para:after { content: $scut-para; }
-&.m-middot:after { content: $scut-middot; }
-&.m-oslash:after { content: $scut-oslash; }
-&.m-mdash:after { content: $scut-mdash; }
-&.m-ndash:after { content: $scut-ndash; }
-&.m-lsquo:after { content: $scut-lsquo; }
-&.m-rsquo:after { content: $scut-rsquo; }
-&.m-lsaquo:after { content: $scut-lsaquo; }
-&.m-rsaquo:after { content: $scut-rsaquo; }
-&.m-ldquo:after { content: $scut-ldquo; }
-&.m-rdquo:after { content: $scut-rdquo; }
-&.m-bull:after { content: $scut-bull; }
-&.m-hellip:after { content: $scut-hellip; }
+// quotation mark "
+&.m-scut-quot:after { content: $scut-quot; }
+
+// left single curly quote ‘
+&.m-scut-lsquo:after { content: $scut-lsquo; }
+
+// right single curly quote ’
+&.m-scut-rsquo:after { content: $scut-rsquo; }
+
+// left double curly quote “
+&.m-scut-ldquo:after { content: $scut-ldquo; }
+
+// right double curly quote ”
+&.m-scut-rdquo:after { content: $scut-rdquo; }
+
+// left single angle quote (guillemet) ‹
+&.m-scut-lsaquo:after { content: $scut-lsaquo; }
+
+// right single angle quote (guillemet) ›
+&.m-scut-rsaquo:after { content: $scut-rsaquo; }
+
+// left double angle quote (guillemet) «
+&.m-scut-laquo:after { content: $scut-laquo; }
+
+// right double angle quote (guillemet) »
+&.m-scut-raquo:after { content: $scut-raquo; }
+
+
+// em dash (mutton) — [should look longer]
+&.m-scut-mdash:after { content: $scut-mdash; }
+
+// en dash (nut) – [between a hyphen and an em dash in length]
+&.m-scut-ndash:after { content: $scut-ndash; }
+
+
+// ampersand &
+&.m-scut-amp:after { content: $scut-amp; }
+
+// greater than >
+&.m-scut-gt:after { content: $scut-gt; }
+
+// less than <
+&.m-scut-lt:after { content: $scut-lt; }
+
+// non-breaking space [nothing to see]
+&.m-scut-nbsp:after { content: $scut-nbsp; }
+
+
+// section sign (double S, hurricane, sectional symbol, the legal doughnut, signum sectiōnis) §
+&.m-scut-sect:after { content: $scut-sect; }
+
+// paragraph symbol (pilcrow) ¶
+&.m-scut-para:after { content: $scut-para; }
+
+
+// middot (interpunct, interpoint) ·
+&.m-scut-middot:after { content: $scut-middot; }
+
+// o-slash (slashed o) Ø
+&.m-scut-oslash:after { content: $scut-oslash; }
+
+// bullet •
+&.m-scut-bull:after { content: $scut-bull; }
+
+// white bullet ◦
+&.m-scut-whibull:after { content: $scut-whibull; }
+
+// horizontal ellipsis …
+&.m-scut-hellip:after { content: $scut-hellip; }
+
+// vertical ellipsis ⋮
+&.m-scut-vellip:after { content: $scut-vellip; }
+
+// midline horizontal ellipsis ⋯
+&.m-scut-midhellip:after { content: $scut-midhellip; }
+
+
+// up-pointing triangle ▲
+&.m-scut-utri:after { content: $scut-utri; }
+
+// down-pointing triangle ▼
+&.m-scut-dtri:after { content: $scut-dtri; }
+
+// left-pointing triangle ◀
+&.m-scut-ltri:after { content: $scut-ltri; }
+
+// right-pointing triangle ▶
+&.m-scut-rtri:after { content: $scut-rtri; }
+
+// up-pointing small triangle ▴
+&.m-scut-ustri:after { content: $scut-ustri; }
+
+// down-pointing small triangle ▾
+&.m-scut-dstri:after { content: $scut-dstri; }
+
+// left-pointing small triangle ◂
+&.m-scut-lstri:after { content: $scut-lstri; }
+
+// right-pointing small triangle ▸
+&.m-scut-rstri:after { content: $scut-rstri; }
+
+// diamond ◆
+&.m-scut-diamond:after { content: $scut-diamond; }
+
+// fisheye ◉
+&.m-scut-fisheye:after { content: $scut-fisheye; }
+
+// bullseye ◎
+&.m-scut-bullseye:after { content: $scut-bullseye; }
+
+// circle ●
+&.m-scut-circle:after { content: $scut-circle; }
+
 
 }

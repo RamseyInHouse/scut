@@ -1,0 +1,29 @@
+@mixin scut-equal-columns (
+  $selector: ".scut-inner"
+) {
+
+  display: table;
+
+  & > #{$selector} {
+    display: table-cell;
+    @content;
+  }
+
+}
+
+.row {
+  @include scut-equal-columns {
+    padding: 2em;
+  }
+  .m-1 {
+    background: red;
+    width: 25%;
+  }
+  .m-2 {
+    width: 25%;
+  }
+  .m-3 {
+    background: blue;
+    width: 50%;
+  }
+}
