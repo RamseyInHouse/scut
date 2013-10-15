@@ -1,0 +1,1151 @@
+/*==========================
+SCUT CLEARFIX
+http://davidtheclark.github.io/scut/#clearfix
+==========================*/
+
+@mixin scut-clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+%scut-clearfix {
+  @include scut-clearfix;
+}
+
+/*==========================
+SCUT LIST: UNSTYLED
+http://davidtheclark.github.io/scut/#list_unstyled
+==========================*/
+
+@mixin scut-list-unstyled {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+%scut-list-unstyled {
+  @include scut-list-unstyled;
+}
+
+/*==========================
+SCUT LIST: FLOATED
+http://davidtheclark.github.io/scut/#list_floated
+
+Depends on `list-unstyled` and `clearfix`.
+==========================*/
+
+@mixin scut-list-floated (
+  $margin: false,
+  $dir: left
+) {
+
+  @include scut-list-unstyled;
+  @include scut-clearfix;
+
+  & > li {
+    float: $dir;
+  }
+
+  @if $margin {
+    & > li + li {
+      margin-#{$dir}: $margin;
+    }
+  }
+
+}
+
+%scut-list-floated {
+  @include scut-list-floated;
+}
+
+
+/*==========================
+SCUT POSITIONING: COORDINATES
+http://davidtheclark.github.io/scut/#positioning_coordinates
+==========================*/
+
+@function scut-autoOrValue ($val) {
+  @if $val == a or $val == auto {
+    @return auto;
+  }
+  @else {
+    @return $val;
+  }
+}
+
+@mixin scut-coords (
+  $coordinates: n n n n
+) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  @if $top != n {
+    top: scut-autoOrValue($top);
+  }
+  @if $right != n {
+    right: scut-autoOrValue($right);
+  }
+  @if $bottom != n {
+    bottom: scut-autoOrValue($bottom);
+  }
+  @if $left != n {
+    left: scut-autoOrValue($left);
+  }
+
+}
+
+/*==========================
+SCUT STRIP UNIT
+http://davidtheclark.github.io/scut/#strip_unit
+==========================*/
+
+@function scut-strip-unit (
+  $num
+) {
+
+  @return $num / ($num * 0 + 1);
+
+}
+
+/*==========================
+SCUT PIXELS TO EMS
+http://davidtheclark.github.io/scut/#pixels-to-ems
+
+Depends on `scut-strip-unit`.
+==========================*/
+
+@function scut-em (
+  $pixels,
+  $base: 16
+) {
+
+  $multiplier: if(unit($base) == em, 16, 1);
+  $divisor: scut-strip-unit($base) * $multiplier;
+
+  @return ($pixels / $divisor) * 1em;
+
+}
+
+/*==========================
+SCUT BORDERS
+==========================*/
+
+@mixin scut-borders (
+  $border: 1px solid,
+  $sides: y n
+) {
+
+  $top: nth($sides, 1);
+  $right: nth($sides, 2);
+  $bottom: null;
+  $left: null;
+
+  @if length($sides) == 2 {
+    $bottom: nth($sides, 1);
+    $left: nth($sides, 2);
+  }
+  @else if length($sides) == 4 {
+    $bottom: nth($sides, 3);
+    $left: nth($sides, 4);
+  }
+
+
+  @if $top == y {
+    border-top: $border;
+  }
+  @if $right == y {
+    border-right: $border;
+  }
+  @if $bottom == y {
+    border-bottom: $border;
+  }
+  @if $left == y {
+    border-left: $border;
+  }
+
+}
+
+%scut-borders-tb {
+  @include scut-borders;
+}
+
+/*==========================
+SCUT COLOR SWAP
+http://davidtheclark.github.io/scut/#color_swap
+==========================*/
+
+@mixin scut-color-swap (
+  $inactive,
+  $active,
+  $duration: 0,
+  $bg: false
+) {
+
+  $transition-properties: null;
+  $inactive-is-list: type-of($inactive) == list;
+
+  @if $inactive-is-list {
+    color: nth($inactive, 1);
+    background-color: nth($inactive, 2);
+    $transition-properties: background-color, color;
+  }
+
+  @else if $bg and not $inactive-is-list {
+    background-color: $inactive;
+    $transition-properties: background-color;
+  }
+
+  @else {
+    color: $inactive;
+    $transition-properties: color;
+  }
+
+  @if $duration != 0 {
+    transition-property: $transition-properties;
+    transition-duration: $duration;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+   $active-is-list: type-of($active) == list;
+
+    @if $active-is-list {
+      color: nth($active, 1);
+      background-color: nth($active, 2);
+    }
+
+    @else if $bg and not $active-is-list {
+      background-color: $active;
+    }
+
+    @else {
+      color: $active;
+    }
+  }
+
+}
+
+/*==========================
+SCUT HD BREAKPOINT
+http://davidtheclark.github.io/scut/#hd_breakpoint
+==========================*/
+
+@mixin scut-hd-bp (
+  $ratio: 1.3
+) {
+
+  @media (-o-min-device-pixel-ratio: #{$ratio}/1),
+         (-webkit-min-device-pixel-ratio: #{$ratio}),
+         (min-resolution: #{round(96*$ratio)}dpi) {
+    @content;
+  }
+
+}
+
+/*==========================
+SCUT HIDE TEXT
+http://davidtheclark.github.io/scut/#hide_text
+==========================*/
+
+  @mixin scut-hide-text {
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+  }
+
+  %scut-hide-text {
+    @include scut-hide-text;
+  }
+
+/*==========================
+SCUT OPACITY
+http://davidtheclark.github.io/scut/#opacity
+==========================*/
+
+@mixin scut-opacity (
+  $opacity
+) {
+
+  $ms-value: $opacity * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
+  opacity: $opacity;
+
+}
+
+
+/*==========================
+SCUT SELECTED
+http://davidtheclark.github.io/scut/#selected
+==========================*/
+
+@mixin scut-selected (
+  $active: true
+) {
+
+  @if $active {
+    &:hover,
+    &:focus,
+    &:active {
+      @content;
+    }
+  }
+  @else {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
+
+}
+
+/*==========================
+SCUT CENTER ABSOLUTELY
+http://davidtheclark.github.io/scut/#center_absolutely
+==========================*/
+
+@mixin scut-center-absolutely (
+  $dimensions
+) {
+
+  $width: nth($dimensions, 1);
+  $height: nth($dimensions, 2);
+
+  position: absolute;
+
+  @if $width != n {
+    width: $width;
+    left: 50%;
+    margin-left: (-$width / 2);
+  }
+
+  @if $height != n {
+    height: $height;
+    top: 50%;
+    margin-top: (-$height / 2);
+  }
+
+}
+
+/*==========================
+SCUT FILL
+http://davidtheclark.github.io/scut/#fill
+==========================*/
+
+@mixin scut-fill {
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+%scut-fill {
+  @include scut-fill;
+}
+
+/*==========================
+SCUT LIST: DIVIDED
+http://davidtheclark.github.io/scut/#list_divided
+
+Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
+==========================*/
+
+@mixin scut-list-divided (
+  $divider: "|",
+  $gap: 0.5em,
+  $dir: left
+) {
+
+  @include scut-list-floated($dir: $dir);
+
+  $psuedo: if($dir == left, 'before', 'after');
+
+  & > li + li:#{$psuedo} {
+    content: $divider;
+    margin-left: $gap;
+    margin-right: $gap;
+  }
+
+}
+
+%scut-list-bar {
+  @include scut-list-divided;
+}
+
+%scut-list-breadcrumb {
+  @include scut-list-divided("/");
+}
+
+/*==========================
+SCUT LIST: INLINE
+http://davidtheclark.github.io/scut/#list_inline
+
+Depends on `list-unstyled`.
+==========================*/
+
+@mixin scut-list-inline (
+  $margin: false
+) {
+
+  @include scut-list-unstyled;
+
+  & > li {
+    display: inline-block;
+  }
+
+  @if $margin {
+    & > li + li {
+      margin-left: $margin;
+    }
+  }
+
+}
+
+%scut-list-inline {
+  @include scut-list-inline;
+}
+
+/*==========================
+SCUT LIST: PUNCTUATED
+http://davidtheclark.github.io/scut/#list_punctuated
+
+Depends on `list-unstyled`.
+==========================*/
+
+@mixin scut-list-punctuated (
+  $divider: ", ",
+  $display: inline
+) {
+
+  @include scut-list-unstyled;
+
+  & > li {
+    display: $display;
+    &:not(:last-child):after {
+      content: $divider;
+    }
+  }
+
+}
+
+%scut-list-comma {
+  @include scut-list-punctuated;
+}
+
+/*==========================
+SCUT POSITIONING: ABSOLUTE
+http://davidtheclark.github.io/scut/#positioning_absolute
+
+Depends on `positioning-coordinates`.
+==========================*/
+
+@mixin scut-absolute (
+  $coordinates: 0 n n 0
+) {
+
+  position: absolute;
+  @include scut-coords($coordinates);
+
+}
+
+%scut-absolute {
+  @include scut-absolute;
+}
+
+/*==========================
+SCUT POSITIONING: FIXED
+http://davidtheclark.github.io/scut/#positioning_fixed
+
+Depends on `positioning-coordinates`.
+==========================*/
+
+@mixin scut-fixed (
+  $coordinates: 0 n n 0
+) {
+
+  position: fixed;
+  @include scut-coords($coordinates);
+
+}
+
+%scut-fixed {
+  @include scut-fixed;
+}
+
+/*==========================
+SCUT POSITIONING: RELATIVE
+http://davidtheclark.github.io/scut/#positioning_relative
+
+Depends on `positioning-coordinates`.
+==========================*/
+
+@mixin scut-relative (
+  $coordinates: n n n n
+) {
+
+  position: relative;
+  @include scut-coords($coordinates);
+
+}
+
+/*==========================
+SCUT RATIO-BOX
+http://davidtheclark.github.io/scut/#ratio-box
+==========================*/
+
+@mixin scut-ratio-box (
+  $ratio: 1/1,
+  $inner: ".scut-inner"
+) {
+
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    height: 0;
+    padding-top: (1 / $ratio) * 100%;
+  }
+
+  & > #{$inner} {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+}
+
+%scut-ratio-box {
+  @include scut-ratio-box;
+}
+
+/*==========================
+SCUT SIZE
+http://davidtheclark.github.io/scut/#size
+==========================*/
+
+@mixin scut-size(
+  $size
+) {
+
+  @if length($size) == 1 {
+    width:  $size;
+    height: $size;
+  }
+  @else if length($size) == 2 {
+    width:  nth($size, 1);
+    height: nth($size, 2);
+  }
+
+}
+
+/*==========================
+SCUT STICKY FOOTER
+http://davidtheclark.github.io/scut/#sticky_footer
+==========================*/
+
+@mixin scut-sticky-footer (
+  $height,
+  $wrapper: ".wrapper",
+  $footer: ".scut-sticky"
+) {
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  #{$wrapper} {
+    min-height: 100%;
+    margin-bottom: -$height;
+    &:after {
+      content: "";
+      display: block;
+    }
+  }
+  #{$wrapper}:after,
+  #{$footer} {
+    height: $height;
+  }
+
+}
+
+/*==========================
+SCUT V-CENTER: INLINE-BLOCK
+http://davidtheclark.github.io/scut/#v-center_inline-block
+==========================*/
+
+@mixin scut-vcenter-ib (
+  $inner: ".scut-inner"
+) {
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+  }
+
+  & > #{$inner} {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+}
+
+%scut-vcenter-ib {
+  @include scut-vcenter-ib;
+}
+
+
+/*==========================
+SCUT V-CENTER: LINE-HEIGHT
+http://davidtheclark.github.io/scut/#v-center_line-height
+==========================*/
+
+@mixin scut-vcenter-lh (
+  $height
+) {
+
+  height: $height;
+  line-height: $height;
+
+}
+
+/*==========================
+SCUT V-CENTER: TABLE DISPLAY
+http://davidtheclark.github.io/scut/#v-center_table_display
+==========================*/
+
+@mixin scut-vcenter-td (
+  $inner: ".scut-inner"
+) {
+
+  display: table;
+
+  & > #{$inner} {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+}
+
+
+%scut-vcenter-td {
+  @include scut-vcenter-td;
+}
+
+/*==========================
+SCUT CIRCLE
+http://davidtheclark.github.io/scut/#circle
+==========================*/
+
+@mixin scut-circle (
+  $size,
+  $color: inherit
+) {
+
+  border-radius: 50%;
+  display: inline-block;
+
+  @if $color == inherit {
+    border-width: $size / 2;
+    border-style: solid;
+    height: 0;
+    width: 0;
+  }
+  @else {
+    background-color: $color;
+    height: $size;
+    width: $size;
+  }
+
+}
+
+/*==========================
+SCUT FOURSQUARE
+http://davidtheclark.github.io/scut/#foursquare
+==========================*/
+
+@mixin scut-foursquare (
+  $rotate: true,
+  $side: 10px,
+  $line-x: 1px,
+  $color: black,
+  $line: white
+) {
+
+  $full-side: $side + $line-x;
+
+  background-color: $color;
+  display: inline-block;
+  height: $full-side;
+  width: $full-side;
+  position: relative;
+
+  @if $rotate {
+    transform: rotate(45deg);
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-color: $line;
+    border-style: solid;
+  }
+  &:before {
+    height: $side/2;
+    right: 0;
+    border-width: 0 0 $line-x;
+  }
+  &:after {
+    width: $side/2;
+    bottom: 0;
+    border-width: 0 $line-x 0 0;
+  }
+
+}
+
+%scut-foursquare {
+  @include scut-foursquare;
+}
+
+/*==========================
+SCUT TRIANGLE
+http://davidtheclark.github.io/scut/#triangle
+==========================*/
+
+@mixin scut-triangle (
+  $direction: right,
+  $size: 1.4em 0.75em,
+  $color: inherit,
+  $pseudo: false
+) {
+
+  display: inline-block;
+  height: 0;
+  width: 0;
+  // for improved appearance in Webkit browsers
+  -webkit-transform: rotate(360deg);
+
+  @if $pseudo {
+    content: "";
+  }
+
+  $dimensions: false;
+  @if type-of($size) == list {
+    $width: nth($size, 1);
+    $height: nth($size, 2);
+    $dimensions: ($height / 2) ($width / 2);
+  }
+  @else {
+    $dimensions: ($size / 2) ($size / 2);
+  }
+  border-width: $dimensions;
+  border-style: solid;
+
+
+  // STANDARD TRIANGLES
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    border-color: transparent;
+    @if $direction == up {
+      border-bottom-color: $color;
+      border-top-width: 0;
+    }
+    @else if $direction == right {
+      border-left-color: $color;
+      border-right-width: 0;
+    }
+    @else if $direction == down {
+      border-top-color: $color;
+      border-bottom-width: 0;
+    }
+    @else if $direction == left {
+      border-right-color: $color;
+      border-left-width: 0;
+    }
+  }
+
+
+  // CORNER TRIANGLES
+
+  @else if ($direction == up-right) or ($direction == up-left) {
+    border-top-color: $color;
+    border-bottom-color: transparent;
+    @if $direction == up-right {
+      border-left-color: transparent;
+      border-right-color: $color;
+    }
+    @else if $direction == up-left {
+      border-left-color: $color;
+      border-right-color: transparent;
+    }
+  }
+
+  @else if ($direction == down-right) or ($direction == down-left) {
+    border-top-color: transparent;
+    border-bottom-color: $color;
+    @if $direction == down-right {
+      border-left-color: transparent;
+      border-right-color: $color;
+    }
+    @else if $direction == down-left {
+      border-left-color: $color;
+      border-right-color: transparent;
+    }
+  }
+
+}
+
+%scut-triangle {
+  @include scut-triangle;
+}
+
+/*==========================
+BOOKENDS
+
+==========================*/
+
+@mixin scut-bookends (
+  $pad: 0.5em,
+  $content: false
+) {
+
+  $content-list: length($content) == 2 and not $content == false;
+
+  @if $content-list or $pad {
+    &:before {
+      @if $content-list {
+        content: nth($content, 1);
+      }
+      @if $pad {
+        margin-right: $pad;
+      }
+    }
+    &:after {
+      @if $content-list {
+        content: nth($content, 2);
+      }
+      @if $pad {
+        margin-left: $pad;
+      }
+    }
+  }
+
+  &:before,
+  &:after {
+    display: inline-block;
+
+    @if $content and length($content) == 1 {
+      content: $content;
+    }
+
+    @content;
+
+  }
+
+}
+
+/*==========================
+SCUT CSS CHARACTERS
+http://davidtheclark.github.io/scut/#characters
+==========================*/
+
+// quotation mark "
+$scut-quot: "\0022";
+// left single curly quote ‘
+$scut-lsquo: "\2018";
+// right single curly quote ’
+$scut-rsquo: "\2019";
+// left double curly quote “
+$scut-ldquo: "\201C";
+// right double curly quote ”
+$scut-rdquo: "\201D";
+// left single angle quote (guillemet) ‹
+$scut-lsaquo: "\2039";
+// right single angle quote (guillemet) ›
+$scut-rsaquo: "\203A";
+// left double angle quote (guillemet) «
+$scut-laquo: "\00ab";
+// right double angle quote (guillemet) »
+$scut-raquo: "\00bb";
+
+// em dash (mutton) — [should look longer]
+$scut-mdash: "\2014";
+// en dash (nut) – [between a hyphen and an em dash in length]
+$scut-ndash: "\2013";
+
+// ampersand &
+$scut-amp: "\0026";
+// greater than >
+$scut-gt: "\003e";
+// less than <
+$scut-lt: "\003c";
+// non-breaking space [nothing to see]
+$scut-nbsp: "\00a0";
+
+// section sign (double S, hurricane, sectional symbol, the legal doughnut, signum sectiōnis) §
+$scut-sect: "\00a7";
+// paragraph symbol (pilcrow) ¶
+$scut-para: "\00b6";
+
+// middot (interpunct, interpoint) ·
+$scut-middot: "\00b7";
+// o-slash (slashed o) Ø
+$scut-oslash: "\00f8";
+// bullet •
+$scut-bull: "\2022";
+// triangular bullet ‣
+$scut-tribull: "\25E6";
+// horizontal ellipsis …
+$scut-hellip: "\2026";
+// vertical ellipsis ⋮
+$scut-vellip: "\22EE";
+// midline horizontal ellipsis ⋯
+$scut-midhellip: "\22EF";
+
+/*==========================
+SCUT FONT-FACE
+http://davidtheclark.github.io/scut/#font-face
+==========================*/
+
+@mixin scut-font-face (
+  $font-family,
+  $file-path,
+  $weight: normal,
+  $style: normal
+) {
+
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+         url('#{$file-path}.woff') format('woff'),
+         url('#{$file-path}.ttf') format('truetype'),
+         url('#{$file-path}.svg##{$font-family}') format('svg');
+  }
+
+}
+
+/*==========================
+SCUT HANGING INDENT
+http://davidtheclark.github.io/scut/#hanging_indent
+==========================*/
+
+@mixin scut-hanging-indent (
+  $indent: 1em
+) {
+
+  text-indent: -$indent;
+  padding-left: $indent;
+
+}
+
+%scut-hanging-indent {
+  @include scut-hanging-indent;
+}
+
+/*==========================
+SCUT INDENTED PARAGRAPHS
+http://davidtheclark.github.io/scut/#indented_paragraphs
+==========================*/
+
+@mixin scut-indented-ps (
+  $indent: 1.5em,
+  $no-first-indent: true
+) {
+
+  p {
+    margin: 0;
+    text-indent: $indent;
+  }
+
+  @if $no-first-indent {
+    p:first-of-type {
+      text-indent: 0;
+    }
+  }
+
+}
+
+%scut-indented-ps {
+  @include scut-indented-ps;
+}
+
+/*==========================
+SCUT KEY-VALUE
+http://davidtheclark.github.io/scut/#key-value
+==========================*/
+
+@mixin scut-key-val (
+  $divider: ":",
+  $pad: 0.25em,
+  $indent: 1em,
+  $spacing: 0,
+  $pad-left: 0
+) {
+
+  & > dt {
+    clear: both;
+    float: left;
+    &:after {
+      content: $divider;
+      margin-right: $pad;
+      @if $pad-left != 0 {
+        margin-left: $pad-left;
+      }
+    }
+  }
+
+  & > dd {
+    margin-left: $indent;
+    @if $spacing != 0 {
+      margin-bottom: $spacing;
+    }
+  }
+
+}
+
+%scut-key-val {
+  @include scut-key-val;
+}
+
+/*==========================
+SCUT LINK: BOTTOM-BORDERED
+http://davidtheclark.github.io/scut/#link_bottom-bordered
+==========================*/
+
+@mixin scut-link-bb (
+  $color: inherit,
+  $style: solid,
+  $width: 1px
+) {
+
+  text-decoration: none;
+
+  border-bottom-width: $width;
+  border-bottom-style: $style;
+  @if $color != inherit {
+    border-bottom-color: $color;
+  }
+
+}
+
+%scut-link-bb {
+  @include scut-link-bb;
+}
+
+/*==========================
+SCUT REVERSE ITALICS
+http://davidtheclark.github.io/scut/#reverse-italics
+==========================*/
+
+@mixin scut-reverse-italics (
+  $elements: false
+) {
+
+  $element-list: em, cite, i;
+  @each $el in $elements {
+    $unquoted-value: unquote($el);
+    $element-list: append($element-list, unquote($el), comma)
+  }
+
+  font-style: italic;
+  #{$element-list} {
+    font-style: normal;
+  }
+
+}
+
+%scut-reverse-italics {
+  @include scut-reverse-italics;
+}
+
+/*==========================
+SCUT SIDE-LINED
+http://davidtheclark.github.io/scut/#side-lined
+==========================*/
+
+@mixin scut-side-lined (
+  $height: 1px,
+  $pad: 0.5em,
+  $color: inherit,
+  $style: solid,
+  $v-adjust: false,
+  $double: false
+) {
+
+  display: block;
+  overflow: hidden;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 50%;
+
+    border-top-style: $style;
+    border-top-width: $height;
+
+    @if $color != inherit {
+      border-top-color: $color;
+    }
+
+    @if $v-adjust != false {
+      bottom: $v-adjust;
+    }
+
+    @if $double != false {
+      height: $double;
+      border-bottom-style: $style;
+      border-bottom-width: $height;
+      @if $color != inherit {
+        border-bottom-color: $color;
+      }
+    }
+  }
+
+  &:before {
+    right: $pad;
+    margin-left: -50%;
+  }
+  &:after {
+    left: $pad;
+    margin-right: -50%;
+  }
+
+}
+
+%scut-side-lined {
+  @include scut-side-lined;
+}

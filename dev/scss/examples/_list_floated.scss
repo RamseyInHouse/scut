@@ -3,16 +3,16 @@
     border: 1px solid;
     padding: 0 5px;
   }
-  &.v-1 {
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-list-floated;
     margin-bottom: 1em;
   }
-  &.v-2 {
+  &.m-2 {
     @include scut-list-floated(1em);
     margin-bottom: 1em;
   }
-  &.v-3 {
+  &.m-3 {
     @include scut-list-floated(2em, right);
   }
 }

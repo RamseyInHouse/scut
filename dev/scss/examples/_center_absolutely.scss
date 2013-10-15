@@ -1,4 +1,4 @@
-.eg-center-absolutely-c {
+.eg-center-absolutely-container {
   border: 5px solid;
   height: 6em;
   margin-bottom: 1em;
@@ -6,13 +6,13 @@
 }
 .eg-center-absolutely {
   background: gray;
-  &.v-1 {
+  &.m-1 {
     @include scut-center-absolutely(20em 3em);
   }
-  &.v-2 {
+  &.m-2 {
     @include scut-center-absolutely(20em n);
   }
-  &.v-3 {
+  &.m-3 {
     @include scut-center-absolutely(n 3em);
   }
 }

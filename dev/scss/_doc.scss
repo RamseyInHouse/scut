@@ -9,6 +9,15 @@
   a:not(.inner-anchor) {
     @extend %scut-link-bb;
   }
+  h3,
+  h4,
+  h5 {
+    margin-top: 2em;
+  }
+  h3 {
+    display: block;
+    border-bottom: 2px solid $c-bg-light;
+  }
 }
 
 .intro-btn {

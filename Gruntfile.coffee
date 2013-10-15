@@ -4,6 +4,13 @@ module.exports = (grunt) ->
 
     pkg: grunt.file.readJSON "package.json"
 
+    concat:
+      examples:
+        options:
+          banner: "/*==========================#{grunt.util.linefeed}DO NOT ALTER THIS DOCUMENT!#{grunt.util.linefeed}#{grunt.util.linefeed}It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)#{grunt.util.linefeed}==========================*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+        files:
+          "dev/scss/_concatenated-examples.scss": ["dev/scss/examples/*.scss"]
+
     sass:
       style:
         files:
@@ -102,7 +109,7 @@ module.exports = (grunt) ->
 
     clean:
       clearSrc:
-        src: ["src", "_scut.scss", "_scut-reset.scss"]
+        src: ["_scut.scss", "_scut-reset.scss"]
       images:
         src: ["dev/images/opt"]
 
@@ -136,6 +143,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-imagemin"
   grunt.loadNpmTasks "grunt-contrib-htmlmin"
+  grunt.loadNpmTasks "grunt-contrib-concat"
   grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-shell"
@@ -143,7 +151,11 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "src", ["clean:clearSrc", "shell:updateSrc"]
-  grunt.registerTask "style", ["sass:style", "autoprefixer:style"]
+  grunt.registerTask "style", [
+    "concat:examples"
+    "sass:style"
+    "autoprefixer:style"
+  ]
   grunt.registerTask "dev", ["connect", "watch"]
   grunt.registerTask "svg", ["svgmin:images", "grunticon:images"]
   grunt.registerTask "reImage", ["clean:images", "svg"]
