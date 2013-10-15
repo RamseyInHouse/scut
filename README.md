@@ -14,7 +14,7 @@ If you have any questions or anything is unclear, please file an issue or contac
 
 ### Experimenting and Testing
 
-> Feel free to experiment with or create test pages for utilities new and old.
+Feel free to experiment with or create test pages for utilities new and old.
 
 **Test pages are for experimentation and testing. They do not have to be pretty, authoritative, complete, or anything else. They exist only to aid development.**
 
@@ -29,5 +29,5 @@ Look at the existing tests for examples.
 
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt test` for the same result.) Look at `Gruntfile.coffee` for details.
 
-If you run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`), an index of test pages should be available at `localhost:9000`. Find your page and go there. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) installed*.
+If you run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`), an index of test pages should be available at `localhost:9000`. Find your test page in the index and go there. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) installed*.
 
