@@ -12,23 +12,31 @@ http://davidtheclark.github.io/scut/#color_swap
 
   $transition-properties: null;
   $inactive-is-list: type-of($inactive) == list;
+  $active-is-list: type-of($active) == list;
 
+  // If $inactive IS a list,
+  // assign color and background-color.
   @if $inactive-is-list {
     color: nth($inactive, 1);
     background-color: nth($inactive, 2);
     $transition-properties: background-color, color;
   }
 
+  // If $inactive IS NOT a list and $bg is TRUE,
+  // assign background-color.
   @else if $bg and not $inactive-is-list {
     background-color: $inactive;
     $transition-properties: background-color;
   }
 
+  // If $inactive IS NOT a list and $bg is FALSE,
+  // assign color.
   @else {
     color: $inactive;
     $transition-properties: color;
   }
 
+  // Only set-up transition if $duration != 0.
   @if $duration != 0 {
     transition-property: $transition-properties;
     transition-duration: $duration;
@@ -38,8 +46,7 @@ http://davidtheclark.github.io/scut/#color_swap
   &:focus,
   &:active {
 
-   $active-is-list: type-of($active) == list;
-
+    // $active is treated the same as $inactive, above.
     @if $active-is-list {
       color: nth($active, 1);
       background-color: nth($active, 2);

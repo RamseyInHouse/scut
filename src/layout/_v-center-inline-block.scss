@@ -7,11 +7,18 @@ http://davidtheclark.github.io/scut/#v-center_inline-block
   $inner: ".scut-inner"
 ) {
 
+  // The inner element is vertically centered
+  // by middle-aligning it with an inline psuedo-element
+  // whose height is 100%.
+
   &:before {
     content: "";
-    display: inline-block;
     height: 100%;
+    display: inline-block;
     vertical-align: middle;
+    // A small negative right margin is set
+    // to account for the default
+    // word-spacing of inline-block.
     margin-right: -0.25em;
   }
 

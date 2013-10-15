@@ -12,12 +12,16 @@ http://davidtheclark.github.io/scut/#circle
   display: inline-block;
 
   @if $color == inherit {
+    // If user wants to inherit the color,
+    // take advantage of the fact that border
+    // color defaults to the text color of the element.
     border-width: $size / 2;
     border-style: solid;
     height: 0;
     width: 0;
   }
   @else {
+    // Otherwise, just use background-color.
     background-color: $color;
     height: $size;
     width: $size;

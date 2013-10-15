@@ -7,8 +7,12 @@ http://davidtheclark.github.io/scut/#hanging_indent
   $indent: 1em
 ) {
 
-  text-indent: -$indent;
+  // padding-left creates the indent,
+  // while text-indent pulls the first line
+  // back to the edge.
+
   padding-left: $indent;
+  text-indent: -$indent;
 
 }
 

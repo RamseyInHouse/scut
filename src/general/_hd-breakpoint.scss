@@ -9,7 +9,7 @@ http://davidtheclark.github.io/scut/#hd_breakpoint
 
   @media (-o-min-device-pixel-ratio: #{$ratio}/1),
          (-webkit-min-device-pixel-ratio: #{$ratio}),
-         (min-resolution: #{round(96*$ratio)}dpi) {
+         (min-resolution: #{round(96 * $ratio)}dpi) {
     @content;
   }
 

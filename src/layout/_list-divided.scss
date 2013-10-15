@@ -16,6 +16,11 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
   $psuedo: if($dir == left, 'before', 'after');
 
+  // If an explicit height is passed,
+  // things are different: All <li>s
+  // need the psuedo-element (to force height),
+  // but the first's must be hidden.
+
   @if $height {
     & > li {
       height: $height;

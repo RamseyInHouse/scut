@@ -7,6 +7,11 @@ SCUT BORDERS
   $sides: y n
 ) {
 
+  // If $sides is a list of two,
+  // values are: top/bottom left/right.
+  // If $sides ia  list of four,
+  // values are: top right bottom left.
+
   $top: nth($sides, 1);
   $right: nth($sides, 2);
   $bottom: null;
@@ -20,7 +25,6 @@ SCUT BORDERS
     $bottom: nth($sides, 3);
     $left: nth($sides, 4);
   }
-
 
   @if $top == y {
     border-top: $border;

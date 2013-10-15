@@ -10,6 +10,9 @@ Depends on `scut-strip-unit`.
   $base: 16
 ) {
 
+  // $base could be in em or px (no unit = px).
+  // Adjust accordingly to create a $divisor that
+  // serves as context for $pixels.
   $multiplier: if(unit($base) == em, 16, 1);
   $divisor: scut-strip-unit($base) * $multiplier;
 

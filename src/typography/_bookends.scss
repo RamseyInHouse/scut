@@ -10,6 +10,8 @@ BOOKENDS
 
   $content-list: length($content) == 2 and not $content == false;
 
+  // If $content is a list or there $pad exist,
+  // set some psuedo-element-specific rules.
   @if $content-list or $pad {
     &:before {
       @if $content-list {
@@ -29,6 +31,8 @@ BOOKENDS
     }
   }
 
+  // Then set some rules that apply to both
+  // psuedo-elements.
   &:before,
   &:after {
     display: inline-block;
@@ -37,6 +41,7 @@ BOOKENDS
       content: $content;
     }
 
+    // Any additional styling applies to both.\
     @content;
 
   }

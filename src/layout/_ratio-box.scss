@@ -11,6 +11,9 @@ http://davidtheclark.github.io/scut/#ratio-box
   overflow: hidden;
   position: relative;
 
+  // The container's height, as a percentage of the
+  // container's width, is set by assigning
+  // padding-top to a psuedo-element.
   &:before {
     content: "";
     display: block;
@@ -18,12 +21,13 @@ http://davidtheclark.github.io/scut/#ratio-box
     padding-top: (1 / $ratio) * 100%;
   }
 
+  // The inner element simply fills up the container.
   & > #{$inner} {
     position: absolute;
     left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 
 }

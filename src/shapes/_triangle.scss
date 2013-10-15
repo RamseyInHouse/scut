@@ -20,7 +20,7 @@ http://davidtheclark.github.io/scut/#triangle
     content: "";
   }
 
-  $dimensions: false;
+  $dimensions: null;
   @if type-of($size) == list {
     $width: nth($size, 1);
     $height: nth($size, 2);

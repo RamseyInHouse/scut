@@ -12,20 +12,24 @@ SCUT FONTICON-LABEL
   $psuedo: if($side == left, "before", "after");
 
   &:#{$psuedo} {
+    content: $glyph;
     font-family: $font;
-    display: inline-block;
-    vertical-align: middle;
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
-    content: $glyph;
+    display: inline-block;
+    vertical-align: middle;
+
     @if $side == left and $pad != 0 {
       margin-right: $pad;
     }
     @else if $side == right and $pad != 0 {
       margin-left: $pad;
     }
+
+    // Add any additional styling.
     @content;
+
   }
 
 }
