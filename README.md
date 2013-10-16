@@ -12,6 +12,35 @@ Please do! Scut is simple; contributing should be easy. So give it a go.
 
 If you have any questions or anything is unclear, please file an issue or contact me.
 
+### SCSS Style Guide
+
+Basically: Have a look at existing SCSS files within `src/` and match their style.
+
+Here are some guidelines, as well:
+
+- **Head the file with a block comment naming the utility and listing any dependencies.** In the end, that block comment should also contain the URL of the utilities' documentation. For example:
+```scss
+/*==========================
+SCUT PIXELS TO EMS
+http://davidtheclark.github.io/scut/#pixels-to-ems
+
+Depends on `scut-strip-unit`.
+==========================*/
+```
+- **Indent with two spaces.**
+- **List arguments on separate lines**, so they are easy to scan. For example:
+```scss
+@mixin scut-color-swap (
+  $inactive,
+  $active,
+  $duration: 0,
+  $bg: false
+) {
+  // mixin content
+}
+```
+- **Space liberally.** A space at the beginning and end of mixins and functions helps distinguish the arguments from the inner workings. Spacing can also help delineate different "sections" of the code by grouping rules that work together and separating those with different roles.
+
 ### Experimenting and Testing
 
 Feel free to experiment with or create test pages for utilities new and old. Use test pages to make sure that the utility you created works just as you dreamed it would.
