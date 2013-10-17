@@ -1,25 +1,21 @@
-.eg-ratio--outer {
-  // 9 / 16 * 100 = 56.25%
-  @include scut-ratio-box(56.25%, ".eg-ratio--inner");
-}
-.eg-ratio--inner {
+.eg-ratio {
   background: gray;
-}
-.eg-ratio--c {
   margin-top: 1em;
-  &.m-1,
+  &.m-1 {
+    width: 10em;
+    // Default-values placeholder
+    @extend %scut-ratio-box;
+  }
+  &.m-2 {
+    width: 5em;
+    @include scut-ratio-box;
+  }
   &.m-3 {
-    width: 200px;
+    width: 10em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
   }
-  &.m-2,
   &.m-4 {
-    width: 100px;
-  }
-}
-.eg-ratio--square {
-  // Default-values placeholder
-  @extend %scut-ratio-box;
-  .scut-inner {
-    background: gray;
+    width: 5em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
   }
 }

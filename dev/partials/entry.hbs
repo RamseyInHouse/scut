@@ -2,7 +2,7 @@
   <tbody>
     {{#if use-name}}
     <tr>
-      <td class="info--label js-help-btn" data-term="use-name" data-dir="open">
+      <td class="info--label m-help js-help-btn" data-term="use-name" data-dir="open">
         use-name
       </td>
       <td class="info--value">
@@ -12,7 +12,7 @@
     {{/if}}
     {{#if type}}
     <tr>
-      <td class="info--label js-help-btn" data-term="type" data-dir="open">
+      <td class="info--label m-help js-help-btn" data-term="type" data-dir="open">
         type
       </td>
       <td class="info--value">
@@ -22,7 +22,7 @@
     {{/if}}
     {{#if args}}
     <tr>
-      <td class="info--label js-help-btn" data-term="arguments" data-dir="open">
+      <td class="info--label m-help js-help-btn" data-term="arguments" data-dir="open">
         arguments
       </td>
       <td class="info--value">
@@ -39,6 +39,26 @@
           </li>
           {{/each}}
         </ol>
+      </td>
+    </tr>
+    {{/if}}
+    {{#if content}}
+    <tr>
+      <td class="info--label m-help js-help-btn" data-term="contentblock" data-dir="open">
+        @content
+      </td>
+      <td class="info--value">
+        {{{content}}}
+      </td>
+    </tr>
+    {{/if}}
+    {{#if compatibility}}
+    <tr>
+      <td class="info--label">
+        compatibility
+      </td>
+      <td class="info--value">
+        {{{compatibility}}}
       </td>
     </tr>
     {{/if}}

@@ -360,6 +360,39 @@ http://davidtheclark.github.io/scut/#fill
 }
 
 /*==========================
+SCUT FONTICON-LABEL
+==========================*/
+
+@mixin scut-fonticon-label (
+  $font,
+  $glyph,
+  $pad: 0.25em,
+  $side: left
+) {
+
+  $psuedo: if($side == left, "before", "after");
+
+  &:#{$psuedo} {
+    font-family: $font;
+    display: inline-block;
+    vertical-align: middle;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    content: $glyph;
+    @if $side == left and $pad != 0 {
+      margin-right: $pad;
+    }
+    @else if $side == right and $pad != 0 {
+      margin-left: $pad;
+    }
+    @content;
+  }
+
+}
+
+
+/*==========================
 SCUT LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
@@ -369,15 +402,37 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 @mixin scut-list-divided (
   $divider: "|",
   $gap: 0.5em,
-  $dir: left
+  $dir: left,
+  $height: false
 ) {
 
   @include scut-list-floated($dir: $dir);
 
   $psuedo: if($dir == left, 'before', 'after');
 
+  @if $height {
+    & > li {
+      height: $height;
+    }
+    & > li:#{$psuedo} {
+      height: $height;
+      content: $divider;
+      display: inline-block;
+      vertical-align: middle;
+      @content;
+    }
+    & > li:first-child:#{$psuedo} {
+      width: 0;
+      overflow: hidden;
+    }
+  }
+
   & > li + li:#{$psuedo} {
-    content: $divider;
+    @if not $height {
+      content: $divider;
+      display: inline-block;
+      @content;
+    }
     margin-left: $gap;
     margin-right: $gap;
   }
@@ -793,27 +848,27 @@ http://davidtheclark.github.io/scut/#triangle
 
   // CORNER TRIANGLES
 
-  @else if ($direction == up-right) or ($direction == up-left) {
+  @else if ($direction == top-right) or ($direction == top-left) {
     border-top-color: $color;
     border-bottom-color: transparent;
-    @if $direction == up-right {
+    @if $direction == top-right {
       border-left-color: transparent;
       border-right-color: $color;
     }
-    @else if $direction == up-left {
+    @else if $direction == top-left {
       border-left-color: $color;
       border-right-color: transparent;
     }
   }
 
-  @else if ($direction == down-right) or ($direction == down-left) {
+  @else if ($direction == bottom-right) or ($direction == bottom-left) {
     border-top-color: transparent;
     border-bottom-color: $color;
-    @if $direction == down-right {
+    @if $direction == bottom-right {
       border-left-color: transparent;
       border-right-color: $color;
     }
-    @else if $direction == down-left {
+    @else if $direction == bottom-left {
       border-left-color: $color;
       border-right-color: transparent;
     }
@@ -919,14 +974,39 @@ $scut-middot: "\00b7";
 $scut-oslash: "\00f8";
 // bullet •
 $scut-bull: "\2022";
-// triangular bullet ‣
-$scut-tribull: "\25E6";
+// white bullet ◦
+$scut-whibull: "\25E6";
 // horizontal ellipsis …
 $scut-hellip: "\2026";
 // vertical ellipsis ⋮
 $scut-vellip: "\22EE";
 // midline horizontal ellipsis ⋯
 $scut-midhellip: "\22EF";
+
+// up-pointing triangle ▲
+$scut-utri: "\25b2";
+// down-pointing triangle ▼
+$scut-dtri: "\25bc";
+// left-pointing triangle ◀
+$scut-ltri: "\25c0";
+// right-pointing triangle ▶
+$scut-rtri: "\25b6";
+// up-pointing small triangle ▴
+$scut-ustri: "\25b4";
+// down-pointing small triangle ▾
+$scut-dstri: "\25be";
+// left-pointing small triangle ◂
+$scut-lstri: "\25c2";
+// right-pointing small triangle ▸
+$scut-rstri: "\25b8";
+// diamond ◆
+$scut-diamond: "\25c6";
+// fisheye ◉
+$scut-fisheye: "\25c9";
+// bullseye ◎
+$scut-bullseye: "\25ce";
+// circle ●
+$scut-circle: "\25cf";
 
 /*==========================
 SCUT FONT-FACE

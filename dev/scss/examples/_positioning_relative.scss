@@ -1,9 +1,11 @@
-.eg-relative--1 {
-  @include scut-relative(0.2em 0.2em n n);
-}
-.eg-relative--2 {
-  @include scut-relative(a a 1em n);
-}
-.eg-relative--3 {
-  @include scut-relative(n n n 1em);
+.eg-relative {
+  &.m-1 {
+    @include scut-relative(0.2em 0.2em n n);
+  }
+  &.m-2 {
+    @include scut-relative(a a 1em n);
+  }
+  &.m-3 {
+    @include scut-relative(n n -0.5em 0.2em);
+  }
 }

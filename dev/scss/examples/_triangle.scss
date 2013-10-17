@@ -8,10 +8,10 @@
     @include scut-triangle(up, 1em 1.4em, gray);
   }
   &.m-corner-1 {
-    @include scut-triangle(up-right, 1em, blue);
+    @include scut-triangle(top-right, 1em, blue);
   }
   &.m-corner-2 {
-    @include scut-triangle(down-left, 2em 1em, red);
+    @include scut-triangle(bottom-left, 2em 1em, red);
   }
 }
 .eg-triangle-button {

@@ -1,17 +1,17 @@
 .eg-vcenter-td {
   border: 5px solid black;
   padding: 0 1em;
-  &.m-default {
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-vcenter-td;
     height: 120px;
   }
-  &.m-variant {
-    @include scut-vcenter-td(".eg-vcenter-td--inner");
+  &.m-2 {
+    @include scut-vcenter-td(".eg-vcenter-td-inner");
     height: 200px;
   }
 }
-.eg-vcenter-td--box {
+.eg-vcenter-box {
   background: blue;
   color: white;
   display: inline-block;

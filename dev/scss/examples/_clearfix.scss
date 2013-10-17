@@ -1,9 +1,9 @@
-.eg-clearfix--container {
+.eg-clearfix-container {
   @extend %scut-clearfix;
   // or @include scut-clearfix;
   background: gray;
 }
-.eg-clearfix--float {
+.eg-clearfix-floater {
   float: left;
   margin: 1em;
   padding: 0 1em;

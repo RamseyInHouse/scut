@@ -32,12 +32,12 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
   @include scut-circle(2em, black);
   border: 5px solid red;
 }
-.eg-clearfix--container {
+.eg-clearfix-container {
   @extend %scut-clearfix;
   // or @include scut-clearfix;
   background: gray;
 }
-.eg-clearfix--float {
+.eg-clearfix-floater {
   float: left;
   margin: 1em;
   padding: 0 1em;
@@ -82,16 +82,18 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
   font-family: "Arvo";
   font-size: 1.3em;
 }
-.eg-foursquare-1 {
-  // Default-values placeholder
-  @extend %scut-foursquare;
-}
-.eg-foursquare-2 {
-  @include scut-foursquare(true, 1em, 0.2em, red, blue);
-  margin: 0 0.5em;
-}
-.eg-foursquare-3 {
-  @include scut-foursquare(false, 20px, 4px, white, black);
+.eg-foursquare {
+  margin-right: 1em;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-foursquare;
+  }
+  &.m-2 {
+    @include scut-foursquare(true, 1em, 0.2em, red, blue);
+  }
+  &.m-3 {
+    @include scut-foursquare(false, 20px, 4px, white, black);
+  }
 }
 .eg-hanging-indent {
   max-width: 25em;
@@ -161,7 +163,15 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
 }
 
 .eg-list-divided {
-  @include scut-list-divided("+", 2em, right);
+  &.m-1 {
+    @include scut-list-divided("+", 2em, right);
+  }
+  &.m-2 {
+    @include scut-list-divided("", 0.5em, left, 3em) {
+      width: 1em;
+      background-color: red;
+    }
+  }
 }
 .eg-list-floated {
   li {
@@ -228,57 +238,54 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
   &.m-5 { width: scut-em(500, 2em); }
   &.m-6 { width: 500px; }
 }
-.eg-absolute {
+.eg-absolute-container {
   border: 5px solid black;
   height: 150px;
   width: 150px;
   position: relative;
 }
-.eg-absolute--i {
+.eg-absolute {
   background: gray;
-  &.m-left {
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-absolute;
   }
-  &.m-right {
-    @include scut-absolute(n 0.5em 0.5em n);
+  &.m-2 {
+    @include scut-absolute(n 0.5em 1em n);
   }
 }
-.eg-relative--1 {
-  @include scut-relative(0.2em 0.2em n n);
-}
-.eg-relative--2 {
-  @include scut-relative(a a 1em n);
-}
-.eg-relative--3 {
-  @include scut-relative(n n n 1em);
-}
-.eg-ratio--outer {
-  // 9 / 16 * 100 = 56.25%
-  @include scut-ratio-box(56.25%, ".eg-ratio--inner");
-}
-.eg-ratio--inner {
-  background: gray;
-}
-.eg-ratio--c {
-  margin-top: 1em;
-  &.m-1,
+.eg-relative {
+  &.m-1 {
+    @include scut-relative(0.2em 0.2em n n);
+  }
+  &.m-2 {
+    @include scut-relative(a a 1em n);
+  }
   &.m-3 {
-    width: 200px;
+    @include scut-relative(n n -0.5em 0.2em);
   }
-  &.m-2,
+}
+.eg-ratio {
+  background: gray;
+  margin-top: 1em;
+  &.m-1 {
+    width: 10em;
+    // Default-values placeholder
+    @extend %scut-ratio-box;
+  }
+  &.m-2 {
+    width: 5em;
+    @include scut-ratio-box;
+  }
+  &.m-3 {
+    width: 10em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+  }
   &.m-4 {
-    width: 100px;
+    width: 5em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
   }
 }
-.eg-ratio--square {
-  // Default-values placeholder
-  @extend %scut-ratio-box;
-  .scut-inner {
-    background: gray;
-  }
-}
-
 .eg-reverse-italics {
   &.m-default {
     // Default-values placeholder
@@ -315,11 +322,11 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
 }
 .eg-size {
   background: gray;
-  &.m-square {
+  &.m-1 {
     @include scut-size(75px);
     margin-bottom: 1em;
   }
-  &.m-rectangle {
+  &.m-2 {
     @include scut-size(150px 50px);
   }
 }
@@ -334,10 +341,10 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
     @include scut-triangle(up, 1em 1.4em, gray);
   }
   &.m-corner-1 {
-    @include scut-triangle(up-right, 1em, blue);
+    @include scut-triangle(top-right, 1em, blue);
   }
   &.m-corner-2 {
-    @include scut-triangle(down-left, 2em 1em, red);
+    @include scut-triangle(bottom-left, 2em 1em, red);
   }
 }
 .eg-triangle-button {
@@ -369,14 +376,13 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
 .eg-vcenter-ib {
   border: 5px solid black;
   padding: 0 1em;
-  &.m-default {
+  height: 120px;
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-vcenter-ib;
-    height: 120px;
   }
-  &.m-variant {
-    @include scut-vcenter-ib(".eg-vcenter-ib--inner");
-    height: 200px;
+  &.m-2 {
+    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
     margin-top: 1em;
   }
 }
@@ -389,17 +395,17 @@ It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMP
 .eg-vcenter-td {
   border: 5px solid black;
   padding: 0 1em;
-  &.m-default {
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-vcenter-td;
     height: 120px;
   }
-  &.m-variant {
-    @include scut-vcenter-td(".eg-vcenter-td--inner");
+  &.m-2 {
+    @include scut-vcenter-td(".eg-vcenter-td-inner");
     height: 200px;
   }
 }
-.eg-vcenter-td--box {
+.eg-vcenter-box {
   background: blue;
   color: white;
   display: inline-block;

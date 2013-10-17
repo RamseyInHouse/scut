@@ -1,14 +1,13 @@
 .eg-vcenter-ib {
   border: 5px solid black;
   padding: 0 1em;
-  &.m-default {
+  height: 120px;
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-vcenter-ib;
-    height: 120px;
   }
-  &.m-variant {
-    @include scut-vcenter-ib(".eg-vcenter-ib--inner");
-    height: 200px;
+  &.m-2 {
+    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
     margin-top: 1em;
   }
 }

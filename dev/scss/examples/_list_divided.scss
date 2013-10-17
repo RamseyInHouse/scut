@@ -6,5 +6,13 @@
 }
 
 .eg-list-divided {
-  @include scut-list-divided("+", 2em, right);
+  &.m-1 {
+    @include scut-list-divided("+", 2em, right);
+  }
+  &.m-2 {
+    @include scut-list-divided("", 0.5em, left, 3em) {
+      width: 1em;
+      background-color: red;
+    }
+  }
 }
