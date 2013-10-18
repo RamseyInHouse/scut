@@ -74,9 +74,9 @@ h2 {
     display: block;
   }
   font-size: 2em;
-  padding: 0.5em scut-em(16, 2em);
+  padding: 0.5em ($container-pad);
   background-color: $c-bg-light;
-  margin: 0 (-(scut-em(16, 2em)));
+  margin: 0 (-$container-pad);
   @media ($bp-show-list) {
     font-size: 3em;
     padding-top: 0.2em;

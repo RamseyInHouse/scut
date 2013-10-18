@@ -51,13 +51,16 @@ INTRO
   }
   background: $c-list;
   color: $c-main;
-  margin: 1em -1.3em 1em -3em;
+  margin: 1em 0 1em -2em;
   padding: 0.5em 1em 0.5em 3em;
   a {
     color: $c-zing;
     &:hover {
       color: $c-link-active;
     }
+  }
+  code[class*="language-"], pre[class*="language-"] {
+    white-space: pre-line;
   }
 }
 
@@ -101,11 +104,11 @@ DOC
 
 .doc-i--h {
   background-color: $c-zing;
-  padding: 0.5em 1.5em;
+  padding: 0.5em $container-pad;
   text-transform: uppercase;
   font-weight: bold;
-  margin-left: -2em;
-  margin-right: -2em;
+  margin-left: -$container-pad;
+  margin-right: -$container-pad;
 
   @media ($bp-show-list) {
     @include scut-vcenter-lh(2.5em);
@@ -130,6 +133,7 @@ DOC
   @include scut-size(24px);
   @include scut-hide-text;
   float: right;
+  margin-left: 1em;
 
   @media ($bp-show-list) {
     // cancel styles
@@ -138,6 +142,7 @@ DOC
     width: auto;
     height: auto;
     background-image: none;
+    margin-left: 0;
 
     @include scut-vcenter-lh(2.5em);
     color: $c-zing;
