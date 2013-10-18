@@ -14,6 +14,8 @@ $c-bg-light: #EDF0FF;
 
 // breakpoints
 $wide-enough: "min-width: 59.5em";
+$bp-show-list: "min-width: #{scut-em(650)}";
+$bp-hide-list: "max-width: #{scut-em(650)}";
 
 // fonts
 $f-code: "Droid Sans Mono", "Courier New", "Courier New", monospace;

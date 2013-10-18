@@ -1,6 +1,10 @@
+/*==========================
+INTRO
+==========================*/
+
 .intro {
   &:after {
-    content: "-- DOCS BEGIN --";
+    content: "-- UTILITIES BELOW --";
     display: block;
     font-family: $f-code;
     text-align: center;
@@ -11,11 +15,14 @@
   }
   h2 {
     margin-top: 1em;
+    margin-bottom: 0.3em;
   }
   h3,
   h4,
   h5 {
-    margin-top: 2em;
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
   }
   h3 {
     display: block;
@@ -54,26 +61,59 @@
   }
 }
 
+
+/*==========================
+DOC
+==========================*/
+
+.entry-body {
+  height: 0;
+  overflow: hidden;
+
+  @media ($bp-show-list) {
+    height: auto;
+  }
+}
+
+@media ($bp-hide-list) {
+  :target > .entry-body {
+    height: auto;
+    margin-top: 1em;
+  }
+}
+
 .group--h {
   font-size: 2.5em;
   margin-bottom: 0.3em;
+
+  display: none;
+  @media ($bp-show-list) {
+    display: block;
+  }
 }
 
 .doc-i {
-  margin-bottom: 4em;
+  margin-bottom: 1em;
+  @media ($bp-show-list) {
+    margin-bottom: 4em;
+  }
 }
 
 .doc-i--h {
-  @include scut-vcenter-lh(2.5em);
   background-color: $c-zing;
-  padding: 0 0 0 2em;
+  padding: 0.5em 1.5em;
   text-transform: uppercase;
   font-weight: bold;
   margin-left: -2em;
   margin-right: -2em;
-  margin-bottom: 1em;
-  a {
-    display: block;
+
+  @media ($bp-show-list) {
+    @include scut-vcenter-lh(2.5em);
+    padding: 0 0 0 2em;
+    margin-bottom: 1em;
+    a {
+      display: block;
+    }
   }
 }
 
@@ -85,17 +125,32 @@
 }
 
 .source {
-  @include scut-vcenter-lh(2.5em);
-  color: $c-zing;
+  @extend .github;
+  background-size: contain;
+  @include scut-size(24px);
+  @include scut-hide-text;
   float: right;
-  overflow: hidden;
-  padding: 0 2em 0 2.5em;
-  position: relative;
-  z-index: 2;
-  &:before {
-    @include scut-triangle(left, 22em, $c-list, true);
-    @include scut-absolute(-9.75em 0 n n);
-    z-index: -1;
+
+  @media ($bp-show-list) {
+    // cancel styles
+    text-indent: 0;
+    white-space: normal;
+    width: auto;
+    height: auto;
+    background-image: none;
+
+    @include scut-vcenter-lh(2.5em);
+    color: $c-zing;
+
+    overflow: hidden;
+    padding: 0 2em 0 2.5em;
+    position: relative;
+    z-index: 2;
+    &:before {
+      @include scut-triangle(left, 22em, $c-list, true);
+      @include scut-absolute(-9.75em 0 n n);
+      z-index: -1;
+    }
   }
 }
 

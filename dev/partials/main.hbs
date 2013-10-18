@@ -1,7 +1,7 @@
 <article class="main overthrow">
-  <header class="container intro" id="main">
-    {{md "dev/partials/intro.md"}}
-  </header>
+  <section class="container intro" id="main">
+    {{>intro}}
+  </section>
   {{#each categories}}
   <section class="container">
     <h2>
@@ -17,16 +17,18 @@
       </a>
     </h3>
     {{/if}}
-    <section class="doc-i">
+    <section class="doc-i" id="{{name}}">
       <header class="doc-i--h">
         <a href="{{#if href}}{{href}}{{else}}{{../../../github-url}}/{{../../category}}/_{{underscoresToHyphens name}}.scss{{/if}}" class="source">view source</a>
         <h3>
-          <a href="#{{name}}" id="{{name}}" class="inner-anchor">
+          <a href="#{{name}}" class="inner-anchor">
             {{slugToWords name}}
           </a>
         </h3>
       </header>
-      {{>entry}}
+      <div class="entry-body">
+        {{>entry}}
+      </div>
     </section>
     {{/each}}
   </section>

@@ -14,15 +14,18 @@ a {
 .inner-anchor {
   color: inherit;
   cursor: pointer;
-  &:after {
-    color: rgba(0,0,0,0.05);
-    content: "#";
-    margin-left: 0.2em;
-  }
-  &:hover {
-    color: $c-link-active;
+
+  @media ($bp-show-list) {
     &:after {
-      color: rgba(0,0,0,0.3)
+      color: rgba(0,0,0,0.05);
+      content: "#";
+      margin-left: 0.2em;
+    }
+    &:hover {
+      color: $c-link-active;
+      &:after {
+        color: rgba(0,0,0,0.3)
+      }
     }
   }
 }
@@ -70,16 +73,23 @@ h2 {
   a {
     display: block;
   }
-  font-size: 3em;
-  padding: 0.2em 1em;
+  font-size: 2em;
+  padding: 0.5em scut-em(16, 2em);
   background-color: $c-bg-light;
-  margin: 0 -1em;
+  margin: 0 (-(scut-em(16, 2em)));
+  @media ($bp-show-list) {
+    font-size: 3em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
 }
 
 h3 {
   font-size: 1.5em;
   color: $c-list;
-  display: inline-block;
+  @media ($bp-show-list) {
+    display: inline-block;
+  }
 }
 
 h4 {

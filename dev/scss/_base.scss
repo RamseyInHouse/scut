@@ -6,10 +6,10 @@ body {
   background-color: $c-list;
   color: $c-f-1;
   font-size: 12px;
-  @media (min-width: 768px) {
+  @media (min-width: scut-em(768)) {
     font-size: 14px;
   }
-  @media (min-width: 1100px) {
+  @media (min-width: scut-em(1100)) {
     font-size: 16px;
   }
 }
@@ -22,13 +22,21 @@ body {
 .list {
   @include scut-absolute(0 n 0 0);
   width: $list-x;
+
+  display: none;
+  @media ($bp-show-list) {
+    display: block;
+  }
 }
 
 .main {
-  @include scut-absolute(0 0 0 $list-x);
+  @include scut-absolute(0 0 0 0);
+  @media ($bp-show-list) {
+    left: $list-x;
+  }
 
   // remove if things get responsive
-  min-width: 30em;
+  min-width: scut-em(320);
 }
 
 .container {
