@@ -66,11 +66,9 @@ Look at the existing tests for examples.
 
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt test` for the same result.) Look at `Gruntfile.coffee` for details.
 
-com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) installed*.
-
 ### Documenting
 
-Documentation is compiled using using [Assemble](http://assemble.io). The files are located in `docs/dev`, with all Assemble-related files (content, helpers, Handlebars templates) in `docs/dev/assemble` &mdash; compiling to `docs/dev/index.html` &mdash; other site assets (style, js, images, etc.) in `docs/dev/assets`.
+Documentation is compiled using [Assemble](http://assemble.io). The files are located in `docs/dev`, with all Assemble-related files (content, helpers, Handlebars templates) in `docs/dev/assemble` &mdash; compiling to `docs/dev/index.html` &mdash; and all other site assets (style, js, images, etc.) in `docs/dev/assets`.
 
 The bulk of the writing is done in `docs/dev/assemble/data.yml`. And the example styling is done in `docs/dev/assets/scss/examples/`.
 
