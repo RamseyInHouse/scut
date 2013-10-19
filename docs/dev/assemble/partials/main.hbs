@@ -1,7 +1,9 @@
 <article class="main overthrow">
+
   <section class="container intro" id="main">
     {{>intro}}
   </section>
+
   {{#each categories}}
   <section class="container">
     <h2>
@@ -33,15 +35,7 @@
     {{/each}}
   </section>
   {{/each}}
+
 </article>
 
-<aside id="help-content" class="help-content-c">
-  {{#each help}}
-  <section id="help-{{term}}" class="help-content js-help-modal">
-    <div class="scut-inner">
-      {{#markdown}}{{{content}}}{{/markdown}}
-      <button class="js-help-btn help-close" data-dir="close" data-term="{{term}}}">close</button>
-    </div>
-  </section>
-  {{/each}}
-</aside>
+{{>help}}

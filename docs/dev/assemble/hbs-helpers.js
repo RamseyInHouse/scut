@@ -27,7 +27,7 @@ module.exports.register = function(Handlebars, options) {
   });
 
   Handlebars.registerHelper('getExampleScss', function(name) {
-    var file = grunt.file.read('docs/dev/scss/examples/_' + name + '.scss');
+    var file = grunt.file.read('docs/dev/assets/scss/examples/_' + name + '.scss');
     return file;
   });
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,17 +8,24 @@
     <meta name="description" content="Scut: A collection of SCSS utilities.">
     <meta name="viewport" content="width=device-width">
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans+Mono|Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="dist/main.css">
+    {{#if dist}}
+    <link rel="stylesheet" href="assets/css-built.min.css">
+    {{else}}
+    <link rel="stylesheet" href="assets/main.css">
+    {{/if}}
   </head>
+
   <body class="preload" onload="document.body.className=''">
     {{>list}}
     {{>main}}
   </body>
+
   {{#if dist}}
-  <script src="dist/js-built.min.js"></script>
+  <script src="assets/js-built.min.js"></script>
   {{else}}
-  <script src="bower_components/overthrow/dist/overthrow.js"></script>
-  <script src="dev/js/lib/prism.js"></script>
-  <script src="dev/js/modals.js"></script>
+  <script src="../../bower_components/overthrow/dist/overthrow.js"></script>
+  <script src="assets/js/lib/prism.js"></script>
+  <script src="assets/js/modals.js"></script>
   {{/if}}
+
 </html>

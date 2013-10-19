@@ -34,41 +34,46 @@ module.exports = (grunt) ->
         options:
           banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
         files:
-          "docs/dev/scss/_concatenated-examples.scss": ["docs/dev/scss/examples/*.scss"]
+          "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
 
     sass:
+
       test:
         options:
           loadPath: ["test/style/scss/test/*.scss"]
         files:
           "test/style/css/main.css": "test/style/scss/main.scss"
+
       docs:
         files:
-          "docs/dist/main.css": "docs/dev/scss/main.scss"
+          "docs/dev/assets/main.css": "docs/dev/assets/scss/main.scss"
 
     autoprefixer:
+
       test:
         files:
           "test/style/css/main.css": "test/style/css/main.css"
+
       docs:
         files:
-          "docs/dist/main.css": "docs/dist/main.css"
+          "docs/dev/assets/main.css": "docs/dev/assets/main.css"
 
     cssmin:
       docs:
         files:
-          "docs/dist/main.css": "docs/dist/main.css"
+          "docs/dist/assets/css-built.min.css": "docs/dev/assets/main.css"
 
     uglify:
       docs:
         files:
-          "docs/dist/js-built.min.js": [
-            "docs/dev/js/lib/prism.js"
+          "docs/dist/assets/js-built.min.js": [
+            "docs/dev/assets/js/lib/prism.js"
             "bower_components/overthrow/dist/overthrow.js"
-            "docs/dev/js/modals.js"
+            "docs/dev/assets/js/modals.js"
           ]
 
     assemble:
+
       test:
         options:
           partials: ["test/templates/partials/*.hbs"]
@@ -79,39 +84,41 @@ module.exports = (grunt) ->
           src: ["*.hbs"]
           dest: "test/"
         ]
+
       docsDev:
         options:
-          data: ["docs/dev/data.yml"]
-          partials: ["docs/dev/partials/*.hbs"]
-          helpers: ["docs/dev/js/hbs-helpers.js"]
+          data: ["docs/dev/assemble/data.yml"]
+          partials: ["docs/dev/assemble/partials/*.hbs"]
+          helpers: ["docs/dev/assemble/hbs-helpers.js"]
           dist: false
         files:
-          "docs/index.html": ["docs/dev/index.hbs"]
+          "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
+
       docsDist:
         options:
-          data: ["docs/dev/data.yml"]
-          partials: ["docs/dev/partials/*.hbs"]
-          helpers: ["docs/dev/js/hbs-helpers.js"]
+          data: ["docs/dev/assemble/data.yml"]
+          partials: ["docs/dev/assemble/partials/*.hbs"]
+          helpers: ["docs/dev/assets/hbs-helpers.js"]
           dist: true
         files:
-          "docs/index.html": ["docs/dev/index.hbs"]
+          "docs/dist/index.html": ["docs/dev/assemble/index.hbs"]
 
     svgmin:
       docs:
         files: [
           expand: true
-          cwd: "docs/dev/images/svg-assets/raw"
+          cwd: "docs/dev/assemble/images/svg-assets/raw"
           src: ["*.svg"]
-          dest: "docs/dev/images/svg-assets/opt"
+          dest: "docs/dev/assemble/images/svg-assets/opt"
         ]
 
     imagemin:
       docs:
         files: [
           expand: true
-          cwd: "docs/dev/images/raw"
+          cwd: "docs/dev/assets/images"
           src: ["*.{jpg,png}"]
-          dest: "docs/dist/images"
+          dest: "docs/dist/assets/images"
         ]
 
     grunticon:
@@ -119,8 +126,8 @@ module.exports = (grunt) ->
         options:
           cssprefix: "",
           datasvgcss: "_svg-data.scss"
-          src: "docs/dev/images/svg-assets/opt"
-          dest: "docs/dev/scss/grunticon"
+          src: "docs/dev/assets/images/svg-assets/opt"
+          dest: "docs/dev/assets/scss/grunticon"
 
     htmlmin:
       docs:
@@ -128,7 +135,16 @@ module.exports = (grunt) ->
           removeComments: true
           collapseWhitespace: true
         files:
-          "docs/index.html": "docs/index.html"
+          "docs/dist/index.html": "docs/dist/index.html"
+
+    copy:
+      docs:
+        files: [
+          expand: true
+          cwd: "docs/dev/assets/fonts"
+          src: ["*"]
+          dest: "docs/dist/assets/fonts"
+        ]
 
     watch:
 
@@ -138,9 +154,8 @@ module.exports = (grunt) ->
         files: [
           "test/style/css/*.css"
           "test/*.html"
-          "docs/dist/*"
-          "docs/index.html"
-          "docs/dev/js/*.js"
+          "docs/dev/index.html"
+          "docs/dev/assets/*.css"
         ]
 
       scut:
@@ -162,30 +177,30 @@ module.exports = (grunt) ->
         tasks: ["newer:assemble:test"]
 
       docsStyle:
-        files: ["docs/dev/scss/*.scss"]
+        files: ["docs/dev/assets/scss/*.scss"]
         tasks: ["docsStyle"]
 
       docsMarkup:
         files: [
-          "docs/dev/partials/*"
-          "docs/dev/data.yml"
-          "docs/dev/index.hbs"
+          "docs/dev/assemble/partials/*"
+          "docs/dev/assemble/data.yml"
+          "docs/dev/assemble/index.hbs"
         ]
         tasks: ["assemble:docsDev"]
 
       docsExamples:
-        files: ["docs/dev/scss/examples/*.scss"]
+        files: ["docs/dev/assets/scss/examples/*.scss"]
         tasks: [
           "assemble:docsDev"
           "docsStyle"
         ]
 
       docsSvg:
-        files: ["docs/dev/images/svg-assets/raw/*"]
+        files: ["docs/dev/assets/images/svg-assets/raw/*"]
         tasks: ["svg"]
 
       docsImages:
-        files: ["docs/dev/images/raw/*"]
+        files: ["docs/dev/assets/images/*"]
         tasks: ["imagemin:docs"]
 
     connect:
@@ -195,12 +210,22 @@ module.exports = (grunt) ->
           base: "./"
 
     clean:
+
       html:
         src: ["test/*.html"]
+
       images:
         src: [
-          "docs/dev/images/opt"
+          "docs/dist/images"
           "docs/dev/images/svg-assets/opt"
+        ]
+
+      docs:
+        src: [
+          "docs/dev/index.html"
+          "docs/dev/assets/main.css"
+          "docs/dev/assets/images/svg-assets/opt"
+          "docs/dist"
         ]
 
   grunt.loadNpmTasks "grunt-contrib-sass"
@@ -212,6 +237,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-htmlmin"
+  grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-newer"
@@ -248,6 +274,8 @@ module.exports = (grunt) ->
   grunt.registerTask "docs", [
     "docsStyle"
     "cssmin:docs"
+    "imagemin:docs"
+    "assemble:docsDev"
     "assemble:docsDist"
     "uglify:docs"
     "htmlmin:docs"
