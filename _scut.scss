@@ -129,54 +129,14 @@ Depends on `scut-strip-unit`.
   $base: 16
 ) {
 
+  // $base could be in em or px (no unit = px).
+  // Adjust accordingly to create a $divisor that
+  // serves as context for $pixels.
   $multiplier: if(unit($base) == em, 16, 1);
   $divisor: scut-strip-unit($base) * $multiplier;
 
   @return ($pixels / $divisor) * 1em;
 
-}
-
-/*==========================
-SCUT BORDERS
-==========================*/
-
-@mixin scut-borders (
-  $border: 1px solid,
-  $sides: y n
-) {
-
-  $top: nth($sides, 1);
-  $right: nth($sides, 2);
-  $bottom: null;
-  $left: null;
-
-  @if length($sides) == 2 {
-    $bottom: nth($sides, 1);
-    $left: nth($sides, 2);
-  }
-  @else if length($sides) == 4 {
-    $bottom: nth($sides, 3);
-    $left: nth($sides, 4);
-  }
-
-
-  @if $top == y {
-    border-top: $border;
-  }
-  @if $right == y {
-    border-right: $border;
-  }
-  @if $bottom == y {
-    border-bottom: $border;
-  }
-  @if $left == y {
-    border-left: $border;
-  }
-
-}
-
-%scut-borders-tb {
-  @include scut-borders;
 }
 
 /*==========================
@@ -193,23 +153,31 @@ http://davidtheclark.github.io/scut/#color_swap
 
   $transition-properties: null;
   $inactive-is-list: type-of($inactive) == list;
+  $active-is-list: type-of($active) == list;
 
+  // If $inactive IS a list,
+  // assign color and background-color.
   @if $inactive-is-list {
     color: nth($inactive, 1);
     background-color: nth($inactive, 2);
     $transition-properties: background-color, color;
   }
 
+  // If $inactive IS NOT a list and $bg is TRUE,
+  // assign background-color.
   @else if $bg and not $inactive-is-list {
     background-color: $inactive;
     $transition-properties: background-color;
   }
 
+  // If $inactive IS NOT a list and $bg is FALSE,
+  // assign color.
   @else {
     color: $inactive;
     $transition-properties: color;
   }
 
+  // Only set-up transition if $duration != 0.
   @if $duration != 0 {
     transition-property: $transition-properties;
     transition-duration: $duration;
@@ -219,8 +187,7 @@ http://davidtheclark.github.io/scut/#color_swap
   &:focus,
   &:active {
 
-   $active-is-list: type-of($active) == list;
-
+    // $active is treated the same as $inactive, above.
     @if $active-is-list {
       color: nth($active, 1);
       background-color: nth($active, 2);
@@ -248,7 +215,7 @@ http://davidtheclark.github.io/scut/#hd_breakpoint
 
   @media (-o-min-device-pixel-ratio: #{$ratio}/1),
          (-webkit-min-device-pixel-ratio: #{$ratio}),
-         (min-resolution: #{round(96*$ratio)}dpi) {
+         (min-resolution: #{round(96 * $ratio)}dpi) {
     @content;
   }
 
@@ -259,17 +226,17 @@ SCUT HIDE TEXT
 http://davidtheclark.github.io/scut/#hide_text
 ==========================*/
 
-  @mixin scut-hide-text {
+@mixin scut-hide-text {
 
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 
-  }
+}
 
-  %scut-hide-text {
-    @include scut-hide-text;
-  }
+%scut-hide-text {
+  @include scut-hide-text;
+}
 
 /*==========================
 SCUT OPACITY
@@ -280,8 +247,10 @@ http://davidtheclark.github.io/scut/#opacity
   $opacity
 ) {
 
+  // -ms-filter opacity values are on a scale of 0-100.
   $ms-value: $opacity * 100;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
+
   opacity: $opacity;
 
 }
@@ -361,32 +330,35 @@ http://davidtheclark.github.io/scut/#fill
 
 /*==========================
 SCUT FONTICON-LABEL
+http://davidtheclark.github.io/scut/#fonticon_label
 ==========================*/
 
 @mixin scut-fonticon-label (
   $font,
   $glyph,
   $pad: 0.25em,
-  $side: left
+  $side: before
 ) {
 
-  $pseudo: if($side == left, "before", "after");
-
-  &:#{$pseudo} {
+  &:#{$side} {
+    content: $glyph;
     font-family: $font;
-    display: inline-block;
-    vertical-align: middle;
     font-style: normal;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
-    content: $glyph;
-    @if $side == left and $pad != 0 {
+    display: inline-block;
+    vertical-align: middle;
+
+    @if $side == before and $pad != 0 {
       margin-right: $pad;
     }
-    @else if $side == right and $pad != 0 {
+    @else if $side == after and $pad != 0 {
       margin-left: $pad;
     }
+
+    // Add any additional styling.
     @content;
+
   }
 
 }
@@ -409,6 +381,11 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
   @include scut-list-floated($dir: $dir);
 
   $pseudo: if($dir == left, 'before', 'after');
+
+  // If an explicit height is passed,
+  // things are different: All <li>s
+  // need the pseudo-element (to force height),
+  // but the first's must be hidden.
 
   @if $height {
     & > li {
@@ -572,6 +549,9 @@ http://davidtheclark.github.io/scut/#ratio-box
   overflow: hidden;
   position: relative;
 
+  // The container's height, as a percentage of the
+  // container's width, is set by assigning
+  // padding-top to a pseudo-element.
   &:before {
     content: "";
     display: block;
@@ -579,12 +559,13 @@ http://davidtheclark.github.io/scut/#ratio-box
     padding-top: (1 / $ratio) * 100%;
   }
 
+  // The inner element simply fills up the container.
   & > #{$inner} {
     position: absolute;
     left: 0;
-    right: 0;
     top: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
   }
 
 }
@@ -653,11 +634,18 @@ http://davidtheclark.github.io/scut/#v-center_inline-block
   $inner: ".scut-inner"
 ) {
 
+  // The inner element is vertically centered
+  // by middle-aligning it with an inline pseudo-element
+  // whose height is 100%.
+
   &:before {
     content: "";
-    display: inline-block;
     height: 100%;
+    display: inline-block;
     vertical-align: middle;
+    // A small negative right margin is set
+    // to account for the default
+    // word-spacing of inline-block.
     margin-right: -0.25em;
   }
 
@@ -724,12 +712,16 @@ http://davidtheclark.github.io/scut/#circle
   display: inline-block;
 
   @if $color == inherit {
+    // If user wants to inherit the color,
+    // take advantage of the fact that border
+    // color defaults to the text color of the element.
     border-width: $size / 2;
     border-style: solid;
     height: 0;
     width: 0;
   }
   @else {
+    // Otherwise, just use background-color.
     background-color: $color;
     height: $size;
     width: $size;
@@ -810,7 +802,7 @@ http://davidtheclark.github.io/scut/#triangle
     content: "";
   }
 
-  $dimensions: false;
+  $dimensions: null;
   @if type-of($size) == list {
     $width: nth($size, 1);
     $height: nth($size, 2);
@@ -882,16 +874,18 @@ http://davidtheclark.github.io/scut/#triangle
 
 /*==========================
 BOOKENDS
-
+http://davidtheclark.github.io/scut/#bookends
 ==========================*/
 
 @mixin scut-bookends (
   $pad: 0.5em,
-  $content: false
+  $content: ""
 ) {
 
-  $content-list: length($content) == 2 and not $content == false;
+  $content-list: length($content) == 2;
 
+  // If $content is a list or there $pad exist,
+  // set some pseudo-element-specific rules.
   @if $content-list or $pad {
     &:before {
       @if $content-list {
@@ -911,6 +905,8 @@ BOOKENDS
     }
   }
 
+  // Then set some rules that apply to both
+  // pseudo-elements.
   &:before,
   &:after {
     display: inline-block;
@@ -919,6 +915,7 @@ BOOKENDS
       content: $content;
     }
 
+    // Any additional styling applies to both.
     @content;
 
   }
@@ -1043,8 +1040,12 @@ http://davidtheclark.github.io/scut/#hanging_indent
   $indent: 1em
 ) {
 
-  text-indent: -$indent;
+  // padding-left creates the indent,
+  // while text-indent pulls the first line
+  // back to the edge.
+
   padding-left: $indent;
+  text-indent: -$indent;
 
 }
 

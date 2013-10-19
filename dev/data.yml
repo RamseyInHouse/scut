@@ -201,6 +201,45 @@ categories:
           show-html: true
 
       -
+        name: fonticon_label
+        type: *MO
+        use-name: scut-fonticon-label
+        args:
+          -
+            variable: $font
+            comment: The name of your icon font
+          -
+            variable: $glyph
+            comment: The Unicode character code for a specific icon from your icon font (feel free to use variables)
+          -
+            variable: $pad
+            default: 0.25em
+            comment: Padding between the icon and the label
+          -
+            variable: $side
+            default: before
+            comment: On which side of the label do you want the icon? The `:before` or `:after` pseudo-element?
+        content: |
+          A content block passed to this mixin will be applied to the icon (either the `:before` or `:after` pseudo-element).
+        text: |
+          Pair icons from your sweet icon fonts with text labels, using semantic HTML and no extraneous elements.
+
+          By default, icons are grafted on as `inline-block` pseudo-elements, vertically centered with the label.
+
+          Icons can be placed on the left or right of the label, spaced according to your learn&egrave;d discretion. And extra customization is possible by either passing a content block or adding rules to the relevant pseudo-element.
+
+          The examples below illustrate some of the possibilities.
+
+        example:
+          html: |
+            <p>Push the play button and hover over the others</p>
+            <button class="eg-fonticon-label m-1">Play</button>
+            <button class="eg-fonticon-label m-2">Stop</button>
+            <button class="eg-fonticon-label m-3">Fast Forwards</button>
+            <button class="eg-fonticon-label m-4">Rewind</button>
+          show-html: true
+
+      -
         group-start: lists
         name: list_unstyled
         type: *MP
