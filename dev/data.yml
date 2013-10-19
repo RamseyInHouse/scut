@@ -347,19 +347,19 @@ categories:
         example:
           html: |
             <ul class="eg-punctuated-list">
-              <strong>Comma list: </strong>
+              <strong>Comma list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
             </ul>
             <ul class="eg-semicolon-list">
-              <strong>Semicolon list: </strong>
+              <strong>Semicolon list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
             </ul>
             <ul class="eg-avant-garde-list">
-              <strong>Avant-garde list: </strong>
+              <strong>Avant-garde list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
