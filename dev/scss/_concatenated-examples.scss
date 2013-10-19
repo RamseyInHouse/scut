@@ -4,6 +4,36 @@ DO NOT ALTER THIS DOCUMENT!
 It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)
 ==========================*/
 
+.eg-bookends {
+  &.m-1 {
+    @include scut-bookends($content: "\2014");
+  }
+  &.m-2 {
+    padding: 0.5em 1em;
+    font-size: 2em;
+    @include scut-bookends(0.25em, "\00ab" "\00bb") {
+      color: red;
+    }
+    &:hover {
+      background: blue;
+      color: red;
+      @include scut-bookends(false) {
+        color: white;
+      }
+    }
+  }
+  &.m-3 {
+    border: 2px solid;
+    background: white;
+    text-align: center;
+    @include scut-bookends($content: "") {
+      height: 2em;
+      width: 2em;
+      background: red;
+      vertical-align: middle;
+    }
+  }
+}
 .eg-center-absolutely-container {
   border: 5px solid;
   height: 6em;

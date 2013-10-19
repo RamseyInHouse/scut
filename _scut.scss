@@ -370,9 +370,9 @@ SCUT FONTICON-LABEL
   $side: left
 ) {
 
-  $psuedo: if($side == left, "before", "after");
+  $pseudo: if($side == left, "before", "after");
 
-  &:#{$psuedo} {
+  &:#{$pseudo} {
     font-family: $font;
     display: inline-block;
     vertical-align: middle;
@@ -408,26 +408,26 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
   @include scut-list-floated($dir: $dir);
 
-  $psuedo: if($dir == left, 'before', 'after');
+  $pseudo: if($dir == left, 'before', 'after');
 
   @if $height {
     & > li {
       height: $height;
     }
-    & > li:#{$psuedo} {
+    & > li:#{$pseudo} {
       height: $height;
       content: $divider;
       display: inline-block;
       vertical-align: middle;
       @content;
     }
-    & > li:first-child:#{$psuedo} {
+    & > li:first-child:#{$pseudo} {
       width: 0;
       overflow: hidden;
     }
   }
 
-  & > li + li:#{$psuedo} {
+  & > li + li:#{$pseudo} {
     @if not $height {
       content: $divider;
       display: inline-block;

@@ -347,7 +347,7 @@ categories:
             default: false
             comment: Manually set a height for the list items so that you can use tall dividers. See examples below.
         content: |
-          A content block passed to this mixin will be applied to the dividing psuedo-elements.
+          A content block passed to this mixin will be applied to the dividing pseudo-elements.
 
         text: |
           A floated list ([see above](#list_floated)) with punctuation between each list item.
@@ -759,6 +759,33 @@ categories:
   -
     category: typography
     items:
+
+      -
+        name: bookends
+        type: *MO
+        use-name: scut-bookends
+        args:
+          -
+            variable: $pad
+            default: 0.5em
+            comment: Whitespace between the bookends and the element's contents
+          -
+            variable: $content
+            default: false
+            comment: One or two `content` values for the pseudo-elements. Use a list to pass different content values to the left (`:before`) and right (`:after`), respectively; or pass one value to both.
+        content: |
+          A content block passed to this mixin will be applied to both `:before` and `:after` pseudo-elements.
+        text: |
+          Create mirror-pseudo-elements on both sides of something.
+
+          A common typographical usage is to place decorative ornaments on either side of some heading. But the mixin can prove useful for anything that involves pseudo-elements on both sides. Absolutely anything.
+
+
+        example:
+          html: |
+            <div class="eg-bookends m-1">Variation 1</div>
+            <button class="eg-bookends m-2">Variation 2</button>
+            <div class="eg-bookends m-3">Variation 3</div>
 
       -
         name: characters

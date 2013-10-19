@@ -117,7 +117,7 @@ DOC
 
   @media ($bp-show-list) {
     @include scut-vcenter-lh(2.5em);
-    padding: 0 0 0 2em;
+    padding: 0 0 0 $container-pad;
     margin-bottom: 1em;
     a {
       display: block;
@@ -219,6 +219,7 @@ DOC
 
 .example--disp--inner {
   background: $c-bg-light;
+  overflow: auto;
   padding: 1em;
 }
 
@@ -260,8 +261,8 @@ HELP
 .help-content {
   background: $c-bg-light;
   @include scut-absolute(20% 50% n n);
-  margin-right: -15em;
-  width: 30em;
+  margin-right: -13em;
+  width: 26em;
   padding: 2em;
   border: 5px solid $c-list;
   @extend %scut-vcenter-ib;
