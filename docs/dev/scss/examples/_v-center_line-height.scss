@@ -1,0 +1,6 @@
+.eg-vcenter-lh {
+  @include scut-vcenter-lh(3em);
+  background: gray;
+  display: inline-block;
+  padding: 0 1em;
+}

@@ -7,8 +7,7 @@ module.exports = (grunt) ->
       options:
         separator: grunt.util.linefeed + grunt.util.linefeed
 
-# This one builds Scut!
-
+      # Build Scut
       scut:
         src: [
           # Utilities that are dependencies for others
@@ -23,14 +22,19 @@ module.exports = (grunt) ->
         ]
         dest: "_scut.scss"
 
-
-# Everything else below (except watch:scut) is for testing.
-
+      # Build test styles
       test:
         options:
-          banner: "/*==========================#{grunt.util.linefeed}DO NOT ALTER THIS DOCUMENT!#{grunt.util.linefeed}#{grunt.util.linefeed}It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE. If you put them here, they will be overwritten when somebody does things the right way and grunt concatenates once again. (See the `concat` task in the Gruntfile to fully understand.)#{grunt.util.linefeed}==========================*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+          banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE.*/#{grunt.util.linefeed}"
         src: ["test/style/scss/tests/*.scss"]
         dest: "test/style/scss/_tests.scss"
+
+      # Build docs example styles
+      docsExamples:
+        options:
+          banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+        files:
+          "docs/dev/scss/_concatenated-examples.scss": ["docs/dev/scss/examples/*.scss"]
 
     sass:
       test:
@@ -38,11 +42,31 @@ module.exports = (grunt) ->
           loadPath: ["test/style/scss/test/*.scss"]
         files:
           "test/style/css/main.css": "test/style/scss/main.scss"
+      docs:
+        files:
+          "docs/dist/main.css": "docs/dev/scss/main.scss"
 
     autoprefixer:
       test:
         files:
           "test/style/css/main.css": "test/style/css/main.css"
+      docs:
+        files:
+          "docs/dist/main.css": "docs/dist/main.css"
+
+    cssmin:
+      docs:
+        files:
+          "docs/dist/main.css": "docs/dist/main.css"
+
+    uglify:
+      docs:
+        files:
+          "docs/dist/js-built.min.js": [
+            "docs/dev/js/lib/prism.js"
+            "bower_components/overthrow/dist/overthrow.js"
+            "docs/dev/js/modals.js"
+          ]
 
     assemble:
       test:
@@ -55,71 +79,182 @@ module.exports = (grunt) ->
           src: ["*.hbs"]
           dest: "test/"
         ]
+      docsDev:
+        options:
+          data: ["docs/dev/data.yml"]
+          partials: ["docs/dev/partials/*.hbs"]
+          helpers: ["docs/dev/js/hbs-helpers.js"]
+          dist: false
+        files:
+          "docs/index.html": ["docs/dev/index.hbs"]
+      docsDist:
+        options:
+          data: ["docs/dev/data.yml"]
+          partials: ["docs/dev/partials/*.hbs"]
+          helpers: ["docs/dev/js/hbs-helpers.js"]
+          dist: true
+        files:
+          "docs/index.html": ["docs/dev/index.hbs"]
+
+    svgmin:
+      docs:
+        files: [
+          expand: true
+          cwd: "docs/dev/images/svg-assets/raw"
+          src: ["*.svg"]
+          dest: "docs/dev/images/svg-assets/opt"
+        ]
+
+    imagemin:
+      docs:
+        files: [
+          expand: true
+          cwd: "docs/dev/images/raw"
+          src: ["*.{jpg,png}"]
+          dest: "docs/dist/images"
+        ]
+
+    grunticon:
+      docs:
+        options:
+          cssprefix: "",
+          datasvgcss: "_svg-data.scss"
+          src: "docs/dev/images/svg-assets/opt"
+          dest: "docs/dev/scss/grunticon"
+
+    htmlmin:
+      docs:
+        options:
+          removeComments: true
+          collapseWhitespace: true
+        files:
+          "docs/index.html": "docs/index.html"
 
     watch:
+
       livereload:
         options:
           livereload: true
         files: [
           "test/style/css/*.css"
           "test/*.html"
+          "docs/dist/*"
+          "docs/index.html"
+          "docs/dev/js/*.js"
         ]
+
       scut:
         files: [
           "src/**/*.scss"
           "_scut-reset.scss"
         ]
-        tasks: [
-          "build"
-          "test"
-        ]
+        tasks: ["concat:scut"]
+
       testStyle:
         files: [
           "test/style/scss/*.scss"
           "test/style/scss/**/*.scss"
         ]
-        tasks: ["style"]
+        tasks: ["testStyle"]
+
       testMarkup:
-        files: [
-          "test/templates/**/*.hbs"
-        ]
+        files: ["test/templates/**/*.hbs"]
         tasks: ["newer:assemble:test"]
+
+      docsStyle:
+        files: ["docs/dev/scss/*.scss"]
+        tasks: ["docsStyle"]
+
+      docsMarkup:
+        files: [
+          "docs/dev/partials/*"
+          "docs/dev/data.yml"
+          "docs/dev/index.hbs"
+        ]
+        tasks: ["assemble:docsDev"]
+
+      docsExamples:
+        files: ["docs/dev/scss/examples/*.scss"]
+        tasks: [
+          "assemble:docsDev"
+          "docsStyle"
+        ]
+
+      docsSvg:
+        files: ["docs/dev/images/svg-assets/raw/*"]
+        tasks: ["svg"]
+
+      docsImages:
+        files: ["docs/dev/images/raw/*"]
+        tasks: ["imagemin:docs"]
 
     connect:
       server:
         options:
           port: 9000
-          base: "test/"
+          base: "./"
 
     clean:
       html:
         src: ["test/*.html"]
+      images:
+        src: [
+          "docs/dev/images/opt"
+          "docs/dev/images/svg-assets/opt"
+        ]
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
+  grunt.loadNpmTasks "grunt-contrib-imagemin"
+  grunt.loadNpmTasks "grunt-contrib-cssmin"
+  grunt.loadNpmTasks "grunt-contrib-uglify"
+  grunt.loadNpmTasks "grunt-contrib-htmlmin"
+  grunt.loadNpmTasks "grunt-svgmin"
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-newer"
+  grunt.loadNpmTasks "grunt-grunticon"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", [
     "connect"
     "watch"
   ]
-  grunt.registerTask "style", [
+  grunt.registerTask "testStyle", [
     "concat:test"
     "sass:test"
     "autoprefixer:test"
   ]
+  grunt.registerTask "docsStyle", [
+    "concat:docsExamples"
+    "sass:docs"
+    "autoprefixer:docs"
+  ]
+  grunt.registerTask "svg", [
+    "svgmin:docs"
+    "grunticon:docs"
+  ]
+  grunt.registerTask "reImage", [
+    "clean:images"
+    "imagemin:docs"
+    "svg"
+  ]
   grunt.registerTask "test", [
     "newer:assemble:test"
-    "style"
+    "testStyle"
+  ]
+  grunt.registerTask "docs", [
+    "docsStyle"
+    "cssmin:docs"
+    "assemble:docsDist"
+    "uglify:docs"
+    "htmlmin:docs"
   ]
   grunt.registerTask "build", [
-    "clean:html"
     "concat:scut"
     "test"
+    "docs"
   ]
   grunt.registerTask "default", ["build"]

@@ -1,0 +1,17 @@
+.eg-side-lined {
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-side-lined;
+  }
+  &.m-2 {
+    font-size: 2em;
+    @include scut-side-lined(3px, 1em, red, $v-adjust: 0.1em);
+  }
+  &.m-3 {
+    @include scut-side-lined($double: 0.3em, $color: blue, $v-adjust: 0.05em);
+    text-transform: uppercase;
+  }
+  &.m-4 {
+    @include scut-side-lined($style: dotted);
+  }
+}

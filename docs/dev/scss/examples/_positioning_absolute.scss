@@ -1,0 +1,16 @@
+.eg-absolute-container {
+  border: 5px solid black;
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+.eg-absolute {
+  background: gray;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-absolute;
+  }
+  &.m-2 {
+    @include scut-absolute(n 0.5em 1em n);
+  }
+}

@@ -1,0 +1,48 @@
+<nav class="list overthrow" role="navigation">
+  <ul class="index-1">
+    <li>
+      <a href="#main" class="main-link">
+        <span class="index-title">Scut</span>
+        <span class="index-subtitle">: SCSS Utilities</span>
+      </a>
+      <a href="{{github-home}}" class="sidebar-link">Github Repository</a>
+      <a href="{{codepen-url}}" target="_blank" class="sidebar-link">Codepen Playground</a>
+    </li>
+    <li>
+      <a href="#about" class="index-1--i">about</a>
+    </li>
+    <li>
+      <a href="#installation" class="index-2--i">
+        installation
+      </a>
+    </li>
+    <li>
+      <a href="#usage" class="index-2--i">
+        usage
+      </a>
+    </li>
+    <li>
+      <a href="#contributing" class="index-2--i">
+        contributing
+      </a>
+    </li>
+    {{#each categories}}
+    <li>
+      <a href="#{{category}}" class="index-1--i">
+        {{slugToWords category}}
+      </a>
+      <ul class="index-2">
+        {{#each items}}
+        <li>
+          <a href="#{{name}}" class="index-2--i">
+            {{slugToWords name}}
+          </a>
+        </li>
+        {{/each}}
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+  <a href="https://github.com/davidtheclark/scut/" class="contribute-link">Contribute your own utilities to help Scut grow. <em>The world needs you.</em></a>
+
+</nav>

@@ -1,0 +1,21 @@
+.eg-ratio {
+  background: gray;
+  margin-top: 1em;
+  &.m-1 {
+    width: 10em;
+    // Default-values placeholder
+    @extend %scut-ratio-box;
+  }
+  &.m-2 {
+    width: 5em;
+    @include scut-ratio-box;
+  }
+  &.m-3 {
+    width: 10em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+  }
+  &.m-4 {
+    width: 5em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+  }
+}

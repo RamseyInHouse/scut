@@ -1,0 +1,14 @@
+.eg-link-bb {
+  &.m-default a {
+    // Default-values placeholder
+    @extend %scut-link-bb;
+  }
+  &.m-styled a {
+    color: blue;
+    @include scut-link-bb(blue, double, 4px);
+    &:hover {
+      color: red;
+      border-bottom-color: red;
+    }
+  }
+}

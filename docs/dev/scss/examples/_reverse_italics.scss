@@ -1,0 +1,9 @@
+.eg-reverse-italics {
+  &.m-default {
+    // Default-values placeholder
+    @extend %scut-reverse-italics;
+  }
+  &.m-variant {
+    @include scut-reverse-italics("strong" "b" ".no-italics");
+  }
+}

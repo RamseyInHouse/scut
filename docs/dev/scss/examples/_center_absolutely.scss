@@ -1,0 +1,18 @@
+.eg-center-absolutely-container {
+  border: 5px solid;
+  height: 6em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.eg-center-absolutely {
+  background: gray;
+  &.m-1 {
+    @include scut-center-absolutely(20em 3em);
+  }
+  &.m-2 {
+    @include scut-center-absolutely(20em n);
+  }
+  &.m-3 {
+    @include scut-center-absolutely(n 3em);
+  }
+}

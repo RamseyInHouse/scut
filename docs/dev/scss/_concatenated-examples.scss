@@ -1,0 +1,519 @@
+/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/
+
+.eg-bookends {
+  &.m-1 {
+    @include scut-bookends($content: "\2014");
+  }
+  &.m-2 {
+    padding: 0.5em 1em;
+    font-size: 2em;
+    @include scut-bookends(0.25em, "\00ab" "\00bb") {
+      color: red;
+    }
+    &:hover {
+      background: blue;
+      color: red;
+      @include scut-bookends(false) {
+        color: white;
+      }
+    }
+  }
+  &.m-3 {
+    border: 2px solid;
+    background: white;
+    text-align: center;
+    @include scut-bookends($content: "") {
+      height: 2em;
+      width: 2em;
+      background: red;
+      vertical-align: middle;
+    }
+  }
+}
+
+.eg-center-absolutely-container {
+  border: 5px solid;
+  height: 6em;
+  margin-bottom: 1em;
+  position: relative;
+}
+.eg-center-absolutely {
+  background: gray;
+  &.m-1 {
+    @include scut-center-absolutely(20em 3em);
+  }
+  &.m-2 {
+    @include scut-center-absolutely(20em n);
+  }
+  &.m-3 {
+    @include scut-center-absolutely(n 3em);
+  }
+}
+
+.eg-circle-default {
+  @include scut-circle(1em);
+}
+.eg-circle-colored {
+  @include scut-circle(2em, blue);
+}
+.eg-circle-bordered {
+  @include scut-circle(2em, black);
+  border: 5px solid red;
+}
+
+.eg-clearfix-container {
+  @extend %scut-clearfix;
+  // or @include scut-clearfix;
+  background: gray;
+}
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+  padding: 0 1em;
+  background: white;
+}
+
+
+.eg-color-swap {
+  border: 1px solid;
+  padding: 0.3em 0.5em;
+  margin-right: 0.5em;
+  &.m-1 {
+    @include scut-color-swap(blue, red, 1s);
+  }
+  &.m-2 {
+    @include scut-color-swap(white black, black white);
+  }
+  &.m-3 {
+    color: white;
+    @include scut-color-swap(blue, red, 0.5s, true);
+  }
+}
+
+.eg-fill-container {
+  border: 3px solid black;
+  color: red;
+  height: 100px;
+  padding: 1em;
+  position: relative;
+}
+
+.eg-fill {
+  @extend %scut-fill;
+  // or @include scut-fill;
+  background: rgba(0,0,0,0.4);
+  padding: 2.5em 1em 0;
+}
+
+@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
+@include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
+@include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
+@include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);
+
+.eg-font-face {
+  font-family: "Arvo";
+  font-size: 1.3em;
+}
+
+@include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
+
+.eg-fonticon-label {
+  border: 2px solid black;
+  padding: 0.5em 1em;
+  &.m-1 {
+    @include scut-fonticon-label("icomoon-stereo", "\e004");
+    &:active:before {
+      content: "\e002"
+    }
+  }
+  &.m-2 {
+    @include scut-fonticon-label("icomoon-stereo", "\e003") {
+      font-size: 2em;
+    }
+    &:hover {
+      color: red;
+    }
+  }
+  &.m-3 {
+    @include scut-fonticon-label("icomoon-stereo", "\e001", 1.5em, after) {
+      color: red;
+    }
+    &:hover {
+      color: red;
+      &:after {
+        color: blue;
+      }
+    }
+  }
+}
+
+@keyframes rewind {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1em); }
+}
+
+.eg-fonticon-label.m-4 {
+  border: 0;
+  font-size: 2em;
+  padding-left: 2em;
+  @include scut-fonticon-label("icomoon-stereo", "\e000") {
+    font-size: 2em;
+  }
+  &:hover:before {
+    animation: rewind 1s linear infinite;
+  }
+}
+
+.eg-foursquare {
+  margin-right: 1em;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-foursquare;
+  }
+  &.m-2 {
+    @include scut-foursquare(true, 1em, 0.2em, red, blue);
+  }
+  &.m-3 {
+    @include scut-foursquare(false, 20px, 4px, white, black);
+  }
+}
+
+.eg-hanging-indent {
+  max-width: 25em;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-hanging-indent;
+  }
+  &.m-2 {
+    @include scut-hanging-indent(2em);
+  }
+}
+
+.eg-hd-bp {
+  color: gray;
+  @include scut-hd-bp(2.0) {
+    color: blue;
+  }
+}
+
+.eg-hide-text {
+  @extend %scut-hide-text;
+  // or @include scut-hide-text;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 100px;
+}
+
+.eg-indented-ps {
+  &.m-default {
+    // Default-values placeholder
+    @extend %scut-indented-ps;
+    margin-bottom: 1em;
+  }
+  &.m-variant {
+    @include scut-indented-ps(3em, false);
+  }
+}
+
+.eg-key-val {
+  max-width: 20em;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-key-val;
+  }
+  &.m-2 {
+    @include scut-key-val("\2014", 0.5em, 2em, 1em, 0.5em);
+    & > dt {
+      font-weight: bold;
+    }
+  }
+}
+
+.eg-link-bb {
+  &.m-default a {
+    // Default-values placeholder
+    @extend %scut-link-bb;
+  }
+  &.m-styled a {
+    color: blue;
+    @include scut-link-bb(blue, double, 4px);
+    &:hover {
+      color: red;
+      border-bottom-color: red;
+    }
+  }
+}
+
+.eg-list-bar {
+  @extend %scut-list-bar;
+}
+.eg-list-breadcrumb {
+  @extend %scut-list-breadcrumb;
+}
+
+.eg-list-divided {
+  &.m-1 {
+    @include scut-list-divided("+", 2em, right);
+  }
+  &.m-2 {
+    @include scut-list-divided("", 0.5em, left, 3em) {
+      width: 1em;
+      background-color: red;
+    }
+  }
+}
+
+.eg-list-floated {
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-list-floated;
+    margin-bottom: 1em;
+  }
+  &.m-2 {
+    @include scut-list-floated(1em);
+    margin-bottom: 1em;
+  }
+  &.m-3 {
+    @include scut-list-floated(2em, right);
+  }
+}
+
+.eg-list-inline {
+  li {
+    border: 1px solid;
+    padding: 0 5px;
+  }
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-list-inline;
+    margin-bottom: 1em;
+  }
+  &.m-2 {
+    @include scut-list-inline(1em);
+  }
+}
+
+.eg-punctuated-list {
+  @include scut-list-punctuated;
+  // or @extend %scut-list-comma;
+}
+.eg-semicolon-list {
+  @include scut-list-punctuated("; ");
+}
+.eg-avant-garde-list {
+  @include scut-list-punctuated(" . ");
+  text-transform: lowercase;
+}
+
+.eg-unstyled-list {
+  @extend %scut-list-unstyled;
+  // or @include scut-list-unstyled;
+}
+
+.eg-em-c {
+  font-size: 16px;
+}
+.eg-em {
+  border: 5px solid;
+  margin-bottom: 1em;
+
+  &.m-1 { width: scut-em(300); }
+  &.m-2 { width: 300px; }
+
+  &.m-3, &.m-4 { font-size: 20px; }
+  &.m-3 { width: scut-em(400, 20px); }
+  &.m-4 { width: 400px; }
+
+  &.m-5, &.m-6 { font-size: 2em; }
+  &.m-5 { width: scut-em(500, 2em); }
+  &.m-6 { width: 500px; }
+}
+
+.eg-absolute-container {
+  border: 5px solid black;
+  height: 150px;
+  width: 150px;
+  position: relative;
+}
+.eg-absolute {
+  background: gray;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-absolute;
+  }
+  &.m-2 {
+    @include scut-absolute(n 0.5em 1em n);
+  }
+}
+
+.eg-relative {
+  &.m-1 {
+    @include scut-relative(0.2em 0.2em n n);
+  }
+  &.m-2 {
+    @include scut-relative(a a 1em n);
+  }
+  &.m-3 {
+    @include scut-relative(n n -0.5em 0.2em);
+  }
+}
+
+.eg-ratio {
+  background: gray;
+  margin-top: 1em;
+  &.m-1 {
+    width: 10em;
+    // Default-values placeholder
+    @extend %scut-ratio-box;
+  }
+  &.m-2 {
+    width: 5em;
+    @include scut-ratio-box;
+  }
+  &.m-3 {
+    width: 10em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+  }
+  &.m-4 {
+    width: 5em;
+    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+  }
+}
+
+.eg-reverse-italics {
+  &.m-default {
+    // Default-values placeholder
+    @extend %scut-reverse-italics;
+  }
+  &.m-variant {
+    @include scut-reverse-italics("strong" "b" ".no-italics");
+  }
+}
+
+.eg-selected {
+  background-color: gray;
+  padding: 3px 10px;
+  @include scut-selected {
+    background-color: blue;
+    color: white;
+  }
+}
+
+.eg-side-lined {
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-side-lined;
+  }
+  &.m-2 {
+    font-size: 2em;
+    @include scut-side-lined(3px, 1em, red, $v-adjust: 0.1em);
+  }
+  &.m-3 {
+    @include scut-side-lined($double: 0.3em, $color: blue, $v-adjust: 0.05em);
+    text-transform: uppercase;
+  }
+  &.m-4 {
+    @include scut-side-lined($style: dotted);
+  }
+}
+
+.eg-size {
+  background: gray;
+  &.m-1 {
+    @include scut-size(75px);
+    margin-bottom: 1em;
+  }
+  &.m-2 {
+    @include scut-size(150px 50px);
+  }
+}
+
+
+.eg-triangle {
+  margin-right: 1em;
+  &.m-default {
+    // Default-values placeholder
+    @extend %scut-triangle;
+  }
+  &.m-equilateral {
+    @include scut-triangle(up, 1em 1.4em, gray);
+  }
+  &.m-corner-1 {
+    @include scut-triangle(top-right, 1em, blue);
+  }
+  &.m-corner-2 {
+    @include scut-triangle(bottom-left, 2em 1em, red);
+  }
+}
+.eg-triangle-button {
+  border: 1px solid;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  &:after {
+    margin-left: 0.3em;
+  }
+  &.m-down:after {
+    @include scut-triangle(down, 0.7em 1em, $pseudo: true);
+    margin-bottom: 0.15em;
+  }
+  &.m-up:after {
+    @include scut-triangle(up, 0.7em 1em, $pseudo: true);
+    margin-bottom: 0.2em;
+  }
+  &.m-more {
+    color: blue;
+    &:hover {
+      color: red;
+    }
+    &:after {
+      @include scut-triangle($pseudo: true);
+    }
+  }
+}
+
+.eg-vcenter-ib {
+  border: 5px solid black;
+  padding: 0 1em;
+  height: 120px;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-vcenter-ib;
+  }
+  &.m-2 {
+    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
+    margin-top: 1em;
+  }
+}
+
+.eg-vcenter-lh {
+  @include scut-vcenter-lh(3em);
+  background: gray;
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.eg-vcenter-td {
+  border: 5px solid black;
+  padding: 0 1em;
+  &.m-1 {
+    // Default-values placeholder
+    @extend %scut-vcenter-td;
+    height: 120px;
+  }
+  &.m-2 {
+    @include scut-vcenter-td(".eg-vcenter-td-inner");
+    height: 200px;
+  }
+}
+.eg-vcenter-box {
+  background: blue;
+  color: white;
+  display: inline-block;
+  height: 70px;
+  width: 200px;
+}

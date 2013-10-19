@@ -1,0 +1,10 @@
+.eg-size {
+  background: gray;
+  &.m-1 {
+    @include scut-size(75px);
+    margin-bottom: 1em;
+  }
+  &.m-2 {
+    @include scut-size(150px 50px);
+  }
+}

@@ -1,0 +1,22 @@
+// dimensions
+$list-x: 16em;
+$label-x: 9em;
+$container-pad: 20px;
+
+// colors
+$c-f-1: #222;
+$c-list: #002834;
+$c-main: #fff;
+$c-link: #2F96B3;
+$c-link-active: #05A536;
+$c-link-2: #FFBA73;
+$c-zing: #9AE9FF;
+$c-bg-light: #EDF0FF;
+
+// breakpoints
+$wide-enough: "min-width: 59.5em";
+$bp-show-list: "min-width: #{scut-em(650)}";
+$bp-hide-list: "max-width: #{scut-em(650)}";
+
+// fonts
+$f-code: "Droid Sans Mono", "Courier New", "Courier New", monospace;
