@@ -278,6 +278,7 @@ module.exports = (grunt) ->
     "docsStyle"
     "cssmin:docs"
     "imagemin:docs"
+    "copy:docsFonts"
     "assemble:docsDev"
     "assemble:docsDist"
     "uglify:docs"
@@ -288,4 +289,5 @@ module.exports = (grunt) ->
     "test"
     "docs"
   ]
+  grunt.registerTask "gh-pages", ["copy:docsDist"]
   grunt.registerTask "default", ["build"]
