@@ -138,12 +138,20 @@ module.exports = (grunt) ->
           "docs/dist/index.html": "docs/dist/index.html"
 
     copy:
-      docs:
+      docsFonts:
         files: [
           expand: true
           cwd: "docs/dev/assets/fonts"
           src: ["*"]
           dest: "docs/dist/assets/fonts"
+        ]
+      # Copy docs/dist to a parallel gh-pages dir
+      docsDist:
+        files: [
+          expand: true
+          cwd: "docs/dist"
+          src: ["*", "**/*"]
+          dest: "../gh-pages"
         ]
 
     watch:
@@ -221,12 +229,7 @@ module.exports = (grunt) ->
         ]
 
       docs:
-        src: [
-          "docs/dev/index.html"
-          "docs/dev/assets/main.css"
-          "docs/dev/assets/images/svg-assets/opt"
-          "docs/dist"
-        ]
+        src: ["docs/dist"]
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"

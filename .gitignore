@@ -1,7 +1,6 @@
 node_modules
 bower_components
 .sass-cache
-_scut-all.scss
 
-style/css/main.css
-style/scss/_tests.scss
+docs/dist
+
