@@ -92,10 +92,6 @@ Depends on `scut-strip-unit`.
 ==========================*/
 
 /*==========================
-SCUT BORDERS
-==========================*/
-
-/*==========================
 SCUT COLOR SWAP
 http://davidtheclark.github.io/scut/#color_swap
 ==========================*/
@@ -140,6 +136,7 @@ http://davidtheclark.github.io/scut/#fill
 
 /*==========================
 SCUT FONTICON-LABEL
+http://davidtheclark.github.io/scut/#fonticon_label
 ==========================*/
 
 /*==========================
@@ -278,7 +275,7 @@ http://davidtheclark.github.io/scut/#triangle
 
 /*==========================
 BOOKENDS
-
+http://davidtheclark.github.io/scut/#bookends
 ==========================*/
 
 /*==========================
@@ -297,8 +294,8 @@ http://davidtheclark.github.io/scut/#hanging_indent
 ==========================*/
 
 .hanging-indent.m-1 p {
-  text-indent: -1em;
   padding-left: 1em;
+  text-indent: -1em;
 }
 
 /*==========================
@@ -425,6 +422,7 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .eg-bookends.v-1:before,
 .eg-bookends.v-1:after {
   display: inline-block;
+  content: "";
   content: "--";
 }
 
@@ -453,6 +451,7 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .eg-bookends.v-3:before,
 .eg-bookends.v-3:after {
   display: inline-block;
+  content: "";
   content: "\22EE \22EE \22EE";
   color: red;
 }
@@ -460,6 +459,7 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .eg-bookends.v-3:hover:before,
 .eg-bookends.v-3:hover:after {
   display: inline-block;
+  content: "";
   color: blue;
 }
 
@@ -499,6 +499,7 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .eg-bookends.v-5:before,
 .eg-bookends.v-5:after {
   display: inline-block;
+  content: "";
   content: "\00a7";
 }
 
@@ -517,27 +518,6 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
   display: inline-block;
   font-size: 3em;
   vertical-align: middle;
-}
-
-.borders {
-  display: inline-block;
-  margin-bottom: 1em;
-  padding: 1em;
-}
-
-.borders.v-1 {
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-}
-
-.borders.v-2 {
-  border-top: 1px solid;
-  border-right: 1px solid;
-}
-
-.borders.v-3 {
-  border-top: 5px solid red;
-  border-bottom: 5px solid red;
 }
 
 .vcenter-abs-c {
@@ -811,8 +791,8 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 }
 
 .hanging-indent.m-2 p {
-  text-indent: -2em;
   padding-left: 2em;
+  text-indent: -2em;
 }
 
 .key-val {
@@ -1067,9 +1047,9 @@ It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE 
 .ratio-box.v-1 > .scut-inner {
   position: absolute;
   left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .side-lined {

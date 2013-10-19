@@ -1,17 +1,17 @@
 /*==========================
 BOOKENDS
-
+http://davidtheclark.github.io/scut/#bookends
 ==========================*/
 
 @mixin scut-bookends (
   $pad: 0.5em,
-  $content: false
+  $content: ""
 ) {
 
-  $content-list: length($content) == 2 and not $content == false;
+  $content-list: length($content) == 2;
 
   // If $content is a list or there $pad exist,
-  // set some psuedo-element-specific rules.
+  // set some pseudo-element-specific rules.
   @if $content-list or $pad {
     &:before {
       @if $content-list {
@@ -32,7 +32,7 @@ BOOKENDS
   }
 
   // Then set some rules that apply to both
-  // psuedo-elements.
+  // pseudo-elements.
   &:before,
   &:after {
     display: inline-block;
@@ -41,7 +41,7 @@ BOOKENDS
       content: $content;
     }
 
-    // Any additional styling applies to both.\
+    // Any additional styling applies to both.
     @content;
 
   }

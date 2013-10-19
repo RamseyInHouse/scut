@@ -1,17 +1,16 @@
 /*==========================
 SCUT FONTICON-LABEL
+http://davidtheclark.github.io/scut/#fonticon_label
 ==========================*/
 
 @mixin scut-fonticon-label (
   $font,
   $glyph,
   $pad: 0.25em,
-  $side: left
+  $side: before
 ) {
 
-  $psuedo: if($side == left, "before", "after");
-
-  &:#{$psuedo} {
+  &:#{$side} {
     content: $glyph;
     font-family: $font;
     font-style: normal;
@@ -20,10 +19,10 @@ SCUT FONTICON-LABEL
     display: inline-block;
     vertical-align: middle;
 
-    @if $side == left and $pad != 0 {
+    @if $side == before and $pad != 0 {
       margin-right: $pad;
     }
-    @else if $side == right and $pad != 0 {
+    @else if $side == after and $pad != 0 {
       margin-left: $pad;
     }
 

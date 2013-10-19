@@ -14,31 +14,31 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
   @include scut-list-floated($dir: $dir);
 
-  $psuedo: if($dir == left, 'before', 'after');
+  $pseudo: if($dir == left, 'before', 'after');
 
   // If an explicit height is passed,
   // things are different: All <li>s
-  // need the psuedo-element (to force height),
+  // need the pseudo-element (to force height),
   // but the first's must be hidden.
 
   @if $height {
     & > li {
       height: $height;
     }
-    & > li:#{$psuedo} {
+    & > li:#{$pseudo} {
       height: $height;
       content: $divider;
       display: inline-block;
       vertical-align: middle;
       @content;
     }
-    & > li:first-child:#{$psuedo} {
+    & > li:first-child:#{$pseudo} {
       width: 0;
       overflow: hidden;
     }
   }
 
-  & > li + li:#{$psuedo} {
+  & > li + li:#{$pseudo} {
     @if not $height {
       content: $divider;
       display: inline-block;
