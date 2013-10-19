@@ -56,8 +56,8 @@ Feel free to experiment with or create test pages for utilities new and old. Use
 Test pages are compiled from Handlebars templates using [Assemble](http://assemble.io). You should do the following:
 
 - `npm install` to ensure you have all the node modules you need.
-- As you work, run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`). This will make an index of test pages available at `localhost:9000` and your test page available at `localhost:9000/your-file-name.html`. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.
-- Edit or create a Handlebars template named after the utility in `test/templates/pages/`. Add a `title` to the YAML front matter.
+- As you work, run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`). This will make an index of test pages available at `localhost:9000/test` and your test page available at `localhost:9000/test/your-file-name.html`. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.
+- Edit or create a Handlebars template named after the utility in `test/templates/pages/`. Add a `title` to the YAML front matter (for the sake of the index).
 - Edit or create an SCSS stylesheet named after the utility in `test/style/scss/tests/`.
 
 Look at the existing tests for examples.
@@ -67,4 +67,12 @@ Look at the existing tests for examples.
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt test` for the same result.) Look at `Gruntfile.coffee` for details.
 
 com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) installed*.
+
+### Documenting
+
+Documentation is compiled using using [Assemble](http://assemble.io). The files are located in `docs/dev`, with all Assemble-related files (content, helpers, Handlebars templates) in `docs/dev/assemble` &mdash; compiling to `docs/dev/index.html` &mdash; other site assets (style, js, images, etc.) in `docs/dev/assets`.
+
+The bulk of the writing is done in `docs/dev/assemble/data.yml`. And the example styling is done in `docs/dev/assets/scss/examples/`.
+
+A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt docs` for the same result.) Look at `Gruntfile.coffee` for details.
 

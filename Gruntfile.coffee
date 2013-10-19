@@ -37,33 +37,35 @@ module.exports = (grunt) ->
           "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
 
     sass:
-
+      # Process test styles
       test:
         options:
           loadPath: ["test/style/scss/test/*.scss"]
         files:
           "test/style/css/main.css": "test/style/scss/main.scss"
-
+      # Process docs styles
       docs:
         files:
           "docs/dev/assets/main.css": "docs/dev/assets/scss/main.scss"
 
     autoprefixer:
-
+      # Prefix test styles
       test:
         files:
           "test/style/css/main.css": "test/style/css/main.css"
-
+      # Prefix docs styles
       docs:
         files:
           "docs/dev/assets/main.css": "docs/dev/assets/main.css"
 
     cssmin:
+      # Minify docs styles into dist
       docs:
         files:
           "docs/dist/assets/css-built.min.css": "docs/dev/assets/main.css"
 
     uglify:
+      # Minify docs JS into dist
       docs:
         files:
           "docs/dist/assets/js-built.min.js": [
@@ -73,7 +75,7 @@ module.exports = (grunt) ->
           ]
 
     assemble:
-
+      # Assemble test markup
       test:
         options:
           partials: ["test/templates/partials/*.hbs"]
@@ -84,7 +86,7 @@ module.exports = (grunt) ->
           src: ["*.hbs"]
           dest: "test/"
         ]
-
+      # Assemble docs dev markup
       docsDev:
         options:
           data: ["docs/dev/assemble/data.yml"]
@@ -93,7 +95,7 @@ module.exports = (grunt) ->
           dist: false
         files:
           "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
-
+      # Assemble docs dist markup
       docsDist:
         options:
           data: ["docs/dev/assemble/data.yml"]
@@ -104,6 +106,7 @@ module.exports = (grunt) ->
           "docs/dist/index.html": ["docs/dev/assemble/index.hbs"]
 
     svgmin:
+      # Minify docs SVG assets in preparation for grunticon
       docs:
         files: [
           expand: true
@@ -112,7 +115,18 @@ module.exports = (grunt) ->
           dest: "docs/dev/assemble/images/svg-assets/opt"
         ]
 
+    grunticon:
+      # Grunticon docs SVG assets, producing an SCSS file
+      # that gets @imported
+      docs:
+        options:
+          cssprefix: "",
+          datasvgcss: "_svg-data.scss"
+          src: "docs/dev/assets/images/svg-assets/opt"
+          dest: "docs/dev/assets/scss/grunticon"
+
     imagemin:
+      # Minify docs images into dist
       docs:
         files: [
           expand: true
@@ -121,15 +135,8 @@ module.exports = (grunt) ->
           dest: "docs/dist/assets/images"
         ]
 
-    grunticon:
-      docs:
-        options:
-          cssprefix: "",
-          datasvgcss: "_svg-data.scss"
-          src: "docs/dev/assets/images/svg-assets/opt"
-          dest: "docs/dev/assets/scss/grunticon"
-
     htmlmin:
+      # Minify docs dist html
       docs:
         options:
           removeComments: true
@@ -138,6 +145,7 @@ module.exports = (grunt) ->
           "docs/dist/index.html": "docs/dist/index.html"
 
     copy:
+      # Copy docs fonts from dev to dist
       docsFonts:
         files: [
           expand: true
@@ -146,6 +154,7 @@ module.exports = (grunt) ->
           dest: "docs/dist/assets/fonts"
         ]
       # Copy docs/dist to a parallel gh-pages dir
+      # for updating the live site
       docsDist:
         files: [
           expand: true
@@ -218,16 +227,16 @@ module.exports = (grunt) ->
           base: "./"
 
     clean:
-
+      # Clean up test HTML
       html:
         src: ["test/*.html"]
-
+      # Clean up docs optimized images
       images:
         src: [
           "docs/dist/images"
           "docs/dev/images/svg-assets/opt"
         ]
-
+      # Clean up docs dist folder
       docs:
         src: ["docs/dist"]
 
