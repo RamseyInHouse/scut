@@ -3,4 +3,9 @@ bower_components
 .sass-cache
 
 docs/dist
+docs/dev/index.html
+docs/dev/assets/main.css
+docs/dev/assets/images/svg-assets/opt
 
+test/*.html
+test/style/css

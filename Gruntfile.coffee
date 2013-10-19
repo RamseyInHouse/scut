@@ -100,7 +100,7 @@ module.exports = (grunt) ->
         options:
           data: ["docs/dev/assemble/data.yml"]
           partials: ["docs/dev/assemble/partials/*.hbs"]
-          helpers: ["docs/dev/assets/hbs-helpers.js"]
+          helpers: ["docs/dev/assemble/hbs-helpers.js"]
           dist: true
         files:
           "docs/dist/index.html": ["docs/dev/assemble/index.hbs"]
@@ -228,8 +228,12 @@ module.exports = (grunt) ->
 
     clean:
       # Clean up test HTML
-      html:
-        src: ["test/*.html"]
+      test:
+        src: [
+          "test/*.html"
+          "test/style/css"
+          "test/style/scss/_tests.scss"
+        ]
       # Clean up docs optimized images
       images:
         src: [
@@ -238,7 +242,12 @@ module.exports = (grunt) ->
         ]
       # Clean up docs dist folder
       docs:
-        src: ["docs/dist"]
+        src: [
+          "docs/dev/index.html"
+          "docs/dev/assets/main.css"
+          "docs/dev/images/svg-assets/opt"
+          "docs/dist"
+        ]
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
@@ -283,20 +292,25 @@ module.exports = (grunt) ->
     "newer:assemble:test"
     "testStyle"
   ]
-  grunt.registerTask "docs", [
+  grunt.registerTask "docsDev", [
     "docsStyle"
-    "cssmin:docs"
-    "imagemin:docs"
-    "copy:docsFonts"
     "assemble:docsDev"
-    "assemble:docsDist"
+  ]
+  grunt.registerTask "docsDist", [
+    "docsDev"
+    "cssmin:docs"
+    "newer:imagemin:docs"
+    "copy:docsFonts"
     "uglify:docs"
+    "assemble:docsDist"
     "htmlmin:docs"
   ]
   grunt.registerTask "build", [
     "concat:scut"
+  ]
+  grunt.registerTask "init", [
     "test"
-    "docs"
+    "docsDev"
   ]
   grunt.registerTask "gh-pages", ["copy:docsDist"]
   grunt.registerTask "default", ["build"]

@@ -5,7 +5,7 @@
   "keywords": [],
   "keywords": [],
   "scripts": {
-    "prepublish": "bower install"
+    "prepublish": "bower install; grunt init"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
