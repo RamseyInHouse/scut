@@ -1,9 +1,0 @@
-@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
-@include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
-@include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
-@include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);
-
-.eg-font-face {
-  font-family: "Arvo";
-  font-size: 1.3em;
-}
