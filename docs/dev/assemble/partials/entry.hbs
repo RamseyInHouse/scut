@@ -76,9 +76,9 @@
 </section>
 
 {{#if example}}
-{{#with example}}
 <section class="example">
   <h4>Example</h4>
+  {{#with example}}
   {{#if show-html}}
   <div class="example--html">
     <h5>HTML</h5>
@@ -93,8 +93,14 @@
     <h5>Result</h5>
     <div class="example--disp--inner">{{{html}}}</div>
   </div>
+  {{/with}}
 </section>
-{{/with}}
+{{/if}}
+
+{{#if codepen}}
+<section class="example">
+  {{{codepen}}}
+</section>
 {{/if}}
 
 {{#if references}}

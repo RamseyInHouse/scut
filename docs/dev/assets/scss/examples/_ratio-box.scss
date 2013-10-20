@@ -1,21 +1,26 @@
+/* hidden rules */
 .eg-ratio {
-  background: gray;
   margin-top: 1em;
+}
+/* end hidden rules */
+
+.eg-ratio {
+  background: $eg-muted;
   &.m-1 {
-    width: 10em;
+    width: 15em;
     // Default-values placeholder
     @extend %scut-ratio-box;
   }
   &.m-2 {
-    width: 5em;
+    width: 7em;
     @include scut-ratio-box;
   }
   &.m-3 {
-    width: 10em;
+    width: 15em;
     @include scut-ratio-box(16/9, ".eg-ratio-inner");
   }
   &.m-4 {
-    width: 5em;
+    width: 7em;
     @include scut-ratio-box(16/9, ".eg-ratio-inner");
   }
 }

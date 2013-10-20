@@ -78,5 +78,9 @@ Documentation is compiled using [Assemble](http://assemble.io). The files are lo
 - Run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`) will make the documentation page available at `localhost:9000/docs/dev`. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.
 - The bulk of the writing is done in `docs/dev/assemble/data.yml`. And the example styling is done in the SCSS stylesheets in `docs/dev/assets/scss/examples/`.
 
-A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt docs` for the same result.) Look at `Gruntfile.coffee` for details.
+At the top of `docs/dev/assemble/data.yml` is a short guide to writing the YAML that translates into a utility's entry in the documentation.
+
+For the SCSS of your example, please follow the conventions established in the other examples. Please stick with the color variables `$eg-muted`, `$eg-light`, and `$eg-dark`. If there are rules that you would like to add in order to make the example look nice but you don't need to display them (because they have nothing to do with usage of the utility), wrap them in the comments `/* hidden rules */` and `/* end hidden rules */`, followed by a blank line. Look at the existing example stylesheets and you'll get it.
+
+A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt docsDev` for the same result.) Look at `Gruntfile.coffee` for details.
 

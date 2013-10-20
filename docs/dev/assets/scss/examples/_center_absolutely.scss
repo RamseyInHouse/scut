@@ -1,18 +1,29 @@
+/* hidden rules */
 .eg-center-absolutely-container {
-  border: 5px solid;
+  border: 5px solid $eg-dark;
   height: 6em;
-  margin-bottom: 1em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+.eg-center-absolutely {
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+/* end hidden rules */
+
+.eg-center-absolutely-container {
   position: relative;
 }
 .eg-center-absolutely {
-  background: gray;
+  background: $eg-muted;
   &.m-1 {
-    @include scut-center-absolutely(20em 3em);
+    @include scut-center-absolutely(22em 2.5em);
   }
   &.m-2 {
     @include scut-center-absolutely(20em n);
   }
   &.m-3 {
-    @include scut-center-absolutely(n 3em);
+    @include scut-center-absolutely(n 2.5em);
   }
 }

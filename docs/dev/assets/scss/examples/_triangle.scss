@@ -1,3 +1,8 @@
+/* hidden rules */
+.eg-triangle-button {
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
 .eg-triangle {
   margin-right: 1em;
   &.m-default {
@@ -5,20 +10,16 @@
     @extend %scut-triangle;
   }
   &.m-equilateral {
-    @include scut-triangle(up, 1em 1.4em, gray);
+    @include scut-triangle(up, 1em 1.4em, $eg-muted);
   }
   &.m-corner-1 {
-    @include scut-triangle(top-right, 1em, blue);
+    @include scut-triangle(top-right, 1em, $eg-dark);
   }
   &.m-corner-2 {
-    @include scut-triangle(bottom-left, 2em 1em, red);
+    @include scut-triangle(bottom-left, 2em 1em, $eg-light);
   }
 }
 .eg-triangle-button {
-  border: 1px solid;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 0.1em 0.5em;
   &:after {
     margin-left: 0.3em;
   }
@@ -30,13 +31,7 @@
     @include scut-triangle(up, 0.7em 1em, $pseudo: true);
     margin-bottom: 0.2em;
   }
-  &.m-more {
-    color: blue;
-    &:hover {
-      color: red;
-    }
-    &:after {
-      @include scut-triangle($pseudo: true);
-    }
+  &.m-more:after {
+    @include scut-triangle($pseudo: true);
   }
 }

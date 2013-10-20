@@ -1,11 +1,15 @@
+/* hidden rules */
+.eg-clearfix-floater {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
 .eg-clearfix-container {
   @extend %scut-clearfix;
   // or @include scut-clearfix;
-  background: gray;
+  background: $eg-muted;
 }
 .eg-clearfix-floater {
   float: left;
   margin: 1em;
-  padding: 0 1em;
-  background: white;
 }

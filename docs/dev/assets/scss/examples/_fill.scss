@@ -1,14 +1,20 @@
+/* hidden rules */
 .eg-fill-container {
-  border: 3px solid black;
-  color: red;
-  height: 100px;
+  border: 5px solid $eg-dark;
+  height: 6em;
   padding: 1em;
+}
+.eg-fill {
+  padding: 2.5em 1em 0;
+}
+/* end hidden rules */
+
+.eg-fill-container {
+  color: $eg-light;
   position: relative;
 }
-
 .eg-fill {
   @extend %scut-fill;
   // or @include scut-fill;
-  background: rgba(0,0,0,0.4);
-  padding: 2.5em 1em 0;
+  background-color: rgba(0,0,0,0.4);
 }

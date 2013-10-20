@@ -1,18 +1,23 @@
+/* hidden rules */
 .eg-list-floated {
-  li {
-    border: 1px solid;
-    padding: 0 5px;
+  & > li {
+    @extend %eg-dark-btn;
   }
+}
+/* end hidden rules */
+
+.eg-list-floated {
   &.m-1 {
     // Default-values placeholder
     @extend %scut-list-floated;
-    margin-bottom: 1em;
   }
   &.m-2 {
     @include scut-list-floated(1em);
-    margin-bottom: 1em;
   }
   &.m-3 {
     @include scut-list-floated(2em, right);
+  }
+  &:not(:first-child) {
+    margin-top: 1em;
   }
 }

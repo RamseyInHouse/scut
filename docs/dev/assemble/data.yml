@@ -4,6 +4,37 @@ codepen-url: "http://codepen.io/davidtheclark/pen/yCadJ"
 
 categories:
 
+  # General item fields --
+  # name: Underscores translate to spaces; hyphens stay hyphens.
+  #   The utility's example stylesheet's filename should match
+  #   the `name` provided here.
+  # type: Use one of the existing types.
+  # use-name: The name of the mixin/placeholder -- what the user
+  #   will actually type, including the scut- prefix.
+  # args: A list of arguments, in order. Each argument includes
+  #   the following fields:
+  #   - variable: The name of the variable, including the $ sign
+  #     at the beginning.
+  #   - default: Any default value. If there is no default, do not
+  #     include this field. If the value is 0 or false, make sure
+  #     to wrap it in quotation marks, or YAML won't get it.
+  #   - comment (markdown): A comment about the variable.
+  # contentblock: If the mixin accepts a content block, explain here
+  #    what that content block will affect.
+  # text (markdown): Text to explain the utility.
+  # example:
+  #   - html: The HTML code for the example
+  #   - show-html: Set to `true` if the HTML should be shown in the
+  #     example.
+  #   *** A STYLESHEET FOR THE EXAMPLE IS EXPECTED IN
+  #     `DOCS/DEV/ASSETS/SCSS/EXAMPLES` WITH THE SAME NAME AS THAT
+  #     GIVEN TO THIS ITEM. Within that stylesheet, code between the
+  #     comments `/* hidden rules */` and `/* end hidden rules */`
+  #     will not be displayed. ***
+  # references:
+  #   - description: Display text for the reference link.
+  #   - url: URL for the referene link.
+
   -
     category: general
     items:
@@ -15,7 +46,7 @@ categories:
         args:
           -
             variable: $inactive
-            comment: Color(s) for the inactive state. A list of two values will designates `color` and `background-color`.One value will be interpreted as `color` &mdash; unless the `$bg` argument, below, is set to `true`, in which case it will be `background-color`.
+            comment: Color(s) for the inactive state. A list of two values will designate `color` and `background-color`. One value will be interpreted as `color` &mdash; unless the `$bg` argument, below, is set to `true`, in which case it will be `background-color`.
           -
             variable: $active
             comment: Color(s) for the active state. One or two values, interpreted the same as `$inactive`, above.
@@ -33,9 +64,9 @@ categories:
           The "active state" includes `:hover`, `:focus`, and `:active`.
         example:
           html: |
-            <button class="eg-color-swap m-1">Example 1</button>
-            <button class="eg-color-swap m-2">Example 2</button>
-            <button class="eg-color-swap m-3">Example 3</button>
+            <button class="eg-color-swap m-1">Variation 1</button>
+            <button class="eg-color-swap m-2">Variation 2</button>
+            <button class="eg-color-swap m-3">Variation 3</button>
 
       -
         name: hd_breakpoint
@@ -52,7 +83,7 @@ categories:
             comment: A *minimum* resolution value.
         example:
           html: |
-            <p class="eg-hd-bp">If you are using a retina screen, this paragraph will be blue &mdash; otherwise, a sad, sad gray.</p>
+            <p class="eg-hd-bp">If you are using a retina screen, this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p>
         references:
           -
             description: The involved Github discussion that resulted in HTML5 Boilerplate's HiDPI breakpoint
@@ -87,7 +118,7 @@ categories:
             variable: $opacity
             comment: An `opacity` value between 0 and 1.
         text: |
-          Simply adds an `-ms-filter` value for IE8-compatible opacity. Nothing more. No example necessary &mdash; since you are not using IE8 (right? please?).
+          Simply adds an `-ms-filter` value for IE8-compatible opacity. Nothing more. No example necessary &mdash; since *you* are not using IE8 (right? please?).
         references:
           -
             description: "CSS-Tricks: \"Cross-Browser Opacity\""
@@ -102,14 +133,16 @@ categories:
             variable: $active
             default: "true"
             comment: Declare whether or not to target the `:active` state, in addition to `:hover` and `:focus`.
+        contentblock: |
+          A content block passed to this mixin will apply to the <i>selected</i> states (`:hover`, `:focus`, and optionally `:active`).
         text: |
           Apply rules to `:hover`, `:focus`, and (optionally) `:active` states. Make your site more friendly for touchscreens, keyboard navigators, etc.
 
           *Don't forget to add a `tabindex` to any element that will need it for `:focus`.*
         example:
           html: |
-            <p>The following button turns blue in all three states:<p>
-            <p><button class="eg-selected">Inspect Me!</button></p>
+            <p><button class="eg-selected m-1">This following button turns blue in all three states</button></p>
+            <p><button class="eg-selected m-2">This following button turns blue only on hover and focus (not active)</button></p>
 
       -
         name: scut-reset
@@ -137,11 +170,12 @@ categories:
         args:
           -
             variable: $dimensions
-            comment: The `width` and `height` of the element-to-be-centered (both optional). To bypass either and avoid centering in that dimension, pass `n` (for `null`). See below.
+            comment: |
+              A two-value list: the `width` and `height` of the element-to-be-centered (both optional). To bypass either and avoid centering in that dimension, pass `n`. See below.
         text: |
           Center an absolutely positioned element: horizontally, vertically, or both ways.
 
-          This method only works if the element-to-be-centered has fixed dimensions &mdash; fixed width if you want it centered horizontally, fixed height if you want it centered vertically.
+          *This method only works if the element-to-be-centered has a fixed dimension on the relevant axis* &mdash; fixed width to center horizontally, fixed height to center vertically.
 
           If you do not want to center horizontally &mdash; only vertically &mdash; pass `n` (short for `null`, "no," "nothing," etc.) for the `width` value. Same goes for height, if you do not want to center vertically. See the examples below for clarification.
         example:
@@ -210,7 +244,7 @@ categories:
             comment: The name of your icon font
           -
             variable: $glyph
-            comment: The Unicode character code for a specific icon from your icon font (feel free to use variables)
+            comment: The Unicode character code for a specific icon from your icon font (please feel free to use variables)
           -
             variable: $pad
             default: 0.25em
@@ -218,25 +252,25 @@ categories:
           -
             variable: $side
             default: before
-            comment: On which side of the label do you want the icon? The `:before` or `:after` pseudo-element?
+            comment: |
+              `before` or `after`, translating to the pseudo-element for the icon &mdash; so on which side of the label do you want the icon?
         contentblock: |
           A content block passed to this mixin will be applied to the icon (either the `:before` or `:after` pseudo-element).
         text: |
-          Pair icons from your sweet icon fonts with text labels, using semantic HTML and no extraneous elements.
+          Pair the icons from your rad icon fonts with text labels, using semantic HTML and no extraneous elements.
 
-          By default, icons are grafted on as `inline-block` pseudo-elements, vertically centered with the label.
+          By default, icons are grafted on as `inline-block` pseudo-elements, vertically centered with the label. The mixin also takes care of some common needs: it sets the `font-style` and `font-weight` to `normal` and `-webkit-font-smoothing` to `antialiased`.
 
-          Icons can be placed on the left or right of the label, spaced according to your learn&egrave;d discretion. And extra customization is possible by either passing a content block or adding rules to the relevant pseudo-element.
+          Icons can be placed on the left or right of the label and spaced according to your learn&egrave;d discretion. Additional customization is possible by either passing a content block or adding rules to the relevant pseudo-element.
 
           The examples below illustrate some of the possibilities.
 
         example:
           html: |
-            <p>Push the play button and hover over the others</p>
-            <button class="eg-fonticon-label m-1">Play</button>
-            <button class="eg-fonticon-label m-2">Stop</button>
-            <button class="eg-fonticon-label m-3">Fast Forwards</button>
-            <button class="eg-fonticon-label m-4">Rewind</button>
+            <p><button class="eg-fonticon-label m-1">Play &amp; Pause</button></p>
+            <p><button class="eg-fonticon-label m-2">Stop</button></p>
+            <p><button class="eg-fonticon-label m-3">Fast Forwards</button></p>
+            <p><button class="eg-fonticon-label m-4">Rewind</button></p>
           show-html: true
 
       -
@@ -245,7 +279,7 @@ categories:
         type: *MP
         use-name: scut-list-unstyled
         text: |
-          Remove styling (`margin`, `padding`, and `list-style-type`) from a list.
+          Remove default styling (`margin`, `padding`, and `list-style-type`) from a list.
         example:
           html: |
             <ul class="eg-unstyled-list">
@@ -303,7 +337,7 @@ categories:
         text: |
           Inline the items of an unstyled list.
 
-          ("Inline" is a hip new verb: use liberally.)
+          ("Inline" is a hip new verb: deploy liberally.)
 
           Use an inline list if you don't mind your list items spaced out a little, like inline words. If you need them flush, with no interstitial space, try a [floated list](#floated-list).
 
@@ -389,7 +423,7 @@ categories:
           A content block passed to this mixin will be applied to the dividing pseudo-elements.
 
         text: |
-          A floated list ([see above](#list_floated)) with punctuation between each list item.
+          A floated list ([see above](#list_floated)) with a dividing pseudo-element between list items.
 
           A couple of common variations have their own placeholders:
 
@@ -398,7 +432,7 @@ categories:
 
           But, of course, all things are possible.
 
-          The `$height` argument is kind of tricky: If you want a `$divider` taller than your list items, you need include the height here to ensure that everything stays in a nice neat horizontal line, vertically aligned in the middle. See the example below for clarification.
+          The `$height` argument is kind of tricky: If you want a `$divider` taller than your list items, you need include a `$height` argument to ensure nice neat vertical alignment. See the example below for clarification.
 
           Only the list's immediate children are divided (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
@@ -437,17 +471,17 @@ categories:
             comment: |
               A list: `top`, `right`, `bottom`, and `left` coordinates. `n` abbreviates `null`. `a` is interchangeable with `auto`. See below.
         text: |
-          A shortcut for assigning coordinates to an element.
+          A shortcut (and organizer) for assigning coordinates to an element.
 
-          You *may* want to use this mixin on its own &mdash; but **this mixin's primary purpose is to facilitate those below**, which will pair your coordinates with a `position` value.
+          You *may* want to use this mixin on its own &mdash; but **this mixin's primary purpose is to facilitate the positioning mixins below**, which pair your coordinates with a `position` value.
 
           Some guidlines for this mixin and its followers:
 
-          - **`n` (the default value) signifies `null` or "nothing" or "no"** &mdash; so any coordinate assigned `n` is simply ignored, creating no rule in compiled CSS.
+          - **`n` (the default value) signifies `null` or "nothing" or "no"** &mdash; so any coordinate assigned `n` is simply ignored, creating no rule in your compiled CSS.
           - **`a` can abbreviate `auto`** (both will work).
-          - **All four values must be passed**: so use `n` as needed.
+          - **All four values must be passed**, so use `n` as needed.
 
-          See the examples below.
+          The mixins below (and their examples) below further illustrate how this works.
 
 
       -
@@ -496,7 +530,7 @@ categories:
         text: |
           Fixedly (*fix-ed-lee*) position an element and assign its coordinates.
 
-          No example is provided because it would spoil this nice documentation. Check out the examples above: you'll get the picture.
+          No example is provided because it would spoil this nice documentation. Check out the positioning mixins above and you'll get the picture.
 
       -
         name: ratio-box
@@ -506,7 +540,7 @@ categories:
           -
             variable: $ratio
             default: 1/1
-            comment: "The ratio-box's ratio: a fraction signifying width / height. The default, 1/1, is a square."
+            comment: "The ratio-box's ratio: a fraction signifying width / height. The default, 1/1, is a square. Photos and videos usually come in 4/3 or 16/9 ratios."
           -
             variable: $inner
             default: "\".scut-inner\""
@@ -517,32 +551,24 @@ categories:
           **Implementation involves two elements**:
 
           - The outer element, to which the mixin applies, whose width will determine the width of the ratio-box.
-          - The inner element, whose selector must be passed to the mixin as the `$inner` (second) argument, and whose content will manifest as the content of the ratio-box. The inner element should be an *immediate child* of the outer element (it's selected with the CSS selector `>`, the "child combinator").
+          - The inner element, the ratio-box itself, whose selector must be passed to the mixin ast the `$inner` (second) argument. This inner element should be an *immediate child* of the outer element (it's selected with the CSS selector `>`, the "child combinator").
 
           The examples should demonstrate.
         example:
           html: |
             <p>These containers have different widths, but the ratio-boxes remain squares.</p>
             <div class="eg-ratio m-1">
-              <div class="scut-inner">
-                  <!-- Content! -->
-                </div>
+              <div class="scut-inner">Variation 1</div>
             </div>
             <div class="eg-ratio m-2">
-              <div class="scut-inner">
-                  <!-- Content! -->
-              </div>
+              <div class="scut-inner">Variation 2</div>
             </div>
-            <p>And the same principle applies to these, which maintain a 16:9 ratio and use a different classname for the inner element:</p>
+            <p>And the same principle applies to these, which maintain a 16/9 ratio and use a different classname for the inner element:</p>
             <div class="eg-ratio m-3">
-              <div class="eg-ratio-inner">
-                <!-- Content! -->
-              </div>
+              <div class="eg-ratio-inner">Variation 3</div>
             </div>
             <div class="eg-ratio m-4">
-              <div class="eg-ratio-inner">
-                <!-- Content! -->
-              </div>
+              <div class="eg-ratio-inner">Variation 4</div>
             </div>
           show-html: true
 
@@ -557,7 +583,7 @@ categories:
         text: |
           Define both of an element's dimensions in one fell swoop.
 
-          [(Read about the origin of the phrase "one fell swoop.")](http://www.straightdope.com/columns/read/1698/whats-the-origin-of-one-fell-swoop)
+          [(You may want to read about the origin of the phrase "one fell swoop.")](http://www.straightdope.com/columns/read/1698/whats-the-origin-of-one-fell-swoop)
 
           If a single value is passed, it will be applied to both `width` and `height`, producing a square. To make a rectangle, pass a two-value list: `width` then `height`.
         example:
@@ -585,12 +611,15 @@ categories:
 
           This one takes some commitment &mdash; but nothing you can't handle:
 
-          - Your sticky footer must have a fixed height.
-          - Your stuff-above-the-footer must be wrapped in a wrapper element. (The footer itself remains outside of this wrapper.)
+          - **Your sticky footer must have a fixed height.**
+          - **Your stuff-above-the-footer must be wrapped in a wrapper element.** (The footer itself remains outside of this wrapper.)
 
-          **This mixin should not be invoked within a declaration block.** It needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be nested within a selector.
+          **This mixin should not be invoked within a declaration block: don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be nested within a selector.
 
-          **For an example of the Scut sticky footer in action, [have a look at this Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**. Play around with it.
+          Since this example requires its own `<html>` and `<body>` elements, here's an embedded Codepen Pen:
+        codepen: |
+            <p data-height="268" data-theme-id="0" data-slug-hash="ExjiF" data-user="davidtheclark" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/davidtheclark/pen/ExjiF'>ExjiF</a> by davidtheclark (<a href='http://codepen.io/davidtheclark'>@davidtheclark</a>) on <a href='http://codepen.io'>CodePen</a></p>
+            <script async src="//codepen.io/assets/embed/ei.js"></script>
 
 
         references:
@@ -614,9 +643,8 @@ categories:
           If you need to vertically center something else, try one of the mixins below.
         example:
           html: |
-            <p class="eg-vcenter-lh">
-              Vertically centered text
-            </p>
+            <button class="eg-vcenter-lh m-1">Vertically centered text</button>
+            <button class="eg-vcenter-lh m-2">Same height, smaller font-size</button>
 
       -
         name: v-center_inline-block
@@ -625,7 +653,7 @@ categories:
         args:
           -
             variable: $inner
-            default: ".scut-inner"
+            default: "\".scut-inner\""
             comment: *IE
         text: |
           Vertically center *an inner element* with the `inline-block` method.
@@ -634,7 +662,7 @@ categories:
 
           Any to-be-centered element should be an *immediate child* of the container (`container > inner`).
 
-          A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't always work well if you require exact widths (or if your inner element has a 100% width). If you require exactitude and nothing stands in the way of giving your container `display: table`, try [vertically centering via table display](#vertically-center-via-table-display).
+          A word of caution: Because `inline-block` results in some unpredictable word-like spacing, this method doesn't always work well if you require exact widths (or if your inner element has a 100% width). If you require exactitude and nothing stands in the way of giving your container `display: table`, try [vertically centering via table display](#v-center_table_display).
         example:
           html: |
             <div class="eg-vcenter-ib m-1">
@@ -661,14 +689,12 @@ categories:
         args:
           -
             variable: $inner
-            default: ".scut-inner"
+            default: "\".scut-inner\""
             comment: *IE
         text: |
           Vertically center *the content of an inner element* with the `display: table` method.
 
           **This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
-
-          Whatever goes into the inner container, whether text or block, will be vertically centered.
 
           Any to-be-centered element should be an *immediate child* of the container (`container > inner`).
 
@@ -681,7 +707,7 @@ categories:
             </div>
             <div class="eg-vcenter-td m-2">
               <div class="eg-vcenter-td-inner">
-                <div class="eg-vcenter-box">A vertically centered box, with its own special classname.</div>
+                A vertically centered div, with its own special classname.
               </div>
             </div>
           show-html: true
@@ -730,11 +756,13 @@ categories:
           -
             variable: $side
             default: 10px
-            comment: The length of a side of the foursquare shape.
+            comment: |
+              The length of a side of the foursquare shape. Must have the same unit as `$line-x`; pixels are recommended.
           -
             variable: $line-x
             default: 1px
-            comment: The width of the inner lines.
+            comment: |
+              The width of the inner lines. Must have the same unit as `$side`; pixels are recommended.
           -
             variable: $color
             default: black
@@ -745,7 +773,9 @@ categories:
         text: |
           Create a foursquare shape &mdash; a customizable diamond-minus-x.
 
-          By default, the shape is rotated 45 degrees. Essentially, it reproduces [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070); but through the power of CSS, the Scut foursquare is customizable.
+          By default, the shape is rotated 45 degrees. Essentially, it reproduces [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070) &mdash; but through the power of CSS, the Scut foursquare is fully customizable.
+
+          Using `em` values for `$side` and `$line-x` sometimes produces unwelcome irregularities, but only sometimes ...
         example:
           html: |
             <div class="eg-foursquare m-1"></div>
@@ -775,11 +805,15 @@ categories:
         text: |
           Create a wide variety of CSS triangles.
 
-          (The default placeholder extension points right.)
+          (The default placeholder extension is a little one pointing right &mdash; the kind you'd see on a "Read More" link.)
 
-          The mixin can produce equilateral and isosceles triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.
+          The mixin can produce acute triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.
 
-          When choosing `width` and `height` values, consider how their proportion will determine the form. For example, to create an equilateral triangle, you'll want your `height` value to be ~140% of your `width` value (`width` * &radic;2). Anybody remember high school geometry?
+          When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle, you'll want your `height` value to be ~140% of your `width` value (`width` * &radic;2). Anybody remember high school geometry?
+
+          In my experience, it always takes some positional tweaking to get the triangle in the right place relative to text. Keep that in mind.
+
+          The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should [play around with this Codepen Pen](http://codepen.io/davidtheclark/pen/oelbk).
         example:
           html: |
             <p>
@@ -789,9 +823,9 @@ categories:
               <span class="eg-triangle m-corner-2"></span>
             </p>
             <p>
-              <span class="eg-triangle-button m-down">Dropdown</span>
-              <span class="eg-triangle-button m-up">Dropdown</span>
-              <span class="eg-triangle-button m-more">Read more</span>
+              <button class="eg-triangle-button m-down">Dropdown</button>
+              <button class="eg-triangle-button m-up">Dropdown</button>
+              <button class="eg-triangle-button m-more">Read more</button>
             </p>
           show-html: true
 
@@ -807,7 +841,7 @@ categories:
           -
             variable: $pad
             default: 0.5em
-            comment: Whitespace between the bookends and the element's contents
+            comment: Spacing between the bookends and the element's content
           -
             variable: $content
             default: false
@@ -819,12 +853,14 @@ categories:
 
           A common typographical usage is to place decorative ornaments on either side of some heading. But the mixin can prove useful for anything that involves pseudo-elements on both sides. Absolutely anything.
 
+          Pass `false` as both arguments if you want to modify bookend pseudo-elements that have already been created. See example variation 3.
 
         example:
           html: |
             <div class="eg-bookends m-1">Variation 1</div>
-            <button class="eg-bookends m-2">Variation 2</button>
-            <div class="eg-bookends m-3">Variation 3</div>
+            <div class="eg-bookends m-2">Variation 2</div>
+            <button class="eg-bookends m-3">Variation 3</button>
+            <div class="eg-bookends m-4">Variation 4</div>
 
       -
         name: characters
@@ -835,7 +871,7 @@ categories:
 
           Instead of looking them up every time, use a variable.
 
-          The names of these variables often correspond with HTML character entity references that you can use in your markup (most of them). For example, `$scut-nbsp` is the same character as `&nbsp;` in HTML.
+          The names of these variables often correspond with HTML character entity references that you can use in your markup. For example, `$scut-nbsp` is the same character as `&nbsp;` in HTML.
 
           Click View Source to see the full list.
 
@@ -884,7 +920,7 @@ categories:
 
           My <cite>Chicago Manual of Style</cite> also calls it the <i>flush-and-hang</i> style. I like that.
 
-          Hanging indents are standard fare for indexes and works cited, but may seem obscure to you (if you're no scholar) until one day you realize that you do need them, and have needed them all along ...
+          Hanging indents are standard fare for indexes and works cited, but may seem obscure to you if you're no scholar ... until one day you realize that you do need them, and have needed them all along ...
         example:
           html: |
             <div class="eg-hanging-indent m-1">Lastname, Firstname. <cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.
@@ -903,19 +939,19 @@ categories:
           -
             variable: $no-first-indent
             default: "true"
-            comment: It is common printing practice to leave the first paragraph un-indented.
+            comment: It is a not uncommon printing practice to leave the first paragraph un-indented.
         text: |
-          Indent paragraphs, as in those "books" and "magazines" that old people read.
+          Indent paragraphs &mdash; as tends to happen in those "books" and "magazines" that old people read.
         example:
           html: |
-            <div class="eg-indented-ps m-default">
+            <div class="eg-indented-ps m-1">
               <div><strong>Default</strong></div>
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
               <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
               <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
               <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
             </div>
-            <div class="eg-indented-ps m-variant">
+            <div class="eg-indented-ps m-2">
               <div><strong>Variant</strong></div>
               <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
               <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
@@ -949,11 +985,11 @@ categories:
             default: 0
             comment: Horizontal space between the `$divider` and the term.
         text: |
-          You've probably been wondering how to semantically markup your lists of keys and values &mdash; your labelled bits of information. You've probably been gnawing your fingernails to nubs, panicked with uncertainty. Well: The answer seems to be **description (or <i>association</i>) lists** &mdash; the `<dl>`, `<dt>`, and `<dd>` elements. (See the References listed below.)
+          You've probably been wondering how to *semantically mark-up your lists of keys and values* &mdash; your labelled bits of information. You've probably been gnawing your fingernails to nubs, panicked with uncertainty. Well wait 'till you hear this: The answer seems to be *description (or <i>association</i>) lists* &mdash; the `<dl>`, `<dt>`, and `<dd>` elements. (See the References listed below.)
 
           WhatWG says "The dl element represents an association list consisting of zero or more name-value groups (a description list)." There you have it.
 
-          One common way of *styling* such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (the fabled ["hanging indent"](#hanging_indent)).
+          One traditional manner of *styling* such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (the fabled ["hanging indent"](#hanging_indent)).
 
           This mixin should help make that dream a reality &mdash; with enough flexibility so you can play around, and really make that assocation list your own.
 
@@ -1007,13 +1043,13 @@ categories:
         text: |
           Replace standard link underlining with a bottom border.
 
-          People like this, at least some people, because it provides a little extra space between the text and the line. Other pleasing effects are also possible by passing arguments.
+          People seem to like this trick, at least some people, because it provides a little extra space between the text and the line. Other pleasing effects are also possible by passing arguments.
 
           Of course, as always, you can add your own rules after the mixin to further customize. For example, if you want to define a special color for the bottom-border on hover, just do it (see the example below).
         example:
           html: |
-            <p class="eg-link-bb m-default">Default values: <a href="#link-with-bottom-border">Link text</a></p>
-            <p class="eg-link-bb m-styled">Variant values: <a href="#link-with-bottom-border">Link text</a></p>
+            <p class="eg-link-bb m-1">Default values: <a href="#link-with-bottom-border">Link text</a></p>
+            <p class="eg-link-bb m-2">Variant values: <a href="#link-with-bottom-border">Link text</a></p>
 
       -
         name: reverse_italics
@@ -1027,9 +1063,9 @@ categories:
         text: |
           Italicize a section of text while de-italicizing those elements that would normally be italicized. Stand the world on its head.
 
-          This is a common typographical practice: in non-italicized text, italics provide mild stress; but in italicized text, it is the non-italicized text that is stressed.
+          This is common typographical practice. In non-italicized text, italics provide mild stress; but in an italicized passage, it is the *non-italicized* text that is stressed. (Everything is relative and nothing means anything.)
 
-          The elements `<em>`, `<cite>`, and `<i>`, which browsers typically italicize, are by default de-italicized. To de-italicize more elements, include some selectors in a list that you pass to the mixin.
+          The elements `<em>`, `<cite>`, and `<i>`, which browsers typically italicize, are by default de-italicized. To de-italicize more elements, include their selectors in a list that you pass to the mixin.
 
         example:
           html: |
@@ -1075,19 +1111,19 @@ categories:
           -
             variable: $m-adjust
             default: false
-            comment: Vertical adjustment to the lines, from the bottom up. See examples below.
+            comment: Vertical adjustment to the lines, adding space *from the bottom*. See examples below.
           -
             variable: $double
             default: false
             comment: Double your lines by adding *a value for the distance between the two lines you want*.
         text: |
-          Everybody loves this flourish: horizontal lines extending from either side of center-aligned text.
+          Woman- and mankind have always loved this flourish: horizontal lines extending from either side of center-aligned text.
 
           Look at the examples below. You want to do that!
 
-          The lines will be vertically aligned with the text's center &mdash; but sometimes that will look off, and you'll want to tweak that vertical position. So add some height to the `$m-adjust` argument, which will push your lines up, away from the bottom of the element.
+          By default, the lines will be vertically aligned with the text's centerline &mdash; but sometimes that will look off to your discerning eye, and you'll want to tweak that vertical position. So add some height to the `$m-adjust` argument, which will push your lines up, away from the bottom of the element.
 
-          By default, the mixin produces one line; but if you add a height to the `$double` argument, you'll get two lines (separated by that height). (You could also use a `$style` of `double`, which would act the same as any double border-style.)
+          By default, the mixin produces one line; but if you add a height value to the `$double` argument, you'll get two lines (separated by that height). (You could also use a `$style` of `double`, which would act the same as any double border-style.)
         example:
           html:
             <p class="eg-side-lined m-1">Variation 1</p>
@@ -1118,7 +1154,9 @@ categories:
 
           It provides some flexibility for situations in which the `em`-value has to be calculated in relation to something other than a default `16px` `font-size`.
 
-          If a `$base` argument is provided, the `em`-value will be calculated relative to that `$base`. If that `$base` is in pixels, everything should work smoothly, no questions asked. *You can also provide a `$base` in ems* &mdash; but this is trickier: it will only work if your `em`s are not more than one layer deep. For example, if your element is the child of a container whose `font-size` is an `em`-value other than `1em`, you can pass the `font-size` as the `$base` argument and everything will work fine (see example variations 5 and 6), But if the container has a `font-size` in `em`s (not `1em`), and a child of it has a `font-size` in `em`s (also not `1em`), and your messing with a grandchild ... and I don't suggest trying to use this function three or more levels deep in `em`s.
+          If a `$base` argument is provided, the `em`-value will be calculated relative to that `$base` (by default, `$base` is assumed to be `16`). If that `$base` is in pixels, everything should work smoothly, no questions asked. *You can also provide a `$base` in ems* &mdash; but this is trickier: it will only work if your `em`s are not more than one layer deep.
+
+          <small>(For example, if your element is the child of a container whose `font-size` is an `em`-value other than `1em`, you can pass the `font-size` as the `$base` argument and everything will work fine (see example variations 5 and 6), But if the container has a `font-size` in `em`s (not `1em`), and a child of it has a `font-size` in `em`s (also not `1em`), and your messing with a grandchild ... things will go wrong. So, again, I don't suggest trying to use this function three or more levels deep in `em`s.)</small>
         example:
           html: |
             <div class="eg-em-c">
@@ -1154,9 +1192,9 @@ categories:
         args:
           -
             variable: $num
-            comment: The number whose units you want to stirp.
+            comment: The number whose units you want to strip.
         text: |
-          Strip units from a number.
+          Strip the unit from a number.
 
           This becomes useful when you are building your own mixins and functions and find yourself in an error-littered tangle of units. With this function you can just ditch those units, then put them back later.
 
@@ -1166,11 +1204,11 @@ help:
   -
     term: use-name
     text: |
-      **use-name** is the name of the utility's mixin and placeholder, including the `scut-` prefix, as they should appear in your Sass/SCSS. This should be illustrated in the examples.
+      **use-name** is the name of the utility as it is used (as a mixin, placeholder, function, variable, etc.), including the `scut-` prefix. It's what you plug into your Sass/SCSS. This should be illustrated in the examples.
   -
     term: type
     text: |
-      **type** tells you how you can invoke the utility. Is it only available as a mixin (e.g. HD breakpoint)? Or as a mixin and a placeholder that always do the same thing (e.g. clearfix)? Or as a mixin and a placeholder that passes default values (e.g. indented paragraphs)? Or as a mixin with some extension placeholders for common variations (e.g. punctuated list)?
+      **type** tells you what kind of Sass feature the utility involves. Is it only available as a mixin (e.g. HD breakpoint)? Or as a mixin and a placeholder that always do the same thing (e.g. clearfix)? Or as a mixin and a placeholder that passes default values (e.g. indented paragraphs)? Or as a mixin with some extension placeholders for common variations (e.g. punctuated list)? As a function, a variable, an import? And so on.
   -
     term: arguments
     text: |
@@ -1180,4 +1218,4 @@ help:
   -
     term: contentblock
     text: |
-      **@content** describes what happens if you pass a content block to the mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).
+      **@content** describes what happens if you pass a content block to the utility's mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).

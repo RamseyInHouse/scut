@@ -3,7 +3,8 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
 }
 
-a {
+a,
+a code {
   color: $c-link;
   text-decoration: none;
   @include scut-selected {

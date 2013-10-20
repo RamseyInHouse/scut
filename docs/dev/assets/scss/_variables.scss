@@ -13,6 +13,11 @@ $c-link-2: #FFBA73;
 $c-zing: #9AE9FF;
 $c-bg-light: #EDF0FF;
 
+// example colors
+$eg-dark: $c-list;
+$eg-light: $c-zing;
+$eg-muted: #CCCCCC;
+
 // breakpoints
 $wide-enough: "min-width: 59.5em";
 $bp-show-list: "min-width: #{scut-em(650)}";

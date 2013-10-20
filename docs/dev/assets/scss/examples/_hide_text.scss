@@ -1,7 +1,14 @@
+/* hidden rules */
+.eg-hide-text {
+  margin-top: 1em;
+}
+/* end hidden rules */
+
+
 .eg-hide-text {
   @extend %scut-hide-text;
   // or @include scut-hide-text;
   background: url(images/bird.jpg) no-repeat;
   background-size: contain;
-  height: 100px;
+  height: 8em;
 }

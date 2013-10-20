@@ -1,11 +1,17 @@
+/* hidden rules */
+.example--disp--inner .eg-fonticon-label {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+
 @include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
 
 .eg-fonticon-label {
-  border: 2px solid black;
-  padding: 0.5em 1em;
   &.m-1 {
     @include scut-fonticon-label("icomoon-stereo", "\e004");
-    &:active:before {
+    &:active:before,
+    &:focus:before {
       content: "\e002"
     }
   }
@@ -13,18 +19,20 @@
     @include scut-fonticon-label("icomoon-stereo", "\e003") {
       font-size: 2em;
     }
-    &:hover {
-      color: red;
+    &:hover,
+    &:focus {
+      color: $eg-light;
     }
   }
   &.m-3 {
     @include scut-fonticon-label("icomoon-stereo", "\e001", 1.5em, after) {
-      color: red;
+      color: $eg-light;
     }
-    &:hover {
-      color: red;
+    &:hover,
+    &:focus {
+      color: $eg-light;
       &:after {
-        color: blue;
+        color: white;
       }
     }
   }
@@ -36,13 +44,13 @@
 }
 
 .eg-fonticon-label.m-4 {
-  border: 0;
   font-size: 2em;
   padding-left: 2em;
   @include scut-fonticon-label("icomoon-stereo", "\e000") {
     font-size: 2em;
   }
-  &:hover:before {
+  &:hover:before,
+  &:focus:before {
     animation: rewind 1s linear infinite;
   }
 }

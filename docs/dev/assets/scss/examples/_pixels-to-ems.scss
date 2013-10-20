@@ -1,17 +1,25 @@
+/* hidden rules */
 .eg-em-c {
   font-size: 16px;
 }
 .eg-em {
-  border: 5px solid;
-  margin-bottom: 1em;
+  border: 5px solid $eg-dark;
+  padding: 10px;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+/* end hidden rules */
 
+.eg-em {
+  // first pair
   &.m-1 { width: scut-em(300); }
   &.m-2 { width: 300px; }
-
+  // second pair
   &.m-3, &.m-4 { font-size: 20px; }
-  &.m-3 { width: scut-em(400, 20px); }
+  &.m-3 { width: scut-em(400, 20); }
   &.m-4 { width: 400px; }
-
+  // third pair
   &.m-5, &.m-6 { font-size: 2em; }
   &.m-5 { width: scut-em(500, 2em); }
   &.m-6 { width: 500px; }

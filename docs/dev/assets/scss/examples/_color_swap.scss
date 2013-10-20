@@ -1,15 +1,17 @@
+/* hidden rules */
 .eg-color-swap {
-  border: 1px solid;
-  padding: 0.3em 0.5em;
-  margin-right: 0.5em;
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+.eg-color-swap {
   &.m-1 {
-    @include scut-color-swap(blue, red, 1s);
+    @include scut-color-swap($eg-dark, $eg-light, 1s);
   }
   &.m-2 {
-    @include scut-color-swap(white black, black white);
+    @include scut-color-swap($eg-light $eg-dark, $eg-dark $eg-light);
   }
   &.m-3 {
     color: white;
-    @include scut-color-swap(blue, red, 0.5s, true);
+    @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
   }
 }

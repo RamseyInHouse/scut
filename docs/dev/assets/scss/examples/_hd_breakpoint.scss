@@ -1,6 +1,12 @@
+/* hidden rules */
 .eg-hd-bp {
-  color: gray;
+  padding: 1em;
+}
+/* end hidden rules */
+
+.eg-hd-bp {
+  background-color: $eg-muted;
   @include scut-hd-bp(2.0) {
-    color: blue;
+    background-color: $eg-light;
   }
 }

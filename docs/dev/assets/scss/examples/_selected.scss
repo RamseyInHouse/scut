@@ -1,8 +1,19 @@
+/* hidden rules */
 .eg-selected {
-  background-color: gray;
-  padding: 3px 10px;
-  @include scut-selected {
-    background-color: blue;
-    color: white;
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+
+.eg-selected {
+  background-color: $eg-muted;
+  &.m-1 {
+    @include scut-selected {
+      background-color: $eg-light;
+    }
+  }
+  &.m-2 {
+    @include scut-selected(false) {
+      background-color: $eg-light;
+    }
   }
 }

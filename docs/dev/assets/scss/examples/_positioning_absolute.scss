@@ -1,11 +1,18 @@
+/* hidden rules */
 .eg-absolute-container {
-  border: 5px solid black;
-  height: 150px;
-  width: 150px;
+  border: 5px solid $eg-dark;
+  height: 10em;
+  width: 15em;
+}
+.eg-absolute {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+.eg-absolute-container {
   position: relative;
 }
 .eg-absolute {
-  background: gray;
   &.m-1 {
     // Default-values placeholder
     @extend %scut-absolute;

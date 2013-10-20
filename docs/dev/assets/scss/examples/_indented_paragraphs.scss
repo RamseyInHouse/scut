@@ -1,10 +1,17 @@
+/* hidden rules */
 .eg-indented-ps {
-  &.m-default {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+/* end hidden rules */
+
+.eg-indented-ps {
+  &.m-1 {
     // Default-values placeholder
     @extend %scut-indented-ps;
-    margin-bottom: 1em;
   }
-  &.m-variant {
+  &.m-2 {
     @include scut-indented-ps(3em, false);
   }
 }

@@ -1,13 +1,20 @@
+/* hidden rules */
 .eg-vcenter-ib {
-  border: 5px solid black;
+  border: 5px solid $eg-dark;
   padding: 0 1em;
-  height: 120px;
+  height: 8em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+/* end hidden rules */
+
+.eg-vcenter-ib {
   &.m-1 {
     // Default-values placeholder
     @extend %scut-vcenter-ib;
   }
   &.m-2 {
     @include scut-vcenter-ib(".eg-vcenter-ib-inner");
-    margin-top: 1em;
   }
 }

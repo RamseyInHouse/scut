@@ -2,9 +2,9 @@
   @include scut-circle(1em);
 }
 .eg-circle-colored {
-  @include scut-circle(2em, blue);
+  @include scut-circle(2em, $eg-light);
 }
 .eg-circle-bordered {
-  @include scut-circle(2em, black);
-  border: 5px solid red;
+  @include scut-circle(2em, $eg-dark);
+  border: 5px solid $eg-light;
 }
