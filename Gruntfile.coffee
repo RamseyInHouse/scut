@@ -9,6 +9,8 @@ module.exports = (grunt) ->
 
       # Build Scut
       scut:
+        options:
+          banner: "/*#{grunt.util.linefeed}* Scut, a collection of Sass/SCSS utilities.#{grunt.util.linefeed}* Documentation at http://davidtheclark.github.io/scut#{grunt.util.linefeed}*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
         src: [
           # Utilities that are dependencies for others
           "src/layout/_clearfix.scss"
@@ -20,7 +22,7 @@ module.exports = (grunt) ->
           # The rest of them
           "src/**/*.scss"
         ]
-        dest: "_scut.scss"
+        dest: "dist/_scut.scss"
 
       # Build test styles
       test:
@@ -161,6 +163,14 @@ module.exports = (grunt) ->
           cwd: "docs/dist"
           src: ["*", "**/*"]
           dest: "../gh-pages"
+        ]
+      # Copy dist files to gh-pages/src for download
+      release:
+        files: [
+          expand: true
+          cwd: "dist"
+          src: "*"
+          dest: "../gh-pages/src"
         ]
 
     watch:
@@ -313,4 +323,5 @@ module.exports = (grunt) ->
     "docsDev"
   ]
   grunt.registerTask "gh-pages", ["copy:docsDist"]
+  grunt.registerTask "release", ["copy:release"]
   grunt.registerTask "default", ["build"]

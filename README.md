@@ -10,11 +10,13 @@ Installation and usage should be explained there, as well as some of the general
 
 Please do! Scut is simple; contributing should be easy. So give it a go.
 
-**The code is in `src/`, organized by category.** The SCSS stylesheets in `src/` concatenate into `_scut.scss`, which is what users `@import` into their own Sass.
-
 If you have any questions, if anything about this document is unclear or inaccurate, if you can't figure out what to do, please file an issue or contact me.
 
-### SCSS Style Guide
+### Writing Scut Utilities
+
+**The code is in `src/`, organized by category.** The SCSS stylesheets in `src/` ultimately concatenate into `dist/_scut.scss`, which is what users `@import` into their own Sass.
+
+#### Scut's SCSS Styleguide
 
 **Please have a look at existing SCSS files within `src/` and try to match their style.**
 

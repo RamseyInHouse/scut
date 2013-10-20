@@ -53,11 +53,18 @@ INTRO
   color: $c-main;
   margin: 1em 0 1em -2em;
   padding: 0.5em 1em 0.5em 3em;
-  a {
+  code {
+    color: $c-main;
+  }
+  a,
+  a > code {
     color: $c-zing;
     &:hover {
       color: $c-link-active;
     }
+  }
+  pre > code {
+    color: $c-f-1;
   }
   code[class*="language-"], pre[class*="language-"] {
     white-space: pre-line;

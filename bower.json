@@ -5,7 +5,7 @@
   "authors": [
     "David Clark <david.dave.clark@gmail.com>"
   ],
-  "description": "A collection of SCSS utilities.",
+  "description": "A collection of Sass/SCSS utilities.",
   "main": "src/_scut.scss",
   "keywords": [
     "SCSS",
@@ -19,6 +19,7 @@
     "**/.*",
     "node_modules",
     "bower_components",
+    "docs",
     "test",
     "tests",
     "Gruntfile.coffee",
