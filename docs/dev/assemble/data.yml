@@ -147,13 +147,13 @@ categories:
       -
         name: scut-reset
         type: separate file that must be imported
-        href: "https://github.com/davidtheclark/scut/blob/master/_scut-reset.scss"
+        href: "https://github.com/davidtheclark/scut/blob/master/dist/_scut-reset.scss"
         text: |
           **`scut-reset` is an additional file that you should import into your Sass/SCSS only if you want it.** You may not want it.
 
           I've found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all default button styling, which never gets used; and so on. So I decided to store those resets in an SCSS file. That's what `scut-reset` is.
 
-          [Have a look at the file](https://github.com/davidtheclark/scut/blob/master/_scut-reset.scss) to see what `scut-reset` does and assess whether you would like to include it in your own project.
+          [Have a look at the file](https://github.com/davidtheclark/scut/blob/master/dist/_scut-reset.scss) to see what `scut-reset` does and assess whether you would like to include it in your own project.
 
           If you do want to use `scut-reset`, simply import the file `_scut-reset.scss` after your other resets (e.g. [Normalize](http://necolas.github.io/normalize.css/)).
           <pre class="language-scss"><code>@import "path/to/scut-reset";</code></pre>
