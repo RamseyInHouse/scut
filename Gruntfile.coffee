@@ -164,14 +164,6 @@ module.exports = (grunt) ->
           src: ["*", "**/*"]
           dest: "../gh-pages"
         ]
-      # Copy dist files to gh-pages/src for download
-      release:
-        files: [
-          expand: true
-          cwd: "dist"
-          src: "*"
-          dest: "../gh-pages/src"
-        ]
 
     watch:
 
@@ -323,5 +315,4 @@ module.exports = (grunt) ->
     "docsDev"
   ]
   grunt.registerTask "gh-pages", ["copy:docsDist"]
-  grunt.registerTask "release", ["copy:release"]
   grunt.registerTask "default", ["build"]

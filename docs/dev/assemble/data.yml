@@ -124,9 +124,7 @@ categories:
 
           If you do want to use `scut-reset`, simply import the file `_scut-reset.scss` after your other resets (e.g. [Normalize](http://necolas.github.io/normalize.css/)).
           <pre class="language-scss"><code>@import "path/to/scut-reset";</code></pre>
-          You should find it in the `dist/` directory, alongside `_scut.scss`.
-
-          Or you can [download it here](/src/_scut-reset.scss).
+          You should find it in the `dist/` directory, alongside `_scut.scss`. Or you can just copy from Github.
 
   -
     category: layout
