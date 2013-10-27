@@ -314,5 +314,10 @@ module.exports = (grunt) ->
     "test"
     "docsDev"
   ]
-  grunt.registerTask "gh-pages", ["copy:docsDist"]
+  grunt.registerTask "gh-pages", [
+    "build"
+    "docsStyle"
+    "docsDist"
+    "copy:docsDist"
+  ]
   grunt.registerTask "default", ["build"]

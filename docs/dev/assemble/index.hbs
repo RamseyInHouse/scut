@@ -18,14 +18,14 @@
   <body class="preload" onload="document.body.className=''">
     {{>list}}
     {{>main}}
-  </body>
 
-  {{#if dist}}
-  <script src="assets/js-built.min.js"></script>
-  {{else}}
-  <script src="../../bower_components/overthrow/dist/overthrow.js"></script>
-  <script src="assets/js/lib/prism.js"></script>
-  <script src="assets/js/modals.js"></script>
-  {{/if}}
+    {{#if dist}}
+    <script src="assets/js-built.min.js"></script>
+    {{else}}
+    <script src="../../bower_components/overthrow/dist/overthrow.js"></script>
+    <script src="assets/js/lib/prism.js"></script>
+    <script src="assets/js/modals.js"></script>
+    {{/if}}
+  </body>
 
 </html>

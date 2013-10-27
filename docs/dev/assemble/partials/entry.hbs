@@ -34,10 +34,10 @@
           <li>
             <code class="args--name">{{variable}}</code>
             {{#if this.default}}
-            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+            [&nbsp;<div class="args--default">default:</div> <code class="args--default--val">{{this.default}}</code>&nbsp;]
             {{/if}}
             {{#if comment}}
-            <span class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</span>
+            <div class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</div>
             {{/if}}
           </li>
           {{/each}}

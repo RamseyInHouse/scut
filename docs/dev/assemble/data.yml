@@ -156,7 +156,9 @@ categories:
           [Have a look at the file](https://github.com/davidtheclark/scut/blob/master/dist/_scut-reset.scss) to see what `scut-reset` does and assess whether you would like to include it in your own project.
 
           If you do want to use `scut-reset`, simply import the file `_scut-reset.scss` after your other resets (e.g. [Normalize](http://necolas.github.io/normalize.css/)).
+
           <pre class="language-scss"><code>@import "path/to/scut-reset";</code></pre>
+
           You should find it in the `dist/` directory, alongside `_scut.scss`. Or you can just copy from Github.
 
   -
@@ -381,19 +383,16 @@ categories:
         example:
           html: |
             <ul class="eg-punctuated-list">
-              <strong>Comma list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
             </ul>
             <ul class="eg-semicolon-list">
-              <strong>Semicolon list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
             </ul>
             <ul class="eg-avant-garde-list">
-              <strong>Avant-garde list:&nbsp;</strong>
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
