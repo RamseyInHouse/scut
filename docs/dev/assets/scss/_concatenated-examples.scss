@@ -283,6 +283,15 @@
       font-weight: bold;
     }
   }
+  &.m-3 {
+    $dt-width: 6em;
+    @include scut-key-val("", 0, $dt-width + 1em);
+    & > dt {
+      width: $dt-width;
+      text-align: right;
+      text-transform: uppercase;
+    }
+  }
 }
 
 .eg-link-bb {
