@@ -3,13 +3,15 @@
   z-index: 3;
   background: rgba(0,0,0,0.7);
 
+  backface-visibility: hidden;
+  perspective: 1000;
   transition: transform 0.3s linear;
   .preload & {
     transition: none !important;
   }
-  transform: translateX(100%);
+  transform: translate3d(100%,0,0);
   &.is-active {
-    transform: translateX(0);
+    transform: translate3d(0,0,0);
   }
 }
 
@@ -23,6 +25,8 @@
   @extend %scut-vcenter-ib;
 
   display: none;
+  backface-visibility: hidden;
+  perspective: 1000;
   transition-property: opacity, transform;
   transition-duration: 0.3s;
   opacity: 0;
