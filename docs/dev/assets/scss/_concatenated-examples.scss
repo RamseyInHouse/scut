@@ -138,16 +138,6 @@
   background-color: rgba(0,0,0,0.4);
 }
 
-@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
-@include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
-@include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
-@include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);
-
-.eg-font-face {
-  font-family: "Arvo";
-  font-size: 1.3em;
-}
-
 /* hidden rules */
 .example--disp--inner .eg-fonticon-label {
   @extend %eg-dark-btn;

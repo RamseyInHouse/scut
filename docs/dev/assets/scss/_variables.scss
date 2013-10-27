@@ -5,6 +5,7 @@ $container-pad: 20px;
 
 // colors
 $c-f-1: #222;
+$c-f-2: #6B7072;
 $c-list: #002834;
 $c-main: #fff;
 $c-link: #2F96B3;
@@ -24,4 +25,5 @@ $bp-show-list: "min-width: #{scut-em(650)}";
 $bp-hide-list: "max-width: #{scut-em(650)}";
 
 // fonts
-$f-code: "Droid Sans Mono", "Courier New", "Courier New", monospace;
+$f-base: Helvetica Neue, Helvetica, Arial, sans-serif;
+$f-code: Courier, "Andale Mono", AndaleMono, monospace;

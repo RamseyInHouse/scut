@@ -1,6 +1,6 @@
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: $f-base;
 }
 
 a,
@@ -23,7 +23,6 @@ a code {
       font-size: 1.5em;
       line-height: 0;
       margin-right: 0.2em;
-      @include scut-relative(0.13em n n n);
       opacity: 0.7;
     }
   }
@@ -123,9 +122,8 @@ h5 {
 }
 
 code {
-  color: $c-list;
+  color: $c-f-2;
   font-family: $f-code;
-  font-size: 0.9em;
   font-style: normal;
 }
 

@@ -615,10 +615,7 @@ categories:
 
           **This mixin should not be invoked within a declaration block: don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be nested within a selector.
 
-          Since this example requires its own `<html>` and `<body>` elements, here's an embedded Codepen Pen:
-        codepen: |
-            <p data-height="268" data-theme-id="0" data-slug-hash="ExjiF" data-user="davidtheclark" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/davidtheclark/pen/ExjiF'>ExjiF</a> by davidtheclark (<a href='http://codepen.io/davidtheclark'>@davidtheclark</a>) on <a href='http://codepen.io'>CodePen</a></p>
-            <script async src="//codepen.io/assets/embed/ei.js"></script>
+          Since this example requires its own `<html>` and `<body>` elements, [the example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF).
 
 
         references:
@@ -894,12 +891,11 @@ categories:
             default: normal
             comment: A `font-style` value.
         text: |
-          Implement `font-face` best practices with the greatest of ease.
-        example:
-          html: |
-            <div class="eg-font-face">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. <strong>Aenean commodo ligula eget dolor.</strong> Aenean massa. <em>Cum sociis natoque penatibus et magnis dis parturient montes, <strong>nascetur ridiculus mus</strong>.</em>
-            </div>
+          Implement `font-face` best practices with the greatest of ease. For example, to implement all varieties of Arvo:
+          <pre class="language-scss"><code>@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
+          @include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
+          @include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
+          @include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);</code></pre>
 
         references:
           -

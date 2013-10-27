@@ -5,10 +5,7 @@ LAYOUT
 body {
   background-color: $c-list;
   color: $c-f-1;
-  font-size: 12px;
-  @media (min-width: scut-em(768)) {
-    font-size: 14px;
-  }
+  font-size: 14px;
   @media (min-width: scut-em(1100)) {
     font-size: 16px;
   }

@@ -79,22 +79,26 @@ DOC
 // entry-body is accordion-style
 // at small sizes
 
+@mixin show-entry-body {
+  @include scut-size(auto);
+  position: static;
+  z-index: 1;
+}
+
 .entry-body {
-  height: 0;
+  @include scut-size(0);
   overflow: hidden;
   position: absolute;
   z-index: -10;
 
   @media ($bp-show-list) {
-    height: auto;
-    position: static;
-    z-index: 1;
+    @include show-entry-body;
   }
 }
 
 @media ($bp-hide-list) {
   :target > .entry-body {
-    height: auto;
+    @include show-entry-body;
     margin-top: 1em;
   }
 }
@@ -175,13 +179,19 @@ DOC
   }
 }
 
+.info-list {
+  @media ($bp-show-list) {
+    @include scut-key-val("", $indent: 9em);
+  }
+}
+
 .info--label {
   cursor: pointer;
   &:hover {
     color: $c-link-active;
   }
   @extend %label;
-  float: left;
+  //float: left;
   width: $label-x;
 
   &.m-help:after {
@@ -198,13 +208,16 @@ DOC
 }
 
 .info--value {
-  margin: 0.1em 0;
+  margin: 0.1em 0 0.5em 1.5em;
 }
 
 .args {
   display: inline-block;
   margin: 0;
   padding: 0;
+  & > li:not(:first-child) {
+    margin-top: 0.5em;
+  }
 }
 
 .args--name {

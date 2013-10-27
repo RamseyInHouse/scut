@@ -1,11 +1,11 @@
-var scutModals = function () {
+function ScutModals() {
 
   var helpBtns = document.getElementsByClassName('js-help-btn'),
       helpC = document.getElementById('help-content'),
       transTime = 300,
       modals = document.getElementsByClassName('js-help-modal');
 
-  function activation (el, action) {
+  function activation(el, action) {
     var activeClass = 'is-active';
     switch (action) {
       case 'add':
@@ -20,7 +20,7 @@ var scutModals = function () {
     }
   }
 
-  function openModal (targetModal) {
+  function openModal(targetModal) {
     activation(helpC, 'add');
     targetModal.style.display = 'block';
     setTimeout(function () {
@@ -28,7 +28,7 @@ var scutModals = function () {
     }, transTime);
   }
 
-  function closeModal (targetModal) {
+  function closeModal(targetModal) {
     activation(targetModal, 'remove');
     setTimeout(function () {
       targetModal.style.display = 'none';
@@ -36,7 +36,7 @@ var scutModals = function () {
     }, transTime);
   }
 
-  function closeOpenModal () {
+  function closeOpenModal() {
     var activeModal;
     for (var i=0,l=modals.length; i<l; i++) {
       if (modals[i].classList.contains('is-active')) {
@@ -47,7 +47,7 @@ var scutModals = function () {
     closeModal(activeModal);
   }
 
-  function processButton (btn) {
+  function processButton(btn) {
     var term = btn.getAttribute('data-term'),
         targetModal = document.getElementById('help-' + term),
         dir = btn.getAttribute('data-dir');
@@ -65,7 +65,7 @@ var scutModals = function () {
     }
   }
 
-  function stopProp (e) {
+  function stopProp(e) {
     e.stopPropagation();
   }
 
@@ -80,7 +80,7 @@ var scutModals = function () {
   }
 
   return { 'init': init };
-};
+}
 
-var helpfulModals = new scutModals();
+var helpfulModals = new ScutModals();
 helpfulModals.init();

@@ -1,75 +1,65 @@
-<table class="info">
-  <tbody>
+<section class="info">
 
+  <dl class="info-list">
     {{#if use-name}}
-    <tr>
-      <td class="info--label m-help js-help-btn" data-term="use-name" data-dir="open">
-        use-name
-      </td>
-      <td class="info--value">
-        <code>{{use-name}}</code>
-      </td>
-    </tr>
+    <dt class="info--label m-help js-help-btn" data-term="use-name" data-dir="open">
+      use-name
+    </dt>
+    <dd class="info--value">
+      <code>{{use-name}}</code>
+    </dd>
     {{/if}}
 
     {{#if type}}
-    <tr>
-      <td class="info--label m-help js-help-btn" data-term="type" data-dir="open">
-        type
-      </td>
-      <td class="info--value">
-        {{type}}
-      </td>
-    </tr>
+    <dt class="info--label m-help js-help-btn" data-term="type" data-dir="open">
+      type
+    </dt>
+    <dd class="info--value">
+      {{type}}
+    </dd>
     {{/if}}
 
     {{#if args}}
-    <tr>
-      <td class="info--label m-help js-help-btn" data-term="arguments" data-dir="open">
-        arguments
-      </td>
-      <td class="info--value">
-        <ol class="args">
-          {{#each args}}
-          <li>
-            <code class="args--name">{{variable}}</code>
-            {{#if this.default}}
-            [&nbsp;<div class="args--default">default:</div> <code class="args--default--val">{{this.default}}</code>&nbsp;]
-            {{/if}}
-            {{#if comment}}
-            <div class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</div>
-            {{/if}}
-          </li>
-          {{/each}}
-        </ol>
-      </td>
-    </tr>
+    <dt class="info--label m-help js-help-btn" data-term="arguments" data-dir="open">
+      arguments
+    </dt>
+    <dd class="info--value">
+      <ol class="args">
+        {{#each args}}
+        <li>
+          <code class="args--name">{{variable}}</code>
+          {{#if this.default}}
+          [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+          {{/if}}
+          {{#if comment}}
+          <div class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</div>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ol>
+    </dd>
     {{/if}}
 
     {{#if contentblock}}
-    <tr>
-      <td class="info--label m-help js-help-btn" data-term="contentblock" data-dir="open">
-        @content
-      </td>
-      <td class="info--value">
-        {{#markdown}}{{{contentblock}}}{{/markdown}}
-      </td>
-    </tr>
+    <dt class="info--label m-help js-help-btn" data-term="contentblock" data-dir="open">
+      @content
+    </dt>
+    <dd class="info--value">
+      {{#markdown}}{{{contentblock}}}{{/markdown}}
+    </dd>
     {{/if}}
 
     {{#if compatibility}}
-    <tr>
-      <td class="info--label">
-        compatibility
-      </td>
-      <td class="info--value">
-        {{#markdown}}{{{compatibility}}}{{/markdown}}
-      </td>
-    </tr>
+    <dt class="info--label">
+      compatibility
+    </dt>
+    <dd class="info--value">
+      {{#markdown}}{{{compatibility}}}{{/markdown}}
+    </dd>
     {{/if}}
 
-  </tbody>
-</table>
+  </dl>
+</section>
 
 <section class="description">
   {{#markdown}}{{{text}}}{{/markdown}}
@@ -96,12 +86,6 @@
   {{/with}}
 </section>
 {{/if}}
-
-{{!-- {{#if codepen}}
-<section class="example">
-  {{{codepen}}}
-</section>
-{{/if}} --}}
 
 {{#if references}}
 <footer>
