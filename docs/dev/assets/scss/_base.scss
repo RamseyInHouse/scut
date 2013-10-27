@@ -45,6 +45,6 @@ body {
 /* Overthrow CSS:
    Enable overflow: auto on elements with overthrow class when html element has overthrow-enabled class too */
 .overthrow-enabled .overthrow {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
