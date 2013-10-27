@@ -82,9 +82,13 @@ DOC
 .entry-body {
   height: 0;
   overflow: hidden;
+  position: absolute;
+  z-index: -10;
 
   @media ($bp-show-list) {
     height: auto;
+    position: static;
+    z-index: 1;
   }
 }
 
