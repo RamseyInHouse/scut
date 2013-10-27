@@ -1,10 +1,13 @@
 /* hidden rules */
+.eg-triangle {
+  margin-right: 1em;
+}
 .eg-triangle-button {
   @extend %eg-light-btn;
 }
 /* end hidden rules */
+
 .eg-triangle {
-  margin-right: 1em;
   &.m-default {
     // Default-values placeholder
     @extend %scut-triangle;

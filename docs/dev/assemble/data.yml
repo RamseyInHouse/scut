@@ -1,4 +1,5 @@
-github-url: "https://github.com/davidtheclark/scut/blob/master/src"
+version: "v0.2.0"
+github-url: "https://github.com/davidtheclark/scut/blob/"
 github-home: "https://github.com/davidtheclark/scut"
 codepen-url: "http://codepen.io/davidtheclark/pen/yCadJ"
 
@@ -615,7 +616,7 @@ categories:
 
           **This mixin should not be invoked within a declaration block: don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be nested within a selector.
 
-          Since this example requires its own `<html>` and `<body>` elements, [the example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF).
+          Since an example of this utility requires its own `<html>` and `<body>` elements, **[the example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**.
 
 
         references:
@@ -736,9 +737,9 @@ categories:
           *If you want to add a border to your circle, you have to declare a color.*
         example:
           html: |
-            <div class="eg-circle-default"></div>
-            <div class="eg-circle-colored"></div>
-            <div class="eg-circle-bordered"></div>
+            <div class="eg-circle m-1"></div>
+            <div class="eg-circle m-2"></div>
+            <div class="eg-circle m-3"></div>
 
       -
         name: foursquare
@@ -807,7 +808,7 @@ categories:
 
           When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle, you'll want your `height` value to be ~140% of your `width` value (`width` * &radic;2). Anybody remember high school geometry?
 
-          In my experience, it always takes some positional tweaking to get the triangle in the right place relative to text. Keep that in mind.
+          *In my experience, it always takes some positional tweaking to get the triangle in the right place relative to text* (see the `.eg-triangle-button` examples below). Keep that in mind.
 
           The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should [play around with this Codepen Pen](http://codepen.io/davidtheclark/pen/oelbk).
         example:
@@ -891,7 +892,11 @@ categories:
             default: normal
             comment: A `font-style` value.
         text: |
-          Implement `font-face` best practices with the greatest of ease. For example, to implement all varieties of Arvo:
+          Implement `font-face` best practices with the greatest of ease.
+
+          The "best practices" to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.
+
+          For example, to implement all varieties of Arvo:
           <pre class="language-scss"><code>@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
           @include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
           @include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);

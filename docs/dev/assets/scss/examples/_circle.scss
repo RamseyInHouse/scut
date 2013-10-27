@@ -1,10 +1,18 @@
-.eg-circle-default {
-  @include scut-circle(1em);
+/* hidden rules */
+.eg-circle {
+  margin-right: 0.5em;
 }
-.eg-circle-colored {
-  @include scut-circle(2em, $eg-light);
-}
-.eg-circle-bordered {
-  @include scut-circle(2em, $eg-dark);
-  border: 5px solid $eg-light;
+/* end hidden rules */
+
+.eg-circle {
+  &.m-1 {
+    @include scut-circle(1em);
+  }
+  &.m-2 {
+    @include scut-circle(2em, $eg-light);
+  }
+  &.m-3 {
+    @include scut-circle(2em, $eg-dark);
+    border: 5px solid $eg-light;
+  }
 }
