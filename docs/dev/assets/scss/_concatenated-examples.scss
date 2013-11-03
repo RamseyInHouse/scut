@@ -112,6 +112,7 @@
   @extend %eg-light-btn;
 }
 /* end hidden rules */
+
 .eg-color-swap {
   &.m-1 {
     @include scut-color-swap($eg-dark, $eg-light, 1s);
