@@ -132,18 +132,16 @@ categories:
         args:
           -
             variable: $active
-            default: "true"
+            default: "false"
             comment: Declare whether or not to target the `:active` state, in addition to `:hover` and `:focus`.
         contentblock: |
-          A content block passed to this mixin will apply to the <i>selected</i> states (`:hover`, `:focus`, and optionally `:active`).
+          A content block passed to this mixin will apply to <i>the selected states</i> (`:hover` and `:focus` &mdash; and, optionally, `:active`).
         text: |
-          Apply rules to `:hover`, `:focus`, and (optionally) `:active` states. Make your site more friendly for touchscreens, keyboard navigators, etc.
-
-          *Don't forget to add a `tabindex` to any element that will need it for `:focus`.*
+          Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states. Make your site more friendly for touchscreens, keyboard navigators, etc.; account for the various means of targeting elements.
         example:
           html: |
-            <p><button class="eg-selected m-1">This following button turns blue in all three states</button></p>
-            <p><button class="eg-selected m-2">This following button turns blue only on hover and focus (not active)</button></p>
+            <p><button class="eg-selected m-1">This following button turns blue on hover and focus</button></p>
+            <p><button class="eg-selected m-2">This following button turns blue on hover, focus, and active</button></p>
 
       -
         name: scut-reset

@@ -266,7 +266,7 @@ http://davidtheclark.github.io/scut/#selected
 ==========================*/
 
 @mixin scut-selected (
-  $active: true
+  $active: false
 ) {
 
   @if $active {

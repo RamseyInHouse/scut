@@ -12,7 +12,7 @@
     }
   }
   &.m-2 {
-    @include scut-selected(false) {
+    @include scut-selected(true) {
       background-color: $eg-light;
     }
   }
