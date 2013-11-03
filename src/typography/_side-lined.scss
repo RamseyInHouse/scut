@@ -5,7 +5,7 @@ http://davidtheclark.github.io/scut/#side-lined
 
 @mixin scut-side-lined (
   $height: 1px,
-  $pad: 0.5em,
+  $space: 0.5em,
   $color: inherit,
   $style: solid,
   $v-adjust: false,
@@ -46,11 +46,11 @@ http://davidtheclark.github.io/scut/#side-lined
   }
 
   &:before {
-    right: $pad;
+    right: $space;
     margin-left: -50%;
   }
   &:after {
-    left: $pad;
+    left: $space;
     margin-right: -50%;
   }
 

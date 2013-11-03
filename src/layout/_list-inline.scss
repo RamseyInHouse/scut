@@ -6,7 +6,7 @@ Depends on `list-unstyled`.
 ==========================*/
 
 @mixin scut-list-inline (
-  $margin: false
+  $space: false
 ) {
 
   @include scut-list-unstyled;
@@ -15,9 +15,9 @@ Depends on `list-unstyled`.
     display: inline-block;
   }
 
-  @if $margin {
+  @if $space {
     & > li + li {
-      margin-left: $margin;
+      margin-left: $space;
     }
   }
 

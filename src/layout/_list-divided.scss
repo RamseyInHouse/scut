@@ -7,7 +7,7 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
 @mixin scut-list-divided (
   $divider: "|",
-  $gap: 0.5em,
+  $space: 0.5em,
   $dir: left,
   $height: false
 ) {
@@ -44,8 +44,8 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
       display: inline-block;
       @content;
     }
-    margin-left: $gap;
-    margin-right: $gap;
+    margin-left: $space;
+    margin-right: $space;
   }
 
 }

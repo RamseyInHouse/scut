@@ -4,14 +4,14 @@ http://davidtheclark.github.io/scut/#foursquare
 ==========================*/
 
 @mixin scut-foursquare (
-  $rotate: true,
   $side: 10px,
-  $line-x: 1px,
   $color: black,
-  $line: white
+  $line-width: 1px,
+  $line-color: white,
+  $rotate: true
 ) {
 
-  $full-side: $side + $line-x;
+  $full-side: $side + $line-width;
 
   background-color: $color;
   display: inline-block;
@@ -29,18 +29,18 @@ http://davidtheclark.github.io/scut/#foursquare
     position: absolute;
     top: 0;
     left: 0;
-    border-color: $line;
+    border-color: $line-color;
     border-style: solid;
   }
   &:before {
-    height: $side/2;
+    height: $side / 2;
     right: 0;
-    border-width: 0 0 $line-x;
+    border-width: 0 0 $line-width;
   }
   &:after {
-    width: $side/2;
+    width: $side / 2;
     bottom: 0;
-    border-width: 0 $line-x 0 0;
+    border-width: 0 $line-width 0 0;
   }
 
 }

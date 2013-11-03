@@ -10,7 +10,7 @@
 .eg-fonticon-label {
   &.m-1 {
     @include scut-fonticon-label("icomoon-stereo", "\e004");
-    &:active:before,
+    &:hover:before,
     &:focus:before {
       content: "\e002"
     }

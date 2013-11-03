@@ -5,7 +5,6 @@
 .eg-semicolon-list {
   @include scut-list-punctuated("; ");
 }
-.eg-avant-garde-list {
-  @include scut-list-punctuated(" . ");
-  text-transform: lowercase;
+.eg-circle-list {
+  @include scut-list-punctuated(" \2022 ");
 }

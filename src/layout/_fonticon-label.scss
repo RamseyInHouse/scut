@@ -6,7 +6,7 @@ http://davidtheclark.github.io/scut/#fonticon_label
 @mixin scut-fonticon-label (
   $font,
   $glyph,
-  $pad: 0.25em,
+  $space: 0.25em,
   $side: before
 ) {
 
@@ -19,11 +19,11 @@ http://davidtheclark.github.io/scut/#fonticon_label
     display: inline-block;
     vertical-align: middle;
 
-    @if $side == before and $pad != 0 {
-      margin-right: $pad;
+    @if $side == before and $space != 0 {
+      margin-right: $space;
     }
-    @else if $side == after and $pad != 0 {
-      margin-left: $pad;
+    @else if $side == after and $space != 0 {
+      margin-left: $space;
     }
 
     // Add any additional styling.

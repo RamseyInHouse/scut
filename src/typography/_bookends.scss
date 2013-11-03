@@ -4,29 +4,29 @@ http://davidtheclark.github.io/scut/#bookends
 ==========================*/
 
 @mixin scut-bookends (
-  $pad: 0.5em,
+  $space: 0.5em,
   $content: ""
 ) {
 
   $content-list: length($content) == 2;
 
-  // If $content is a list or there $pad exist,
+  // If $content is a list or there $space exist,
   // set some pseudo-element-specific rules.
-  @if $content-list or $pad {
+  @if $content-list or $space {
     &:before {
       @if $content-list {
         content: nth($content, 1);
       }
-      @if $pad {
-        margin-right: $pad;
+      @if $space {
+        margin-right: $space;
       }
     }
     &:after {
       @if $content-list {
         content: nth($content, 2);
       }
-      @if $pad {
-        margin-left: $pad;
+      @if $space {
+        margin-left: $space;
       }
     }
   }

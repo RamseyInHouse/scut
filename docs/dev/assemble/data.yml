@@ -247,9 +247,9 @@ categories:
             variable: $glyph
             comment: The Unicode character code for a specific icon from your icon font (please feel free to use variables)
           -
-            variable: $pad
+            variable: $space
             default: 0.25em
-            comment: Padding between the icon and the label
+            comment: Spacing between the icon and the label
           -
             variable: $side
             default: before
@@ -295,9 +295,9 @@ categories:
         use-name: scut-list-floated
         args:
           -
-            variable: $margin
+            variable: $space
             default: "false"
-            comment: A margin to separate the floated list items.
+            comment: Spacing to separate the floated list items.
           -
             variable: $dir
             default: left
@@ -332,15 +332,15 @@ categories:
         use-name: scut-list-inline
         args:
           -
-            variable: $margin
+            variable: $space
             default: "false"
-            comment: A margin to separate the inline list items.
+            comment: Spacing to separate the inline list items.
         text: |
           Inline the items of an unstyled list.
 
           ("Inline" is a hip new verb: deploy liberally.)
 
-          Use an inline list if you don't mind your list items spaced out a little, like inline words. If you need them flush, with no interstitial space, try a [floated list](#floated-list).
+          Use an inline list if you don't mind your list items spaced out a little by default, like inline words. If you need them flush, with no interstitial space, try a [floated list](#floated-list).
 
           Only the list's immediate children are inlined (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
@@ -391,7 +391,7 @@ categories:
               <li>list item</li>
               <li>list item</li>
             </ul>
-            <ul class="eg-avant-garde-list">
+            <ul class="eg-circle-list">
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
@@ -406,9 +406,9 @@ categories:
             variable: $divider
             default: "\"|\""
           -
-            variable: $gap
+            variable: $space
             default: 0.5em
-            comment: The space separating your dividers from the your list items.
+            comment: Spacing to separate your dividers (on both sides) from the your list items.
           -
             variable: $dir
             default: left
@@ -548,8 +548,8 @@ categories:
 
           **Implementation involves two elements**:
 
-          - The outer element, to which the mixin applies, whose width will determine the width of the ratio-box.
-          - The inner element, the ratio-box itself, whose selector must be passed to the mixin ast the `$inner` (second) argument. This inner element should be an *immediate child* of the outer element (it's selected with the CSS selector `>`, the "child combinator").
+          - The outer element, to which the mixin applies, *whose width will determine the width of the ratio-box*.
+          - The inner element, *the ratio-box itself*, whose selector must be passed to the mixin as the `$inner` (second) argument. This inner element should be an *immediate child* of the outer element (it's selected with the CSS selector `>`, the "child combinator").
 
           The examples should demonstrate.
         example:
@@ -569,6 +569,10 @@ categories:
               <div class="eg-ratio-inner">Variation 4</div>
             </div>
           show-html: true
+        references:
+          -
+            description: "Thierry Koblentz: \"Creating Intrinsic Ratios for Video\" (<cite>A List Apart</cite>)"
+            url: http://alistapart.com/article/creating-intrinsic-ratios-for-video
 
       -
         name: size
@@ -612,9 +616,9 @@ categories:
           - **Your sticky footer must have a fixed height.**
           - **Your stuff-above-the-footer must be wrapped in a wrapper element.** (The footer itself remains outside of this wrapper.)
 
-          **This mixin should not be invoked within a declaration block: don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be nested within a selector.
+          **This mixin should not be invoked within a declaration block &mdash; i.e. don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be restricted to the context of a different selector.
 
-          Since an example of this utility requires its own `<html>` and `<body>` elements, **[the example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**.
+          Since an example of this utility requires its own `<html>` and `<body>` elements, **[this example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**.
 
 
         references:
@@ -745,26 +749,26 @@ categories:
         use-name: scut-foursquare
         args:
           -
-            variable: $rotate
-            default: "true"
-            comment: Rotate the shape 45 degrees.
-          -
             variable: $side
             default: 10px
             comment: |
-              The length of a side of the foursquare shape. Must have the same unit as `$line-x`; pixels are recommended.
-          -
-            variable: $line-x
-            default: 1px
-            comment: |
-              The width of the inner lines. Must have the same unit as `$side`; pixels are recommended.
+              The length of a side of the foursquare shape. *Must have the same unit as `$line-width`*; pixels are recommended.
           -
             variable: $color
             default: black
           -
-            variable: $line
+            variable: $line-width
+            default: 1px
+            comment: |
+              The width of the inner lines. *Must have the same unit as `$side`*; pixels are recommended.
+          -
+            variable: $line-color
             default: white
             comment: The color of the inner lines.
+          -
+            variable: $rotate
+            default: "true"
+            comment: Rotate the shape 45 degrees.
         text: |
           Create a foursquare shape &mdash; a customizable diamond-minus-x.
 
@@ -834,9 +838,9 @@ categories:
         use-name: scut-bookends
         args:
           -
-            variable: $pad
+            variable: $space
             default: 0.5em
-            comment: Spacing between the bookends and the element's content
+            comment: Spacing to separate the bookends from the element's content
           -
             variable: $content
             default: false
@@ -844,7 +848,7 @@ categories:
         contentblock: |
           A content block passed to this mixin will be applied to both `:before` and `:after` pseudo-elements.
         text: |
-          Create mirror-pseudo-elements on both sides of something.
+          Install and style pseudo-elements on both sides of something.
 
           A common typographical usage is to place decorative ornaments on either side of some heading. But the mixin can prove useful for anything that involves pseudo-elements on both sides. Absolutely anything.
 
@@ -1103,9 +1107,9 @@ categories:
             default: 1px
             comment: The height of the lines.
           -
-            variable: $pad
+            variable: $space
             default: 0.5em
-            comment: Padding between the text and the lines.
+            comment: Spacing to separate the text and the lines.
           -
             variable: $color
             default: inherit

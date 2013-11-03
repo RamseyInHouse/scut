@@ -10,9 +10,9 @@
     @extend %scut-foursquare;
   }
   &.m-2 {
-    @include scut-foursquare(true, 1em, 0.2em, $eg-light, $eg-dark);
+    @include scut-foursquare(1em, $eg-light, 0.2em, $eg-dark);
   }
   &.m-3 {
-    @include scut-foursquare(false, 20px, 4px, transparent, $eg-dark);
+    @include scut-foursquare(20px, transparent, 4px, $eg-dark, false);
   }
 }

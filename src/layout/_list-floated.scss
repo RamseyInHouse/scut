@@ -6,7 +6,7 @@ Depends on `list-unstyled` and `clearfix`.
 ==========================*/
 
 @mixin scut-list-floated (
-  $margin: false,
+  $space: false,
   $dir: left
 ) {
 
@@ -17,9 +17,9 @@ Depends on `list-unstyled` and `clearfix`.
     float: $dir;
   }
 
-  @if $margin {
+  @if $space {
     & > li + li {
-      margin-#{$dir}: $margin;
+      margin-#{$dir}: $space;
     }
   }
 

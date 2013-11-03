@@ -47,7 +47,7 @@ Depends on `list-unstyled` and `clearfix`.
 ==========================*/
 
 @mixin scut-list-floated (
-  $margin: false,
+  $space: false,
   $dir: left
 ) {
 
@@ -58,9 +58,9 @@ Depends on `list-unstyled` and `clearfix`.
     float: $dir;
   }
 
-  @if $margin {
+  @if $space {
     & > li + li {
-      margin-#{$dir}: $margin;
+      margin-#{$dir}: $space;
     }
   }
 
@@ -340,7 +340,7 @@ http://davidtheclark.github.io/scut/#fonticon_label
 @mixin scut-fonticon-label (
   $font,
   $glyph,
-  $pad: 0.25em,
+  $space: 0.25em,
   $side: before
 ) {
 
@@ -353,11 +353,11 @@ http://davidtheclark.github.io/scut/#fonticon_label
     display: inline-block;
     vertical-align: middle;
 
-    @if $side == before and $pad != 0 {
-      margin-right: $pad;
+    @if $side == before and $space != 0 {
+      margin-right: $space;
     }
-    @else if $side == after and $pad != 0 {
-      margin-left: $pad;
+    @else if $side == after and $space != 0 {
+      margin-left: $space;
     }
 
     // Add any additional styling.
@@ -377,7 +377,7 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
 
 @mixin scut-list-divided (
   $divider: "|",
-  $gap: 0.5em,
+  $space: 0.5em,
   $dir: left,
   $height: false
 ) {
@@ -414,8 +414,8 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
       display: inline-block;
       @content;
     }
-    margin-left: $gap;
-    margin-right: $gap;
+    margin-left: $space;
+    margin-right: $space;
   }
 
 }
@@ -436,7 +436,7 @@ Depends on `list-unstyled`.
 ==========================*/
 
 @mixin scut-list-inline (
-  $margin: false
+  $space: false
 ) {
 
   @include scut-list-unstyled;
@@ -445,9 +445,9 @@ Depends on `list-unstyled`.
     display: inline-block;
   }
 
-  @if $margin {
+  @if $space {
     & > li + li {
-      margin-left: $margin;
+      margin-left: $space;
     }
   }
 
@@ -739,14 +739,14 @@ http://davidtheclark.github.io/scut/#foursquare
 ==========================*/
 
 @mixin scut-foursquare (
-  $rotate: true,
   $side: 10px,
-  $line-x: 1px,
   $color: black,
-  $line: white
+  $line-width: 1px,
+  $line-color: white,
+  $rotate: true
 ) {
 
-  $full-side: $side + $line-x;
+  $full-side: $side + $line-width;
 
   background-color: $color;
   display: inline-block;
@@ -764,18 +764,18 @@ http://davidtheclark.github.io/scut/#foursquare
     position: absolute;
     top: 0;
     left: 0;
-    border-color: $line;
+    border-color: $line-color;
     border-style: solid;
   }
   &:before {
-    height: $side/2;
+    height: $side / 2;
     right: 0;
-    border-width: 0 0 $line-x;
+    border-width: 0 0 $line-width;
   }
   &:after {
-    width: $side/2;
+    width: $side / 2;
     bottom: 0;
-    border-width: 0 $line-x 0 0;
+    border-width: 0 $line-width 0 0;
   }
 
 }
@@ -882,29 +882,29 @@ http://davidtheclark.github.io/scut/#bookends
 ==========================*/
 
 @mixin scut-bookends (
-  $pad: 0.5em,
+  $space: 0.5em,
   $content: ""
 ) {
 
   $content-list: length($content) == 2;
 
-  // If $content is a list or there $pad exist,
+  // If $content is a list or there $space exist,
   // set some pseudo-element-specific rules.
-  @if $content-list or $pad {
+  @if $content-list or $space {
     &:before {
       @if $content-list {
         content: nth($content, 1);
       }
-      @if $pad {
-        margin-right: $pad;
+      @if $space {
+        margin-right: $space;
       }
     }
     &:after {
       @if $content-list {
         content: nth($content, 2);
       }
-      @if $pad {
-        margin-left: $pad;
+      @if $space {
+        margin-left: $space;
       }
     }
   }
@@ -1180,7 +1180,7 @@ http://davidtheclark.github.io/scut/#side-lined
 
 @mixin scut-side-lined (
   $height: 1px,
-  $pad: 0.5em,
+  $space: 0.5em,
   $color: inherit,
   $style: solid,
   $v-adjust: false,
@@ -1221,11 +1221,11 @@ http://davidtheclark.github.io/scut/#side-lined
   }
 
   &:before {
-    right: $pad;
+    right: $space;
     margin-left: -50%;
   }
   &:after {
-    left: $pad;
+    left: $space;
     margin-right: -50%;
   }
 
