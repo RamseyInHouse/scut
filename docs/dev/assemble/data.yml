@@ -920,14 +920,14 @@ categories:
         text: |
           The "hanging indent" applies to all lines but the first &mdash; as opposed to the "normal" indent, applying to only the first line, that you're accustomed to from those print publications you may have seen.
 
-          My <cite>Chicago Manual of Style</cite> also calls it the <i>flush-and-hang</i> style. I like that.
+          My&nbsp;<cite>Chicago Manual of Style</cite>&nbsp;also calls it the <i>flush-and-hang</i> style. I like that.
 
           Hanging indents are standard fare for indexes and works cited, but may seem obscure to you if you're no scholar ... until one day you realize that you do need them, and have needed them all along ...
         example:
           html: |
             <div class="eg-hanging-indent m-1">Lastname, Firstname. <cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.
             </div>
-            <div class="eg-hanging-indent m-2">Lastnameofanotherguy, Firstname. <cite>Title of the Another Work</cite>. City, State: Publisher, YEAR. Print.
+            <div class="eg-hanging-indent m-2">Lastnameofanotherlady, Firstname. <cite>Title of Another Work</cite>. City, State: Publisher, YEAR. Print.
             </div>
 
       -
@@ -1019,8 +1019,8 @@ categories:
             <dl class="eg-key-val m-3">
               <dt>Doom</dt>
               <dd>Fate decreed or determined; fixed fortune; irrevocable destiny.</dd>
-              <dt>Dirigible</dt>
-              <dd>That may be directed, controlled, or steered.</dd>
+              <dt>Waggle</dt>
+              <dd>To cause to wag frequently and with short motions; move first one way and then the other.</dd>
               <dt>Pantaloon</dt>
               <dd>In early Italian comedy, a character usually represented as a lean and foolish old man (properly a Venetian), wearing spectacles and slippers.</dd>
             </dl>
