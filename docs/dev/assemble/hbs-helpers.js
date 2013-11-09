@@ -26,11 +26,15 @@ module.exports.register = function(Handlebars, options) {
     return str.replace(/_/g, '-');
   });
 
+  function removeHiddenRules(str) {
+    return str.replace(/^\/\* hidden rules \*\/$[\s\S]*^\/\* end hidden rules \*\/$\n\n/gm, '');
+  }
+
   Handlebars.registerHelper('getExampleScss', function(name) {
     var file = grunt.file.read('docs/dev/assets/scss/examples/_' + name + '.scss');
     // Remove rules that don't need to be displayed.
-    var onlyDisplayRules = file.replace(/^\/\* hidden rules \*\/$[\s\S]*^\/\* end hidden rules \*\/$\n\n/gm, '');
-    return onlyDisplayRules;
+    var withoutHiddenRules = removeHiddenRules(file);
+    return withoutHiddenRules;
   });
 
 };

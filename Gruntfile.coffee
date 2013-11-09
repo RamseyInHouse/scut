@@ -1,3 +1,5 @@
+path = require "path"
+
 module.exports = (grunt) ->
   grunt.initConfig
 
@@ -39,6 +41,8 @@ module.exports = (grunt) ->
           "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
 
     sass:
+      options:
+        style: "expanded"
       # Process test styles
       test:
         options:

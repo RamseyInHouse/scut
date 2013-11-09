@@ -6,5 +6,5 @@
   @include scut-list-punctuated("; ");
 }
 .eg-circle-list {
-  @include scut-list-punctuated(" \2022 ");
+  @include scut-list-punctuated("\0020\2022\0020");
 }
