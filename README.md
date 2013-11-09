@@ -14,9 +14,16 @@ Please do! Scut is simple; contributing should be easy. So give it a go.
 
 If you have any questions, if anything about this document is unclear or inaccurate, if you can't figure out what to do, please file an issue or contact me.
 
+### Development Requirements
+
+- [Node and npm](http://nodejs.org/)
+- [Grunt-cli](https://github.com/gruntjs/grunt-cli)
+- [Bower](http://bower.io/)
+- [Sass-cli](http://sass-lang.com/install)
+
 ### Writing Scut Utilities
 
-**The code is in `src/`, organized by category.** The SCSS stylesheets in `src/` ultimately concatenate into `dist/_scut.scss`, which is what users `@import` into their own Sass.
+**The utilities are in `src/`, organized by category.** The SCSS stylesheets in `src/` ultimately concatenate into `dist/_scut.scss`, which is what users `@import` into their own Sass.
 
 #### Scut's SCSS Styleguide
 
@@ -71,6 +78,8 @@ Look at the existing tests for examples.
 *Do not edit the HTML files `test/*.html`: they are compiled by Assemble from Handlebars templates, so any changes you make in the HTML files will be overwritten when somebody else makes changes and runs Assemble.* In fact, the HTML files shouldn't even be included in the repo.
 
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt test` for the same result.) Look at `Gruntfile.coffee` for details.
+
+**Another good way to experiment and test is to use [Codepen](http://codepen.io/), either starting your own pen from scratch or forking [the Scut Playground](http://codepen.io/davidtheclark/pen/yCadJ) (which imports the latest version of Scut)**
 
 ### Documenting
 
