@@ -1119,7 +1119,7 @@ categories:
             default: solid
             comment: The `border-style` of the lines.
           -
-            variable: $m-adjust
+            variable: $v-adjust
             default: false
             comment: Vertical adjustment to the lines, adding space *from the bottom*. See examples below.
           -
@@ -1131,7 +1131,7 @@ categories:
 
           Look at the examples below. You want to do that!
 
-          By default, the lines will be vertically aligned with the text's centerline &mdash; but sometimes that will look off to your discerning eye, and you'll want to tweak that vertical position. So add some height to the `$m-adjust` argument, which will push your lines up, away from the bottom of the element.
+          By default, the lines will be vertically aligned with the text's centerline &mdash; but sometimes that will look off to your discerning eye, and you'll want to tweak that vertical position. So add some height to the `$v-adjust` argument, which will push your lines up, away from the bottom of the element.
 
           By default, the mixin produces one line; but if you add a height value to the `$double` argument, you'll get two lines (separated by that height). (You could also use a `$style` of `double`, which would act the same as any double border-style.)
         example:
