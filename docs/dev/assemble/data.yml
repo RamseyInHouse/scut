@@ -482,6 +482,8 @@ categories:
           - responsive web design &mdash; when at certain breakpoints you're changing, overriding, some values and not others; and
           - "object" extending &mdash; when you have a repeating component that you'd like to slightly modify.
 
+          This same explanation applies to <a href="#padding">`scut-padding`, below</a>.
+
         example:
           html: |
             <div class="eg-margin-container">
@@ -500,8 +502,39 @@ categories:
               <div class="eg-margin m-5">5. bottom, left, and right</div>
             </div>
 
+      -
+        name: padding
+        type: *MO
+        use-name: scut-padding
+        args:
+          -
+            variable: $padding
+            comment: |
+              A value for the padding you wish to create.
+          -
+            variable: $sides
+            default: n y
+            comment: |
+              The sides on which to apply your padding value; a list of 2 or 4. `n` abbreviates `null`, passing no value; `y`, or anything other than `n`, will create a rule. See below for details.
+        text: |
+          A shorthand for setting a single padding value to multiple sides of an element.
 
+          The $sides argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-padding`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
 
+          If you don't see the value in this shorthand, please read the explanation of <a href="#margin">`scut-margin`, above</a>, which applies equally to this padding mixin.
+
+        example:
+          html: |
+            <div class="eg-padding m-1">1. top and bottom
+            </div>
+            <div class="eg-padding m-2">2. left and right
+            </div>
+            <div class="eg-padding m-3">3. top and right
+            </div>
+            <div class="eg-padding m-4">4. bottom and left
+            </div>
+            <div class="eg-padding m-5">5. bottom, left, and right
+            </div>
 
       -
         group-start: positioning

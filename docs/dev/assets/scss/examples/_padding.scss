@@ -1,0 +1,26 @@
+/* hidden rules */
+.eg-padding {
+  @extend %eg-dark-btn;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+/* end hidden rules */
+
+.eg-padding {
+  display: inline-block;
+  &.m-1 {
+    @include scut-padding(30px, y n);
+  }
+  &.m-2 {
+    @include scut-padding(4em, n y);
+  }
+  &.m-3 {
+    @include scut-padding(3em, y y n n);
+  }
+  &.m-4 {
+    @include scut-padding(3em, n n y y);
+  }
+  &.m-5 {
+    @include scut-padding(3em, n y y y);
+  }
+}

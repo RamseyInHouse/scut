@@ -1,0 +1,41 @@
+/*==========================
+SCUT PADDING
+http://davidtheclark.github.io/scut/#padding
+==========================*/
+
+@mixin scut-padding (
+  $padding,
+  $sides: n y
+) {
+
+  @if length($sides) == 2 {
+    @if nth($sides, 1) != n {
+      padding-top: $padding;
+      padding-bottom: $padding;
+    }
+    @if nth($sides, 2) != n {
+      padding-left: $padding;
+      padding-right: $padding;
+    }
+  }
+
+  @else if length($sides) == 4 {
+    @if nth($sides, 1) != n {
+      padding-top: $padding;
+    }
+    @if nth($sides, 2) != n {
+      padding-right: $padding;
+    }
+    @if nth($sides, 3) != n {
+      padding-bottom: $padding;
+    }
+    @if nth($sides, 4) != n {
+      padding-left: $padding;
+    }
+  }
+
+  @else {
+    @warn "Scut-padding requires a $sides argument of 2 or 4 values."
+  }
+
+}
