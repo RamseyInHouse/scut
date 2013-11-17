@@ -13,13 +13,13 @@
     @extend %scut-triangle;
   }
   &.m-equilateral {
-    @include scut-triangle(up, 1em 1.4em, $eg-muted);
+    @include scut-triangle(up, 100px 87px, $eg-muted);
   }
-  &.m-corner-1 {
-    @include scut-triangle(top-right, 1em, $eg-dark);
+  &.m-top-right {
+    @include scut-triangle(top-right, 2em, $eg-dark);
   }
-  &.m-corner-2 {
-    @include scut-triangle(bottom-left, 2em 1em, $eg-light);
+  &.m-bottom-left {
+    @include scut-triangle(bottom-left, 80px 40px, $eg-light);
   }
 }
 .eg-triangle-button {
@@ -27,12 +27,10 @@
     margin-left: 0.3em;
   }
   &.m-down:after {
-    @include scut-triangle(down, 0.7em 1em, $pseudo: true);
-    margin-bottom: 0.15em;
+    @include scut-triangle(down, $pseudo: true);
   }
   &.m-up:after {
-    @include scut-triangle(up, 0.7em 1em, $pseudo: true);
-    margin-bottom: 0.2em;
+    @include scut-triangle(up, $pseudo: true);
   }
   &.m-more:after {
     @include scut-triangle($pseudo: true);

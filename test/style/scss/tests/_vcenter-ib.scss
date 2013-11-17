@@ -1,0 +1,12 @@
+.vcenter-ib-c {
+  border: 5px solid black;
+  height: 20em;
+  padding: 1em;
+  @include scut-vcenter-ib;
+
+  & > .scut-inner {
+    background: gray;
+    height: 5em;
+    width: 30em;
+  }
+}

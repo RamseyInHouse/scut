@@ -26,7 +26,6 @@
   font-size: 0.9em;
   &:before {
     @include scut-triangle($pseudo: true);
-    @include scut-relative(1px n n n);
     margin-right: 0.4em;
   }
 }

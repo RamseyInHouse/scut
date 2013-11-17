@@ -7,8 +7,7 @@ http://davidtheclark.github.io/scut/#foursquare
   $side: 10px,
   $color: black,
   $line-width: 1px,
-  $line-color: white,
-  $rotate: true
+  $line-color: white
 ) {
 
   $full-side: $side + $line-width;
@@ -18,10 +17,6 @@ http://davidtheclark.github.io/scut/#foursquare
   height: $full-side;
   width: $full-side;
   position: relative;
-
-  @if $rotate {
-    transform: rotate(45deg);
-  }
 
   &:before,
   &:after {

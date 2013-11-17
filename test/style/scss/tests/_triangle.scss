@@ -1,0 +1,11 @@
+.triangle {
+  &.m-1 {
+    @extend %scut-triangle;
+  }
+  &.m-2 {
+    @include scut-triangle(down, 50px 20px, blue);
+  }
+  &.m-3 {
+    @include scut-triangle(bottom-right, 3em 6em, red);
+  }
+}

@@ -5,7 +5,7 @@ http://davidtheclark.github.io/scut/#triangle
 
 @mixin scut-triangle (
   $direction: right,
-  $size: 1.4em 0.75em,
+  $size: 0.75em,
   $color: inherit,
   $pseudo: false
 ) {
@@ -13,23 +13,44 @@ http://davidtheclark.github.io/scut/#triangle
   display: inline-block;
   height: 0;
   width: 0;
-  // for improved appearance in Webkit browsers
+  // For improved appearance in some Webkit browsers
   -webkit-transform: rotate(360deg);
 
   @if $pseudo {
     content: "";
   }
 
-  $dimensions: null;
+  // Set up some variables
+  $width: null;
+  $height: null;
+  $border-widths: null;
+
   @if type-of($size) == list {
     $width: nth($size, 1);
     $height: nth($size, 2);
-    $dimensions: ($height / 2) ($width / 2);
   }
   @else {
-    $dimensions: ($size / 2) ($size / 2);
+    $width: $size;
+    $height: $size;
   }
-  border-width: $dimensions;
+
+  @if ($direction == up) or ($direction == down) {
+    // For up and down, width gets two borders but height only one,
+    // so divide second border-width value by 2
+    $border-widths: $height ($width / 2);
+  }
+  @else if ($direction == right) or ($direction == left) {
+    // For right and left, height gets two borders but width only one,
+    // so divide first border-width value by 2
+    $border-widths: ($height / 2) $width;
+  }
+  @else {
+    // For right triangles (the rest), both sides get two borders,
+    // so divide both by 2
+    $border-widths: ($height / 2) ($width / 2);
+  }
+
+  border-width: $border-widths;
   border-style: solid;
 
 

@@ -731,6 +731,8 @@ categories:
           -
             variable: $color
             default: inherit
+        compatibility: |
+          This utility uses `border-radius`, which is not supported in IE8; so IE8 will just get what it deserves: squares.
         text: |
           Create a CSS circle.
 
@@ -765,21 +767,18 @@ categories:
             variable: $line-color
             default: white
             comment: The color of the inner lines.
-          -
-            variable: $rotate
-            default: "true"
-            comment: Rotate the shape 45 degrees.
         text: |
-          Create a foursquare shape &mdash; a customizable diamond-minus-x.
+          Create a foursquare shape.
 
-          By default, the shape is rotated 45 degrees. Essentially, it reproduces [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070) &mdash; but through the power of CSS, the Scut foursquare is fully customizable.
+          Rotate the shape 45 degrees, and you essentially reproduce [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070) &mdash; but through the power of CSS, Scut's is fully customizable (see example below).
 
-          Using `em` values for `$side` and `$line-x` sometimes produces unwelcome irregularities, but only sometimes ...
+          Be aware: using `em` values for `$side` and `$line-x` sometimes produces unwelcome irregularities, but only sometimes ...
         example:
           html: |
             <div class="eg-foursquare m-1"></div>
             <div class="eg-foursquare m-2"></div>
             <div class="eg-foursquare m-3"></div>
+            <div class="eg-foursquare m-4"></div>
 
       -
         name: triangle
@@ -792,8 +791,8 @@ categories:
             comment: "The direction that the triangle points: `up`, `down`, `right`, `left`. Or, for right triangles, the corner of the right angle: `top-right`, `top-left`, `bottom-right` or `bottom-left`."
           -
             variable: $size
-            default: 1.4em 0.75em
-            comment: One or two values determining the size of the triangle. To make a 45-45-90 triangle, provide one value. Otherwise, provide two, translating to `width` and `height`.
+            default: 0.75em
+            comment: One or two values determining the size of the triangle. One value will make a triangle equally wide and tall. Two values translate to `width` and `height`.
           -
             variable: $color
             default: inherit
@@ -808,9 +807,7 @@ categories:
 
           The mixin can produce acute triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.
 
-          When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle, you'll want your `height` value to be ~140% of your `width` value (`width` * &radic;2). Anybody remember high school geometry?
-
-          *In my experience, it always takes some positional tweaking to get the triangle in the right place relative to text* (see the `.eg-triangle-button` examples below). Keep that in mind.
+          When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle pointing up, you'll want your `height` value to be ~86.6% of your `width` value (1/2 x &radic;3 x `width`). Anybody remember high school geometry?
 
           The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should [play around with this Codepen Pen](http://codepen.io/davidtheclark/pen/oelbk).
         example:
@@ -818,8 +815,8 @@ categories:
             <p>
               <span class="eg-triangle m-default"></span>
               <span class="eg-triangle m-equilateral"></span>
-              <span class="eg-triangle m-corner-1"></span>
-              <span class="eg-triangle m-corner-2"></span>
+              <span class="eg-triangle m-top-right"></span>
+              <span class="eg-triangle m-bottom-left"></span>
             </p>
             <p>
               <button class="eg-triangle-button m-down">Dropdown</button>

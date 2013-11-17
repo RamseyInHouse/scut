@@ -46,7 +46,7 @@ INTRO
     position: relative;
     &:before {
       @include scut-triangle($pseudo: true);
-      @include scut-absolute(0.35em n n -1.5em);
+      @include scut-absolute(0.25em n n -1.5em);
     }
   }
   background: $c-list;
@@ -168,12 +168,13 @@ DOC
     color: $c-zing;
 
     overflow: hidden;
-    padding: 0 2em 0 2.5em;
+    width: 11em;
+    padding-left: 2.5em;
     position: relative;
     z-index: 2;
     &:before {
-      @include scut-triangle(left, 22em, $c-list, true);
-      @include scut-absolute(-9.75em 0 n n);
+      @include scut-triangle(left, 11em 20em, $c-list, true);
+      @include scut-absolute(-8.75em 0 n n);
       z-index: -1;
     }
   }
