@@ -60,7 +60,7 @@ categories:
             default: "false"
             comment: Set to `true` if you want to pass a single color value for the `$off` and `$on` arguments and you want that value interpreted as `background-color`. (By default, a single value will be intepreted as `color`.)
         text: |
-          A shortcut for setting two color-states &mdash; involving text `color` and `background-color` &mdash; with the option of adding a transition.
+          A shorthand for setting two color-states &mdash; involving text `color` and `background-color` &mdash; with the option of adding a transition.
 
           The "on" state subsumes `:hover` and `:focus`.
         example:
@@ -456,6 +456,52 @@ categories:
               <li>list item 3</li>
             </ul>
 
+      -
+        name: margin
+        type: *MO
+        use-name: scut-margin
+        args:
+          -
+            variable: $margin
+            comment: |
+              A value for the margins you wish to create.
+          -
+            variable: $sides
+            default: n y
+            comment: |
+              The sides on which to apply your margin value; a list of 2 or 4. `n` abbreviates `null`, passing no value; `y`, or anything other than `n`, will create a rule. See below for details.
+        text: |
+          A shorthand for setting a single margin value to multiple sides of an element.
+
+          The $sides argument determines which sides get the margin. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-margin`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
+
+          This mixin is more useful than the vanilla CSS `margin` shorthand in one very common situation: *you want to use the same value for multiple margins, and you do not want to set (or override) all four margins*.
+
+          That first part (using the same value for multiple margins) is simply to DRY things up. The second part (you do not want to set or override all margins) is especially relevant to:
+
+          - responsive web design &mdash; when at certain breakpoints you're changing, overriding, some values and not others; and
+          - "object" extending &mdash; when you have a repeating component that you'd like to slightly modify.
+
+        example:
+          html: |
+            <div class="eg-margin-container">
+              <div class="eg-margin m-1">1. top and bottom</div>
+            </div>
+            <div class="eg-margin-container">
+              <div class="eg-margin m-2">2. left and right</div>
+            </div>
+            <div class="eg-margin-container">
+              <div class="eg-margin m-3">3. top and right</div>
+            </div>
+            <div class="eg-margin-container">
+              <div class="eg-margin m-4">4. bottom and left</div>
+            </div>
+            <div class="eg-margin-container">
+              <div class="eg-margin m-5">5. bottom, left, and right</div>
+            </div>
+
+
+
 
       -
         group-start: positioning
@@ -469,7 +515,7 @@ categories:
             comment: |
               A list: `top`, `right`, `bottom`, and `left` coordinates. `n` abbreviates `null`. `a` is interchangeable with `auto`. See below.
         text: |
-          A shortcut (and organizer) for assigning coordinates to an element.
+          A shorthand for assigning coordinates to an element.
 
           You *may* want to use this mixin on its own &mdash; but **this mixin's primary purpose is to facilitate the positioning mixins below**, which pair your coordinates with a `position` value.
 

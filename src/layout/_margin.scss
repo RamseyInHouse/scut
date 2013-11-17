@@ -1,0 +1,41 @@
+/*==========================
+SCUT MARGIN
+http://davidtheclark.github.io/scut/#margin
+==========================*/
+
+@mixin scut-margin (
+  $margin,
+  $sides: n y
+) {
+
+  @if length($sides) == 2 {
+    @if nth($sides, 1) != n {
+      margin-top: $margin;
+      margin-bottom: $margin;
+    }
+    @if nth($sides, 2) != n {
+      margin-left: $margin;
+      margin-right: $margin;
+    }
+  }
+
+  @else if length($sides) == 4 {
+    @if nth($sides, 1) != n {
+      margin-top: $margin;
+    }
+    @if nth($sides, 2) != n {
+      margin-right: $margin;
+    }
+    @if nth($sides, 3) != n {
+      margin-bottom: $margin;
+    }
+    @if nth($sides, 4) != n {
+      margin-left: $margin;
+    }
+  }
+
+  @else {
+    @warn "Scut-margin requires a $sides argument of 2 or 4 values."
+  }
+
+}

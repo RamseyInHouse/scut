@@ -1,0 +1,29 @@
+/* hidden rules */
+.eg-margin-container {
+  border: 5px solid;
+  & + .eg-margin-container {
+    margin-top: 1em;
+  }
+}
+.eg-margin {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+.eg-margin {
+  &.m-1 {
+    @include scut-margin(30px, y n);
+  }
+  &.m-2 {
+    @include scut-margin(4em, n y);
+  }
+  &.m-3 {
+    @include scut-margin(3em, y y n n);
+  }
+  &.m-4 {
+    @include scut-margin(3em, n n y y);
+  }
+  &.m-5 {
+    @include scut-margin(3em, n y y y);
+  }
+}

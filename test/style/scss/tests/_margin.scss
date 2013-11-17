@@ -1,0 +1,23 @@
+.margin-container {
+  border: 5px solid;
+  margin-bottom: 1em;
+}
+.margin {
+  border: 5px solid blue;
+  padding: 1em;
+  &.m-1 {
+    @include scut-margin(30px, y n);
+  }
+  &.m-2 {
+    @include scut-margin(4em, n y);
+  }
+  &.m-3 {
+    @include scut-margin(3em, y y n n);
+  }
+  &.m-4 {
+    @include scut-margin(3em, n n y y);
+  }
+  &.m-5 {
+    @include scut-margin(3em, n y y y);
+  }
+}
