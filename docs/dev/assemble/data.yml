@@ -1067,9 +1067,7 @@ categories:
 
           WhatWG says "The dl element represents an association list consisting of zero or more name-value groups (a description list)." There you have it.
 
-          One traditional manner of *styling* such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (the fabled ["hanging indent"](#hanging_indent)).
-
-          This mixin should help make that dream a reality &mdash; with enough flexibility so you can play around, and really make that assocation list your own.
+          One traditional manner of *styling* such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (the fabled ["hanging indent"](#hanging_indent)). This mixin should help make that dream a reality. And it also enables many other common key-value formats, a couple of which are shown in the examples below.
 
           **Apply the mixin to your `<dl>` element.**
         example:
