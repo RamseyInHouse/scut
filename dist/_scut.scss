@@ -243,24 +243,6 @@ http://davidtheclark.github.io/scut/#hide_text
 }
 
 /*==========================
-SCUT OPACITY
-http://davidtheclark.github.io/scut/#opacity
-==========================*/
-
-@mixin scut-opacity (
-  $opacity
-) {
-
-  // -ms-filter opacity values are on a scale of 0-100.
-  $ms-value: $opacity * 100;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$ms-value})";
-
-  opacity: $opacity;
-
-}
-
-
-/*==========================
 SCUT SELECTED
 http://davidtheclark.github.io/scut/#selected
 ==========================*/

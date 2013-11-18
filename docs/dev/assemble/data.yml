@@ -110,20 +110,6 @@ categories:
           -
             description: "L. Jeffrey Zeldman: \"Replacing the -9999px Hack (New Image Replacement)\""
             url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
-      -
-        name: opacity
-        type: *MO
-        use-name: scut-opacity
-        args:
-          -
-            variable: $opacity
-            comment: An `opacity` value between 0 and 1.
-        text: |
-          Simply adds an `-ms-filter` value for IE8-compatible opacity. Nothing more. No example necessary &mdash; since *you* are not using IE8 (right? please?).
-        references:
-          -
-            description: "CSS-Tricks: \"Cross-Browser Opacity\""
-            url: http://css-tricks.com/snippets/css/cross-browser-opacity/
 
       -
         name: selected
