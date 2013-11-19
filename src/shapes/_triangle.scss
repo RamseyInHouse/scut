@@ -6,8 +6,7 @@ http://davidtheclark.github.io/scut/#triangle
 @mixin scut-triangle (
   $direction: right,
   $size: 0.75em,
-  $color: inherit,
-  $pseudo: false
+  $color: inherit
 ) {
 
   display: inline-block;
@@ -15,10 +14,6 @@ http://davidtheclark.github.io/scut/#triangle
   width: 0;
   // For improved appearance in some Webkit browsers
   -webkit-transform: rotate(360deg);
-
-  @if $pseudo {
-    content: "";
-  }
 
   // Set up some variables
   $width: null;

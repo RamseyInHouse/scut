@@ -25,7 +25,8 @@
   margin-top: 0.4em;
   font-size: 0.9em;
   &:before {
-    @include scut-triangle($pseudo: true);
+    content: "";
+    @include scut-triangle;
     margin-right: 0.4em;
   }
 }

@@ -2,6 +2,12 @@
 INTRO
 ==========================*/
 
+.version {
+  float: right;
+  font-weight: bold;
+  margin-top: 3em;
+}
+
 .intro {
   &:after {
     content: "-- UTILITIES BELOW --";
@@ -45,7 +51,8 @@ INTRO
     margin: 0.5em 0;
     position: relative;
     &:before {
-      @include scut-triangle($pseudo: true);
+      content: "";
+      @include scut-triangle;
       @include scut-absolute(0.25em n n -1.5em);
     }
   }
@@ -173,7 +180,8 @@ DOC
     position: relative;
     z-index: 2;
     &:before {
-      @include scut-triangle(left, 11em 20em, $c-list, true);
+      content: "";
+      @include scut-triangle(left, 11em 20em, $c-list);
       @include scut-absolute(-8.75em 0 n n);
       z-index: -1;
     }

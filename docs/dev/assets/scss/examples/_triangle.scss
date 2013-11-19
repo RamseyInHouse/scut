@@ -24,15 +24,16 @@
 }
 .eg-triangle-button {
   &:after {
+    content: "";
     margin-left: 0.3em;
   }
   &.m-down:after {
-    @include scut-triangle(down, $pseudo: true);
+    @include scut-triangle(down);
   }
   &.m-up:after {
-    @include scut-triangle(up, $pseudo: true);
+    @include scut-triangle(up);
   }
   &.m-more:after {
-    @include scut-triangle($pseudo: true);
+    @extend %scut-triangle;
   }
 }

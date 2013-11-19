@@ -1,5 +1,5 @@
-version: "v0.3.0"
-github-url: "https://github.com/davidtheclark/scut/blob/"
+"version": "0.3.0"
+github-url: "https://github.com/davidtheclark/scut/blob/v"
 github-home: "https://github.com/davidtheclark/scut"
 codepen-url: "http://codepen.io/davidtheclark/pen/yCadJ"
 
@@ -861,10 +861,7 @@ categories:
           -
             variable: $color
             default: inherit
-          -
-            variable: $pseudo
-            default: "false"
-            comment: "Make the triangle a pseudo-element by adding the rule `content: \"\"`."
+
         text: |
           Create a wide variety of CSS triangles.
 

@@ -1,3 +1,4 @@
+currentVersion = "0.3.0"
 path = require "path"
 
 module.exports = (grunt) ->
@@ -168,6 +169,18 @@ module.exports = (grunt) ->
           src: ["*", "**/*"]
           dest: "../gh-pages"
         ]
+      # Stash current version of docs
+      docsVersion:
+        files: [
+          expand: true
+          cwd: "../gh-pages"
+          src: [
+            "index.html"
+            "assets/*"
+            "assets/**/*"
+          ]
+          dest: "../gh-pages/old/v#{currentVersion}/"
+        ]
 
     watch:
 
@@ -255,6 +268,20 @@ module.exports = (grunt) ->
           "docs/dist"
         ]
 
+    replace:
+      # Change version number in all relevant places
+      version:
+        src: [
+          "bower.json"
+          "package.json"
+          "docs/dev/assemble/data.yml"
+        ]
+        overwrite: true
+        replacements: [
+          from: /\"version\": \"(.*)\"/g
+          to: "\"version\": \"#{currentVersion}\""
+        ]
+
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-clean"
@@ -269,6 +296,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-newer"
   grunt.loadNpmTasks "grunt-grunticon"
+  grunt.loadNpmTasks "grunt-text-replace"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", [
@@ -323,5 +351,10 @@ module.exports = (grunt) ->
     "docsStyle"
     "docsDist"
     "copy:docsDist"
+  ]
+  grunt.registerTask "version", [
+    "copy:docsVersion"
+    "replace:version"
+    "assemble"
   ]
   grunt.registerTask "default", ["build"]
