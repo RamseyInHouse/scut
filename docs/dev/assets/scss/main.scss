@@ -1,7 +1,7 @@
 @import "../../../../bower_components/normalize-scss/normalize";
 
-@import "../../../../dist/scut-reset";
 @import "../../../../dist/scut";
+@include scut-reset;
 
 @import "grunticon/svg-data";
 

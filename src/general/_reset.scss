@@ -1,0 +1,84 @@
+/*==========================
+SCUT RESET
+http://davidtheclark.github.io/scut/#reset
+==========================*/
+
+@mixin scut-reset-border-box {
+  // Make everything a border-box, because why not?
+  *, *:before, *:after {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@mixin scut-reset-antialias {
+  // Antialias!
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@mixin scut-reset-semanticize {
+  // Make headers and <b> semantic, not presentational.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0;
+  }
+  b {
+    font-weight: normal;
+  }
+}
+
+@mixin scut-reset-pointer {
+  // Clickable form elements should have a pointer.
+  label,
+  input,
+  textarea,
+  select,
+  option,
+  button {
+    cursor: pointer;
+  }
+}
+
+@mixin scut-reset-button {
+  // Reset default button styles, which are never used.
+  button {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    width: auto;
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@mixin scut-reset-paragraphs {
+  // Some paragraph margins just get in the way.
+  p:first-of-type {
+    margin-top: 0;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Call them all!
+@mixin scut-reset {
+  @include scut-reset-border-box;
+  @include scut-reset-antialias;
+  @include scut-reset-semanticize;
+  @include scut-reset-pointer;
+  @include scut-reset-button;
+  @include scut-reset-paragraphs;
+}

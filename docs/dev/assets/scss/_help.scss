@@ -18,8 +18,8 @@
 .help-content {
   background: $c-bg-light;
   @include scut-absolute(20% 50% n n);
-  margin-right: -13em;
-  width: 26em;
+  margin-right: -10em;
+  width: 20em;
   padding: 2em;
   border: 5px solid $c-list;
   @extend %scut-vcenter-ib;

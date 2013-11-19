@@ -3,6 +3,11 @@ SCUT CSS CHARACTERS
 http://davidtheclark.github.io/scut/#characters
 ==========================*/
 
+// space
+$scut-space: "\0020";
+// non-breaking space
+$scut-nbsp: "\00a0";
+
 // quotation mark "
 $scut-quot: "\0022";
 // left single curly quote ‘
@@ -26,6 +31,8 @@ $scut-raquo: "\00bb";
 $scut-mdash: "\2014";
 // en dash (nut) – [between a hyphen and an em dash in length]
 $scut-ndash: "\2013";
+// hyphen -
+$scut-hyphen: "\2010";
 
 // ampersand &
 $scut-amp: "\0026";
@@ -33,8 +40,12 @@ $scut-amp: "\0026";
 $scut-gt: "\003e";
 // less than <
 $scut-lt: "\003c";
-// non-breaking space [nothing to see]
-$scut-nbsp: "\00a0";
+// times ×
+$scut-times: "\00D7";
+// big times ✕
+$scut-bigtimes: "\2715";
+// checkmark ✓
+$scut-checkmark: "\2713";
 
 // section sign (double S, hurricane, sectional symbol, the legal doughnut, signum sectiōnis) §
 $scut-sect: "\00a7";
@@ -80,3 +91,5 @@ $scut-fisheye: "\25c9";
 $scut-bullseye: "\25ce";
 // circle ●
 $scut-circle: "\25cf";
+// white circle ○
+$scut-whitecircle: "\25cb";
