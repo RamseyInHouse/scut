@@ -1,8 +1,6 @@
 {{#markdown}}
 
-<div class="version">v{{version}}</div>
-
-# Scut
+# Scut <div class="version">v{{version}}</div>
 
 **&mdash; a collection of Sass (SCSS) mixins and placeholders for common styling patterns.**
 
@@ -134,6 +132,31 @@ You can think of the word Scut as an acronym for ***SC***SS ***Ut***itilies.
 
   If you have any questions, please [file an issue](https://github.com/davidtheclark/scut/issues) or [contact me](https://github.com/davidtheclark).
   {{/markdown}}
+  </div>
+
+</section>
+
+<section id="changelog">
+
+  <h2>
+    <a href="#changelog" class="inner-anchor m-intro">Changelog</a>
+  </h2>
+
+  <div class="entry-body">
+    <dl class="changelog">
+      {{#each changelog}}
+      <dt class="changelog-version">
+        {{version}}
+      </dt>
+      <dd class="changelog-list">
+        <ul class="changelog-i-list">
+          {{#each items}}
+          <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </dd>
+      {{/each}}
+    </dl>
   </div>
 
 </section>
