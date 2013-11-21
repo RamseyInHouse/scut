@@ -1,6 +1,8 @@
 # Scut
 
-**&mdash; a collection of Sass (SCSS) mixins and placeholders for common styling patterns.**
+**&mdash; a collection of Sass utilities for common styling patterns.**
+
+For a prolonged introduction to Scut, [read "Introducing Scut" on CSS-Tricks](http://css-tricks.com/introducing-scut-new-sass-utility-library/#comment-687613).
 
 > [Please visit the complete documentation here:<br>http://davidtheclark.github.io/scut/](http://davidtheclark.github.io/scut/)
 
