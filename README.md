@@ -1,8 +1,8 @@
 # Scut
 
-**&mdash; a collection of Sass utilities for common styling patterns.**
+**&mdash; a collection of Sass utilities to ease and improve our implementations of common style-code patterns.**
 
-For a prolonged introduction to Scut, [read "Introducing Scut" on CSS-Tricks](http://css-tricks.com/introducing-scut-new-sass-utility-library/#comment-687613).
+For a prolonged introduction to Scut, [read "Introducing Scut" on CSS-Tricks](http://css-tricks.com/introducing-scut-new-sass-utility-library).
 
 > [Please visit the complete documentation here:<br>http://davidtheclark.github.io/scut/](http://davidtheclark.github.io/scut/)
 
