@@ -47,6 +47,17 @@ http://davidtheclark.github.io/scut/#reset
   }
 }
 
+@mixin scut-reset-form {
+  fieldset {
+      border: 0;
+      margin: 0;
+      padding: 0;
+  }
+  textarea {
+      resize: vertical;
+  }
+}
+
 @mixin scut-reset-button {
   // Reset default button styles, which are never used.
   button {
@@ -79,6 +90,7 @@ http://davidtheclark.github.io/scut/#reset
   @include scut-reset-antialias;
   @include scut-reset-semanticize;
   @include scut-reset-pointer;
+  @include scut-reset-form;
   @include scut-reset-button;
   @include scut-reset-paragraphs;
 }

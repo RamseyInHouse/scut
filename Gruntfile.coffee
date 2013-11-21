@@ -1,4 +1,4 @@
-currentVersion = "0.3.0"
+currentVersion = "0.4.0"
 path = require "path"
 
 module.exports = (grunt) ->
