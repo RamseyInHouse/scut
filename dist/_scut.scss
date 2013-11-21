@@ -448,6 +448,67 @@ http://davidtheclark.github.io/scut/#fonticon_label
 
 
 /*==========================
+SCUT FULL-WIDTH COLOR
+
+Depends on html and body having overflow-x set to hidden.
+
+Example:
+body, html {
+  overflow-x: hidden;
+}
+
+==========================*/
+
+@mixin scut-full-color (
+  $center-background: white, 
+  $left-background: red, 
+  $right-background: blue
+) {
+  
+  @extend %full-width-content;
+  background-color: $center-background;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 99999px;
+  }
+  
+  &:after {
+    background-color: $left-background;
+    right: 100%; 
+  }
+
+  &:before {
+    background-color: $right-background;
+    left: 100%;
+  }
+}
+
+%full-width-content {
+  
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 99999px;
+  }
+  &:after {
+    right: 100%; 
+  }
+  &:before {
+    left: 100%;
+  }
+}`
+
+/*==========================
 SCUT LIST: DIVIDED
 http://davidtheclark.github.io/scut/#list_divided
 
