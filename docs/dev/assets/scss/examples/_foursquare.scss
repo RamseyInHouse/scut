@@ -14,7 +14,7 @@
     transform: rotate(45deg);
   }
   &.m-3 {
-    @include scut-foursquare(1em, $eg-light, 0.2em, $eg-dark);
+    @include scut-foursquare(16px, $eg-light, 2px, $eg-dark);
     transform: rotate(45deg);
   }
   &.m-4 {

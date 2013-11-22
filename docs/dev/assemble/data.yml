@@ -1,4 +1,4 @@
-"version": "0.4.0"
+"version": "0.4.1"
 github-url: "https://github.com/davidtheclark/scut/blob/v"
 github-home: "https://github.com/davidtheclark/scut"
 codepen-url: "http://codepen.io/davidtheclark/pen/yCadJ"
@@ -833,6 +833,8 @@ categories:
         text: |
           Create a foursquare shape.
 
+          **This mixin depends on the element having `box-sizing: border-box`. So you'll want to include that in your reset, with vendor prefixes &mdash; good practice anyway, <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">according to Mr. Paul Irish</a> and plenty others (<a href="#reset">`scut-reset`</a> includes it) &mdash; or assign it specifically to your foursquare element.**
+
           Rotate the shape 45 degrees, and you essentially reproduce [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070) &mdash; but through the power of CSS, Scut's is fully customizable (see example below).
 
           Be aware: using `em` values for `$side` and `$line-x` sometimes produces unwelcome irregularities, but only sometimes ...
@@ -1286,6 +1288,9 @@ help:
       **@content** describes what happens if you pass a content block to the utility's mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).
 
 changelog:
+  - version: 0.4.1
+    items:
+      - "Fixed bug with `scut-foursquare`: it requires `box-sizing: border-box`."
   - version: 0.4.0
     items:
       - Started changelog!

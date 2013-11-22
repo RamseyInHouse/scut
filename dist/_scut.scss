@@ -926,12 +926,12 @@ http://davidtheclark.github.io/scut/#foursquare
     border-style: solid;
   }
   &:before {
-    height: $side / 2;
+    height: ($side / 2) + $line-width;
     right: 0;
     border-width: 0 0 $line-width;
   }
   &:after {
-    width: $side / 2;
+    width: ($side / 2) + $line-width;
     bottom: 0;
     border-width: 0 $line-width 0 0;
   }
