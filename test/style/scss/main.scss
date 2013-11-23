@@ -1,6 +1,6 @@
 // Scut files
-@import "../../../dist/scut-reset";
 @import "../../../dist/scut";
+@include scut-reset;
 
 // Base styles for the test docs
 @import "test-doc-styles";

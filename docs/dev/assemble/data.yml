@@ -149,6 +149,34 @@ categories:
     items:
 
       -
+        name: border
+        type: *MO
+        use-name: scut-border
+        args:
+          -
+            variable: $style
+            comment: |
+              A border shorthand value for the border you wish to create.
+          -
+            variable: $sides
+            default: n y
+            comment: |
+              The sides on which to add your border; a list of 2 or 4. `n` abbreviates `null`, passing no value; `y`, or anything other than `n`, will create a rule. See below for details.
+        text: |
+          A shorthand for adding a border to multiple sides of an element using a single border shorthand value.
+
+          The `$sides` argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-border`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
+
+          If you don't see the value in this shorthand, please read the explanation of <a href="#margin">`scut-margin`, below</a>, which applies equally to this border mixin.
+
+        example:
+          html: |
+            <div class="eg-border m-1">Variation 1</div>
+            <div class="eg-border m-2">Variation 2</div>
+            <div class="eg-border m-3">Variation 3</div>
+            <div class="eg-border m-4">Variation 4</div>
+
+      -
         name: center_absolutely
         type: *MO
         use-name: scut-center-absolutely
@@ -457,7 +485,7 @@ categories:
         text: |
           A shorthand for setting a single margin value to multiple sides of an element.
 
-          The $sides argument determines which sides get the margin. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-margin`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
+          The `$sides` argument determines which sides get the margin. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-margin`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
 
           This mixin is more useful than the vanilla CSS `margin` shorthand in one very common situation: *you want to use the same value for multiple margins, and you do not want to set (or override) all four margins*.
 
@@ -503,7 +531,7 @@ categories:
         text: |
           A shorthand for setting a single padding value to multiple sides of an element.
 
-          The $sides argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-padding`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
+          The `$sides` argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-padding`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
 
           If you don't see the value in this shorthand, please read the explanation of <a href="#margin">`scut-margin`, above</a>, which applies equally to this padding mixin.
 
@@ -1288,6 +1316,9 @@ help:
       **@content** describes what happens if you pass a content block to the utility's mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).
 
 changelog:
+  - version: 0.5.0
+    items:
+      - Added `scut-border`.
   - version: 0.4.1
     items:
       - "Fixed bug with `scut-foursquare`: it requires `box-sizing: border-box`."

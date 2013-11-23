@@ -1,0 +1,41 @@
+/*==========================
+SCUT BORDER
+http://davidtheclark.github.io/scut/#border
+==========================*/
+
+@mixin scut-border (
+  $style,
+  $sides: n y
+) {
+
+  @if length($sides) == 2 {
+    @if nth($sides, 1) != n {
+      border-top: $style;
+      border-bottom: $style;
+    }
+    @if nth($sides, 2) != n {
+      border-left: $style;
+      border-right: $style;
+    }
+  }
+
+  @else if length($sides) == 4 {
+    @if nth($sides, 1) != n {
+      border-top: $style;
+    }
+    @if nth($sides, 2) != n {
+      border-right: $style;
+    }
+    @if nth($sides, 3) != n {
+      border-bottom: $style;
+    }
+    @if nth($sides, 4) != n {
+      border-left: $style;
+    }
+  }
+
+  @else {
+    @warn "Scut-border requires a $sides argument of 2 or 4 values."
+  }
+
+}
