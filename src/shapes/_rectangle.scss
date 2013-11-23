@@ -1,0 +1,19 @@
+/*==========================
+SCUT RECTANGLE
+documentation needs to be added
+==========================*/
+
+@mixin scut-rectangle (
+  $width,
+  $height,
+  $color: inherit
+) {
+
+  display: inline-block;
+  
+  background-color: $color;
+  height: $height;
+  width: $width;
+  }
+
+}
