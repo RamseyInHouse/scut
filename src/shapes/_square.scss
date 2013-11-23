@@ -4,6 +4,8 @@ documentation needs to be added
 http://www.css3shapes.com/
 ==========================*/
 
+@import "rectangle";
+
 @mixin scut-square (
   $size,
   $color: inherit
