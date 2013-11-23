@@ -1,0 +1,30 @@
+/*==========================
+SCUT DIAMOND
+documentation needs to be added
+based on http://www.css3shapes.com/
+==========================*/
+
+@import "square";
+
+@mixin scut-diamond (
+  $size,
+  $color: inherit
+) {
+
+  display: inline-block;
+  
+  @include scut-square($size, $color);
+  
+  /* Rotate */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  /* Rotate Origin */
+  -webkit-transform-origin: 0 100%;
+  -moz-transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+  -o-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  }

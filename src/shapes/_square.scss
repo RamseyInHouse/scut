@@ -1,0 +1,14 @@
+/*==========================
+SCUT SQUARE
+documentation needs to be added
+based on http://www.css3shapes.com/
+==========================*/
+
+@import "rectangle";
+
+@mixin scut-square (
+  $size,
+  $color: inherit
+) {
+  @include scut-rectangle($size, $size, $color);
+  }

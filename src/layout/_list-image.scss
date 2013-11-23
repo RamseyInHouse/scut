@@ -1,0 +1,19 @@
+/*==========================
+SCUT LIST: IMAGE
+documentation needs to be added
+==========================*/
+
+@import "list-unstyled";
+
+@mixin scut-list-image (
+  $image-url,
+  $image-width
+) {
+  @include scut-list-unstyled;
+  li  {
+    background-image: url($image-url);
+    background-repeat: no-repeat;
+    background-position: 0 0.4em;
+    padding-left: $image-width + 0.25em;
+  }
+}

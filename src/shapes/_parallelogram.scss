@@ -1,0 +1,25 @@
+/*==========================
+SCUT PARALLELOGRAM
+documentation needs to be added
+based on http://www.css3shapes.com/
+==========================*/
+
+@import "rectangle";
+
+@mixin scut-parallelogram (
+  $width,
+  $height,
+  $angle,
+  $color: inherit
+) {
+
+  display: inline-block;
+  
+  @include scut-rectangle($width, $height, $color);
+  
+  /* Skew */
+  -webkit-transform: skew($angle); 
+  -moz-transform: skew($angle); 
+  -o-transform: skew($angle);
+  transform: skew($angle);
+  }
