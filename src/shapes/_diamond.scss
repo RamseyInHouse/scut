@@ -4,6 +4,8 @@ documentation needs to be added
 based on http://www.css3shapes.com/
 ==========================*/
 
+@import "square";
+
 @mixin scut-diamond (
   $size,
   $color: inherit
@@ -11,9 +13,7 @@ based on http://www.css3shapes.com/
 
   display: inline-block;
   
-  background-color: $color;
-  height: $size;
-  width: $size;
+  @include scut-square($size, $color);
   
   /* Rotate */
   -webkit-transform: rotate(-45deg);

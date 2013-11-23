@@ -1,0 +1,16 @@
+/*==========================
+SCUT LINK: UNSTYLED
+documentation needs to be added
+==========================*/
+
+@mixin scut-link-unstyled {
+  text-decoration: none;
+  color: inherit;
+  &:visited, &:hover, &:active {
+    color: inherit;
+  }
+}
+
+%scut-link-unstyled {
+  @include scut-link-unstyled;
+}

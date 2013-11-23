@@ -1,0 +1,38 @@
+/*==========================
+SCUT TWELVE POINT STAR
+documentation needs to be added
+based on http://www.css3shapes.com/
+==========================*/
+
+@import "square";
+
+@mixin scut-twelvepointstar (
+  $size,
+  $color: inherit
+) {
+  @include scut-square($size, $color);
+  
+  &:before {
+    @include scut-square($size, $color);
+    content:"";
+    position: absolute;
+    /* Rotate */
+    -moz-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    transform: rotate(30deg);
+  }
+  
+  &:after {
+    @include scut-square($size, $color);
+    content:"";
+    position: absolute;
+    /* Rotate */
+    -moz-transform: rotate(-30deg);
+    -webkit-transform: rotate(-30deg);
+    -ms-transform: rotate(-30deg);
+    -o-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+  }
+}

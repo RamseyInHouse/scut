@@ -4,6 +4,8 @@ documentation needs to be added
 based on http://www.css3shapes.com/
 ==========================*/
 
+@import "rectangle";
+
 @mixin scut-parallelogram (
   $width,
   $height,
@@ -13,9 +15,7 @@ based on http://www.css3shapes.com/
 
   display: inline-block;
   
-  background-color: $color;
-  height: $height;
-  width: $width;
+  @include scut-rectangle($width, $height, $color);
   
   /* Skew */
   -webkit-transform: skew($angle); 
