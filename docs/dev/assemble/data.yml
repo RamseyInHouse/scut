@@ -141,7 +141,9 @@ categories:
           Click "View Source" to see what the `scut-reset` mixin does and assess whether you would like to include it (or some subset of the reset mixins) in your own project.
 
           If you *do* want to use `scut-reset`, simply
+
           <pre class="language-scss"><code>@include scut-reset;</code></pre>
+
           somewhere in your stylesheet (not nested within any other rulesets).
 
   -
