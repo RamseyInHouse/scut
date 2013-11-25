@@ -1,3 +1,6 @@
+### 0.6.0
+- Replace block comments with in-line comments.
+
 ### 0.5.0
 - Added `scut-border`.
 

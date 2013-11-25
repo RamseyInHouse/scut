@@ -38,12 +38,10 @@ Here are some guidelines to explain how I've been doing things:
 - **Head the file with a block comment naming the utility and listing any dependencies.** Limit dependencies please. In the end, that block comment should also contain the URL of the utility's documentation. For example:
 
 ```scss
-/*==========================
-SCUT PIXELS TO EMS
-http://davidtheclark.github.io/scut/#pixels-to-ems
+// SCUT PIXELS TO EMS
+// http://davidtheclark.github.io/scut/#pixels-to-ems
 
-Depends on `scut-strip-unit`.
-==========================*/
+// Depends on `scut-strip-unit`.
 ```
 
 - **Indent with two spaces.**

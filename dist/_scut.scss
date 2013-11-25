@@ -3,10 +3,8 @@
 * Documentation at http://davidtheclark.github.io/scut
 */
 
-/*==========================
-SCUT CLEARFIX
-http://davidtheclark.github.io/scut/#clearfix
-==========================*/
+// SCUT CLEARFIX
+// http://davidtheclark.github.io/scut/#clearfix
 
 @mixin scut-clearfix {
 
@@ -22,10 +20,8 @@ http://davidtheclark.github.io/scut/#clearfix
   @include scut-clearfix;
 }
 
-/*==========================
-SCUT LIST: UNSTYLED
-http://davidtheclark.github.io/scut/#list_unstyled
-==========================*/
+// SCUT LIST: UNSTYLED
+// http://davidtheclark.github.io/scut/#list_unstyled
 
 @mixin scut-list-unstyled {
 
@@ -39,12 +35,10 @@ http://davidtheclark.github.io/scut/#list_unstyled
   @include scut-list-unstyled;
 }
 
-/*==========================
-SCUT LIST: FLOATED
-http://davidtheclark.github.io/scut/#list_floated
+// SCUT LIST: FLOATED
+// http://davidtheclark.github.io/scut/#list_floated
 
-Depends on `list-unstyled` and `clearfix`.
-==========================*/
+// Depends on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-floated (
   $space: false,
@@ -71,10 +65,8 @@ Depends on `list-unstyled` and `clearfix`.
 }
 
 
-/*==========================
-SCUT POSITIONING: COORDINATES
-http://davidtheclark.github.io/scut/#positioning_coordinates
-==========================*/
+// SCUT POSITIONING: COORDINATES
+// http://davidtheclark.github.io/scut/#positioning_coordinates
 
 @function scut-autoOrValue ($val) {
   @if $val == a or $val == auto {
@@ -109,10 +101,8 @@ http://davidtheclark.github.io/scut/#positioning_coordinates
 
 }
 
-/*==========================
-SCUT STRIP UNIT
-http://davidtheclark.github.io/scut/#strip_unit
-==========================*/
+// SCUT STRIP UNIT
+// http://davidtheclark.github.io/scut/#strip_unit
 
 @function scut-strip-unit (
   $num
@@ -122,12 +112,10 @@ http://davidtheclark.github.io/scut/#strip_unit
 
 }
 
-/*==========================
-SCUT PIXELS TO EMS
-http://davidtheclark.github.io/scut/#pixels-to-ems
+// SCUT PIXELS TO EMS
+// http://davidtheclark.github.io/scut/#pixels-to-ems
 
-Depends on `scut-strip-unit`.
-==========================*/
+// Depends on `scut-strip-unit`.
 
 @function scut-em (
   $pixels,
@@ -144,10 +132,8 @@ Depends on `scut-strip-unit`.
 
 }
 
-/*==========================
-SCUT COLOR SWAP
-http://davidtheclark.github.io/scut/#color_swap
-==========================*/
+// SCUT COLOR SWAP
+// http://davidtheclark.github.io/scut/#color_swap
 
 @mixin scut-color-swap (
   $off,
@@ -208,10 +194,8 @@ http://davidtheclark.github.io/scut/#color_swap
 
 }
 
-/*==========================
-SCUT HD BREAKPOINT
-http://davidtheclark.github.io/scut/#hd_breakpoint
-==========================*/
+// SCUT HD BREAKPOINT
+// http://davidtheclark.github.io/scut/#hd_breakpoint
 
 @mixin scut-hd-bp (
   $ratio: 1.3
@@ -225,10 +209,8 @@ http://davidtheclark.github.io/scut/#hd_breakpoint
 
 }
 
-/*==========================
-SCUT HIDE TEXT
-http://davidtheclark.github.io/scut/#hide_text
-==========================*/
+// SCUT HIDE TEXT
+// http://davidtheclark.github.io/scut/#hide_text
 
 @mixin scut-hide-text {
 
@@ -242,10 +224,8 @@ http://davidtheclark.github.io/scut/#hide_text
   @include scut-hide-text;
 }
 
-/*==========================
-SCUT RESET
-http://davidtheclark.github.io/scut/#reset
-==========================*/
+// SCUT RESET
+// http://davidtheclark.github.io/scut/#reset
 
 @mixin scut-reset-border-box {
   // Make everything a border-box, because why not?
@@ -339,10 +319,8 @@ http://davidtheclark.github.io/scut/#reset
   @include scut-reset-paragraphs;
 }
 
-/*==========================
-SCUT SELECTED
-http://davidtheclark.github.io/scut/#selected
-==========================*/
+// SCUT SELECTED
+// http://davidtheclark.github.io/scut/#selected
 
 @mixin scut-selected (
   $active: false
@@ -364,10 +342,8 @@ http://davidtheclark.github.io/scut/#selected
 
 }
 
-/*==========================
-SCUT BORDER
-http://davidtheclark.github.io/scut/#border
-==========================*/
+// SCUT BORDER
+// http://davidtheclark.github.io/scut/#border
 
 @mixin scut-border (
   $style,
@@ -406,10 +382,8 @@ http://davidtheclark.github.io/scut/#border
 
 }
 
-/*==========================
-SCUT CENTER ABSOLUTELY
-http://davidtheclark.github.io/scut/#center_absolutely
-==========================*/
+// SCUT CENTER ABSOLUTELY
+// http://davidtheclark.github.io/scut/#center_absolutely
 
 @mixin scut-center-absolutely (
   $dimensions
@@ -434,10 +408,8 @@ http://davidtheclark.github.io/scut/#center_absolutely
 
 }
 
-/*==========================
-SCUT FILL
-http://davidtheclark.github.io/scut/#fill
-==========================*/
+// SCUT FILL
+// http://davidtheclark.github.io/scut/#fill
 
 @mixin scut-fill {
 
@@ -453,10 +425,8 @@ http://davidtheclark.github.io/scut/#fill
   @include scut-fill;
 }
 
-/*==========================
-SCUT FONTICON-LABEL
-http://davidtheclark.github.io/scut/#fonticon_label
-==========================*/
+// SCUT FONTICON-LABEL
+// http://davidtheclark.github.io/scut/#fonticon_label
 
 @mixin scut-fonticon-label (
   $font,
@@ -489,12 +459,10 @@ http://davidtheclark.github.io/scut/#fonticon_label
 }
 
 
-/*==========================
-SCUT LIST: DIVIDED
-http://davidtheclark.github.io/scut/#list_divided
+// SCUT LIST: DIVIDED
+// http://davidtheclark.github.io/scut/#list_divided
 
-Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
-==========================*/
+// Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-divided (
   $divider: "|",
@@ -549,12 +517,10 @@ Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfi
   @include scut-list-divided("/");
 }
 
-/*==========================
-SCUT LIST: INLINE
-http://davidtheclark.github.io/scut/#list_inline
+// SCUT LIST: INLINE
+// http://davidtheclark.github.io/scut/#list_inline
 
-Depends on `list-unstyled`.
-==========================*/
+// Depends on `list-unstyled`.
 
 @mixin scut-list-inline (
   $space: false
@@ -578,12 +544,10 @@ Depends on `list-unstyled`.
   @include scut-list-inline;
 }
 
-/*==========================
-SCUT LIST: PUNCTUATED
-http://davidtheclark.github.io/scut/#list_punctuated
+// SCUT LIST: PUNCTUATED
+// http://davidtheclark.github.io/scut/#list_punctuated
 
-Depends on `list-unstyled`.
-==========================*/
+// Depends on `list-unstyled`.
 
 @mixin scut-list-punctuated (
   $divider: ", ",
@@ -605,10 +569,8 @@ Depends on `list-unstyled`.
   @include scut-list-punctuated;
 }
 
-/*==========================
-SCUT MARGIN
-http://davidtheclark.github.io/scut/#margin
-==========================*/
+// SCUT MARGIN
+// http://davidtheclark.github.io/scut/#margin
 
 @mixin scut-margin (
   $margin,
@@ -647,10 +609,8 @@ http://davidtheclark.github.io/scut/#margin
 
 }
 
-/*==========================
-SCUT PADDING
-http://davidtheclark.github.io/scut/#padding
-==========================*/
+// SCUT PADDING
+// http://davidtheclark.github.io/scut/#padding
 
 @mixin scut-padding (
   $padding,
@@ -689,12 +649,10 @@ http://davidtheclark.github.io/scut/#padding
 
 }
 
-/*==========================
-SCUT POSITIONING: ABSOLUTE
-http://davidtheclark.github.io/scut/#positioning_absolute
+// SCUT POSITIONING: ABSOLUTE
+// http://davidtheclark.github.io/scut/#positioning_absolute
 
-Depends on `positioning-coordinates`.
-==========================*/
+// Depends on `positioning-coordinates`.
 
 @mixin scut-absolute (
   $coordinates: 0 n n 0
@@ -709,12 +667,10 @@ Depends on `positioning-coordinates`.
   @include scut-absolute;
 }
 
-/*==========================
-SCUT POSITIONING: FIXED
-http://davidtheclark.github.io/scut/#positioning_fixed
+// SCUT POSITIONING: FIXED
+// http://davidtheclark.github.io/scut/#positioning_fixed
 
-Depends on `positioning-coordinates`.
-==========================*/
+// Depends on `positioning-coordinates`.
 
 @mixin scut-fixed (
   $coordinates: 0 n n 0
@@ -729,12 +685,10 @@ Depends on `positioning-coordinates`.
   @include scut-fixed;
 }
 
-/*==========================
-SCUT POSITIONING: RELATIVE
-http://davidtheclark.github.io/scut/#positioning_relative
+// SCUT POSITIONING: RELATIVE
+// http://davidtheclark.github.io/scut/#positioning_relative
 
-Depends on `positioning-coordinates`.
-==========================*/
+// Depends on `positioning-coordinates`.
 
 @mixin scut-relative (
   $coordinates: n n n n
@@ -745,10 +699,8 @@ Depends on `positioning-coordinates`.
 
 }
 
-/*==========================
-SCUT RATIO-BOX
-http://davidtheclark.github.io/scut/#ratio-box
-==========================*/
+// SCUT RATIO-BOX
+// http://davidtheclark.github.io/scut/#ratio-box
 
 @mixin scut-ratio-box (
   $ratio: 1/1,
@@ -783,10 +735,8 @@ http://davidtheclark.github.io/scut/#ratio-box
   @include scut-ratio-box;
 }
 
-/*==========================
-SCUT SIZE
-http://davidtheclark.github.io/scut/#size
-==========================*/
+// SCUT SIZE
+// http://davidtheclark.github.io/scut/#size
 
 @mixin scut-size(
   $size
@@ -803,10 +753,8 @@ http://davidtheclark.github.io/scut/#size
 
 }
 
-/*==========================
-SCUT STICKY FOOTER
-http://davidtheclark.github.io/scut/#sticky_footer
-==========================*/
+// SCUT STICKY FOOTER
+// http://davidtheclark.github.io/scut/#sticky_footer
 
 @mixin scut-sticky-footer (
   $height,
@@ -834,10 +782,8 @@ http://davidtheclark.github.io/scut/#sticky_footer
 
 }
 
-/*==========================
-SCUT V-CENTER: INLINE-BLOCK
-http://davidtheclark.github.io/scut/#v-center_inline-block
-==========================*/
+// SCUT V-CENTER: INLINE-BLOCK
+// http://davidtheclark.github.io/scut/#v-center_inline-block
 
 @mixin scut-vcenter-ib (
   $inner: ".scut-inner"
@@ -870,10 +816,8 @@ http://davidtheclark.github.io/scut/#v-center_inline-block
 }
 
 
-/*==========================
-SCUT V-CENTER: LINE-HEIGHT
-http://davidtheclark.github.io/scut/#v-center_line-height
-==========================*/
+// SCUT V-CENTER: LINE-HEIGHT
+// http://davidtheclark.github.io/scut/#v-center_line-height
 
 @mixin scut-vcenter-lh (
   $height
@@ -884,10 +828,8 @@ http://davidtheclark.github.io/scut/#v-center_line-height
 
 }
 
-/*==========================
-SCUT V-CENTER: TABLE DISPLAY
-http://davidtheclark.github.io/scut/#v-center_table_display
-==========================*/
+// SCUT V-CENTER: TABLE DISPLAY
+// http://davidtheclark.github.io/scut/#v-center_table_display
 
 @mixin scut-vcenter-td (
   $inner: ".scut-inner"
@@ -907,10 +849,8 @@ http://davidtheclark.github.io/scut/#v-center_table_display
   @include scut-vcenter-td;
 }
 
-/*==========================
-SCUT CIRCLE
-http://davidtheclark.github.io/scut/#circle
-==========================*/
+// SCUT CIRCLE
+// http://davidtheclark.github.io/scut/#circle
 
 @mixin scut-circle (
   $size,
@@ -938,10 +878,8 @@ http://davidtheclark.github.io/scut/#circle
 
 }
 
-/*==========================
-SCUT FOURSQUARE
-http://davidtheclark.github.io/scut/#foursquare
-==========================*/
+// SCUT FOURSQUARE
+// http://davidtheclark.github.io/scut/#foursquare
 
 @mixin scut-foursquare (
   $side: 10px,
@@ -984,10 +922,8 @@ http://davidtheclark.github.io/scut/#foursquare
   @include scut-foursquare;
 }
 
-/*==========================
-SCUT TRIANGLE
-http://davidtheclark.github.io/scut/#triangle
-==========================*/
+// SCUT TRIANGLE
+// http://davidtheclark.github.io/scut/#triangle
 
 @mixin scut-triangle (
   $direction: right,
@@ -1092,10 +1028,8 @@ http://davidtheclark.github.io/scut/#triangle
   @include scut-triangle;
 }
 
-/*==========================
-BOOKENDS
-http://davidtheclark.github.io/scut/#bookends
-==========================*/
+// BOOKENDS
+// http://davidtheclark.github.io/scut/#bookends
 
 @mixin scut-bookends (
   $space: 0.5em,
@@ -1142,10 +1076,8 @@ http://davidtheclark.github.io/scut/#bookends
 
 }
 
-/*==========================
-SCUT CSS CHARACTERS
-http://davidtheclark.github.io/scut/#characters
-==========================*/
+// SCUT CSS CHARACTERS
+// http://davidtheclark.github.io/scut/#characters
 
 // space
 $scut-space: "\0020";
@@ -1238,10 +1170,8 @@ $scut-circle: "\25cf";
 // white circle ○
 $scut-whitecircle: "\25cb";
 
-/*==========================
-SCUT FONT-FACE
-http://davidtheclark.github.io/scut/#font-face
-==========================*/
+// SCUT FONT-FACE
+// http://davidtheclark.github.io/scut/#font-face
 
 @mixin scut-font-face (
   $font-family,
@@ -1264,10 +1194,8 @@ http://davidtheclark.github.io/scut/#font-face
 
 }
 
-/*==========================
-SCUT HANGING INDENT
-http://davidtheclark.github.io/scut/#hanging_indent
-==========================*/
+// SCUT HANGING INDENT
+// http://davidtheclark.github.io/scut/#hanging_indent
 
 @mixin scut-hanging-indent (
   $indent: 1em
@@ -1286,10 +1214,8 @@ http://davidtheclark.github.io/scut/#hanging_indent
   @include scut-hanging-indent;
 }
 
-/*==========================
-SCUT INDENTED PARAGRAPHS
-http://davidtheclark.github.io/scut/#indented_paragraphs
-==========================*/
+// SCUT INDENTED PARAGRAPHS
+// http://davidtheclark.github.io/scut/#indented_paragraphs
 
 @mixin scut-indented-ps (
   $indent: 1.5em,
@@ -1313,10 +1239,8 @@ http://davidtheclark.github.io/scut/#indented_paragraphs
   @include scut-indented-ps;
 }
 
-/*==========================
-SCUT KEY-VALUE
-http://davidtheclark.github.io/scut/#key-value
-==========================*/
+// SCUT KEY-VALUE
+// http://davidtheclark.github.io/scut/#key-value
 
 @mixin scut-key-val (
   $divider: ":",
@@ -1351,10 +1275,8 @@ http://davidtheclark.github.io/scut/#key-value
   @include scut-key-val;
 }
 
-/*==========================
-SCUT LINK: BOTTOM-BORDERED
-http://davidtheclark.github.io/scut/#link_bottom-bordered
-==========================*/
+// SCUT LINK: BOTTOM-BORDERED
+// http://davidtheclark.github.io/scut/#link_bottom-bordered
 
 @mixin scut-link-bb (
   $color: inherit,
@@ -1376,10 +1298,8 @@ http://davidtheclark.github.io/scut/#link_bottom-bordered
   @include scut-link-bb;
 }
 
-/*==========================
-SCUT REVERSE ITALICS
-http://davidtheclark.github.io/scut/#reverse-italics
-==========================*/
+// SCUT REVERSE ITALICS
+// http://davidtheclark.github.io/scut/#reverse-italics
 
 @mixin scut-reverse-italics (
   $elements: false
@@ -1401,10 +1321,8 @@ http://davidtheclark.github.io/scut/#reverse-italics
   @include scut-reverse-italics;
 }
 
-/*==========================
-SCUT SIDE-LINED
-http://davidtheclark.github.io/scut/#side-lined
-==========================*/
+// SCUT SIDE-LINED
+// http://davidtheclark.github.io/scut/#side-lined
 
 @mixin scut-side-lined (
   $height: 1px,

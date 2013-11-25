@@ -1,9 +1,7 @@
-/*==========================
-SCUT LIST: DIVIDED
-http://davidtheclark.github.io/scut/#list_divided
+// SCUT LIST: DIVIDED
+// http://davidtheclark.github.io/scut/#list_divided
 
-Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
-==========================*/
+// Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-divided (
   $divider: "|",
