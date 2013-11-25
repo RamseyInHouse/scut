@@ -9,7 +9,6 @@ http://davidtheclark.github.io/scut/#reverse-italics
 
   $element-list: em, cite, i;
   @each $el in $elements {
-    $unquoted-value: unquote($el);
     $element-list: append($element-list, unquote($el), comma)
   }
 
