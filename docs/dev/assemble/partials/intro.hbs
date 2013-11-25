@@ -140,28 +140,3 @@
   </div>
 
 </section>
-
-<section id="changelog">
-
-  <h2>
-    <a href="#changelog" class="inner-anchor m-intro">Changelog</a>
-  </h2>
-
-  <div class="entry-body">
-    <dl class="changelog">
-      {{#each changelog}}
-      <dt class="changelog-version">
-        <a href="https://github.com/davidtheclark/scut/tree/v{{version}}">{{version}}</a>
-      </dt>
-      <dd class="changelog-list">
-        <ul class="changelog-i-list">
-          {{#each items}}
-          <li>{{#markdown}}{{{this}}}{{/markdown}}</li>
-          {{/each}}
-        </ul>
-      </dd>
-      {{/each}}
-    </dl>
-  </div>
-
-</section>

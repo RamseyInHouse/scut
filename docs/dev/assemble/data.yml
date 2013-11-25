@@ -1316,14 +1316,3 @@ help:
     term: contentblock
     text: |
       **@content** describes what happens if you pass a content block to the utility's mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).
-
-changelog:
-  - version: 0.5.0
-    items:
-      - Added `scut-border`.
-  - version: 0.4.1
-    items:
-      - "Fixed bug with `scut-foursquare`: it requires `box-sizing: border-box`."
-  - version: 0.4.0
-    items:
-      - Started changelog!
