@@ -147,13 +147,30 @@ categories:
             url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
 
       -
-        name: image_replacement
+        name: hide_visually
         type: &MP mixin and placeholder (same)
+        use-name: scut-hide-visually
+        text: |
+          Hide an element visually, and effectively remove it from page layout, without hiding it from screen readers. Vital accessibility practice.
+        example:
+          html: |
+            <div class="eg-hide-visually">This element is visually hidden.</div>
+            <div>You can't see the element above this one, can you?</div>
+          show-html: true
+        references:
+          -
+            description: "Jonathan Snook: \"Hiding Content for Accessibility\""
+            url: http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+          -
+            description: HTML5 Boilerplate discussion and research
+            url: https://github.com/h5bp/html5-boilerplate/issues/194/
+
+      -
+        name: image_replacement
+        type: *MP
         use-name: scut-image-replace
         text: |
           Include text in the markup but replace it with an image.
-
-          This technique is most commonly used to provide (semantic, accessible, SEO-friendly, etc.) text that will be (visually) replaced with an image.
         example:
           html: |
             <p>The following image is replacing text:</p>

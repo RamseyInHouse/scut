@@ -1,0 +1,4 @@
+.eg-hide-visually {
+  @extend %scut-hide-visually;
+  // or @include scut-hide-visually;
+}
