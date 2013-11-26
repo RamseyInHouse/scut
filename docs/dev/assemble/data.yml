@@ -263,7 +263,6 @@ categories:
   -
     category: layout
     items:
-
       -
         name: center_absolutely
         type: *MO
@@ -290,6 +289,29 @@ categories:
             <div class="eg-center-absolutely-container">
               <div class="eg-center-absolutely m-3">Centered only vertically</div>
             </div>
+
+      -
+        name: center_block
+        type: *MDP
+        use-name: scut-center-block
+        args:
+          -
+            variable: $max-width
+            default: "false"
+            comment: |
+              A `max-width` value for the to-be-centered block.
+        text: |
+          You, being wise, probably know that setting `margin-left: auto; margin-right: auto;` on a block element with a defined width will center that element. You probably do it all the time.
+
+          So why a utility?
+
+            - To make sure you're setting `margin-left` and `margin-right` when that's all you need to set &mdash; instead of also overriding `margin-top` and `margin-bottom` with a rule like `margin: 0 auto;`.
+            - To organize and name the pattern, describing what is being done &mdash; you are *centering a block* &mdash; whereas `margin: auto;` does not explain itself.
+            - To provide a little handy shortcut for the all-too-common pattern of setting `auto` left and right margins along with a `max-width`. (`max-width` instead of `width`, so the element shrinks with the viewport, if it comes to that &mdash; I find myself doing it that way most often.)
+        example:
+          html: |
+            <div class="eg-center-block m-1">Variation 1</div>
+            <div class="eg-center-block m-2">Variation 2</div>
 
       -
         name: clearfix

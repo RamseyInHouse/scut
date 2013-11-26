@@ -1,0 +1,17 @@
+/* hidden rules */
+.eg-center-block {
+  background: $eg-muted;
+  padding: 1em;
+}
+/* end hidden rules */
+
+.eg-center-block {
+  &.m-1 {
+    width: 8em;
+    @extend %scut-center-block;
+  }
+  &.m-2 {
+    margin-top: 2em;
+    @include scut-center-block(80%);
+  }
+}

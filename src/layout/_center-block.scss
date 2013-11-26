@@ -1,0 +1,18 @@
+// SCUT CENTER BLOCK
+// http://davidtheclark.github.io/scut/#center_block
+
+@mixin scut-center-block (
+  $max-width: false
+) {
+
+  margin-left: auto;
+  margin-right: auto;
+  @if $max-width {
+    max-width: $max-width;
+  }
+
+}
+
+%scut-center-block {
+  @include scut-center-block;
+}
