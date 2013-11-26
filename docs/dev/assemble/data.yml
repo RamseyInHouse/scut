@@ -171,6 +171,8 @@ categories:
         use-name: scut-image-replace
         text: |
           Include text in the markup but replace it with an image.
+
+          Be warned: you might run into occasional bugs with this method of image-replacement *unless you've also set a `width` on your element.*
         example:
           html: |
             <p>The following image is replacing text:</p>
