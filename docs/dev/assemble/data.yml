@@ -147,17 +147,17 @@ categories:
             url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
 
       -
-        name: hide_text
+        name: image_replacement
         type: &MP mixin and placeholder (same)
-        use-name: scut-hide-text
+        use-name: scut-image-replace
         text: |
-          Include text in the markup while hiding it from view.
+          Include text in the markup but replace it with an image.
 
           This technique is most commonly used to provide (semantic, accessible, SEO-friendly, etc.) text that will be (visually) replaced with an image.
         example:
           html: |
-            <p>The following image is hiding text:</p>
-            <div class="eg-hide-text">This text is hidden</div>
+            <p>The following image is replacing text:</p>
+            <div class="eg-image-replace">This text has been replaced.</div>
           show-html: true
         references:
           -

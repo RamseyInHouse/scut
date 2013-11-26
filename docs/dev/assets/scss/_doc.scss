@@ -73,7 +73,7 @@
   @extend .github;
   background-size: contain;
   @include scut-size(24px);
-  @include scut-hide-text;
+  @include scut-image-replace;
   float: right;
   margin-left: 1em;
 
