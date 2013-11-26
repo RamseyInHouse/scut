@@ -33,9 +33,9 @@ If you have any questions, if anything about this document is unclear or inaccur
 
 (Or, if you think there's a better way to do things, please file an issue.)
 
-Here are some guidelines to explain how I've been doing things:
+Here are some guidelines to explain how I've been writing:
 
-- **Head the file with a block comment naming the utility and listing any dependencies.** Limit dependencies please. In the end, that block comment should also contain the URL of the utility's documentation. For example:
+- **Head the file with a multi-line comment (each line an inline `//` comment, not a block comment) naming the utility and listing any dependencies.** Limit dependencies please. In the end, that top comment should also contain the URL of the utility's documentation. For example:
 
 ```scss
 // SCUT PIXELS TO EMS
@@ -64,7 +64,7 @@ Here are some guidelines to explain how I've been doing things:
 
 Feel free to experiment with or create test pages for utilities new and old. Use test pages to make sure that the utility you created works just as you dreamed it would.
 
-**Test pages are for experimentation and testing. They do not have to be pretty, authoritative, complete, or anything else. They exist only to aid development.**
+**Test pages are for experimentation and testing. They do not have to be pretty, authoritative, complete, or anything else. They exist only to aid development.** Test pages are ephemeral: any developer should feel free to modify existing tests.
 
 Test pages are compiled from [Handlebars](http://handlebarsjs.com/) templates using [Assemble](http://assemble.io). You should do the following:
 
@@ -91,7 +91,10 @@ Documentation is compiled using [Assemble](http://assemble.io). The files are lo
 
 At the top of `docs/dev/assemble/data.yml` is a short guide to writing the YAML that translates into a utility's entry in the documentation.  (What's YAML? [If you skim this you'll understand.](http://www.yaml.org/spec/1.2/spec.html))
 
-For the SCSS of your example, please follow the conventions established in the other examples (found in `docs/dev/assets/scss/examples/`). Please stick with the color variables `$eg-muted`, `$eg-light`, and `$eg-dark`, so everything matches. If there are rules that you would like to add (in order to make the example look nice) but you don't need to display them (because they have nothing to do with usage of the utility), wrap them in the comments `/* hidden rules */` and `/* end hidden rules */`, followed by a blank line. Look at the existing example stylesheets and you'll get it.
+For the SCSS of your example, please follow the conventions established in the other examples (found in `docs/dev/assets/scss/examples/`). A couple of points:
+
+- Please stick with the color variables `$eg-muted`, `$eg-light`, and `$eg-dark`, so everything matches.
+- If there are rules that you would like to add (in order to make the example look nice) but you don't need to display them (because they have nothing to do with usage of the utility), wrap them in the comments `/* hidden rules */` and `/* end hidden rules */`, followed by a blank line. Look at the existing example stylesheets and you'll get it.
 
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt docsDev` for the same result.) Look at `Gruntfile.coffee` for details.
 
