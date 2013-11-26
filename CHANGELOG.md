@@ -1,5 +1,6 @@
 ### 0.6.0
-- Replace block comments with in-line comments.
+- Replaced block comments with in-line comments.
+- Moved `scut-triangle` and `scut-circle` to General category; removed `scut-foursquare`; and removed Shapes category.
 
 ### 0.5.0
 - Added `scut-border`.

@@ -41,8 +41,61 @@ categories:
     items:
 
       -
-        name: color_swap
+        name: border
         type: &MO mixin only
+        use-name: scut-border
+        args:
+          -
+            variable: $style
+            comment: |
+              A border shorthand value for the border you wish to create.
+          -
+            variable: $sides
+            default: n y
+            comment: |
+              The sides on which to add your border; a list of 2 or 4. `n` abbreviates `null`, passing no value; `y`, or anything other than `n`, will create a rule. See below for details.
+        text: |
+          A shorthand for adding a border to multiple sides of an element using a single border shorthand value.
+
+          The `$sides` argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-border`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
+
+          If you don't see the value in this shorthand, please read the explanation of <a href="#margin">`scut-margin`, below</a>, which applies equally to this border mixin.
+
+        example:
+          html: |
+            <div class="eg-border m-1">Variation 1</div>
+            <div class="eg-border m-2">Variation 2</div>
+            <div class="eg-border m-3">Variation 3</div>
+            <div class="eg-border m-4">Variation 4</div>
+
+      -
+        name: circle
+        type: *MO
+        use-name: scut-circle
+        args:
+          -
+            variable: $size
+            comment: One value becomes both `width` and `height`.
+          -
+            variable: $color
+            default: inherit
+        compatibility: |
+          This utility uses `border-radius`, which is not supported in IE8; so IE8 will just get what it deserves: squares.
+        text: |
+          Create a CSS circle.
+
+          By default, the circle will inherit the color of its parent's text. Or you can designate a color yourself.
+
+          *If you want to add a border to your circle, you have to declare a color.*
+        example:
+          html: |
+            <div class="eg-circle m-1"></div>
+            <div class="eg-circle m-2"></div>
+            <div class="eg-circle m-3"></div>
+
+      -
+        name: color_swap
+        type: *MO
         use-name: scut-color-swap
         args:
           -
@@ -112,6 +165,23 @@ categories:
             url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 
       -
+        name: reset
+        type: *MO
+        use-name: scut-reset
+        text: |
+          Scut's "reset" is a small set of modular resets, each one an independent mixin. The master mixin, `scut-reset`, calls them all; alternately, you could pick and choose yourself.
+
+          Here's the reasoning: I've found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all the default button styling (which *never* gets used); and so on. So I decided to start stashing those resets for future projects. That's what `scut-reset` is.
+
+          Click "View Source" to see what the `scut-reset` mixin does and assess whether you would like to include it (or some subset of the reset mixins) in your own project.
+
+          If you *do* want to use `scut-reset`, simply
+
+          <pre class="language-scss"><code>@include scut-reset;</code></pre>
+
+          somewhere in your stylesheet (not nested within any other rulesets).
+
+      -
         name: selected
         type: *MO
         use-name: scut-selected
@@ -130,53 +200,50 @@ categories:
             <p><button class="eg-selected m-2">This following button turns blue on hover, focus, and active</button></p>
 
       -
-        name: reset
-        type: *MO
-        use-name: scut-reset
+        name: triangle
+        type: &MDP mixin, with a default-values placeholder
+        use-name: scut-triangle
+        args:
+          -
+            variable: $direction
+            default: right
+            comment: "The direction that the triangle points: `up`, `down`, `right`, `left`. Or, for right triangles, the corner of the right angle: `top-right`, `top-left`, `bottom-right` or `bottom-left`."
+          -
+            variable: $size
+            default: 0.75em
+            comment: One or two values determining the size of the triangle. One value will make a triangle equally wide and tall. Two values translate to `width` and `height`.
+          -
+            variable: $color
+            default: inherit
+
         text: |
-          Scut's "reset" is a small set of modular resets, each one an independent mixin. The master mixin, `scut-reset`, calls them all; alternately, you could pick and choose yourself.
+          Create a wide variety of CSS triangles.
 
-          Here's the reasoning: I've found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all the default button styling (which *never* gets used); and so on. So I decided to start stashing those resets for future projects. That's what `scut-reset` is.
+          (The default placeholder extension is a little one pointing right &mdash; the kind you'd see on a "Read More" link.)
 
-          Click "View Source" to see what the `scut-reset` mixin does and assess whether you would like to include it (or some subset of the reset mixins) in your own project.
+          The mixin can produce acute triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.
 
-          If you *do* want to use `scut-reset`, simply
+          When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle pointing up, you'll want your `height` value to be ~86.6% of your `width` value (1/2 x &radic;3 x `width`). Anybody remember high school geometry?
 
-          <pre class="language-scss"><code>@include scut-reset;</code></pre>
-
-          somewhere in your stylesheet (not nested within any other rulesets).
+          The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should [play around with this Codepen Pen](http://codepen.io/davidtheclark/pen/oelbk).
+        example:
+          html: |
+            <p>
+              <span class="eg-triangle m-default"></span>
+              <span class="eg-triangle m-equilateral"></span>
+              <span class="eg-triangle m-top-right"></span>
+              <span class="eg-triangle m-bottom-left"></span>
+            </p>
+            <p>
+              <button class="eg-triangle-button m-down">Dropdown</button>
+              <button class="eg-triangle-button m-up">Dropdown</button>
+              <button class="eg-triangle-button m-more">Read more</button>
+            </p>
+          show-html: true
 
   -
     category: layout
     items:
-
-      -
-        name: border
-        type: *MO
-        use-name: scut-border
-        args:
-          -
-            variable: $style
-            comment: |
-              A border shorthand value for the border you wish to create.
-          -
-            variable: $sides
-            default: n y
-            comment: |
-              The sides on which to add your border; a list of 2 or 4. `n` abbreviates `null`, passing no value; `y`, or anything other than `n`, will create a rule. See below for details.
-        text: |
-          A shorthand for adding a border to multiple sides of an element using a single border shorthand value.
-
-          The `$sides` argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, `n` stands for `null` and results in no rule being created. For `scut-border`, `y` (or anything other than `n`) stands for "yes" or `true` and will result in a rule. See the examples below.
-
-          If you don't see the value in this shorthand, please read the explanation of <a href="#margin">`scut-margin`, below</a>, which applies equally to this border mixin.
-
-        example:
-          html: |
-            <div class="eg-border m-1">Variation 1</div>
-            <div class="eg-border m-2">Variation 2</div>
-            <div class="eg-border m-3">Variation 3</div>
-            <div class="eg-border m-4">Variation 4</div>
 
       -
         name: center_absolutely
@@ -204,8 +271,6 @@ categories:
             <div class="eg-center-absolutely-container">
               <div class="eg-center-absolutely m-3">Centered only vertically</div>
             </div>
-
-
 
       -
         name: clearfix
@@ -305,7 +370,7 @@ categories:
 
       -
         name: list_floated
-        type: &MDP mixin, with a default-values placeholder
+        type: *MDP
         use-name: scut-list-floated
         args:
           -
@@ -574,7 +639,6 @@ categories:
 
           The mixins below (and their examples) below further illustrate how this works.
 
-
       -
         name: positioning_absolute
         type: *MDP
@@ -808,114 +872,6 @@ categories:
           -
             description: "CSS-Tricks: \"Centering in the Unknown\""
             url: http://css-tricks.com/centering-in-the-unknown/
-
-  -
-    category: shapes
-    items:
-
-      -
-        name: circle
-        type: *MO
-        use-name: scut-circle
-        args:
-          -
-            variable: $size
-            comment: One value becomes both `width` and `height`.
-          -
-            variable: $color
-            default: inherit
-        compatibility: |
-          This utility uses `border-radius`, which is not supported in IE8; so IE8 will just get what it deserves: squares.
-        text: |
-          Create a CSS circle.
-
-          By default, the circle will inherit the color of its parent's text. Or you can designate a color yourself.
-
-          *If you want to add a border to your circle, you have to declare a color.*
-        example:
-          html: |
-            <div class="eg-circle m-1"></div>
-            <div class="eg-circle m-2"></div>
-            <div class="eg-circle m-3"></div>
-
-      -
-        name: foursquare
-        type: *MDP
-        use-name: scut-foursquare
-        args:
-          -
-            variable: $side
-            default: 10px
-            comment: |
-              The length of a side of the foursquare shape. *Must have the same unit as `$line-width`*; pixels are recommended.
-          -
-            variable: $color
-            default: black
-          -
-            variable: $line-width
-            default: 1px
-            comment: |
-              The width of the inner lines. *Must have the same unit as `$side`*; pixels are recommended.
-          -
-            variable: $line-color
-            default: white
-            comment: The color of the inner lines.
-        text: |
-          Create a foursquare shape.
-
-          **This mixin depends on the element having `box-sizing: border-box`. So you'll want to include that in your reset, with vendor prefixes &mdash; good practice anyway, <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">according to Mr. Paul Irish</a> and plenty others (<a href="#reset">`scut-reset`</a> includes it) &mdash; or assign it specifically to your foursquare element.**
-
-          Rotate the shape 45 degrees, and you essentially reproduce [the unicode character "Black diamond minus white x"](http://shapecatcher.com/unicode/info/10070) &mdash; but through the power of CSS, Scut's is fully customizable (see example below).
-
-          Be aware: using `em` values for `$side` and `$line-x` sometimes produces unwelcome irregularities, but only sometimes ...
-        example:
-          html: |
-            <div class="eg-foursquare m-1"></div>
-            <div class="eg-foursquare m-2"></div>
-            <div class="eg-foursquare m-3"></div>
-            <div class="eg-foursquare m-4"></div>
-
-      -
-        name: triangle
-        type: *MDP
-        use-name: scut-triangle
-        args:
-          -
-            variable: $direction
-            default: right
-            comment: "The direction that the triangle points: `up`, `down`, `right`, `left`. Or, for right triangles, the corner of the right angle: `top-right`, `top-left`, `bottom-right` or `bottom-left`."
-          -
-            variable: $size
-            default: 0.75em
-            comment: One or two values determining the size of the triangle. One value will make a triangle equally wide and tall. Two values translate to `width` and `height`.
-          -
-            variable: $color
-            default: inherit
-
-        text: |
-          Create a wide variety of CSS triangles.
-
-          (The default placeholder extension is a little one pointing right &mdash; the kind you'd see on a "Read More" link.)
-
-          The mixin can produce acute triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.
-
-          When choosing `width` and `height` values, consider how their ratio will determine the form. For example, to create an equilateral triangle pointing up, you'll want your `height` value to be ~86.6% of your `width` value (1/2 x &radic;3 x `width`). Anybody remember high school geometry?
-
-          The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should [play around with this Codepen Pen](http://codepen.io/davidtheclark/pen/oelbk).
-        example:
-          html: |
-            <p>
-              <span class="eg-triangle m-default"></span>
-              <span class="eg-triangle m-equilateral"></span>
-              <span class="eg-triangle m-top-right"></span>
-              <span class="eg-triangle m-bottom-left"></span>
-            </p>
-            <p>
-              <button class="eg-triangle-button m-down">Dropdown</button>
-              <button class="eg-triangle-button m-up">Dropdown</button>
-              <button class="eg-triangle-button m-more">Read more</button>
-            </p>
-          show-html: true
 
   -
     category: typography
