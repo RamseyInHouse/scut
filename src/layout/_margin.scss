@@ -2,38 +2,62 @@
 // http://davidtheclark.github.io/scut/#margin
 
 @mixin scut-margin (
-  $margin,
-  $sides: n y
+  $margin
 ) {
 
-  @if length($sides) == 2 {
-    @if nth($sides, 1) != n {
-      margin-top: $margin;
-      margin-bottom: $margin;
+  @if length($margin) == 1 and $margin != n {
+    margin-top: $margin;
+    margin-right: $margin;
+    margin-bottom: $margin;
+    margin-left: $margin;
+  }
+
+  @if length($margin) == 2 {
+    $margin-y: nth($margin, 1);
+    $margin-x: nth($margin, 2);
+    @if $margin-y != n {
+      margin-top: $margin-y;
+      margin-bottom: $margin-y;
     }
-    @if nth($sides, 2) != n {
-      margin-left: $margin;
-      margin-right: $margin;
+    @if $margin-x != n {
+      margin-left: $margin-x;
+      margin-right: $margin-x;
     }
   }
 
-  @else if length($sides) == 4 {
-    @if nth($sides, 1) != n {
-      margin-top: $margin;
+  @if length($margin) == 3 {
+    $margin-y-top: nth($margin, 1);
+    $margin-x: nth($margin, 2);
+    $margin-y-bottom: nth($margin, 3);
+    @if $margin-y-top != n {
+      margin-top: $margin-y-top;
     }
-    @if nth($sides, 2) != n {
-      margin-right: $margin;
+    @if $margin-x != n {
+      margin-right: $margin-x;
+      margin-left: $margin-x;
     }
-    @if nth($sides, 3) != n {
-      margin-bottom: $margin;
-    }
-    @if nth($sides, 4) != n {
-      margin-left: $margin;
+    @if $margin-y-bottom != n {
+      margin-bottom: $margin-y-bottom;
     }
   }
 
-  @else {
-    @warn "Scut-margin requires a $sides argument of 2 or 4 values."
+  @if length($margin) == 4 {
+    $margin-top: nth($margin, 1);
+    $margin-right: nth($margin, 2);
+    $margin-bottom: nth($margin, 3);
+    $margin-left: nth($margin, 4);
+    @if $margin-top != n {
+      margin-top: $margin-top;
+    }
+    @if $margin-right != n {
+      margin-right: $margin-right;
+    }
+    @if $margin-bottom != n {
+      margin-bottom: $margin-bottom;
+    }
+    @if $margin-left != n {
+      margin-left: $margin-left;
+    }
   }
 
 }

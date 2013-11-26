@@ -1,8 +1,8 @@
 /* hidden rules */
 .eg-border {
   background-color: $eg-muted;
-  @include scut-padding(1em, y y);
-  @include scut-margin(1em, y n n n);
+  padding: 1em;
+  margin-top: 1em;
 }
 /* end hidden rules */
 

@@ -12,18 +12,12 @@
 
 .eg-margin {
   &.m-1 {
-    @include scut-margin(30px, y n);
+    @include scut-margin(1em n);
   }
   &.m-2 {
-    @include scut-margin(4em, n y);
+    @include scut-margin(0.5em 3em);
   }
   &.m-3 {
-    @include scut-margin(3em, y y n n);
-  }
-  &.m-4 {
-    @include scut-margin(3em, n n y y);
-  }
-  &.m-5 {
-    @include scut-margin(3em, n y y y);
+    @include scut-margin(3em 1em n);
   }
 }

@@ -6,18 +6,15 @@
   border: 5px solid blue;
   padding: 1em;
   &.m-1 {
-    @include scut-margin(30px, y n);
+    @include scut-margin(2em 3em n);
   }
   &.m-2 {
-    @include scut-margin(4em, n y);
+    @include scut-margin(n 4em);
   }
   &.m-3 {
-    @include scut-margin(3em, y y n n);
+    @include scut-margin(3em);
   }
   &.m-4 {
-    @include scut-margin(3em, n n y y);
-  }
-  &.m-5 {
-    @include scut-margin(3em, n y y y);
+    @include scut-margin(3em 1em 2em);
   }
 }

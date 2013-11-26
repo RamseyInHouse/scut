@@ -9,18 +9,12 @@
 .eg-padding {
   display: inline-block;
   &.m-1 {
-    @include scut-padding(30px, y n);
+    @include scut-padding(1em n);
   }
   &.m-2 {
-    @include scut-padding(4em, n y);
+    @include scut-padding(0.5em 3em);
   }
   &.m-3 {
-    @include scut-padding(3em, y y n n);
-  }
-  &.m-4 {
-    @include scut-padding(3em, n n y y);
-  }
-  &.m-5 {
-    @include scut-padding(3em, n y y y);
+    @include scut-padding(n 8em 3em n);
   }
 }

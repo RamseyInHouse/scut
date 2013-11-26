@@ -1,4 +1,5 @@
 ### 0.6.0
+- Modified `scut-margin` and `scut-padding`.
 - Added `scut-center-block`.
 - Changed `scut-hide-text` to `scut-image-replace` and added `scut-hide-visually`.
 - Moved `scut-triangle` and `scut-circle` to General category; removed `scut-foursquare`; and removed Shapes category.

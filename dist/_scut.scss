@@ -748,38 +748,62 @@
 // http://davidtheclark.github.io/scut/#margin
 
 @mixin scut-margin (
-  $margin,
-  $sides: n y
+  $margin
 ) {
 
-  @if length($sides) == 2 {
-    @if nth($sides, 1) != n {
-      margin-top: $margin;
-      margin-bottom: $margin;
+  @if length($margin) == 1 and $margin != n {
+    margin-top: $margin;
+    margin-right: $margin;
+    margin-bottom: $margin;
+    margin-left: $margin;
+  }
+
+  @if length($margin) == 2 {
+    $margin-y: nth($margin, 1);
+    $margin-x: nth($margin, 2);
+    @if $margin-y != n {
+      margin-top: $margin-y;
+      margin-bottom: $margin-y;
     }
-    @if nth($sides, 2) != n {
-      margin-left: $margin;
-      margin-right: $margin;
+    @if $margin-x != n {
+      margin-left: $margin-x;
+      margin-right: $margin-x;
     }
   }
 
-  @else if length($sides) == 4 {
-    @if nth($sides, 1) != n {
-      margin-top: $margin;
+  @if length($margin) == 3 {
+    $margin-y-top: nth($margin, 1);
+    $margin-x: nth($margin, 2);
+    $margin-y-bottom: nth($margin, 3);
+    @if $margin-y-top != n {
+      margin-top: $margin-y-top;
     }
-    @if nth($sides, 2) != n {
-      margin-right: $margin;
+    @if $margin-x != n {
+      margin-right: $margin-x;
+      margin-left: $margin-x;
     }
-    @if nth($sides, 3) != n {
-      margin-bottom: $margin;
-    }
-    @if nth($sides, 4) != n {
-      margin-left: $margin;
+    @if $margin-y-bottom != n {
+      margin-bottom: $margin-y-bottom;
     }
   }
 
-  @else {
-    @warn "Scut-margin requires a $sides argument of 2 or 4 values."
+  @if length($margin) == 4 {
+    $margin-top: nth($margin, 1);
+    $margin-right: nth($margin, 2);
+    $margin-bottom: nth($margin, 3);
+    $margin-left: nth($margin, 4);
+    @if $margin-top != n {
+      margin-top: $margin-top;
+    }
+    @if $margin-right != n {
+      margin-right: $margin-right;
+    }
+    @if $margin-bottom != n {
+      margin-bottom: $margin-bottom;
+    }
+    @if $margin-left != n {
+      margin-left: $margin-left;
+    }
   }
 
 }
@@ -788,40 +812,63 @@
 // http://davidtheclark.github.io/scut/#padding
 
 @mixin scut-padding (
-  $padding,
-  $sides: n y
+  $padding
 ) {
 
-  @if length($sides) == 2 {
-    @if nth($sides, 1) != n {
-      padding-top: $padding;
-      padding-bottom: $padding;
+  @if length($padding) == 1 and $padding != n {
+    padding-top: $padding;
+    padding-right: $padding;
+    padding-bottom: $padding;
+    padding-left: $padding;
+  }
+
+  @if length($padding) == 2 {
+    $padding-y: nth($padding, 1);
+    $padding-x: nth($padding, 2);
+    @if $padding-y != n {
+      padding-top: $padding-y;
+      padding-bottom: $padding-y;
     }
-    @if nth($sides, 2) != n {
-      padding-left: $padding;
-      padding-right: $padding;
+    @if $padding-x != n {
+      padding-left: $padding-x;
+      padding-right: $padding-x;
     }
   }
 
-  @else if length($sides) == 4 {
-    @if nth($sides, 1) != n {
-      padding-top: $padding;
+  @if length($padding) == 3 {
+    $padding-y-top: nth($padding, 1);
+    $padding-x: nth($padding, 2);
+    $padding-y-bottom: nth($padding, 3);
+    @if $padding-y-top != n {
+      padding-top: $padding-y-top;
     }
-    @if nth($sides, 2) != n {
-      padding-right: $padding;
+    @if $padding-x != n {
+      padding-right: $padding-x;
+      padding-left: $padding-x;
     }
-    @if nth($sides, 3) != n {
-      padding-bottom: $padding;
-    }
-    @if nth($sides, 4) != n {
-      padding-left: $padding;
+    @if $padding-y-bottom != n {
+      padding-bottom: $padding-y-bottom;
     }
   }
 
-  @else {
-    @warn "Scut-padding requires a $sides argument of 2 or 4 values."
+  @if length($padding) == 4 {
+    $padding-top: nth($padding, 1);
+    $padding-right: nth($padding, 2);
+    $padding-bottom: nth($padding, 3);
+    $padding-left: nth($padding, 4);
+    @if $padding-top != n {
+      padding-top: $padding-top;
+    }
+    @if $padding-right != n {
+      padding-right: $padding-right;
+    }
+    @if $padding-bottom != n {
+      padding-bottom: $padding-bottom;
+    }
+    @if $padding-left != n {
+      padding-left: $padding-left;
+    }
   }
-
 }
 
 // SCUT POSITIONING: ABSOLUTE
