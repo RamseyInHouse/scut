@@ -13,7 +13,7 @@ module.exports = (grunt) ->
       # Build Scut
       scut:
         options:
-          banner: "/*#{grunt.util.linefeed}* Scut, a collection of Sass/SCSS utilities.#{grunt.util.linefeed}* Documentation at http://davidtheclark.github.io/scut#{grunt.util.linefeed}*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+          banner: "/*#{grunt.util.linefeed}* Scut, a collection of Sass utilities to ease and improve our implementations of common style-code patterns.#{grunt.util.linefeed}* v#{currentVersion}#{grunt.util.linefeed}* Docs at http://davidtheclark.github.io/scut#{grunt.util.linefeed}*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
         src: [
           # Utilities that are dependencies for others
           "src/layout/_clearfix.scss"
@@ -275,12 +275,21 @@ module.exports = (grunt) ->
           "bower.json"
           "package.json"
           "docs/dev/assemble/data.yml"
+          "lib/scut.rb"
         ]
         overwrite: true
-        replacements: [
-          from: /\"version\": \"(.*)\"/g
+        replacements: [{
+        # For bower.json, package.json, and data.yml
+          from: /\"version\": \"(.*)\"/g,
           to: "\"version\": \"#{currentVersion}\""
-        ]
+        }, {
+        # For the Ruby business
+          from: /VERSION = \"(.*)\"/g,
+          to: "VERSION = \"#{currentVersion}\""
+        }, {
+          from: /DATE = \"(.*)\"/g,
+          to: "DATE = \"#{grunt.template.today('yyyy-mm-dd')}\""
+        }]
 
   grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"

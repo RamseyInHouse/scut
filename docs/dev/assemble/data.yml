@@ -642,7 +642,7 @@ categories:
         group-start: positioning
         name: positioning_coordinates
         type: *MO
-        use-name: scut-coordinates
+        use-name: scut-coords
         args:
           -
             variable: $coordinates

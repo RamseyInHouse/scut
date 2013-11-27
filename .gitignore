@@ -11,3 +11,5 @@ docs/dev/assets/scss/_concatenated-examples.scss
 test/*.html
 test/style/css
 test/style/scss/_tests.scss
+
+*.gem

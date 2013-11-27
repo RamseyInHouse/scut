@@ -5,8 +5,8 @@
   "authors": [
     "David Clark <david.dave.clark@gmail.com>"
   ],
-  "description": "A collection of Sass/SCSS utilities.",
-  "main": "src/_scut.scss",
+  "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns.",
+  "main": "dist/_scut.scss",
   "keywords": [
     "SCSS",
     "Sass",
