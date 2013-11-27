@@ -1,0 +1,12 @@
+// SCUT ELLIPSIS
+// http://davidtheclark.github.io/scut/#ellipsis
+
+@mixin scut-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+%scut-ellipsis {
+  @include scut-ellipsis;
+}
