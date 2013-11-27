@@ -460,7 +460,7 @@ categories:
 
           ("Inline" is a hip new verb: deploy liberally.)
 
-          Use an inline list if you don't mind your list items spaced out a little by default, like inline words. If you need them flush, with no interstitial space, try a [floated list](#floated-list).
+          Use an inline list if you don't mind your list items spaced out a little by default, like inline words. If you need them flush, with no interstitial space, try a [floated list](#list_floated).
 
           Only the list's immediate children are inlined (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
         example:
