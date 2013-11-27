@@ -1,4 +1,4 @@
-### 0.6.0
+### 0.6.0 (in the works)
 - Modified `scut-margin` and `scut-padding`.
 - Added `scut-center-block`.
 - Changed `scut-hide-text` to `scut-image-replace` and added `scut-hide-visually`.
@@ -9,7 +9,7 @@
 - Added `scut-border`.
 
 ### 0.4.1
-- "Fixed bug with `scut-foursquare`: it requires `box-sizing: border-box`."
+- Fixed bug with `scut-foursquare`: it requires `box-sizing: border-box`.
 
 ### 0.4.0
 - Started changelog!
