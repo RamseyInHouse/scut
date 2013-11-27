@@ -78,21 +78,36 @@
   </h2>
 
   <div class="entry-body">
+    <p>
+      Scut is a single file that can be copied and pasted, downloaded, or installed via Bower or RubyGems (for Compass). No trouble at all. Here are the details.
+    </p>
+    <h3>Method 1: Get the File and Use It</h3>
     <ol>
-      <li> Get the files. You have the following options:
+      <li> Get the file. You have the following options:
         <div class="install-list">
           <ul>
             <li>
-              <strong>Use <a href="http://bower.io/">Bower</a> (<em>recommended</em>)</strong>: <pre class="language-bash"><code>bower install scut --save-dev</code></pre> This will get you the latest release, without superfluous files, and save it as a <code>devDependency</code> for your project. The files you'll need to <code>@import</code> will be in the <code>dist/</code> directory.</li>
-            <li>Download <a href="https://github.com/davidtheclark/scut/releases">the latest release from Github</a>.
+              Use <a href="http://bower.io/">Bower</a>:
+              <pre class="language-bash"><code>bower install scut --save-dev</code></pre>
+              This will get you the latest release and save it as a <code>devDependency</code> for your project.</li>
+            <li>
+              Download <a href="{{github-url}}{{version}}/dist/_scut.scss">the latest release from Github</a>.
             </li>
           </ul>
         </div>
       </li>
-      <li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like this: <pre class="language-scss"><code>@import "path/to/scut";</code></pre></li>
+      <li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like so: <pre class="language-scss"><code>@import "path/to/scut";</code></pre></li>
     </ol>
-    <p><code>_scut.scss</code> is a concatenation of all the files in <code>src/</code>. To inspect the code you're using, you could look in either place.</p>
-    <p>Make sure you import Scut <em>above</em> any other stylesheets that will rely on it.</p>
+    <h3>Method 2: Compass Extension</h3>
+    <ol>
+      <li>
+        Install the RubyGem:
+        <pre class="language-bash"><code>gem install scut</code></pre>
+      </li>
+      <li>
+        Include Scut in your project by using <code>require</code> and <code>@import</code> according to the usual Compass-extension methods. You know: <code>require 'scut'</code>. And <code>@import 'scut'</code>. That kind of thing.
+      </li>
+    </ol>
   </div>
 
 </section>

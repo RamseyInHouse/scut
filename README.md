@@ -4,11 +4,17 @@
 
 For a prolonged introduction to Scut, [read "Introducing Scut" on CSS-Tricks](http://css-tricks.com/introducing-scut-new-sass-utility-library).
 
+If you have any questions about Sass, they are answered [in Sass's fine documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html).
+
+## Installing and Using
+
 > [Please visit the complete documentation here:<br>http://davidtheclark.github.io/scut/](http://davidtheclark.github.io/scut/)
 
-Installation and usage should be explained there, as well as some of the general principles of the project.
+Usage should be explained there, as is installation. But I'll explain installation here, too, for your convenience. You can install Scut by:
 
-If you have any questions about Sass, they are answered [in Sass's fine documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html).
+- Using Bower: `bower install scut --save-dev`.
+- Downloading the file from [the latest release](https://github.com/davidtheclark/scut/releases).
+- Using Scut as a Compass extension by installing the RubyGem (`gem install scut`) and then performing the usual Compass `require` and `@import` business.
 
 ## Contributing
 

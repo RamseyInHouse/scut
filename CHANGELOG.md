@@ -1,4 +1,5 @@
 ### 0.6.0 (in the works)
+- Added Ruby config so Scut can be used as a standard Compass extension.
 - Modified `scut-margin` and `scut-padding`.
 - Added `scut-center-block`.
 - Changed `scut-hide-text` to `scut-image-replace` and added `scut-hide-visually`.
