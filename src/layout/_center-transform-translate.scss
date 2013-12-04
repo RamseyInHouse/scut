@@ -1,0 +1,43 @@
+@mixin scut-center-tt(
+  $side: null // or x or y
+) {
+  position: relative;
+
+  @if $side != x {
+    top: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @if $side != y {
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  $translate-val: null;
+
+  @if not $side {
+    $translate-val: translate(-50%, -50%);
+  } @else if $side != x {
+    $translate-val: translateY(-50%);
+  } @else if $side != y {
+    $translate-val: translateX(-50%);
+  }
+
+  -webkit-transform: $translate-val;
+  -ms-transform: $translate-val;
+  transform: $translate-val;
+}
+
+%scut-center-tt {
+  @include scut-center-tt;
+}
+
+%scut-center-tt-x {
+  @include scut-center-tt(x);
+}
+
+%scut-center-tt-y {
+  @include scut-center-tt(y);
+}
