@@ -1,0 +1,38 @@
+/* hidden rules */
+.eg-center-transform-container {
+  background: $eg-dark;
+  height: 6em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+  &.m-large {
+    height: 10em;
+  }
+}
+.eg-center-transform {
+  background: $eg-muted;
+  padding: 1em;
+}
+/* end hidden rules */
+
+.eg-center-transform-container {
+  position: relative;
+}
+.eg-center-transform {
+  display: inline-block;
+  &.m-1 {
+    @extend %scut-center-transform;
+    // or @include scut-center-transform;
+  }
+  &.m-2 {
+    @extend %scut-center-transform-x;
+    // or @include scut-center-transform(x);
+  }
+  &.m-3 {
+    @include scut-center-transform(y);
+    // or @extend %scut-center-transform-y;
+  }
+  &.m-4 {
+    @include scut-center-transform;
+  }
+}

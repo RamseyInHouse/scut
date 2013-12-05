@@ -1,0 +1,49 @@
+// SCUT CENTER TRANSFORM
+// http://davidtheclark.github.io/scut/#center_transform
+
+@mixin scut-center-transform (
+  $axis: false // or x or y
+) {
+
+  position: absolute;
+
+  @if $axis != x {
+    top: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @if $axis != y {
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  $translate-val: null;
+
+  @if not $axis {
+    $translate-val: translate(-50%, -50%);
+  }
+  @else if $axis != x {
+    $translate-val: translateY(-50%);
+  }
+  @else if $axis != y {
+    $translate-val: translateX(-50%);
+  }
+
+  -webkit-transform: $translate-val;
+  -ms-transform: $translate-val;
+  transform: $translate-val;
+}
+
+%scut-center-transform {
+  @include scut-center-transform;
+}
+
+%scut-center-transform-x {
+  @include scut-center-transform(x);
+}
+
+%scut-center-transform-y {
+  @include scut-center-transform(y);
+}

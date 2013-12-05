@@ -275,7 +275,7 @@ categories:
         text: |
           Center an absolutely positioned element: horizontally, vertically, or both ways.
 
-          *This method only works if the element-to-be-centered has a fixed dimension on the relevant axis* &mdash; fixed width to center horizontally, fixed height to center vertically.
+          **This method only works if the element-to-be-centered has a fixed dimension on the relevant axis** &mdash; fixed width to center horizontally, fixed height to center vertically. *If your element cannot have fixed dimensions (and you do not need to support IE8), consider <a href="#center_transform">`scut-center-transform`</a>, below.*
 
           If you do not want to center horizontally &mdash; only vertically &mdash; pass `n` (short for `null`, "no," "nothing," etc.) for the `width` value. Same goes for height, if you do not want to center vertically. See the examples below for clarification.
         example:
@@ -312,6 +312,62 @@ categories:
           html: |
             <div class="eg-center-block m-1">Variation 1</div>
             <div class="eg-center-block m-2">Variation 2</div>
+
+      -
+        name: center_transform
+        type: &MOP mixin, with extension placeholder(s)
+        use-name: scut-center-transform
+        args:
+          -
+            variable: $axis
+            default: "false"
+            comment: |
+              Leave `false` to center on both axes; or set to `x` or `y` to center on one axis only.
+        compatibility: |
+          This utility uses a CSS `transform`, so will not work with IE8. Also note that `transform` requires vendor prefixes, which are included in the utility.
+        text: |
+          Center an element **without fixed dimensions**, vertically, horizontally, or both ways.
+
+          (If your element *does* have fixed dimensions on each axis you wish to center, you may enjoy the primitive browser support and vendorprefixlessness of <a href="#center_absolutely">`scut-center-absolutely`</a>, above.)
+
+          Be warned: *This method uses `position: absolute`, so the parent within which you'll be centering must have a `position` value other than `static`*.
+
+          If you pass no arguments, both axes get the treatment; or you can pass `x` or `y` to center on one axis only.
+
+          These three varieties are also available with three extension placeholders:
+
+          - **`%scut-center-transform`**
+          - **`%scut-center-tranform-x`**
+          - **`%scut-center-transform-y`**
+
+          Also, notice that an alias is provided for vertical centering: <a href="#v-center_transform">`scut-vcenter-tt`</a> (fitting the `vcenter` naming convention).
+        example:
+          html: |
+            <div class="eg-center-transform-container">
+              <div class="eg-center-transform m-1">
+                Variation 1
+              </div>
+            </div>
+            <div class="eg-center-transform-container">
+              <div class="eg-center-transform m-2">
+                Variation 2
+              </div>
+            </div>
+            <div class="eg-center-transform-container">
+              <div class="eg-center-transform m-3">
+                Variation 3
+              </div>
+            </div>
+            <div class="eg-center-transform-container m-large">
+              <div class="eg-center-transform m-4">
+                <p>Variation 4</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+              </div>
+            </div>
+        references:
+          -
+            description: "CSS-Tricks: \"Centering Percentage Width/Height Elements\""
+            url: http://css-tricks.com/centering-percentage-widthheight-elements/
 
       -
         name: clearfix
@@ -478,7 +534,7 @@ categories:
 
       -
         name: list_punctuated
-        type: &MOP mixin, with extension placeholder(s)
+        type: *MOP
         use-name: scut-list-punctuated
         args:
           -
@@ -895,6 +951,19 @@ categories:
           -
             description: "CSS-Tricks: \"Centering in the Unknown\""
             url: http://css-tricks.com/centering-in-the-unknown/
+
+      -
+        name: v-center_transform
+        type: *MP
+        use-name: scut-vcenter-tt
+        compatibility: |
+          This utility uses a CSS `transform`, so will not work with IE8. Also note that `transform` requires vendor prefixes (which are included).
+        text: |
+          Vertically center an element using the clever `transform` method.
+
+          **This utility is simply an alias for <a href="#center_transform">`scut-center-transform`</a>, but centering only on the vertical axis.** It's included to fit with the `vcenter` naming convention.
+
+          So see the examples for <a href="#center_transform">`scut-center-transform`</a>.
 
   -
     category: typography

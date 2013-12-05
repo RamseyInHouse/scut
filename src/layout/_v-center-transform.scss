@@ -1,0 +1,12 @@
+// SCUT V-CENTER: TRANSFORM
+// http://davidtheclark.github.io/scut/#v-center_transform
+
+// Depends on scut-center-transform
+
+@mixin scut-vcenter-tt () {
+  @include scut-center-transform(y);
+}
+
+%scut-vcenter-tt {
+  @include scut-vcenter-tt;
+}
