@@ -1,0 +1,46 @@
+// SCUT LIST: CUSTOM
+// http://davidtheclark.github.io/scut/#list_custom
+
+@mixin scut-list-custom (
+  $content: "\2022",
+  $marker-width: 0.75em,
+  $pad: 0
+) {
+
+  $content-val: null;
+  $counter: index($content, count);
+  @if $counter {
+    @if length($content) == 3 {
+      $content-val: counter(scutlistcounter, nth($content, 3))nth($content,2);
+    }
+    @else if length($content) == 2 {
+      $content-val: counter(scutlistcounter)nth($content,2);
+    }
+    @else {
+      $content-val: counter(scutlistcounter);
+    }
+  }
+  @else {
+    $content-val: $content;
+  }
+
+  padding-left: $marker-width + $pad;
+  list-style-type: none;
+
+  & > li {
+    position: relative;
+    @if $counter {
+      counter-increment: scutlistcounter;
+    }
+    &:before {
+      content: $content-val;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -$marker-width;
+      width: $marker-width;
+      @content;
+    }
+  }
+
+}

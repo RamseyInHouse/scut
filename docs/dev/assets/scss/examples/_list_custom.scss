@@ -1,0 +1,34 @@
+/* hidden rules */
+.eg-list-custom {
+  margin: 0;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+
+/* end hidden rules */
+
+.eg-list-custom {
+  &.m-1 {
+    @include scut-list-custom {
+      color: $eg-light;
+    }
+  }
+  &.m-2 {
+    @include scut-list-custom("\00bb", 1.3em, 1em);
+  }
+  &.m-3 {
+    @include scut-list-custom(count, 2em, 2em);
+  }
+  &.m-4 {
+    @include scut-list-custom(count ")" lower-alpha, 1.5em) {
+      color: $eg-dark;
+      font-size: 1.5em;
+      font-weight: bold;
+      top: -0.25em;
+    }
+    & > li + li {
+      margin-top: 1em;
+    }
+  }
+}
