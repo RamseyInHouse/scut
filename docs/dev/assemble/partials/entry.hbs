@@ -63,6 +63,10 @@
 
 <section class="description">
   {{#markdown}}{{{text}}}{{/markdown}}
+  {{#is use-name "$scut-[something]"}}
+  <!-- characters table -->
+  {{>characters}}
+  {{/is}}
 </section>
 
 {{#if example}}

@@ -1114,8 +1114,6 @@ categories:
 
           The names of these variables often correspond with HTML character entity references that you can use in your markup. For example, `$scut-nbsp` is the same character as `&nbsp;` in HTML.
 
-          Click View Source to see the full list.
-
       -
         name: font-face
         type: *MO
