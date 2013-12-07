@@ -118,9 +118,11 @@
 
 // Depends on `scut-strip-unit`.
 
+$scut-em-base: 16 !default;
+
 @function scut-em (
   $pixels,
-  $base: 16
+  $base: $scut-em-base
 ) {
 
   // $base could be in em or px (no unit = px).

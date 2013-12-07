@@ -1387,7 +1387,7 @@ categories:
 
       -
         name: pixels-to-ems
-        type: function
+        type: function, with an exposed settings-variable
         use-name: scut-em
         args:
           -
@@ -1396,7 +1396,7 @@ categories:
           -
             variable: $base
             default: 16
-            comment: A base-value with which to calculate the `em`-value. If there are no units, it's interpreted as *pixels*; but you can use `em`-values, as well.
+            comment: A base-value with which to calculate the `em`-value. If there are no units, it's interpreted as *pixels*; but you can use `em`-values, as well. **The `$base` default value can be changed for your project by setting your own `$scut-em-base` variable prior to using this function** (see examples).
         text: |
           Convert pixel-values to `em`-values &mdash; with flexibility for situations in which the `em`-value has to be calculated in relation to something other than a default `16px font-size`. *Pass a single value or a list of values.*
 
@@ -1437,6 +1437,10 @@ categories:
 
               <div class="eg-em m-7">
                 Variation 7: Demonstrating a list of values being passed, as well as the option of including or leaving out the px unit.
+              </div>
+
+              <div class="eg-em m-8">
+                Variation 8: You can change the default $base value to avoid setting it manually over and over again.
               </div>
             </div>
 

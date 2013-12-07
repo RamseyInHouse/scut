@@ -27,7 +27,7 @@ module.exports.register = function(Handlebars, options) {
   });
 
   function removeHiddenRules(str) {
-    return str.replace(/^\/\* hidden rules \*\/$[\s\S]*^\/\* end hidden rules \*\/$\n\n/gm, '');
+    return str.replace(/(^\/\* hidden rules \*\/$[\s\S]*?)^\/\* end hidden rules \*\/$\n\n/gm, '');
   }
 
   Handlebars.registerHelper('getExampleScss', function(name) {

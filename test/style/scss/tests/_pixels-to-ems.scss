@@ -1,3 +1,9 @@
+.pixels-ems-c {
+  font-size: 20px;
+}
+
+$scut-em-base: 20;
+
 .pixels-ems {
   background: gray;
   margin-bottom: 1em;
@@ -7,28 +13,6 @@
   }
   &.m-2 {
     width: 300px;
-  }
-
-  &.m-3,
-  &.m-4 {
-    font-size: 20px;
-  }
-  &.m-3 {
-    width: scut-em(400, 20px);
-  }
-  &.m-4 {
-    width: 400px;
-  }
-
-  &.m-5,
-  &.m-6 {
-    font-size: 2em;
-  }
-  &.m-5 {
-    width: scut-em(500, 2em);
-  }
-  &.m-6 {
-    width: 500px;
   }
 
 }
