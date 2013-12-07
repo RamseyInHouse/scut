@@ -184,6 +184,44 @@ categories:
             url: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
 
       -
+        name: rems_with_fallback
+        type: *MO
+        use-name: scut-rem-fallback
+        args:
+          -
+            variable: $pixels
+            comment: |
+              The `px`-value you wish to convert to `rem`s. No `px` unit necessary (e.g. `20` is fine, so is `20px`). *Passing a list will result in a list of `rem` values* (see examples).
+          -
+            variable: $property
+            default: font-size
+            comment: |
+              The CSS property that you want to apply your `rem`-value to (along with its `px`-value fallback).
+        text: |
+          Use `rem` values while providing a `px`-value fallback for <IE8 and Opera Mini.
+
+          Take a look at [Jonathan Snook's article on the issue](http://snook.ca/archives/html_and_css/font-size-with-rem) to learn about this fallback trick &mdash; why it's necessary and why it works.
+
+          **If you don't need to support IE8 and Opera Mini, consider using the [`scut-rem` function, below](#pixels-to-rems)**, instead, so you don't have to pass the CSS property as an argument.
+
+          Also, have a look at [`scut-rem`'s entry](#pixels-to-rems) for more information (and references) about `rem` units, how they differ from `em` units, and the compatibility issue.
+        example:
+          html: |
+            <div class="eg-rem-fallback m-1">
+              Variation 1: with a font-size of 20px.
+            </div>
+            <div class="eg-rem-fallback m-2">
+              Variation 2: with a font-size in rems matching 20px, and a true-pixel-value fallback.
+            </div>
+            <div class="eg-rem-fallback m-3">
+              Variation 3: Demonstrating 1) the $property argument, 2) that you can pass a list of pixels-values, and 3) that you can include or exclude the px-unit.
+            </div>
+        references:
+          -
+            description: "Jonathan Snook: \"Font Sizing With Rem\""
+            url: "http://snook.ca/archives/html_and_css/font-size-with-rem"
+
+      -
         name: reset
         type: *MO
         use-name: scut-reset
@@ -1354,21 +1392,22 @@ categories:
         args:
           -
             variable: $pixels
-            comment: The `px`-value you wish to convert to `em`s.
+            comment: The `px`-value you wish to convert to `em`s. No `px` unit necessary (e.g. `20` is fine, so is `20px`). *Passing a list will result in a list of `rem` values* (see examples).
           -
             variable: $base
             default: 16
             comment: A base-value with which to calculate the `em`-value. If there are no units, it's interpreted as *pixels*; but you can use `em`-values, as well.
         text: |
-          Convert pixel-values to `em`-values.
+          Convert pixel-values to `em`-values &mdash; with flexibility for situations in which the `em`-value has to be calculated in relation to something other than a default `16px font-size`. *Pass a single value or a list of values.*
 
           This function eases the burden on those who build flexible, `em`-based layouts but still find themselves thinking in pixels or using tools that speak in pixels.
-
-          It provides some flexibility for situations in which the `em`-value has to be calculated in relation to something other than a default `16px` `font-size`.
 
           If a `$base` argument is provided, the `em`-value will be calculated relative to that `$base` (by default, `$base` is assumed to be `16`). If that `$base` is in pixels, everything should work smoothly, no questions asked. *You can also provide a `$base` in ems* &mdash; but this is trickier: it will only work if your `em`s are not more than one layer deep.
 
           <small>(For example, if your element is the child of a container whose `font-size` is an `em`-value other than `1em`, you can pass the `font-size` as the `$base` argument and everything will work fine (see example variations 5 and 6), But if the container has a `font-size` in `em`s (not `1em`), and a child of it has a `font-size` in `em`s (also not `1em`), and your messing with a grandchild ... things will go wrong. So, again, I don't suggest trying to use this function three or more levels deep in `em`s.)</small>
+
+          **If you're worried about these nesting issues and want to use `rem` units, instead, try the [`scut-rem` function, below](#pixels-to-rems) or the [`scut-rem-fallback` mixin, above](#rems_with_fallback).**
+
         example:
           html: |
             <div class="eg-em-c">
@@ -1377,7 +1416,7 @@ categories:
               </div>
 
               <div class="eg-em m-2">
-                Variation 2: 300px wide, in regular pixels
+                Variation 2: 300px wide, in regular pixels (for reference)
               </div>
 
               <div class="eg-em m-3">
@@ -1395,7 +1434,55 @@ categories:
               <div class="eg-em m-6">
                 Variation 6: 500px wide, in pixels, with a different base size in ems
               </div>
+
+              <div class="eg-em m-7">
+                Variation 7: Demonstrating a list of values being passed, as well as the option of including or leaving out the px unit.
+              </div>
             </div>
+
+      -
+        name: pixels-to-rems
+        type: function
+        use-name: scut-rem
+        args:
+          -
+            variable: $pixels
+            comment: |
+              The `px`-value you wish to convert to `rem`s. No `px` unit necessary (e.g. `20` is fine, so is `20px`). *Passing a list will result in a list of `rem` values* (see examples).
+        compatibility: |
+          IE8 and Opera Mini do not support `rem` units. If you want to support these browsers you must provide a fallback in pixels &mdash; which Scut can do with the [`scut-rem-fallback` mixin, above](#rems_with_fallback).
+        text: |
+          Convert pixel-values to `rem`-values. *Pass a single value or a list of values.*
+
+          Like [`scut-em`](#pixels-to-ems), above, this function makes (limited parts of) life easier for those of us who appreciate the many benefits of relative units but still find themselves thinking in pixels, or (what's especially common) using tools that speak in pixels.
+
+          For a good description of the differences between `em` and `rem` units, coupled with some examples of why `rem`s are handy, read ["In Defense of Rem Units" on the Harvest blog](http://techtime.getharvest.com/blog/in-defense-of-rem-units). For an alternative perspective, in favor of `em`s, try [Filament Group's  "On ems and rems"](http://filamentgroup.com/lab/on_ems_and_rems/). The example below illustrates the main difference: `rem`s are always relative to the root `html` element, not to the subject-element's parent.
+
+          **Please note the compatibility issue with this utility: If you need `px`-value fallbacks to support IE8 and Opera Mini, use the [`scut-rem-fallback` mixin](#rems_with_fallback) instead of this function.**
+
+          If you're really worried about this compatibility issue, you might also consider using [`scut-em`](#pixels-to-ems), instead.
+        example:
+          html: |
+            <div class="eg-rem m-1">
+              Variation 1: 24px font-size, in regular pixels
+            </div>
+
+            <div class="eg-rem m-2">
+              Variation 2: 24px font-size converted to rems
+            </div>
+
+            <div class="eg-rem-c">
+              <div class="eg-rem m-3">
+                Variation 3: 24px font-size wide in rems, nested inside a div with a font-size of 1000px. No effect!
+              </div>
+            </div>
+
+            <div class="eg-rem m-4">
+              Variation 4: Showing that a list of px values can be passed, and that the px unit is optional.
+            </div>
+          show-html: true
+
+
 
       -
         name: strip_unit

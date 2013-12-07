@@ -129,7 +129,30 @@
   $multiplier: if(unit($base) == em, 16, 1);
   $divisor: scut-strip-unit($base) * $multiplier;
 
-  @return ($pixels / $divisor) * 1em;
+  $em-vals: null;
+  @each $val in $pixels {
+    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
+    $em-vals: append($em-vals, $val-in-ems);
+  }
+  @return $em-vals;
+
+}
+
+// SCUT PIXELS TO REMS
+// http://davidtheclark.github.io/scut/#pixels-to-rems
+
+// Depends on `scut-strip-unit`.
+
+@function scut-rem (
+  $pixels
+) {
+
+  $rem-vals: null;
+  @each $val in $pixels {
+    $val-in-rems: scut-strip-unit($val) / 16 * 1rem;
+    $rem-vals: append($rem-vals, $val-in-rems);
+  }
+  @return $rem-vals;
 
 }
 
@@ -312,6 +335,28 @@
 
 %scut-image-replace {
   @include scut-image-replace;
+}
+
+// SCUT REMS WITH FALLBACK
+// http://davidtheclark.github.io/scut/#rems_with_fallback
+
+// Depends on scut-rem and scut-strip-unit
+
+@mixin scut-rem-fallback (
+  $pixels,
+  $property: font-size
+) {
+
+  $px-vals: null;
+  @each $val in $pixels {
+    $val-in-px: scut-strip-unit($val) * 1px;
+    $px-vals: append($px-vals, $val-in-px);
+  }
+  $rem-vals: scut-rem($pixels);
+
+  #{$property}: $px-vals;
+  #{$property}: $rem-vals;
+
 }
 
 // SCUT RESET

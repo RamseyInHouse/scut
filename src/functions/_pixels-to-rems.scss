@@ -1,0 +1,17 @@
+// SCUT PIXELS TO REMS
+// http://davidtheclark.github.io/scut/#pixels-to-rems
+
+// Depends on `scut-strip-unit`.
+
+@function scut-rem (
+  $pixels
+) {
+
+  $rem-vals: null;
+  @each $val in $pixels {
+    $val-in-rems: scut-strip-unit($val) / 16 * 1rem;
+    $rem-vals: append($rem-vals, $val-in-rems);
+  }
+  @return $rem-vals;
+
+}

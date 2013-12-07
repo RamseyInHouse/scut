@@ -1,0 +1,21 @@
+// SCUT REMS WITH FALLBACK
+// http://davidtheclark.github.io/scut/#rems_with_fallback
+
+// Depends on scut-rem and scut-strip-unit
+
+@mixin scut-rem-fallback (
+  $pixels,
+  $property: font-size
+) {
+
+  $px-vals: null;
+  @each $val in $pixels {
+    $val-in-px: scut-strip-unit($val) * 1px;
+    $px-vals: append($px-vals, $val-in-px);
+  }
+  $rem-vals: scut-rem($pixels);
+
+  #{$property}: $px-vals;
+  #{$property}: $rem-vals;
+
+}

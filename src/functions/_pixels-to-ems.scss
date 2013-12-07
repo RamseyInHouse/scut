@@ -14,6 +14,11 @@
   $multiplier: if(unit($base) == em, 16, 1);
   $divisor: scut-strip-unit($base) * $multiplier;
 
-  @return ($pixels / $divisor) * 1em;
+  $em-vals: null;
+  @each $val in $pixels {
+    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
+    $em-vals: append($em-vals, $val-in-ems);
+  }
+  @return $em-vals;
 
 }
