@@ -1,6 +1,7 @@
 ### 0.7.0
 - Updated `scut-em` to accept lists of pixel-values.
 - Added `scut-rem` and `scut-rem-fallback`.
+- Added `scut-list-custom`.
 - Added `scut-center-trasform` and `scut-vcenter-tt`.
 
 ### 0.6.0
