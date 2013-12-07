@@ -1,7 +1,7 @@
 To release:
 
 - Add notes to changelog.
-- Change version number in Gruntfile.
+- Change version numbers at top of Gruntfile.
 - Run `grunt version`.
 - Build and push a new gem.
 - Delete the gem.

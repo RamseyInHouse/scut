@@ -6,6 +6,11 @@
   @include scut-absolute(n 0 0.5em n);
 }
 
+.older-docs {
+  display: inline;
+  @extend %scut-list-comma;
+}
+
 .intro {
   &:after {
     content: "-- UTILITIES BELOW --";

@@ -1,4 +1,5 @@
-currentVersion = "0.6.0"
+currentVersion = "0.7.0"
+
 path = require "path"
 
 module.exports = (grunt) ->
@@ -65,14 +66,22 @@ module.exports = (grunt) ->
         files:
           "docs/dev/assets/main.css": "docs/dev/assets/main.css"
 
-    cssmin:
-      # Minify docs styles into dist
+
+    cssUrlEmbed:
+      # Embed URLs (fonts, images) into CSS,
+      # and put the result in dist/
       docs:
         files:
           "docs/dist/assets/css-built.min.css": "docs/dev/assets/main.css"
 
+    cssmin:
+      # Minify docs styles in dist/
+      docs:
+        files:
+          "docs/dist/assets/css-built.min.css": "docs/dist/assets/css-built.min.css"
+
     uglify:
-      # Minify docs JS into dist
+      # Minify docs JS into dist/
       docs:
         files:
           "docs/dist/assets/js-built.min.js": [
@@ -132,34 +141,16 @@ module.exports = (grunt) ->
           src: "docs/dev/assets/images/svg-assets/opt"
           dest: "docs/dev/assets/scss/grunticon"
 
-    imagemin:
-      # Minify docs images into dist
-      docs:
-        files: [
-          expand: true
-          cwd: "docs/dev/assets/images"
-          src: ["*.{jpg,png}"]
-          dest: "docs/dist/assets/images"
-        ]
-
     htmlmin:
       # Minify docs dist html
       docs:
         options:
           removeComments: true
-          collapseWhitespace: true
+          collapseWhitespace: false
         files:
           "docs/dist/index.html": "docs/dist/index.html"
 
     copy:
-      # Copy docs fonts from dev to dist
-      docsFonts:
-        files: [
-          expand: true
-          cwd: "docs/dev/assets/fonts"
-          src: ["*"]
-          dest: "docs/dist/assets/fonts"
-        ]
       # Copy docs/dist to a parallel gh-pages dir
       # for updating the live site
       docsDist:
@@ -177,7 +168,6 @@ module.exports = (grunt) ->
           src: [
             "index.html"
             "assets/*"
-            "assets/**/*"
           ]
           dest: "../gh-pages/old/v#{currentVersion}/"
         ]
@@ -235,10 +225,6 @@ module.exports = (grunt) ->
         files: ["docs/dev/assets/images/svg-assets/raw/*"]
         tasks: ["svg"]
 
-      docsImages:
-        files: ["docs/dev/assets/images/*"]
-        tasks: ["imagemin:docs"]
-
     connect:
       server:
         options:
@@ -256,7 +242,6 @@ module.exports = (grunt) ->
       # Clean up docs optimized images
       images:
         src: [
-          "docs/dist/images"
           "docs/dev/images/svg-assets/opt"
         ]
       # Clean up docs dist folder
@@ -296,7 +281,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
-  grunt.loadNpmTasks "grunt-contrib-imagemin"
   grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-htmlmin"
@@ -306,6 +290,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-newer"
   grunt.loadNpmTasks "grunt-grunticon"
   grunt.loadNpmTasks "grunt-text-replace"
+  grunt.loadNpmTasks "grunt-css-url-embed"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", [
@@ -326,11 +311,6 @@ module.exports = (grunt) ->
     "svgmin:docs"
     "grunticon:docs"
   ]
-  grunt.registerTask "reImage", [
-    "clean:images"
-    "imagemin:docs"
-    "svg"
-  ]
   grunt.registerTask "test", [
     "newer:assemble:test"
     "testStyle"
@@ -341,9 +321,8 @@ module.exports = (grunt) ->
   ]
   grunt.registerTask "docsDist", [
     "docsDev"
+    "cssUrlEmbed:docs"
     "cssmin:docs"
-    "newer:imagemin:docs"
-    "copy:docsFonts"
     "uglify:docs"
     "assemble:docsDist"
     "htmlmin:docs"
@@ -357,7 +336,6 @@ module.exports = (grunt) ->
   ]
   grunt.registerTask "gh-pages", [
     "build"
-    "docsStyle"
     "docsDist"
     "copy:docsDist"
   ]
@@ -365,5 +343,6 @@ module.exports = (grunt) ->
     "copy:docsVersion"
     "replace:version"
     "assemble"
+    "build"
   ]
   grunt.registerTask "default", ["build"]
