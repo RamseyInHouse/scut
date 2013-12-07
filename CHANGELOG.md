@@ -1,3 +1,8 @@
+### 0.7.0
+- Updated `scut-em` to accept lists of pixel-values.
+- Added `scut-rem` and `scut-rem-fallback`.
+- Added `scut-center-trasform` and `scut-vcenter-tt`.
+
 ### 0.6.0
 - Added RubyGem config so Scut can be used as a standard Compass extension.
 - Modified `scut-margin` and `scut-padding`.
