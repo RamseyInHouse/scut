@@ -1,4 +1,5 @@
 ### 0.7.0 (in the works)
+- Updated `scut-fill` for two different filling approaches: all coordinates = 0 or width/height = 100%.
 - Updated `scut-em` to accept lists of pixel-values and exposed the `$scut-em-base` default value to users.
 - Added `scut-rem` and `scut-rem-fallback`.
 - Added `scut-list-custom`.

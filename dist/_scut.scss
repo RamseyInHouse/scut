@@ -685,13 +685,21 @@ $scut-em-base: 16 !default;
 // SCUT FILL
 // http://davidtheclark.github.io/scut/#fill
 
-@mixin scut-fill {
+@mixin scut-fill (
+  $width-height: false
+) {
 
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  @if $width-height {
+    width: 100%;
+    height: 100%;
+  }
+  @else {
+    right: 0;
+    bottom: 0;
+  }
 
 }
 

@@ -3,9 +3,14 @@
   border: 5px solid $eg-dark;
   height: 6em;
   padding: 1em;
+  &:nth-of-type(2) {
+    margin-bottom: 2em;
+  }
 }
 .eg-fill {
-  padding: 2.5em 1em 0;
+  &.m-1 {
+    padding: 2.5em 1em 0;
+  }
 }
 /* end hidden rules */
 
@@ -14,7 +19,15 @@
   position: relative;
 }
 .eg-fill {
-  @extend %scut-fill;
-  // or @include scut-fill;
-  background-color: rgba(0,0,0,0.4);
+  &.m-1 {
+    background-color: rgba(0,0,0,0.4);
+    @extend %scut-fill;
+    // or @include scut-fill;
+  }
+  &.m-2 {
+    @include scut-fill;
+  }
+  &.m-3 {
+    @include scut-fill(true);
+  }
 }
