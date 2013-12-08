@@ -1,5 +1,5 @@
 @mixin scut-vcenter-tt() {
-  @include scut-center-tt-y;
+  @include scut-center-tt(y);
 }
 
 %scut-vcenter-tt {
