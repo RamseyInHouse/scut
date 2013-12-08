@@ -1,5 +1,9 @@
 /* hidden rules */
 .eg-list-inline {
+  margin: 1em 0 0;
+  &.m-1 {
+    margin-top: 0;
+  }
   & > li {
     @extend %eg-dark-btn;
   }
@@ -13,8 +17,5 @@
   }
   &.m-2 {
     @include scut-list-inline(1em);
-  }
-  &:not(:first-child) {
-    margin-top: 1em;
   }
 }

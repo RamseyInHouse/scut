@@ -27,8 +27,7 @@
 @mixin scut-list-unstyled {
 
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  padding-left: 0;
 
 }
 
@@ -884,6 +883,8 @@ $scut-em-base: 16 !default;
 ) {
 
   @include scut-list-unstyled;
+  margin-top: 0;
+  margin-bottom: 0;
 
   & > li {
     display: $display;

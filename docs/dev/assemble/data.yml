@@ -519,7 +519,9 @@ categories:
         type: *MP
         use-name: scut-list-unstyled
         text: |
-          Remove default styling (`margin`, `padding`, and `list-style-type`) from a list.
+          Remove default styling (`padding-left` and `list-style-type`) from a list.
+
+          (Browser-default top and bottom margins are left intact: probably, in most cases, either you want those defaults or you want to set your own margins and don't want Scut to override your setting.)
         example:
           html: |
             <ul class="eg-unstyled-list">

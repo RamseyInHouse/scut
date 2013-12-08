@@ -9,6 +9,8 @@
 ) {
 
   @include scut-list-unstyled;
+  margin-top: 0;
+  margin-bottom: 0;
 
   & > li {
     display: $display;

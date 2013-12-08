@@ -167,6 +167,7 @@
 
 .refs {
   @extend %scut-list-unstyled;
+  margin: 0;
   li {
     margin-bottom: 0.3em;
     padding-left: 1.3em;

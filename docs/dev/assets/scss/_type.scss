@@ -52,9 +52,6 @@ a code {
 
 .list {
   color: white;
-  ul {
-    @extend %scut-list-unstyled;
-  }
 }
 
 h1,

@@ -1,5 +1,9 @@
 .list {
   line-height: 1.3;
+  ul {
+    @extend %scut-list-unstyled;
+    margin: 0;
+  }
 }
 
 .main-link {

@@ -1,5 +1,9 @@
 /* hidden rules */
 .eg-list-floated {
+  margin: 1em 0 0;
+  &.m-1 {
+    margin-top: 0;
+  }
   & > li {
     @extend %eg-dark-btn;
   }
@@ -16,8 +20,5 @@
   }
   &.m-3 {
     @include scut-list-floated(2em, right);
-  }
-  &:not(:first-child) {
-    margin-top: 1em;
   }
 }
