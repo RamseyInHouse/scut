@@ -1,4 +1,4 @@
-### 0.7.0 (in the works)
+### 0.7.0
 - Updated `scut-list-unstyled` for less aggressive resetting; modified related utilities to fit.
 - Updated `scut-fill` for two different filling approaches: all coordinates = 0 or width/height = 100%.
 - Updated `scut-em` to accept lists of pixel-values and exposed the `$scut-em-base` default value to users.
