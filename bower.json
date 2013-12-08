@@ -23,7 +23,9 @@
     "test",
     "tests",
     "Gruntfile.coffee",
-    "package.json"
+    "package.json",
+    "lib/*",
+    "scut.gemspec"
   ],
   "devDependencies": {
     "normalize-scss": "~2.1.2",
