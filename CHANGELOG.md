@@ -1,3 +1,6 @@
+### 0.7.1
+- Bug fixes.
+
 ### 0.7.0
 - Updated `scut-list-unstyled` for less aggressive resetting; modified related utilities to fit.
 - Updated `scut-fill` for two different filling approaches: all coordinates = 0 or width/height = 100%.
