@@ -1226,15 +1226,6 @@ $scut-em-base: 16 !default;
   @include scut-vcenter-td;
 }
 
-@mixin scut-vcenter-tt() {
-  @include scut-center-transform(y);
-}
-
-%scut-vcenter-tt {
-  @include scut-vcenter-tt;
-}
-
-
 // SCUT V-CENTER: TRANSFORM
 // http://davidtheclark.github.io/scut/#v-center_transform
 
