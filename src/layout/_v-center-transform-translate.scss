@@ -1,0 +1,7 @@
+@mixin scut-vcenter-tt() {
+  @include scut-center-transform(y);
+}
+
+%scut-vcenter-tt {
+  @include scut-vcenter-tt;
+}
