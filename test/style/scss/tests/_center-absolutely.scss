@@ -5,6 +5,6 @@
 }
 
 .vcenter-abs {
-  @include scut-center-absolutely(7em 30px);
+  @include scut-center-absolutely(7em 10em);
   background: gray;
 }
