@@ -67,6 +67,10 @@
     width: auto;
     -webkit-appearance: none;
     -webkit-font-smoothing: antialiased;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 
