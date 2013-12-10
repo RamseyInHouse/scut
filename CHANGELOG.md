@@ -1,3 +1,6 @@
+### 0.8.0 (in the works)
+- Updated `scut-reset` so that specific resets are excludable.
+
 ### 0.7.1
 - Bug fixes.
 

@@ -36,8 +36,6 @@
 @mixin scut-reset-pointer {
   // Clickable form elements should have a pointer.
   label,
-  input,
-  textarea,
   select,
   option,
   button {
@@ -47,12 +45,12 @@
 
 @mixin scut-reset-form {
   fieldset {
-      border: 0;
-      margin: 0;
-      padding: 0;
+    border: 0;
+    margin: 0;
+    padding: 0;
   }
   textarea {
-      resize: vertical;
+    resize: vertical;
   }
 }
 
@@ -72,7 +70,7 @@
   }
 }
 
-@mixin scut-reset-paragraphs {
+@mixin scut-reset-paragraph {
   // Some paragraph margins just get in the way.
   p:first-of-type {
     margin-top: 0;
@@ -82,13 +80,27 @@
   }
 }
 
-// Call them all!
-@mixin scut-reset {
-  @include scut-reset-border-box;
-  @include scut-reset-antialias;
-  @include scut-reset-semanticize;
-  @include scut-reset-pointer;
-  @include scut-reset-form;
-  @include scut-reset-button;
-  @include scut-reset-paragraphs;
+// Call them all, minus exclusions!
+@mixin scut-reset ($exclude: false) {
+  @if not index($exclude, border-box) {
+    @include scut-reset-border-box;
+  }
+  @if not index($exclude, antialias) {
+    @include scut-reset-antialias;
+  }
+  @if not index($exclude, semanticize) {
+    @include scut-reset-semanticize;
+  }
+  @if not index($exclude, pointer) {
+    @include scut-reset-pointer;
+  }
+  @if not index($exclude, form) {
+    @include scut-reset-form;
+  }
+  @if not index($exclude, button) {
+    @include scut-reset-button;
+  }
+  @if not index($exclude, paragraph) {
+    @include scut-reset-paragraph;
+  }
 }
