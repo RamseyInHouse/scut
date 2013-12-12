@@ -39,6 +39,9 @@ module.exports = (grunt) ->
       docsExamples:
         options:
           banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+          process: (src, filepath) ->
+            name = (path.basename(filepath, ".scss")).slice(1)
+            return "/* Example: #{name} */\n#{src}"
         files:
           "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
 
@@ -88,6 +91,7 @@ module.exports = (grunt) ->
             "docs/dev/assets/js/lib/prism.js"
             "bower_components/overthrow/dist/overthrow.js"
             "docs/dev/assets/js/modals.js"
+            "docs/dev/assets/js/css.js"
           ]
 
     assemble:

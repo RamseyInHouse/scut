@@ -1,3 +1,18 @@
+function classToggle(el, action, togglingClass) {
+  var classToToggle = togglingClass || 'is-active';
+  switch (action) {
+    case 'add':
+      el.className += ' ' + classToToggle;
+      return;
+    case 'remove':
+      var re = new RegExp('(?:^|\\s)' + classToToggle + '(?!\\S)', 'g');
+      el.className = el.className.replace(re, '');
+      return;
+    case 'contains':
+      return el.className.indexOf(classToToggle) !== -1;
+  }
+}
+
 function ScutModals() {
 
   var helpBtns = document.getElementsByClassName('js-help-btn'),
@@ -5,34 +20,21 @@ function ScutModals() {
       transTime = 300,
       modals = document.getElementsByClassName('js-help-modal');
 
-  function activation(el, action) {
-    var activeClass = 'is-active';
-    switch (action) {
-      case 'add':
-        el.className += ' ' + activeClass;
-        return;
-      case 'remove':
-        var re = new RegExp('(?:^|\\s)' + activeClass + '(?!\\S)', 'g');
-        el.className = el.className.replace(re, '');
-        return;
-      case 'contains':
-        return el.className.indexOf(activeClass) !== -1;
-    }
-  }
+  init();
 
   function openModal(targetModal) {
-    activation(helpC, 'add');
+    classToggle(helpC, 'add');
     targetModal.style.display = 'block';
     setTimeout(function () {
-      activation(targetModal, 'add');
+      classToggle(targetModal, 'add');
     }, transTime);
   }
 
   function closeModal(targetModal) {
-    activation(targetModal, 'remove');
+    classToggle(targetModal, 'remove');
     setTimeout(function () {
       targetModal.style.display = 'none';
-      activation(helpC, 'remove');
+      classToggle(helpC, 'remove');
     }, transTime);
   }
 
@@ -78,9 +80,6 @@ function ScutModals() {
     }
     helpC.addEventListener('click', closeOpenModal);
   }
-
-  return { 'init': init };
 }
 
-var helpfulModals = new ScutModals();
-helpfulModals.init();
+var helpfulModals = ScutModals();

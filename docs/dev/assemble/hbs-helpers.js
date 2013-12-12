@@ -22,8 +22,12 @@ module.exports.register = function(Handlebars, options) {
 
   });
 
-  Handlebars.registerHelper('underscoresToHyphens', function(str) {
+  function underscoresToHyphens (str) {
     return str.replace(/_/g, '-');
+  }
+
+  Handlebars.registerHelper('underscoresToHyphens', function(str) {
+    return underscoresToHyphens(str);
   });
 
   function removeHiddenRules(str) {
@@ -35,6 +39,19 @@ module.exports.register = function(Handlebars, options) {
     // Remove rules that don't need to be displayed.
     var withoutHiddenRules = removeHiddenRules(file);
     return withoutHiddenRules;
+  });
+
+  var mainCSS = grunt.file.read('docs/dev/assets/main.css');
+  Handlebars.registerHelper('getExampleCss', function(name) {
+    // Remove rules that don't need to be displayed.
+    var withoutHiddenRules = removeHiddenRules(mainCSS);
+    // Find rules that start with // Example: name
+    var relevantRegex = new RegExp('\\/\\* Example: ' + name + ' \\*\\/\\n\\n([\\S\\s]*?)\\n\\/\\* Example', 'gm');
+    var match = (relevantRegex).exec(withoutHiddenRules);
+    if (match) {
+      console.log(match);
+      return match[1];
+    }
   });
 
 };

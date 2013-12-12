@@ -188,6 +188,23 @@
 EXAMPLES
 ==========================*/
 
+.toggle-css {
+  color: $c-link;
+  border: 1px solid;
+  padding: 0.3em 0.7em;
+  margin-bottom: 1em;
+  @include scut-selected {
+    color: $c-link-active;
+  }
+}
+
+.example--css {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}
+
 .example--disp--inner {
   background: $c-bg-light;
   overflow: auto;

@@ -79,10 +79,15 @@
     <pre><code class="language-markup">{{html}}</code></pre>
   </div>
   {{/if}}
-  <div class="example--scss">
+  <div id="{{../name}}-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">{{getExampleScss ../name}}</code></pre>
   </div>
+  <div id="{{../name}}-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">{{{getExampleCss ../name}}}</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="{{../name}}">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner">{{{html}}}</div>
