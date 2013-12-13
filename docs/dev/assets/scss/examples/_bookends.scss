@@ -30,7 +30,7 @@
     background-color: $eg-dark;
     color: white;
     text-align: center;
-    @include scut-bookends($content: "") {
+    @include scut-bookends {
       height: 2em;
       width: 2em;
       background-color: $eg-light;

@@ -1112,7 +1112,7 @@ categories:
             comment: Spacing to separate the bookends from the element's content
           -
             variable: $content
-            default: false
+            default: "\"\""
             comment: One or two `content` values for the pseudo-elements. Use a list to pass different content values to the left (`:before`) and right (`:after`), respectively; or pass one value to both.
         contentblock: |
           A content block passed to this mixin will be applied to both `:before` and `:after` pseudo-elements.
