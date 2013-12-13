@@ -22,6 +22,27 @@ Please do! Scut is simple; contributing should be easy. So give it a go.
 
 If you have any questions, if anything about this document is unclear or inaccurate, if you can't figure out what to do, please file an issue or contact me.
 
+### Approach
+
+Scut utilities should help users **avoid repetition, organize code, and re-use code**.
+
+Scut utilities should tackle patterns that suffer from one or more of the following problems:
+
+1. The pattern is non-intuitive.
+2. The pattern deserves a shorthand.
+3. The pattern involves some important best practices.
+4. The pattern is extremeley common and (at least) a little annoying.
+
+The utility's goal is to fix those problems in a way that **maximizies reusability**. Here are some principles to keep in mind to maximize that reusability:
+
+- Include sufficient detail to implement the pattern, but no more.
+- Use arguments to allow for typical variations on the theme.
+- Arrange those arguments according to the likelihood that users will want to change them.
+- Namespace (notice the `scut-` prefix everwhere).
+- Document thoroughly.
+
+I go into detail about all these ideas in [that CSS-Tricks article](http://css-tricks.com/introducing-scut-new-sass-utility-library/).
+
 ### Development Requirements
 
 - [Node and npm](http://nodejs.org/)
