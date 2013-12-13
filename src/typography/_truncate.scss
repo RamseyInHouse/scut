@@ -1,0 +1,14 @@
+// SCUT TRUNCATE
+// http://davidtheclark.github.io/scut/#truncate
+
+@mixin scut-truncate {
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+%scut-truncate {
+  @include scut-truncate;
+}

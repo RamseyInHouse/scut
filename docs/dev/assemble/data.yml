@@ -1400,11 +1400,24 @@ categories:
 
           By default, the mixin produces one line; but if you add a height value to the `$double` argument, you'll get two lines (separated by that height). (You could also use a `$style` of `double`, which would act the same as any double border-style.)
         example:
-          html:
+          html: |
             <p class="eg-side-lined m-1">Variation 1</p>
             <p class="eg-side-lined m-2">Variation 2</p>
             <p class="eg-side-lined m-3">Variation 3</p>
             <p class="eg-side-lined m-4">Variation 4</p>
+
+      -
+        name: truncate
+        type: *MDP
+        use-name: scut-truncate
+        text: |
+          Truncate text to a single line, clipped with an ellipsis.
+
+          A quick and dirty method of tailoring content to layout. In order to truncate without clipping words, truncate to character counts, or truncate multi-line strings generally, the most reliable and flexible methods seem to lie outside of CSS (i.e. in your templating language, or JavaScript, etc.).
+        example:
+          html: |
+            <div class="eg-truncate">This string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis and just to ensure that that example works even on your gigantic fancy-boy screen I'll duplicate that sentence content starting now this string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis.</div>
+          show-html: true
 
   -
     category: functions

@@ -1607,3 +1607,18 @@ $scut-whitecircle: "\25cb";
 %scut-side-lined {
   @include scut-side-lined;
 }
+
+// SCUT TRUNCATE
+// http://davidtheclark.github.io/scut/#truncate
+
+@mixin scut-truncate {
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+%scut-truncate {
+  @include scut-truncate;
+}
