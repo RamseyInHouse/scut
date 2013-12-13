@@ -8,8 +8,8 @@
   background: $eg-muted;
   &.m-1 {
     width: 15em;
-    // Default-values placeholder
-    @extend %scut-ratio-box;
+    @include scut-ratio-box;
+    // or @extend %scut-ratio-box;
   }
   &.m-2 {
     width: 7em;

@@ -11,8 +11,8 @@
 
 .eg-vcenter-ib {
   &.m-1 {
-    // Default-values placeholder
-    @extend %scut-vcenter-ib;
+    @include scut-vcenter-ib;
+    // or @extend %scut-vcenter-ib;
   }
   &.m-2 {
     @include scut-vcenter-ib(".eg-vcenter-ib-inner");

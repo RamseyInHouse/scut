@@ -21,12 +21,12 @@
 .eg-center-transform {
   display: inline-block;
   &.m-1 {
-    @extend %scut-center-transform;
-    // or @include scut-center-transform;
+    @include scut-center-transform;
+    // or @extend %scut-center-transform;
   }
   &.m-2 {
-    @extend %scut-center-transform-x;
-    // or @include scut-center-transform(x);
+    @include scut-center-transform(x);
+    // or @extend %scut-center-transform-x;
   }
   &.m-3 {
     @include scut-center-transform(y);

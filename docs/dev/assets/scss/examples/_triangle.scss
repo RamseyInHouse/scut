@@ -9,8 +9,8 @@
 
 .eg-triangle {
   &.m-default {
-    // Default-values placeholder
-    @extend %scut-triangle;
+    @include scut-triangle;
+    // or @extend %scut-triangle;
   }
   &.m-equilateral {
     @include scut-triangle(up, 100px 87px, $eg-muted);
@@ -34,6 +34,6 @@
     @include scut-triangle(up);
   }
   &.m-more:after {
-    @extend %scut-triangle;
+    @include scut-triangle;
   }
 }

@@ -10,6 +10,7 @@ function toggleCss (event) {
   } else {
     classToggle(css, 'remove');
     button.innerHTML = 'Show compiled CSS';
+    document.getElementById(entry + '-scss').scrollIntoView();
   }
 
 }

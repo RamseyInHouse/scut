@@ -39,6 +39,7 @@ module.exports = (grunt) ->
       docsExamples:
         options:
           banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
+          footer: "/* Examples end */"
           process: (src, filepath) ->
             name = (path.basename(filepath, ".scss")).slice(1)
             return "/* Example: #{name} */\n#{src}"

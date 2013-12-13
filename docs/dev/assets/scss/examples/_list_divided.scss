@@ -6,10 +6,12 @@
 /* end hidden rules */
 
 .eg-list-bar {
-  @extend %scut-list-bar;
+  @include scut-list-divided;
+  // or @extend %scut-list-bar;
 }
 .eg-list-breadcrumb {
-  @extend %scut-list-breadcrumb;
+  @include scut-list-divided("/");
+  // or @extend %scut-list-breadcrumb;
 }
 
 .eg-list-divided {

@@ -4,10 +4,9 @@
 }
 /* end hidden rules */
 
-
 .eg-image-replace {
-  @extend %scut-image-replace;
-  // or @include scut-image-replace;
+  @include scut-image-replace;
+  // or @extend %scut-image-replace;
   background: url(images/bird.jpg) no-repeat;
   background-size: contain;
   height: 8em;

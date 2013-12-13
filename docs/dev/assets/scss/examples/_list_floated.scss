@@ -12,8 +12,8 @@
 
 .eg-list-floated {
   &.m-1 {
-    // Default-values placeholder
-    @extend %scut-list-floated;
+    @include scut-list-floated;
+    // or @extend %scut-list-floated;
   }
   &.m-2 {
     @include scut-list-floated(1em);

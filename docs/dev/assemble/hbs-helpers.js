@@ -48,8 +48,10 @@ module.exports.register = function(Handlebars, options) {
     // Find rules that start with // Example: name
     var relevantRegex = new RegExp('\\/\\* Example: ' + name + ' \\*\\/\\n\\n([\\S\\s]*?)\\n\\/\\* Example', 'gm');
     var match = (relevantRegex).exec(withoutHiddenRules);
+    if (name === 'v-center_table_display') {
+      console.log(relevantRegex, match);
+    }
     if (match) {
-      console.log(match);
       return match[1];
     }
   });

@@ -1,7 +1,7 @@
 .eg-side-lined {
   &.m-1 {
-    // Default-values placeholder
-    @extend %scut-side-lined;
+    @include scut-side-lined;
+    // or @extend %scut-side-lined;
   }
   &.m-2 {
     font-size: 2em;

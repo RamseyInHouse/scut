@@ -21,8 +21,8 @@
 .eg-fill {
   &.m-1 {
     background-color: rgba(0,0,0,0.4);
-    @extend %scut-fill;
-    // or @include scut-fill;
+    @include scut-fill;
+    // or @extend %scut-fill;
   }
   &.m-2 {
     @include scut-fill;

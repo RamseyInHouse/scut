@@ -8,7 +8,8 @@
 .eg-center-block {
   &.m-1 {
     width: 8em;
-    @extend %scut-center-block;
+    @include scut-center-block;
+    // or @extend %scut-center-block;
   }
   &.m-2 {
     margin-top: 2em;

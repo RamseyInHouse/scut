@@ -1,7 +1,7 @@
 .eg-link-bb {
   &.m-1 a {
-    // Default-values placeholder
-    @extend %scut-link-bb;
+    @include scut-link-bb;
+    // or @extend %scut-link-bb;
   }
   &.m-2 a {
     color: $eg-muted;

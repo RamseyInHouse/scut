@@ -1,8 +1,8 @@
 .eg-key-val {
   max-width: 20em;
   &.m-1 {
-    // Default-values placeholder
-    @extend %scut-key-val;
+    @include scut-key-val;
+    // or @extend %scut-key-val;
   }
   &.m-2 {
     @include scut-key-val("\2014", 0.5em, 8em, 1em, 0.5em);

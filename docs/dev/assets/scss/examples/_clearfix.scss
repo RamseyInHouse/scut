@@ -5,8 +5,8 @@
 /* end hidden rules */
 
 .eg-clearfix-container {
-  @extend %scut-clearfix;
-  // or @include scut-clearfix;
+  @include scut-clearfix;
+  // or @extend %scut-clearfix;
   background: $eg-muted;
 }
 .eg-clearfix-floater {
