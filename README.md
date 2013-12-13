@@ -68,24 +68,9 @@ Here are some guidelines to explain how I've been writing:
 
 ### Experimenting and Testing
 
-Feel free to experiment with or create test pages for utilities new and old. Use test pages to make sure that the utility you created works just as you dreamed it would.
+The method I recommend for experimentation and testing is to use [Codepen](http://codepen.io/), either starting your own pen from scratch or forking [the Scut Playground](http://codepen.io/davidtheclark/pen/yCadJ) (which imports the latest version of Scut).
 
-**Test pages are for experimentation and testing. They do not have to be pretty, authoritative, complete, or anything else. They exist only to aid development.** Test pages are ephemeral: any developer should feel free to modify existing tests.
-
-Test pages are compiled from [Handlebars](http://handlebarsjs.com/) templates using [Assemble](http://assemble.io). You should do the following:
-
-- `npm install` to ensure you have all the node modules you need. The command will also run `grunt init`, which will build existing pages so that you can view them locally.
-- As you work, run `grunt dev` (which in turn runs both `grunt watch` and `grunt connect`). This will make an index of test pages available at `localhost:9000/test` and your test page available at `localhost:9000/test/your-file-name.html`. While running `grunt dev`, the page will LiveReload when you save changes *if you have [the LiveReload Chrome extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).*
-- Edit or create a Handlebars template named after the utility in `test/templates/pages/`. Add a `title` to the YAML front matter (for the sake of the index).
-- Edit or create an SCSS stylesheet named after the utility in `test/style/scss/tests/`.
-
-Look at the existing tests for examples.
-
-*Do not edit the HTML files `test/*.html`: they are compiled by Assemble from Handlebars templates, so any changes you make in the HTML files will be overwritten when somebody else makes changes and runs Assemble.* In fact, the HTML files shouldn't even be included in the repo.
-
-A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt test` for the same result.) Look at `Gruntfile.coffee` for details.
-
-**Another good way to experiment and test is to use [Codepen](http://codepen.io/), either starting your own pen from scratch or forking [the Scut Playground](http://codepen.io/davidtheclark/pen/yCadJ) (which imports the latest version of Scut)**
+(I have deleted the "tests" directory and tasks from the repository in favor of relying on Codepen.)
 
 ### Documenting
 
@@ -101,6 +86,7 @@ For the SCSS of your example, please follow the conventions established in the o
 
 - Please stick with the color variables `$eg-muted`, `$eg-light`, and `$eg-dark`, so everything matches.
 - If there are rules that you would like to add (in order to make the example look nice) but you don't need to display them (because they have nothing to do with usage of the utility), wrap them in the comments `/* hidden rules */` and `/* end hidden rules */`, followed by a blank line. Look at the existing example stylesheets and you'll get it.
+- *Do not use `@extend`s in the examples, but mention them within comments (as in existing examples).* The method with which I'm showing compiled CSS in the docs precludes the use of `@extend`s. So just `@include` the mixin and comment about the `@extend` option.
 
 A few Grunt tasks will create the test page if you're running `grunt watch`. (If you weren't running `grunt watch` when you saved your changes, you can manually run `grunt docsDev` for the same result.) Look at `Gruntfile.coffee` for details.
 
