@@ -28,13 +28,6 @@ module.exports = (grunt) ->
         ]
         dest: "dist/_scut.scss"
 
-      # Build test styles
-      test:
-        options:
-          banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `tests/style/scss/tests`. CREATE TEST STYLESHEETS IN `TESTS/STYLE/SCSS/TESTS`, NOT HERE.*/#{grunt.util.linefeed}"
-        src: ["test/style/scss/tests/*.scss"]
-        dest: "test/style/scss/_tests.scss"
-
       # Build docs example styles
       docsExamples:
         options:
@@ -49,22 +42,12 @@ module.exports = (grunt) ->
     sass:
       options:
         style: "expanded"
-      # Process test styles
-      test:
-        options:
-          loadPath: ["test/style/scss/test/*.scss"]
-        files:
-          "test/style/css/main.css": "test/style/scss/main.scss"
       # Process docs styles
       docs:
         files:
           "docs/dev/assets/main.css": "docs/dev/assets/scss/main.scss"
 
     autoprefixer:
-      # Prefix test styles
-      test:
-        files:
-          "test/style/css/main.css": "test/style/css/main.css"
       # Prefix docs styles
       docs:
         files:
@@ -96,32 +79,20 @@ module.exports = (grunt) ->
           ]
 
     assemble:
-      # Assemble test markup
-      test:
-        options:
-          partials: ["test/templates/partials/*.hbs"]
-          layout: "test/templates/layouts/base.hbs"
-        files: [
-          expand: true
-          cwd: "test/templates/pages/"
-          src: ["*.hbs"]
-          dest: "test/"
-        ]
+
       # Assemble docs dev markup
+      options:
+        data: ["docs/dev/assemble/data.yml"]
+        partials: ["docs/dev/assemble/partials/*.hbs"]
+        helpers: ["docs/dev/assemble/hbs-helpers.js"]
       docsDev:
         options:
-          data: ["docs/dev/assemble/data.yml"]
-          partials: ["docs/dev/assemble/partials/*.hbs"]
-          helpers: ["docs/dev/assemble/hbs-helpers.js"]
           dist: false
         files:
           "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
       # Assemble docs dist markup
       docsDist:
         options:
-          data: ["docs/dev/assemble/data.yml"]
-          partials: ["docs/dev/assemble/partials/*.hbs"]
-          helpers: ["docs/dev/assemble/hbs-helpers.js"]
           dist: true
         files:
           "docs/dist/index.html": ["docs/dev/assemble/index.hbs"]
@@ -183,10 +154,9 @@ module.exports = (grunt) ->
         options:
           livereload: true
         files: [
-          "test/style/css/*.css"
-          "test/*.html"
           "docs/dev/index.html"
           "docs/dev/assets/*.css"
+          "docs/dev/assets/*.js"
         ]
 
       scut:
@@ -195,17 +165,6 @@ module.exports = (grunt) ->
           "_scut-reset.scss"
         ]
         tasks: ["concat:scut"]
-
-      testStyle:
-        files: [
-          "test/style/scss/*.scss"
-          "test/style/scss/**/*.scss"
-        ]
-        tasks: ["testStyle"]
-
-      testMarkup:
-        files: ["test/templates/**/*.hbs"]
-        tasks: ["newer:assemble:test"]
 
       docsStyle:
         files: ["docs/dev/assets/scss/*.scss"]
@@ -237,13 +196,6 @@ module.exports = (grunt) ->
           base: "./"
 
     clean:
-      # Clean up test HTML
-      test:
-        src: [
-          "test/*.html"
-          "test/style/css"
-          "test/style/scss/_tests.scss"
-        ]
       # Clean up docs optimized images
       images:
         src: [
@@ -302,11 +254,6 @@ module.exports = (grunt) ->
     "connect"
     "watch"
   ]
-  grunt.registerTask "testStyle", [
-    "concat:test"
-    "sass:test"
-    "autoprefixer:test"
-  ]
   grunt.registerTask "docsStyle", [
     "concat:docsExamples"
     "sass:docs"
@@ -315,10 +262,6 @@ module.exports = (grunt) ->
   grunt.registerTask "svg", [
     "svgmin:docs"
     "grunticon:docs"
-  ]
-  grunt.registerTask "test", [
-    "newer:assemble:test"
-    "testStyle"
   ]
   grunt.registerTask "docsDev", [
     "docsStyle"
@@ -336,7 +279,6 @@ module.exports = (grunt) ->
     "concat:scut"
   ]
   grunt.registerTask "init", [
-    "test"
     "docsDev"
   ]
   grunt.registerTask "gh-pages", [

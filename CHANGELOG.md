@@ -1,5 +1,6 @@
 ### 0.8.0 (in the works)
-- Updated `scut-reset`; specific resets are now excludable.
+- 
+- Updated `scut-reset`. Some substance-changes and specific resets are now excludable.
 
 ### 0.7.1 and 0.7.2
 - Bug fixes.
