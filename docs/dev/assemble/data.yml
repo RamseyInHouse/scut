@@ -1166,10 +1166,10 @@ categories:
           The "best practices" to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.
 
           For example, to implement all varieties of Arvo:
-          <pre class="language-scss"><code>@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
-          @include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
-          @include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
-          @include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);</code></pre>
+          <pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
+          @include scut-font-face("Arvo", "fonts/arvo-bold-webfont", bold);
+          @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
+          @include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre>
 
         references:
           -
