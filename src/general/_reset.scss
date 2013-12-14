@@ -56,7 +56,8 @@
 
 @mixin scut-reset-button {
   // Reset default button styles, which are never used.
-  button {
+  button,
+  input[type="button"] {
     background: transparent;
     border: 0;
     color: inherit;
@@ -71,6 +72,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    &::-moz-focus-inner {
+      padding:0;
+      border:0;
+    }
   }
 }
 
