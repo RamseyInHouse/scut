@@ -1,7 +1,7 @@
 ### 0.8.0
 - Fixed a bug preventing the results of `scut-em` and `scut-rem` from being used in calculations.
 - Added `scut-truncate`.
-- Delted "tests" in repository. Devs should use Codepen. It's easy.
+- Deleted "tests" in repository. Devs should use Codepen. It's easy.
 - Updated `scut-reset`. Some substance-changes and specific resets are now excludable.
 
 ### 0.7.1 and 0.7.2
