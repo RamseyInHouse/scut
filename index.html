@@ -342,6 +342,12 @@
           </a>
         </li>
         
+        <li>
+          <a href="#truncate" class="index-2--i">
+            truncate
+          </a>
+        </li>
+        
       </ul>
     </li>
     
@@ -382,7 +388,7 @@
     <h1>
   Scut
   <div class="version">
-    v0.7.2
+    v0.8.0
   </div>
 </h1>
 
@@ -393,6 +399,13 @@
 <p><a href="http://codepen.io/davidtheclark/pen/yCadJ" target="_blank" class="intro-btn">Experiment with Scut on Codepen</a></p>
 <p><strong>BE AWARE:</strong> Scut is in early stages, under active development, <em>unstable</em> &mdash; still in <a href="http://semver.org/">SemVer</a> v0. <strong>Scut is wide, wide open to contributions</strong>, and I will be building on it myself. New features will be added and old features might be improved. So: <strong>if some part of Scut that you had been using suddenly doesn&#39;t work, please check this documentation to see what changed.</strong></p>
 <p>You might also want to <a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">have a look at the changelog</a>.</p>
+<p>Or view older docs:</p>
+<ul class="older-docs">
+
+  <li><a href="old/v0.7.0">v0.7.0</a></li>
+
+</ul>
+
 
 
 <section id="about">
@@ -448,7 +461,7 @@
               <pre class="language-bash"><code>bower install scut --save-dev</code></pre>
               This will get you the latest release and save it as a <code>devDependency</code> for your project.</li>
             <li>
-              Download <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/dist/_scut.scss">the latest release from Github</a>.
+              Download <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/dist/_scut.scss">the latest release from Github</a>.
             </li>
           </ul>
         </div>
@@ -515,7 +528,7 @@
     
     <section class="doc-i" id="border">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_border.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_border.scss" class="source">view source</a>
         <h3>
           <a href="#border" class="inner-anchor m-util">
             border
@@ -595,7 +608,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="border-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-border {
   &amp;.m-1 {
@@ -613,6 +626,32 @@
   }
 }</code></pre>
   </div>
+  <div id="border-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-border.m-1 {
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+}
+
+.eg-border.m-2 {
+  border-left: 0.5em solid #9ae9ff;
+  border-right: 0.5em solid #9ae9ff;
+}
+
+.eg-border.m-3 {
+  border-top: 10px solid #002834;
+  border-right: 10px solid #002834;
+}
+
+.eg-border.m-4 {
+  border-bottom: 0.75em solid #002834;
+  border-left: 0.75em solid #002834;
+  border-top: 0.75em solid #9ae9ff;
+  border-right: 0.75em solid #9ae9ff;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="border">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-border m-1">Variation 1</div>
@@ -632,7 +671,7 @@
     
     <section class="doc-i" id="circle">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_circle.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_circle.scss" class="source">view source</a>
         <h3>
           <a href="#circle" class="inner-anchor m-util">
             circle
@@ -717,7 +756,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="circle-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-circle {
   &amp;.m-1 {
@@ -732,6 +771,36 @@
   }
 }</code></pre>
   </div>
+  <div id="circle-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-circle.m-1 {
+  border-radius: 50%;
+  display: inline-block;
+  border-width: 0.5em;
+  border-style: solid;
+  height: 0;
+  width: 0;
+}
+
+.eg-circle.m-2 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #9ae9ff;
+  height: 2em;
+  width: 2em;
+}
+
+.eg-circle.m-3 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #002834;
+  height: 2em;
+  width: 2em;
+  border: 5px solid #9ae9ff;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="circle">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-circle m-1"></div>
@@ -750,7 +819,7 @@
     
     <section class="doc-i" id="color_swap">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_color-swap.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_color-swap.scss" class="source">view source</a>
         <h3>
           <a href="#color_swap" class="inner-anchor m-util">
             color swap
@@ -849,7 +918,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="color_swap-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-color-swap {
   &amp;.m-1 {
@@ -864,6 +933,48 @@
   }
 }</code></pre>
   </div>
+  <div id="color_swap-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-color-swap.m-1 {
+  color: #002834;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+.eg-color-swap.m-1:hover,
+.eg-color-swap.m-1:focus {
+  color: #9ae9ff;
+}
+
+.eg-color-swap.m-2 {
+  color: #9ae9ff;
+  background-color: #002834;
+}
+
+.eg-color-swap.m-2:hover,
+.eg-color-swap.m-2:focus {
+  color: #002834;
+  background-color: #9ae9ff;
+}
+
+.eg-color-swap.m-3 {
+  color: white;
+  background-color: #002834;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.eg-color-swap.m-3:hover,
+.eg-color-swap.m-3:focus {
+  background-color: #9ae9ff;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="color_swap">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><button class="eg-color-swap m-1">Variation 1</button>
@@ -882,7 +993,7 @@
     
     <section class="doc-i" id="hd_breakpoint">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_hd-breakpoint.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_hd-breakpoint.scss" class="source">view source</a>
         <h3>
           <a href="#hd_breakpoint" class="inner-anchor m-util">
             hd breakpoint
@@ -952,7 +1063,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="hd_breakpoint-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-hd-bp {
   background-color: $eg-muted;
@@ -961,6 +1072,20 @@
   }
 }</code></pre>
   </div>
+  <div id="hd_breakpoint-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-hd-bp {
+  background-color: #cccccc;
+}
+
+@media (-o-min-device-pixel-ratio: 2 / 1), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .eg-hd-bp {
+    background-color: #9ae9ff;
+  }
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="hd_breakpoint">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p class="eg-hd-bp">If you are using a retina screen, this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p>
@@ -998,7 +1123,7 @@
     
     <section class="doc-i" id="hide_visually">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_hide-visually.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_hide-visually.scss" class="source">view source</a>
         <h3>
           <a href="#hide_visually" class="inner-anchor m-util">
             hide visually
@@ -1054,13 +1179,28 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="hide_visually-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-hide-visually {
-  @extend %scut-hide-visually;
-  // or @include scut-hide-visually;
+  @include scut-hide-visually;
+  // or @extend %scut-hide-visually;
 }</code></pre>
   </div>
+  <div id="hide_visually-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-hide-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="hide_visually">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-hide-visually">This element is visually hidden.</div>
@@ -1099,7 +1239,7 @@
     
     <section class="doc-i" id="image_replacement">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_image-replacement.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_image-replacement.scss" class="source">view source</a>
         <h3>
           <a href="#image_replacement" class="inner-anchor m-util">
             image replacement
@@ -1156,17 +1296,29 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="image_replacement-scss" class="example--scss">
     <h5>SCSS</h5>
-    <pre><code class="language-scss">
-.eg-image-replace {
-  @extend %scut-image-replace;
-  // or @include scut-image-replace;
+    <pre><code class="language-scss">.eg-image-replace {
+  @include scut-image-replace;
+  // or @extend %scut-image-replace;
   background: url(images/bird.jpg) no-repeat;
   background-size: contain;
   height: 8em;
 }</code></pre>
   </div>
+  <div id="image_replacement-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-image-replace {
+  text-indent: 102%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="image_replacement">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>The following image is replacing text:</p>
@@ -1198,7 +1350,7 @@
     
     <section class="doc-i" id="rems_with_fallback">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_rems-with-fallback.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_rems-with-fallback.scss" class="source">view source</a>
         <h3>
           <a href="#rems_with_fallback" class="inner-anchor m-util">
             rems with fallback
@@ -1279,7 +1431,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="rems_with_fallback-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-rem-fallback {
   &amp;.m-1 { font-size: 20px; }
@@ -1291,6 +1443,27 @@
   }
 }</code></pre>
   </div>
+  <div id="rems_with_fallback-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-rem-fallback.m-1 {
+  font-size: 20px;
+}
+
+.eg-rem-fallback.m-2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.eg-rem-fallback.m-3 {
+  margin: 30px 50px 0px 25px;
+  margin: 1.875rem 3.125rem 0rem 1.5625rem;
+  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
+  border: 5px solid;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="rems_with_fallback">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-rem-fallback m-1">
@@ -1329,7 +1502,7 @@
     
     <section class="doc-i" id="reset">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_reset.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_reset.scss" class="source">view source</a>
         <h3>
           <a href="#reset" class="inner-anchor m-util">
             reset
@@ -1388,7 +1561,7 @@
     
     <section class="doc-i" id="selected">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_selected.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_selected.scss" class="source">view source</a>
         <h3>
           <a href="#selected" class="inner-anchor m-util">
             selected
@@ -1465,7 +1638,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="selected-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-selected {
   background-color: $eg-muted;
@@ -1481,6 +1654,25 @@
   }
 }</code></pre>
   </div>
+  <div id="selected-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-selected {
+  background-color: #cccccc;
+}
+
+.eg-selected.m-1:hover,
+.eg-selected.m-1:focus {
+  background-color: #9ae9ff;
+}
+
+.eg-selected.m-2:hover,
+.eg-selected.m-2:focus,
+.eg-selected.m-2:active {
+  background-color: #9ae9ff;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="selected">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p><button class="eg-selected m-1">This following button turns blue on hover and focus</button></p>
@@ -1498,7 +1690,7 @@
     
     <section class="doc-i" id="triangle">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/general/_triangle.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_triangle.scss" class="source">view source</a>
         <h3>
           <a href="#triangle" class="inner-anchor m-util">
             triangle
@@ -1606,12 +1798,12 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="triangle-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-triangle {
   &amp;.m-default {
-    // Default-values placeholder
-    @extend %scut-triangle;
+    @include scut-triangle;
+    // or @extend %scut-triangle;
   }
   &amp;.m-equilateral {
     @include scut-triangle(up, 100px 87px, $eg-muted);
@@ -1635,10 +1827,105 @@
     @include scut-triangle(up);
   }
   &amp;.m-more:after {
-    @extend %scut-triangle;
+    @include scut-triangle;
   }
 }</code></pre>
   </div>
+  <div id="triangle-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-triangle.m-default {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.375em 0.75em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: inherit;
+  border-right-width: 0;
+}
+
+.eg-triangle.m-equilateral {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 87px 50px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #cccccc;
+  border-top-width: 0;
+}
+
+.eg-triangle.m-top-right {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 1em 1em;
+  border-style: solid;
+  border-top-color: #002834;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: #002834;
+}
+
+.eg-triangle.m-bottom-left {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 20px 40px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: #9ae9ff;
+  border-left-color: #9ae9ff;
+  border-right-color: transparent;
+}
+
+.eg-triangle-button:after {
+  content: "";
+  margin-left: 0.3em;
+}
+
+.eg-triangle-button.m-down:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.75em 0.375em;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: inherit;
+  border-bottom-width: 0;
+}
+
+.eg-triangle-button.m-up:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.75em 0.375em;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: inherit;
+  border-top-width: 0;
+}
+
+.eg-triangle-button.m-more:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.375em 0.75em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: inherit;
+  border-right-width: 0;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="triangle">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>
@@ -1674,7 +1961,7 @@
     
     <section class="doc-i" id="center_absolutely">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_center-absolutely.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-absolutely.scss" class="source">view source</a>
         <h3>
           <a href="#center_absolutely" class="inner-anchor m-util">
             center absolutely
@@ -1743,7 +2030,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="center_absolutely-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-center-absolutely-container {
   position: relative;
@@ -1761,6 +2048,42 @@
   }
 }</code></pre>
   </div>
+  <div id="center_absolutely-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-center-absolutely-container {
+  position: relative;
+}
+
+.eg-center-absolutely {
+  background: #cccccc;
+}
+
+.eg-center-absolutely.m-1 {
+  position: absolute;
+  width: 22em;
+  left: 50%;
+  margin-left: -11em;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}
+
+.eg-center-absolutely.m-2 {
+  position: absolute;
+  width: 20em;
+  left: 50%;
+  margin-left: -10em;
+}
+
+.eg-center-absolutely.m-3 {
+  position: absolute;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="center_absolutely">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-center-absolutely-container">
@@ -1785,7 +2108,7 @@
     
     <section class="doc-i" id="center_block">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_center-block.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-block.scss" class="source">view source</a>
         <h3>
           <a href="#center_block" class="inner-anchor m-util">
             center block
@@ -1860,12 +2183,13 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="center_block-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-center-block {
   &amp;.m-1 {
     width: 8em;
-    @extend %scut-center-block;
+    @include scut-center-block;
+    // or @extend %scut-center-block;
   }
   &amp;.m-2 {
     margin-top: 2em;
@@ -1873,6 +2197,23 @@
   }
 }</code></pre>
   </div>
+  <div id="center_block-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-center-block.m-1 {
+  width: 8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eg-center-block.m-2 {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="center_block">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-center-block m-1">Variation 1</div>
@@ -1890,7 +2231,7 @@
     
     <section class="doc-i" id="center_transform">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_center-transform.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-transform.scss" class="source">view source</a>
         <h3>
           <a href="#center_transform" class="inner-anchor m-util">
             center transform
@@ -1977,7 +2318,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="center_transform-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-center-transform-container {
   position: relative;
@@ -1985,12 +2326,12 @@
 .eg-center-transform {
   display: inline-block;
   &amp;.m-1 {
-    @extend %scut-center-transform;
-    // or @include scut-center-transform;
+    @include scut-center-transform;
+    // or @extend %scut-center-transform;
   }
   &amp;.m-2 {
-    @extend %scut-center-transform-x;
-    // or @include scut-center-transform(x);
+    @include scut-center-transform(x);
+    // or @extend %scut-center-transform-x;
   }
   &amp;.m-3 {
     @include scut-center-transform(y);
@@ -2001,6 +2342,64 @@
   }
 }</code></pre>
   </div>
+  <div id="center_transform-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-center-transform-container {
+  position: relative;
+}
+
+.eg-center-transform {
+  display: inline-block;
+}
+
+.eg-center-transform.m-1 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.eg-center-transform.m-2 {
+  position: absolute;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.eg-center-transform.m-3 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.eg-center-transform.m-4 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="center_transform">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-center-transform-container">
@@ -2051,7 +2450,7 @@
     
     <section class="doc-i" id="clearfix">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_clearfix.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_clearfix.scss" class="source">view source</a>
         <h3>
           <a href="#clearfix" class="inner-anchor m-util">
             clearfix
@@ -2109,11 +2508,11 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="clearfix-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-clearfix-container {
-  @extend %scut-clearfix;
-  // or @include scut-clearfix;
+  @include scut-clearfix;
+  // or @extend %scut-clearfix;
   background: $eg-muted;
 }
 .eg-clearfix-floater {
@@ -2122,6 +2521,25 @@
 }
 </code></pre>
   </div>
+  <div id="clearfix-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-clearfix-container {
+  background: #cccccc;
+}
+
+.eg-clearfix-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="clearfix">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-clearfix-container">
@@ -2169,7 +2587,7 @@
     
     <section class="doc-i" id="fill">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_fill.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_fill.scss" class="source">view source</a>
         <h3>
           <a href="#fill" class="inner-anchor m-util">
             fill
@@ -2263,7 +2681,7 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="fill-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-fill-container {
   color: $eg-light;
@@ -2272,8 +2690,8 @@
 .eg-fill {
   &amp;.m-1 {
     background-color: rgba(0,0,0,0.4);
-    @extend %scut-fill;
-    // or @include scut-fill;
+    @include scut-fill;
+    // or @extend %scut-fill;
   }
   &amp;.m-2 {
     @include scut-fill;
@@ -2283,6 +2701,40 @@
   }
 }</code></pre>
   </div>
+  <div id="fill-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-fill-container {
+  color: #9ae9ff;
+  position: relative;
+}
+
+.eg-fill.m-1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.eg-fill.m-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.eg-fill.m-3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="fill">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>Default method:</p>
@@ -2313,7 +2765,7 @@
     
     <section class="doc-i" id="fonticon_label">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_fonticon-label.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_fonticon-label.scss" class="source">view source</a>
         <h3>
           <a href="#fonticon_label" class="inner-anchor m-util">
             fonticon label
@@ -2431,7 +2883,7 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="fonticon_label-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">
 @include scut-font-face(&quot;icomoon-stereo&quot;, fonts/icomoon-stereo);
@@ -2484,6 +2936,122 @@
   }
 }</code></pre>
   </div>
+  <div id="fonticon_label-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">@font-face {
+  font-family: "icomoon-stereo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/icomoon-stereo.eot");
+  src: url("fonts/icomoon-stereo.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon-stereo.woff") format("woff"), url("fonts/icomoon-stereo.ttf") format("truetype"), url("fonts/icomoon-stereo.svg#icomoon-stereo") format("svg");
+}
+
+.eg-fonticon-label.m-1:before {
+  content: "\e004";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+
+.eg-fonticon-label.m-1:hover:before,
+.eg-fonticon-label.m-1:focus:before {
+  content: "\e002";
+}
+
+.eg-fonticon-label.m-2:before {
+  content: "\e003";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+
+.eg-fonticon-label.m-2:hover,
+.eg-fonticon-label.m-2:focus {
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:after {
+  content: "\e001";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.5em;
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:hover,
+.eg-fonticon-label.m-3:focus {
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:hover:after,
+.eg-fonticon-label.m-3:focus:after {
+  color: white;
+}
+
+@-webkit-keyframes rewind {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+}
+
+@keyframes rewind {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1em);
+    -ms-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+}
+
+.eg-fonticon-label.m-4:before {
+  content: "\e000";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+
+.eg-fonticon-label.m-4:hover:before,
+.eg-fonticon-label.m-4:focus:before {
+  -webkit-animation: rewind 1s linear infinite;
+  animation: rewind 1s linear infinite;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="fonticon_label">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p><button class="eg-fonticon-label m-1">Play &amp; Pause</button></p>
@@ -2509,7 +3077,7 @@
     
     <section class="doc-i" id="list_unstyled">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-unstyled.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-unstyled.scss" class="source">view source</a>
         <h3>
           <a href="#list_unstyled" class="inner-anchor m-util">
             list: unstyled
@@ -2559,13 +3127,22 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_unstyled-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-unstyled-list {
-  @extend %scut-list-unstyled;
-  // or @include scut-list-unstyled;
+  @include scut-list-unstyled;
+  // or @extend %scut-list-unstyled;
 }</code></pre>
   </div>
+  <div id="list_unstyled-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-unstyled-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_unstyled">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-unstyled-list">
@@ -2586,7 +3163,7 @@
     
     <section class="doc-i" id="list_custom">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-custom.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-custom.scss" class="source">view source</a>
         <h3>
           <a href="#list_custom" class="inner-anchor m-util">
             list: custom
@@ -2679,7 +3256,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_custom-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-list-custom {
   &amp;.m-1 {
@@ -2706,6 +3283,93 @@
   }
 }</code></pre>
   </div>
+  <div id="list_custom-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-list-custom.m-1 {
+  padding-left: 0.75em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-1 > li {
+  position: relative;
+}
+
+.eg-list-custom.m-1 > li:before {
+  content: "\2022";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -0.75em;
+  width: 0.75em;
+  color: #9ae9ff;
+}
+
+.eg-list-custom.m-2 {
+  padding-left: 2.3em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-2 > li {
+  position: relative;
+}
+
+.eg-list-custom.m-2 > li:before {
+  content: "\00bb";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.3em;
+  width: 1.3em;
+}
+
+.eg-list-custom.m-3 {
+  padding-left: 4em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-3 > li {
+  position: relative;
+  counter-increment: scutlistcounter;
+}
+
+.eg-list-custom.m-3 > li:before {
+  content: counter(scutlistcounter);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  width: 2em;
+}
+
+.eg-list-custom.m-4 {
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-4 > li {
+  position: relative;
+  counter-increment: scutlistcounter;
+}
+
+.eg-list-custom.m-4 > li:before {
+  content: counter(scutlistcounter, lower-alpha) ")";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  width: 1.5em;
+  color: #002834;
+  font-size: 1.5em;
+  font-weight: bold;
+  top: -0.25em;
+}
+
+.eg-list-custom.m-4 > li + li {
+  margin-top: 1em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_custom">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-list-custom m-1">
@@ -2769,7 +3433,7 @@
     
     <section class="doc-i" id="list_floated">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-floated.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-floated.scss" class="source">view source</a>
         <h3>
           <a href="#list_floated" class="inner-anchor m-util">
             list: floated
@@ -2851,12 +3515,12 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_floated-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-list-floated {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-list-floated;
+    @include scut-list-floated;
+    // or @extend %scut-list-floated;
   }
   &amp;.m-2 {
     @include scut-list-floated(1em);
@@ -2866,6 +3530,63 @@
   }
 }</code></pre>
   </div>
+  <div id="list_floated-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-list-floated.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-1 > li {
+  float: left;
+}
+
+.eg-list-floated.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-2 > li {
+  float: left;
+}
+
+.eg-list-floated.m-2 > li + li {
+  margin-left: 1em;
+}
+
+.eg-list-floated.m-3 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-3 > li {
+  float: right;
+}
+
+.eg-list-floated.m-3 > li + li {
+  margin-right: 2em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_floated">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-list-floated m-1">
@@ -2896,7 +3617,7 @@
     
     <section class="doc-i" id="list_inline">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-inline.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-inline.scss" class="source">view source</a>
         <h3>
           <a href="#list_inline" class="inner-anchor m-util">
             list: inline
@@ -2968,18 +3689,44 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_inline-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-list-inline {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-list-inline;
+    @include scut-list-inline;
+    // or @extend %scut-list-inline;
   }
   &amp;.m-2 {
     @include scut-list-inline(1em);
   }
 }</code></pre>
   </div>
+  <div id="list_inline-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-list-inline.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-inline.m-1 > li {
+  display: inline-block;
+}
+
+.eg-list-inline.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-inline.m-2 > li {
+  display: inline-block;
+}
+
+.eg-list-inline.m-2 > li + li {
+  margin-left: 1em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_inline">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-list-inline m-1">
@@ -3005,7 +3752,7 @@
     
     <section class="doc-i" id="list_punctuated">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-punctuated.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-punctuated.scss" class="source">view source</a>
         <h3>
           <a href="#list_punctuated" class="inner-anchor m-util">
             list: punctuated
@@ -3095,7 +3842,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_punctuated-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-punctuated-list {
   @include scut-list-punctuated;
@@ -3108,6 +3855,55 @@
   @include scut-list-punctuated(&quot;\0020\2022\0020&quot;);
 }</code></pre>
   </div>
+  <div id="list_punctuated-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-punctuated-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-punctuated-list > li {
+  display: inline;
+}
+
+.eg-punctuated-list > li:not(:last-child):after {
+  content: ", ";
+}
+
+.eg-semicolon-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-semicolon-list > li {
+  display: inline;
+}
+
+.eg-semicolon-list > li:not(:last-child):after {
+  content: "; ";
+}
+
+.eg-circle-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-circle-list > li {
+  display: inline;
+}
+
+.eg-circle-list > li:not(:last-child):after {
+  content: "\0020\2022\0020";
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_punctuated">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-punctuated-list">
@@ -3138,7 +3934,7 @@
     
     <section class="doc-i" id="list_divided">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_list-divided.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-divided.scss" class="source">view source</a>
         <h3>
           <a href="#list_divided" class="inner-anchor m-util">
             list: divided
@@ -3251,13 +4047,15 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="list_divided-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-list-bar {
-  @extend %scut-list-bar;
+  @include scut-list-divided;
+  // or @extend %scut-list-bar;
 }
 .eg-list-breadcrumb {
-  @extend %scut-list-breadcrumb;
+  @include scut-list-divided(&quot;/&quot;);
+  // or @extend %scut-list-breadcrumb;
 }
 
 .eg-list-divided {
@@ -3272,6 +4070,114 @@
   }
 }</code></pre>
   </div>
+  <div id="list_divided-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-list-bar {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-bar > li {
+  float: left;
+}
+
+.eg-list-bar > li + li:before {
+  content: "|";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-breadcrumb {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-breadcrumb:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-breadcrumb > li {
+  float: left;
+}
+
+.eg-list-breadcrumb > li + li:before {
+  content: "/";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-divided.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-divided.m-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-divided.m-1 > li {
+  float: right;
+}
+
+.eg-list-divided.m-1 > li + li:after {
+  content: "...";
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.eg-list-divided.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-divided.m-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-divided.m-2 > li {
+  float: left;
+}
+
+.eg-list-divided.m-2 > li {
+  height: 3em;
+}
+
+.eg-list-divided.m-2 > li:before {
+  height: 3em;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #002834;
+  width: 1em;
+}
+
+.eg-list-divided.m-2 > li:first-child:before {
+  width: 0;
+  overflow: hidden;
+}
+
+.eg-list-divided.m-2 > li + li:before {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="list_divided">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><ul class="eg-list-bar">
@@ -3307,7 +4213,7 @@
     
     <section class="doc-i" id="margin">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_margin.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_margin.scss" class="source">view source</a>
         <h3>
           <a href="#margin" class="inner-anchor m-util">
             margin
@@ -3380,7 +4286,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="margin-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-margin {
   &amp;.m-1 {
@@ -3394,6 +4300,28 @@
   }
 }</code></pre>
   </div>
+  <div id="margin-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-margin.m-1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.eg-margin.m-2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.eg-margin.m-3 {
+  margin-top: 3em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="margin">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-margin-container">
@@ -3418,7 +4346,7 @@
     
     <section class="doc-i" id="padding">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_padding.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_padding.scss" class="source">view source</a>
         <h3>
           <a href="#padding" class="inner-anchor m-util">
             padding
@@ -3491,7 +4419,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="padding-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-padding {
   display: inline-block;
@@ -3506,6 +4434,31 @@
   }
 }</code></pre>
   </div>
+  <div id="padding-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-padding {
+  display: inline-block;
+}
+
+.eg-padding.m-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.eg-padding.m-2 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.eg-padding.m-3 {
+  padding-right: 8em;
+  padding-bottom: 3em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="padding">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-padding-container">
@@ -3536,7 +4489,7 @@
     
     <section class="doc-i" id="positioning_coordinates">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_positioning-coordinates.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-coordinates.scss" class="source">view source</a>
         <h3>
           <a href="#positioning_coordinates" class="inner-anchor m-util">
             positioning: coordinates
@@ -3617,7 +4570,7 @@
     
     <section class="doc-i" id="positioning_absolute">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_positioning-absolute.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-absolute.scss" class="source">view source</a>
         <h3>
           <a href="#positioning_absolute" class="inner-anchor m-util">
             positioning: absolute
@@ -3695,21 +4648,41 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="positioning_absolute-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-absolute-container {
   position: relative;
 }
 .eg-absolute {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-absolute;
+    @include scut-absolute;
+    // or @extend %scut-absolute;
   }
   &amp;.m-2 {
     @include scut-absolute(n 0.5em 1em n);
   }
 }</code></pre>
   </div>
+  <div id="positioning_absolute-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-absolute-container {
+  position: relative;
+}
+
+.eg-absolute.m-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eg-absolute.m-2 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="positioning_absolute">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-absolute-container">
@@ -3729,7 +4702,7 @@
     
     <section class="doc-i" id="positioning_relative">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_positioning-relative.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-relative.scss" class="source">view source</a>
         <h3>
           <a href="#positioning_relative" class="inner-anchor m-util">
             positioning: relative
@@ -3798,7 +4771,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="positioning_relative-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-relative {
   &amp;.m-1 {
@@ -3812,6 +4785,29 @@
   }
 }</code></pre>
   </div>
+  <div id="positioning_relative-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-relative.m-1 {
+  position: relative;
+  top: 0.2em;
+  right: 0.2em;
+}
+
+.eg-relative.m-2 {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: 1em;
+}
+
+.eg-relative.m-3 {
+  position: relative;
+  bottom: -0.5em;
+  left: 0.2em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="positioning_relative">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>Some of <span class="eg-relative m-1">these</span> words <span class="eg-relative m-2">are</span> positioned in <span class="eg-relative m-3">strange</span> ways.</p>
@@ -3828,7 +4824,7 @@
     
     <section class="doc-i" id="positioning_fixed">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_positioning-fixed.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-fixed.scss" class="source">view source</a>
         <h3>
           <a href="#positioning_fixed" class="inner-anchor m-util">
             positioning: fixed
@@ -3902,7 +4898,7 @@
     
     <section class="doc-i" id="ratio-box">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_ratio-box.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_ratio-box.scss" class="source">view source</a>
         <h3>
           <a href="#ratio-box" class="inner-anchor m-util">
             ratio-box
@@ -4007,14 +5003,14 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="ratio-box-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-ratio {
   background: $eg-muted;
   &amp;.m-1 {
     width: 15em;
-    // Default-values placeholder
-    @extend %scut-ratio-box;
+    @include scut-ratio-box;
+    // or @extend %scut-ratio-box;
   }
   &amp;.m-2 {
     width: 7em;
@@ -4030,6 +5026,98 @@
   }
 }</code></pre>
   </div>
+  <div id="ratio-box-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-ratio {
+  background: #cccccc;
+}
+
+.eg-ratio.m-1 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+
+.eg-ratio.m-1 > .scut-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-2 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-2:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+
+.eg-ratio.m-2 > .scut-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-3 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-3:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.eg-ratio.m-3 > .eg-ratio-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-4 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-4:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.eg-ratio.m-4 > .eg-ratio-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="ratio-box">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p>These containers have different widths, but the ratio-boxes remain squares.</p>
@@ -4073,7 +5161,7 @@
     
     <section class="doc-i" id="size">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_size.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_size.scss" class="source">view source</a>
         <h3>
           <a href="#size" class="inner-anchor m-util">
             size
@@ -4142,7 +5230,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="size-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-size {
   &amp;.m-1 {
@@ -4154,6 +5242,20 @@
 }
 </code></pre>
   </div>
+  <div id="size-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-size.m-1 {
+  width: 8em;
+  height: 8em;
+}
+
+.eg-size.m-2 {
+  width: 10em;
+  height: 5em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="size">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-size m-1">A square</div>
@@ -4171,7 +5273,7 @@
     
     <section class="doc-i" id="sticky_footer">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_sticky-footer.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_sticky-footer.scss" class="source">view source</a>
         <h3>
           <a href="#sticky_footer" class="inner-anchor m-util">
             sticky footer
@@ -4291,7 +5393,7 @@
     
     <section class="doc-i" id="v-center_line-height">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_v-center-line-height.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-line-height.scss" class="source">view source</a>
         <h3>
           <a href="#v-center_line-height" class="inner-anchor m-util">
             v-center: line-height
@@ -4357,7 +5459,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="v-center_line-height-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-lh {
   vertical-align: middle;
@@ -4370,6 +5472,25 @@
   }
 }</code></pre>
   </div>
+  <div id="v-center_line-height-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-vcenter-lh {
+  vertical-align: middle;
+}
+
+.eg-vcenter-lh.m-1 {
+  height: 50px;
+  line-height: 50px;
+}
+
+.eg-vcenter-lh.m-2 {
+  height: 50px;
+  line-height: 50px;
+  font-size: 0.75em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="v-center_line-height">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><button class="eg-vcenter-lh m-1">Vertically centered text</button>
@@ -4387,7 +5508,7 @@
     
     <section class="doc-i" id="v-center_inline-block">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_v-center-inline-block.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-inline-block.scss" class="source">view source</a>
         <h3>
           <a href="#v-center_inline-block" class="inner-anchor m-util">
             v-center: inline-block
@@ -4474,18 +5595,48 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="v-center_inline-block-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-ib {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-vcenter-ib;
+    @include scut-vcenter-ib;
+    // or @extend %scut-vcenter-ib;
   }
   &amp;.m-2 {
     @include scut-vcenter-ib(&quot;.eg-vcenter-ib-inner&quot;);
   }
 }</code></pre>
   </div>
+  <div id="v-center_inline-block-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-vcenter-ib.m-1:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.eg-vcenter-ib.m-1 > .scut-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eg-vcenter-ib.m-2:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.eg-vcenter-ib.m-2 > .eg-vcenter-ib-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="v-center_inline-block">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-vcenter-ib m-1">
@@ -4525,7 +5676,7 @@
     
     <section class="doc-i" id="v-center_table_display">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_v-center-table-display.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-table-display.scss" class="source">view source</a>
         <h3>
           <a href="#v-center_table_display" class="inner-anchor m-util">
             v-center: table display
@@ -4611,12 +5762,12 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="v-center_table_display-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-td {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-vcenter-td;
+    @include scut-vcenter-td;
+    // or @extend %scut-vcenter-td;
     height: 8em;
   }
   &amp;.m-2 {
@@ -4625,6 +5776,30 @@
   }
 }</code></pre>
   </div>
+  <div id="v-center_table_display-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-vcenter-td.m-1 {
+  display: table;
+  height: 8em;
+}
+
+.eg-vcenter-td.m-1 > .scut-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.eg-vcenter-td.m-2 {
+  display: table;
+  height: 12em;
+}
+
+.eg-vcenter-td.m-2 > .eg-vcenter-td-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="v-center_table_display">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-vcenter-td m-1">
@@ -4664,7 +5839,7 @@
     
     <section class="doc-i" id="v-center_transform">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/layout/_v-center-transform.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-transform.scss" class="source">view source</a>
         <h3>
           <a href="#v-center_transform" class="inner-anchor m-util">
             v-center: transform
@@ -4736,7 +5911,7 @@
     
     <section class="doc-i" id="bookends">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_bookends.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_bookends.scss" class="source">view source</a>
         <h3>
           <a href="#bookends" class="inner-anchor m-util">
             bookends
@@ -4786,6 +5961,8 @@
         <li>
           <code class="args--name">$content</code>
           
+          [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;&quot;</code>&nbsp;]
+          
           
           <div class="args--comment"><p>One or two <code>content</code> values for the pseudo-elements. Use a list to pass different content values to the left (<code>:before</code>) and right (<code>:after</code>), respectively; or pass one value to both.</p>
 </div>
@@ -4824,7 +6001,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="bookends-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-bookends {
   &amp;.m-1 {
@@ -4850,7 +6027,7 @@
     background-color: $eg-dark;
     color: white;
     text-align: center;
-    @include scut-bookends($content: &quot;&quot;) {
+    @include scut-bookends {
       height: 2em;
       width: 2em;
       background-color: $eg-light;
@@ -4859,6 +6036,96 @@
   }
 }</code></pre>
   </div>
+  <div id="bookends-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-bookends.m-1:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.m-1:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.m-1:before,
+.eg-bookends.m-1:after {
+  display: inline-block;
+  content: "\2014";
+}
+
+.eg-bookends.m-2:before {
+  content: "\201c";
+  margin-right: 0;
+}
+
+.eg-bookends.m-2:after {
+  content: "\201d";
+  margin-left: 0;
+}
+
+.eg-bookends.m-2:before,
+.eg-bookends.m-2:after {
+  display: inline-block;
+}
+
+.eg-bookends.m-3 {
+  font-size: 2em;
+}
+
+.eg-bookends.m-3:before {
+  content: "\00ab";
+  margin-right: 0.25em;
+}
+
+.eg-bookends.m-3:after {
+  content: "\00bb";
+  margin-left: 0.25em;
+}
+
+.eg-bookends.m-3:before,
+.eg-bookends.m-3:after {
+  display: inline-block;
+  color: #9ae9ff;
+}
+
+.eg-bookends.m-3:hover,
+.eg-bookends.m-3:focus {
+  color: #9ae9ff;
+}
+
+.eg-bookends.m-3:hover:before,
+.eg-bookends.m-3:hover:after,
+.eg-bookends.m-3:focus:before,
+.eg-bookends.m-3:focus:after {
+  display: inline-block;
+  color: #002834;
+}
+
+.eg-bookends.m-4 {
+  background-color: #002834;
+  color: white;
+  text-align: center;
+}
+
+.eg-bookends.m-4:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.m-4:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.m-4:before,
+.eg-bookends.m-4:after {
+  display: inline-block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: #9ae9ff;
+  vertical-align: middle;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="bookends">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-bookends m-1">Variation 1</div>
@@ -4878,7 +6145,7 @@
     
     <section class="doc-i" id="characters">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_characters.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_characters.scss" class="source">view source</a>
         <h3>
           <a href="#characters" class="inner-anchor m-util">
             characters
@@ -5077,7 +6344,7 @@
     
     <section class="doc-i" id="font-face">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_font-face.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_font-face.scss" class="source">view source</a>
         <h3>
           <a href="#font-face" class="inner-anchor m-util">
             font-face
@@ -5168,10 +6435,10 @@
   <p>Implement <code>font-face</code> best practices with the greatest of ease.</p>
 <p>The &quot;best practices&quot; to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.</p>
 <p>For example, to implement all varieties of Arvo:</p>
-<pre class="language-scss"><code>@include scut-font-face("Arvo", fonts/arvo-regular-webfont);
-@include scut-font-face("Arvo", fonts/arvo-bold-webfont, bold);
-@include scut-font-face("Arvo", fonts/arvo-italic-webfont, normal, italic);
-@include scut-font-face("Arvo", fonts/arvo-bolditalic-webfont, bold, italic);</code></pre>
+<pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
+@include scut-font-face("Arvo", "fonts/arvo-bold-webfont", bold);
+@include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
+@include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre>
 
   
 </section>
@@ -5199,7 +6466,7 @@
     
     <section class="doc-i" id="hanging_indent">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_hanging-indent.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_hanging-indent.scss" class="source">view source</a>
         <h3>
           <a href="#hanging_indent" class="inner-anchor m-util">
             hanging indent
@@ -5267,19 +6534,37 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="hanging_indent-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-hanging-indent {
   max-width: 25em;
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-hanging-indent;
+    @include scut-hanging-indent;
+    // or @extend %scut-hanging-indent;
   }
   &amp;.m-2 {
     @include scut-hanging-indent(2em);
   }
 }</code></pre>
   </div>
+  <div id="hanging_indent-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-hanging-indent {
+  max-width: 25em;
+}
+
+.eg-hanging-indent.m-1 {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.eg-hanging-indent.m-2 {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="hanging_indent">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-hanging-indent m-1">Lastname, Firstname. <cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.
@@ -5299,7 +6584,7 @@
     
     <section class="doc-i" id="indented_paragraphs">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_indented-paragraphs.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_indented-paragraphs.scss" class="source">view source</a>
         <h3>
           <a href="#indented_paragraphs" class="inner-anchor m-util">
             indented paragraphs
@@ -5376,18 +6661,36 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="indented_paragraphs-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-indented-ps {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-indented-ps;
+    @include scut-indented-ps;
+    // or @extend %scut-indented-ps;
   }
   &amp;.m-2 {
     @include scut-indented-ps(3em, false);
   }
 }</code></pre>
   </div>
+  <div id="indented_paragraphs-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-indented-ps.m-1 p {
+  margin: 0;
+  text-indent: 1.5em;
+}
+
+.eg-indented-ps.m-1 p:first-of-type {
+  text-indent: 0;
+}
+
+.eg-indented-ps.m-2 p {
+  margin: 0;
+  text-indent: 3em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="indented_paragraphs">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-indented-ps m-1">
@@ -5417,7 +6720,7 @@
     
     <section class="doc-i" id="key-value">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_key-value.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_key-value.scss" class="source">view source</a>
         <h3>
           <a href="#key-value" class="inner-anchor m-util">
             key-value
@@ -5560,13 +6863,13 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="key-value-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-key-val {
   max-width: 20em;
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-key-val;
+    @include scut-key-val;
+    // or @extend %scut-key-val;
   }
   &amp;.m-2 {
     @include scut-key-val(&quot;\2014&quot;, 0.5em, 8em, 1em, 0.5em);
@@ -5585,6 +6888,68 @@
   }
 }</code></pre>
   </div>
+  <div id="key-value-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-key-val {
+  max-width: 20em;
+}
+
+.eg-key-val.m-1 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-1 > dt:after {
+  content: ":";
+  margin-right: 0.25em;
+}
+
+.eg-key-val.m-1 > dd {
+  margin-left: 1em;
+}
+
+.eg-key-val.m-2 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-2 > dt:after {
+  content: "\2014";
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+.eg-key-val.m-2 > dd {
+  margin-left: 8em;
+  margin-bottom: 1em;
+}
+
+.eg-key-val.m-2 > dt {
+  font-weight: bold;
+}
+
+.eg-key-val.m-3 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-3 > dt:after {
+  content: "";
+  margin-right: 0;
+}
+
+.eg-key-val.m-3 > dd {
+  margin-left: 7em;
+}
+
+.eg-key-val.m-3 > dt {
+  width: 6em;
+  text-align: right;
+  text-transform: uppercase;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="key-value">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><dl class="eg-key-val m-1">
@@ -5647,7 +7012,7 @@
     
     <section class="doc-i" id="link_bottom-bordered">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_link-bottom-bordered.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_link-bottom-bordered.scss" class="source">view source</a>
         <h3>
           <a href="#link_bottom-bordered" class="inner-anchor m-util">
             link: bottom-bordered
@@ -5740,12 +7105,12 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="link_bottom-bordered-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-link-bb {
   &amp;.m-1 a {
-    // Default-values placeholder
-    @extend %scut-link-bb;
+    @include scut-link-bb;
+    // or @extend %scut-link-bb;
   }
   &amp;.m-2 a {
     color: $eg-muted;
@@ -5757,6 +7122,28 @@
   }
 }</code></pre>
   </div>
+  <div id="link_bottom-bordered-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-link-bb.m-1 a {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.eg-link-bb.m-2 a {
+  color: #cccccc;
+  text-decoration: none;
+  border-bottom-width: 4px;
+  border-bottom-style: double;
+}
+
+.eg-link-bb.m-2 a:hover {
+  color: #002834;
+  border-bottom-color: #9ae9ff;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="link_bottom-bordered">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p class="eg-link-bb m-1">Default values: <a href="#link-with-bottom-border">Link text</a></p>
@@ -5774,7 +7161,7 @@
     
     <section class="doc-i" id="reverse_italics">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_reverse-italics.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_reverse-italics.scss" class="source">view source</a>
         <h3>
           <a href="#reverse_italics" class="inner-anchor m-util">
             reverse italics
@@ -5866,18 +7253,46 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="reverse_italics-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-reverse-italics {
   &amp;.m-default {
-    // Default-values placeholder
-    @extend %scut-reverse-italics;
+    @include scut-reverse-italics;
+    // or @extend %scut-reverse-italics;
   }
   &amp;.m-variant {
     @include scut-reverse-italics(&quot;strong&quot; &quot;b&quot; &quot;.no-italics&quot;);
   }
 }</code></pre>
   </div>
+  <div id="reverse_italics-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-reverse-italics.m-default {
+  font-style: italic;
+}
+
+.eg-reverse-italics.m-default em,
+.eg-reverse-italics.m-default cite,
+.eg-reverse-italics.m-default i,
+.eg-reverse-italics.m-default false {
+  font-style: normal;
+}
+
+.eg-reverse-italics.m-variant {
+  font-style: italic;
+}
+
+.eg-reverse-italics.m-variant em,
+.eg-reverse-italics.m-variant cite,
+.eg-reverse-italics.m-variant i,
+.eg-reverse-italics.m-variant strong,
+.eg-reverse-italics.m-variant b,
+.eg-reverse-italics.m-variant .no-italics {
+  font-style: normal;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="reverse_italics">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><p class="eg-reverse-italics m-default">DEFAULT:
@@ -5909,7 +7324,7 @@
     
     <section class="doc-i" id="side-lined">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/typography/_side-lined.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_side-lined.scss" class="source">view source</a>
         <h3>
           <a href="#side-lined" class="inner-anchor m-util">
             side-lined
@@ -6032,12 +7447,12 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="side-lined-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-side-lined {
   &amp;.m-1 {
-    // Default-values placeholder
-    @extend %scut-side-lined;
+    @include scut-side-lined;
+    // or @extend %scut-side-lined;
   }
   &amp;.m-2 {
     font-size: 2em;
@@ -6051,9 +7466,223 @@
   }
 }</code></pre>
   </div>
+  <div id="side-lined-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-side-lined.m-1 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-1:before,
+.eg-side-lined.m-1:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.eg-side-lined.m-1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-2 {
+  font-size: 2em;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-2:before,
+.eg-side-lined.m-2:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 0.3em;
+  border-top-color: #9ae9ff;
+  bottom: 0.1em;
+}
+
+.eg-side-lined.m-2:before {
+  right: 1em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-2:after {
+  left: 1em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-3 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-3:before,
+.eg-side-lined.m-3:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #cccccc;
+  bottom: 0.05em;
+  height: 0.3em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #cccccc;
+}
+
+.eg-side-lined.m-3:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-3:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-4 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-4:before,
+.eg-side-lined.m-4:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: dotted;
+  border-top-width: 1px;
+}
+
+.eg-side-lined.m-4:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-4:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="side-lined">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
-    <div class="example--disp--inner"><p class="eg-side-lined m-1">Variation 1</p> <p class="eg-side-lined m-2">Variation 2</p> <p class="eg-side-lined m-3">Variation 3</p> <p class="eg-side-lined m-4">Variation 4</p></div>
+    <div class="example--disp--inner"><p class="eg-side-lined m-1">Variation 1</p>
+<p class="eg-side-lined m-2">Variation 2</p>
+<p class="eg-side-lined m-3">Variation 3</p>
+<p class="eg-side-lined m-4">Variation 4</p>
+</div>
+  </div>
+  
+</section>
+
+
+
+      </div>
+    </section>
+    
+    
+    <section class="doc-i" id="truncate">
+      <header class="doc-i--h">
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_truncate.scss" class="source">view source</a>
+        <h3>
+          <a href="#truncate" class="inner-anchor m-util">
+            truncate
+          </a>
+        </h3>
+      </header>
+      <div class="entry-body">
+        <section class="info">
+
+  <dl class="info-list">
+    
+    <dt class="info--label m-help js-help-btn" data-term="use-name" data-dir="open">
+      use-name
+    </dt>
+    <dd class="info--value">
+      <code>scut-truncate</code>
+    </dd>
+    
+
+    
+    <dt class="info--label m-help js-help-btn" data-term="type" data-dir="open">
+      type
+    </dt>
+    <dd class="info--value">
+      mixin, with a default-values placeholder
+    </dd>
+    
+
+    
+
+    
+
+    
+
+  </dl>
+</section>
+
+<section class="description">
+  <p>Truncate text to a single line, clipped with an ellipsis.</p>
+<p>A quick and dirty method of tailoring content to layout. In order to truncate without clipping words, truncate to character counts, or truncate multi-line strings generally, the most reliable and flexible methods seem to lie outside of CSS (i.e. in your templating language, or JavaScript, etc.).</p>
+
+  
+</section>
+
+
+<section class="example">
+  <h4>Example</h4>
+  
+  
+  <div class="example--html">
+    <h5>HTML</h5>
+    <pre><code class="language-markup">&lt;div class=&quot;eg-truncate&quot;&gt;This string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis and just to ensure that that example works even on your gigantic fancy-boy screen I&#x27;ll duplicate that sentence content starting now this string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis.&lt;/div&gt;
+</code></pre>
+  </div>
+  
+  <div id="truncate-scss" class="example--scss">
+    <h5>SCSS</h5>
+    <pre><code class="language-scss">.eg-truncate {
+  @include scut-truncate;
+  // or @extend %scut-truncate;
+}</code></pre>
+  </div>
+  <div id="truncate-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="truncate">Show compiled CSS</button>
+  <div class="example--disp">
+    <h5>Result</h5>
+    <div class="example--disp--inner"><div class="eg-truncate">This string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis and just to ensure that that example works even on your gigantic fancy-boy screen I'll duplicate that sentence content starting now this string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis.</div>
+</div>
   </div>
   
 </section>
@@ -6075,7 +7704,7 @@
     
     <section class="doc-i" id="pixels-to-ems">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/functions/_pixels-to-ems.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_pixels-to-ems.scss" class="source">view source</a>
         <h3>
           <a href="#pixels-to-ems" class="inner-anchor m-util">
             pixels-to-ems
@@ -6157,7 +7786,7 @@
   <h4>Example</h4>
   
   
-  <div class="example--scss">
+  <div id="pixels-to-ems-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-em {
   // first pair
@@ -6184,8 +7813,59 @@
     width: scut-em(400);
   }
 }
+/* hidden rules */
+$scut-em-default: 16;
+/* end hidden rules */
 </code></pre>
   </div>
+  <div id="pixels-to-ems-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-em.m-1 {
+  width: 18.75em;
+}
+
+.eg-em.m-2 {
+  width: 300px;
+}
+
+.eg-em.m-3,
+.eg-em.m-4 {
+  font-size: 20px;
+}
+
+.eg-em.m-3 {
+  width: 20em;
+}
+
+.eg-em.m-4 {
+  width: 400px;
+}
+
+.eg-em.m-5,
+.eg-em.m-6 {
+  font-size: 0.6em;
+}
+
+.eg-em.m-5 {
+  width: 52.08333em;
+}
+
+.eg-em.m-6 {
+  width: 500px;
+}
+
+.eg-em.m-7 {
+  margin: 3.125em 1.875em 0em 3.75em;
+  padding: 3.125em 1.25em 0em;
+}
+
+.eg-em.m-8 {
+  font-size: 20px;
+  width: 25em;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="pixels-to-ems">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-em-c">
@@ -6234,7 +7914,7 @@
     
     <section class="doc-i" id="pixels-to-rems">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/functions/_pixels-to-rems.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_pixels-to-rems.scss" class="source">view source</a>
         <h3>
           <a href="#pixels-to-rems" class="inner-anchor m-util">
             pixels-to-rems
@@ -6335,7 +8015,7 @@
 </code></pre>
   </div>
   
-  <div class="example--scss">
+  <div id="pixels-to-rems-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-rem-c {
   font-size: 1000px;
@@ -6350,6 +8030,31 @@
   }
 }</code></pre>
   </div>
+  <div id="pixels-to-rems-css" class="example--css">
+    <h5>Compiled CSS</h5>
+    <pre><code class="language-css">.eg-rem-c {
+  font-size: 1000px;
+}
+
+.eg-rem.m-1 {
+  font-size: 24px;
+}
+
+.eg-rem.m-2 {
+  font-size: 1.5rem;
+}
+
+.eg-rem.m-3 {
+  font-size: 1.5rem;
+}
+
+.eg-rem.m-4 {
+  margin: 5rem 3.125rem 0rem 6.25rem;
+  padding: 1.875rem 1.25rem;
+}
+</code></pre>
+  </div>
+  <button class="toggle-css js-toggle-css" data-entry="pixels-to-rems">Show compiled CSS</button>
   <div class="example--disp">
     <h5>Result</h5>
     <div class="example--disp--inner"><div class="eg-rem m-1">
@@ -6382,7 +8087,7 @@
     
     <section class="doc-i" id="strip_unit">
       <header class="doc-i--h">
-        <a href="https://github.com/davidtheclark/scut/blob/v0.7.2/src/functions/_strip-unit.scss" class="source">view source</a>
+        <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_strip-unit.scss" class="source">view source</a>
         <h3>
           <a href="#strip_unit" class="inner-anchor m-util">
             strip unit
