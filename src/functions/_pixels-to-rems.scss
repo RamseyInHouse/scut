@@ -7,11 +7,19 @@
   $pixels
 ) {
 
-  $rem-vals: null;
+  $rem-vals: ();
   @each $val in $pixels {
     $val-in-rems: scut-strip-unit($val) / 16 * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
-  @return $rem-vals;
+
+  @if length($rem-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($rem-vals, 1);
+  }
+  @else {
+    @return $rem-vals;
+  }
 
 }

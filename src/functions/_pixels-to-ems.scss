@@ -16,11 +16,19 @@ $scut-em-base: 16 !default;
   $multiplier: if(unit($base) == em, 16, 1);
   $divisor: scut-strip-unit($base) * $multiplier;
 
-  $em-vals: null;
+  $em-vals: ();
   @each $val in $pixels {
     $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
   }
-  @return $em-vals;
+
+  @if length($em-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($em-vals, 1);
+  }
+  @else {
+    @return $em-vals;
+  }
 
 }
