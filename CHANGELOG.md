@@ -1,4 +1,4 @@
-### 0.8.0 (in the works)
+### 0.8.0
 - Fixed a bug preventing the results of `scut-em` and `scut-rem` from being used in calculations.
 - Added `scut-truncate`.
 - Delted "tests" in repository. Devs should use Codepen. It's easy.

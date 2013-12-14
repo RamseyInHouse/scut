@@ -3,7 +3,9 @@
   z-index: 3;
   background: rgba(0,0,0,0.7);
 
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-perspective: 1000;
   perspective: 1000;
   transition: transform 0.3s linear;
   .preload & {
