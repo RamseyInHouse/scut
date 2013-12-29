@@ -42,9 +42,7 @@ body {
   max-width: 45em;
 }
 
-/* Overthrow CSS:
-   Enable overflow: auto on elements with overthrow class when html element has overthrow-enabled class too */
-.overthrow-enabled .overthrow {
+.overflow-scroll {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }

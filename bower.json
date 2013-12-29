@@ -28,7 +28,6 @@
     "scut.gemspec"
   ],
   "devDependencies": {
-    "normalize-scss": "~2.1.2",
-    "overthrow": "~0.6.5"
+    "normalize-scss": "~2.1.2"
   }
 }

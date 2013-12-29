@@ -73,7 +73,6 @@ module.exports = (grunt) ->
         files:
           "docs/dist/assets/js-built.min.js": [
             "docs/dev/assets/js/lib/prism.js"
-            "bower_components/overthrow/dist/overthrow.js"
             "docs/dev/assets/js/modals.js"
             "docs/dev/assets/js/css.js"
           ]
