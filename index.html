@@ -5591,6 +5591,9 @@
   <div id="v-center_inline-block-scss" class="example--scss">
     <h5>SCSS</h5>
     <pre><code class="language-scss">.eg-vcenter-ib {
+  &amp; &gt; p {
+    max-width: 90%;
+  }
   &amp;.m-1 {
     @include scut-vcenter-ib;
     // or @extend %scut-vcenter-ib;
@@ -5602,7 +5605,11 @@
   </div>
   <div id="v-center_inline-block-css" class="example--css">
     <h5>Compiled CSS</h5>
-    <pre><code class="language-css">.eg-vcenter-ib.m-1:before {
+    <pre><code class="language-css">.eg-vcenter-ib > p {
+  max-width: 90%;
+}
+
+.eg-vcenter-ib.m-1:before {
   content: "";
   height: 100%;
   display: inline-block;
