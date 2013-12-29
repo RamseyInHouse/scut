@@ -17,7 +17,12 @@ body {
 }
 
 .list {
-  @include scut-absolute(0 n 0 0);
+  @include scut-fixed(0 n 0 0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   width: $list-x;
 
   display: none;
@@ -27,9 +32,8 @@ body {
 }
 
 .main {
-  @include scut-absolute(0 0 0 0);
   @media ($bp-show-list) {
-    left: $list-x;
+    padding-left: $list-x;
   }
 
   // remove if things get responsive
