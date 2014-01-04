@@ -2,48 +2,34 @@
   @include scut-fixed(0 0 0 0);
   z-index: 3;
   background: rgba(0,0,0,0.7);
-
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000;
-  perspective: 1000;
-  transition: transform 0.3s linear;
-  .preload & {
-    transition: none !important;
-  }
-  transform: translate3d(100%,0,0);
+  display: none;
   &.is-active {
-    transform: translate3d(0,0,0);
+    display: block;
   }
 }
 
 .help-content {
   background: $c-bg-light;
-  @include scut-absolute(20% 50% n n);
-  margin-right: -10em;
   width: 20em;
+  max-height: 100%;
+  overflow: auto;
   padding: 2em;
   border: 5px solid $c-list;
-  @extend %scut-vcenter-ib;
-
+  @extend %scut-center-transform;
   display: none;
-  transition-property: opacity, transform;
-  transition-duration: 0.3s;
-  opacity: 0;
-  transform: scale(1.3);
   &.is-active {
-    opacity: 1;
-    transform: scale(1);
+    display: block;
   }
 }
 
 .help-close {
   background: $c-link;
+  color: $c-bg-light;
   display: block;
   margin: 1em auto 0;
-  width: 5em;
+  width: 7em;
   text-align: center;
-  padding: 0.2em 0;
+  padding: 0.7em 0;
   font-size: 0.9em;
   text-transform: uppercase;
   &:hover {

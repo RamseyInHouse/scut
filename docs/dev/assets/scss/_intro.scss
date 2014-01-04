@@ -80,14 +80,3 @@
     white-space: pre-line;
   }
 }
-
-.changelog {
-  dt {
-    font-weight: bold;
-  }
-  @include scut-key-val("", 0, 2em);
-}
-
-.changelog-i-list {
-  margin: 0;
-}
