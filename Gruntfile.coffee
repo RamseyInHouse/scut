@@ -120,7 +120,7 @@ module.exports = (grunt) ->
       docs:
         options:
           removeComments: true
-          collapseWhitespace: false
+          collapseWhitespace: true
         files:
           "docs/dist/index.html": "docs/dist/index.html"
 
