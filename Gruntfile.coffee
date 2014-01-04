@@ -73,8 +73,7 @@ module.exports = (grunt) ->
         files:
           "docs/dist/assets/js-built.min.js": [
             "docs/dev/assets/js/lib/prism.js"
-            "docs/dev/assets/js/modals.js"
-            "docs/dev/assets/js/css.js"
+            "docs/dev/assets/js/main.js"
           ]
 
     assemble:
