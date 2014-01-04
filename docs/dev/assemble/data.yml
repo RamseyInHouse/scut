@@ -255,8 +255,8 @@ categories:
           Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states. Make your site more friendly for touchscreens, keyboard navigators, etc.; account for the various means of targeting elements.
         example:
           html: |
-            <p><button class="eg-selected m-1">This following button turns blue on hover and focus</button></p>
-            <p><button class="eg-selected m-2">This following button turns blue on hover, focus, and active</button></p>
+            <p><button class="eg-selected m-1">This button turns blue on hover and focus</button></p>
+            <p><button class="eg-selected m-2">This button turns blue on hover, focus, and active</button></p>
 
       -
         name: triangle
