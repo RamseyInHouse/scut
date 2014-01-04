@@ -17,19 +17,18 @@ body {
 }
 
 .list {
-  @include scut-fixed(0 n 0 0);
-  transform: translateZ(0);
-  width: $list-x;
-
   display: none;
   @media ($bp-show-list) {
     display: block;
+    @include scut-fixed(0 n 0 0);
+    transform: translateZ(0);
+    width: $list-x;
   }
 }
 
 .main {
   @media ($bp-show-list) {
-    padding-left: $list-x;
+    margin-left: $list-x;
   }
 }
 
@@ -39,7 +38,8 @@ body {
   max-width: 45em;
 }
 
-.overflow-scroll {
+// overthrow!
+.overthrow-enabled .overthrow {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
