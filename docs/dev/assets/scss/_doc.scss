@@ -2,16 +2,11 @@
 // at small sizes
 
 @mixin show-entry-body {
-  @include scut-size(auto);
-  position: static;
-  z-index: 1;
+  display: block;
 }
 
 .entry-body {
-  @include scut-size(0);
-  overflow: hidden;
-  position: absolute;
-  z-index: -10;
+  display: none;
 
   @media ($bp-show-list) {
     @include show-entry-body;
