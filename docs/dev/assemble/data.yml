@@ -466,11 +466,11 @@ categories:
             </div>
             <p>Default method <em>not working</em> with an <code>&lt;img&gt;</code> element (to illustrate the issue):</p>
             <div class="eg-fill-container">
-              <img src="http://placehold.it/200x100" class="eg-fill m-2" class="eg-fill m-2">
+              <img src="http://placehold.it/200x100" class="eg-fill m-2" alt="placeholder">
             </div>
             <p>Width-height method working with an <code>&lt;img&gt;</code> element:</p>
             <div class="eg-fill-container">
-              <img src="http://placehold.it/200x100" class="eg-fill m-3" class="eg-fill m-2">
+              <img src="http://placehold.it/200x100" class="eg-fill m-3" alt="placeholder">
             </div>
           show-html: true
 
