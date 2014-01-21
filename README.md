@@ -31,7 +31,7 @@ Scut utilities should tackle patterns that suffer from one or more of the follow
 1. The pattern is non-intuitive.
 2. The pattern deserves a shorthand.
 3. The pattern involves some important best practices.
-4. The pattern is extremeley common and (at least) a little annoying.
+4. The pattern is extremely common and (at least) a little annoying.
 
 The utility's goal is to fix those problems in a way that **maximizies reusability**. Here are some principles to keep in mind to maximize that reusability:
 
