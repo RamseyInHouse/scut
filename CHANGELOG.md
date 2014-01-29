@@ -1,3 +1,7 @@
+### 0.9.0
+- Removed inner element from `scut-ratio-box`, as the user can add it herself if she wants it (and she may not want it).
+- Exposed the `$scut-rem-base` default value to users.
+
 ### 0.8.0
 - Fixed a bug preventing the results of `scut-em` and `scut-rem` from being used in calculations.
 - Added `scut-truncate`.
