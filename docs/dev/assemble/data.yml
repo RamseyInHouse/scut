@@ -1147,7 +1147,7 @@ categories:
           -
             variable: $weight
             default: normal
-            comment: A `font-weight` value.
+            comment: "A `font-weight` value. **This argument is *optional*: you can just leave it out for your italic non-bold fonts.** See the example below."
           -
             variable: $style
             default: normal
@@ -1155,12 +1155,13 @@ categories:
         text: |
           Implement `font-face` best practices with the greatest of ease.
 
-          The "best practices" to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.
+          (The "best practices" to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.)
 
           For example, to implement all varieties of Arvo:
           <pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
           @include scut-font-face("Arvo", "fonts/arvo-bold-webfont", bold);
-          @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
+          @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", italic);
+          // or @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
           @include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre>
 
         references:

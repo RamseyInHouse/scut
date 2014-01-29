@@ -8,6 +8,11 @@
   $style: normal
 ) {
 
+  @if index('italic' 'oblique', $weight) {
+    $style: $weight;
+    $weight: normal;
+  }
+
   @font-face {
     font-family: $font-family;
     font-weight: $weight;
