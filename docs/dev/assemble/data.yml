@@ -518,18 +518,27 @@ categories:
       -
         group-start: lists
         name: list_unstyled
-        type: *MP
+        type: *MDP
         use-name: scut-list-unstyled
+        args:
+          -
+            variable: $no-margin
+            default: true
+            comment: If `true`, top and bottom margins will be removed from the list.
         text: |
-          Remove default styling (`padding-left` and `list-style-type`) from a list.
+          Remove default styling from a list (`padding-left`, `list-style-type`, and optionally `margin-top` and `margin-bottom`).
 
-          (Browser-default top and bottom margins are left intact: probably, in most cases, either you want those defaults or you want to set your own margins and don't want Scut to override your setting.)
         example:
           html: |
-            <ul class="eg-unstyled-list">
+            <ul class="eg-unstyled-list m-1">
               <li>list item</li>
               <li>list item</li>
               <li>list item</li>
+            </ul>
+            <ul class="eg-unstyled-list m-2">
+              <li>list-with-margins item</li>
+              <li>list-with-margins item</li>
+              <li>list-with-margins item</li>
             </ul>
 
       -
@@ -552,6 +561,10 @@ categories:
             default: 0
             comment: |
               Left-padding *before* the list-item marker.
+          -
+            variable: $no-margin
+            default: "false"
+            comment: If `true`, top and bottom margins will be removed from the list. *Note that the default here is `false`, unlike the other list mixins.*
         content: |
           A content block passed to this mixin will be applied to the list-item markers.
         text: |
@@ -612,6 +625,10 @@ categories:
             variable: $dir
             default: left
             comment: The `float` direction.
+          -
+            variable: $no-margin
+            default: true
+            comment: If `true`, top and bottom margins will be removed from the list.
         text: |
           Float the items of an unstyled list &mdash; to the left or to the right, with or without spacing between them.
 
@@ -645,6 +662,10 @@ categories:
             variable: $space
             default: "false"
             comment: Spacing to separate the inline list items.
+          -
+            variable: $no-margin
+            default: true
+            comment: If `true`, top and bottom margins will be removed from the list.
         text: |
           Inline the items of an unstyled list.
 
@@ -678,6 +699,10 @@ categories:
             variable: $display
             default: inline
             comment: Change to `inline-block` if you don't want your list items spanning lines.
+          -
+            variable: $no-margin
+            default: true
+            comment: If `true`, top and bottom margins will be removed from the list.
         compatibility: |
           This utility uses the `:not` and `:last-child` selectors, which are not supported in IE8 without a polyfill.
 
@@ -727,6 +752,10 @@ categories:
             variable: $height
             default: false
             comment: Manually set a height for the list items so that you can use tall dividers. See examples below.
+          -
+            variable: $no-margin
+            default: true
+            comment: If `true`, top and bottom margins will be removed from the list.
         contentblock: |
           A content block passed to this mixin will be applied to the dividing pseudo-elements.
 

@@ -7,10 +7,11 @@
   $divider: "|",
   $space: 0.5em,
   $dir: left,
-  $height: false
+  $height: false,
+  $no-margin: true
 ) {
 
-  @include scut-list-floated($dir: $dir);
+  @include scut-list-floated($dir: $dir, $no-margin: $no-margin);
 
   $pseudo: if($dir == left, 'before', 'after');
 

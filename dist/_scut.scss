@@ -24,15 +24,22 @@
 // SCUT LIST: UNSTYLED
 // http://davidtheclark.github.io/scut/#list_unstyled
 
-@mixin scut-list-unstyled {
+@mixin scut-list-unstyled(
+  $no-margin: true
+) {
 
   list-style-type: none;
   padding-left: 0;
 
+  @if $no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 }
 
 %scut-list-unstyled {
-  @include scut-list-unstyled;
+  @include scut-list-unstyled();
 }
 
 // SCUT LIST: FLOATED
@@ -42,10 +49,11 @@
 
 @mixin scut-list-floated (
   $space: false,
-  $dir: left
+  $dir: left,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
+  @include scut-list-unstyled($no-margin);
   @include scut-clearfix;
 
   & > li {
@@ -785,7 +793,8 @@ $scut-rem-base: 16 !default;
 @mixin scut-list-custom (
   $content: "\2022",
   $marker-width: 0.75em,
-  $pad: 0
+  $pad: 0,
+  $no-margin: false
 ) {
 
   $content-val: null;
@@ -807,6 +816,11 @@ $scut-rem-base: 16 !default;
 
   padding-left: $marker-width + $pad;
   list-style-type: none;
+
+  @if $no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   & > li {
     position: relative;
@@ -835,10 +849,11 @@ $scut-rem-base: 16 !default;
   $divider: "|",
   $space: 0.5em,
   $dir: left,
-  $height: false
+  $height: false,
+  $no-margin: true
 ) {
 
-  @include scut-list-floated($dir: $dir);
+  @include scut-list-floated($dir: $dir, $no-margin: $no-margin);
 
   $pseudo: if($dir == left, 'before', 'after');
 
@@ -890,10 +905,11 @@ $scut-rem-base: 16 !default;
 // Depends on `list-unstyled`.
 
 @mixin scut-list-inline (
-  $space: false
+  $space: false,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
+  @include scut-list-unstyled($no-margin);
 
   & > li {
     display: inline-block;
@@ -918,12 +934,11 @@ $scut-rem-base: 16 !default;
 
 @mixin scut-list-punctuated (
   $divider: ", ",
-  $display: inline
+  $display: inline,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
-  margin-top: 0;
-  margin-bottom: 0;
+  @include scut-list-unstyled($no-margin);
 
   & > li {
     display: $display;

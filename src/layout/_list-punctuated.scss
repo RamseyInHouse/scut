@@ -5,12 +5,11 @@
 
 @mixin scut-list-punctuated (
   $divider: ", ",
-  $display: inline
+  $display: inline,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
-  margin-top: 0;
-  margin-bottom: 0;
+  @include scut-list-unstyled($no-margin);
 
   & > li {
     display: $display;

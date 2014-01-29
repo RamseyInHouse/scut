@@ -16,7 +16,7 @@
 
 .eg-list-divided {
   &.m-1 {
-    @include scut-list-divided("...", 0, right);
+    @include scut-list-divided("...", 0, right, $no-margin: false);
   }
   &.m-2 {
     @include scut-list-divided("", 0.5em, left, 3em) {

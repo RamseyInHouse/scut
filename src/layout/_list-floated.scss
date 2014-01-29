@@ -5,10 +5,11 @@
 
 @mixin scut-list-floated (
   $space: false,
-  $dir: left
+  $dir: left,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
+  @include scut-list-unstyled($no-margin);
   @include scut-clearfix;
 
   & > li {

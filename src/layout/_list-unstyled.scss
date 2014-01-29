@@ -1,13 +1,20 @@
 // SCUT LIST: UNSTYLED
 // http://davidtheclark.github.io/scut/#list_unstyled
 
-@mixin scut-list-unstyled {
+@mixin scut-list-unstyled(
+  $no-margin: true
+) {
 
   list-style-type: none;
   padding-left: 0;
 
+  @if $no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
 }
 
 %scut-list-unstyled {
-  @include scut-list-unstyled;
+  @include scut-list-unstyled();
 }

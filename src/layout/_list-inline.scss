@@ -4,10 +4,11 @@
 // Depends on `list-unstyled`.
 
 @mixin scut-list-inline (
-  $space: false
+  $space: false,
+  $no-margin: true
 ) {
 
-  @include scut-list-unstyled;
+  @include scut-list-unstyled($no-margin);
 
   & > li {
     display: inline-block;

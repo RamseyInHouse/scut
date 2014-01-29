@@ -1,4 +1,6 @@
 ### 0.9.0
+- Added `$no-margin` variable to list mixins, with the default value `true`.
+- Made `scut-font-face`'s argument `$weight` optional.
 - Removed inner element from `scut-ratio-box`, as the user can add it herself if she wants it (and she may not want it).
 - Exposed the `$scut-rem-base` default value to users.
 

@@ -4,7 +4,8 @@
 @mixin scut-list-custom (
   $content: "\2022",
   $marker-width: 0.75em,
-  $pad: 0
+  $pad: 0,
+  $no-margin: false
 ) {
 
   $content-val: null;
@@ -26,6 +27,11 @@
 
   padding-left: $marker-width + $pad;
   list-style-type: none;
+
+  @if $no-margin {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   & > li {
     position: relative;
