@@ -3,13 +3,15 @@
 
 // Depends on `scut-strip-unit`.
 
+$scut-rem-base: 16 !default;
+
 @function scut-rem (
   $pixels
 ) {
 
   $rem-vals: ();
   @each $val in $pixels {
-    $val-in-rems: scut-strip-unit($val) / 16 * 1rem;
+    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
 

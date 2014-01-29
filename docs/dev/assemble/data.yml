@@ -202,6 +202,8 @@ categories:
         text: |
           Use `rem` values while providing a `px`-value fallback for <IE8 and Opera Mini.
 
+          ***Note: The base pixel value with which to calculate your `rem`-value is by default `16px`: to change this for your project, you can set your own `$scut-rem-base` variable prior to using this mixin***.
+
           Take a look at [Jonathan Snook's article on the issue](http://snook.ca/archives/html_and_css/font-size-with-rem) to learn about this fallback trick &mdash; why it's necessary and why it works.
 
           **If you don't need to support IE8 and Opera Mini, consider using the [`scut-rem` function, below](#pixels-to-rems)**, instead, so you don't have to pass the CSS property as an argument.
@@ -1495,6 +1497,8 @@ categories:
           IE8 and Opera Mini do not support `rem` units. If you want to support these browsers you must provide a fallback in pixels &mdash; which Scut can do with the [`scut-rem-fallback` mixin, above](#rems_with_fallback).
         text: |
           Convert pixel-values to `rem`-values. *Pass a single value or a list of values.*
+
+          ***Note: The base pixel value with which to calculate your `rem`-value is by default `16px`: to change this for your project, you can set your own `$scut-rem-base` variable prior to using this function***. *(Unlike [`scut-em`](#pixels-to-ems), it is presumed that you will only need to set this variable *once* per project, so it is not also an argument in the function.)*
 
           Like [`scut-em`](#pixels-to-ems), above, this function makes (limited parts of) life easier for those of us who appreciate the many benefits of relative units but still find themselves thinking in pixels, or (what's especially common) using tools that speak in pixels.
 
