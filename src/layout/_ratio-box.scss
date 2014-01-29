@@ -2,8 +2,7 @@
 // http://davidtheclark.github.io/scut/#ratio-box
 
 @mixin scut-ratio-box (
-  $ratio: 1/1,
-  $inner: ".scut-inner"
+  $ratio: 1/1
 ) {
 
   overflow: hidden;
@@ -17,15 +16,6 @@
     display: block;
     height: 0;
     padding-top: (1 / $ratio) * 100%;
-  }
-
-  // The inner element simply fills up the container.
-  & > #{$inner} {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
   }
 
 }

@@ -17,10 +17,15 @@
   }
   &.m-3 {
     width: 15em;
-    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+    @include scut-ratio-box(16/9);
   }
   &.m-4 {
     width: 7em;
-    @include scut-ratio-box(16/9, ".eg-ratio-inner");
+    @include scut-ratio-box(16/9);
   }
+}
+.eg-ratio-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
