@@ -21,5 +21,5 @@ Gem::Specification.new do |s|
   s.files += Dir.glob("dist/*.*")
 
   # Gems Dependencies
-  s.add_dependency("sass", [">=3.2.0"])
+  s.add_runtime_dependency 'sass', '~> 3.2', '>= 3.2.0'
 end
