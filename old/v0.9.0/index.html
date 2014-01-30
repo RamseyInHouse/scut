@@ -1,0 +1,2082 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Scut</title><meta name="description" content="Sass-CSS utilities for everyday chores."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="assets/css-built.min.css"><!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script><![endif]--></head><body><nav id="list" class="list overthrow" role="navigation"><ul class="index-1"><li><a href="#main" class="main-link"><span class="index-title">Scut</span> <span class="index-subtitle">: SCSS Utilities</span></a> <a href="https://github.com/davidtheclark/scut" class="sidebar-link">Github Repository</a> <a href="http://codepen.io/davidtheclark/pen/FhqGc" target="_blank" class="sidebar-link">Codepen Playground</a></li><li><a href="#about" class="index-1--i">about</a></li><li><a href="#installation" class="index-2--i">installation</a></li><li><a href="#usage" class="index-2--i">usage</a></li><li><a href="#contributing" class="index-2--i">contributing</a></li><li><a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md" class="index-2--i">changelog</a></li><li><a href="#general" class="index-1--i">general</a><ul class="index-2"><li><a href="#border" class="index-2--i">border</a></li><li><a href="#circle" class="index-2--i">circle</a></li><li><a href="#color_swap" class="index-2--i">color swap</a></li><li><a href="#hd_breakpoint" class="index-2--i">hd breakpoint</a></li><li><a href="#hide_visually" class="index-2--i">hide visually</a></li><li><a href="#image_replacement" class="index-2--i">image replacement</a></li><li><a href="#rems_with_fallback" class="index-2--i">rems with fallback</a></li><li><a href="#reset" class="index-2--i">reset</a></li><li><a href="#selected" class="index-2--i">selected</a></li><li><a href="#triangle" class="index-2--i">triangle</a></li></ul></li><li><a href="#layout" class="index-1--i">layout</a><ul class="index-2"><li><a href="#center_absolutely" class="index-2--i">center absolutely</a></li><li><a href="#center_block" class="index-2--i">center block</a></li><li><a href="#center_transform" class="index-2--i">center transform</a></li><li><a href="#clearfix" class="index-2--i">clearfix</a></li><li><a href="#fill" class="index-2--i">fill</a></li><li><a href="#fonticon_label" class="index-2--i">fonticon label</a></li><li><a href="#list_unstyled" class="index-2--i">list: unstyled</a></li><li><a href="#list_custom" class="index-2--i">list: custom</a></li><li><a href="#list_floated" class="index-2--i">list: floated</a></li><li><a href="#list_inline" class="index-2--i">list: inline</a></li><li><a href="#list_punctuated" class="index-2--i">list: punctuated</a></li><li><a href="#list_divided" class="index-2--i">list: divided</a></li><li><a href="#margin" class="index-2--i">margin</a></li><li><a href="#padding" class="index-2--i">padding</a></li><li><a href="#positioning_coordinates" class="index-2--i">positioning: coordinates</a></li><li><a href="#positioning_absolute" class="index-2--i">positioning: absolute</a></li><li><a href="#positioning_relative" class="index-2--i">positioning: relative</a></li><li><a href="#positioning_fixed" class="index-2--i">positioning: fixed</a></li><li><a href="#ratio-box" class="index-2--i">ratio-box</a></li><li><a href="#size" class="index-2--i">size</a></li><li><a href="#sticky_footer" class="index-2--i">sticky footer</a></li><li><a href="#v-center_line-height" class="index-2--i">v-center: line-height</a></li><li><a href="#v-center_inline-block" class="index-2--i">v-center: inline-block</a></li><li><a href="#v-center_table_display" class="index-2--i">v-center: table display</a></li><li><a href="#v-center_transform" class="index-2--i">v-center: transform</a></li></ul></li><li><a href="#typography" class="index-1--i">typography</a><ul class="index-2"><li><a href="#bookends" class="index-2--i">bookends</a></li><li><a href="#characters" class="index-2--i">characters</a></li><li><a href="#font-face" class="index-2--i">font-face</a></li><li><a href="#hanging_indent" class="index-2--i">hanging indent</a></li><li><a href="#indented_paragraphs" class="index-2--i">indented paragraphs</a></li><li><a href="#key-value" class="index-2--i">key-value</a></li><li><a href="#link_bottom-bordered" class="index-2--i">link: bottom-bordered</a></li><li><a href="#reverse_italics" class="index-2--i">reverse italics</a></li><li><a href="#side-lined" class="index-2--i">side-lined</a></li><li><a href="#truncate" class="index-2--i">truncate</a></li></ul></li><li><a href="#functions" class="index-1--i">functions</a><ul class="index-2"><li><a href="#pixels-to-ems" class="index-2--i">pixels-to-ems</a></li><li><a href="#pixels-to-rems" class="index-2--i">pixels-to-rems</a></li><li><a href="#strip_unit" class="index-2--i">strip unit</a></li></ul></li></ul><a href="https://github.com/davidtheclark/scut/" class="contribute-link">Contribute your own utilities and help Scut grow. <em>The world needs you.</em></a></nav><article id="main" class="main overthrow"><section class="container intro"><h1>Scut <span class="version">v0.8.0</span></h1><p><strong>&mdash; a collection of Sass utilities to ease and improve our implementations of common style-code patterns.</strong></p><p><small>You can think of the word Scut as an acronym for <strong><em>S</em></strong>ass-<strong><em>C</em></strong>SS <strong><em>Ut</em></strong>itilies.(Or you can think of the word in other ways: Scut will do your <em>scut work</em>; let Scut be your <em>scut monkey</em>. (But whatever you may do at home, be careful how you use this word in polite company. To learn its many and colorful connotations, <a href="http://en.wiktionary.org/wiki/scut">have a look at Wiktionary</a>.))</small></p><p><a href="https://github.com/davidtheclark/scut/" class="intro-btn">Visit the Github repository</a></p><p><a href="http://codepen.io/davidtheclark/pen/FhqGc" target="_blank" class="intro-btn">Experiment with Scut on Codepen</a></p><p><strong>BE AWARE:</strong> Scut is in early stages, under active development, <em>unstable</em> &mdash; still in <a href="http://semver.org/">SemVer</a> v0. <strong>Scut is wide, wide open to contributions</strong>, and I will be building on it myself. New features will be added and old features might be improved. So: <strong>if some part of Scut that you had been using suddenly doesn&#39;t work, please check this documentation to see what changed.</strong></p><p>You might also want to <a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">have a look at the changelog</a>.</p><section id="about"><h2><a href="#about" class="inner-anchor m-intro">About</a></h2><div class="entry-body"><p>For a thorough introduction to Scut, have a look at <a href="http://css-tricks.com/introducing-scut-new-sass-utility-library/">my article, &quot;Introducing Scut,&quot; on CSS-Tricks</a>.</p><h3>Why use Scut?</h3><h4>Avoid repetition</h4><p>Scut&#39;s primary goal is to save people like you and me from repeating the same few lines of styling code, over and over again, to achieve the same effect in different places.</p><h4>Organize your rules</h4><p>An oft-unsung quality of mixins and placeholders is that they organize your code, <em>grouping rules according to the effects they combine to achieve</em>. Even when a mixin applies only a couple of rules (like <a href="#hanging_indent"><code>scut-hanging-indent</code></a>), it serves this end.</p><h4>Save some Google searching</h4><p>As we would all like to spend a smaller percentage of our lives sitting at red lights, we also hope to spend less life flicking through search results.</p><h4>Implement best practices</h4><p>Some of Scut&#39;s utilities, such as <a href="#hd_breakpoint"><code>hd-breakpoint</code></a> and <a href="#font-face"><code>font-face</code></a>, are all about implementing &quot;best practices&quot; &mdash; without looking them up every time you need them.</p><p>And for any Scut utility, <em>if somebody figures out a better way to do it, with more flexibility, better browser support, fewer extra <code>&lt;div&gt;</code>s, whatever, Scut should be updated accordingly. <strong>So contribute your fabulous ideas and discoveries!</strong></em></p><h3>What makes Scut unique?</h3><h4>Flexible abstractions of common patterns &mdash; nothing more</h4><p>Scut doesn&#39;t require additional setup and processing, doesn&#39;t apply any default sizes, spacing, colors, etc. It is nowhere close to a &quot;framework.&quot; The intention is to build utilities that are as simple, flexible, and generic as possible &mdash; abstract patterns that you can work into your own designs without having to override anything or set up site-wide parameters.</p><h4>No vendor prefixes</h4><p>Some other pre-processor libraries do little more than vendor prefixing. Scut doesn&#39;t bother with that: we&#39;re looking for other things to do.</p><p>Most of Scut&#39;s utilities do not use properties that require vendor prefixes. But <strong>if a utility <em>does</em> require vendor prefixing, you should be warned in the documentation below. In such cases <em>and all other cases</em> Scut suggests that you install and run <a href="https://github.com/ai/autoprefixer">Autoprefixer</a> as part of the compilation process.</strong> (I rely on <a href="http://gruntjs.com/">Grunt</a> to make this happen, with the <a href="https://github.com/nDmitry/grunt-autoprefixer">grunt-autoprefixer plugin</a>. Easy as can be.)</p><h4>@extend placeholders</h4><p>All mixins that require no arguments &mdash; either because they <em>have</em> no arguments or because all their arguments have default values &mdash; are paired with <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#placeholders">placeholder selectors</a>, which are good things to use, when you can.</p><h4><code>scut-</code> prefix</h4><p>To avoid confusions and collisions, all Scut utilities &mdash; mixins, placeholders, functions, variables, whatever &mdash; are prefixed with <code>scut-</code>.</p></div></section><section id="installation"><h2><a href="#installation" class="inner-anchor m-intro">Installation</a></h2><div class="entry-body"><p>Scut is a single file that can be copied and pasted, downloaded, or installed via Bower or RubyGems (for Compass). No trouble at all. Here are the details.</p><h3>Method 1: Get the File and Use It</h3><ol><li>Get the file. You have the following options:<div class="install-list"><ul><li>Download or copy/paste <a href="https://github.com/davidtheclark/scut/blob/v0.8.0/dist/_scut.scss">the latest release from Github</a>.</li><li>Use <a href="http://bower.io/">Bower</a>:<pre class="language-bash"><code>bower install scut --save-dev</code></pre>This will get you the latest release and save it as a <code>devDependency</code> for your project.</li></ul></div></li><li>Then, from your own Sass/SCSS files, import <code>_scut.scss</code>. Like so:<pre class="language-scss"><code>@import "path/to/scut";</code></pre></li></ol><h3>Method 2: Compass Extension</h3><ol><li>Install the RubyGem:<pre class="language-bash"><code>gem install scut</code></pre></li><li>Include Scut in your project by using <code>require</code> and <code>@import</code> according to the usual Compass-extension methods. You know: <code>require 'scut'</code>. And <code>@import 'scut'</code>. That kind of thing.</li></ol></div></section><section id="usage"><h2><a href="#usage" class="inner-anchor m-intro">Usage</a></h2><div class="entry-body"><p>Having imported <code>_scut.scss</code>, use the mixins and placeholders described below in the manner described below.</p><p>If you have any questions about how to use Sass/SCSS, refer to <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html">the thorough Sass documentation</a>.</p><p>If the Scut documentation below is inadequate or upsetting, please <a href="https://github.com/davidtheclark/scut/issues">file an issue</a> or <a href="https://github.com/davidtheclark">contact me</a>.</p><h3>Browser Support</h3><p>Most of Scut&#39;s utilities should work magnificently in any modern browser and IE8+.</p><p>If a specific utility <em>does</em> have compatibility issues (and some do), those issues should be noted in the documentation below. (If they are not, please let me know.)</p></div></section><section id="contributing"><h2><a href="#contributing" class="inner-anchor m-intro">Contributing</a></h2><div class="entry-body"><p>Yes, you can and should contribute.</p><p>Scut is all about making your work, my work, and the work of other developers easier, maybe even a little bit better; extending tutorials into reusable utilities; encouraging best practices; and sharing good ideas &mdash; goals we can agree on. I hope you&#39;ll find it a worthy experiment.</p><p><a href="https://github.com/davidtheclark/scut">Visit the repository on Github</a> and file issues and pull requests according to the usual Github methods. A little contribution guide is included in the README there.</p><p>If you have any questions, please <a href="https://github.com/davidtheclark/scut/issues">file an issue</a> or <a href="https://github.com/davidtheclark">contact me</a>.</p></div></section></section><section class="container"><h2><a href="#general" id="general" class="inner-anchor m-category">general</a></h2><section class="doc-i" id="border"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_border.scss" class="source">view source</a><h3><a href="#border" class="inner-anchor m-util">border</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-border</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$style</code><div class="args--comment"><p>A border shorthand value for the border you wish to create.</p></div></li><li><code class="args--name">$sides</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n y</code>&nbsp;]<div class="args--comment"><p>The sides on which to add your border; a list of 2 or 4. <code>n</code> abbreviates <code>null</code>, passing no value; <code>y</code>, or anything other than <code>n</code>, will create a rule. See below for details.</p></div></li></ol></dd></dl></section><section class="description"><p>A shorthand for adding a border to multiple sides of an element using a single border shorthand value.</p><p>The <code>$sides</code> argument determines which sides get the padding. It parallels the established pattern in vanilla CSS: if a list of two is passed, the first value applies to top and bottom, the second to right and left; if a list of four is passed, the values apply, in order, to top, right, bottom, and left. As elsewhere in Scut, <code>n</code> stands for <code>null</code> and results in no rule being created. For <code>scut-border</code>, <code>y</code> (or anything other than <code>n</code>) stands for &quot;yes&quot; or <code>true</code> and will result in a rule. See the examples below.</p><p>If you don&#39;t see the value in this shorthand, please read the explanation of <a href="#margin"><code>scut-margin</code>, below</a>, which applies equally to this border mixin.</p></section><section class="example"><h4>Example</h4><div id="border-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-border {
+  &amp;.m-1 {
+    @include scut-border(5px solid, y n);
+  }
+  &amp;.m-2 {
+    @include scut-border(0.5em solid $eg-light, n y);
+  }
+  &amp;.m-3 {
+    @include scut-border(10px solid $eg-dark, y y n n);
+  }
+  &amp;.m-4 {
+    @include scut-border(0.75em solid $eg-dark, n n y y);
+    @include scut-border(0.75em solid $eg-light, y y n n);
+  }
+}</code></pre></div><div id="border-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-border.m-1 {
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+}
+
+.eg-border.m-2 {
+  border-left: 0.5em solid #9ae9ff;
+  border-right: 0.5em solid #9ae9ff;
+}
+
+.eg-border.m-3 {
+  border-top: 10px solid #002834;
+  border-right: 10px solid #002834;
+}
+
+.eg-border.m-4 {
+  border-bottom: 0.75em solid #002834;
+  border-left: 0.75em solid #002834;
+  border-top: 0.75em solid #9ae9ff;
+  border-right: 0.75em solid #9ae9ff;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="border">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-border m-1">Variation 1</div><div class="eg-border m-2">Variation 2</div><div class="eg-border m-3">Variation 3</div><div class="eg-border m-4">Variation 4</div></div></div></section></div></section><section class="doc-i" id="circle"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_circle.scss" class="source">view source</a><h3><a href="#circle" class="inner-anchor m-util">circle</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-circle</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$size</code><div class="args--comment"><p>One value becomes both <code>width</code> and <code>height</code>.</p></div></li><li><code class="args--name">$color</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inherit</code>&nbsp;]</li></ol></dd><dt class="info--label">compatibility</dt><dd class="info--value"><p>This utility uses <code>border-radius</code>, which is not supported in IE8; so IE8 will just get what it deserves: squares.</p></dd></dl></section><section class="description"><p>Create a CSS circle.</p><p>By default, the circle will inherit the color of its parent&#39;s text. Or you can designate a color yourself.</p><p><em>If you want to add a border to your circle, you have to declare a color.</em></p></section><section class="example"><h4>Example</h4><div id="circle-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-circle {
+  &amp;.m-1 {
+    @include scut-circle(1em);
+  }
+  &amp;.m-2 {
+    @include scut-circle(2em, $eg-light);
+  }
+  &amp;.m-3 {
+    @include scut-circle(2em, $eg-dark);
+    border: 5px solid $eg-light;
+  }
+}</code></pre></div><div id="circle-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-circle.m-1 {
+  border-radius: 50%;
+  display: inline-block;
+  border-width: 0.5em;
+  border-style: solid;
+  height: 0;
+  width: 0;
+}
+
+.eg-circle.m-2 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #9ae9ff;
+  height: 2em;
+  width: 2em;
+}
+
+.eg-circle.m-3 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #002834;
+  height: 2em;
+  width: 2em;
+  border: 5px solid #9ae9ff;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="circle">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-circle m-1"></div><div class="eg-circle m-2"></div><div class="eg-circle m-3"></div></div></div></section></div></section><section class="doc-i" id="color_swap"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_color-swap.scss" class="source">view source</a><h3><a href="#color_swap" class="inner-anchor m-util">color swap</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-color-swap</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$off</code><div class="args--comment"><p>Color(s) for the &quot;off&quot; state. A list of two values will designate <code>color</code> and <code>background-color</code>. One value will be interpreted as <code>color</code> &mdash; unless the <code>$bg</code> argument, below, is set to <code>true</code>, in which case it will be <code>background-color</code>.</p></div></li><li><code class="args--name">$on</code><div class="args--comment"><p>Color(s) for the &quot;on&quot; state (<code>:hover</code> and <code>:focus</code>). One or two values, interpreted the same as <code>$off</code>, above.</p></div></li><li><code class="args--name">$duration</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0</code>&nbsp;]<div class="args--comment"><p>The <code>transition-duration</code> between <code>$off</code> and <code>$on</code> states.</p></div></li><li><code class="args--name">$bg</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>Set to <code>true</code> if you want to pass a single color value for the <code>$off</code> and <code>$on</code> arguments and you want that value interpreted as <code>background-color</code>. (By default, a single value will be intepreted as <code>color</code>.)</p></div></li></ol></dd></dl></section><section class="description"><p>A shorthand for setting two color-states &mdash; involving text <code>color</code> and <code>background-color</code> &mdash; with the option of adding a transition.</p><p>The &quot;on&quot; state subsumes <code>:hover</code> and <code>:focus</code>.</p></section><section class="example"><h4>Example</h4><div id="color_swap-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-color-swap {
+  &amp;.m-1 {
+    @include scut-color-swap($eg-dark, $eg-light, 1s);
+  }
+  &amp;.m-2 {
+    @include scut-color-swap($eg-light $eg-dark, $eg-dark $eg-light);
+  }
+  &amp;.m-3 {
+    color: white;
+    @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
+  }
+}</code></pre></div><div id="color_swap-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-color-swap.m-1 {
+  color: #002834;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+
+.eg-color-swap.m-1:hover,
+.eg-color-swap.m-1:focus {
+  color: #9ae9ff;
+}
+
+.eg-color-swap.m-2 {
+  color: #9ae9ff;
+  background-color: #002834;
+}
+
+.eg-color-swap.m-2:hover,
+.eg-color-swap.m-2:focus {
+  color: #002834;
+  background-color: #9ae9ff;
+}
+
+.eg-color-swap.m-3 {
+  color: white;
+  background-color: #002834;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.eg-color-swap.m-3:hover,
+.eg-color-swap.m-3:focus {
+  background-color: #9ae9ff;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="color_swap">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><button class="eg-color-swap m-1">Variation 1</button><button class="eg-color-swap m-2">Variation 2</button><button class="eg-color-swap m-3">Variation 3</button></div></div></section></div></section><section class="doc-i" id="hd_breakpoint"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_hd-breakpoint.scss" class="source">view source</a><h3><a href="#hd_breakpoint" class="inner-anchor m-util">hd breakpoint</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-hd-bp</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$ratio</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.3</code>&nbsp;]<div class="args--comment"><p>A <em>minimum</em> resolution value.</p></div></li></ol></dd></dl></section><section class="description"><p>Write effective resolution-based <code>@media</code>-queries, without trying too hard.</p><p>This mixin uses <code>-o-min-device-pixel-ratio</code>, <code>-webkit-min-device-pixel-ratio</code>, and <code>min-resolution</code>. If you&#39;re curious about the choices, read the References below.</p></section><section class="example"><h4>Example</h4><div id="hd_breakpoint-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-hd-bp {
+  background-color: $eg-muted;
+  @include scut-hd-bp(2.0) {
+    background-color: $eg-light;
+  }
+}</code></pre></div><div id="hd_breakpoint-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-hd-bp {
+  background-color: #cccccc;
+}
+
+@media (-o-min-device-pixel-ratio: 2 / 1), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .eg-hd-bp {
+    background-color: #9ae9ff;
+  }
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="hd_breakpoint">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p class="eg-hd-bp">If you are using a retina screen, this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="https://github.com/h5bp/html5-boilerplate/issues/1127" class="refs--i"><p>The involved Github discussion that resulted in HTML5 Boilerplate&#39;s HiDPI breakpoint</p></a></li><li><a href="http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/" class="refs--i"><p>Matt Thomas&#39;s post about Wordpress&#39;s HiDPI breakpoint (implemented in WordPress core 3.5)</p></a></li></ul></footer></div></section><section class="doc-i" id="hide_visually"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_hide-visually.scss" class="source">view source</a><h3><a href="#hide_visually" class="inner-anchor m-util">hide visually</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-hide-visually</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd></dl></section><section class="description"><p>Hide an element visually, and effectively remove it from page layout, without hiding it from screen readers. Vital accessibility practice.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-hide-visually&quot;&gt;This element is visually hidden.&lt;/div&gt;
+&lt;div&gt;You can&#x27;t see the element above this one, can you?&lt;/div&gt;
+</code></pre></div><div id="hide_visually-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-hide-visually {
+  @include scut-hide-visually;
+  // or @extend %scut-hide-visually;
+}</code></pre></div><div id="hide_visually-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-hide-visually {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="hide_visually">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-hide-visually">This element is visually hidden.</div><div>You can't see the element above this one, can you?</div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://snook.ca/archives/html_and_css/hiding-content-for-accessibility" class="refs--i"><p>Jonathan Snook: &quot;Hiding Content for Accessibility&quot;</p></a></li><li><a href="https://github.com/h5bp/html5-boilerplate/issues/194/" class="refs--i"><p>HTML5 Boilerplate discussion and research</p></a></li></ul></footer></div></section><section class="doc-i" id="image_replacement"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_image-replacement.scss" class="source">view source</a><h3><a href="#image_replacement" class="inner-anchor m-util">image replacement</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-image-replace</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd></dl></section><section class="description"><p>Include text in the markup but replace it with an image.</p><p>Be warned: you might run into occasional bugs with this method of image-replacement <em>unless you&#39;ve also set a <code>width</code> on your element.</em></p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p&gt;The following image is replacing text:&lt;/p&gt;
+&lt;div class=&quot;eg-image-replace&quot;&gt;This text has been replaced.&lt;/div&gt;
+</code></pre></div><div id="image_replacement-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-image-replace {
+  @include scut-image-replace;
+  // or @extend %scut-image-replace;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}</code></pre></div><div id="image_replacement-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-image-replace {
+  text-indent: 102%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="image_replacement">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p>The following image is replacing text:</p><div class="eg-image-replace">This text has been replaced.</div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/" class="refs--i"><p>L. Jeffrey Zeldman: &quot;Replacing the -9999px Hack (New Image Replacement)&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="rems_with_fallback"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_rems-with-fallback.scss" class="source">view source</a><h3><a href="#rems_with_fallback" class="inner-anchor m-util">rems with fallback</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-rem-fallback</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$pixels</code><div class="args--comment"><p>The <code>px</code>-value you wish to convert to <code>rem</code>s. No <code>px</code> unit necessary (e.g. <code>20</code> is fine, so is <code>20px</code>). <em>Passing a list will result in a list of <code>rem</code> values</em> (see examples).</p></div></li><li><code class="args--name">$property</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">font-size</code>&nbsp;]<div class="args--comment"><p>The CSS property that you want to apply your <code>rem</code>-value to (along with its <code>px</code>-value fallback).</p></div></li></ol></dd></dl></section><section class="description"><p>Use <code>rem</code> values while providing a <code>px</code>-value fallback for &lt;IE8 and Opera Mini.</p><p>Take a look at <a href="http://snook.ca/archives/html_and_css/font-size-with-rem">Jonathan Snook&#39;s article on the issue</a> to learn about this fallback trick &mdash; why it&#39;s necessary and why it works.</p><p><strong>If you don&#39;t need to support IE8 and Opera Mini, consider using the <a href="#pixels-to-rems"><code>scut-rem</code> function, below</a></strong>, instead, so you don&#39;t have to pass the CSS property as an argument.</p><p>Also, have a look at <a href="#pixels-to-rems"><code>scut-rem</code>&#39;s entry</a> for more information (and references) about <code>rem</code> units, how they differ from <code>em</code> units, and the compatibility issue.</p></section><section class="example"><h4>Example</h4><div id="rems_with_fallback-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-rem-fallback {
+  &amp;.m-1 { font-size: 20px; }
+  &amp;.m-2 { @include scut-rem-fallback(20); }
+  &amp;.m-3 {
+    @include scut-rem-fallback(30 50px 0 25px, margin);
+    @include scut-rem-fallback(20 30px, padding);
+    border: 5px solid;
+  }
+}</code></pre></div><div id="rems_with_fallback-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-rem-fallback.m-1 {
+  font-size: 20px;
+}
+
+.eg-rem-fallback.m-2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+.eg-rem-fallback.m-3 {
+  margin: 30px 50px 0px 25px;
+  margin: 1.875rem 3.125rem 0rem 1.5625rem;
+  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
+  border: 5px solid;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="rems_with_fallback">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-rem-fallback m-1">Variation 1: with a font-size of 20px.</div><div class="eg-rem-fallback m-2">Variation 2: with a font-size in rems matching 20px, and a true-pixel-value fallback.</div><div class="eg-rem-fallback m-3">Variation 3: Demonstrating 1) the $property argument, 2) that you can pass a list of pixels-values, and 3) that you can include or exclude the px-unit.</div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://snook.ca/archives/html_and_css/font-size-with-rem" class="refs--i"><p>Jonathan Snook: &quot;Font Sizing With Rem&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="reset"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_reset.scss" class="source">view source</a><h3><a href="#reset" class="inner-anchor m-util">reset</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-reset</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd></dl></section><section class="description"><p>Scut&#39;s &quot;reset&quot; is a small set of modular resets, each one an independent mixin. The master mixin, <code>scut-reset</code>, calls them all; alternately, you could pick and choose yourself.</p><p>Here&#39;s the reasoning: I&#39;ve found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all the default button styling (which <em>never</em> gets used); and so on. So I decided to start stashing those resets for future projects. That&#39;s what <code>scut-reset</code> is.</p><p>Click &quot;View Source&quot; to see what the <code>scut-reset</code> mixin does and assess whether you would like to include it (or some subset of the reset mixins) in your own project.</p><p>If you <em>do</em> want to use <code>scut-reset</code>, simply</p><pre class="language-scss"><code>@include scut-reset;</code></pre><p>somewhere in your stylesheet (not nested within any other rulesets).</p></section></div></section><section class="doc-i" id="selected"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_selected.scss" class="source">view source</a><h3><a href="#selected" class="inner-anchor m-util">selected</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-selected</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$active</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>Declare whether or not to target the <code>:active</code> state, in addition to <code>:hover</code> and <code>:focus</code>.</p></div></li></ol></dd><dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt><dd class="info--value"><p>A content block passed to this mixin will apply to <i>the selected states</i> (<code>:hover</code> and <code>:focus</code> &mdash; and, optionally, <code>:active</code>).</p></dd></dl></section><section class="description"><p>Apply rules to <code>:hover</code> and <code>:focus</code> (and, optionally, <code>:active</code>) states. Make your site more friendly for touchscreens, keyboard navigators, etc.; account for the various means of targeting elements.</p></section><section class="example"><h4>Example</h4><div id="selected-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-selected {
+  background-color: $eg-muted;
+  &amp;.m-1 {
+    @include scut-selected {
+      background-color: $eg-light;
+    }
+  }
+  &amp;.m-2 {
+    @include scut-selected(true) {
+      background-color: $eg-light;
+    }
+  }
+}</code></pre></div><div id="selected-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-selected {
+  background-color: #cccccc;
+}
+
+.eg-selected.m-1:hover,
+.eg-selected.m-1:focus {
+  background-color: #9ae9ff;
+}
+
+.eg-selected.m-2:hover,
+.eg-selected.m-2:focus,
+.eg-selected.m-2:active {
+  background-color: #9ae9ff;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="selected">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p><button class="eg-selected m-1">This button turns blue on hover and focus</button></p><p><button class="eg-selected m-2">This button turns blue on hover, focus, and active</button></p></div></div></section></div></section><section class="doc-i" id="triangle"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/general/_triangle.scss" class="source">view source</a><h3><a href="#triangle" class="inner-anchor m-util">triangle</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-triangle</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$direction</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">right</code>&nbsp;]<div class="args--comment"><p>The direction that the triangle points: <code>up</code>, <code>down</code>, <code>right</code>, <code>left</code>. Or, for right triangles, the corner of the right angle: <code>top-right</code>, <code>top-left</code>, <code>bottom-right</code> or <code>bottom-left</code>.</p></div></li><li><code class="args--name">$size</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.75em</code>&nbsp;]<div class="args--comment"><p>One or two values determining the size of the triangle. One value will make a triangle equally wide and tall. Two values translate to <code>width</code> and <code>height</code>.</p></div></li><li><code class="args--name">$color</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inherit</code>&nbsp;]</li></ol></dd></dl></section><section class="description"><p>Create a wide variety of CSS triangles.</p><p>(The default placeholder extension is a little one pointing right &mdash; the kind you&#39;d see on a &quot;Read More&quot; link.)</p><p>The mixin can produce acute triangles pointing up, down, left, and right; or right triangles with their right angles in the top right, top left, bottom right, and bottom left corners.</p><p>When choosing <code>width</code> and <code>height</code> values, consider how their ratio will determine the form. For example, to create an equilateral triangle pointing up, you&#39;ll want your <code>height</code> value to be ~86.6% of your <code>width</code> value (1/2 x &radic;3 x <code>width</code>). Anybody remember high school geometry?</p><p>The best way to understand this mixin is to play around with it, so besides looking at the examples below, you should <a href="http://codepen.io/davidtheclark/pen/oelbk">play around with this Codepen Pen</a>.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p&gt;
+  &lt;span class=&quot;eg-triangle m-default&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-equilateral&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-top-right&quot;&gt;&lt;/span&gt;
+  &lt;span class=&quot;eg-triangle m-bottom-left&quot;&gt;&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;button class=&quot;eg-triangle-button m-down&quot;&gt;Dropdown&lt;/button&gt;
+  &lt;button class=&quot;eg-triangle-button m-up&quot;&gt;Dropdown&lt;/button&gt;
+  &lt;button class=&quot;eg-triangle-button m-more&quot;&gt;Read more&lt;/button&gt;
+&lt;/p&gt;
+</code></pre></div><div id="triangle-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-triangle {
+  &amp;.m-default {
+    @include scut-triangle;
+    // or @extend %scut-triangle;
+  }
+  &amp;.m-equilateral {
+    @include scut-triangle(up, 100px 87px, $eg-muted);
+  }
+  &amp;.m-top-right {
+    @include scut-triangle(top-right, 2em, $eg-dark);
+  }
+  &amp;.m-bottom-left {
+    @include scut-triangle(bottom-left, 80px 40px, $eg-light);
+  }
+}
+.eg-triangle-button {
+  &amp;:after {
+    content: &quot;&quot;;
+    margin-left: 0.3em;
+  }
+  &amp;.m-down:after {
+    @include scut-triangle(down);
+  }
+  &amp;.m-up:after {
+    @include scut-triangle(up);
+  }
+  &amp;.m-more:after {
+    @include scut-triangle;
+  }
+}</code></pre></div><div id="triangle-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-triangle.m-default {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.375em 0.75em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: inherit;
+  border-right-width: 0;
+}
+
+.eg-triangle.m-equilateral {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 87px 50px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #cccccc;
+  border-top-width: 0;
+}
+
+.eg-triangle.m-top-right {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 1em 1em;
+  border-style: solid;
+  border-top-color: #002834;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-right-color: #002834;
+}
+
+.eg-triangle.m-bottom-left {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 20px 40px;
+  border-style: solid;
+  border-top-color: transparent;
+  border-bottom-color: #9ae9ff;
+  border-left-color: #9ae9ff;
+  border-right-color: transparent;
+}
+
+.eg-triangle-button:after {
+  content: "";
+  margin-left: 0.3em;
+}
+
+.eg-triangle-button.m-down:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.75em 0.375em;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: inherit;
+  border-bottom-width: 0;
+}
+
+.eg-triangle-button.m-up:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.75em 0.375em;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: inherit;
+  border-top-width: 0;
+}
+
+.eg-triangle-button.m-more:after {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  -webkit-transform: rotate(360deg);
+  border-width: 0.375em 0.75em;
+  border-style: solid;
+  border-color: transparent;
+  border-left-color: inherit;
+  border-right-width: 0;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="triangle">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p><span class="eg-triangle m-default"></span> <span class="eg-triangle m-equilateral"></span> <span class="eg-triangle m-top-right"></span> <span class="eg-triangle m-bottom-left"></span></p><p><button class="eg-triangle-button m-down">Dropdown</button> <button class="eg-triangle-button m-up">Dropdown</button> <button class="eg-triangle-button m-more">Read more</button></p></div></div></section></div></section></section><section class="container"><h2><a href="#layout" id="layout" class="inner-anchor m-category">layout</a></h2><section class="doc-i" id="center_absolutely"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-absolutely.scss" class="source">view source</a><h3><a href="#center_absolutely" class="inner-anchor m-util">center absolutely</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-center-absolutely</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$dimensions</code><div class="args--comment"><p>A two-value list: the <code>width</code> and <code>height</code> of the element-to-be-centered (both optional). To bypass either and avoid centering in that dimension, pass <code>n</code>. See below.</p></div></li></ol></dd></dl></section><section class="description"><p>Center an absolutely positioned element: horizontally, vertically, or both ways.</p><p><strong>This method only works if the element-to-be-centered has a fixed dimension on the relevant axis</strong> &mdash; fixed width to center horizontally, fixed height to center vertically. <em>If your element cannot have fixed dimensions (and you do not need to support IE8), consider <a href="#center_transform"><code>scut-center-transform</code></a>, below.</em></p><p>If you do not want to center horizontally &mdash; only vertically &mdash; pass <code>n</code> (short for <code>null</code>, &quot;no,&quot; &quot;nothing,&quot; etc.) for the <code>width</code> value. Same goes for height, if you do not want to center vertically. See the examples below for clarification.</p></section><section class="example"><h4>Example</h4><div id="center_absolutely-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-center-absolutely-container {
+  position: relative;
+}
+.eg-center-absolutely {
+  background: $eg-muted;
+  &amp;.m-1 {
+    @include scut-center-absolutely(22em 2.5em);
+  }
+  &amp;.m-2 {
+    @include scut-center-absolutely(20em n);
+  }
+  &amp;.m-3 {
+    @include scut-center-absolutely(n 2.5em);
+  }
+}</code></pre></div><div id="center_absolutely-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-center-absolutely-container {
+  position: relative;
+}
+
+.eg-center-absolutely {
+  background: #cccccc;
+}
+
+.eg-center-absolutely.m-1 {
+  position: absolute;
+  width: 22em;
+  left: 50%;
+  margin-left: -11em;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}
+
+.eg-center-absolutely.m-2 {
+  position: absolute;
+  width: 20em;
+  left: 50%;
+  margin-left: -10em;
+}
+
+.eg-center-absolutely.m-3 {
+  position: absolute;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="center_absolutely">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-center-absolutely-container"><div class="eg-center-absolutely m-1">Centered both horizontally and vertically</div></div><div class="eg-center-absolutely-container"><div class="eg-center-absolutely m-2">Centered only horizontally</div></div><div class="eg-center-absolutely-container"><div class="eg-center-absolutely m-3">Centered only vertically</div></div></div></div></section></div></section><section class="doc-i" id="center_block"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-block.scss" class="source">view source</a><h3><a href="#center_block" class="inner-anchor m-util">center block</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-center-block</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$max-width</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>A <code>max-width</code> value for the to-be-centered block.</p></div></li></ol></dd></dl></section><section class="description"><p>You, being wise, probably know that setting <code>margin-left: auto; margin-right: auto;</code> on a block element with a defined width will center that element. You probably do it all the time.</p><p>So why a utility?</p><ul><li>To make sure you&#39;re setting <code>margin-left</code> and <code>margin-right</code> when that&#39;s all you need to set &mdash; instead of also overriding <code>margin-top</code> and <code>margin-bottom</code> with a rule like <code>margin: 0 auto;</code>.</li><li>To organize and name the pattern, describing what is being done &mdash; you are <em>centering a block</em> &mdash; whereas <code>margin: auto;</code> does not explain itself.</li><li>To provide a little handy shortcut for the all-too-common pattern of setting <code>auto</code> left and right margins along with a <code>max-width</code>. (<code>max-width</code> instead of <code>width</code>, so the element shrinks with the viewport, if it comes to that &mdash; I find myself doing it that way most often.)</li></ul></section><section class="example"><h4>Example</h4><div id="center_block-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-center-block {
+  &amp;.m-1 {
+    width: 8em;
+    @include scut-center-block;
+    // or @extend %scut-center-block;
+  }
+  &amp;.m-2 {
+    margin-top: 2em;
+    @include scut-center-block(80%);
+  }
+}</code></pre></div><div id="center_block-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-center-block.m-1 {
+  width: 8em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eg-center-block.m-2 {
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="center_block">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-center-block m-1">Variation 1</div><div class="eg-center-block m-2">Variation 2</div></div></div></section></div></section><section class="doc-i" id="center_transform"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_center-transform.scss" class="source">view source</a><h3><a href="#center_transform" class="inner-anchor m-util">center transform</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-center-transform</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with extension placeholder(s)</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$axis</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>Leave <code>false</code> to center on both axes; or set to <code>x</code> or <code>y</code> to center on one axis only.</p></div></li></ol></dd><dt class="info--label">compatibility</dt><dd class="info--value"><p>This utility uses a CSS <code>transform</code>, so will not work with IE8. Also note that <code>transform</code> requires vendor prefixes, which are included in the utility.</p></dd></dl></section><section class="description"><p>Center an element <strong>without fixed dimensions</strong>, vertically, horizontally, or both ways.</p><p>(If your element <em>does</em> have fixed dimensions on each axis you wish to center, you may enjoy the primitive browser support and vendorprefixlessness of <a href="#center_absolutely"><code>scut-center-absolutely</code></a>, above.)</p><p>Be warned: <em>This method uses <code>position: absolute</code>, so the parent within which you&#39;ll be centering must have a <code>position</code> value other than <code>static</code></em>.</p><p>If you pass no arguments, both axes get the treatment; or you can pass <code>x</code> or <code>y</code> to center on one axis only.</p><p>These three varieties are also available with three extension placeholders:</p><ul><li><strong><code>%scut-center-transform</code></strong></li><li><strong><code>%scut-center-tranform-x</code></strong></li><li><strong><code>%scut-center-transform-y</code></strong></li></ul><p>Also, notice that an alias is provided for vertical centering: <a href="#v-center_transform"><code>scut-vcenter-tt</code></a> (fitting the <code>vcenter</code> naming convention).</p></section><section class="example"><h4>Example</h4><div id="center_transform-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-center-transform-container {
+  position: relative;
+}
+.eg-center-transform {
+  display: inline-block;
+  &amp;.m-1 {
+    @include scut-center-transform;
+    // or @extend %scut-center-transform;
+  }
+  &amp;.m-2 {
+    @include scut-center-transform(x);
+    // or @extend %scut-center-transform-x;
+  }
+  &amp;.m-3 {
+    @include scut-center-transform(y);
+    // or @extend %scut-center-transform-y;
+  }
+  &amp;.m-4 {
+    @include scut-center-transform;
+  }
+}</code></pre></div><div id="center_transform-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-center-transform-container {
+  position: relative;
+}
+
+.eg-center-transform {
+  display: inline-block;
+}
+
+.eg-center-transform.m-1 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.eg-center-transform.m-2 {
+  position: absolute;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.eg-center-transform.m-3 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.eg-center-transform.m-4 {
+  position: absolute;
+  top: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="center_transform">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-center-transform-container"><div class="eg-center-transform m-1">Variation 1</div></div><div class="eg-center-transform-container"><div class="eg-center-transform m-2">Variation 2</div></div><div class="eg-center-transform-container"><div class="eg-center-transform m-3">Variation 3</div></div><div class="eg-center-transform-container m-large"><div class="eg-center-transform m-4"><p>Variation 4</p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></div></div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://css-tricks.com/centering-percentage-widthheight-elements/" class="refs--i"><p>CSS-Tricks: &quot;Centering Percentage Width/Height Elements&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="clearfix"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_clearfix.scss" class="source">view source</a><h3><a href="#clearfix" class="inner-anchor m-util">clearfix</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-clearfix</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd></dl></section><section class="description"><p>Make an element adapt its height to fit floated children, and clear floats in both directions.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-clearfix-container&quot;&gt;
+  &lt;div class=&quot;eg-clearfix-floater&quot;&gt;floated&lt;/div&gt;
+  &lt;div class=&quot;eg-clearfix-floater&quot;&gt;floated&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div id="clearfix-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-clearfix-container {
+  @include scut-clearfix;
+  // or @extend %scut-clearfix;
+  background: $eg-muted;
+}
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+}
+</code></pre></div><div id="clearfix-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-clearfix-container {
+  background: #cccccc;
+}
+
+.eg-clearfix-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="clearfix">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-clearfix-container"><div class="eg-clearfix-floater">floated</div><div class="eg-clearfix-floater">floated</div></div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://blog.teamtreehouse.com/a-better-clearfix-with-sass" class="refs--i"><p>Treehouse blog: &quot;CSS Tip: A Better Clearfix with Sass&quot;</p></a></li><li><a href="http://css-tricks.com/snippets/css/clear-fix/" class="refs--i"><p>CSS-Tricks catalogs various clearfix hacks</p></a></li><li><a href="http://nicolasgallagher.com/micro-clearfix-hack/" class="refs--i"><p>Nicholas Gallagher: &quot;A New Micro Clearfix Hack&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="fill"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_fill.scss" class="source">view source</a><h3><a href="#fill" class="inner-anchor m-util">fill</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-fill</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$width-height</code><div class="args--comment"><p>Use 100% width and height of zero coordinates on all sides. See description and example below.</p></div></li></ol></dd></dl></section><section class="description"><p>Make an element fill its parent.</p><p>This utility provides two methods for filling. Both position the element absolutely. Both set <code>top: 0</code> and <code>left: 0</code>. Then:</p><ul><li>The default method, with <code>$width-height: false</code>, applies <code>right: 0; bottom: 0;</code> &mdash; so all four coordinates are <code>0</code>. <strong>The default method works for &quot;non-replaced&quot; HTML elements (most of them).</strong></li><li>The width-height method, with <code>$width-height: true</code>, applies <code>width: 100%; height: 100%</code>. <strong>The width-height method works the same for &quot;replaced&quot; and &quot;non-replaced&quot; HTML elements; <em>but this method can run into problems if you don&#39;t use <code>box-sizing: border-box</code> and the parent element has borders or padding</em></strong> (even with <code>border-box</code>, problems occasionally arise).</li></ul><p>To learn more about &quot;replaced&quot; vs. &quot;non-replaced&quot; elements, have a look at <a href="http://reference.sitepoint.com/css/replacedelements">this Sitepoint article on the subject</a>. Basically, &quot;replaced&quot; elements are those that have intrinsic dimensions determined by their content &mdash; examples include form elements (e.g. <code>input</code>, <code>textarea</code>, <code>button</code>, <code>selected</code>), media elements (e.g. <code>img</code>, <code>video</code>), <code>iframe</code> elements, and probably others I don&#39;t know about. For replaced elements, you need to manually set whatever dimensions you want to control: just positioning absolutely and setting all coordinates won&#39;t do. See the example below.</p><p>And note this: Because this mixin positions the element absolutely, <em>the parent-to-be-filled must be <strong>positioned</strong></em> &mdash; meaning that you must assign <code>position: relative</code> to the parent if its position is not already <code>absolute</code> or <code>fixed</code>.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p&gt;Default method:&lt;/p&gt;
+&lt;div class=&quot;eg-fill-container&quot;&gt;
+  Parent provides the border
+  &lt;div class=&quot;eg-fill m-1&quot;&gt;
+    Child provides the background
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Default method &lt;em&gt;not working&lt;/em&gt; with an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element (to illustrate the issue):&lt;/p&gt;
+&lt;div class=&quot;eg-fill-container&quot;&gt;
+  &lt;img src=&quot;http://placehold.it/200x100&quot; class=&quot;eg-fill m-2&quot; alt=&quot;placeholder&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Width-height method working with an &lt;code&gt;&amp;lt;img&amp;gt;&lt;/code&gt; element:&lt;/p&gt;
+&lt;div class=&quot;eg-fill-container&quot;&gt;
+  &lt;img src=&quot;http://placehold.it/200x100&quot; class=&quot;eg-fill m-3&quot; alt=&quot;placeholder&quot;&gt;
+&lt;/div&gt;
+</code></pre></div><div id="fill-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-fill-container {
+  color: $eg-light;
+  position: relative;
+}
+.eg-fill {
+  &amp;.m-1 {
+    background-color: rgba(0,0,0,0.4);
+    @include scut-fill;
+    // or @extend %scut-fill;
+  }
+  &amp;.m-2 {
+    @include scut-fill;
+  }
+  &amp;.m-3 {
+    @include scut-fill(true);
+  }
+}</code></pre></div><div id="fill-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-fill-container {
+  color: #9ae9ff;
+  position: relative;
+}
+
+.eg-fill.m-1 {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.eg-fill.m-2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.eg-fill.m-3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="fill">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p>Default method:</p><div class="eg-fill-container">Parent provides the border<div class="eg-fill m-1">Child provides the background</div></div><p>Default method <em>not working</em> with an <code>&lt;img&gt;</code> element (to illustrate the issue):</p><div class="eg-fill-container"><img src="http://placehold.it/200x100" class="eg-fill m-2" alt="placeholder"></div><p>Width-height method working with an <code>&lt;img&gt;</code> element:</p><div class="eg-fill-container"><img src="http://placehold.it/200x100" class="eg-fill m-3" alt="placeholder"></div></div></div></section></div></section><section class="doc-i" id="fonticon_label"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_fonticon-label.scss" class="source">view source</a><h3><a href="#fonticon_label" class="inner-anchor m-util">fonticon label</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-fonticon-label</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$font</code><div class="args--comment"><p>The name of your icon font</p></div></li><li><code class="args--name">$glyph</code><div class="args--comment"><p>The Unicode character code for a specific icon from your icon font (please feel free to use variables)</p></div></li><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.25em</code>&nbsp;]<div class="args--comment"><p>Spacing between the icon and the label</p></div></li><li><code class="args--name">$side</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">before</code>&nbsp;]<div class="args--comment"><p><code>before</code> or <code>after</code>, translating to the pseudo-element for the icon &mdash; so on which side of the label do you want the icon?</p></div></li></ol></dd><dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt><dd class="info--value"><p>A content block passed to this mixin will be applied to the icon (either the <code>:before</code> or <code>:after</code> pseudo-element).</p></dd></dl></section><section class="description"><p>Pair the icons from your rad icon fonts with text labels, using semantic HTML and no extraneous elements.</p><p>By default, icons are grafted on as <code>inline-block</code> pseudo-elements, vertically centered with the label. The mixin also takes care of some common needs: it sets the <code>font-style</code> and <code>font-weight</code> to <code>normal</code> and <code>-webkit-font-smoothing</code> to <code>antialiased</code>.</p><p>Icons can be placed on the left or right of the label and spaced according to your learn&egrave;d discretion. Additional customization is possible by either passing a content block or adding rules to the relevant pseudo-element.</p><p>The examples below illustrate some of the possibilities.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p&gt;&lt;button class=&quot;eg-fonticon-label m-1&quot;&gt;Play &amp;amp; Pause&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button class=&quot;eg-fonticon-label m-2&quot;&gt;Stop&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button class=&quot;eg-fonticon-label m-3&quot;&gt;Fast Forwards&lt;/button&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button class=&quot;eg-fonticon-label m-4&quot;&gt;Rewind&lt;/button&gt;&lt;/p&gt;
+</code></pre></div><div id="fonticon_label-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">
+@include scut-font-face(&quot;icomoon-stereo&quot;, fonts/icomoon-stereo);
+
+.eg-fonticon-label {
+  &amp;.m-1 {
+    @include scut-fonticon-label(&quot;icomoon-stereo&quot;, &quot;\e004&quot;);
+    &amp;:hover:before,
+    &amp;:focus:before {
+      content: &quot;\e002&quot;
+    }
+  }
+  &amp;.m-2 {
+    @include scut-fonticon-label(&quot;icomoon-stereo&quot;, &quot;\e003&quot;) {
+      font-size: 2em;
+    }
+    &amp;:hover,
+    &amp;:focus {
+      color: $eg-light;
+    }
+  }
+  &amp;.m-3 {
+    @include scut-fonticon-label(&quot;icomoon-stereo&quot;, &quot;\e001&quot;, 1.5em, after) {
+      color: $eg-light;
+    }
+    &amp;:hover,
+    &amp;:focus {
+      color: $eg-light;
+      &amp;:after {
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes rewind {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1em); }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+  @include scut-fonticon-label(&quot;icomoon-stereo&quot;, &quot;\e000&quot;) {
+    font-size: 2em;
+  }
+  &amp;:hover:before,
+  &amp;:focus:before {
+    animation: rewind 1s linear infinite;
+  }
+}</code></pre></div><div id="fonticon_label-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">@font-face {
+  font-family: "icomoon-stereo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/icomoon-stereo.eot");
+  src: url("fonts/icomoon-stereo.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon-stereo.woff") format("woff"), url("fonts/icomoon-stereo.ttf") format("truetype"), url("fonts/icomoon-stereo.svg#icomoon-stereo") format("svg");
+}
+
+.eg-fonticon-label.m-1:before {
+  content: "\e004";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+
+.eg-fonticon-label.m-1:hover:before,
+.eg-fonticon-label.m-1:focus:before {
+  content: "\e002";
+}
+
+.eg-fonticon-label.m-2:before {
+  content: "\e003";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+
+.eg-fonticon-label.m-2:hover,
+.eg-fonticon-label.m-2:focus {
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:after {
+  content: "\e001";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.5em;
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:hover,
+.eg-fonticon-label.m-3:focus {
+  color: #9ae9ff;
+}
+
+.eg-fonticon-label.m-3:hover:after,
+.eg-fonticon-label.m-3:focus:after {
+  color: white;
+}
+
+@-webkit-keyframes rewind {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+}
+
+@keyframes rewind {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-1em);
+    -ms-transform: translateX(-1em);
+    transform: translateX(-1em);
+  }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+}
+
+.eg-fonticon-label.m-4:before {
+  content: "\e000";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+
+.eg-fonticon-label.m-4:hover:before,
+.eg-fonticon-label.m-4:focus:before {
+  -webkit-animation: rewind 1s linear infinite;
+  animation: rewind 1s linear infinite;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="fonticon_label">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p><button class="eg-fonticon-label m-1">Play &amp; Pause</button></p><p><button class="eg-fonticon-label m-2">Stop</button></p><p><button class="eg-fonticon-label m-3">Fast Forwards</button></p><p><button class="eg-fonticon-label m-4">Rewind</button></p></div></div></section></div></section><h3 class="group--h"><a href="#lists" id="lists" class="inner-anchor m-group">lists</a></h3><section class="doc-i" id="list_unstyled"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-unstyled.scss" class="source">view source</a><h3><a href="#list_unstyled" class="inner-anchor m-util">list: unstyled</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-unstyled</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd></dl></section><section class="description"><p>Remove default styling (<code>padding-left</code> and <code>list-style-type</code>) from a list.</p><p>(Browser-default top and bottom margins are left intact: probably, in most cases, either you want those defaults or you want to set your own margins and don&#39;t want Scut to override your setting.)</p></section><section class="example"><h4>Example</h4><div id="list_unstyled-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-unstyled-list {
+  @include scut-list-unstyled;
+  // or @extend %scut-list-unstyled;
+}</code></pre></div><div id="list_unstyled-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-unstyled-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_unstyled">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-unstyled-list"><li>list item</li><li>list item</li><li>list item</li></ul></div></div></section></div></section><section class="doc-i" id="list_custom"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-custom.scss" class="source">view source</a><h3><a href="#list_custom" class="inner-anchor m-util">list: custom</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-custom</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$content</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;\2022&quot; (bullet)</code>&nbsp;]<div class="args--comment"><p>A character to mark list items; <em>or</em> enter <code>count</code> to indicate that you want to use a counter, optionally followed by 1) a string to follow the counter, and 2) a <code>list-style-type</code> for the counter.</p></div></li><li><code class="args--name">$label-width</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.75em</code>&nbsp;]<div class="args--comment"><p>A width for the list-item markers.</p></div></li><li><code class="args--name">$pad</code><div class="args--comment"><p>Left-padding <em>before</em> the list-item marker.</p></div></li></ol></dd></dl></section><section class="description"><p>Fully customize your list-item markers &mdash; both characters and counters.</p><p>This utility creates the list-item marker as an absolutely positioned <code>:before</code> psuedo-element, which can be given any <code>content</code> you&#39;d like and styled just like any other element.</p><p>Pass a string or unicode value as <code>$content</code> and thing should explain themselves. If you want a counter, pass <code>count</code>, optionally followed by 1) a string to follow the counter (e.g. in this list I&#39;m using &quot;)&quot; after the counter), and 2) a <code>list-style-type</code> for the counter (refer to <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type">MDN&#39;s reference list</a>).</p><p>Spacing is set with the <code>$marker-width</code> and <code>$pad</code> arguments. And any amount of customization can happen in the <code>@content</code> block.</p><p>Refer to the examples, please, for further clarification. Please.</p></section><section class="example"><h4>Example</h4><div id="list_custom-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-list-custom {
+  &amp;.m-1 {
+    @include scut-list-custom {
+      color: $eg-light;
+    }
+  }
+  &amp;.m-2 {
+    @include scut-list-custom(&quot;\00bb&quot;, 1.3em, 1em);
+  }
+  &amp;.m-3 {
+    @include scut-list-custom(count, 2em, 2em);
+  }
+  &amp;.m-4 {
+    @include scut-list-custom(count &quot;)&quot; lower-alpha, 1.5em) {
+      color: $eg-dark;
+      font-size: 1.5em;
+      font-weight: bold;
+      top: -0.25em;
+    }
+    &amp; &gt; li + li {
+      margin-top: 1em;
+    }
+  }
+}</code></pre></div><div id="list_custom-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-list-custom.m-1 {
+  padding-left: 0.75em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-1 > li {
+  position: relative;
+}
+
+.eg-list-custom.m-1 > li:before {
+  content: "\2022";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -0.75em;
+  width: 0.75em;
+  color: #9ae9ff;
+}
+
+.eg-list-custom.m-2 {
+  padding-left: 2.3em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-2 > li {
+  position: relative;
+}
+
+.eg-list-custom.m-2 > li:before {
+  content: "\00bb";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.3em;
+  width: 1.3em;
+}
+
+.eg-list-custom.m-3 {
+  padding-left: 4em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-3 > li {
+  position: relative;
+  counter-increment: scutlistcounter;
+}
+
+.eg-list-custom.m-3 > li:before {
+  content: counter(scutlistcounter);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -2em;
+  width: 2em;
+}
+
+.eg-list-custom.m-4 {
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+
+.eg-list-custom.m-4 > li {
+  position: relative;
+  counter-increment: scutlistcounter;
+}
+
+.eg-list-custom.m-4 > li:before {
+  content: counter(scutlistcounter,lower-alpha) ")";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.5em;
+  width: 1.5em;
+  color: #002834;
+  font-size: 1.5em;
+  font-weight: bold;
+  top: -0.25em;
+}
+
+.eg-list-custom.m-4 > li + li {
+  margin-top: 1em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_custom">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-list-custom m-1"><li>short item</li><li>medium item medium item medium item medium item</li><li>long item long item long item long item long item long item long item long item long item long item long item long item long item</li></ul><ul class="eg-list-custom m-2"><li>short item</li><li>medium item medium item medium item medium item</li><li>long item long item long item long item long item long item long item long item long item long item long item long item long item</li></ul><ul class="eg-list-custom m-3"><li>short item</li><li>medium item medium item medium item medium item</li><li>long item long item long item long item long item long item long item long item long item long item long item long item long item</li></ul><ul class="eg-list-custom m-4"><li>short item</li><li>medium item medium item medium item medium item</li><li>long item long item long item long item long item long item long item long item long item long item long item long item long item</li></ul></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://css-tricks.com/numbering-in-style/" class="refs--i"><p>CSS-Tricks: &quot;Numbering In Style&quot;</p></a></li><li><a href="http://coding.smashingmagazine.com/2013/04/12/css-generated-content-counters/" class="refs--i"><p>Gabriele Romanato: &quot;How To Benefit From CSS Generated Content and Counter&quot; (<cite>Smashing Magazine</cite>)</p></a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Counters" class="refs--i"><p>MDN: &quot;Using CSS Counters&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="list_floated"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-floated.scss" class="source">view source</a><h3><a href="#list_floated" class="inner-anchor m-util">list: floated</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-floated</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>Spacing to separate the floated list items.</p></div></li><li><code class="args--name">$dir</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">left</code>&nbsp;]<div class="args--comment"><p>The <code>float</code> direction.</p></div></li></ol></dd></dl></section><section class="description"><p>Float the items of an unstyled list &mdash; to the left or to the right, with or without spacing between them.</p><p>Use a floated list instead of an inline list when you want your list items snuggled right next to each other.</p><p>Only the list&#39;s immediate children are floated (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p></section><section class="example"><h4>Example</h4><div id="list_floated-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-list-floated {
+  &amp;.m-1 {
+    @include scut-list-floated;
+    // or @extend %scut-list-floated;
+  }
+  &amp;.m-2 {
+    @include scut-list-floated(1em);
+  }
+  &amp;.m-3 {
+    @include scut-list-floated(2em, right);
+  }
+}</code></pre></div><div id="list_floated-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-list-floated.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-1 > li {
+  float: left;
+}
+
+.eg-list-floated.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-2 > li {
+  float: left;
+}
+
+.eg-list-floated.m-2 > li + li {
+  margin-left: 1em;
+}
+
+.eg-list-floated.m-3 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-floated.m-3:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-floated.m-3 > li {
+  float: right;
+}
+
+.eg-list-floated.m-3 > li + li {
+  margin-right: 2em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_floated">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-list-floated m-1"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-floated m-2"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-floated m-3"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul></div></div></section></div></section><section class="doc-i" id="list_inline"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-inline.scss" class="source">view source</a><h3><a href="#list_inline" class="inner-anchor m-util">list: inline</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-inline</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>Spacing to separate the inline list items.</p></div></li></ol></dd></dl></section><section class="description"><p>Inline the items of an unstyled list.</p><p>(&quot;Inline&quot; is a hip new verb: deploy liberally.)</p><p>Use an inline list if you don&#39;t mind your list items spaced out a little by default, like inline words. If you need them flush, with no interstitial space, try a <a href="#list_floated">floated list</a>.</p><p>Only the list&#39;s immediate children are inlined (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p></section><section class="example"><h4>Example</h4><div id="list_inline-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-list-inline {
+  &amp;.m-1 {
+    @include scut-list-inline;
+    // or @extend %scut-list-inline;
+  }
+  &amp;.m-2 {
+    @include scut-list-inline(1em);
+  }
+}</code></pre></div><div id="list_inline-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-list-inline.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-inline.m-1 > li {
+  display: inline-block;
+}
+
+.eg-list-inline.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-inline.m-2 > li {
+  display: inline-block;
+}
+
+.eg-list-inline.m-2 > li + li {
+  margin-left: 1em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_inline">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-list-inline m-1"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-inline m-2"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul></div></div></section></div></section><section class="doc-i" id="list_punctuated"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-punctuated.scss" class="source">view source</a><h3><a href="#list_punctuated" class="inner-anchor m-util">list: punctuated</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-punctuated</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with extension placeholder(s)</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$divider</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;, &quot;</code>&nbsp;]</li><li><code class="args--name">$display</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inline</code>&nbsp;]<div class="args--comment"><p>Change to <code>inline-block</code> if you don&#39;t want your list items spanning lines.</p></div></li></ol></dd><dt class="info--label">compatibility</dt><dd class="info--value"><p>This utility uses the <code>:not</code> and <code>:last-child</code> selectors, which are not supported in IE8 without a polyfill.</p></dd></dl></section><section class="description"><p>Keep your HTML semantic and your punctuation traditional.</p><p>Since the most common punctuated list uses commas, commas are the default <code>$divider</code> and the comma list is available as its own placeholder:</p><ul><li><strong><code>%scut-list-comma</code></strong></li></ul><p>Only the list&#39;s immediate children are punctuated (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p></section><section class="example"><h4>Example</h4><div id="list_punctuated-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-punctuated-list {
+  @include scut-list-punctuated;
+  // or @extend %scut-list-comma;
+}
+.eg-semicolon-list {
+  @include scut-list-punctuated(&quot;; &quot;);
+}
+.eg-circle-list {
+  @include scut-list-punctuated(&quot;\0020\2022\0020&quot;);
+}</code></pre></div><div id="list_punctuated-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-punctuated-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-punctuated-list > li {
+  display: inline;
+}
+
+.eg-punctuated-list > li:not(:last-child):after {
+  content: ", ";
+}
+
+.eg-semicolon-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-semicolon-list > li {
+  display: inline;
+}
+
+.eg-semicolon-list > li:not(:last-child):after {
+  content: "; ";
+}
+
+.eg-circle-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.eg-circle-list > li {
+  display: inline;
+}
+
+.eg-circle-list > li:not(:last-child):after {
+  content: "\0020\2022\0020";
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_punctuated">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-punctuated-list"><li>list item</li><li>list item</li><li>list item</li></ul><ul class="eg-semicolon-list"><li>list item</li><li>list item</li><li>list item</li></ul><ul class="eg-circle-list"><li>list item</li><li>list item</li><li>list item</li></ul></div></div></section></div></section><section class="doc-i" id="list_divided"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_list-divided.scss" class="source">view source</a><h3><a href="#list_divided" class="inner-anchor m-util">list: divided</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-list-divided</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with extension placeholder(s)</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$divider</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;|&quot;</code>&nbsp;]</li><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.5em</code>&nbsp;]<div class="args--comment"><p>Spacing to separate your dividers (on both sides) from the your list items.</p></div></li><li><code class="args--name">$dir</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">left</code>&nbsp;]<div class="args--comment"><p>The <code>float</code> direction.</p></div></li><li><code class="args--name">$height</code><div class="args--comment"><p>Manually set a height for the list items so that you can use tall dividers. See examples below.</p></div></li></ol></dd><dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt><dd class="info--value"><p>A content block passed to this mixin will be applied to the dividing pseudo-elements.</p></dd></dl></section><section class="description"><p>A floated list (<a href="#list_floated">see above</a>) with a dividing pseudo-element between list items.</p><p>A couple of common variations have their own placeholders:</p><ul><li><strong><code>%scut-list-bar</code></strong></li><li><strong><code>%scut-list-breadcrumb</code></strong></li></ul><p>But, of course, all things are possible.</p><p>The <code>$height</code> argument is kind of tricky: If you want a <code>$divider</code> taller than your list items, you need include a <code>$height</code> argument to ensure nice neat vertical alignment. See the example below for clarification.</p><p>Only the list&#39;s immediate children are divided (<code>ul &gt; li</code>): Scut does not presume to know what you might plan to do with sub-lists.</p></section><section class="example"><h4>Example</h4><div id="list_divided-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-list-bar {
+  @include scut-list-divided;
+  // or @extend %scut-list-bar;
+}
+.eg-list-breadcrumb {
+  @include scut-list-divided(&quot;/&quot;);
+  // or @extend %scut-list-breadcrumb;
+}
+
+.eg-list-divided {
+  &amp;.m-1 {
+    @include scut-list-divided(&quot;...&quot;, 0, right);
+  }
+  &amp;.m-2 {
+    @include scut-list-divided(&quot;&quot;, 0.5em, left, 3em) {
+      background-color: $eg-dark;
+      width: 1em;
+    }
+  }
+}</code></pre></div><div id="list_divided-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-list-bar {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-bar > li {
+  float: left;
+}
+
+.eg-list-bar > li + li:before {
+  content: "|";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-breadcrumb {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-breadcrumb:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-breadcrumb > li {
+  float: left;
+}
+
+.eg-list-breadcrumb > li + li:before {
+  content: "/";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-divided.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-divided.m-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-divided.m-1 > li {
+  float: right;
+}
+
+.eg-list-divided.m-1 > li + li:after {
+  content: "...";
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.eg-list-divided.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.eg-list-divided.m-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.eg-list-divided.m-2 > li {
+  float: left;
+}
+
+.eg-list-divided.m-2 > li {
+  height: 3em;
+}
+
+.eg-list-divided.m-2 > li:before {
+  height: 3em;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #002834;
+  width: 1em;
+}
+
+.eg-list-divided.m-2 > li:first-child:before {
+  width: 0;
+  overflow: hidden;
+}
+
+.eg-list-divided.m-2 > li + li:before {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="list_divided">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><ul class="eg-list-bar"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-breadcrumb"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-divided m-1"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul><ul class="eg-list-divided m-2"><li>list item 1</li><li>list item 2</li><li>list item 3</li></ul></div></div></section></div></section><section class="doc-i" id="margin"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_margin.scss" class="source">view source</a><h3><a href="#margin" class="inner-anchor m-util">margin</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-margin</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$margin</code><div class="args--comment"><p>A list (1 to 4 values) will set margin rules on multiple sides. <code>n</code> abbreviates <code>null</code> and creates no rule.</p></div></li></ol></dd></dl></section><section class="description"><p>A slight but useful variation on vanilla CSS&#39;s margin shorthand:</p><p>Pass a list (1 to 4 values, not comma-separated) and <code>scut-margin</code> will</p><ul><li><strong>create all margins as separate rules</strong> (that is, it will not use the shorthand, but create <code>margin-top</code>, <code>margin-right</code>, etc.); and</li><li><strong>allow you to pass <code>n</code> to avoid creating a rule on any side</strong>. (As elsewhere in Scut, <code>n</code> stands for <code>null</code> and results in no rule being created.)</li></ul><p>By using the mixin in this way, you will avoid some troubles that can occur when <em>changing</em> margins on an element, for whatever reason. <em>The point is to make it easier to override the values you want to override without affecting those you want to leave alone.</em></p></section><section class="example"><h4>Example</h4><div id="margin-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-margin {
+  &amp;.m-1 {
+    @include scut-margin(1em n);
+  }
+  &amp;.m-2 {
+    @include scut-margin(0.5em 3em);
+  }
+  &amp;.m-3 {
+    @include scut-margin(3em 1em n);
+  }
+}</code></pre></div><div id="margin-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-margin.m-1 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.eg-margin.m-2 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.eg-margin.m-3 {
+  margin-top: 3em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="margin">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-margin-container"><div class="eg-margin m-1">Variation 1</div></div><div class="eg-margin-container"><div class="eg-margin m-2">Variation 2</div></div><div class="eg-margin-container"><div class="eg-margin m-3">Variation 3</div></div></div></div></section></div></section><section class="doc-i" id="padding"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_padding.scss" class="source">view source</a><h3><a href="#padding" class="inner-anchor m-util">padding</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-padding</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$padding</code><div class="args--comment"><p>A list (1 to 4 values) will set padding rules on multiple sides. <code>n</code> abbreviates <code>null</code> and creates no rule.</p></div></li></ol></dd></dl></section><section class="description"><p>A slight but useful variation on vanilla CSS&#39;s padding shorthand:</p><p>Pass a list (1 to 4 values, not comma-separated) and <code>scut-padding</code> will</p><ul><li><strong>create all paddings as separate rules</strong> (that is, it will not use the shorthand, but create <code>padding-top</code>, <code>padding-right</code>, etc.); and</li><li><strong>allow you to pass <code>n</code> to avoid creating a rule on any side</strong>. (As elsewhere in Scut, <code>n</code> stands for <code>null</code> and results in no rule being created.)</li></ul><p>By using the mixin in this way, you will avoid some troubles that can occur when <em>changing</em> paddings on an element, for whatever reason. <em>The point is to make it easier to override the values you want to override without affecting those you want to leave alone.</em></p></section><section class="example"><h4>Example</h4><div id="padding-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-padding {
+  display: inline-block;
+  &amp;.m-1 {
+    @include scut-padding(1em n);
+  }
+  &amp;.m-2 {
+    @include scut-padding(0.5em 3em);
+  }
+  &amp;.m-3 {
+    @include scut-padding(n 8em 3em n);
+  }
+}</code></pre></div><div id="padding-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-padding {
+  display: inline-block;
+}
+
+.eg-padding.m-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.eg-padding.m-2 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.eg-padding.m-3 {
+  padding-right: 8em;
+  padding-bottom: 3em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="padding">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-padding-container"><div class="eg-padding m-1">Variation 1</div></div><div class="eg-padding-container"><div class="eg-padding m-2">Variation 2</div></div><div class="eg-padding-container"><div class="eg-padding m-3">Variation 3</div></div></div></div></section></div></section><h3 class="group--h"><a href="#positioning" id="positioning" class="inner-anchor m-group">positioning</a></h3><section class="doc-i" id="positioning_coordinates"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-coordinates.scss" class="source">view source</a><h3><a href="#positioning_coordinates" class="inner-anchor m-util">positioning: coordinates</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-coords</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$coordinates</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]<div class="args--comment"><p>A list: <code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code> coordinates. <code>n</code> abbreviates <code>null</code>. <code>a</code> is interchangeable with <code>auto</code>. See below.</p></div></li></ol></dd></dl></section><section class="description"><p>A shorthand for assigning coordinates to an element.</p><p>You <em>may</em> want to use this mixin on its own &mdash; but <strong>this mixin&#39;s primary purpose is to facilitate the positioning mixins below</strong>, which pair your coordinates with a <code>position</code> value.</p><p>Some guidlines for this mixin and its followers:</p><ul><li><strong><code>n</code> (the default value) signifies <code>null</code> or &quot;nothing&quot; or &quot;no&quot;</strong> &mdash; so any coordinate assigned <code>n</code> is simply ignored, creating no rule in your compiled CSS.</li><li><strong><code>a</code> can abbreviate <code>auto</code></strong> (both will work).</li><li><strong>All four values must be passed</strong>, so use <code>n</code> as needed.</li></ul><p>The mixins below (and their examples) below further illustrate how this works.</p></section></div></section><section class="doc-i" id="positioning_absolute"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-absolute.scss" class="source">view source</a><h3><a href="#positioning_absolute" class="inner-anchor m-util">positioning: absolute</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-absolute</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$coordinates</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0 n n 0</code>&nbsp;]<div class="args--comment"><p><a href="#positioning_coordinates">See information about <code>coordinates</code> above.</a></p></div></li></ol></dd></dl></section><section class="description"><p>Absolutely position an element and assign its coordinates, all in one line of SCSS. You&#39;ll save years of your life, and probably lose weight.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-absolute-container&quot;&gt;
+  &lt;div class=&quot;eg-absolute m-1&quot;&gt;Top left&lt;/div&gt;
+  &lt;div class=&quot;eg-absolute m-2&quot;&gt;Bottom right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div id="positioning_absolute-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-absolute-container {
+  position: relative;
+}
+.eg-absolute {
+  &amp;.m-1 {
+    @include scut-absolute;
+    // or @extend %scut-absolute;
+  }
+  &amp;.m-2 {
+    @include scut-absolute(n 0.5em 1em n);
+  }
+}</code></pre></div><div id="positioning_absolute-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-absolute-container {
+  position: relative;
+}
+
+.eg-absolute.m-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.eg-absolute.m-2 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="positioning_absolute">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-absolute-container"><div class="eg-absolute m-1">Top left</div><div class="eg-absolute m-2">Bottom right</div></div></div></div></section></div></section><section class="doc-i" id="positioning_relative"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-relative.scss" class="source">view source</a><h3><a href="#positioning_relative" class="inner-anchor m-util">positioning: relative</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-relative</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$coordinates</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]<div class="args--comment"><p><a href="#positioning_coordinates">See information about <code>coordinates</code> above.</a></p></div></li></ol></dd></dl></section><section class="description"><p>Relatively position an element and assign its coordinates, all in one line of SCSS.</p></section><section class="example"><h4>Example</h4><div id="positioning_relative-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-relative {
+  &amp;.m-1 {
+    @include scut-relative(0.2em 0.2em n n);
+  }
+  &amp;.m-2 {
+    @include scut-relative(a a 1em n);
+  }
+  &amp;.m-3 {
+    @include scut-relative(n n -0.5em 0.2em);
+  }
+}</code></pre></div><div id="positioning_relative-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-relative.m-1 {
+  position: relative;
+  top: 0.2em;
+  right: 0.2em;
+}
+
+.eg-relative.m-2 {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: 1em;
+}
+
+.eg-relative.m-3 {
+  position: relative;
+  bottom: -0.5em;
+  left: 0.2em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="positioning_relative">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p>Some of <span class="eg-relative m-1">these</span> words <span class="eg-relative m-2">are</span> positioned in <span class="eg-relative m-3">strange</span> ways.</p></div></div></section></div></section><section class="doc-i" id="positioning_fixed"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_positioning-fixed.scss" class="source">view source</a><h3><a href="#positioning_fixed" class="inner-anchor m-util">positioning: fixed</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-fixed</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$coordinates</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">n n n n</code>&nbsp;]<div class="args--comment"><p><a href="#positioning_coordinates">See information about <code>coordinates</code> above.</a></p></div></li></ol></dd></dl></section><section class="description"><p>Fixedly (<em>fix-ed-lee</em>) position an element and assign its coordinates.</p><p>No example is provided because it would spoil this nice documentation. Check out the positioning mixins above and you&#39;ll get the picture.</p></section></div></section><section class="doc-i" id="ratio-box"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_ratio-box.scss" class="source">view source</a><h3><a href="#ratio-box" class="inner-anchor m-util">ratio-box</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-ratio-box</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$ratio</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1/1</code>&nbsp;]<div class="args--comment"><p>The ratio-box&#39;s ratio: a fraction signifying width / height. The default, 1/1, is a square. Photos and videos usually come in 4/3 or 16/9 ratios.</p></div></li><li><code class="args--name">$inner</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-inner&quot;</code>&nbsp;]<div class="args--comment"><p>A CSS selector for the inner element. <em>Wrap your selector in quotes.</em></p></div></li></ol></dd></dl></section><section class="description"><p>Give an element with unknown or fluid width a fixed aspect ratio.</p><p><strong>Implementation involves two elements</strong>:</p><ul><li>The outer element, to which the mixin applies, <em>whose width will determine the width of the ratio-box</em>.</li><li>The inner element, <em>the ratio-box itself</em>, whose selector must be passed to the mixin as the <code>$inner</code> (second) argument. This inner element should be an <em>immediate child</em> of the outer element (it&#39;s selected with the CSS selector <code>&gt;</code>, the &quot;child combinator&quot;).</li></ul><p>The examples should demonstrate.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p&gt;These containers have different widths, but the ratio-boxes remain squares.&lt;/p&gt;
+&lt;div class=&quot;eg-ratio m-1&quot;&gt;
+  &lt;div class=&quot;scut-inner&quot;&gt;Variation 1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-ratio m-2&quot;&gt;
+  &lt;div class=&quot;scut-inner&quot;&gt;Variation 2&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;And the same principle applies to these, which maintain a 16/9 ratio and use a different classname for the inner element:&lt;/p&gt;
+&lt;div class=&quot;eg-ratio m-3&quot;&gt;
+  &lt;div class=&quot;eg-ratio-inner&quot;&gt;Variation 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-ratio m-4&quot;&gt;
+  &lt;div class=&quot;eg-ratio-inner&quot;&gt;Variation 4&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div id="ratio-box-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-ratio {
+  background: $eg-muted;
+  &amp;.m-1 {
+    width: 15em;
+    @include scut-ratio-box;
+    // or @extend %scut-ratio-box;
+  }
+  &amp;.m-2 {
+    width: 7em;
+    @include scut-ratio-box;
+  }
+  &amp;.m-3 {
+    width: 15em;
+    @include scut-ratio-box(16/9, &quot;.eg-ratio-inner&quot;);
+  }
+  &amp;.m-4 {
+    width: 7em;
+    @include scut-ratio-box(16/9, &quot;.eg-ratio-inner&quot;);
+  }
+}</code></pre></div><div id="ratio-box-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-ratio {
+  background: #cccccc;
+}
+
+.eg-ratio.m-1 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+
+.eg-ratio.m-1 > .scut-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-2 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-2:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+
+.eg-ratio.m-2 > .scut-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-3 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-3:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.eg-ratio.m-3 > .eg-ratio-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.eg-ratio.m-4 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+
+.eg-ratio.m-4:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.eg-ratio.m-4 > .eg-ratio-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="ratio-box">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p>These containers have different widths, but the ratio-boxes remain squares.</p><div class="eg-ratio m-1"><div class="scut-inner">Variation 1</div></div><div class="eg-ratio m-2"><div class="scut-inner">Variation 2</div></div><p>And the same principle applies to these, which maintain a 16/9 ratio and use a different classname for the inner element:</p><div class="eg-ratio m-3"><div class="eg-ratio-inner">Variation 3</div></div><div class="eg-ratio m-4"><div class="eg-ratio-inner">Variation 4</div></div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video" class="refs--i"><p>Thierry Koblentz: &quot;Creating Intrinsic Ratios for Video&quot; (<cite>A List Apart</cite>)</p></a></li></ul></footer></div></section><section class="doc-i" id="size"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_size.scss" class="source">view source</a><h3><a href="#size" class="inner-anchor m-util">size</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-size</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$size</code><div class="args--comment"><p>A single value will make a square; a list of two (<code>width</code> then <code>height</code>) will make a rectangle.</p></div></li></ol></dd></dl></section><section class="description"><p>Define both of an element&#39;s dimensions in one fell swoop.</p><p><a href="http://www.straightdope.com/columns/read/1698/whats-the-origin-of-one-fell-swoop">(You may want to read about the origin of the phrase &quot;one fell swoop.&quot;)</a></p><p>If a single value is passed, it will be applied to both <code>width</code> and <code>height</code>, producing a square. To make a rectangle, pass a two-value list: <code>width</code> then <code>height</code>.</p></section><section class="example"><h4>Example</h4><div id="size-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-size {
+  &amp;.m-1 {
+    @include scut-size(8em);
+  }
+  &amp;.m-2 {
+    @include scut-size(10em 5em);
+  }
+}
+</code></pre></div><div id="size-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-size.m-1 {
+  width: 8em;
+  height: 8em;
+}
+
+.eg-size.m-2 {
+  width: 10em;
+  height: 5em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="size">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-size m-1">A square</div><div class="eg-size m-2">A rectangle</div></div></div></section></div></section><section class="doc-i" id="sticky_footer"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_sticky-footer.scss" class="source">view source</a><h3><a href="#sticky_footer" class="inner-anchor m-util">sticky footer</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-sticky-footer</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$height</code><div class="args--comment"><p>The height of the footer</p></div></li><li><code class="args--name">$wrapper</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.wrapper&quot;</code>&nbsp;]<div class="args--comment"><p>A CSS selector for the page-wrapper element. <em>Wrap your selector in quotes.</em></p></div></li><li><code class="args--name">$footer</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-sticky&quot;</code>&nbsp;]<div class="args--comment"><p>A CSS selector for the footer. Wrap your selector in quotes.</p></div></li></ol></dd></dl></section><section class="description"><p>Ensure that your footer stays down at the bottom of the viewport, where God intended it to be, even if your content is too short to keep it down naturally. Avoid the weird look people give you when they see your footer in the middle of their browser window and unsettling emptiness beneath.</p><p>This one takes some commitment &mdash; but nothing you can&#39;t handle:</p><ul><li><strong>Your sticky footer must have a fixed height.</strong></li><li><strong>Your stuff-above-the-footer must be wrapped in a wrapper element.</strong> (The footer itself remains outside of this wrapper.)</li></ul><p><strong>This mixin should not be invoked within a declaration block &mdash; i.e. don&#39;t nest it.</strong> The mixin needs to add rules for a number of elements &mdash; <code>html</code>, <code>body</code>, the wrapper, and the footer &mdash; so it can&#39;t be restricted to the context of a different selector.</p><p>Since an example of this utility requires its own <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> elements, <strong><a href="http://codepen.io/davidtheclark/pen/ExjiF">this example is relegated to Codepen</a></strong>.</p></section><footer><h4>References</h4><ul class="refs"><li><a href="http://css-tricks.com/snippets/css/sticky-footer/" class="refs--i"><p>CSS-Tricks: &quot;Sticky Footer&quot;</p></a></li></ul></footer></div></section><h3 class="group--h"><a href="#vertically_center" id="vertically_center" class="inner-anchor m-group">vertically center</a></h3><section class="doc-i" id="v-center_line-height"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-line-height.scss" class="source">view source</a><h3><a href="#v-center_line-height" class="inner-anchor m-util">v-center: line-height</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-vcenter-lh</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$height</code></li></ol></dd></dl></section><section class="description"><p>Vertically center text (or other inline elements) by equalizing an element&#39;s <code>height</code> and <code>line-height</code>.</p><p>Although this method is soothingly, reassuringly simple, requiring none of the extra <code>&lt;div&gt;</code>&#39;s that make us all second-guess ourselves, it is also limited. <strong>This method only works for inline content (usually text) that will not exceed a single line.</strong> So it&#39;s good for buttons and headings with backgrounds and things like that.</p><p>If you need to vertically center something else, try one of the mixins below.</p></section><section class="example"><h4>Example</h4><div id="v-center_line-height-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-vcenter-lh {
+  vertical-align: middle;
+  &amp;.m-1 {
+    @include scut-vcenter-lh(50px);
+  }
+  &amp;.m-2 {
+    @include scut-vcenter-lh(50px);
+    font-size: 0.75em;
+  }
+}</code></pre></div><div id="v-center_line-height-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-vcenter-lh {
+  vertical-align: middle;
+}
+
+.eg-vcenter-lh.m-1 {
+  height: 50px;
+  line-height: 50px;
+}
+
+.eg-vcenter-lh.m-2 {
+  height: 50px;
+  line-height: 50px;
+  font-size: 0.75em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="v-center_line-height">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><button class="eg-vcenter-lh m-1">Vertically centered text</button><button class="eg-vcenter-lh m-2">Same height, smaller font-size</button></div></div></section></div></section><section class="doc-i" id="v-center_inline-block"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-inline-block.scss" class="source">view source</a><h3><a href="#v-center_inline-block" class="inner-anchor m-util">v-center: inline-block</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-vcenter-ib</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$inner</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-inner&quot;</code>&nbsp;]<div class="args--comment"><p>A CSS selector for the inner element. <em>Wrap your selector in quotes.</em></p></div></li></ol></dd></dl></section><section class="description"><p>Vertically center <em>an inner element</em> with the <code>inline-block</code> method.</p><p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p><p>Any to-be-centered element should be an <em>immediate child</em> of the container (<code>container &gt; inner</code>).</p><p>A word of caution: Because <code>inline-block</code> results in some unpredictable word-like spacing, this method doesn&#39;t always work well if you require exact widths (or if your inner element has a 100% width). If you require exactitude and nothing stands in the way of giving your container <code>display: table</code>, try <a href="#v-center_table_display">vertically centering via table display</a>.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-ib m-1&quot;&gt;
+  &lt;p class=&quot;scut-inner&quot;&gt;
+    A vertically centered element, with the default classname &quot;scut-inner&quot;.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-vcenter-ib m-2&quot;&gt;
+  &lt;p class=&quot;eg-vcenter-ib-inner&quot;&gt;
+    A vertically centered element, with its own special classname.
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div><div id="v-center_inline-block-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-vcenter-ib {
+  &amp; &gt; p {
+    max-width: 90%;
+  }
+  &amp;.m-1 {
+    @include scut-vcenter-ib;
+    // or @extend %scut-vcenter-ib;
+  }
+  &amp;.m-2 {
+    @include scut-vcenter-ib(&quot;.eg-vcenter-ib-inner&quot;);
+  }
+}</code></pre></div><div id="v-center_inline-block-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-vcenter-ib > p {
+  max-width: 90%;
+}
+
+.eg-vcenter-ib.m-1:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.eg-vcenter-ib.m-1 > .scut-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eg-vcenter-ib.m-2:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.eg-vcenter-ib.m-2 > .eg-vcenter-ib-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="v-center_inline-block">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-vcenter-ib m-1"><p class="scut-inner">A vertically centered element, with the default classname "scut-inner".</p></div><div class="eg-vcenter-ib m-2"><p class="eg-vcenter-ib-inner">A vertically centered element, with its own special classname.</p></div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://css-tricks.com/centering-in-the-unknown/" class="refs--i"><p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="v-center_table_display"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-table-display.scss" class="source">view source</a><h3><a href="#v-center_table_display" class="inner-anchor m-util">v-center: table display</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-vcenter-td</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$inner</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;.scut-inner&quot;</code>&nbsp;]<div class="args--comment"><p>A CSS selector for the inner element. <em>Wrap your selector in quotes.</em></p></div></li></ol></dd></dl></section><section class="description"><p>Vertically center <em>the content of an inner element</em> with the <code>display: table</code> method.</p><p><strong>This method requires a container and an inner element.</strong> The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.</p><p>Any to-be-centered element should be an <em>immediate child</em> of the container (<code>container &gt; inner</code>).</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-vcenter-td m-1&quot;&gt;
+  &lt;span class=&quot;scut-inner&quot;&gt;
+    A vertically centered span, with the default classname &quot;scut-inner&quot;.
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;eg-vcenter-td m-2&quot;&gt;
+  &lt;div class=&quot;eg-vcenter-td-inner&quot;&gt;
+    A vertically centered div, with its own special classname.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div id="v-center_table_display-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-vcenter-td {
+  &amp;.m-1 {
+    @include scut-vcenter-td;
+    // or @extend %scut-vcenter-td;
+    height: 8em;
+  }
+  &amp;.m-2 {
+    @include scut-vcenter-td(&quot;.eg-vcenter-td-inner&quot;);
+    height: 12em;
+  }
+}</code></pre></div><div id="v-center_table_display-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-vcenter-td.m-1 {
+  display: table;
+  height: 8em;
+}
+
+.eg-vcenter-td.m-1 > .scut-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.eg-vcenter-td.m-2 {
+  display: table;
+  height: 12em;
+}
+
+.eg-vcenter-td.m-2 > .eg-vcenter-td-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="v-center_table_display">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-vcenter-td m-1"><span class="scut-inner">A vertically centered span, with the default classname "scut-inner".</span></div><div class="eg-vcenter-td m-2"><div class="eg-vcenter-td-inner">A vertically centered div, with its own special classname.</div></div></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://css-tricks.com/centering-in-the-unknown/" class="refs--i"><p>CSS-Tricks: &quot;Centering in the Unknown&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="v-center_transform"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/layout/_v-center-transform.scss" class="source">view source</a><h3><a href="#v-center_transform" class="inner-anchor m-util">v-center: transform</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-vcenter-tt</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin and placeholder (same)</dd><dt class="info--label">compatibility</dt><dd class="info--value"><p>This utility uses a CSS <code>transform</code>, so will not work with IE8. Also note that <code>transform</code> requires vendor prefixes (which are included).</p></dd></dl></section><section class="description"><p>Vertically center an element using the clever <code>transform</code> method.</p><p><strong>This utility is simply an alias for <a href="#center_transform"><code>scut-center-transform</code></a>, but centering only on the vertical axis.</strong> It&#39;s included to fit with the <code>vcenter</code> naming convention.</p><p>So see the examples for <a href="#center_transform"><code>scut-center-transform</code></a>.</p></section></div></section></section><section class="container"><h2><a href="#typography" id="typography" class="inner-anchor m-category">typography</a></h2><section class="doc-i" id="bookends"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_bookends.scss" class="source">view source</a><h3><a href="#bookends" class="inner-anchor m-util">bookends</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-bookends</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.5em</code>&nbsp;]<div class="args--comment"><p>Spacing to separate the bookends from the element&#39;s content</p></div></li><li><code class="args--name">$content</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;&quot;</code>&nbsp;]<div class="args--comment"><p>One or two <code>content</code> values for the pseudo-elements. Use a list to pass different content values to the left (<code>:before</code>) and right (<code>:after</code>), respectively; or pass one value to both.</p></div></li></ol></dd><dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt><dd class="info--value"><p>A content block passed to this mixin will be applied to both <code>:before</code> and <code>:after</code> pseudo-elements.</p></dd></dl></section><section class="description"><p>Install and style pseudo-elements on both sides of something.</p><p>A common typographical usage is to place decorative ornaments on either side of some heading. But the mixin can prove useful for anything that involves pseudo-elements on both sides. Absolutely anything.</p><p>Pass <code>false</code> as both arguments if you want to modify bookend pseudo-elements that have already been created. See example variation 3.</p></section><section class="example"><h4>Example</h4><div id="bookends-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-bookends {
+  &amp;.m-1 {
+    @include scut-bookends($content: &quot;\2014&quot;);
+  }
+  &amp;.m-2 {
+    @include scut-bookends(0, &quot;\201c&quot; &quot;\201d&quot;);
+  }
+  &amp;.m-3 {
+    font-size: 2em;
+    @include scut-bookends(0.25em, &quot;\00ab&quot; &quot;\00bb&quot;) {
+      color: $eg-light;
+    }
+    &amp;:hover,
+    &amp;:focus {
+      color: $eg-light;
+      @include scut-bookends(false, false) {
+        color: $eg-dark;
+      }
+    }
+  }
+  &amp;.m-4 {
+    background-color: $eg-dark;
+    color: white;
+    text-align: center;
+    @include scut-bookends {
+      height: 2em;
+      width: 2em;
+      background-color: $eg-light;
+      vertical-align: middle;
+    }
+  }
+}</code></pre></div><div id="bookends-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-bookends.m-1:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.m-1:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.m-1:before,
+.eg-bookends.m-1:after {
+  display: inline-block;
+  content: "\2014";
+}
+
+.eg-bookends.m-2:before {
+  content: "\201c";
+  margin-right: 0;
+}
+
+.eg-bookends.m-2:after {
+  content: "\201d";
+  margin-left: 0;
+}
+
+.eg-bookends.m-2:before,
+.eg-bookends.m-2:after {
+  display: inline-block;
+}
+
+.eg-bookends.m-3 {
+  font-size: 2em;
+}
+
+.eg-bookends.m-3:before {
+  content: "\00ab";
+  margin-right: 0.25em;
+}
+
+.eg-bookends.m-3:after {
+  content: "\00bb";
+  margin-left: 0.25em;
+}
+
+.eg-bookends.m-3:before,
+.eg-bookends.m-3:after {
+  display: inline-block;
+  color: #9ae9ff;
+}
+
+.eg-bookends.m-3:hover,
+.eg-bookends.m-3:focus {
+  color: #9ae9ff;
+}
+
+.eg-bookends.m-3:hover:before,
+.eg-bookends.m-3:hover:after,
+.eg-bookends.m-3:focus:before,
+.eg-bookends.m-3:focus:after {
+  display: inline-block;
+  color: #002834;
+}
+
+.eg-bookends.m-4 {
+  background-color: #002834;
+  color: white;
+  text-align: center;
+}
+
+.eg-bookends.m-4:before {
+  margin-right: 0.5em;
+}
+
+.eg-bookends.m-4:after {
+  margin-left: 0.5em;
+}
+
+.eg-bookends.m-4:before,
+.eg-bookends.m-4:after {
+  display: inline-block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background-color: #9ae9ff;
+  vertical-align: middle;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="bookends">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-bookends m-1">Variation 1</div><div class="eg-bookends m-2">Variation 2</div><button class="eg-bookends m-3">Variation 3</button><div class="eg-bookends m-4">Variation 4</div></div></div></section></div></section><section class="doc-i" id="characters"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_characters.scss" class="source">view source</a><h3><a href="#characters" class="inner-anchor m-util">characters</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>$scut-[something]</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">variables</dd></dl></section><section class="description"><p>A set of variables providing CSS-friendly Unicode character-codes for the kinds of typographic glyphs you may find yourself adding to your stylesheets as <code>content</code> values.</p><p>Instead of looking them up every time, use a variable.</p><p>The names of these variables often correspond with HTML character entity references that you can use in your markup. For example, <code>$scut-nbsp</code> is the same character as <code>&amp;nbsp;</code> in HTML.</p><h4>Spaces</h4><dl class="characters-list"><dt><code>$scut-space</code></dt><dd></dd><dd>space ("\0020")</dd><dt><code>$scut-nbsp</code></dt><dd></dd><dd>non-breaking space ("\00a0")</dd></dl><h4>Quotation Marks</h4><dl class="characters-list"><dt><code>$scut-quot</code></dt><dd>"</dd><dd>quotation mark ("\0022")</dd><dt><code>$scut-lsquo</code></dt><dd>‘</dd><dd>left single curly quote ("\2018")</dd><dt><code>$scut-rsquo</code></dt><dd>’</dd><dd>right single curly quote ("\2019")</dd><dt><code>$scut-ldquo</code></dt><dd>“</dd><dd>left double curly quote ("\201C")</dd><dt><code>$scut-rdquo</code></dt><dd>”</dd><dd>right double curly quote ("\201D")</dd><dt><code>$scut-lsaquo</code></dt><dd>‹</dd><dd>left single angle quote (guillemet) ("\2039")</dd><dt><code>$scut-rsaquo</code></dt><dd>›</dd><dd>right single angle quote (guillemet) ("\203A")</dd><dt><code>$scut-laquo</code></dt><dd>«</dd><dd>left double angle quote (guillemet) ("\00ab")</dd><dt><code>$scut-raquo</code></dt><dd>»</dd><dd>right double angle quote (guillemet) ("\00bb")</dd></dl><h4>Other Punctuation</h4><dl class="characters-list"><dt><code>$scut-mdash</code></dt><dd>—</dd><dd>em dash (mutton) ("\2014")</dd><dt><code>$scut-ndash</code></dt><dd>–</dd><dd>en dash (nut) ("\2013")</dd><dt><code>$scut-hyphen</code></dt><dd>-</dd><dd>hyphen ("\2010")</dd><dt><code>$scut-amp</code></dt><dd>&</dd><dd>ampersand ("\0026")</dd><dt><code>$scut-para</code></dt><dd>¶</dd><dd>paragraph symbol (pilcrow) ("\00b6")</dd><dt><code>$scut-middot</code></dt><dd>·</dd><dd>middot (interpunct, interpoint) ("\00b7")</dd><dt><code>$scut-bull</code></dt><dd>•</dd><dd>bullet ("\2022")</dd><dt><code>$scut-whibull</code></dt><dd>◦</dd><dd>white bullet ("\25E6")</dd><dt><code>$scut-hellip</code></dt><dd>…</dd><dd>horizontal ellipsis ("\2026")</dd><dt><code>$scut-vellip</code></dt><dd>⋮</dd><dd>vertical ellipsis ("\22EE")</dd><dt><code>$scut-midhellip</code></dt><dd>⋯</dd><dd>midline horizontal ellipsis ("\22EF")</dd></dl><h4>Various Symbols</h4><dl class="characters-list"><dt><code>$scut-gt</code></dt><dd>&gt;</dd><dd>greater than ("\003e")</dd><dt><code>$scut-lt</code></dt><dd>&lt;</dd><dd>less than ("\003c")</dd><dt><code>$scut-times</code></dt><dd>×</dd><dd>times ("\00D7")</dd><dt><code>$scut-bigtimes</code></dt><dd>✕</dd><dd>big times ("\2715")</dd><dt><code>$scut-checkmark</code></dt><dd>✓</dd><dd>checkmark ("\2713")</dd><dt><code>$scut-sect</code></dt><dd>§</dd><dd>section sign (double S, hurricane, sectional symbol, the legal doughnut, signum sectiōnis) ("\00a7")</dd><dt><code>$scut-oslash</code></dt><dd>Ø</dd><dd>o-slash (slashed o) ("\00f8")</dd></dl><h4>Shapes</h4><dl class="characters-list"><dt><code>$scut-utri</code></dt><dd>▲</dd><dd>up-pointing triangle ("\25b2")</dd><dt><code>$scut-dtri</code></dt><dd>▼</dd><dd>down-pointing triangle ("\25bc")</dd><dt><code>$scut-ltri</code></dt><dd>◀</dd><dd>left-pointing triangle ("\25c0")</dd><dt><code>$scut-rtri</code></dt><dd>▶</dd><dd>right-pointing triangle ("\25b6")</dd><dt><code>$scut-ustri</code></dt><dd>▴</dd><dd>up-pointing small triangle ("\25b4")</dd><dt><code>$scut-dstri</code></dt><dd>▾</dd><dd>down-pointing small triangle ("\25be")</dd><dt><code>$scut-lstri</code></dt><dd>◂</dd><dd>left-pointing small triangle ("\25c2")</dd><dt><code>$scut-rstri</code></dt><dd>▸</dd><dd>right-pointing small triangle ("\25b8")</dd><dt><code>$scut-diamond</code></dt><dd>◆</dd><dd>diamond ("\25c6")</dd><dt><code>$scut-fisheye</code></dt><dd>◉</dd><dd>fisheye ("\25c9")</dd><dt><code>$scut-bullseye</code></dt><dd>◎</dd><dd>bullseye ("\25ce")</dd><dt><code>$scut-circle</code></dt><dd>●</dd><dd>circle ("\25cf")</dd><dt><code>$scut-whitecircle</code></dt><dd>○</dd><dd>white circle ("\25cb")</dd></dl></section></div></section><section class="doc-i" id="font-face"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_font-face.scss" class="source">view source</a><h3><a href="#font-face" class="inner-anchor m-util">font-face</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-font-face</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin only</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$font-family</code><div class="args--comment"><p>A name for the font.</p></div></li><li><code class="args--name">$file-path</code><div class="args--comment"><p>The relative path to the font&#39;s files, <em>including the files&#39; names (which should be the same) and excluding their extensions</em>.</p></div></li><li><code class="args--name">$weight</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">normal</code>&nbsp;]<div class="args--comment"><p>A <code>font-weight</code> value.</p></div></li><li><code class="args--name">$style</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">normal</code>&nbsp;]<div class="args--comment"><p>A <code>font-style</code> value.</p></div></li></ol></dd></dl></section><section class="description"><p>Implement <code>font-face</code> best practices with the greatest of ease.</p><p>The &quot;best practices&quot; to which I refer (New Bulletproof @Font-Face Syntax!!!) are explained in the Reference below.</p><p>For example, to implement all varieties of Arvo:</p><pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
+@include scut-font-face("Arvo", "fonts/arvo-bold-webfont", bold);
+@include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
+@include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre></section><footer><h4>References</h4><ul class="refs"><li><a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax" class="refs--i"><p>Fontspring: &quot;The New Bulletproof @Font-Face Syntax&quot;</p></a></li></ul></footer></div></section><section class="doc-i" id="hanging_indent"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_hanging-indent.scss" class="source">view source</a><h3><a href="#hanging_indent" class="inner-anchor m-util">hanging indent</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-hanging-indent</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$indent</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1em</code>&nbsp;]</li></ol></dd></dl></section><section class="description"><p>The &quot;hanging indent&quot; applies to all lines but the first &mdash; as opposed to the &quot;normal&quot; indent, applying to only the first line, that you&#39;re accustomed to from those print publications you may have seen.</p><p>My&nbsp;<cite>Chicago Manual of Style</cite>&nbsp;also calls it the <i>flush-and-hang</i> style. I like that.</p><p>Hanging indents are standard fare for indexes and works cited, but may seem obscure to you if you&#39;re no scholar ... until one day you realize that you do need them, and have needed them all along ...</p></section><section class="example"><h4>Example</h4><div id="hanging_indent-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-hanging-indent {
+  max-width: 25em;
+  &amp;.m-1 {
+    @include scut-hanging-indent;
+    // or @extend %scut-hanging-indent;
+  }
+  &amp;.m-2 {
+    @include scut-hanging-indent(2em);
+  }
+}</code></pre></div><div id="hanging_indent-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-hanging-indent {
+  max-width: 25em;
+}
+
+.eg-hanging-indent.m-1 {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.eg-hanging-indent.m-2 {
+  padding-left: 2em;
+  text-indent: -2em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="hanging_indent">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-hanging-indent m-1">Lastname, Firstname.<cite>Title of the Work</cite>. City, State: Publisher, YEAR. Print.</div><div class="eg-hanging-indent m-2">Lastnameofanotherlady, Firstname.<cite>Title of Another Work</cite>. City, State: Publisher, YEAR. Print.</div></div></div></section></div></section><section class="doc-i" id="indented_paragraphs"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_indented-paragraphs.scss" class="source">view source</a><h3><a href="#indented_paragraphs" class="inner-anchor m-util">indented paragraphs</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-indented-ps</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$indent</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1.5em</code>&nbsp;]</li><li><code class="args--name">$no-first-indent</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">true</code>&nbsp;]<div class="args--comment"><p>It is a not uncommon printing practice to leave the first paragraph un-indented.</p></div></li></ol></dd></dl></section><section class="description"><p>Indent paragraphs &mdash; as tends to happen in those &quot;books&quot; and &quot;magazines&quot; that old people read.</p></section><section class="example"><h4>Example</h4><div id="indented_paragraphs-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-indented-ps {
+  &amp;.m-1 {
+    @include scut-indented-ps;
+    // or @extend %scut-indented-ps;
+  }
+  &amp;.m-2 {
+    @include scut-indented-ps(3em, false);
+  }
+}</code></pre></div><div id="indented_paragraphs-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-indented-ps.m-1 p {
+  margin: 0;
+  text-indent: 1.5em;
+}
+
+.eg-indented-ps.m-1 p:first-of-type {
+  text-indent: 0;
+}
+
+.eg-indented-ps.m-2 p {
+  margin: 0;
+  text-indent: 3em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="indented_paragraphs">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-indented-ps m-1"><div><strong>Default</strong></div><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p><p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p></div><div class="eg-indented-ps m-2"><div><strong>Variant</strong></div><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p><p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p><p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p></div></div></div></section></div></section><section class="doc-i" id="key-value"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_key-value.scss" class="source">view source</a><h3><a href="#key-value" class="inner-anchor m-util">key-value</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-key-val</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$divider</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">&quot;:&quot;</code>&nbsp;]<div class="args--comment"><p>Content (most likely punctuation) to divide the term from the description.</p></div></li><li><code class="args--name">$pad</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.25em</code>&nbsp;]<div class="args--comment"><p>Horizontal space between the <code>$divider</code> and the description.</p></div></li><li><code class="args--name">$indent</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1em</code>&nbsp;]<div class="args--comment"><p>Indentation of the description.</p></div></li><li><code class="args--name">$spacing</code><div class="args--comment"><p>Vertical space between term-description pairs.</p></div></li><li><code class="args--name">$pad-left</code><div class="args--comment"><p>Horizontal space between the <code>$divider</code> and the term.</p></div></li></ol></dd></dl></section><section class="description"><p>You&#39;ve probably been wondering how to <em>semantically mark-up your lists of keys and values</em> &mdash; your labelled bits of information. You&#39;ve probably been gnawing your fingernails to nubs, panicked with uncertainty. Well wait &#39;till you hear this: The answer seems to be <em>description (or <i>association</i>) lists</em> &mdash; the <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, and <code>&lt;dd&gt;</code> elements. (See the References listed below.)</p><p>WhatWG says &quot;The dl element represents an association list consisting of zero or more name-value groups (a description list).&quot; There you have it.</p><p>One traditional manner of <em>styling</em> such assocation (description) lists is with colon-separated name-value pairs, the first line flush left and following lines indented (the fabled <a href="#hanging_indent">&quot;hanging indent&quot;</a>). This mixin should help make that dream a reality. And it also enables many other common key-value formats, a couple of which are shown in the examples below.</p><p><strong>Apply the mixin to your <code>&lt;dl&gt;</code> element.</strong></p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;dl class=&quot;eg-key-val m-1&quot;&gt;
+  &lt;dt&gt;Name&lt;/dt&gt;
+  &lt;dd&gt;Lorem Ipsum&lt;/dd&gt;
+  &lt;dt&gt;Occupation&lt;/dt&gt;
+  &lt;dd&gt;Placeholder&lt;/dd&gt;
+  &lt;dt&gt;Children&lt;/dt&gt;
+  &lt;dd&gt;None&lt;/dd&gt;
+  &lt;dt&gt;Excuses&lt;/dt&gt;
+  &lt;dd&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl class=&quot;eg-key-val m-2&quot;&gt;
+  &lt;dt&gt;Consolation&lt;/dt&gt;
+  &lt;dd&gt;Alleviation of misery or distress of mind&lt;/dd&gt;
+  &lt;dt&gt;Depression&lt;/dt&gt;
+  &lt;dd&gt;A sinking of the spirits&lt;/dd&gt;
+  &lt;dt&gt;Equanimity&lt;/dt&gt;
+  &lt;dd&gt;A state of resistance to elation, depression, anger, etc.&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;dl class=&quot;eg-key-val m-3&quot;&gt;
+  &lt;dt&gt;Doom&lt;/dt&gt;
+  &lt;dd&gt;Fate decreed or determined; fixed fortune; irrevocable destiny.&lt;/dd&gt;
+  &lt;dt&gt;Waggle&lt;/dt&gt;
+  &lt;dd&gt;To cause to wag frequently and with short motions; move first one way and then the other.&lt;/dd&gt;
+  &lt;dt&gt;Pantaloon&lt;/dt&gt;
+  &lt;dd&gt;In early Italian comedy, a character usually represented as a lean and foolish old man (properly a Venetian), wearing spectacles and slippers.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre></div><div id="key-value-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-key-val {
+  max-width: 20em;
+  &amp;.m-1 {
+    @include scut-key-val;
+    // or @extend %scut-key-val;
+  }
+  &amp;.m-2 {
+    @include scut-key-val(&quot;\2014&quot;, 0.5em, 8em, 1em, 0.5em);
+    &amp; &gt; dt {
+      font-weight: bold;
+    }
+  }
+  &amp;.m-3 {
+    $dt-width: 6em;
+    @include scut-key-val(&quot;&quot;, 0, $dt-width + 1em);
+    &amp; &gt; dt {
+      width: $dt-width;
+      text-align: right;
+      text-transform: uppercase;
+    }
+  }
+}</code></pre></div><div id="key-value-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-key-val {
+  max-width: 20em;
+}
+
+.eg-key-val.m-1 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-1 > dt:after {
+  content: ":";
+  margin-right: 0.25em;
+}
+
+.eg-key-val.m-1 > dd {
+  margin-left: 1em;
+}
+
+.eg-key-val.m-2 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-2 > dt:after {
+  content: "\2014";
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
+.eg-key-val.m-2 > dd {
+  margin-left: 8em;
+  margin-bottom: 1em;
+}
+
+.eg-key-val.m-2 > dt {
+  font-weight: bold;
+}
+
+.eg-key-val.m-3 > dt {
+  clear: both;
+  float: left;
+}
+
+.eg-key-val.m-3 > dt:after {
+  content: "";
+  margin-right: 0;
+}
+
+.eg-key-val.m-3 > dd {
+  margin-left: 7em;
+}
+
+.eg-key-val.m-3 > dt {
+  width: 6em;
+  text-align: right;
+  text-transform: uppercase;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="key-value">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><dl class="eg-key-val m-1"><dt>Name</dt><dd>Lorem Ipsum</dd><dt>Occupation</dt><dd>Placeholder</dd><dt>Children</dt><dd>None</dd><dt>Excuses</dt><dd>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</dd></dl><dl class="eg-key-val m-2"><dt>Consolation</dt><dd>Alleviation of misery or distress of mind</dd><dt>Depression</dt><dd>A sinking of the spirits</dd><dt>Equanimity</dt><dd>A state of resistance to elation, depression, anger, etc.</dd></dl><dl class="eg-key-val m-3"><dt>Doom</dt><dd>Fate decreed or determined; fixed fortune; irrevocable destiny.</dd><dt>Waggle</dt><dd>To cause to wag frequently and with short motions; move first one way and then the other.</dd><dt>Pantaloon</dt><dd>In early Italian comedy, a character usually represented as a lean and foolish old man (properly a Venetian), wearing spectacles and slippers.</dd></dl></div></div></section><footer><h4>References</h4><ul class="refs"><li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/grouping-content.html#the-dl-element" class="refs--i"><p>WhatWG on the <code>&lt;dl&gt;</code> element</p></a></li><li><a href="http://html5doctor.com/the-dl-element/" class="refs--i"><p>HTML5 Doctor on the <code>&lt;dl&gt;</code> element</p></a></li></ul></footer></div></section><section class="doc-i" id="link_bottom-bordered"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_link-bottom-bordered.scss" class="source">view source</a><h3><a href="#link_bottom-bordered" class="inner-anchor m-util">link: bottom-bordered</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-link-bb</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$color</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inherit</code>&nbsp;]<div class="args--comment"><p>A <code>border-bottom-color</code> value.</p></div></li><li><code class="args--name">$style</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">solid</code>&nbsp;]<div class="args--comment"><p>A <code>border-bottom-style</code> value.</p></div></li><li><code class="args--name">$width</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1px</code>&nbsp;]<div class="args--comment"><p>A <code>border-bottom-width</code> value.</p></div></li></ol></dd></dl></section><section class="description"><p>Replace standard link underlining with a bottom border.</p><p>People seem to like this trick, at least some people, because it provides a little extra space between the text and the line. Other pleasing effects are also possible by passing arguments.</p><p>Of course, as always, you can add your own rules after the mixin to further customize. For example, if you want to define a special color for the bottom-border on hover, just do it (see the example below).</p></section><section class="example"><h4>Example</h4><div id="link_bottom-bordered-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-link-bb {
+  &amp;.m-1 a {
+    @include scut-link-bb;
+    // or @extend %scut-link-bb;
+  }
+  &amp;.m-2 a {
+    color: $eg-muted;
+    @include scut-link-bb(inherit, double, 4px);
+    &amp;:hover {
+      color: $eg-dark;
+      border-bottom-color: $eg-light;
+    }
+  }
+}</code></pre></div><div id="link_bottom-bordered-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-link-bb.m-1 a {
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.eg-link-bb.m-2 a {
+  color: #cccccc;
+  text-decoration: none;
+  border-bottom-width: 4px;
+  border-bottom-style: double;
+}
+
+.eg-link-bb.m-2 a:hover {
+  color: #002834;
+  border-bottom-color: #9ae9ff;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="link_bottom-bordered">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p class="eg-link-bb m-1">Default values: <a href="#link-with-bottom-border">Link text</a></p><p class="eg-link-bb m-2">Variant values: <a href="#link-with-bottom-border">Link text</a></p></div></div></section></div></section><section class="doc-i" id="reverse_italics"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_reverse-italics.scss" class="source">view source</a><h3><a href="#reverse_italics" class="inner-anchor m-util">reverse italics</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-reverse-italics</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$elements</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">false</code>&nbsp;]<div class="args--comment"><p>A list (not comma separated) of CSS selectors for elements that you do not want italicized (<code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code> are already taken care of: see below). <em>Wrap your selectors in quotes.</em></p></div></li></ol></dd></dl></section><section class="description"><p>Italicize a section of text while de-italicizing those elements that would normally be italicized. Stand the world on its head.</p><p>This is common typographical practice. In non-italicized text, italics provide mild stress; but in an italicized passage, it is the <em>non-italicized</em> text that is stressed. (Everything is relative and nothing means anything.)</p><p>The elements <code>&lt;em&gt;</code>, <code>&lt;cite&gt;</code>, and <code>&lt;i&gt;</code>, which browsers typically italicize, are by default de-italicized. To de-italicize more elements, include their selectors in a list that you pass to the mixin.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;p class=&quot;eg-reverse-italics m-default&quot;&gt;DEFAULT:
+  &lt;em&gt;Some &amp;lt;em&amp;gt; text&lt;/em&gt; sit amet, consectetuer adipiscing elit.
+  &lt;cite&gt;Some &amp;lt;cite&amp;gt; text&lt;/cite&gt;, aenean commodo ligula eget dolor.
+  &lt;strong&gt;Some &amp;lt;strong&amp;gt; text&lt;/strong&gt; Cum sociis natoque penatibus
+  &lt;i&gt;some &amp;lt;i&amp;gt; text&lt;/i&gt; et magnis dis parturient montes, nascetur ridiculus mus
+  &lt;b&gt;some &amp;lt;b&amp;gt; text&lt;/b&gt;.
+  &lt;span class=&quot;no-italics&quot;&gt;And a &amp;lt;span&amp;gt; with the classname &quot;no-italics&quot;.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p class=&quot;eg-reverse-italics m-variant&quot;&gt;VARIANT:
+  &lt;em&gt;Some &amp;lt;em&amp;gt; text&lt;/em&gt; sit amet, consectetuer adipiscing elit.
+  &lt;cite&gt;Some &amp;lt;cite&amp;gt; text&lt;/cite&gt;, aenean commodo ligula eget dolor.
+  &lt;strong&gt;Some &amp;lt;strong&amp;gt; text&lt;/strong&gt; Cum sociis natoque penatibus
+  &lt;i&gt;some &amp;lt;i&amp;gt; text&lt;/i&gt; et magnis dis parturient montes, nascetur ridiculus mus
+  &lt;b&gt;some &amp;lt;b&amp;gt; text&lt;/b&gt;.
+  &lt;span class=&quot;no-italics&quot;&gt;And a &amp;lt;span&amp;gt; with the classname &quot;no-italics&quot;.&lt;/span&gt;
+&lt;/p&gt;
+</code></pre></div><div id="reverse_italics-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-reverse-italics {
+  &amp;.m-default {
+    @include scut-reverse-italics;
+    // or @extend %scut-reverse-italics;
+  }
+  &amp;.m-variant {
+    @include scut-reverse-italics(&quot;strong&quot; &quot;b&quot; &quot;.no-italics&quot;);
+  }
+}</code></pre></div><div id="reverse_italics-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-reverse-italics.m-default {
+  font-style: italic;
+}
+
+.eg-reverse-italics.m-default em,
+.eg-reverse-italics.m-default cite,
+.eg-reverse-italics.m-default i,
+.eg-reverse-italics.m-default false {
+  font-style: normal;
+}
+
+.eg-reverse-italics.m-variant {
+  font-style: italic;
+}
+
+.eg-reverse-italics.m-variant em,
+.eg-reverse-italics.m-variant cite,
+.eg-reverse-italics.m-variant i,
+.eg-reverse-italics.m-variant strong,
+.eg-reverse-italics.m-variant b,
+.eg-reverse-italics.m-variant .no-italics {
+  font-style: normal;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="reverse_italics">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p class="eg-reverse-italics m-default">DEFAULT: <em>Some &lt;em&gt; text</em> sit amet, consectetuer adipiscing elit.<cite>Some &lt;cite&gt; text</cite>, aenean commodo ligula eget dolor. <strong>Some &lt;strong&gt; text</strong> Cum sociis natoque penatibus <i>some &lt;i&gt; text</i> et magnis dis parturient montes, nascetur ridiculus mus <b>some &lt;b&gt; text</b>. <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span></p><p class="eg-reverse-italics m-variant">VARIANT: <em>Some &lt;em&gt; text</em> sit amet, consectetuer adipiscing elit.<cite>Some &lt;cite&gt; text</cite>, aenean commodo ligula eget dolor. <strong>Some &lt;strong&gt; text</strong> Cum sociis natoque penatibus <i>some &lt;i&gt; text</i> et magnis dis parturient montes, nascetur ridiculus mus <b>some &lt;b&gt; text</b>. <span class="no-italics">And a &lt;span&gt; with the classname "no-italics".</span></p></div></div></section></div></section><section class="doc-i" id="side-lined"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_side-lined.scss" class="source">view source</a><h3><a href="#side-lined" class="inner-anchor m-util">side-lined</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-side-lined</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$height</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">1px</code>&nbsp;]<div class="args--comment"><p>The height of the lines.</p></div></li><li><code class="args--name">$space</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">0.5em</code>&nbsp;]<div class="args--comment"><p>Spacing to separate the text and the lines.</p></div></li><li><code class="args--name">$color</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">inherit</code>&nbsp;]<div class="args--comment"><p>The color of the lines.</p></div></li><li><code class="args--name">$style</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">solid</code>&nbsp;]<div class="args--comment"><p>The <code>border-style</code> of the lines.</p></div></li><li><code class="args--name">$v-adjust</code><div class="args--comment"><p>Vertical adjustment to the lines, adding space <em>from the bottom</em>. See examples below.</p></div></li><li><code class="args--name">$double</code><div class="args--comment"><p>Double your lines by adding <em>a value for the distance between the two lines you want</em>.</p></div></li></ol></dd></dl></section><section class="description"><p>Woman- and mankind have always loved this flourish: horizontal lines extending from either side of center-aligned text.</p><p>Look at the examples below. You want to do that!</p><p>By default, the lines will be vertically aligned with the text&#39;s centerline &mdash; but sometimes that will look off to your discerning eye, and you&#39;ll want to tweak that vertical position. So add some height to the <code>$v-adjust</code> argument, which will push your lines up, away from the bottom of the element.</p><p>By default, the mixin produces one line; but if you add a height value to the <code>$double</code> argument, you&#39;ll get two lines (separated by that height). (You could also use a <code>$style</code> of <code>double</code>, which would act the same as any double border-style.)</p></section><section class="example"><h4>Example</h4><div id="side-lined-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-side-lined {
+  &amp;.m-1 {
+    @include scut-side-lined;
+    // or @extend %scut-side-lined;
+  }
+  &amp;.m-2 {
+    font-size: 2em;
+    @include scut-side-lined(0.3em, 1em, $eg-light, $v-adjust: 0.1em);
+  }
+  &amp;.m-3 {
+    @include scut-side-lined($double: 0.3em, $color: $eg-muted, $v-adjust: 0.05em);
+  }
+  &amp;.m-4 {
+    @include scut-side-lined($style: dotted);
+  }
+}</code></pre></div><div id="side-lined-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-side-lined.m-1 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-1:before,
+.eg-side-lined.m-1:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.eg-side-lined.m-1:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-1:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-2 {
+  font-size: 2em;
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-2:before,
+.eg-side-lined.m-2:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 0.3em;
+  border-top-color: #9ae9ff;
+  bottom: 0.1em;
+}
+
+.eg-side-lined.m-2:before {
+  right: 1em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-2:after {
+  left: 1em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-3 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-3:before,
+.eg-side-lined.m-3:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #cccccc;
+  bottom: 0.05em;
+  height: 0.3em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #cccccc;
+}
+
+.eg-side-lined.m-3:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-3:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+.eg-side-lined.m-4 {
+  display: block;
+  overflow: hidden;
+  text-align: center;
+}
+
+.eg-side-lined.m-4:before,
+.eg-side-lined.m-4:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 50%;
+  border-top-style: dotted;
+  border-top-width: 1px;
+}
+
+.eg-side-lined.m-4:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.eg-side-lined.m-4:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="side-lined">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><p class="eg-side-lined m-1">Variation 1</p><p class="eg-side-lined m-2">Variation 2</p><p class="eg-side-lined m-3">Variation 3</p><p class="eg-side-lined m-4">Variation 4</p></div></div></section></div></section><section class="doc-i" id="truncate"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/typography/_truncate.scss" class="source">view source</a><h3><a href="#truncate" class="inner-anchor m-util">truncate</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-truncate</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with a default-values placeholder</dd></dl></section><section class="description"><p>Truncate text to a single line, clipped with an ellipsis.</p><p>A quick and dirty method of tailoring content to layout. In order to truncate without clipping words, truncate to character counts, or truncate multi-line strings generally, the most reliable and flexible methods seem to lie outside of CSS (i.e. in your templating language, or JavaScript, etc.).</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-truncate&quot;&gt;This string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis and just to ensure that that example works even on your gigantic fancy-boy screen I&#x27;ll duplicate that sentence content starting now this string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis.&lt;/div&gt;
+</code></pre></div><div id="truncate-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-truncate {
+  @include scut-truncate;
+  // or @extend %scut-truncate;
+}</code></pre></div><div id="truncate-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="truncate">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-truncate">This string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis and just to ensure that that example works even on your gigantic fancy-boy screen I'll duplicate that sentence content starting now this string of text is bound to be longer than a single line will allow but you will not see the whole thing because it will be truncated at the end of the displayed line and ended with an ellipsis.</div></div></div></section></div></section></section><section class="container"><h2><a href="#functions" id="functions" class="inner-anchor m-category">functions</a></h2><section class="doc-i" id="pixels-to-ems"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_pixels-to-ems.scss" class="source">view source</a><h3><a href="#pixels-to-ems" class="inner-anchor m-util">pixels-to-ems</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-em</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">function, with an exposed settings-variable</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$pixels</code><div class="args--comment"><p>The <code>px</code>-value you wish to convert to <code>em</code>s. No <code>px</code> unit necessary (e.g. <code>20</code> is fine, so is <code>20px</code>). <em>Passing a list will result in a list of <code>rem</code> values</em> (see examples).</p></div></li><li><code class="args--name">$base</code> [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">16</code>&nbsp;]<div class="args--comment"><p>A base-value with which to calculate the <code>em</code>-value. If there are no units, it&#39;s interpreted as <em>pixels</em>; but you can use <code>em</code>-values, as well. <strong>The <code>$base</code> default value can be changed for your project by setting your own <code>$scut-em-base</code> variable prior to using this function</strong> (see examples).</p></div></li></ol></dd></dl></section><section class="description"><p>Convert pixel-values to <code>em</code>-values &mdash; with flexibility for situations in which the <code>em</code>-value has to be calculated in relation to something other than a default <code>16px font-size</code>. <em>Pass a single value or a list of values.</em></p><p>This function eases the burden on those who build flexible, <code>em</code>-based layouts but still find themselves thinking in pixels or using tools that speak in pixels.</p><p>If a <code>$base</code> argument is provided, the <code>em</code>-value will be calculated relative to that <code>$base</code> (by default, <code>$base</code> is assumed to be <code>16</code>). If that <code>$base</code> is in pixels, everything should work smoothly, no questions asked. <em>You can also provide a <code>$base</code> in ems</em> &mdash; but this is trickier: it will only work if your <code>em</code>s are not more than one layer deep.</p><p><small>(For example, if your element is the child of a container whose <code>font-size</code> is an <code>em</code>-value other than <code>1em</code>, you can pass the <code>font-size</code> as the <code>$base</code> argument and everything will work fine (see example variations 5 and 6), But if the container has a <code>font-size</code> in <code>em</code>s (not <code>1em</code>), and a child of it has a <code>font-size</code> in <code>em</code>s (also not <code>1em</code>), and your messing with a grandchild ... things will go wrong. So, again, I don&#39;t suggest trying to use this function three or more levels deep in <code>em</code>s.)</small></p><p><strong>If you&#39;re worried about these nesting issues and want to use <code>rem</code> units, instead, try the <a href="#pixels-to-rems"><code>scut-rem</code> function, below</a> or the <a href="#rems_with_fallback"><code>scut-rem-fallback</code> mixin, above</a>.</strong></p></section><section class="example"><h4>Example</h4><div id="pixels-to-ems-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-em {
+  // first pair
+  &amp;.m-1 { width: scut-em(300); }
+  &amp;.m-2 { width: 300px; }
+  // second pair
+  &amp;.m-3, &amp;.m-4 { font-size: 20px; }
+  &amp;.m-3 { width: scut-em(400, 20); }
+  &amp;.m-4 { width: 400px; }
+  // third pair
+  &amp;.m-5, &amp;.m-6 { font-size: 0.6em; }
+  &amp;.m-5 { width: scut-em(500, 0.6em); }
+  &amp;.m-6 { width: 500px; }
+  // list and units demonstration
+  &amp;.m-7 {
+    margin: scut-em(50 30px 0 60);
+    padding: scut-em(50 20px 0)
+  }
+  // changing the default $base value
+  // (compare to the second pair, above)
+  $scut-em-default: 20;
+  &amp;.m-8 {
+    font-size: 20px;
+    width: scut-em(400);
+  }
+}
+</code></pre></div><div id="pixels-to-ems-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-em.m-1 {
+  width: 18.75em;
+}
+
+.eg-em.m-2 {
+  width: 300px;
+}
+
+.eg-em.m-3,
+.eg-em.m-4 {
+  font-size: 20px;
+}
+
+.eg-em.m-3 {
+  width: 20em;
+}
+
+.eg-em.m-4 {
+  width: 400px;
+}
+
+.eg-em.m-5,
+.eg-em.m-6 {
+  font-size: 0.6em;
+}
+
+.eg-em.m-5 {
+  width: 52.08333em;
+}
+
+.eg-em.m-6 {
+  width: 500px;
+}
+
+.eg-em.m-7 {
+  margin: 3.125em 1.875em 0em 3.75em;
+  padding: 3.125em 1.25em 0em;
+}
+
+.eg-em.m-8 {
+  font-size: 20px;
+  width: 25em;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="pixels-to-ems">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-em-c"><div class="eg-em m-1">Variation 1: 300px wide, in ems</div><div class="eg-em m-2">Variation 2: 300px wide, in regular pixels (for reference)</div><div class="eg-em m-3">Variation 3: 400px wide, in ems, with a different base size in px</div><div class="eg-em m-4">Variation 4: 400px wide, in pixels, with a different base size in px</div><div class="eg-em m-5">Variation 5: 500px wide, in ems, with a different base size in ems</div><div class="eg-em m-6">Variation 6: 500px wide, in pixels, with a different base size in ems</div><div class="eg-em m-7">Variation 7: Demonstrating a list of values being passed, as well as the option of including or leaving out the px unit.</div><div class="eg-em m-8">Variation 8: You can change the default $base value to avoid setting it manually over and over again.</div></div></div></div></section></div></section><section class="doc-i" id="pixels-to-rems"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_pixels-to-rems.scss" class="source">view source</a><h3><a href="#pixels-to-rems" class="inner-anchor m-util">pixels-to-rems</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-rem</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">function</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$pixels</code><div class="args--comment"><p>The <code>px</code>-value you wish to convert to <code>rem</code>s. No <code>px</code> unit necessary (e.g. <code>20</code> is fine, so is <code>20px</code>). <em>Passing a list will result in a list of <code>rem</code> values</em> (see examples).</p></div></li></ol></dd><dt class="info--label">compatibility</dt><dd class="info--value"><p>IE8 and Opera Mini do not support <code>rem</code> units. If you want to support these browsers you must provide a fallback in pixels &mdash; which Scut can do with the <a href="#rems_with_fallback"><code>scut-rem-fallback</code> mixin, above</a>.</p></dd></dl></section><section class="description"><p>Convert pixel-values to <code>rem</code>-values. <em>Pass a single value or a list of values.</em></p><p>Like <a href="#pixels-to-ems"><code>scut-em</code></a>, above, this function makes (limited parts of) life easier for those of us who appreciate the many benefits of relative units but still find themselves thinking in pixels, or (what&#39;s especially common) using tools that speak in pixels.</p><p>For a good description of the differences between <code>em</code> and <code>rem</code> units, coupled with some examples of why <code>rem</code>s are handy, read <a href="http://techtime.getharvest.com/blog/in-defense-of-rem-units">&quot;In Defense of Rem Units&quot; on the Harvest blog</a>. For an alternative perspective, in favor of <code>em</code>s, try <a href="http://filamentgroup.com/lab/on_ems_and_rems/">Filament Group&#39;s &quot;On ems and rems&quot;</a>. The example below illustrates the main difference: <code>rem</code>s are always relative to the root <code>html</code> element, not to the subject-element&#39;s parent.</p><p><strong>Please note the compatibility issue with this utility: If you need <code>px</code>-value fallbacks to support IE8 and Opera Mini, use the <a href="#rems_with_fallback"><code>scut-rem-fallback</code> mixin</a> instead of this function.</strong></p><p>If you&#39;re really worried about this compatibility issue, you might also consider using <a href="#pixels-to-ems"><code>scut-em</code></a>, instead.</p></section><section class="example"><h4>Example</h4><div class="example--html"><h5>HTML</h5><pre><code class="language-markup">&lt;div class=&quot;eg-rem m-1&quot;&gt;
+  Variation 1: 24px font-size, in regular pixels
+&lt;/div&gt;
+
+&lt;div class=&quot;eg-rem m-2&quot;&gt;
+  Variation 2: 24px font-size converted to rems
+&lt;/div&gt;
+
+&lt;div class=&quot;eg-rem-c&quot;&gt;
+  &lt;div class=&quot;eg-rem m-3&quot;&gt;
+    Variation 3: 24px font-size wide in rems, nested inside a div with a font-size of 1000px. No effect!
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;eg-rem m-4&quot;&gt;
+  Variation 4: Showing that a list of px values can be passed, and that the px unit is optional.
+&lt;/div&gt;
+</code></pre></div><div id="pixels-to-rems-scss" class="example--scss"><h5>SCSS</h5><pre><code class="language-scss">.eg-rem-c {
+  font-size: 1000px;
+}
+.eg-rem {
+  &amp;.m-1 { font-size: 24px; }
+  &amp;.m-2 { font-size: scut-rem(24); }
+  &amp;.m-3 { font-size: scut-rem(24); }
+  &amp;.m-4 {
+    margin: scut-rem(80 50px 0 100);
+    padding: scut-rem(30 20px);
+  }
+}</code></pre></div><div id="pixels-to-rems-css" class="example--css"><h5>Compiled CSS</h5><pre><code class="language-css">.eg-rem-c {
+  font-size: 1000px;
+}
+
+.eg-rem.m-1 {
+  font-size: 24px;
+}
+
+.eg-rem.m-2 {
+  font-size: 1.5rem;
+}
+
+.eg-rem.m-3 {
+  font-size: 1.5rem;
+}
+
+.eg-rem.m-4 {
+  margin: 5rem 3.125rem 0rem 6.25rem;
+  padding: 1.875rem 1.25rem;
+}
+</code></pre></div><button class="toggle-css js-toggle-css" data-entry="pixels-to-rems">Show compiled CSS</button><div class="example--disp"><h5>Result</h5><div class="example--disp--inner"><div class="eg-rem m-1">Variation 1: 24px font-size, in regular pixels</div><div class="eg-rem m-2">Variation 2: 24px font-size converted to rems</div><div class="eg-rem-c"><div class="eg-rem m-3">Variation 3: 24px font-size wide in rems, nested inside a div with a font-size of 1000px. No effect!</div></div><div class="eg-rem m-4">Variation 4: Showing that a list of px values can be passed, and that the px unit is optional.</div></div></div></section></div></section><section class="doc-i" id="strip_unit"><header class="doc-i--h"><a href="https://github.com/davidtheclark/scut/blob/v0.8.0/src/functions/_strip-unit.scss" class="source">view source</a><h3><a href="#strip_unit" class="inner-anchor m-util">strip unit</a></h3></header><div class="entry-body"><section class="info"><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-strip-unit</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">function</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$num</code><div class="args--comment"><p>The number whose units you want to strip.</p></div></li></ol></dd></dl></section><section class="description"><p>Strip the unit from a number.</p><p>This becomes useful when you are building your own mixins and functions and find yourself in an error-littered tangle of units. With this function you can just ditch those units, then put them back later.</p><p>No example necessary.</p></section></div></section></section></article><aside id="help-content" class="help-content-c"><section id="help-use-name" class="help-content js-help-modal"><div class="scut-inner"><p><strong>use-name</strong> is the name of the utility as it is used (as a mixin, placeholder, function, variable, etc.), including the <code>scut-</code> prefix. It&#39;s what you plug into your Sass/SCSS. This should be illustrated in the examples.</p><button class="js-help-btn help-close">close</button></div></section><section id="help-type" class="help-content js-help-modal"><div class="scut-inner"><p><strong>type</strong> tells you what kind of Sass feature the utility involves. Is it only available as a mixin (e.g. HD breakpoint)? Or as a mixin and a placeholder that always do the same thing (e.g. clearfix)? Or as a mixin and a placeholder that passes default values (e.g. indented paragraphs)? Or as a mixin with some extension placeholders for common variations (e.g. punctuated list)? As a function, a variable, an import? And so on.</p><button class="js-help-btn help-close">close</button></div></section><section id="help-arguments" class="help-content js-help-modal"><div class="scut-inner"><p><strong>arguments</strong> lists the arguments, in order, that you can pass to the utility&#39;s mixin. To learn more about Sass/SCSS mixin arguments <a href="http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixin-arguments">have a look at the Sass documentation</a>.</p><p>If no default value is listed, that means there is no default value, so you&#39;ll have to provide a value every time you use the mixin.</p><button class="js-help-btn help-close">close</button></div></section><section id="help-contentblock" class="help-content js-help-modal"><div class="scut-inner"><p><strong>@content</strong> describes what happens if you pass a content block to the utility&#39;s mixin. To understand Sass content blocks, <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content">have a look at the Sass documentation</a>.</p><button class="js-help-btn help-close">close</button></div></section></aside><script src="assets/js-built.min.js"></script></body></html>
