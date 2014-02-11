@@ -1,11 +1,36 @@
 // SCUT FONT-FACE
 // http://davidtheclark.github.io/scut/#font-face
 
+@function main-src($formats, $file-path, $font-family) {
+  // Return the list of `src` values, in order, that
+  // a good `@font-face` will need, including only
+  // those formats specified in the list `$formats`.
+  $result: ();
+  @if index($formats, eot) {
+    $eot-val: url('#{$file-path}.eot?#iefix') format('embedded-opentype');
+    $result: append($result, $eot-val, comma);
+  }
+  @if index($formats, woff) {
+    $woff-val: url('#{$file-path}.woff') format('woff');
+    $result: append($result, $woff-val, comma);
+  }
+  @if index($formats, ttf) {
+    $ttf-val: url('#{$file-path}.ttf') format('truetype');
+    $result: append($result, $ttf-val, comma);
+  }
+  @if index($formats, svg) {
+    $svg-val: url('#{$file-path}.svg##{$font-family}') format('svg');
+    $result: append($result, $svg-val, comma);
+  }
+  @return $result;
+}
+
 @mixin scut-font-face (
   $font-family,
   $file-path,
   $weight: normal,
-  $style: normal
+  $style: normal,
+  $formats: eot woff ttf svg
 ) {
 
   @if index('italic' 'oblique', $weight) {
@@ -18,11 +43,10 @@
     font-weight: $weight;
     font-style: $style;
 
-    src: url('#{$file-path}.eot');
-    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
-         url('#{$file-path}.woff') format('woff'),
-         url('#{$file-path}.ttf') format('truetype'),
-         url('#{$file-path}.svg##{$font-family}') format('svg');
+    @if index($formats, eot) {
+      src: url('#{$file-path}.eot');
+    }
+    src: main-src($formats, $file-path, $font-family);
   }
 
 }
