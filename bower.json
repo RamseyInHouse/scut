@@ -24,7 +24,7 @@
     "tests",
     "Gruntfile.coffee",
     "package.json",
-    "lib/*",
+    "lib",
     "scut.gemspec"
   ],
   "devDependencies": {
