@@ -1,3 +1,6 @@
+### 0.9.1
+- Updated `scut-font-face` so users can enter there own `$formats` list, if they don't want to include all font-file-formats.
+
 ### 0.9.0
 - Documented `scut-reset` so that others might understand.
 - Added `$no-margin` variable to list mixins, with the default value `true`.
