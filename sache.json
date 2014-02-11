@@ -1,0 +1,16 @@
+{
+  "name": "Scut",
+  "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns. Available on its own or as a Compass extension.",
+  "tags": [
+    "utilities",
+    "library",
+    "mixins",
+    "placeholders",
+    "typography",
+    "layout",
+    "ui",
+    "dry",
+    "code-quality",
+    "compass"
+  ]
+}
