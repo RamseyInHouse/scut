@@ -1,0 +1,19 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-hd-bp {
+  padding: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-hd-bp {
+  background-color: $eg-muted;
+  @include scut-hd-bp(2.0) {
+    background-color: $eg-light;
+  }
+}
+/* example end */

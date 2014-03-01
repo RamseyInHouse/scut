@@ -1,0 +1,8 @@
+.eg-image-replace {
+  text-indent: 102%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}

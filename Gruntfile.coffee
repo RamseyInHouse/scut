@@ -39,34 +39,6 @@ module.exports = (grunt) ->
         files:
           "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
 
-    sass:
-      options:
-        style: "expanded"
-      # Process docs styles
-      docs:
-        files:
-          "docs/dev/assets/main.css": "docs/dev/assets/scss/main.scss"
-
-    autoprefixer:
-      # Prefix docs styles
-      docs:
-        files:
-          "docs/dev/assets/main.css": "docs/dev/assets/main.css"
-
-
-    cssUrlEmbed:
-      # Embed URLs (fonts, images) into CSS,
-      # and put the result in dist/
-      docs:
-        files:
-          "docs/dist/assets/css-built.min.css": "docs/dev/assets/main.css"
-
-    cssmin:
-      # Minify docs styles in dist/
-      docs:
-        files:
-          "docs/dist/assets/css-built.min.css": "docs/dist/assets/css-built.min.css"
-
     uglify:
       # Minify docs JS into dist/
       docs:
@@ -78,17 +50,30 @@ module.exports = (grunt) ->
           ]
 
     assemble:
-
       # Assemble docs dev markup
-      options:
-        data: ["docs/dev/assemble/data.yml"]
-        partials: ["docs/dev/assemble/partials/*.hbs"]
-        helpers: ["docs/dev/assemble/hbs-helpers.js"]
+      # options:
+      #   data: ["docs/dev/assemble/data.yml"]
+      #   partials: ["docs/dev/assemble/partials/*.hbs"]
+      #   helpers: ["docs/dev/assemble/hbs-helpers.js"]
+      # docsDev:
+      #   options:
+      #     dist: false
+      #   files:
+      #     "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
       docsDev:
         options:
+          postprocess: require('pretty')
+          layout: "docs/dev/layouts/entry-base.hbs"
+          helpers: ["docs/dev/hbs-helpers.js"]
+          partials: ["docs/dev/partials/*.hbs"]
           dist: false
-        files:
-          "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
+        files: [{
+          expand: true
+          cwd: "docs/content/entries"
+          src: ["*.md"]
+          dest: "docs/dist/"
+        }]
+
       # Assemble docs dist markup
       docsDist:
         options:
@@ -232,21 +217,17 @@ module.exports = (grunt) ->
           to: "DATE = \"#{grunt.template.today('yyyy-mm-dd')}\""
         }]
 
-  grunt.loadNpmTasks "grunt-contrib-sass"
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-contrib-clean"
   grunt.loadNpmTasks "grunt-contrib-connect"
   grunt.loadNpmTasks "grunt-contrib-concat"
-  grunt.loadNpmTasks "grunt-contrib-cssmin"
   grunt.loadNpmTasks "grunt-contrib-uglify"
   grunt.loadNpmTasks "grunt-contrib-htmlmin"
   grunt.loadNpmTasks "grunt-contrib-copy"
   grunt.loadNpmTasks "grunt-svgmin"
-  grunt.loadNpmTasks "grunt-autoprefixer"
   grunt.loadNpmTasks "grunt-newer"
   grunt.loadNpmTasks "grunt-grunticon"
   grunt.loadNpmTasks "grunt-text-replace"
-  grunt.loadNpmTasks "grunt-css-url-embed"
   grunt.loadNpmTasks "assemble"
 
   grunt.registerTask "dev", [

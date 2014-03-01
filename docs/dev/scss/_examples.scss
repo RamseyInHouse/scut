@@ -1,0 +1,88 @@
+$eg-dark: #002834;
+$eg-light: #9AE9FF;
+$eg-muted: #CCCCCC;
+
+/* hidden rules */
+.eg-border {
+  background-color: $eg-muted;
+  padding: 1em;
+  margin-top: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-border {
+  &.m-1 {
+    @include scut-border(5px solid, y n);
+  }
+  &.m-2 {
+    @include scut-border(0.5em solid $eg-light, n y);
+  }
+  &.m-3 {
+    @include scut-border(10px solid $eg-dark, y y n n);
+  }
+  &.m-4 {
+    @include scut-border(0.75em solid $eg-dark, n n y y);
+    @include scut-border(0.75em solid $eg-light, y y n n);
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-circle {
+  margin-right: 0.5em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-circle {
+  &.m-1 {
+    @include scut-circle(1em);
+  }
+  &.m-2 {
+    @include scut-circle(2em, $eg-light);
+  }
+  &.m-3 {
+    @include scut-circle(2em, $eg-dark);
+    border: 5px solid $eg-light;
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-hd-bp {
+  padding: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-hd-bp {
+  background-color: $eg-muted;
+  @include scut-hd-bp(2.0) {
+    background-color: $eg-light;
+  }
+}
+/* example end */
+
+/* example start */
+.eg-hide-visually {
+  @include scut-hide-visually;
+  // or @extend %scut-hide-visually;
+}
+/* example end */
+
+/* hidden start */
+.eg-image-replace {
+  margin-top: 1em;
+}
+/* hidden end */
+
+/* example start */
+.eg-image-replace {
+  @include scut-image-replace;
+  // or @extend %scut-image-replace;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}
+/* example end */

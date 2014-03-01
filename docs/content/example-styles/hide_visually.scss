@@ -1,0 +1,11 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* example start */
+.eg-hide-visually {
+  @include scut-hide-visually;
+  // or @extend %scut-hide-visually;
+}
+/* example end */

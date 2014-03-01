@@ -1,0 +1,20 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden start */
+.eg-image-replace {
+  margin-top: 1em;
+}
+/* hidden end */
+
+/* example start */
+.eg-image-replace {
+  @include scut-image-replace;
+  // or @extend %scut-image-replace;
+  background: url(images/bird.jpg) no-repeat;
+  background-size: contain;
+  height: 8em;
+}
+/* example end */

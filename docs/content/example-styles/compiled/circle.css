@@ -1,0 +1,23 @@
+.eg-circle.m-1 {
+  border-radius: 50%;
+  display: inline-block;
+  border-width: 0.5em;
+  border-style: solid;
+  height: 0;
+  width: 0;
+}
+.eg-circle.m-2 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #9ae9ff;
+  height: 2em;
+  width: 2em;
+}
+.eg-circle.m-3 {
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #002834;
+  height: 2em;
+  width: 2em;
+  border: 5px solid #9ae9ff;
+}

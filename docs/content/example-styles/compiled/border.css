@@ -1,0 +1,18 @@
+.eg-border.m-1 {
+  border-top: 5px solid;
+  border-bottom: 5px solid;
+}
+.eg-border.m-2 {
+  border-left: 0.5em solid #9ae9ff;
+  border-right: 0.5em solid #9ae9ff;
+}
+.eg-border.m-3 {
+  border-top: 10px solid #002834;
+  border-right: 10px solid #002834;
+}
+.eg-border.m-4 {
+  border-bottom: 0.75em solid #002834;
+  border-left: 0.75em solid #002834;
+  border-top: 0.75em solid #9ae9ff;
+  border-right: 0.75em solid #9ae9ff;
+}

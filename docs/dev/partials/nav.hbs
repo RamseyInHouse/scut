@@ -1,0 +1,14 @@
+<nav>
+  {{#categories}}
+    <h2>
+      {{this.category}}
+    </h2>
+    <ul>
+      {{#each pages}}
+      <li>
+        {{data.name}}
+      </li>
+      {{/each}}
+    </ul>
+  {{/categories}}
+</nav>

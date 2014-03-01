@@ -1,0 +1,6 @@
+.eg-hd-bp {
+  background-color: $eg-muted;
+  @include scut-hd-bp(2.0) {
+    background-color: $eg-light;
+  }
+}

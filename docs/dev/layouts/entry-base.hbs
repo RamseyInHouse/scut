@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+      {{use-name}}, a Scut utility
+    </title>
+    <meta name="description" content="A Scut utility: {{summary}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+
+    <article>
+
+      <header>
+
+        <h1>{{name}}</h1>
+
+        <dl class="info-list">
+          {{#if use-name}}
+          <dt class="info--label m-help js-help-btn" data-help="use-name">
+            use-name
+          </dt>
+          <dd class="info--value">
+            <code>{{use-name}}</code>
+          </dd>
+          {{/if}}
+
+          {{#if type}}
+          <dt class="info--label m-help js-help-btn" data-help="type">
+            type
+          </dt>
+          <dd class="info--value">
+            {{type}}
+          </dd>
+          {{/if}}
+
+          {{#if args}}
+          <dt class="info--label m-help js-help-btn" data-help="arguments">
+            arguments
+          </dt>
+          <dd class="info--value">
+            <ol class="args">
+              {{#each args}}
+              <li>
+                <code class="args--name">{{variable}}</code>
+                {{#if this.default}}
+                [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+                {{/if}}
+                {{#if comment}}
+                <div class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</div>
+                {{/if}}
+              </li>
+              {{/each}}
+            </ol>
+          </dd>
+          {{/if}}
+
+          {{#if contentblock}}
+          <dt class="info--label m-help js-help-btn" data-help="contentblock">
+            @content
+          </dt>
+          <dd class="info--value">
+            {{#markdown}}{{{contentblock}}}{{/markdown}}
+          </dd>
+          {{/if}}
+
+          {{#if compatibility}}
+          <dt class="info--label">
+            compatibility
+          </dt>
+          <dd class="info--value">
+            {{#markdown}}{{{compatibility}}}{{/markdown}}
+          </dd>
+          {{/if}}
+
+        </dl>
+
+      </header>
+
+      <section>
+        <p>
+          {{summary}}
+        </p>
+        {{#markdown}}{{>body}}{{/markdown}}
+      </section>
+
+      {{#if example}}
+      <section class="example">
+        <h2>Example</h2>
+        {{#if example.show-html}}
+        <div class="example--html">
+          <h3>HTML</h3>
+          <pre><code class="language-markup">{{example.html}}</code></pre>
+        </div>
+        {{/if}}
+        <div id="{{name}}-scss" class="example--scss">
+          <h3>SCSS</h3>
+          <pre><code class="language-scss">{{getExampleScss name}}</code></pre>
+        </div>
+        <div id="{{name}}-css" class="example--css">
+          <h3>Compiled CSS</h3>
+          <pre><code class="language-css">{{{getExampleCss name}}}</code></pre>
+        </div>
+        <button class="toggle-css js-toggle-css" data-entry="{{name}}">Show compiled CSS</button>
+        <div class="example--disp">
+          <h3>Result</h3>
+          <div class="example--disp--inner">{{{example.html}}}</div>
+        </div>
+      </section>
+      {{/if}}
+
+      {{#if references}}
+      <footer>
+        <h2>References</h2>
+        <ul class="refs">
+          {{#each references}}
+          <li>
+            <a href="{{url}}" class="refs--i">
+              {{#markdown}}{{{description}}}{{/markdown}}
+            </a>
+          </li>
+          {{/each}}
+        </ul>
+      </footer>
+      {{/if}}
+
+    </article>
+
+    {{>nav}}
+
+  </body>
+
+</html>
