@@ -1,4 +1,4 @@
-<nav>
+<nav role="navigation">
   {{#categories}}
     <h2>
       {{this.category}}
@@ -6,7 +6,9 @@
     <ul>
       {{#each pages}}
       <li>
-        {{data.name}}
+        <a href="{{data.slug}}.html">
+          {{data.name}}
+        </a>
       </li>
       {{/each}}
     </ul>

@@ -1,7 +1,8 @@
 ---
-name: image_replacement
+name: Image Replacement
+slug: image-replace
+summary: Include text in the markup but replace it with an image.
 type: mixin and placeholder (same)
-use-name: scut-image-replace
 categories:
   - general
 references:
@@ -13,7 +14,5 @@ example:
     <p>The following image is replacing text:</p>
     <div class="eg-image-replace">This text has been replaced.</div>
 ---
-
-Include text in the markup but replace it with an image.
 
 Be warned: you might run into occasional bugs with this method of image-replacement *unless you've also set a `width` on your element.*

@@ -1,17 +1,3 @@
-/* hidden rules */
-.eg-center-absolutely-container {
-  border: 5px solid $eg-dark;
-  height: 6em;
-  &:not(:first-child) {
-    margin-top: 1em;
-  }
-}
-.eg-center-absolutely {
-  font-size: 0.8em;
-  padding: 0.5em;
-}
-/* end hidden rules */
-
 .eg-center-absolutely-container {
   position: relative;
 }

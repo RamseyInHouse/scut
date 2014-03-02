@@ -2,6 +2,19 @@ $eg-dark: #002834;
 $eg-light: #9AE9FF;
 $eg-muted: #CCCCCC;
 
+
+%eg-light-btn {
+  border: 1px solid $eg-dark;
+  color: $eg-dark;
+  padding: 0.3em 0.5em;
+}
+
+%eg-dark-btn {
+  background-color: $eg-dark;
+  color: white;
+  padding: 0.3em 0.5em;
+}
+
 /* hidden rules */
 .eg-border {
   background-color: $eg-muted;
@@ -29,6 +42,38 @@ $eg-muted: #CCCCCC;
 /* example end */
 
 /* hidden rules */
+.eg-center-absolutely-container {
+  border: 5px solid $eg-dark;
+  height: 6em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+.eg-center-absolutely {
+  font-size: 0.8em;
+  padding: 0.5em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-center-absolutely-container {
+  position: relative;
+}
+.eg-center-absolutely {
+  background: $eg-muted;
+  &.m-1 {
+    @include scut-center-absolutely(22em 2.5em);
+  }
+  &.m-2 {
+    @include scut-center-absolutely(20em n);
+  }
+  &.m-3 {
+    @include scut-center-absolutely(n 2.5em);
+  }
+}
+/* example end */
+
+/* hidden rules */
 .eg-circle {
   margin-right: 0.5em;
 }
@@ -45,6 +90,27 @@ $eg-muted: #CCCCCC;
   &.m-3 {
     @include scut-circle(2em, $eg-dark);
     border: 5px solid $eg-light;
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-color-swap {
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-color-swap {
+  &.m-1 {
+    @include scut-color-swap($eg-dark, $eg-light, 1s);
+  }
+  &.m-2 {
+    @include scut-color-swap($eg-light $eg-dark, $eg-dark $eg-light);
+  }
+  &.m-3 {
+    color: white;
+    @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
   }
 }
 /* example end */
@@ -81,8 +147,87 @@ $eg-muted: #CCCCCC;
 .eg-image-replace {
   @include scut-image-replace;
   // or @extend %scut-image-replace;
-  background: url(images/bird.jpg) no-repeat;
+  background: url("//placehold.it/200x200") no-repeat;
   background-size: contain;
   height: 8em;
+}
+/* example end */
+
+/* hidden rules */
+/* end hidden rules */
+
+/* example start */
+.eg-rem-fallback {
+  &.m-1 { font-size: 20px; }
+  &.m-2 { @include scut-rem-fallback(20); }
+  &.m-3 {
+    @include scut-rem-fallback(30 50px 0 25px, margin);
+    @include scut-rem-fallback(20 30px, padding);
+    border: 5px solid;
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-selected {
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-selected {
+  background-color: $eg-muted;
+  &.m-1 {
+    @include scut-selected {
+      background-color: $eg-light;
+    }
+  }
+  &.m-2 {
+    @include scut-selected(true) {
+      background-color: $eg-light;
+    }
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-triangle {
+  margin-right: 1em;
+}
+.eg-triangle-button {
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-triangle {
+  &.m-default {
+    @include scut-triangle;
+    // or @extend %scut-triangle;
+  }
+  &.m-equilateral {
+    @include scut-triangle(up, 100px 87px, $eg-muted);
+  }
+  &.m-top-right {
+    @include scut-triangle(top-right, 2em, $eg-dark);
+  }
+  &.m-bottom-left {
+    @include scut-triangle(bottom-left, 80px 40px, $eg-light);
+  }
+}
+.eg-triangle-button {
+  &:after {
+    content: "";
+    margin-left: 0.3em;
+  }
+  &.m-down:after {
+    @include scut-triangle(down);
+  }
+  &.m-up:after {
+    @include scut-triangle(up);
+  }
+  &.m-more:after {
+    @include scut-triangle;
+  }
 }
 /* example end */

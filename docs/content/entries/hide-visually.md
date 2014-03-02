@@ -1,7 +1,8 @@
 ---
-name: hide_visually
+name: Hide Visually
+slug: hide-visually
+summary: Hide an element visually, and effectively remove it from page layout, without hiding it from screen readers.
 type: mixin and placeholder (same)
-use-name: scut-hide-visually
 categories:
   - general
 references:
@@ -16,4 +17,4 @@ example:
     <div>You can't see the element above this one, can you?</div>
 ---
 
-Hide an element visually, and effectively remove it from page layout, without hiding it from screen readers. Vital accessibility practice.
+Vital accessibility practice.

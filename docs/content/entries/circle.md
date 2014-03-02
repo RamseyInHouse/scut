@@ -1,7 +1,8 @@
 ---
-name: circle
+name: Circle
+slug: circle
+summary: Create a CSS circle.
 type: mixin only
-use-name: scut-circle
 categories:
   - general
 args:
@@ -17,8 +18,6 @@ example:
     <div class="eg-circle m-2"></div>
     <div class="eg-circle m-3"></div>
 ---
-
-Create a CSS circle.
 
 By default, the circle will inherit the color of its parent's text. Or you n designate a color yourself.
 

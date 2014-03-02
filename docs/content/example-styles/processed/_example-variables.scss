@@ -1,9 +1,6 @@
 $eg-dark: #002834;
 $eg-light: #9AE9FF;
-$eg-muted: #CCCCCC;
-
-
-%eg-light-btn {
+$eg-muted: #CCCCCC;%eg-light-btn {
   border: 1px solid $eg-dark;
   color: $eg-dark;
   padding: 0.3em 0.5em;
@@ -13,4 +10,5 @@ $eg-muted: #CCCCCC;
   background-color: $eg-dark;
   color: white;
   padding: 0.3em 0.5em;
+};
 }

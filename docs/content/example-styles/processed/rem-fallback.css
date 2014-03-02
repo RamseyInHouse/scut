@@ -1,0 +1,14 @@
+.eg-rem-fallback.m-1 {
+  font-size: 20px;
+}
+.eg-rem-fallback.m-2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+.eg-rem-fallback.m-3 {
+  margin: 30px 50px 0px 25px;
+  margin: 1.875rem 3.125rem 0rem 1.5625rem;
+  padding: 20px 30px;
+  padding: 1.25rem 1.875rem;
+  border: 5px solid;
+}

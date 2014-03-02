@@ -1,0 +1,28 @@
+.eg-center-absolutely-container {
+  position: relative;
+}
+
+.eg-center-absolutely {
+  background: #cccccc;
+}
+.eg-center-absolutely.m-1 {
+  position: absolute;
+  width: 22em;
+  left: 50%;
+  margin-left: -11em;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}
+.eg-center-absolutely.m-2 {
+  position: absolute;
+  width: 20em;
+  left: 50%;
+  margin-left: -10em;
+}
+.eg-center-absolutely.m-3 {
+  position: absolute;
+  height: 2.5em;
+  top: 50%;
+  margin-top: -1.25em;
+}

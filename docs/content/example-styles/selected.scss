@@ -1,0 +1,26 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-selected {
+  @extend %eg-light-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-selected {
+  background-color: $eg-muted;
+  &.m-1 {
+    @include scut-selected {
+      background-color: $eg-light;
+    }
+  }
+  &.m-2 {
+    @include scut-selected(true) {
+      background-color: $eg-light;
+    }
+  }
+}
+/* example end */

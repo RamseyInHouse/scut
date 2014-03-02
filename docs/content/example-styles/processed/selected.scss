@@ -1,9 +1,3 @@
-/* hidden rules */
-.eg-selected {
-  @extend %eg-light-btn;
-}
-/* end hidden rules */
-
 .eg-selected {
   background-color: $eg-muted;
   &.m-1 {

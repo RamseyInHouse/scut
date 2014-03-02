@@ -20,7 +20,7 @@ gulp.task('processExamples', function() {
   // for SCSS in the markup
   gulp.src([examplesScssSrc])
     .pipe(replace(exampleOnly, '$1'))
-    .pipe(gulp.dest('./docs/content/example-styles/display/'));
+    .pipe(gulp.dest('./docs/content/example-styles/processed/'));
 
   // compile example SCSS into CSS,
   // removing imports and hidden styles,
@@ -32,7 +32,7 @@ gulp.task('processExamples', function() {
     }))
     .pipe(replace(exampleOnly, '$1'))
     .pipe(replace(twoLines, ''))
-    .pipe(gulp.dest('./docs/content/example-styles/compiled/'));
+    .pipe(gulp.dest('./docs/content/example-styles/processed/'));
 
   // concatenate example SCSS,
   // removing imports,

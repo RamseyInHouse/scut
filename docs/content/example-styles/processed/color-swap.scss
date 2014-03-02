@@ -1,0 +1,12 @@
+.eg-color-swap {
+  &.m-1 {
+    @include scut-color-swap($eg-dark, $eg-light, 1s);
+  }
+  &.m-2 {
+    @include scut-color-swap($eg-light $eg-dark, $eg-dark $eg-light);
+  }
+  &.m-3 {
+    color: white;
+    @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
+  }
+}

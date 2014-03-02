@@ -1,7 +1,8 @@
 ---
-name: hd_breakpoint
+name: HD (HiDPI) Breakpoint
+slug: hd-bp
+summary: Write effective resolution-based `@media`-queries, without trying too hard.
 type: mixin only
-use-name: scut-hd-bp
 categories:
   - general
 args:
@@ -17,7 +18,5 @@ example:
   html: |
     <p class="eg-hd-bp">If you are using a retina screen, this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p>
 ---
-
-Write effective resolution-based `@media`-queries, without trying too hard.
 
 This mixin uses `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`. If you're curious about the choices, read the References below.

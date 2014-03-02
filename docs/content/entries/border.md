@@ -1,8 +1,8 @@
 ---
-name: border
+name: Border
+slug: border
 summary: Shorthand for using a single border value on multiple sides of an element.
 type: mixin only
-use-name: scut-border
 categories:
   - general
 args:

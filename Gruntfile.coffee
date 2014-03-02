@@ -28,17 +28,6 @@ module.exports = (grunt) ->
         ]
         dest: "dist/_scut.scss"
 
-      # Build docs example styles
-      docsExamples:
-        options:
-          banner: "/*DO NOT ALTER THIS DOCUMENT! It is a concatenation of the SCSS files inside `dev/scss/examples`. CREATE EXAMPLE STYLESHEETS IN `DEV/SCSS/EXAMPLES`, NOT HERE.*/#{grunt.util.linefeed}#{grunt.util.linefeed}"
-          footer: "/* Examples end */"
-          process: (src, filepath) ->
-            name = (path.basename(filepath, ".scss")).slice(1)
-            return "/* Example: #{name} */\n#{src}"
-        files:
-          "docs/dev/assets/scss/_concatenated-examples.scss": ["docs/dev/assets/scss/examples/*.scss"]
-
     uglify:
       # Minify docs JS into dist/
       docs:
@@ -51,26 +40,26 @@ module.exports = (grunt) ->
 
     assemble:
       # Assemble docs dev markup
-      # options:
-      #   data: ["docs/dev/assemble/data.yml"]
-      #   partials: ["docs/dev/assemble/partials/*.hbs"]
-      #   helpers: ["docs/dev/assemble/hbs-helpers.js"]
-      # docsDev:
-      #   options:
-      #     dist: false
-      #   files:
-      #     "docs/dev/index.html": ["docs/dev/assemble/index.hbs"]
       docsDev:
         options:
           postprocess: require('pretty')
-          layout: "docs/dev/layouts/entry-base.hbs"
-          helpers: ["docs/dev/hbs-helpers.js"]
-          partials: ["docs/dev/partials/*.hbs"]
+          layoutdir: "docs/dev/layouts/"
+          layout: "entry-base.hbs"
+          helpers: ["docs/dev/js/hbs-helpers.js"]
+          partials: [
+            "docs/dev/partials/*.{md,hbs}"
+            "docs/content/home/*.{md,hbs}"
+          ]
+          data: ["docs/content/data.yml"]
           dist: false
         files: [{
           expand: true
-          cwd: "docs/content/entries"
-          src: ["*.md"]
+          flatten: true
+          cwd: "docs/"
+          src: [
+            "content/entries/*.{md,hbs}"
+            "dev/templates/*.{md,hbs}"
+          ]
           dest: "docs/dist/"
         }]
 
@@ -150,15 +139,10 @@ module.exports = (grunt) ->
         ]
         tasks: ["concat:scut"]
 
-      docsStyle:
-        files: ["docs/dev/assets/scss/*.scss"]
-        tasks: ["docsStyle"]
-
       docsMarkup:
         files: [
-          "docs/dev/assemble/partials/*"
-          "docs/dev/assemble/data.yml"
-          "docs/dev/assemble/index.hbs"
+          "docs/dev/**/*.{md,hbs}"
+          "docs/content/**/*.{md,hbs}"
         ]
         tasks: ["assemble:docsDev"]
 
