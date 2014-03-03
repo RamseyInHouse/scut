@@ -1,3 +1,8 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
 /* hidden rules */
 .eg-absolute-container {
   border: 5px solid $eg-dark;
@@ -9,6 +14,7 @@
 }
 /* end hidden rules */
 
+/* example start */
 .eg-absolute-container {
   position: relative;
 }
@@ -21,3 +27,4 @@
     @include scut-absolute(n 0.5em 1em n);
   }
 }
+/* example end */

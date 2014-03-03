@@ -1,3 +1,12 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+/* end hidden rules */
+
+/* example start */
 .eg-punctuated-list {
   @include scut-list-punctuated;
   // or @extend %scut-list-comma;
@@ -8,3 +17,4 @@
 .eg-circle-list {
   @include scut-list-punctuated("\0020\2022\0020");
 }
+/* example end */

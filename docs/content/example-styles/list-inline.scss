@@ -1,3 +1,8 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
 /* hidden rules */
 .eg-list-inline {
   & > li {
@@ -6,6 +11,7 @@
 }
 /* end hidden rules */
 
+/* example start */
 .eg-list-inline {
   &.m-1 {
     @include scut-list-inline;
@@ -15,3 +21,4 @@
     @include scut-list-inline(1em, false);
   }
 }
+/* example end */

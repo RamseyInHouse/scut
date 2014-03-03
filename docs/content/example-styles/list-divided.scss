@@ -1,3 +1,8 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
 /* hidden rules */
 .eg-list-breadcrumb,
 .eg-list-divided {
@@ -5,6 +10,7 @@
 }
 /* end hidden rules */
 
+/* example start */
 .eg-list-bar {
   @include scut-list-divided;
   // or @extend %scut-list-bar;
@@ -25,3 +31,4 @@
     }
   }
 }
+/* example end */

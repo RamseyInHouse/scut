@@ -1,0 +1,21 @@
+---
+name: "positioning: absolute"
+slug: absolute
+summary: Absolutely position an element and assign its coordinates, all in one line of SCSS.
+type: mixin, with default-values placeholder
+categories:
+  - layout
+args:
+  - variable: $coordinates
+    default: [0 n n 0]
+    comment: &SEEC "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
+example:
+  show-html: true
+  html: |
+    <div class="eg-absolute-container">
+      <div class="eg-absolute m-1">Top left</div>
+      <div class="eg-absolute m-2">Bottom right</div>
+    </div>
+---
+
+You'll save years of your life, and probably lose weight.
