@@ -1,5 +1,5 @@
 ---
-name: Triangle
+name: triangle
 slug: triangle
 summary: Create a wide variety of CSS triangles.
 type: mixin, with a default-values placeholder

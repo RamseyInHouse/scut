@@ -1,5 +1,5 @@
 ---
-name: Circle
+name: circle
 slug: circle
 summary: Create a CSS circle.
 type: mixin only

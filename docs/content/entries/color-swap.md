@@ -1,5 +1,5 @@
 ---
-name: Color Swap
+name: color swap
 slug: color-swap
 summary: Shorthand for setting two color-states, with the option of adding a transition.
 type: mixin only

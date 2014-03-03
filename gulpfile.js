@@ -4,13 +4,15 @@ var replace = require('gulp-replace');
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
+var connect = require('gulp-connect');
+require('gulp-grunt')(gulp);
 
 // process example SCSS to output
 // 1. SCSS ready for the markup
 // 2. CSS ready for the markup
 // 3. a concatenated file for @import into main stylesheet
+var examplesScssSrc = './docs/content/example-styles/*.scss';
 gulp.task('processExamples', function() {
-  var examplesScssSrc = './docs/content/example-styles/*.scss';
   var imports = /\/\* import start \*\/\n[\s\S]*?\/\* import end \*\/\n/g;
   var exampleOnly = /(?:[\s\S]*\/\* example start \*\/\n)([\s\S]*)(?:[.$]*\/\* example end \*\/)/g;
   var twoLines = /\n\n\n/g;
@@ -51,5 +53,36 @@ gulp.task('docStyle', function() {
       'style': 'expanded'
     }))
     .pipe(autoprefixer("last 3 versions", "> 1%", "ie 8"))
-    .pipe(gulp.dest('./docs/dist/'));
+    .pipe(gulp.dest('./docs/dist/'))
+    .pipe(connect.reload());
 });
+
+// compile via Assemble
+gulp.task('assemble', function() {
+  gulp.run('grunt-assemble');
+});
+
+// local dev server
+gulp.task('connect', connect.server({
+  root: ['docs/dist'],
+  port: 9000,
+  livereload: true
+}));
+
+// watch for changes and run relevant tasks
+gulp.task('watch', function() {
+  gulp.watch(examplesScssSrc, [
+    'processExamples',
+    'assemble',
+    'docStyle'
+  ]);
+  gulp.watch('./docs/dev/scss/*.scss', ['docStyle']);
+  gulp.watch([
+    './docs/content/**/*.md',
+    './docs/content/*.yml',
+    './docs/dev/**/*.hbs'
+  ], ['assemble']);
+});
+
+// develop: watch for changes and make things happen
+gulp.task('default', ['connect', 'watch']);

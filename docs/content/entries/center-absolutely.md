@@ -1,5 +1,5 @@
 ---
-name: Center Absolutely
+name: center absolutely
 slug: center-absolutely
 summary: Center an absolutely positioned element horizontally, vertically, or both ways.
 type: mixin only

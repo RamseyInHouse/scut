@@ -1,5 +1,5 @@
 ---
-name: Selected
+name: selected
 slug: selected
 summary: Apply rules to `:hover` and `:focus` (and, optionally, `:active`) states.
 type: mixin only

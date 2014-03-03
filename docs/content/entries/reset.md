@@ -1,5 +1,5 @@
 ---
-name: Reset
+name: reset
 slug: reset
 summary: A small set of modular resets, each one an independent mixin.
 type: mixin only

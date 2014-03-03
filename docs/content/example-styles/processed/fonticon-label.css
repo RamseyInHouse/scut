@@ -1,0 +1,81 @@
+@font-face {
+  font-family: "icomoon-stereo";
+  font-weight: normal;
+  font-style: normal;
+  src: url("fonts/icomoon-stereo.eot");
+  src: url("fonts/icomoon-stereo.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon-stereo.woff") format("woff"), url("fonts/icomoon-stereo.ttf") format("truetype"), url("fonts/icomoon-stereo.svg#icomoon-stereo") format("svg");
+}
+
+.eg-fonticon-label.m-1:before {
+  content: "\e004";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+}
+.eg-fonticon-label.m-1:hover:before, .eg-fonticon-label.m-1:focus:before {
+  content: "\e002";
+}
+.eg-fonticon-label.m-2:before {
+  content: "\e003";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+.eg-fonticon-label.m-2:hover, .eg-fonticon-label.m-2:focus {
+  color: #9ae9ff;
+}
+.eg-fonticon-label.m-3:after {
+  content: "\e001";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1.5em;
+  color: #9ae9ff;
+}
+.eg-fonticon-label.m-3:hover, .eg-fonticon-label.m-3:focus {
+  color: #9ae9ff;
+}
+.eg-fonticon-label.m-3:hover:after, .eg-fonticon-label.m-3:focus:after {
+  color: white;
+}
+
+@keyframes rewind {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-1em);
+  }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+}
+.eg-fonticon-label.m-4:before {
+  content: "\e000";
+  font-family: "icomoon-stereo";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.25em;
+  font-size: 2em;
+}
+.eg-fonticon-label.m-4:hover:before, .eg-fonticon-label.m-4:focus:before {
+  animation: rewind 1s linear infinite;
+}

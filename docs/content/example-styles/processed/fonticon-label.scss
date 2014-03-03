@@ -1,10 +1,3 @@
-/* hidden rules */
-.example--disp--inner .eg-fonticon-label {
-  @extend %eg-dark-btn;
-}
-/* end hidden rules */
-
-
 @include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
 
 .eg-fonticon-label {

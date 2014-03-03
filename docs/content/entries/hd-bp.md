@@ -1,5 +1,5 @@
 ---
-name: HD (HiDPI) Breakpoint
+name: HD (HiDPI) breakpoint
 slug: hd-bp
 summary: Write effective resolution-based `@media`-queries, without trying too hard.
 type: mixin only

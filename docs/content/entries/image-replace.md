@@ -1,5 +1,5 @@
 ---
-name: Image Replacement
+name: image replacement
 slug: image-replace
 summary: Include text in the markup but replace it with an image.
 type: mixin and placeholder (same)

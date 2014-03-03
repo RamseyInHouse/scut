@@ -1,5 +1,5 @@
 ---
-name: REMs With Fallback
+name: REMs with fallback
 slug: rem-fallback
 summary: Use `rem` values while providing a `px`-value fallback for IE8- and Opera Mini.
 type: mixin only

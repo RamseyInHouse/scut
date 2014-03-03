@@ -1,0 +1,62 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.example--disp--inner .eg-fonticon-label {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+@include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
+
+.eg-fonticon-label {
+  &.m-1 {
+    @include scut-fonticon-label("icomoon-stereo", "\e004");
+    &:hover:before,
+    &:focus:before {
+      content: "\e002"
+    }
+  }
+  &.m-2 {
+    @include scut-fonticon-label("icomoon-stereo", "\e003") {
+      font-size: 2em;
+    }
+    &:hover,
+    &:focus {
+      color: $eg-light;
+    }
+  }
+  &.m-3 {
+    @include scut-fonticon-label("icomoon-stereo", "\e001", 1.5em, after) {
+      color: $eg-light;
+    }
+    &:hover,
+    &:focus {
+      color: $eg-light;
+      &:after {
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes rewind {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1em); }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+  @include scut-fonticon-label("icomoon-stereo", "\e000") {
+    font-size: 2em;
+  }
+  &:hover:before,
+  &:focus:before {
+    animation: rewind 1s linear infinite;
+  }
+}
+/* example end */

@@ -1,5 +1,5 @@
 ---
-name: Hide Visually
+name: hide visually
 slug: hide-visually
 summary: Hide an element visually, and effectively remove it from page layout, without hiding it from screen readers.
 type: mixin and placeholder (same)

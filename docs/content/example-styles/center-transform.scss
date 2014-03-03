@@ -1,0 +1,45 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-center-transform-container {
+  background: $eg-dark;
+  height: 6em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+  &.m-large {
+    height: 10em;
+  }
+}
+.eg-center-transform {
+  background: $eg-muted;
+  padding: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-center-transform-container {
+  position: relative;
+}
+.eg-center-transform {
+  display: inline-block;
+  &.m-1 {
+    @include scut-center-transform;
+    // or @extend %scut-center-transform;
+  }
+  &.m-2 {
+    @include scut-center-transform(x);
+    // or @extend %scut-center-transform-x;
+  }
+  &.m-3 {
+    @include scut-center-transform(y);
+    // or @extend %scut-center-transform-y;
+  }
+  &.m-4 {
+    @include scut-center-transform;
+  }
+}
+/* example end */

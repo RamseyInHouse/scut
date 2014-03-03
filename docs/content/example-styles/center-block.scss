@@ -1,3 +1,8 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
 /* hidden rules */
 .eg-center-block {
   background: $eg-muted;
@@ -5,6 +10,7 @@
 }
 /* end hidden rules */
 
+/* example start */
 .eg-center-block {
   &.m-1 {
     width: 8em;
@@ -16,3 +22,4 @@
     @include scut-center-block(80%);
   }
 }
+/* example end */

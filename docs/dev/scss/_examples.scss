@@ -74,6 +74,68 @@ $eg-muted: #CCCCCC;
 /* example end */
 
 /* hidden rules */
+.eg-center-block {
+  background: $eg-muted;
+  padding: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-center-block {
+  &.m-1 {
+    width: 8em;
+    @include scut-center-block;
+    // or @extend %scut-center-block;
+  }
+  &.m-2 {
+    margin-top: 2em;
+    @include scut-center-block(80%);
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-center-transform-container {
+  background: $eg-dark;
+  height: 6em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+  &.m-large {
+    height: 10em;
+  }
+}
+.eg-center-transform {
+  background: $eg-muted;
+  padding: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-center-transform-container {
+  position: relative;
+}
+.eg-center-transform {
+  display: inline-block;
+  &.m-1 {
+    @include scut-center-transform;
+    // or @extend %scut-center-transform;
+  }
+  &.m-2 {
+    @include scut-center-transform(x);
+    // or @extend %scut-center-transform-x;
+  }
+  &.m-3 {
+    @include scut-center-transform(y);
+    // or @extend %scut-center-transform-y;
+  }
+  &.m-4 {
+    @include scut-center-transform;
+  }
+}
+/* example end */
+
+/* hidden rules */
 .eg-circle {
   margin-right: 0.5em;
 }
@@ -95,6 +157,24 @@ $eg-muted: #CCCCCC;
 /* example end */
 
 /* hidden rules */
+.eg-clearfix-floater {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-clearfix-container {
+  @include scut-clearfix;
+  // or @extend %scut-clearfix;
+  background: $eg-muted;
+}
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+}
+/* example end */
+
+/* hidden rules */
 .eg-color-swap {
   @extend %eg-light-btn;
 }
@@ -111,6 +191,100 @@ $eg-muted: #CCCCCC;
   &.m-3 {
     color: white;
     @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
+  }
+}
+/* example end */
+
+/* hidden rules */
+.eg-fill-container {
+  border: 5px solid $eg-dark;
+  height: 6em;
+  padding: 1em;
+  &:nth-of-type(2) {
+    margin-bottom: 2em;
+  }
+}
+.eg-fill {
+  &.m-1 {
+    padding: 2.5em 1em 0;
+  }
+}
+/* end hidden rules */
+
+/* example start */
+.eg-fill-container {
+  color: $eg-light;
+  position: relative;
+}
+.eg-fill {
+  &.m-1 {
+    background-color: rgba(0,0,0,0.4);
+    @include scut-fill;
+    // or @extend %scut-fill;
+  }
+  &.m-2 {
+    @include scut-fill;
+  }
+  &.m-3 {
+    @include scut-fill(true);
+  }
+}
+/* example end */
+
+/* hidden rules */
+.example--disp--inner .eg-fonticon-label {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+@include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
+
+.eg-fonticon-label {
+  &.m-1 {
+    @include scut-fonticon-label("icomoon-stereo", "\e004");
+    &:hover:before,
+    &:focus:before {
+      content: "\e002"
+    }
+  }
+  &.m-2 {
+    @include scut-fonticon-label("icomoon-stereo", "\e003") {
+      font-size: 2em;
+    }
+    &:hover,
+    &:focus {
+      color: $eg-light;
+    }
+  }
+  &.m-3 {
+    @include scut-fonticon-label("icomoon-stereo", "\e001", 1.5em, after) {
+      color: $eg-light;
+    }
+    &:hover,
+    &:focus {
+      color: $eg-light;
+      &:after {
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes rewind {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-1em); }
+}
+
+.eg-fonticon-label.m-4 {
+  font-size: 2em;
+  padding-left: 2em;
+  @include scut-fonticon-label("icomoon-stereo", "\e000") {
+    font-size: 2em;
+  }
+  &:hover:before,
+  &:focus:before {
+    animation: rewind 1s linear infinite;
   }
 }
 /* example end */

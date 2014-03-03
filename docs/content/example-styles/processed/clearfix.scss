@@ -1,0 +1,9 @@
+.eg-clearfix-container {
+  @include scut-clearfix;
+  // or @extend %scut-clearfix;
+  background: $eg-muted;
+}
+.eg-clearfix-floater {
+  float: left;
+  margin: 1em;
+}

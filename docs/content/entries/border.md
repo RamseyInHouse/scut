@@ -1,5 +1,5 @@
 ---
-name: Border
+name: border
 slug: border
 summary: Shorthand for using a single border value on multiple sides of an element.
 type: mixin only
