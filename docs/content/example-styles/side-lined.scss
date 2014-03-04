@@ -1,0 +1,26 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+/* end hidden rules */
+
+/* example start */
+.eg-side-lined {
+  &.m-1 {
+    @include scut-side-lined;
+    // or @extend %scut-side-lined;
+  }
+  &.m-2 {
+    font-size: 2em;
+    @include scut-side-lined(0.3em, 1em, $eg-light, $v-adjust: 0.1em);
+  }
+  &.m-3 {
+    @include scut-side-lined($double: 0.3em, $color: $eg-muted, $v-adjust: 0.05em);
+  }
+  &.m-4 {
+    @include scut-side-lined($style: dotted);
+  }
+}
+/* example end */

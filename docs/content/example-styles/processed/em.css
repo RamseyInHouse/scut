@@ -1,0 +1,33 @@
+.eg-em.m-1 {
+  width: 18.75em;
+}
+.eg-em.m-2 {
+  width: 300px;
+}
+.eg-em.m-3, .eg-em.m-4 {
+  font-size: 20px;
+}
+.eg-em.m-3 {
+  width: 20em;
+}
+.eg-em.m-4 {
+  width: 400px;
+}
+.eg-em.m-5, .eg-em.m-6 {
+  font-size: 0.6em;
+}
+.eg-em.m-5 {
+  width: 52.08333em;
+}
+.eg-em.m-6 {
+  width: 500px;
+}
+.eg-em.m-7 {
+  margin: 3.125em 1.875em 0em 3.75em;
+  padding: 3.125em 1.25em 0em;
+}
+.eg-em.m-8 {
+  font-size: 20px;
+  width: 25em;
+}/* hidden rules */
+/* end hidden rules */

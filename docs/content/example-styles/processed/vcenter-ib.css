@@ -1,0 +1,25 @@
+.eg-vcenter-ib > p {
+  max-width: 90%;
+}
+.eg-vcenter-ib.m-1:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.eg-vcenter-ib.m-1 > .scut-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+.eg-vcenter-ib.m-2:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.eg-vcenter-ib.m-2 > .eg-vcenter-ib-inner {
+  display: inline-block;
+  vertical-align: middle;
+}

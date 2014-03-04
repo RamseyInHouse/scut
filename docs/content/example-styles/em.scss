@@ -1,0 +1,50 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-em-c {
+  font-size: 16px;
+}
+.eg-em {
+  border: 5px solid $eg-dark;
+  padding: 10px;
+  margin-top: 1em;
+  &.m-1 {
+    margin-top: 0;
+  }
+}
+/* end hidden rules */
+
+/* example start */
+.eg-em {
+  // first pair
+  &.m-1 { width: scut-em(300); }
+  &.m-2 { width: 300px; }
+  // second pair
+  &.m-3, &.m-4 { font-size: 20px; }
+  &.m-3 { width: scut-em(400, 20); }
+  &.m-4 { width: 400px; }
+  // third pair
+  &.m-5, &.m-6 { font-size: 0.6em; }
+  &.m-5 { width: scut-em(500, 0.6em); }
+  &.m-6 { width: 500px; }
+  // list and units demonstration
+  &.m-7 {
+    margin: scut-em(50 30px 0 60);
+    padding: scut-em(50 20px 0)
+  }
+  // changing the default $base value
+  // (compare to the second pair, above)
+  $scut-em-default: 20;
+  &.m-8 {
+    font-size: 20px;
+    width: scut-em(400);
+  }
+}
+/* example end */
+
+/* hidden rules */
+$scut-em-default: 16;
+/* end hidden rules */

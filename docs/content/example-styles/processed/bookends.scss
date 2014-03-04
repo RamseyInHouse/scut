@@ -1,0 +1,32 @@
+.eg-bookends {
+  &.m-1 {
+    @include scut-bookends($content: "\2014");
+  }
+  &.m-2 {
+    @include scut-bookends(0, "\201c" "\201d");
+  }
+  &.m-3 {
+    font-size: 2em;
+    @include scut-bookends(0.25em, "\00ab" "\00bb") {
+      color: $eg-light;
+    }
+    &:hover,
+    &:focus {
+      color: $eg-light;
+      @include scut-bookends(false, false) {
+        color: $eg-dark;
+      }
+    }
+  }
+  &.m-4 {
+    background-color: $eg-dark;
+    color: white;
+    text-align: center;
+    @include scut-bookends {
+      height: 2em;
+      width: 2em;
+      background-color: $eg-light;
+      vertical-align: middle;
+    }
+  }
+}

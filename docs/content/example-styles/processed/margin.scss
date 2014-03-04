@@ -1,0 +1,11 @@
+.eg-margin {
+  &.m-1 {
+    @include scut-margin(1em n);
+  }
+  &.m-2 {
+    @include scut-margin(0.5em 3em);
+  }
+  &.m-3 {
+    @include scut-margin(3em 1em n);
+  }
+}

@@ -1,0 +1,36 @@
+.eg-punctuated-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-punctuated-list > li {
+  display: inline;
+}
+.eg-punctuated-list > li:not(:last-child):after {
+  content: ", ";
+}
+
+.eg-semicolon-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.eg-semicolon-list > li {
+  display: inline;
+}
+.eg-semicolon-list > li:not(:last-child):after {
+  content: "; ";
+}
+
+.eg-circle-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-circle-list > li {
+  display: inline;
+}
+.eg-circle-list > li:not(:last-child):after {
+  content: "\0020\2022\0020";
+}

@@ -1,0 +1,38 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-ratio {
+  margin-top: 1em;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-ratio {
+  background: $eg-muted;
+  &.m-1 {
+    width: 15em;
+    @include scut-ratio-box;
+    // or @extend %scut-ratio-box;
+  }
+  &.m-2 {
+    width: 7em;
+    @include scut-ratio-box;
+  }
+  &.m-3 {
+    width: 15em;
+    @include scut-ratio-box(16/9);
+  }
+  &.m-4 {
+    width: 7em;
+    @include scut-ratio-box(16/9);
+  }
+}
+.eg-ratio-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* example end */

@@ -1,0 +1,17 @@
+.eg-rem-c {
+  font-size: 1000px;
+}
+
+.eg-rem.m-1 {
+  font-size: 24px;
+}
+.eg-rem.m-2 {
+  font-size: 1.5rem;
+}
+.eg-rem.m-3 {
+  font-size: 1.5rem;
+}
+.eg-rem.m-4 {
+  margin: 5rem 3.125rem 0rem 6.25rem;
+  padding: 1.875rem 1.25rem;
+}

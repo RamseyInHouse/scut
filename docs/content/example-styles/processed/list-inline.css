@@ -1,0 +1,19 @@
+.eg-list-inline.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-list-inline.m-1 > li {
+  display: inline-block;
+}
+.eg-list-inline.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+}
+.eg-list-inline.m-2 > li {
+  display: inline-block;
+}
+.eg-list-inline.m-2 > li + li {
+  margin-left: 1em;
+}

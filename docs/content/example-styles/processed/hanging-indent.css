@@ -1,0 +1,11 @@
+.eg-hanging-indent {
+  max-width: 25em;
+}
+.eg-hanging-indent.m-1 {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+.eg-hanging-indent.m-2 {
+  padding-left: 2em;
+  text-indent: -2em;
+}

@@ -8,7 +8,7 @@ categories:
 args:
   - variable: $coordinates
     default: [0 n n 0]
-    comment: &SEEC "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
+    comment: "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
 example:
   show-html: true
   html: |

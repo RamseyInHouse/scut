@@ -1,0 +1,14 @@
+.eg-absolute-container {
+  position: relative;
+}
+
+.eg-absolute.m-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.eg-absolute.m-2 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+}

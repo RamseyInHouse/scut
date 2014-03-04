@@ -1,0 +1,12 @@
+.eg-reverse-italics.m-default {
+  font-style: italic;
+}
+.eg-reverse-italics.m-default em, .eg-reverse-italics.m-default cite, .eg-reverse-italics.m-default i, .eg-reverse-italics.m-default false {
+  font-style: normal;
+}
+.eg-reverse-italics.m-variant {
+  font-style: italic;
+}
+.eg-reverse-italics.m-variant em, .eg-reverse-italics.m-variant cite, .eg-reverse-italics.m-variant i, .eg-reverse-italics.m-variant strong, .eg-reverse-italics.m-variant b, .eg-reverse-italics.m-variant .no-italics {
+  font-style: normal;
+}

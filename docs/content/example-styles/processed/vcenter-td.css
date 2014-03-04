@@ -1,0 +1,16 @@
+.eg-vcenter-td.m-1 {
+  display: table;
+  height: 8em;
+}
+.eg-vcenter-td.m-1 > .scut-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.eg-vcenter-td.m-2 {
+  display: table;
+  height: 12em;
+}
+.eg-vcenter-td.m-2 > .eg-vcenter-td-inner {
+  display: table-cell;
+  vertical-align: middle;
+}

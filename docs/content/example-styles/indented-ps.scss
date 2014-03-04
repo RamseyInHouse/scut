@@ -1,0 +1,24 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden start */
+.eg-indented-ps {
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+/* hidden end */
+
+/* example start */
+.eg-indented-ps {
+  &.m-1 {
+    @include scut-indented-ps;
+    // or @extend %scut-indented-ps;
+  }
+  &.m-2 {
+    @include scut-indented-ps(3em, false);
+  }
+}
+/* example end */

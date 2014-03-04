@@ -1,0 +1,12 @@
+.eg-vcenter-lh {
+  vertical-align: middle;
+}
+.eg-vcenter-lh.m-1 {
+  height: 50px;
+  line-height: 50px;
+}
+.eg-vcenter-lh.m-2 {
+  height: 50px;
+  line-height: 50px;
+  font-size: 0.75em;
+}

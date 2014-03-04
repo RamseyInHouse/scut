@@ -1,0 +1,12 @@
+.eg-vcenter-ib {
+  & > p {
+    max-width: 90%;
+  }
+  &.m-1 {
+    @include scut-vcenter-ib;
+    // or @extend %scut-vcenter-ib;
+  }
+  &.m-2 {
+    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
+  }
+}

@@ -1,0 +1,93 @@
+.eg-list-bar {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-list-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.eg-list-bar > li {
+  float: left;
+}
+.eg-list-bar > li + li:before {
+  content: "|";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-breadcrumb {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-list-breadcrumb:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.eg-list-breadcrumb > li {
+  float: left;
+}
+.eg-list-breadcrumb > li + li:before {
+  content: "/";
+  display: inline-block;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+.eg-list-divided.m-1 {
+  list-style-type: none;
+  padding-left: 0;
+}
+.eg-list-divided.m-1:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.eg-list-divided.m-1 > li {
+  float: right;
+}
+.eg-list-divided.m-1 > li + li:after {
+  content: "...";
+  display: inline-block;
+  margin-left: 0;
+  margin-right: 0;
+}
+.eg-list-divided.m-2 {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.eg-list-divided.m-2:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.eg-list-divided.m-2 > li {
+  float: left;
+}
+.eg-list-divided.m-2 > li {
+  height: 3em;
+}
+.eg-list-divided.m-2 > li:before {
+  height: 3em;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #002834;
+  width: 1em;
+}
+.eg-list-divided.m-2 > li:first-child:before {
+  width: 0;
+  overflow: hidden;
+}
+.eg-list-divided.m-2 > li + li:before {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

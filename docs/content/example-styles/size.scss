@@ -1,0 +1,24 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+.eg-size {
+  background: $eg-muted;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+}
+/* end hidden rules */
+
+/* example start */
+.eg-size {
+  &.m-1 {
+    @include scut-size(8em);
+  }
+  &.m-2 {
+    @include scut-size(10em 5em);
+  }
+}
+/* example end */

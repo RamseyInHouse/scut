@@ -1,0 +1,53 @@
+.eg-ratio {
+  background: #cccccc;
+}
+.eg-ratio.m-1 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+.eg-ratio.m-1:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+.eg-ratio.m-2 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+.eg-ratio.m-2:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+.eg-ratio.m-3 {
+  width: 15em;
+  overflow: hidden;
+  position: relative;
+}
+.eg-ratio.m-3:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+.eg-ratio.m-4 {
+  width: 7em;
+  overflow: hidden;
+  position: relative;
+}
+.eg-ratio.m-4:before {
+  content: "";
+  display: block;
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.eg-ratio-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

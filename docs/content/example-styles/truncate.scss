@@ -1,0 +1,14 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden start */
+/* hidden end */
+
+/* example start */
+.eg-truncate {
+  @include scut-truncate;
+  // or @extend %scut-truncate;
+}
+/* example end */

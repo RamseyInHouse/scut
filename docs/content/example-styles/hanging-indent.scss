@@ -1,0 +1,20 @@
+/* import start */
+@import "../../../dist/scut";
+@import "example-variables";
+/* import end */
+
+/* hidden rules */
+/* end hidden rules */
+
+/* example start */
+.eg-hanging-indent {
+  max-width: 25em;
+  &.m-1 {
+    @include scut-hanging-indent;
+    // or @extend %scut-hanging-indent;
+  }
+  &.m-2 {
+    @include scut-hanging-indent(2em);
+  }
+}
+/* example end */

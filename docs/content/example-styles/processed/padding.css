@@ -1,0 +1,17 @@
+.eg-padding {
+  display: inline-block;
+}
+.eg-padding.m-1 {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.eg-padding.m-2 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.eg-padding.m-3 {
+  padding-right: 8em;
+  padding-bottom: 3em;
+}

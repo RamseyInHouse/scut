@@ -1,0 +1,12 @@
+.eg-padding {
+  display: inline-block;
+  &.m-1 {
+    @include scut-padding(1em n);
+  }
+  &.m-2 {
+    @include scut-padding(0.5em 3em);
+  }
+  &.m-3 {
+    @include scut-padding(n 8em 3em n);
+  }
+}
