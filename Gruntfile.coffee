@@ -19,7 +19,7 @@ module.exports = (grunt) ->
             "docs/dev/partials/*.{md,hbs}"
             "docs/content/home/*.{md,hbs}"
           ]
-          data: ["docs/content/data.yml"]
+          data: ["docs/content/*.yml"]
           dist: false
         files: [{
           expand: true

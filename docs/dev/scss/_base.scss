@@ -1,0 +1,18 @@
+body {
+  background-color: $c-bg-main;
+  color: $c-f-1;
+  line-height: 1.5;
+  font-size: 14px;
+
+}
+
+.site-banner,
+.site-main,
+.site-nav {
+  padding: 1em;
+}
+
+.site-banner,
+.site-nav {
+  background-color: $c-bg-list;
+}

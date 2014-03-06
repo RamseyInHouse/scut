@@ -3,44 +3,42 @@ layout: base.hbs
 title: "scut-<%= slug %>, a Scut Utility"
 description: "scut-<%= slug %>: <%= summary %>"
 ---
-<header role="banner">
+
+<header role="banner" class="site-banner">
   {{>banner}}
 </header>
 
-<article role="main">
+<article role="main" class="site-main">
 
   <header>
 
-    <h1>{{name}}</h1>
+    <h1 class="entry-title">{{name}}</h1>
 
     <dl class="info-list">
-      <dt class="info--label m-help js-help-btn" data-help="use-name">
-        use-name
-      </dt>
-      <dd class="info--value">
+      <dt>use-name</dt>
+      <dd>
         <code>scut-{{slug}}</code>
       </dd>
 
       {{#if type}}
-      <dt class="info--label m-help js-help-btn" data-help="type">
-        type
-      </dt>
-      <dd class="info--value">
-        {{type}}
-      </dd>
+      <dt>type</dt>
+      <dd>{{type}}</dd>
       {{/if}}
 
       {{#if args}}
-      <dt class="info--label m-help js-help-btn" data-help="arguments">
-        arguments
-      </dt>
-      <dd class="info--value">
-        <ol class="args">
+      <dt>arguments</dt>
+      <dd>
+        <ol class="args-list">
           {{#each args}}
           <li>
-            <code class="args--name">{{variable}}</code>
+            <code>{{variable}}</code>
             {{#if this.default}}
-            [&nbsp;<span class="args--default">default:</span> <code class="args--default--val">{{this.default}}</code>&nbsp;]
+            <dl class="default">
+              <dt>default</dt>
+              <dd>
+                <code>{{this.default}}</code>
+              </dd>
+            </dl>
             {{/if}}
             {{#if comment}}
             <div class="args--comment">{{#markdown}}{{{comment}}}{{/markdown}}</div>
@@ -52,21 +50,13 @@ description: "scut-<%= slug %>: <%= summary %>"
       {{/if}}
 
       {{#if contentblock}}
-      <dt class="info--label m-help js-help-btn" data-help="contentblock">
-        @content
-      </dt>
-      <dd class="info--value">
-        {{#markdown}}{{{contentblock}}}{{/markdown}}
-      </dd>
+      <dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt>
+      <dd class="info--value">{{#markdown}}{{{contentblock}}}{{/markdown}}</dd>
       {{/if}}
 
       {{#if compatibility}}
-      <dt class="info--label">
-        compatibility
-      </dt>
-      <dd class="info--value">
-        {{#markdown}}{{{compatibility}}}{{/markdown}}
-      </dd>
+      <dt class="info--label">compatibility</dt>
+      <dd class="info--value">{{#markdown}}{{{compatibility}}}{{/markdown}}</dd>
       {{/if}}
 
     </dl>

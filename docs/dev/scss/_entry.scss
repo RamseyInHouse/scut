@@ -1,0 +1,21 @@
+.info-list {
+  @include scut-key-val($spacing: 0.5em);
+  & > dt {
+    font-weight: bold;
+  }
+}
+
+.args-list {
+  clear: both;
+  padding-left: 0.5em;
+  padding-top: 0.01em;
+  margin-top: 2em;
+  & > li {
+    margin-top: 0.5em;
+  }
+}
+
+.default {
+  @extend %scut-key-val;
+  @include scut-margin(0 n);
+}

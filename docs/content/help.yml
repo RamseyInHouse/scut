@@ -1,0 +1,15 @@
+- term: use-name
+  text: |
+    **use-name** is the name of the utility as it is used (as a mixin, placeholder, function, variable, etc.), including the `scut-` prefix. It's what you plug into your Sass/SCSS. This should be illustrated in the examples.
+- term: type
+  text: |
+    **type** tells you what kind of Sass feature the utility involves. Is it only available as a mixin (e.g. HD breakpoint)? Or as a mixin and a placeholder that always do the same thing (e.g. clearfix)? Or as a mixin and a placeholder that passes default values (e.g. indented paragraphs)? Or as a mixin with some extension placeholders for common variations (e.g. punctuated list)? As a function, a variable, an import? And so on.
+- term: arguments
+  text: |
+    **arguments** lists the arguments, in order, that you can pass to the utility's mixin. To learn more about Sass/SCSS mixin arguments [have a look at the Sass documentation](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixin-arguments).
+
+    If no default value is listed, that means there is no default value, so you'll have to provide a value every time you use the mixin.
+
+- term: contentblock
+  text: |
+    **@content** describes what happens if you pass a content block to the utility's mixin. To understand Sass content blocks, [have a look at the Sass documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixin-content).

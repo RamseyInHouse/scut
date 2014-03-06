@@ -1,3 +1,11 @@
+@import "../../../bower_components/normalize-scss/normalize";
 @import "../../../dist/scut";
+@include scut-reset();
 
+@import "variables";
+@import "type";
+@import "code";
+@import "base";
+@import "banner";
+@import "entry";
 @import "examples";
