@@ -1,6 +1,6 @@
 ---
 name: "positioning: relative"
-slug: relative
+slug: positioning-relative
 summary: Relatively position an element and assign its coordinates, all in one line of SCSS.
 type: mixin only
 categories:

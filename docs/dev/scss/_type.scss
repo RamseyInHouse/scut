@@ -8,8 +8,38 @@ body {
 // 1.5
 // 1 1
 
-.entry-title {
-  font-size: 2.25em;
-  font-weight: bold;
-  text-transform: uppercase;
+code {
+  color: $c-f-2;
+  font-family: $f-code;
+  font-style: normal;
+}
+
+a,
+a code {
+  color: $c-link;
+  text-decoration: none;
+  @include scut-selected {
+    color: $c-link-active;
+  }
+}
+
+.entry {
+  h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  h1 {
+    font-size: 2.25em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h2,h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  a {
+    border-bottom: 1px;
+  }
 }

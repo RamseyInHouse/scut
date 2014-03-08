@@ -1,5 +1,5 @@
 ---
-name: "vertically center: table display"
+name: "vertically center: table display method"
 slug: vcenter-td
 summary: "Vertically center descendent elements with the `display: table` method."
 type: mixin, with default-values placeholder

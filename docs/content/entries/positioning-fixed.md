@@ -1,6 +1,6 @@
 ---
 name: "positioning: fixed"
-slug: fixed
+slug: positioning-fixed
 summary: Fix an element's position and assign its coordinates, all in one line of SCSS.
 type: mixin, with default-values placeholder
 categories:

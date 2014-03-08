@@ -64,9 +64,13 @@ gulp.task('docStyle', function() {
 });
 
 // copy over files
-gulp.task('copy', function() {
-  gulp.src('./docs/dev/js/prism.js')
-    .pipe(gulp.dest('./docs/dist/'));
+gulp.task('copyJs', function() {
+  gulp.src([
+      './docs/dev/js/prism.js',
+      './docs/dev/js/main.js'
+    ])
+    .pipe(gulp.dest('./docs/dist/'))
+    .pipe(connect.reload());
 });
 
 // compile via Assemble
@@ -100,6 +104,7 @@ gulp.task('watch', function() {
     './docs/content/*.yml',
     './docs/dev/**/*.hbs'
   ], ['assemble']);
+  gulp.watch('./docs/dev/js/*.js', ['copyJs']);
 });
 
 // develop: watch for changes and make things happen

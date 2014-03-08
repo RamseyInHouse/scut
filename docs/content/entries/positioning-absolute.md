@@ -1,6 +1,6 @@
 ---
 name: "positioning: absolute"
-slug: absolute
+slug: positioning-absolute
 summary: Absolutely position an element and assign its coordinates, all in one line of SCSS.
 type: mixin, with default-values placeholder
 categories:
@@ -8,7 +8,7 @@ categories:
 args:
   - variable: $coordinates
     default: [0 n n 0]
-    comment: "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
+    comment: "See information about `coordinates` above."
 example:
   show-html: true
   html: |

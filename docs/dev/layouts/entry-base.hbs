@@ -8,7 +8,7 @@ description: "scut-<%= slug %>: <%= summary %>"
   {{>banner}}
 </header>
 
-<article role="main" class="site-main">
+<article role="main" class="site-main entry">
 
   <header>
 
@@ -50,13 +50,13 @@ description: "scut-<%= slug %>: <%= summary %>"
       {{/if}}
 
       {{#if contentblock}}
-      <dt class="info--label m-help js-help-btn" data-help="contentblock">@content</dt>
-      <dd class="info--value">{{#markdown}}{{{contentblock}}}{{/markdown}}</dd>
+      <dt>@content</dt>
+      <dd>{{#markdown}}{{{contentblock}}}{{/markdown}}</dd>
       {{/if}}
 
       {{#if compatibility}}
-      <dt class="info--label">compatibility</dt>
-      <dd class="info--value">{{#markdown}}{{{compatibility}}}{{/markdown}}</dd>
+      <dt>compatibility</dt>
+      <dd>{{#markdown}}{{{compatibility}}}{{/markdown}}</dd>
       {{/if}}
 
     </dl>
@@ -64,34 +64,30 @@ description: "scut-<%= slug %>: <%= summary %>"
   </header>
 
   <section>
-    <p>
-      {{summary}}
-    </p>
+    <div class="summary">
+      {{#markdown}}{{{summary}}}{{/markdown}}
+    </div>
     {{#markdown}}{{>body}}{{/markdown}}
   </section>
 
   {{#if example}}
-  <section class="example">
-    <h2>Example</h2>
+  <section id="example">
+    <h2>example</h2>
     {{#if example.show-html}}
-    <div class="example--html">
-      <h3>HTML</h3>
-      <pre><code class="language-markup">{{example.html}}</code></pre>
-    </div>
+    <h3>HTML</h3>
+    <pre><code class="language-markup">{{removeFirstBlank example.html}}</code></pre>
     {{/if}}
-    <div id="{{name}}-scss" class="example--scss">
+    <div id="exampleScss">
       <h3>SCSS</h3>
       <pre><code class="language-scss">{{getExampleScss slug}}</code></pre>
     </div>
-    <div id="{{name}}-css" class="example--css">
-      <h3>Compiled CSS</h3>
+    <div id="exampleCss" class="example-css is-hidden">
+      <h3>compiled CSS</h3>
       <pre><code class="language-css">{{{getExampleCss slug}}}</code></pre>
     </div>
-    <button class="toggle-css js-toggle-css" data-entry="{{name}}">Show compiled CSS</button>
-    <div class="example--disp">
-      <h3>Result</h3>
-      <div class="example--disp--inner">{{{example.html}}}</div>
-    </div>
+
+    <h3 id="resultHeading">Result</h3>
+    <div class="result">{{{example.html}}}</div>
   </section>
   {{/if}}
 
@@ -101,8 +97,8 @@ description: "scut-<%= slug %>: <%= summary %>"
     <ul class="refs">
       {{#each references}}
       <li>
-        <a href="{{url}}" class="refs--i">
-          {{#markdown}}{{{description}}}{{/markdown}}
+        <a href="{{url}}">
+          {{{description}}}
         </a>
       </li>
       {{/each}}

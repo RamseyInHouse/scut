@@ -1,5 +1,5 @@
 ---
-name: "vertically center: inline-block"
+name: "vertically center: inline-block method"
 slug: vcenter-ib
 summary: Vertically center descendent elements with the `inline-block` method.
 type: mixin, with default-values placeholder
@@ -11,7 +11,7 @@ args:
     comment: A CSS selector for the inner element. *Wrap your selector in quotes.*
 references:
   - description: "CSS-Tricks: \"Centering in the Unknown\""
-    url: http://css-tricks.com/centering-in-the-unknown/
+    url: "http://css-tricks.com/centering-in-the-unknown/"
 example:
   show-html: true
   html: |

@@ -1,5 +1,5 @@
 ---
-name: "vertically center: transform"
+name: "vertically center: transform method"
 slug: vcenter-tt
 summary: Vertically center an element using the clever `transform` method.
 type: mixin and placeholder (same)

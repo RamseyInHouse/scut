@@ -11,7 +11,6 @@ module.exports = (grunt) ->
       # Assemble docs dev markup
       docsDev:
         options:
-          postprocess: require('pretty')
           layoutdir: "docs/dev/layouts/"
           layout: "entry-base.hbs"
           helpers: ["docs/dev/js/hbs-helpers.js"]

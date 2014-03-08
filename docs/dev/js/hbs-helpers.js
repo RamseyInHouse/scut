@@ -18,4 +18,9 @@ module.exports.register = function(Handlebars, options) {
     return file;
   });
 
+  Handlebars.registerHelper('removeFirstBlank', function(str) {
+    var result = str.replace('\n', '');
+    return result;
+  });
+
 };

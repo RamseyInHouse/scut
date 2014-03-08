@@ -1,5 +1,5 @@
 ---
-name: "vertically center: line-height"
+name: "vertically center: line-height method"
 slug: vcenter-lh
 summary: Vertically center text (or other inline elements) by equalizing an element's `height` and `line-height`.
 type: mixin only

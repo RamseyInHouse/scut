@@ -3,7 +3,12 @@ body {
   color: $c-f-1;
   line-height: 1.5;
   font-size: 14px;
+}
 
+button {
+  border: 2px solid $c-link;
+  color: $c-link;
+  padding: 0.5em 1em;
 }
 
 .site-banner,

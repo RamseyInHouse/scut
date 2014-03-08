@@ -9,7 +9,6 @@
   "devDependencies": {
     "grunt": "~0.4.1",
     "assemble": "~0.4.11",
-    "pretty": "~0.1.2",
     "gulp": "~3.5.2",
     "gulp-ruby-sass": "~0.3.1",
     "gulp-replace": "~0.2.0",
