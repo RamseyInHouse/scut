@@ -1,0 +1,58 @@
+.site-nav {
+  background-color: $c-bg-list;
+  @media #{$bp-sidebar} {
+    width: 25%;
+  }
+}
+
+.nav-title {
+  color: $c-zing;
+  font-size: 1.5em;
+  border-bottom: 1px solid;
+  margin-bottom: 0.3em;
+  .nav-list + & {
+    margin-top: 0.5em;
+  }
+}
+
+.nav-list {
+  @include scut-list-custom($scut-whitecircle, 1em) {
+    color: #fff;
+  }
+  & > li + li {
+    margin-top: 0.5em;
+  }
+}
+
+.nav-link {
+  color: #fff;
+  display: inline-block;
+}
+
+.goto-top {
+  color: $c-zing;
+  &:before {
+    content: "(\00a0";
+  }
+  &:after {
+    content: $scut-utri + "\00a0)";
+    margin-left: 0.3em;
+  }
+}
+
+.home-toc {
+  @include scut-list-unstyled(false);
+  & > li + li {
+    margin-top: 0.5em;
+  }
+  a {
+    color: $c-zing;
+    @include scut-selected {
+      color: $c-link-active;
+    }
+    &:before {
+      content: $scut-rtri;
+      margin-right: 0.5em;
+    }
+  }
+}

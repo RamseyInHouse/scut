@@ -1,16 +1,18 @@
-<nav role="navigation" class="site-nav">
+<nav id="siteNav" role="navigation" class="site-nav">
+  {{>home-toc}}
   {{#categories}}
-    <h2>
+    <h2 class="nav-title">
       {{this.category}}
     </h2>
-    <ul>
+    <ul class="nav-list">
       {{#each pages}}
       <li>
-        <a href="{{data.slug}}.html">
+        <a class="nav-link" href="{{data.slug}}.html">
           {{data.name}}
         </a>
       </li>
       {{/each}}
     </ul>
   {{/categories}}
+  <a href="#" class="goto-top">back to top</a>
 </nav>

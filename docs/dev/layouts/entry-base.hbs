@@ -1,18 +1,19 @@
 ---
 layout: base.hbs
+entry: true
 title: "scut-<%= slug %>, a Scut Utility"
 description: "scut-<%= slug %>: <%= summary %>"
 ---
-
-<header role="banner" class="site-banner">
-  {{>banner}}
-</header>
 
 <article role="main" class="site-main entry">
 
   <header>
 
     <h1 class="entry-title">{{name}}</h1>
+
+    <a class="btn source-btn" href="{{github-url}}{{version}}/src/_{{slug}}.scss">
+      view source
+    </a>
 
     <dl class="info-list">
       <dt>use-name</dt>

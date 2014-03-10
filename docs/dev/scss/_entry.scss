@@ -1,11 +1,45 @@
-.entry {
+.site-main {
+  background-color: #fff;
   padding-bottom: 5em;
+  @media #{$bp-sidebar} {
+    float: right;
+    width: 75%;
+  }
+}
+
+.source-btn {
+  margin-top: 1em;
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    @include scut-size(1.5em);
+    background: #000;
+    margin-right: 0.5em;
+  }
+  @media #{$bp-sidebar} {
+    @include scut-absolute(0 1em n n);
+  }
+}
+@media #{$bp-sidebar} {
+  .entry-title {
+    margin-right: scut-em(180, 2.25em);
+  }
 }
 
 .info-list {
   @include scut-key-val($spacing: 0.5em);
   & > dt {
     font-weight: bold;
+  }
+  @media #{$bp-sidebar} {
+    & > dt {
+      width: 7em;
+      text-align: right;
+    }
+    & > dd {
+      margin-left: 8em;
+    }
   }
 }
 
@@ -16,6 +50,11 @@
   margin-top: 2em;
   & > li {
     margin-top: 0.5em;
+  }
+  @media #{$bp-sidebar} {
+    margin-top: 0;
+    position: relative;
+    top: -1.95em;
   }
 }
 
@@ -40,7 +79,7 @@
   border-left: 0.3em solid $c-zing;
   @extend %scut-reverse-italics;
   padding: 1em;
-  @include scut-margin(1em n);
+  margin-bottom: 1em;
 }
 
 .result {

@@ -1,11 +1,16 @@
-Scut is a single file that can be copied and pasted, downloaded, or installed via Bower or RubyGems (for Compass). No trouble at all. Here are the details.
+## Installation
+
+<div class="summary">Scut is a single file that can be copied and pasted, downloaded, or installed via Bower or RubyGems (for Compass).</div>
+
+No trouble at all. Here are the details.
 
 ### Method 1: Get the File and Use It
 
-1. Get the file. You have the following options:
-  - Download or copy/paste <a href="{{github-url}}{{version}}/dist/_scut.scss">the latest release from Github</a>.
-  - Use [Bower](http://bower.io/): `bower install scut --save-dev` This will get you the latest release and save it as a `devDependency` for your project.
-2. Then, from your own Sass/SCSS files, import `_scut.scss`. Like so: `@import "path/to/scut";`
+1. To get the file, you have the following options:
+  - Use [Bower](http://bower.io/): `bower install scut --save-dev`
+  - Download (or copy/paste) <a href="{{github-url}}{{version}}/dist/_scut.scss">the latest release from Github</a>.
+
+2. To use the file, import `_scut.scss` into your own Sass/SCSS files. Like so: `@import "path/to/scut";`
 
 ### Method 2: Compass Extension
 

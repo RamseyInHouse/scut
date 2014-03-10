@@ -1,0 +1,22 @@
+$char-x: 30px;
+
+.characters-list {
+  dt {
+    margin-left: $char-x + 10px;
+    margin-top: 0.5em;
+  }
+  dd {
+    margin-left: 0;
+  }
+  dt + dd {
+    float: left;
+    font-size: 1.5em;
+    margin-top: -0.65em;
+    margin-right: 10px;
+    border: 1px solid $eg-muted;
+    width: $char-x;
+    height: $char-x;
+    line-height: $char-x - 2px;
+    text-align: center;
+  }
+}

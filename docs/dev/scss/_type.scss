@@ -30,7 +30,10 @@ a code {
     text-transform: capitalize;
   }
   h1 {
-    font-size: 2.25em;
+    font-size: 1.5em;
+    @media #{$bp-sidebar} {
+      font-size: 2.25em;
+    }
   }
   h2 {
     font-size: 1.5em;

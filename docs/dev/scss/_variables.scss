@@ -9,7 +9,7 @@ $c-f-2: #6B7072;
 $c-bg-list: #002834;
 $c-bg-main: #fff;
 $c-link: #2F96B3;
-$c-link-active: #05A536;
+$c-link-active: #C42872;
 $c-link-2: #FFBA73;
 $c-zing: #9AE9FF;
 $c-bg-light: #EDF0FF;
@@ -22,7 +22,7 @@ $eg-muted: #CCCCCC;
 
 // breakpoints
 $wide-enough: "min-width: 59.5em";
-$bp-show-list: "min-width: #{scut-em(650)}";
+$bp-sidebar: "only screen and (min-width: #{scut-em(680)})";
 $bp-hide-list: "max-width: #{scut-em(650)}";
 
 // fonts

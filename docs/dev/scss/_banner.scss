@@ -1,4 +1,10 @@
+.banner-main {
+  background-color: $c-bg-list;
+  position: relative;
+}
+
 .site-title-c {
+  display: inline-block;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
@@ -9,16 +15,102 @@
 }
 
 .site-title {
-  font-size: 3em;
+  font-size: 2.25em;
+  @media #{$bp-sidebar} {
+    font-size: 3em;
+  }
 }
 
 .site-subtitle {
   color: $c-zing;
   display: block;
-  font-size: 1.5em;
-  margin-top: 0.2em;
+  @media #{$bp-sidebar} {
+    font-size: 1.5em;
+  }
   &:before {
     content: ":";
     margin-right: 0.3em;
+  }
+}
+.site-subtitle-more {
+  display: none;
+}
+
+.goto-nav {
+  @include scut-center-absolutely(n 37px);
+  right: 1em;
+  width: 40px;
+  @include scut-border(6px solid $c-zing, y n);
+  &:before {
+    content: "";
+    @include scut-center-absolutely(n 6px);
+    left: 0;
+    right: 0;
+    background-color: $c-zing;
+  }
+  @include scut-selected {
+    border-color: $c-link-active;
+    &:before {
+      background-color: $c-link-active;
+    }
+  }
+}
+
+.scut-elsewhere {
+  background: #fff;
+  padding: 0.5em 1em;
+  border-bottom: 0.2em solid $c-bg-list;
+  @extend %scut-list-bar;
+}
+.scut-elsewhere-link {
+  display: inline-block;
+}
+
+@media #{$bp-sidebar} {
+  .banner-main {
+    background-color: #fff;
+    border-bottom: 0.5em solid $c-bg-list;
+  }
+  .site-title-c {
+    color: $c-f-1;
+  }
+  .site-title {
+    font-size: 3.375em;
+  }
+  .site-subtitle {
+    color: $c-bg-list;
+    display: inline-block;
+  }
+  .site-subtitle-more {
+    display: inline;
+  }
+  .goto-nav {
+    display: none;
+  }
+  .scut-elsewhere {
+    background-color: $c-bg-list;
+    width: 25%;
+    max-width: scut-em(235);
+    float: left;
+    position: relative;
+    z-index: 10;
+    & > li {
+      display: block;
+      float: none;
+    }
+    & > li + li:before {
+      display: none;
+    }
+    & > li + li {
+      margin-top: 0.5em;
+    }
+  }
+  .scut-elsewhere-link {
+    @include btn;
+    display: block;
+    color: #fff;
+    font-size: 0.9em;
+    border-color: #fff;
+    width: 100%;
   }
 }

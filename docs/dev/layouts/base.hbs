@@ -14,12 +14,18 @@
 
   <body>
 
-    {{>body}}
-
-    {{>nav}}
+    <header role="banner" class="site-banner">
+      {{>banner}}
+    </header>
+    <div class="site-body">
+      {{>body}}
+      {{>nav}}
+    </div>
 
   <script src="prism.js"></script>
+  {{#if entry}}
   <script src="main.js"></script>
+  {{/if}}
   </body>
 
 </html>

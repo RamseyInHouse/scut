@@ -1,23 +1,43 @@
 body {
-  background-color: $c-bg-main;
+  background-color: $c-bg-list;
   color: $c-f-1;
   line-height: 1.5;
   font-size: 14px;
+  @media only screen and (min-width:#{scut-em(768)}) {
+    font-size: 16px;
+  }
 }
 
-button {
-  border: 2px solid $c-link;
+@mixin btn {
+  border-width: 2px;
+  border-style: solid;
+  border-color: $c-link;
   color: $c-link;
+  display: inline-block;
   padding: 0.5em 1em;
+  &:hover {
+    border-color: $c-link-active;
+    color: $c-link-active;
+  }
+  &:focus {
+    box-shadow: 0 0 0.3em 0.2em $c-link-active;
+  }
+}
+button, .btn, a.btn {
+  @include btn;
 }
 
-.site-banner,
+.banner-main,
 .site-main,
 .site-nav {
   padding: 1em;
 }
 
-.site-banner,
-.site-nav {
-  background-color: $c-bg-list;
+.site-body {
+  position: relative;
+  max-width: scut-em(950);
+}
+
+.hide-visually {
+  @extend %scut-hide-visually;
 }
