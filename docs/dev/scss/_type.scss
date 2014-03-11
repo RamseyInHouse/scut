@@ -18,8 +18,13 @@ a,
 a code {
   color: $c-link;
   text-decoration: none;
+}
+a {
   @include scut-selected {
     color: $c-link-active;
+    code {
+      color: $c-link-active;
+    }
   }
 }
 

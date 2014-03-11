@@ -5,22 +5,20 @@
 
 /* hidden rules */
 .eg-selected {
+  background-color: $eg-muted;
   @extend %eg-light-btn;
 }
 /* end hidden rules */
 
 /* example start */
-.eg-selected {
-  background-color: $eg-muted;
-  &.m-1 {
-    @include scut-selected {
-      background-color: $eg-light;
-    }
+.eg-selected-1 {
+  @include scut-selected {
+    background-color: $eg-light;
   }
-  &.m-2 {
-    @include scut-selected(true) {
-      background-color: $eg-light;
-    }
+}
+.eg-selected-2 {
+  @include scut-selected(true) {
+    background-color: $eg-light;
   }
 }
 /* example end */

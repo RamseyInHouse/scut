@@ -67,20 +67,18 @@ $eg-muted: #CCCCCC;
 /* end hidden rules */
 
 /* example start */
-.eg-border {
-  &.m-1 {
-    @include scut-border(5px solid, y n);
-  }
-  &.m-2 {
-    @include scut-border(0.5em solid $eg-light, n y);
-  }
-  &.m-3 {
-    @include scut-border(10px solid $eg-dark, y y n n);
-  }
-  &.m-4 {
-    @include scut-border(0.75em solid $eg-dark, n n y y);
-    @include scut-border(0.75em solid $eg-light, y y n n);
-  }
+.eg-border-1 {
+  @include scut-border(5px solid, y n);
+}
+.eg-border-2 {
+  @include scut-border(0.5em solid $eg-light, n y);
+}
+.eg-border-3 {
+  @include scut-border(10px solid $eg-dark, y y n n);
+}
+.eg-border-4 {
+  @include scut-border(0.75em solid $eg-dark, n n y y);
+  @include scut-border(0.75em solid $eg-light, y y n n);
 }
 /* example end */
 
@@ -185,17 +183,15 @@ $eg-muted: #CCCCCC;
 /* end hidden rules */
 
 /* example start */
-.eg-circle {
-  &.m-1 {
-    @include scut-circle(1em);
-  }
-  &.m-2 {
-    @include scut-circle(2em, $eg-light);
-  }
-  &.m-3 {
-    @include scut-circle(2em, $eg-dark);
-    border: 5px solid $eg-light;
-  }
+.eg-circle-1 {
+  @include scut-circle(1em);
+}
+.eg-circle-2 {
+  @include scut-circle(2em, $eg-light);
+}
+.eg-circle-3 {
+  @include scut-circle(2em, $eg-dark);
+  border: 5px solid $eg-light;
 }
 /* example end */
 
@@ -253,35 +249,35 @@ $eg-muted: #CCCCCC;
 /* end hidden rules */
 
 /* example start */
-.eg-em {
-  // first pair
-  &.m-1 { width: scut-em(300); }
-  &.m-2 { width: 300px; }
-  // second pair
-  &.m-3, &.m-4 { font-size: 20px; }
-  &.m-3 { width: scut-em(400, 20); }
-  &.m-4 { width: 400px; }
-  // third pair
-  &.m-5, &.m-6 { font-size: 0.6em; }
-  &.m-5 { width: scut-em(500, 0.6em); }
-  &.m-6 { width: 500px; }
-  // list and units demonstration
-  &.m-7 {
-    margin: scut-em(50 30px 0 60);
-    padding: scut-em(50 20px 0)
-  }
-  // changing the default $base value
-  // (compare to the second pair, above)
-  $scut-em-default: 20;
-  &.m-8 {
-    font-size: 20px;
-    width: scut-em(400);
-  }
+// first pair
+.eg-em-1 { width: scut-em(150); }
+.eg-em-2 { width: 150px; }
+// second pair
+.eg-em-3,
+.eg-em-4 { font-size: 20px; }
+.eg-em-3 { width: scut-em(250, 20); }
+.eg-em-4 { width: 250px; }
+// third pair
+.eg-em-5,
+.eg-em-6 { font-size: 0.6em; }
+.eg-em-5 { width: scut-em(275, 0.6em); }
+.eg-em-6 { width: 275px; }
+// list and units demonstration
+.eg-em-7 {
+  margin: scut-em(50 30px 0 60);
+  padding: scut-em(50 20px 0)
+}
+// changing the default $scut-em-base value
+// (compare to the second pair, above)
+$scut-em-base: 20;
+.eg-em-8 {
+  font-size: 20px;
+  width: scut-em(250);
 }
 /* example end */
 
 /* hidden rules */
-$scut-em-default: 16;
+$scut-em-base: 16;
 /* end hidden rules */
 
 /* hidden rules */
@@ -770,14 +766,12 @@ $scut-em-default: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-rem-fallback {
-  &.m-1 { font-size: 20px; }
-  &.m-2 { @include scut-rem-fallback(20); }
-  &.m-3 {
-    @include scut-rem-fallback(30 50px 0 25px, margin);
-    @include scut-rem-fallback(20 30px, padding);
-    border: 5px solid;
-  }
+.eg-rem-fallback-1 { font-size: 20px; }
+.eg-rem-fallback-2 { @include scut-rem-fallback(20); }
+.eg-rem-fallback-3 {
+  @include scut-rem-fallback(30 50px 0 25px, margin);
+  @include scut-rem-fallback(20 30px, padding);
+  border: 5px solid;
 }
 /* example end */
 
@@ -786,24 +780,20 @@ $scut-em-default: 16;
   border: 5px solid $eg-dark;
   padding: 10px;
   margin-top: 1em;
-  &.m-1 {
-    margin-top: 0;
-  }
+}
+.eg-rem-1 {
+  margin-top: 0;
 }
 /* end hidden rules */
 
 /* example start */
-.eg-rem-c {
-  font-size: 1000px;
-}
-.eg-rem {
-  &.m-1 { font-size: 24px; }
-  &.m-2 { font-size: scut-rem(24); }
-  &.m-3 { font-size: scut-rem(24); }
-  &.m-4 {
-    margin: scut-rem(80 50px 0 100);
-    padding: scut-rem(30 20px);
-  }
+.eg-rem-1 { font-size: 24px; }
+.eg-rem-2 { font-size: scut-rem(24); }
+.eg-rem-3-container { font-size: 1000px; }
+.eg-rem-3 { font-size: scut-rem(24); }
+.eg-rem-4 {
+  margin: scut-rem(80 50px 0 100);
+  padding: scut-rem(30 20px);
 }
 /* example end */
 
@@ -824,22 +814,20 @@ $scut-em-default: 16;
 
 /* hidden rules */
 .eg-selected {
+  background-color: $eg-muted;
   @extend %eg-light-btn;
 }
 /* end hidden rules */
 
 /* example start */
-.eg-selected {
-  background-color: $eg-muted;
-  &.m-1 {
-    @include scut-selected {
-      background-color: $eg-light;
-    }
+.eg-selected-1 {
+  @include scut-selected {
+    background-color: $eg-light;
   }
-  &.m-2 {
-    @include scut-selected(true) {
-      background-color: $eg-light;
-    }
+}
+.eg-selected-2 {
+  @include scut-selected(true) {
+    background-color: $eg-light;
   }
 }
 /* example end */

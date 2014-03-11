@@ -1,15 +1,13 @@
-.eg-border {
-  &.m-1 {
-    @include scut-border(5px solid, y n);
-  }
-  &.m-2 {
-    @include scut-border(0.5em solid $eg-light, n y);
-  }
-  &.m-3 {
-    @include scut-border(10px solid $eg-dark, y y n n);
-  }
-  &.m-4 {
-    @include scut-border(0.75em solid $eg-dark, n n y y);
-    @include scut-border(0.75em solid $eg-light, y y n n);
-  }
+.eg-border-1 {
+  @include scut-border(5px solid, y n);
+}
+.eg-border-2 {
+  @include scut-border(0.5em solid $eg-light, n y);
+}
+.eg-border-3 {
+  @include scut-border(10px solid $eg-dark, y y n n);
+}
+.eg-border-4 {
+  @include scut-border(0.75em solid $eg-dark, n n y y);
+  @include scut-border(0.75em solid $eg-light, y y n n);
 }

@@ -1,9 +1,7 @@
-.eg-selected {
-  background-color: #cccccc;
-}
-.eg-selected.m-1:hover, .eg-selected.m-1:focus {
+.eg-selected-1:hover, .eg-selected-1:focus {
   background-color: #9ae9ff;
 }
-.eg-selected.m-2:hover, .eg-selected.m-2:focus, .eg-selected.m-2:active {
+
+.eg-selected-2:hover, .eg-selected-2:focus, .eg-selected-2:active {
   background-color: #9ae9ff;
 }

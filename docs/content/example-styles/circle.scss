@@ -10,16 +10,14 @@
 /* end hidden rules */
 
 /* example start */
-.eg-circle {
-  &.m-1 {
-    @include scut-circle(1em);
-  }
-  &.m-2 {
-    @include scut-circle(2em, $eg-light);
-  }
-  &.m-3 {
-    @include scut-circle(2em, $eg-dark);
-    border: 5px solid $eg-light;
-  }
+.eg-circle-1 {
+  @include scut-circle(1em);
+}
+.eg-circle-2 {
+  @include scut-circle(2em, $eg-light);
+}
+.eg-circle-3 {
+  @include scut-circle(2em, $eg-dark);
+  border: 5px solid $eg-light;
 }
 /* example end */

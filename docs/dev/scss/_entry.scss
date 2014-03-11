@@ -28,6 +28,7 @@
 }
 
 .info-list {
+  @include scut-reset-paragraph;
   @include scut-key-val($spacing: 0.5em);
   & > dt {
     font-weight: bold;
@@ -48,6 +49,7 @@
   padding-left: 0.5em;
   padding-top: 0.01em;
   margin-top: 2em;
+  margin-bottom: 0;
   & > li {
     margin-top: 0.5em;
   }
@@ -75,6 +77,7 @@
 }
 
 .summary {
+  @include scut-reset-paragraph;
   background-color: $c-bg-light;
   border-left: 0.3em solid $c-zing;
   @extend %scut-reverse-italics;

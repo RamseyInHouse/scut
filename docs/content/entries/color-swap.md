@@ -7,7 +7,7 @@ categories:
   - general
 args:
   - variable: $off
-    comment: Color(s) for the "off" state. A list of two values will designate `color` and `background-color`. One value will be interpreted as `color` &mdash; unless the `$bg` argument, below, is set to `true`, in which case it will be `background-color`.
+    comment: Color(s) for the "off" state. A list of two values will designate `color` and `background-color`. One value alone will be interpreted as `color` &mdash; unless the `$bg` argument, below, is set to `true`, in which case it will be `background-color`.
   - variable: $on
     comment: Color(s) for the "on" state (`:hover` and `:focus`). One or two values, interpreted the same as `$off`, above.
   - variable: $duration

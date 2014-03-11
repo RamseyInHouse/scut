@@ -17,7 +17,7 @@ var examplesScssSrc = './docs/content/example-styles/*.scss';
 
 gulp.task('processExamples', function() {
   var imports = /\/\* import start \*\/\n[\s\S]*?\/\* import end \*\/\n/g;
-  var exampleOnly = /(?:[\s\S]*\/\* example start \*\/\n)([\s\S]*)(?:[.$]*\/\* example end \*\/)/g;
+  var exampleOnly = /(?:[\s\S]*\/\* example start \*\/\n)([\s\S]*)(?:[.$]*\n\/\* example end \*\/[\s\S]*)/g;
   var twoLines = /\n\n\n/g;
 
   // copy example SCSS,

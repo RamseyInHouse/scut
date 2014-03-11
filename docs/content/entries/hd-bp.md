@@ -16,7 +16,7 @@ references:
     url: http://mattnt.com/2012/11/18/making-sense-of-hidpi-media-queries/
 example:
   html: |
-    <p class="eg-hd-bp">If you are using a retina screen, this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p>
+    <p class="eg-hd-bp">If you are using an HD screen (1.3 resolution or higher), this paragraph's background will be blue &mdash; otherwise, a sad low-definition gray.</p>
 ---
 
-This mixin uses `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`. If you're curious about the choices, read the References below.
+This mixin sets `-o-min-device-pixel-ratio`, `-webkit-min-device-pixel-ratio`, and `min-resolution`. If you're curious about these choices, read the References below.

@@ -7,13 +7,11 @@
 /* end hidden rules */
 
 /* example start */
-.eg-rem-fallback {
-  &.m-1 { font-size: 20px; }
-  &.m-2 { @include scut-rem-fallback(20); }
-  &.m-3 {
-    @include scut-rem-fallback(30 50px 0 25px, margin);
-    @include scut-rem-fallback(20 30px, padding);
-    border: 5px solid;
-  }
+.eg-rem-fallback-1 { font-size: 20px; }
+.eg-rem-fallback-2 { @include scut-rem-fallback(20); }
+.eg-rem-fallback-3 {
+  @include scut-rem-fallback(30 50px 0 25px, margin);
+  @include scut-rem-fallback(20 30px, padding);
+  border: 5px solid;
 }
 /* example end */

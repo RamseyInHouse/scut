@@ -1,30 +1,25 @@
-.eg-em {
-  // first pair
-  &.m-1 { width: scut-em(300); }
-  &.m-2 { width: 300px; }
-  // second pair
-  &.m-3, &.m-4 { font-size: 20px; }
-  &.m-3 { width: scut-em(400, 20); }
-  &.m-4 { width: 400px; }
-  // third pair
-  &.m-5, &.m-6 { font-size: 0.6em; }
-  &.m-5 { width: scut-em(500, 0.6em); }
-  &.m-6 { width: 500px; }
-  // list and units demonstration
-  &.m-7 {
-    margin: scut-em(50 30px 0 60);
-    padding: scut-em(50 20px 0)
-  }
-  // changing the default $base value
-  // (compare to the second pair, above)
-  $scut-em-default: 20;
-  &.m-8 {
-    font-size: 20px;
-    width: scut-em(400);
-  }
+// first pair
+.eg-em-1 { width: scut-em(150); }
+.eg-em-2 { width: 150px; }
+// second pair
+.eg-em-3,
+.eg-em-4 { font-size: 20px; }
+.eg-em-3 { width: scut-em(250, 20); }
+.eg-em-4 { width: 250px; }
+// third pair
+.eg-em-5,
+.eg-em-6 { font-size: 0.6em; }
+.eg-em-5 { width: scut-em(275, 0.6em); }
+.eg-em-6 { width: 275px; }
+// list and units demonstration
+.eg-em-7 {
+  margin: scut-em(50 30px 0 60);
+  padding: scut-em(50 20px 0)
 }
-
-
-/* hidden rules */
-$scut-em-default: 16;
-/* end hidden rules */
+// changing the default $scut-em-base value
+// (compare to the second pair, above)
+$scut-em-base: 20;
+.eg-em-8 {
+  font-size: 20px;
+  width: scut-em(250);
+}

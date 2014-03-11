@@ -1,33 +1,43 @@
-.eg-em.m-1 {
-  width: 18.75em;
+.eg-em-1 {
+  width: 9.375em;
 }
-.eg-em.m-2 {
-  width: 300px;
+
+.eg-em-2 {
+  width: 150px;
 }
-.eg-em.m-3, .eg-em.m-4 {
+
+.eg-em-3,
+.eg-em-4 {
   font-size: 20px;
 }
-.eg-em.m-3 {
-  width: 20em;
+
+.eg-em-3 {
+  width: 12.5em;
 }
-.eg-em.m-4 {
-  width: 400px;
+
+.eg-em-4 {
+  width: 250px;
 }
-.eg-em.m-5, .eg-em.m-6 {
+
+.eg-em-5,
+.eg-em-6 {
   font-size: 0.6em;
 }
-.eg-em.m-5 {
-  width: 52.08333em;
+
+.eg-em-5 {
+  width: 28.64583em;
 }
-.eg-em.m-6 {
-  width: 500px;
+
+.eg-em-6 {
+  width: 275px;
 }
-.eg-em.m-7 {
+
+.eg-em-7 {
   margin: 3.125em 1.875em 0em 3.75em;
   padding: 3.125em 1.25em 0em;
 }
-.eg-em.m-8 {
+
+.eg-em-8 {
   font-size: 20px;
-  width: 25em;
-}/* hidden rules */
-/* end hidden rules */
+  width: 12.5em;
+}
