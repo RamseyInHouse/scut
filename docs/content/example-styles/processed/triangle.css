@@ -1,4 +1,4 @@
-.eg-triangle.m-default {
+.eg-triangle-default {
   display: inline-block;
   height: 0;
   width: 0;
@@ -9,7 +9,8 @@
   border-left-color: inherit;
   border-right-width: 0;
 }
-.eg-triangle.m-equilateral {
+
+.eg-triangle-equilateral {
   display: inline-block;
   height: 0;
   width: 0;
@@ -20,7 +21,8 @@
   border-bottom-color: #cccccc;
   border-top-width: 0;
 }
-.eg-triangle.m-top-right {
+
+.eg-triangle-top-right {
   display: inline-block;
   height: 0;
   width: 0;
@@ -32,7 +34,8 @@
   border-left-color: transparent;
   border-right-color: #002834;
 }
-.eg-triangle.m-bottom-left {
+
+.eg-triangle-bottom-left {
   display: inline-block;
   height: 0;
   width: 0;
@@ -71,7 +74,7 @@
   border-bottom-color: inherit;
   border-top-width: 0;
 }
-.eg-triangle-button.m-more:after {
+.eg-triangle-button.m-right:after {
   display: inline-block;
   height: 0;
   width: 0;

@@ -2,16 +2,14 @@
   color: $eg-light;
   position: relative;
 }
-.eg-fill {
-  &.m-1 {
-    background-color: rgba(0,0,0,0.4);
-    @include scut-fill;
-    // or @extend %scut-fill;
-  }
-  &.m-2 {
-    @include scut-fill;
-  }
-  &.m-3 {
-    @include scut-fill(true);
-  }
+.eg-fill-1 {
+  background-color: rgba(0,0,0,0.4);
+  @include scut-fill;
+  // or @extend %scut-fill;
+}
+.eg-fill-2 {
+  @include scut-fill;
+}
+.eg-fill-3 {
+  @include scut-fill(true);
 }

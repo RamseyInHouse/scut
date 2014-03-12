@@ -12,8 +12,8 @@ args:
       A `max-width` value for the to-be-centered block.
 example:
   html: |
-    <div class="eg-center-block m-1">Variation 1</div>
-    <div class="eg-center-block m-2">Variation 2</div>
+    <div class="eg-center-block eg-center-block-1">Variation 1</div>
+    <div class="eg-center-block eg-center-block-2">Variation 2</div>
 ---
 
 You, being wise, probably know that setting `margin-left: auto; margin-right: auto;` on a block element with a defined width will center that element. You probably do it all the time.

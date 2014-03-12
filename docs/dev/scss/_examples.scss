@@ -86,13 +86,14 @@ $eg-muted: #CCCCCC;
 .eg-center-absolutely-container {
   border: 5px solid $eg-dark;
   height: 6em;
+  font-size: 0.8em;
   &:not(:first-child) {
     margin-top: 1em;
   }
-}
-.eg-center-absolutely {
-  font-size: 0.8em;
-  padding: 0.5em;
+  & > div {
+    background: $eg-muted;
+    padding: 0.5em;
+  }
 }
 /* end hidden rules */
 
@@ -100,17 +101,14 @@ $eg-muted: #CCCCCC;
 .eg-center-absolutely-container {
   position: relative;
 }
-.eg-center-absolutely {
-  background: $eg-muted;
-  &.m-1 {
-    @include scut-center-absolutely(22em 2.5em);
-  }
-  &.m-2 {
-    @include scut-center-absolutely(20em n);
-  }
-  &.m-3 {
-    @include scut-center-absolutely(n 2.5em);
-  }
+.eg-center-absolutely-1 {
+  @include scut-center-absolutely(22em 2.5em);
+}
+.eg-center-absolutely-2 {
+  @include scut-center-absolutely(20em n);
+}
+.eg-center-absolutely-3 {
+  @include scut-center-absolutely(n 2.5em);
 }
 /* example end */
 
@@ -122,16 +120,14 @@ $eg-muted: #CCCCCC;
 /* end hidden rules */
 
 /* example start */
-.eg-center-block {
-  &.m-1 {
-    width: 8em;
-    @include scut-center-block;
-    // or @extend %scut-center-block;
-  }
-  &.m-2 {
-    margin-top: 2em;
-    @include scut-center-block(80%);
-  }
+.eg-center-block-1 {
+  width: 8em;
+  @include scut-center-block;
+  // or @extend %scut-center-block;
+}
+.eg-center-block-2 {
+  margin-top: 1em;
+  @include scut-center-block(80%);
 }
 /* example end */
 
@@ -158,21 +154,21 @@ $eg-muted: #CCCCCC;
 }
 .eg-center-transform {
   display: inline-block;
-  &.m-1 {
-    @include scut-center-transform;
-    // or @extend %scut-center-transform;
-  }
-  &.m-2 {
-    @include scut-center-transform(x);
-    // or @extend %scut-center-transform-x;
-  }
-  &.m-3 {
-    @include scut-center-transform(y);
-    // or @extend %scut-center-transform-y;
-  }
-  &.m-4 {
-    @include scut-center-transform;
-  }
+}
+.eg-center-transform-1 {
+  @include scut-center-transform;
+  // or @extend %scut-center-transform;
+}
+.eg-center-transform-2 {
+  @include scut-center-transform(x);
+  // or @extend %scut-center-transform-x;
+}
+.eg-center-transform-3 {
+  @include scut-center-transform(y);
+  // or @extend %scut-center-transform-y;
+}
+.eg-center-transform-4 {
+  @include scut-center-transform;
 }
 /* example end */
 
@@ -289,10 +285,8 @@ $scut-em-base: 16;
     margin-bottom: 2em;
   }
 }
-.eg-fill {
-  &.m-1 {
-    padding: 2.5em 1em 0;
-  }
+.eg-fill-1 {
+  padding: 2.5em 1em 0;
 }
 /* end hidden rules */
 
@@ -301,18 +295,16 @@ $scut-em-base: 16;
   color: $eg-light;
   position: relative;
 }
-.eg-fill {
-  &.m-1 {
-    background-color: rgba(0,0,0,0.4);
-    @include scut-fill;
-    // or @extend %scut-fill;
-  }
-  &.m-2 {
-    @include scut-fill;
-  }
-  &.m-3 {
-    @include scut-fill(true);
-  }
+.eg-fill-1 {
+  background-color: rgba(0,0,0,0.4);
+  @include scut-fill;
+  // or @extend %scut-fill;
+}
+.eg-fill-2 {
+  @include scut-fill;
+}
+.eg-fill-3 {
+  @include scut-fill(true);
 }
 /* example end */
 
@@ -875,7 +867,7 @@ $scut-em-base: 16;
 /* example end */
 
 /* hidden rules */
-.eg-triangle {
+.eg-triangle-container > span {
   margin-right: 1em;
 }
 .eg-triangle-button {
@@ -884,20 +876,18 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-triangle {
-  &.m-default {
-    @include scut-triangle;
-    // or @extend %scut-triangle;
-  }
-  &.m-equilateral {
-    @include scut-triangle(up, 100px 87px, $eg-muted);
-  }
-  &.m-top-right {
-    @include scut-triangle(top-right, 2em, $eg-dark);
-  }
-  &.m-bottom-left {
-    @include scut-triangle(bottom-left, 80px 40px, $eg-light);
-  }
+.eg-triangle-default {
+  @include scut-triangle;
+  // or @extend %scut-triangle;
+}
+.eg-triangle-equilateral {
+  @include scut-triangle(up, 100px 87px, $eg-muted);
+}
+.eg-triangle-top-right {
+  @include scut-triangle(top-right, 2em, $eg-dark);
+}
+.eg-triangle-bottom-left {
+  @include scut-triangle(bottom-left, 80px 40px, $eg-light);
 }
 .eg-triangle-button {
   &:after {
@@ -910,7 +900,7 @@ $scut-em-base: 16;
   &.m-up:after {
     @include scut-triangle(up);
   }
-  &.m-more:after {
+  &.m-right:after {
     @include scut-triangle;
   }
 }

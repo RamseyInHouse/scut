@@ -5,7 +5,8 @@
 .eg-center-transform {
   display: inline-block;
 }
-.eg-center-transform.m-1 {
+
+.eg-center-transform-1 {
   position: absolute;
   top: 50%;
   margin-top: auto;
@@ -17,7 +18,8 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.eg-center-transform.m-2 {
+
+.eg-center-transform-2 {
   position: absolute;
   left: 50%;
   margin-left: auto;
@@ -26,7 +28,8 @@
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-.eg-center-transform.m-3 {
+
+.eg-center-transform-3 {
   position: absolute;
   top: 50%;
   margin-top: auto;
@@ -35,7 +38,8 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.eg-center-transform.m-4 {
+
+.eg-center-transform-4 {
   position: absolute;
   top: 50%;
   margin-top: auto;

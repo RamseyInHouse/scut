@@ -3,19 +3,19 @@
 }
 .eg-center-transform {
   display: inline-block;
-  &.m-1 {
-    @include scut-center-transform;
-    // or @extend %scut-center-transform;
-  }
-  &.m-2 {
-    @include scut-center-transform(x);
-    // or @extend %scut-center-transform-x;
-  }
-  &.m-3 {
-    @include scut-center-transform(y);
-    // or @extend %scut-center-transform-y;
-  }
-  &.m-4 {
-    @include scut-center-transform;
-  }
+}
+.eg-center-transform-1 {
+  @include scut-center-transform;
+  // or @extend %scut-center-transform;
+}
+.eg-center-transform-2 {
+  @include scut-center-transform(x);
+  // or @extend %scut-center-transform-x;
+}
+.eg-center-transform-3 {
+  @include scut-center-transform(y);
+  // or @extend %scut-center-transform-y;
+}
+.eg-center-transform-4 {
+  @include scut-center-transform;
 }
