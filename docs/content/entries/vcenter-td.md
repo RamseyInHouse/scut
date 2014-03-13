@@ -1,5 +1,5 @@
 ---
-name: "vertically center: table display method"
+name: "v-center: table display method"
 slug: vcenter-td
 summary: "Vertically center descendent elements with the `display: table` method."
 type: mixin, with default-values placeholder
@@ -15,18 +15,18 @@ references:
 example:
   show-html: true
   html: |
-    <div class="eg-vcenter-td m-1">
+    <div class="eg-vcenter-td eg-vcenter-td-1">
       <span class="scut-inner">
         A vertically centered span, with the default classname "scut-inner".
       </span>
     </div>
-    <div class="eg-vcenter-td m-2">
+    <div class="eg-vcenter-td eg-vcenter-td-2">
       <div class="eg-vcenter-td-inner">
         A vertically centered div, with its own special classname.
       </div>
     </div>
 ---
 
-**This method requires a container and an inner element.** The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
+*This method requires a container and an inner element.* The mixin applies to the container; the to-be-centered inner element is passed (by its selector) as an argument.
 
 Any to-be-centered element should be an *immediate child* of the container (`container > inner`).

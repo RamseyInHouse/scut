@@ -1,11 +1,11 @@
-.eg-list-custom.m-1 {
+.eg-list-custom-1 {
   padding-left: 0.75em;
   list-style-type: none;
 }
-.eg-list-custom.m-1 > li {
+.eg-list-custom-1 > li {
   position: relative;
 }
-.eg-list-custom.m-1 > li:before {
+.eg-list-custom-1 > li:before {
   content: "\2022";
   display: block;
   position: absolute;
@@ -14,14 +14,15 @@
   width: 0.75em;
   color: #9ae9ff;
 }
-.eg-list-custom.m-2 {
+
+.eg-list-custom-2 {
   padding-left: 2.3em;
   list-style-type: none;
 }
-.eg-list-custom.m-2 > li {
+.eg-list-custom-2 > li {
   position: relative;
 }
-.eg-list-custom.m-2 > li:before {
+.eg-list-custom-2 > li:before {
   content: "\00bb";
   display: block;
   position: absolute;
@@ -29,15 +30,16 @@
   left: -1.3em;
   width: 1.3em;
 }
-.eg-list-custom.m-3 {
+
+.eg-list-custom-3 {
   padding-left: 4em;
   list-style-type: none;
 }
-.eg-list-custom.m-3 > li {
+.eg-list-custom-3 > li {
   position: relative;
   counter-increment: scutlistcounter;
 }
-.eg-list-custom.m-3 > li:before {
+.eg-list-custom-3 > li:before {
   content: counter(scutlistcounter);
   display: block;
   position: absolute;
@@ -45,16 +47,17 @@
   left: -2em;
   width: 2em;
 }
-.eg-list-custom.m-4 {
+
+.eg-list-custom-4 {
   padding-left: 1.5em;
   list-style-type: none;
 }
-.eg-list-custom.m-4 > li {
+.eg-list-custom-4 > li {
   position: relative;
   counter-increment: scutlistcounter;
 }
-.eg-list-custom.m-4 > li:before {
-  content: counter(scutlistcounter,lower-alpha) ")";
+.eg-list-custom-4 > li:before {
+  content: counter(scutlistcounter, lower-alpha) ")";
   display: block;
   position: absolute;
   top: 0;
@@ -65,6 +68,6 @@
   font-weight: bold;
   top: -0.25em;
 }
-.eg-list-custom.m-4 > li + li {
+.eg-list-custom-4 > li + li {
   margin-top: 1em;
 }

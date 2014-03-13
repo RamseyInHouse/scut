@@ -1,10 +1,11 @@
-.eg-unstyled-list.m-1 {
+.eg-unstyled-list-1 {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-.eg-unstyled-list.m-2 {
+
+.eg-unstyled-list-2 {
   list-style-type: none;
   padding-left: 0;
 }

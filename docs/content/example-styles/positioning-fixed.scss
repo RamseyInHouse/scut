@@ -4,19 +4,13 @@
 /* import end */
 
 /* hidden rules */
-.eg-size {
-  background: $eg-muted;
-  &:not(:first-child) {
-    margin-top: 1em;
-  }
+.eg-fixed {
+  @extend %eg-dark-btn;
 }
 /* end hidden rules */
 
 /* example start */
-.eg-size-1 {
-  @include scut-size(8em);
-}
-.eg-size-2 {
-  @include scut-size(10em 5em);
+.eg-fixed {
+  @include scut-fixed(n 2em 1em n);
 }
 /* example end */

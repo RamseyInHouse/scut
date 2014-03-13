@@ -498,37 +498,31 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-list-custom {
-  &.m-1 {
-    @include scut-list-custom {
-      color: $eg-light;
-    }
+.eg-list-custom-1 {
+  @include scut-list-custom {
+    color: $eg-light;
   }
-  &.m-2 {
-    @include scut-list-custom("\00bb", 1.3em, 1em);
+}
+.eg-list-custom-2 {
+  @include scut-list-custom("\00bb", 1.3em, 1em);
+}
+.eg-list-custom-3 {
+  @include scut-list-custom(count, 2em, 2em);
+}
+.eg-list-custom-4 {
+  @include scut-list-custom(count ")" lower-alpha, 1.5em) {
+    color: $eg-dark;
+    font-size: 1.5em;
+    font-weight: bold;
+    top: -0.25em;
   }
-  &.m-3 {
-    @include scut-list-custom(count, 2em, 2em);
-  }
-  &.m-4 {
-    @include scut-list-custom(count ")" lower-alpha, 1.5em) {
-      color: $eg-dark;
-      font-size: 1.5em;
-      font-weight: bold;
-      top: -0.25em;
-    }
-    & > li + li {
-      margin-top: 1em;
-    }
+  & > li + li {
+    margin-top: 1em;
   }
 }
 /* example end */
 
 /* hidden rules */
-.eg-list-breadcrumb,
-.eg-list-divided {
-  margin-top: 1em;
-}
 /* end hidden rules */
 
 /* example start */
@@ -540,16 +534,13 @@ $scut-em-base: 16;
   @include scut-list-divided("/");
   // or @extend %scut-list-breadcrumb;
 }
-
-.eg-list-divided {
-  &.m-1 {
-    @include scut-list-divided("...", 0, right, $no-margin: false);
-  }
-  &.m-2 {
-    @include scut-list-divided("", 0.5em, left, 3em) {
-      background-color: $eg-dark;
-      width: 1em;
-    }
+.eg-list-divided-1 {
+  @include scut-list-divided("...", 0, right, $no-margin: false);
+}
+.eg-list-divided-2 {
+  @include scut-list-divided("", 0.5em, left, 3em) {
+    background-color: $eg-dark;
+    width: 1em;
   }
 }
 /* example end */
@@ -563,17 +554,15 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-list-floated {
-  &.m-1 {
-    @include scut-list-floated;
-    // or @extend %scut-list-floated;
-  }
-  &.m-2 {
-    @include scut-list-floated(1em, $no-margin: false);
-  }
-  &.m-3 {
-    @include scut-list-floated(2em, right);
-  }
+.eg-list-floated-1 {
+  @include scut-list-floated;
+  // or @extend %scut-list-floated;
+}
+.eg-list-floated-2 {
+  @include scut-list-floated(1em, $no-margin: false);
+}
+.eg-list-floated-3 {
+  @include scut-list-floated(2em, right);
 }
 /* example end */
 
@@ -586,14 +575,12 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-list-inline {
-  &.m-1 {
-    @include scut-list-inline;
-    // or @extend %scut-list-inline;
+.eg-list-inline-1 {
+  @include scut-list-inline;
+  // or @extend %scut-list-inline;
   }
-  &.m-2 {
-    @include scut-list-inline(1em, false);
-  }
+.eg-list-inline-2 {
+  @include scut-list-inline(1em, false);
 }
 /* example end */
 
@@ -617,14 +604,12 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-unstyled-list {
-  &.m-1 {
-    @include scut-list-unstyled;
-    // or @extend %scut-list-unstyled;
+.eg-unstyled-list-1 {
+  @include scut-list-unstyled;
+  // or @extend %scut-list-unstyled;
   }
-  &.m-2 {
-    @include scut-list-unstyled(false);
-  }
+.eg-unstyled-list-2 {
+  @include scut-list-unstyled(false);
 }
 /* example end */
 
@@ -641,16 +626,14 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-margin {
-  &.m-1 {
-    @include scut-margin(1em n);
-  }
-  &.m-2 {
-    @include scut-margin(0.5em 3em);
-  }
-  &.m-3 {
-    @include scut-margin(3em 1em n);
-  }
+.eg-margin-1 {
+  @include scut-margin(1em n);
+}
+.eg-margin-2 {
+  @include scut-margin(0.5em 3em);
+}
+.eg-margin-3 {
+  @include scut-margin(3em 1em n);
 }
 /* example end */
 
@@ -665,15 +648,15 @@ $scut-em-base: 16;
 /* example start */
 .eg-padding {
   display: inline-block;
-  &.m-1 {
-    @include scut-padding(1em n);
-  }
-  &.m-2 {
-    @include scut-padding(0.5em 3em);
-  }
-  &.m-3 {
-    @include scut-padding(n 8em 3em n);
-  }
+}
+.eg-padding-1 {
+  @include scut-padding(1em n);
+}
+.eg-padding-2 {
+  @include scut-padding(0.5em 3em);
+}
+.eg-padding-3 {
+  @include scut-padding(n 8em 3em n);
 }
 /* example end */
 
@@ -692,14 +675,24 @@ $scut-em-base: 16;
 .eg-absolute-container {
   position: relative;
 }
-.eg-absolute {
-  &.m-1 {
-    @include scut-absolute;
-    // or @extend %scut-absolute;
+.eg-absolute-1 {
+  @include scut-absolute;
+  // or @extend %scut-absolute;
   }
-  &.m-2 {
-    @include scut-absolute(n 0.5em 1em n);
-  }
+.eg-absolute-2 {
+  @include scut-absolute(n 0.5em 1em n);
+}
+/* example end */
+
+/* hidden rules */
+.eg-fixed {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-fixed {
+  @include scut-fixed(n 2em 1em n);
 }
 /* example end */
 
@@ -707,16 +700,14 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-relative {
-  &.m-1 {
-    @include scut-relative(0.2em 0.2em n n);
-  }
-  &.m-2 {
-    @include scut-relative(a a 1em n);
-  }
-  &.m-3 {
-    @include scut-relative(n n -0.5em 0.2em);
-  }
+.eg-relative-1 {
+  @include scut-relative(0.2em 0.2em n n);
+}
+.eg-relative-2 {
+  @include scut-relative(a a 1em n);
+}
+.eg-relative-3 {
+  @include scut-relative(n n -0.5em 0.2em);
 }
 /* example end */
 
@@ -729,23 +720,23 @@ $scut-em-base: 16;
 /* example start */
 .eg-ratio {
   background: $eg-muted;
-  &.m-1 {
-    width: 15em;
-    @include scut-ratio-box;
-    // or @extend %scut-ratio-box;
-  }
-  &.m-2 {
-    width: 7em;
-    @include scut-ratio-box;
-  }
-  &.m-3 {
-    width: 15em;
-    @include scut-ratio-box(16/9);
-  }
-  &.m-4 {
-    width: 7em;
-    @include scut-ratio-box(16/9);
-  }
+}
+.eg-ratio-1 {
+  width: 15em;
+  @include scut-ratio-box;
+  // or @extend %scut-ratio-box;
+}
+.eg-ratio-2 {
+  width: 7em;
+  @include scut-ratio-box;
+}
+.eg-ratio-3 {
+  width: 15em;
+  @include scut-ratio-box(16/9);
+}
+.eg-ratio-4 {
+  width: 7em;
+  @include scut-ratio-box(16/9);
 }
 .eg-ratio-inner {
   position: absolute;
@@ -856,13 +847,11 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-size {
-  &.m-1 {
-    @include scut-size(8em);
-  }
-  &.m-2 {
-    @include scut-size(10em 5em);
-  }
+.eg-size-1 {
+  @include scut-size(8em);
+}
+.eg-size-2 {
+  @include scut-size(10em 5em);
 }
 /* example end */
 
@@ -928,17 +917,15 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-vcenter-ib {
-  & > p {
-    max-width: 90%;
+.eg-vcenter-ib > p {
+  max-width: 90%;
+}
+.eg-vcenter-ib-1 {
+  @include scut-vcenter-ib;
+  // or @extend %scut-vcenter-ib;
   }
-  &.m-1 {
-    @include scut-vcenter-ib;
-    // or @extend %scut-vcenter-ib;
-  }
-  &.m-2 {
-    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
-  }
+.eg-vcenter-ib-2 {
+  @include scut-vcenter-ib(".eg-vcenter-ib-inner");
 }
 /* example end */
 
@@ -947,19 +934,17 @@ $scut-em-base: 16;
   @extend %eg-dark-btn;
   padding-top: 0;
   padding-bottom: 0;
+  vertical-align: middle;
 }
 /* end hidden rules */
 
 /* example start */
-.eg-vcenter-lh {
-  vertical-align: middle;
-  &.m-1 {
-    @include scut-vcenter-lh(50px);
-  }
-  &.m-2 {
-    @include scut-vcenter-lh(50px);
-    font-size: 0.75em;
-  }
+.eg-vcenter-lh-1 {
+  @include scut-vcenter-lh(50px);
+}
+.eg-vcenter-lh-2 {
+  @include scut-vcenter-lh(50px);
+  font-size: 0.7em;
 }
 /* example end */
 
@@ -974,15 +959,13 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-vcenter-td {
-  &.m-1 {
-    @include scut-vcenter-td;
-    // or @extend %scut-vcenter-td;
-    height: 8em;
-  }
-  &.m-2 {
-    @include scut-vcenter-td(".eg-vcenter-td-inner");
-    height: 12em;
-  }
+.eg-vcenter-td-1 {
+  @include scut-vcenter-td;
+  // or @extend %scut-vcenter-td;
+  height: 8em;
+}
+.eg-vcenter-td-2 {
+  @include scut-vcenter-td(".eg-vcenter-td-inner");
+  height: 12em;
 }
 /* example end */

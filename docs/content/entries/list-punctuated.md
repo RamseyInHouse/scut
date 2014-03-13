@@ -41,4 +41,4 @@ Since the most common punctuated list uses commas, commas are the default `$divi
 
 - **`%scut-list-comma`**
 
-Only the list's immediate children are punctuated (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
+Only the list's immediate children are punctuated (`ul > li`): Scut does not presume to know what you plan to do with sub-lists.

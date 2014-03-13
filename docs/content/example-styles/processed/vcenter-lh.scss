@@ -1,10 +1,7 @@
-.eg-vcenter-lh {
-  vertical-align: middle;
-  &.m-1 {
-    @include scut-vcenter-lh(50px);
-  }
-  &.m-2 {
-    @include scut-vcenter-lh(50px);
-    font-size: 0.75em;
-  }
+.eg-vcenter-lh-1 {
+  @include scut-vcenter-lh(50px);
+}
+.eg-vcenter-lh-2 {
+  @include scut-vcenter-lh(50px);
+  font-size: 0.7em;
 }

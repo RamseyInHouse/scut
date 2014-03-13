@@ -10,7 +10,7 @@ args:
     default: "\"|\""
   - variable: $space
     default: 0.5em
-    comment: Spacing to separate your dividers (on both sides) from the your list items.
+    comment: Spacing to separate your dividers (on both sides) from your list items.
   - variable: $dir
     default: left
     comment: The `float` direction.
@@ -34,12 +34,12 @@ example:
       <li>list item 2</li>
       <li>list item 3</li>
     </ul>
-    <ul class="eg-list-divided m-1">
+    <ul class="eg-list-divided-1">
       <li>list item 1</li>
       <li>list item 2</li>
       <li>list item 3</li>
     </ul>
-    <ul class="eg-list-divided m-2">
+    <ul class="eg-list-divided-2">
       <li>list item 1</li>
       <li>list item 2</li>
       <li>list item 3</li>
@@ -53,6 +53,6 @@ A couple of common variations have their own placeholders:
 
 But, of course, all things are possible.
 
-The `$height` argument is kind of tricky: If you want a `$divider` taller than your list items, you need include a `$height` argument to ensure nice neat vertical alignment. See the example below for clarification.
+The `$height` argument is kind of tricky: If you want a `$divider` *taller* than your list items, you need include a `$height` argument to ensure nice neat vertical alignment. See the example below.
 
-Only the list's immediate children are divided (`ul > li`): Scut does not presume to know what you might plan to do with sub-lists.
+Only the list's immediate children are divided (`ul > li`): Scut does not presume to know what you plan to do with sub-lists.

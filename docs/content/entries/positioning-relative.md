@@ -8,8 +8,8 @@ categories:
 args:
   - variable: $coordinates
     default: [n n n n]
-    comment: "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
+    comment: "See information about [`scut-coords`](positioning-coords.html)."
 example:
   html: |
-    <p>Some of <span class="eg-relative m-1">these</span> words <span class="eg-relative m-2">are</span> positioned in <span class="eg-relative m-3">strange</span> ways.</p>
-----
+    <p>Some of <span class="eg-relative-1">these</span> words <span class="eg-relative-2">are</span> positioned in <span class="eg-relative-3">strange</span> ways.</p>
+---

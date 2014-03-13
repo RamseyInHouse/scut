@@ -4,7 +4,7 @@ slug: indented-ps
 summary: Indent paragraphs instead of spacing them, as tends to happen in those "books" and "magazines" that old people read.
 type: mixin, with default-values placeholder
 categories:
-  - layout
+  - typography
 args:
   - variable: $indent
     default: 1.5em

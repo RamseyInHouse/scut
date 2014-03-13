@@ -1,9 +1,7 @@
-.eg-unstyled-list {
-  &.m-1 {
-    @include scut-list-unstyled;
-    // or @extend %scut-list-unstyled;
+.eg-unstyled-list-1 {
+  @include scut-list-unstyled;
+  // or @extend %scut-list-unstyled;
   }
-  &.m-2 {
-    @include scut-list-unstyled(false);
-  }
+.eg-unstyled-list-2 {
+  @include scut-list-unstyled(false);
 }

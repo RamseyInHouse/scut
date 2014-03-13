@@ -8,7 +8,12 @@ categories:
 args:
   - variable: $coordinates
     default: [0 n n 0]
-    comment: "<a href=\"#positioning_coordinates\">See information about `coordinates` above.</a>"
+    comment: "See information about [`scut-coords`](positioning-coords.html)."
+example:
+  show-html: true
+  html: |
+    <div>See the bottom right</div>
+    <div class="eg-fixed">Here's your example.</div>
 ---
 
-No example is provided because it would spoil this nice documentation. Check out the positioning mixins above and you'll get the picture.
+Notice the example in the bottom right.

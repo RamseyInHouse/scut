@@ -13,13 +13,13 @@ args:
     comment: A CSS selector for the page-wrapper element. *Wrap your selector in quotes.*
   - variable: $footer
     default: "\".scut-sticky\""
-    comment: A CSS selector for the footer. Wrap your selector in quotes.
+    comment: A CSS selector for the footer. Wrap this selector in quotes, too.
 references:
   - description: "CSS-Tricks: \"Sticky Footer\""
     url: http://css-tricks.com/snippets/css/sticky-footer/
 ---
 
-Avoid the weird look people give you when they see your footer in the middle of their browser window and unsettling emptiness beneath.
+Avoid the weird feeling people get and the weird look they give you when they see your footer in the middle of their browser window with only unsettling emptiness beneath.
 
 This one takes some commitment &mdash; but nothing you can't handle:
 

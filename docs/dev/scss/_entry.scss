@@ -76,15 +76,6 @@
   margin-top: 1em;
 }
 
-.summary {
-  @include scut-reset-paragraph;
-  background-color: $c-bg-light;
-  border-left: 0.3em solid $c-zing;
-  @extend %scut-reverse-italics;
-  padding: 1em;
-  margin-bottom: 1em;
-}
-
 .result {
   background-color: $c-bg-light;
   padding: 1em;

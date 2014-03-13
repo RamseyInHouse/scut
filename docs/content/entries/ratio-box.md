@@ -18,11 +18,11 @@ example:
   show-html: true
   html: |
     <p>These containers have different widths, but the ratio-boxes remain squares.</p>
-    <div class="eg-ratio m-1"></div>
-    <div class="eg-ratio m-2"></div>
+    <div class="eg-ratio eg-ratio-1"></div>
+    <div class="eg-ratio eg-ratio-2"></div>
     <p>And the same principle applies to these, which maintain a 16/9 ratio and use a different classname for the inner element:</p>
-    <div class="eg-ratio m-3"></div>
-    <div class="eg-ratio m-4">
+    <div class="eg-ratio eg-ratio-3"></div>
+    <div class="eg-ratio eg-ratio-4">
       <div class="eg-ratio-inner">Content inside</div>
     </div>
 ---

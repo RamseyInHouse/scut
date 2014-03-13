@@ -1,19 +1,20 @@
-.eg-list-inline.m-1 {
+.eg-list-inline-1 {
   list-style-type: none;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
 }
-.eg-list-inline.m-1 > li {
+.eg-list-inline-1 > li {
   display: inline-block;
 }
-.eg-list-inline.m-2 {
+
+.eg-list-inline-2 {
   list-style-type: none;
   padding-left: 0;
 }
-.eg-list-inline.m-2 > li {
+.eg-list-inline-2 > li {
   display: inline-block;
 }
-.eg-list-inline.m-2 > li + li {
+.eg-list-inline-2 > li + li {
   margin-left: 1em;
 }

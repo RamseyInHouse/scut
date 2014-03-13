@@ -1,8 +1,6 @@
-.eg-size {
-  &.m-1 {
-    @include scut-size(8em);
-  }
-  &.m-2 {
-    @include scut-size(10em 5em);
-  }
+.eg-size-1 {
+  @include scut-size(8em);
+}
+.eg-size-2 {
+  @include scut-size(10em 5em);
 }

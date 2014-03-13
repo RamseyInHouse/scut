@@ -1,11 +1,9 @@
-.eg-vcenter-td {
-  &.m-1 {
-    @include scut-vcenter-td;
-    // or @extend %scut-vcenter-td;
-    height: 8em;
-  }
-  &.m-2 {
-    @include scut-vcenter-td(".eg-vcenter-td-inner");
-    height: 12em;
-  }
+.eg-vcenter-td-1 {
+  @include scut-vcenter-td;
+  // or @extend %scut-vcenter-td;
+  height: 8em;
+}
+.eg-vcenter-td-2 {
+  @include scut-vcenter-td(".eg-vcenter-td-inner");
+  height: 12em;
 }

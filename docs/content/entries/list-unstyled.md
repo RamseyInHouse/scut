@@ -11,12 +11,12 @@ args:
     comment: If `true`, top and bottom margins will be removed from the list.
 example:
   html: |
-    <ul class="eg-unstyled-list m-1">
+    <ul class="eg-unstyled-list-1">
       <li>list item</li>
       <li>list item</li>
       <li>list item</li>
     </ul>
-    <ul class="eg-unstyled-list m-2">
+    <ul class="eg-unstyled-list-2">
       <li>list-with-margins item</li>
       <li>list-with-margins item</li>
       <li>list-with-margins item</li>

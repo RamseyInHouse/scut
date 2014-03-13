@@ -18,13 +18,11 @@
 .eg-absolute-container {
   position: relative;
 }
-.eg-absolute {
-  &.m-1 {
-    @include scut-absolute;
-    // or @extend %scut-absolute;
+.eg-absolute-1 {
+  @include scut-absolute;
+  // or @extend %scut-absolute;
   }
-  &.m-2 {
-    @include scut-absolute(n 0.5em 1em n);
-  }
+.eg-absolute-2 {
+  @include scut-absolute(n 0.5em 1em n);
 }
 /* example end */

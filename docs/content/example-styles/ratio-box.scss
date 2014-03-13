@@ -12,23 +12,23 @@
 /* example start */
 .eg-ratio {
   background: $eg-muted;
-  &.m-1 {
-    width: 15em;
-    @include scut-ratio-box;
-    // or @extend %scut-ratio-box;
-  }
-  &.m-2 {
-    width: 7em;
-    @include scut-ratio-box;
-  }
-  &.m-3 {
-    width: 15em;
-    @include scut-ratio-box(16/9);
-  }
-  &.m-4 {
-    width: 7em;
-    @include scut-ratio-box(16/9);
-  }
+}
+.eg-ratio-1 {
+  width: 15em;
+  @include scut-ratio-box;
+  // or @extend %scut-ratio-box;
+}
+.eg-ratio-2 {
+  width: 7em;
+  @include scut-ratio-box;
+}
+.eg-ratio-3 {
+  width: 15em;
+  @include scut-ratio-box(16/9);
+}
+.eg-ratio-4 {
+  width: 7em;
+  @include scut-ratio-box(16/9);
 }
 .eg-ratio-inner {
   position: absolute;

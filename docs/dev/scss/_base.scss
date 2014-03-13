@@ -41,3 +41,12 @@ button, .btn, a.btn {
 .hide-visually {
   @extend %scut-hide-visually;
 }
+
+.summary {
+  @include scut-reset-paragraph;
+  background-color: $c-bg-light;
+  border: 0.3em solid $c-zing;
+  @extend %scut-reverse-italics;
+  padding: 1em;
+  margin-bottom: 1em;
+}

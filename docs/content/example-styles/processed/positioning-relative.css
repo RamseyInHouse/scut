@@ -1,15 +1,17 @@
-.eg-relative.m-1 {
+.eg-relative-1 {
   position: relative;
   top: 0.2em;
   right: 0.2em;
 }
-.eg-relative.m-2 {
+
+.eg-relative-2 {
   position: relative;
   top: auto;
   right: auto;
   bottom: 1em;
 }
-.eg-relative.m-3 {
+
+.eg-relative-3 {
   position: relative;
   bottom: -0.5em;
   left: 0.2em;

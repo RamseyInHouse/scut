@@ -8,13 +8,13 @@ categories:
 args:
   - variable: $coordinates
     default: [0 n n 0]
-    comment: "See information about `coordinates` above."
+    comment: "See information about [`scut-coords`](positioning-coords.html)."
 example:
   show-html: true
   html: |
     <div class="eg-absolute-container">
-      <div class="eg-absolute m-1">Top left</div>
-      <div class="eg-absolute m-2">Bottom right</div>
+      <div class="eg-absolute eg-absolute-1">Top left</div>
+      <div class="eg-absolute eg-absolute-2">Bottom right</div>
     </div>
 ---
 

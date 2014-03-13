@@ -15,16 +15,14 @@
 /* end hidden rules */
 
 /* example start */
-.eg-vcenter-ib {
-  & > p {
-    max-width: 90%;
+.eg-vcenter-ib > p {
+  max-width: 90%;
+}
+.eg-vcenter-ib-1 {
+  @include scut-vcenter-ib;
+  // or @extend %scut-vcenter-ib;
   }
-  &.m-1 {
-    @include scut-vcenter-ib;
-    // or @extend %scut-vcenter-ib;
-  }
-  &.m-2 {
-    @include scut-vcenter-ib(".eg-vcenter-ib-inner");
-  }
+.eg-vcenter-ib-2 {
+  @include scut-vcenter-ib(".eg-vcenter-ib-inner");
 }
 /* example end */
