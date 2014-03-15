@@ -1,0 +1,30 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>scut-absolute, a Scut Utility</title><meta name="description" content="scut-absolute: Absolutely position an element and assign its coordinates, all in one line of SCSS."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="main.css"></head><body><header role="banner"><a href="index.html" class="site-title">Scut <span class="site-subtitle">Sass Utilities for the Front-End Laborer</span></a></header><article role="main"><header><h1>positioning: absolute</h1><dl class="info-list"><dt class="info--label m-help js-help-btn" data-help="use-name">use-name</dt><dd class="info--value"><code>scut-absolute</code></dd><dt class="info--label m-help js-help-btn" data-help="type">type</dt><dd class="info--value">mixin, with default-values placeholder</dd><dt class="info--label m-help js-help-btn" data-help="arguments">arguments</dt><dd class="info--value"><ol class="args"><li><code class="args--name">$coordinates</code> [&nbsp; <span class="args--default">default:</span> <code class="args--default--val">0 n n 0</code>&nbsp;]<div class="args--comment"><p><a href="#positioning_coordinates">See information about <code>coordinates</code> above.</a></p></div></li></ol></dd></dl></header><section><p>Absolutely position an element and assign its coordinates, all in one line of SCSS.</p><p>You&#39;ll save years of your life, and probably lose weight.</p></section><section class="example"><h2>Example</h2><div class="example--html"><h3>HTML</h3><pre><code class="language-markup">
+&lt;div class=&quot;eg-absolute-container&quot;&gt;
+  &lt;div class=&quot;eg-absolute m-1&quot;&gt;Top left&lt;/div&gt;
+  &lt;div class=&quot;eg-absolute m-2&quot;&gt;Bottom right&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div><div id="positioning: absolute-scss" class="example--scss"><h3>SCSS</h3><pre><code class="language-scss">.eg-absolute-container {
+  position: relative;
+}
+.eg-absolute {
+  &amp;.m-1 {
+    @include scut-absolute;
+    // or @extend %scut-absolute;
+  }
+  &amp;.m-2 {
+    @include scut-absolute(n 0.5em 1em n);
+  }
+}
+</code></pre></div><div id="positioning: absolute-css" class="example--css"><h3>Compiled CSS</h3><pre><code class="language-css">.eg-absolute-container {
+  position: relative;
+}
+.eg-absolute.m-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.eg-absolute.m-2 {
+  position: absolute;
+  right: 0.5em;
+  bottom: 1em;
+}</code></pre></div><button class="toggle-css js-toggle-css" data-entry="positioning: absolute">Show compiled CSS</button><div class="example--disp"><h3>Result</h3><div class="example--disp--inner"><div class="eg-absolute-container"><div class="eg-absolute m-1">Top left</div><div class="eg-absolute m-2">Bottom right</div></div></div></div></section></article><nav role="navigation"><h2>functions</h2><ul><li><a href="em.html">pixels-to-ems</a></li><li><a href="rem.html">pixels-to-rems</a></li><li><a href="strip-unit.html">strip unit</a></li></ul><h2>general</h2><ul><li><a href="border.html">border</a></li><li><a href="circle.html">circle</a></li><li><a href="color-swap.html">color swap</a></li><li><a href="hd-bp.html">HD (HiDPI) breakpoint</a></li><li><a href="hide-visually.html">hide visually</a></li><li><a href="image-replace.html">image replacement</a></li><li><a href="rem-fallback.html">REMs with fallback</a></li><li><a href="reset.html">reset</a></li><li><a href="selected.html">selected</a></li><li><a href="triangle.html">triangle</a></li></ul><h2>layout</h2><ul><li><a href="absolute.html">positioning: absolute</a></li><li><a href="center-absolutely.html">center absolutely</a></li><li><a href="center-block.html">center block</a></li><li><a href="center-transform.html">center transform</a></li><li><a href="clearfix.html">clearfix</a></li><li><a href="fill.html">fill</a></li><li><a href="fonticon-label.html">fonticon label</a></li><li><a href="indented-ps.html">indented paragraphs</a></li><li><a href="list-custom.html">list: custom</a></li><li><a href="list-divided.html">list: divided</a></li><li><a href="list-floated.html">list: floated</a></li><li><a href="list-punctuated.html">list: punctuated</a></li><li><a href="list-unstyled.html">list: unstyled</a></li><li><a href="margin.html">margin</a></li><li><a href="padding.html">padding</a></li><li><a href="coords.html">positioning: coordinates</a></li><li><a href="ratio-box.html">ratio-box</a></li><li><a href="relative.html">positioning: relative</a></li><li><a href="size.html">size</a></li><li><a href="sticky-footer.html">sticky footer</a></li><li><a href="vcenter-ib.html">vertically center: inline-block</a></li><li><a href="vcenter-lh.html">vertically center: line-height</a></li><li><a href="vcenter-td.html">vertically center: table display</a></li><li><a href="vcenter-tt.html">vertically center: transform</a></li></ul><h2>typography</h2><ul><li><a href="bookends.html">bookends</a></li><li><a href="characters.html">characters</a></li><li><a href="font-face.html">font-face</a></li><li><a href="hanging-indent.html">hanging indent</a></li><li><a href="key-val.html">key-value punctuation</a></li><li><a href="link-bb.html">link bottom-bordered</a></li><li><a href="reverse-italics.html">reverse italics</a></li><li><a href="side-lined.html">side-lined</a></li><li><a href="truncate.html">truncate</a></li></ul></nav></body></html>
