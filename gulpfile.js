@@ -63,7 +63,7 @@ gulp.task('docStyle', function() {
     .pipe(connect.reload());
 });
 
-// copy over files
+// copy over JS files
 gulp.task('copyJs', function() {
   gulp.src([
       './docs/dev/js/prism.js',
@@ -90,6 +90,12 @@ gulp.task('connect', connect.server({
   port: 9000,
   livereload: true
 }));
+
+// copy docs dist folder to parallel gh-pages directory
+gulp.task('copyDocs', function() {
+  gulp.src('./docs/dist/*')
+    .pipe(gulp.dest('../gh-pages/'));
+});
 
 // watch for changes and run relevant tasks
 gulp.task('watch', function() {
