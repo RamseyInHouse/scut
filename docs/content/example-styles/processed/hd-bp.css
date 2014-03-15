@@ -1,8 +1,0 @@
-.eg-hd-bp {
-  background-color: #cccccc;
-}
-@media (-o-min-device-pixel-ratio: 2 / 1), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .eg-hd-bp {
-    background-color: #9ae9ff;
-  }
-}

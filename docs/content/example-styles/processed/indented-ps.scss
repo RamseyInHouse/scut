@@ -1,7 +1,0 @@
-.eg-indented-ps-1 {
-  @include scut-indented-ps;
-  // or @extend %scut-indented-ps;
-}
-.eg-indented-ps-2 {
-  @include scut-indented-ps(3em, false);
-}

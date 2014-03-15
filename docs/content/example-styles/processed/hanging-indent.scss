@@ -1,7 +1,0 @@
-.eg-hanging-indent-1 {
-  @include scut-hanging-indent;
-  // or @extend %scut-hanging-indent;
-}
-.eg-hanging-indent-2 {
-  @include scut-hanging-indent(2em);
-}

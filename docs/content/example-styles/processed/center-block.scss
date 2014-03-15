@@ -1,9 +1,0 @@
-.eg-center-block-1 {
-  width: 8em;
-  @include scut-center-block;
-  // or @extend %scut-center-block;
-}
-.eg-center-block-2 {
-  margin-top: 1em;
-  @include scut-center-block(80%);
-}
