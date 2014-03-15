@@ -919,6 +919,12 @@ button:focus, .btn:focus, a.btn:focus {
     color: #fff;
     font-weight: bold;
   }
+  .version > a {
+    color: #9ae9ff;
+  }
+  .version > a:hover, .version > a:focus {
+    color: #c42872;
+  }
 
   .scut-elsewhere-links > li {
     display: block;
@@ -2459,6 +2465,7 @@ button:focus, .btn:focus, a.btn:focus {
 /* example end */
 /* hidden rules */
 .eg-vcenter-lh {
+  border: 0;
   padding-top: 0;
   padding-bottom: 0;
   vertical-align: middle;
