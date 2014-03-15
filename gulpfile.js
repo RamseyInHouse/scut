@@ -11,6 +11,7 @@ var connect = require('gulp-connect');
 var newer = require('gulp-newer');
 var htmlmin = require('gulp-htmlmin');
 var header = require('gulp-header');
+var runSequence = require('run-sequence');
 require('gulp-grunt')(gulp);
 
 // build Scut
@@ -75,7 +76,7 @@ gulp.task('processExamples', function() {
 });
 
 // compile the main stylesheet
-gulp.task('docStyle', function() {
+gulp.task('docStyle', ['processExamples'], function() {
   gulp.src(['./docs/dev/scss/main.scss'])
     .pipe(sass({
       'style': 'expanded'
@@ -154,8 +155,20 @@ gulp.task('versionNumber', function() {
 });
 
 // new version
-gulp.task('version', [
-  'build',
-  'versionNumber',
-  'assemble'
-]);
+gulp.task('version', function(callback) {
+  runSequence(
+    'build',
+    'versionNumber',
+    'assemble',
+    callback
+  );
+});
+
+// docs tasks
+gulp.task('docs', function(callback) {
+  runSequence(
+    'docStyle',
+    'assemble',
+    callback
+  );
+});

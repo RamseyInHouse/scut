@@ -19,6 +19,7 @@
     "gulp-connect": "~1.0.5",
     "gulp-newer": "~0.3.0",
     "gulp-htmlmin": "~0.1.2",
-    "moment": "^2.5.1"
+    "moment": "^2.5.1",
+    "run-sequence": "^0.3.6"
   }
 }
