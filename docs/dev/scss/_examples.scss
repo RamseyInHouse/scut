@@ -802,6 +802,7 @@ $scut-em-base: 16;
 /* hidden rules */
 .eg-vcenter-lh {
   @extend %eg-dark-btn;
+  border: 0;
   padding-top: 0;
   padding-bottom: 0;
   vertical-align: middle;
