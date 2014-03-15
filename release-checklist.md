@@ -2,8 +2,7 @@ To release:
 
 - Make sure notes have been added to changelog.
 - Change version number at top of Gruntfile.
-- Maybe add old version to `data.yml`.
-- Run `grunt version`.
+- Run `gulp version`.
 - Build and push a new gem (`gem build scut.gemspec`, `gem push scut...gem`).
 - Delete the gem.
 - Commit and push.

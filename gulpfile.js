@@ -136,3 +136,16 @@ gulp.task('watch', function() {
 
 // develop: watch for changes and make things happen
 gulp.task('default', ['connect', 'watch']);
+
+// grunt version
+//
+
+// new version
+gulp.task('gruntVersion', function() {
+  gulp.run('grunt-replace');
+});
+gulp.task('version', [
+  'build',
+  'gruntVersion',
+  'assemble'
+]);
