@@ -15,6 +15,10 @@ description: "scut-<%= slug %>: <%= summary %>"
       view source
     </a>
 
+    <div class="summary">
+      {{#markdown}}{{{summary}}}{{/markdown}}
+    </div>
+
     <dl class="info-list">
       <dt>use-name</dt>
       <dd>
@@ -65,9 +69,6 @@ description: "scut-<%= slug %>: <%= summary %>"
   </header>
 
   <section>
-    <div class="summary">
-      {{#markdown}}{{{summary}}}{{/markdown}}
-    </div>
     {{#markdown}}{{>body}}{{/markdown}}
   </section>
 

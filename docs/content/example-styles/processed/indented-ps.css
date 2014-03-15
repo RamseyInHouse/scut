@@ -1,11 +1,12 @@
-.eg-indented-ps.m-1 p {
+.eg-indented-ps-1 p {
   margin: 0;
   text-indent: 1.5em;
 }
-.eg-indented-ps.m-1 p:first-of-type {
+.eg-indented-ps-1 p:first-of-type {
   text-indent: 0;
 }
-.eg-indented-ps.m-2 p {
+
+.eg-indented-ps-2 p {
   margin: 0;
   text-indent: 3em;
 }

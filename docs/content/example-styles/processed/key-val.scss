@@ -1,22 +1,19 @@
-.eg-key-val {
-  max-width: 20em;
-  &.m-1 {
-    @include scut-key-val;
-    // or @extend %scut-key-val;
+.eg-key-val-1 {
+  @include scut-key-val;
+  // or @extend %scut-key-val;
+}
+.eg-key-val-2 {
+  @include scut-key-val("\2014", 0.5em, 8em, 1em, 0.5em);
+  & > dt {
+    font-weight: bold;
   }
-  &.m-2 {
-    @include scut-key-val("\2014", 0.5em, 8em, 1em, 0.5em);
-    & > dt {
-      font-weight: bold;
-    }
-  }
-  &.m-3 {
-    $dt-width: 6em;
-    @include scut-key-val("", 0, $dt-width + 1em);
-    & > dt {
-      width: $dt-width;
-      text-align: right;
-      text-transform: uppercase;
-    }
+}
+.eg-key-val-3 {
+  $dt-width: 6em;
+  @include scut-key-val("", 0, $dt-width + 1em);
+  & > dt {
+    width: $dt-width;
+    text-align: right;
+    text-transform: uppercase;
   }
 }

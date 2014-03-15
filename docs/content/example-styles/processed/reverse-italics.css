@@ -1,12 +1,13 @@
-.eg-reverse-italics.m-default {
+.eg-reverse-italics-default {
   font-style: italic;
 }
-.eg-reverse-italics.m-default em, .eg-reverse-italics.m-default cite, .eg-reverse-italics.m-default i, .eg-reverse-italics.m-default false {
+.eg-reverse-italics-default em, .eg-reverse-italics-default cite, .eg-reverse-italics-default i, .eg-reverse-italics-default false {
   font-style: normal;
 }
-.eg-reverse-italics.m-variant {
+
+.eg-reverse-italics-variant {
   font-style: italic;
 }
-.eg-reverse-italics.m-variant em, .eg-reverse-italics.m-variant cite, .eg-reverse-italics.m-variant i, .eg-reverse-italics.m-variant strong, .eg-reverse-italics.m-variant b, .eg-reverse-italics.m-variant .no-italics {
+.eg-reverse-italics-variant em, .eg-reverse-italics-variant cite, .eg-reverse-italics-variant i, .eg-reverse-italics-variant strong, .eg-reverse-italics-variant b, .eg-reverse-italics-variant .no-italics {
   font-style: normal;
 }

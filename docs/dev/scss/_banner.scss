@@ -56,10 +56,16 @@
   }
 }
 
-.scut-elsewhere {
+.scut-subbanner {
   background: #fff;
-  padding: 0.5em 1em;
+}
+.version,
+.scut-elsewhere-links {
   border-bottom: 0.2em solid $c-bg-list;
+  padding: 0.5em 1em;
+}
+
+.scut-elsewhere-links {
   @extend %scut-list-bar;
 }
 .scut-elsewhere-link {
@@ -87,13 +93,19 @@
   .goto-nav {
     display: none;
   }
-  .scut-elsewhere {
+  .scut-subbanner {
     background-color: $c-bg-list;
     width: 25%;
     max-width: scut-em(235);
     float: left;
     position: relative;
     z-index: 10;
+  }
+  .version {
+    color: #fff;
+    font-weight: bold;
+  }
+  .scut-elsewhere-links {
     & > li {
       display: block;
       float: none;

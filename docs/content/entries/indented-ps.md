@@ -13,15 +13,15 @@ args:
     comment: It is a not uncommon printing practice to leave the first paragraph un-indented.
 example:
   html: |
-    <div class="eg-indented-ps m-1">
-      <div><strong>Default</strong></div>
+    <div class="eg-indented-ps eg-indented-ps-1">
+      <div><strong>Default</strong> (first line un-indented)</div>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
       <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
       <p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
     </div>
-    <div class="eg-indented-ps m-2">
-      <div><strong>Variant</strong></div>
+    <div class="eg-indented-ps eg-indented-ps-2">
+      <div><strong>Variant</strong> (first line is no exception; larger indent)</div>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
       <p>Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       <p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>

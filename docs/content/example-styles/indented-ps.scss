@@ -12,13 +12,11 @@
 /* hidden end */
 
 /* example start */
-.eg-indented-ps {
-  &.m-1 {
-    @include scut-indented-ps;
-    // or @extend %scut-indented-ps;
-  }
-  &.m-2 {
-    @include scut-indented-ps(3em, false);
-  }
+.eg-indented-ps-1 {
+  @include scut-indented-ps;
+  // or @extend %scut-indented-ps;
+}
+.eg-indented-ps-2 {
+  @include scut-indented-ps(3em, false);
 }
 /* example end */

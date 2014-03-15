@@ -1,9 +1,7 @@
-.eg-reverse-italics {
-  &.m-default {
-    @include scut-reverse-italics;
-    // or @extend %scut-reverse-italics;
-  }
-  &.m-variant {
-    @include scut-reverse-italics("strong" "b" ".no-italics");
-  }
+.eg-reverse-italics-default {
+  @include scut-reverse-italics;
+  // or @extend %scut-reverse-italics;
+}
+.eg-reverse-italics-variant {
+  @include scut-reverse-italics("strong" "b" ".no-italics");
 }

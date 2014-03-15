@@ -48,5 +48,5 @@ button, .btn, a.btn {
   border: 0.3em solid $c-zing;
   @extend %scut-reverse-italics;
   padding: 1em;
-  margin-bottom: 1em;
+  margin: 1em 0;
 }

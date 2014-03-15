@@ -1,10 +1,7 @@
-.eg-hanging-indent {
-  max-width: 25em;
-  &.m-1 {
-    @include scut-hanging-indent;
-    // or @extend %scut-hanging-indent;
-  }
-  &.m-2 {
-    @include scut-hanging-indent(2em);
-  }
+.eg-hanging-indent-1 {
+  @include scut-hanging-indent;
+  // or @extend %scut-hanging-indent;
+}
+.eg-hanging-indent-2 {
+  @include scut-hanging-indent(2em);
 }

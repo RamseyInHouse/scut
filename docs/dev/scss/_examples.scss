@@ -367,18 +367,18 @@ $scut-em-base: 16;
 /* example end */
 
 /* hidden rules */
+.eg-hanging-indent {
+  max-width: 25em;
+}
 /* end hidden rules */
 
 /* example start */
-.eg-hanging-indent {
-  max-width: 25em;
-  &.m-1 {
-    @include scut-hanging-indent;
-    // or @extend %scut-hanging-indent;
-  }
-  &.m-2 {
-    @include scut-hanging-indent(2em);
-  }
+.eg-hanging-indent-1 {
+  @include scut-hanging-indent;
+  // or @extend %scut-hanging-indent;
+}
+.eg-hanging-indent-2 {
+  @include scut-hanging-indent(2em);
 }
 /* example end */
 
@@ -429,41 +429,39 @@ $scut-em-base: 16;
 /* hidden end */
 
 /* example start */
-.eg-indented-ps {
-  &.m-1 {
-    @include scut-indented-ps;
-    // or @extend %scut-indented-ps;
-  }
-  &.m-2 {
-    @include scut-indented-ps(3em, false);
-  }
+.eg-indented-ps-1 {
+  @include scut-indented-ps;
+  // or @extend %scut-indented-ps;
+}
+.eg-indented-ps-2 {
+  @include scut-indented-ps(3em, false);
 }
 /* example end */
 
 /* hidden rules */
+.eg-key-val-c {
+  max-width: 25em;
+}
 /* end hidden rules */
 
 /* example start */
-.eg-key-val {
-  max-width: 20em;
-  &.m-1 {
-    @include scut-key-val;
-    // or @extend %scut-key-val;
+.eg-key-val-1 {
+  @include scut-key-val;
+  // or @extend %scut-key-val;
+}
+.eg-key-val-2 {
+  @include scut-key-val("\2014", 0.5em, 8em, 1em, 0.5em);
+  & > dt {
+    font-weight: bold;
   }
-  &.m-2 {
-    @include scut-key-val("\2014", 0.5em, 8em, 1em, 0.5em);
-    & > dt {
-      font-weight: bold;
-    }
-  }
-  &.m-3 {
-    $dt-width: 6em;
-    @include scut-key-val("", 0, $dt-width + 1em);
-    & > dt {
-      width: $dt-width;
-      text-align: right;
-      text-transform: uppercase;
-    }
+}
+.eg-key-val-3 {
+  $dt-width: 6em;
+  @include scut-key-val("", 0, $dt-width + 1em);
+  & > dt {
+    width: $dt-width;
+    text-align: right;
+    text-transform: uppercase;
   }
 }
 /* example end */
@@ -472,18 +470,16 @@ $scut-em-base: 16;
 /* hidden end */
 
 /* example start */
-.eg-link-bb {
-  &.m-1 a {
-    @include scut-link-bb;
-    // or @extend %scut-link-bb;
-  }
-  &.m-2 a {
-    color: $eg-muted;
-    @include scut-link-bb(inherit, double, 4px);
-    &:hover {
-      color: $eg-dark;
-      border-bottom-color: $eg-light;
-    }
+.eg-link-bb-1 a {
+  @include scut-link-bb;
+  // or @extend %scut-link-bb;
+}
+.eg-link-bb-2 a {
+  color: $eg-muted;
+  @include scut-link-bb(inherit, double, 4px);
+  &:hover {
+    color: $eg-dark;
+    border-bottom-color: $eg-light;
   }
 }
 /* example end */
@@ -784,14 +780,12 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-reverse-italics {
-  &.m-default {
-    @include scut-reverse-italics;
-    // or @extend %scut-reverse-italics;
-  }
-  &.m-variant {
-    @include scut-reverse-italics("strong" "b" ".no-italics");
-  }
+.eg-reverse-italics-default {
+  @include scut-reverse-italics;
+  // or @extend %scut-reverse-italics;
+}
+.eg-reverse-italics-variant {
+  @include scut-reverse-italics("strong" "b" ".no-italics");
 }
 /* example end */
 
@@ -819,21 +813,19 @@ $scut-em-base: 16;
 /* end hidden rules */
 
 /* example start */
-.eg-side-lined {
-  &.m-1 {
-    @include scut-side-lined;
-    // or @extend %scut-side-lined;
-  }
-  &.m-2 {
-    font-size: 2em;
-    @include scut-side-lined(0.3em, 1em, $eg-light, $v-adjust: 0.1em);
-  }
-  &.m-3 {
-    @include scut-side-lined($double: 0.3em, $color: $eg-muted, $v-adjust: 0.05em);
-  }
-  &.m-4 {
-    @include scut-side-lined($style: dotted);
-  }
+.eg-side-lined-1 {
+  @include scut-side-lined;
+  // or @extend %scut-side-lined;
+}
+.eg-side-lined-2 {
+  font-size: 2em;
+  @include scut-side-lined(0.3em, 1em, $eg-light, $v-adjust: 0.1em);
+}
+.eg-side-lined-3 {
+  @include scut-side-lined($double: 0.3em, $color: $eg-muted, $v-adjust: 0.05em);
+}
+.eg-side-lined-4 {
+  @include scut-side-lined($style: dotted);
 }
 /* example end */
 

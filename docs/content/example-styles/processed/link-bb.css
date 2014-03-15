@@ -1,15 +1,16 @@
-.eg-link-bb.m-1 a {
+.eg-link-bb-1 a {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: solid;
 }
-.eg-link-bb.m-2 a {
+
+.eg-link-bb-2 a {
   color: #cccccc;
   text-decoration: none;
   border-bottom-width: 4px;
   border-bottom-style: double;
 }
-.eg-link-bb.m-2 a:hover {
+.eg-link-bb-2 a:hover {
   color: #002834;
   border-bottom-color: #9ae9ff;
 }
