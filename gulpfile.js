@@ -1,3 +1,5 @@
+var currentVersion = '0.9.1';
+
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var replace = require('gulp-replace');
@@ -7,7 +9,26 @@ var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var newer = require('gulp-newer');
 var htmlmin = require('gulp-htmlmin');
+var header = require('gulp-header');
 require('gulp-grunt')(gulp);
+
+// build Scut
+var distBanner = '/*\n* Scut, a collection of Sass utilities\n* to ease and improve our implementations of common style-code patterns.\n* v' + currentVersion + '\n* Docs at http://davidtheclark.github.io/scut\n*/\n\n';
+gulp.task('build', function() {
+  gulp.src([
+      // when order matters
+      'src/layout/_clearfix.scss',
+      'src/layout/_list-unstyled.scss',
+      'src/layout/_list-floated.scss',
+      'src/layout/_positioning-coordinates.scss',
+      'src/functions/_strip-unit.scss',
+      // the rest of them
+      'src/**/*.scss'
+    ])
+    .pipe(concat('_scut-test.scss'))
+    .pipe(header(distBanner))
+    .pipe(gulp.dest('./dist/'));
+});
 
 // process example SCSS to output
 // 1. SCSS ready for the markup

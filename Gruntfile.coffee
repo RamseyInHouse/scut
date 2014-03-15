@@ -1,4 +1,4 @@
-currentVersion = "0.9.1"
+currentVersion = "0.10.0"
 
 path = require "path"
 
@@ -31,4 +31,28 @@ module.exports = (grunt) ->
           dest: "docs/dist/"
         }]
 
+    replace:
+      # Change version number in all relevant places
+      version:
+        src: [
+          "bower.json"
+          "package.json"
+          "docs/content/data.yml"
+          "lib/scut.rb"
+        ]
+        overwrite: true
+        replacements: [{
+        # For bower.json, package.json, and data.yml
+          from: /\"version\": \"(.*)\"/g,
+          to: "\"version\": \"#{currentVersion}\""
+        }, {
+        # For the Ruby business
+          from: /VERSION = \"(.*)\"/g,
+          to: "VERSION = \"#{currentVersion}\""
+        }, {
+          from: /DATE = \"(.*)\"/g,
+          to: "DATE = \"#{grunt.template.today('yyyy-mm-dd')}\""
+        }]
+
   grunt.loadNpmTasks "assemble"
+  grunt.loadNpmTasks "grunt-text-replace"
