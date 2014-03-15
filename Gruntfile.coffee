@@ -1,4 +1,4 @@
-currentVersion = "0.10.0"
+currentVersion = "0.10.1"
 
 path = require "path"
 

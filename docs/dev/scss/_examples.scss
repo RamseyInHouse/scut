@@ -16,49 +16,6 @@ $eg-muted: #CCCCCC;
 }
 
 /* hidden rules */
-.eg-bookends {
-  &:not(:first-child) {
-    margin-top: 12px;
-  }
-}
-/* end hidden rules */
-
-/* example start */
-.eg-bookends {
-  &.m-1 {
-    @include scut-bookends($content: "\2014");
-  }
-  &.m-2 {
-    @include scut-bookends(0, "\201c" "\201d");
-  }
-  &.m-3 {
-    font-size: 2em;
-    @include scut-bookends(0.25em, "\00ab" "\00bb") {
-      color: $eg-light;
-    }
-    &:hover,
-    &:focus {
-      color: $eg-light;
-      @include scut-bookends(false, false) {
-        color: $eg-dark;
-      }
-    }
-  }
-  &.m-4 {
-    background-color: $eg-dark;
-    color: white;
-    text-align: center;
-    @include scut-bookends {
-      height: 2em;
-      width: 2em;
-      background-color: $eg-light;
-      vertical-align: middle;
-    }
-  }
-}
-/* example end */
-
-/* hidden rules */
 .eg-border {
   background-color: $eg-muted;
   padding: 1em;
@@ -210,27 +167,6 @@ $eg-muted: #CCCCCC;
 /* example end */
 
 /* hidden rules */
-.eg-color-swap {
-  @extend %eg-light-btn;
-}
-/* end hidden rules */
-
-/* example start */
-.eg-color-swap {
-  &.m-1 {
-    @include scut-color-swap($eg-dark, $eg-light, 1s);
-  }
-  &.m-2 {
-    @include scut-color-swap($eg-light $eg-dark, $eg-dark $eg-light);
-  }
-  &.m-3 {
-    color: white;
-    @include scut-color-swap($eg-dark, $eg-light, 0.5s, true);
-  }
-}
-/* example end */
-
-/* hidden rules */
 .eg-em-c {
   font-size: 16px;
 }
@@ -305,64 +241,6 @@ $scut-em-base: 16;
 }
 .eg-fill-3 {
   @include scut-fill(true);
-}
-/* example end */
-
-/* hidden rules */
-.example--disp--inner .eg-fonticon-label {
-  @extend %eg-dark-btn;
-}
-/* end hidden rules */
-
-/* example start */
-@include scut-font-face("icomoon-stereo", fonts/icomoon-stereo);
-
-.eg-fonticon-label {
-  &.m-1 {
-    @include scut-fonticon-label("icomoon-stereo", "\e004");
-    &:hover:before,
-    &:focus:before {
-      content: "\e002"
-    }
-  }
-  &.m-2 {
-    @include scut-fonticon-label("icomoon-stereo", "\e003") {
-      font-size: 2em;
-    }
-    &:hover,
-    &:focus {
-      color: $eg-light;
-    }
-  }
-  &.m-3 {
-    @include scut-fonticon-label("icomoon-stereo", "\e001", 1.5em, after) {
-      color: $eg-light;
-    }
-    &:hover,
-    &:focus {
-      color: $eg-light;
-      &:after {
-        color: white;
-      }
-    }
-  }
-}
-
-@keyframes rewind {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-1em); }
-}
-
-.eg-fonticon-label.m-4 {
-  font-size: 2em;
-  padding-left: 2em;
-  @include scut-fonticon-label("icomoon-stereo", "\e000") {
-    font-size: 2em;
-  }
-  &:hover:before,
-  &:focus:before {
-    animation: rewind 1s linear infinite;
-  }
 }
 /* example end */
 

@@ -1,3 +1,6 @@
+### 0.10.1
+- Fixed bug in build process.
+
 ### 0.10.0
 - Added some squares to characters: `$scut-square`, `$scut-whitesquare`, `$scut-ssquare`, `$scut-swhitesquare`.
 - Removed `scut-color-swap`, `scut-bookends`, and `scut-fonticon-label` because I never ended up using them.

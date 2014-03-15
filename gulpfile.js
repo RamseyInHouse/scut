@@ -1,4 +1,4 @@
-var currentVersion = '0.10.0';
+var currentVersion = '0.10.1';
 
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
@@ -20,7 +20,7 @@ gulp.task('build', function() {
       'src/layout/_clearfix.scss',
       'src/layout/_list-unstyled.scss',
       'src/layout/_list-floated.scss',
-      'src/layout/_positioning-coordinates.scss',
+      'src/layout/_positioning-coords.scss',
       'src/functions/_strip-unit.scss',
       // the rest of them
       'src/**/*.scss'

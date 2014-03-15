@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.0
+* v0.10.1
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -71,6 +71,41 @@
   @include scut-list-floated;
 }
 
+// SCUT POSITIONING: COORDINATES
+// http://davidtheclark.github.io/scut/#positioning_coordinates
+
+@function scut-autoOrValue ($val) {
+  @if $val == a or $val == auto {
+    @return auto;
+  }
+  @else {
+    @return $val;
+  }
+}
+
+@mixin scut-coords (
+  $coordinates: n n n n
+) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  @if $top != n {
+    top: scut-autoOrValue($top);
+  }
+  @if $right != n {
+    right: scut-autoOrValue($right);
+  }
+  @if $bottom != n {
+    bottom: scut-autoOrValue($bottom);
+  }
+  @if $left != n {
+    left: scut-autoOrValue($left);
+  }
+
+}
 // SCUT STRIP UNIT
 // http://davidtheclark.github.io/scut/#strip_unit
 
@@ -940,41 +975,6 @@ $scut-rem-base: 16 !default;
 
 %scut-absolute {
   @include scut-absolute;
-}
-// SCUT POSITIONING: COORDINATES
-// http://davidtheclark.github.io/scut/#positioning_coordinates
-
-@function scut-autoOrValue ($val) {
-  @if $val == a or $val == auto {
-    @return auto;
-  }
-  @else {
-    @return $val;
-  }
-}
-
-@mixin scut-coords (
-  $coordinates: n n n n
-) {
-
-  $top: nth($coordinates, 1);
-  $right: nth($coordinates, 2);
-  $bottom: nth($coordinates, 3);
-  $left: nth($coordinates, 4);
-
-  @if $top != n {
-    top: scut-autoOrValue($top);
-  }
-  @if $right != n {
-    right: scut-autoOrValue($right);
-  }
-  @if $bottom != n {
-    bottom: scut-autoOrValue($bottom);
-  }
-  @if $left != n {
-    left: scut-autoOrValue($left);
-  }
-
 }
 // SCUT POSITIONING: FIXED
 // http://davidtheclark.github.io/scut/#positioning_fixed
