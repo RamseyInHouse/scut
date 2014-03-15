@@ -104,6 +104,12 @@
   .version {
     color: #fff;
     font-weight: bold;
+    > a {
+      color: $c-zing;
+      @include scut-selected {
+        color: $c-link-active;
+      }
+    }
   }
   .scut-elsewhere-links {
     & > li {
