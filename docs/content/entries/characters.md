@@ -152,4 +152,16 @@ The names of these variables often correspond with HTML character entity referen
   <dt><code>$scut-whitecircle</code></dt>
   <dd>○</dd>
   <dd>white circle ("\25cb")</dd>
+  <dt><code>$scut-square</code></dt>
+  <dd>■</dd>
+  <dd>square ("\25a0")</dd>
+  <dt><code>$scut-whitesquare</code></dt>
+  <dd>□</dd>
+  <dd>white square ("\25a1")</dd>
+  <dt><code>$scut-ssquare</code></dt>
+  <dd>▪</dd>
+  <dd>small square ("\25aa")</dd>
+  <dt><code>$scut-swhitesquare</code></dt>
+  <dd>▫</dd>
+  <dd>small white square ("\25ab")</dd>
 </dl>

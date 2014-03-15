@@ -1,6 +1,7 @@
 /*
-* Scut, a collection of Sass utilities to ease and improve our implementations of common style-code patterns.
-* v0.9.1
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v0.10.0
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -20,7 +21,6 @@
 %scut-clearfix {
   @include scut-clearfix;
 }
-
 // SCUT LIST: UNSTYLED
 // http://davidtheclark.github.io/scut/#list_unstyled
 
@@ -41,7 +41,6 @@
 %scut-list-unstyled {
   @include scut-list-unstyled();
 }
-
 // SCUT LIST: FLOATED
 // http://davidtheclark.github.io/scut/#list_floated
 
@@ -72,43 +71,6 @@
   @include scut-list-floated;
 }
 
-
-// SCUT POSITIONING: COORDINATES
-// http://davidtheclark.github.io/scut/#positioning_coordinates
-
-@function scut-autoOrValue ($val) {
-  @if $val == a or $val == auto {
-    @return auto;
-  }
-  @else {
-    @return $val;
-  }
-}
-
-@mixin scut-coords (
-  $coordinates: n n n n
-) {
-
-  $top: nth($coordinates, 1);
-  $right: nth($coordinates, 2);
-  $bottom: nth($coordinates, 3);
-  $left: nth($coordinates, 4);
-
-  @if $top != n {
-    top: scut-autoOrValue($top);
-  }
-  @if $right != n {
-    right: scut-autoOrValue($right);
-  }
-  @if $bottom != n {
-    bottom: scut-autoOrValue($bottom);
-  }
-  @if $left != n {
-    left: scut-autoOrValue($left);
-  }
-
-}
-
 // SCUT STRIP UNIT
 // http://davidtheclark.github.io/scut/#strip_unit
 
@@ -119,7 +81,6 @@
   @return $num / ($num * 0 + 1);
 
 }
-
 // SCUT PIXELS TO EMS
 // http://davidtheclark.github.io/scut/#pixels-to-ems
 
@@ -154,7 +115,6 @@ $scut-em-base: 16 !default;
   }
 
 }
-
 // SCUT PIXELS TO REMS
 // http://davidtheclark.github.io/scut/#pixels-to-rems
 
@@ -182,7 +142,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT BORDER
 // http://davidtheclark.github.io/scut/#border
 
@@ -222,7 +181,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT CIRCLE
 // http://davidtheclark.github.io/scut/#circle
 
@@ -251,69 +209,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
-// SCUT COLOR SWAP
-// http://davidtheclark.github.io/scut/#color_swap
-
-@mixin scut-color-swap (
-  $off,
-  $on,
-  $duration: 0,
-  $bg: false
-) {
-
-  $transition-properties: null;
-  $off-is-list: type-of($off) == list;
-  $on-is-list: type-of($on) == list;
-
-  // If $off IS a list,
-  // assign color and background-color.
-  @if $off-is-list {
-    color: nth($off, 1);
-    background-color: nth($off, 2);
-    $transition-properties: background-color, color;
-  }
-
-  // If $off IS NOT a list and $bg is TRUE,
-  // assign background-color.
-  @else if $bg and not $off-is-list {
-    background-color: $off;
-    $transition-properties: background-color;
-  }
-
-  // If $off IS NOT a list and $bg is FALSE,
-  // assign color.
-  @else {
-    color: $off;
-    $transition-properties: color;
-  }
-
-  // Only set-up transition if $duration != 0.
-  @if $duration != 0 {
-    transition-property: $transition-properties;
-    transition-duration: $duration;
-  }
-
-  &:hover,
-  &:focus {
-
-    // $on is treated the same as $off, above.
-    @if $on-is-list {
-      color: nth($on, 1);
-      background-color: nth($on, 2);
-    }
-
-    @else if $bg and not $on-is-list {
-      background-color: $on;
-    }
-
-    @else {
-      color: $on;
-    }
-  }
-
-}
-
 // SCUT HD BREAKPOINT
 // http://davidtheclark.github.io/scut/#hd_breakpoint
 
@@ -328,7 +223,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT HIDE VISUALLY
 // http://davidtheclark.github.io/scut/#hide_visually
 
@@ -348,7 +242,6 @@ $scut-rem-base: 16 !default;
 %scut-hide-visually {
   @include scut-hide-visually;
 }
-
 // SCUT IMAGE REPLACEMENT
 // http://davidtheclark.github.io/scut/#image_replacement
 
@@ -363,7 +256,6 @@ $scut-rem-base: 16 !default;
 %scut-image-replace {
   @include scut-image-replace;
 }
-
 // SCUT REMS WITH FALLBACK
 // http://davidtheclark.github.io/scut/#rems_with_fallback
 
@@ -385,7 +277,6 @@ $scut-rem-base: 16 !default;
   #{$property}: $rem-vals;
 
 }
-
 // SCUT RESET
 // http://davidtheclark.github.io/scut/#reset
 
@@ -501,7 +392,6 @@ $scut-rem-base: 16 !default;
     @include scut-reset-paragraph;
   }
 }
-
 // SCUT SELECTED
 // http://davidtheclark.github.io/scut/#selected
 
@@ -524,7 +414,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT TRIANGLE
 // http://davidtheclark.github.io/scut/#triangle
 
@@ -630,7 +519,6 @@ $scut-rem-base: 16 !default;
 %scut-triangle {
   @include scut-triangle;
 }
-
 // SCUT CENTER ABSOLUTELY
 // http://davidtheclark.github.io/scut/#center_absolutely
 
@@ -656,7 +544,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT CENTER BLOCK
 // http://davidtheclark.github.io/scut/#center_block
 
@@ -675,7 +562,6 @@ $scut-rem-base: 16 !default;
 %scut-center-block {
   @include scut-center-block;
 }
-
 
 // SCUT CENTER TRANSFORM
 // http://davidtheclark.github.io/scut/#center_transform
@@ -727,7 +613,6 @@ $scut-rem-base: 16 !default;
   @include scut-center-transform(y);
 }
 
-
 // SCUT FILL
 // http://davidtheclark.github.io/scut/#fill
 
@@ -752,41 +637,6 @@ $scut-rem-base: 16 !default;
 %scut-fill {
   @include scut-fill;
 }
-
-// SCUT FONTICON-LABEL
-// http://davidtheclark.github.io/scut/#fonticon_label
-
-@mixin scut-fonticon-label (
-  $font,
-  $glyph,
-  $space: 0.25em,
-  $side: before
-) {
-
-  &:#{$side} {
-    content: $glyph;
-    font-family: $font;
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    vertical-align: middle;
-
-    @if $side == before and $space != 0 {
-      margin-right: $space;
-    }
-    @else if $side == after and $space != 0 {
-      margin-left: $space;
-    }
-
-    // Add any additional styling.
-    @content;
-
-  }
-
-}
-
-
 // SCUT LIST: CUSTOM
 // http://davidtheclark.github.io/scut/#list_custom
 
@@ -839,7 +689,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT LIST: DIVIDED
 // http://davidtheclark.github.io/scut/#list_divided
 
@@ -898,7 +747,6 @@ $scut-rem-base: 16 !default;
 %scut-list-breadcrumb {
   @include scut-list-divided("/");
 }
-
 // SCUT LIST: INLINE
 // http://davidtheclark.github.io/scut/#list_inline
 
@@ -926,7 +774,6 @@ $scut-rem-base: 16 !default;
 %scut-list-inline {
   @include scut-list-inline;
 }
-
 // SCUT LIST: PUNCTUATED
 // http://davidtheclark.github.io/scut/#list_punctuated
 
@@ -952,7 +799,6 @@ $scut-rem-base: 16 !default;
 %scut-list-comma {
   @include scut-list-punctuated;
 }
-
 // SCUT MARGIN
 // http://davidtheclark.github.io/scut/#margin
 
@@ -1016,7 +862,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT PADDING
 // http://davidtheclark.github.io/scut/#padding
 
@@ -1079,7 +924,6 @@ $scut-rem-base: 16 !default;
     }
   }
 }
-
 // SCUT POSITIONING: ABSOLUTE
 // http://davidtheclark.github.io/scut/#positioning_absolute
 
@@ -1097,7 +941,41 @@ $scut-rem-base: 16 !default;
 %scut-absolute {
   @include scut-absolute;
 }
+// SCUT POSITIONING: COORDINATES
+// http://davidtheclark.github.io/scut/#positioning_coordinates
 
+@function scut-autoOrValue ($val) {
+  @if $val == a or $val == auto {
+    @return auto;
+  }
+  @else {
+    @return $val;
+  }
+}
+
+@mixin scut-coords (
+  $coordinates: n n n n
+) {
+
+  $top: nth($coordinates, 1);
+  $right: nth($coordinates, 2);
+  $bottom: nth($coordinates, 3);
+  $left: nth($coordinates, 4);
+
+  @if $top != n {
+    top: scut-autoOrValue($top);
+  }
+  @if $right != n {
+    right: scut-autoOrValue($right);
+  }
+  @if $bottom != n {
+    bottom: scut-autoOrValue($bottom);
+  }
+  @if $left != n {
+    left: scut-autoOrValue($left);
+  }
+
+}
 // SCUT POSITIONING: FIXED
 // http://davidtheclark.github.io/scut/#positioning_fixed
 
@@ -1115,7 +993,6 @@ $scut-rem-base: 16 !default;
 %scut-fixed {
   @include scut-fixed;
 }
-
 // SCUT POSITIONING: RELATIVE
 // http://davidtheclark.github.io/scut/#positioning_relative
 
@@ -1129,7 +1006,6 @@ $scut-rem-base: 16 !default;
   @include scut-coords($coordinates);
 
 }
-
 // SCUT RATIO-BOX
 // http://davidtheclark.github.io/scut/#ratio-box
 
@@ -1155,7 +1031,6 @@ $scut-rem-base: 16 !default;
 %scut-ratio-box {
   @include scut-ratio-box;
 }
-
 // SCUT SIZE
 // http://davidtheclark.github.io/scut/#size
 
@@ -1173,7 +1048,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT STICKY FOOTER
 // http://davidtheclark.github.io/scut/#sticky_footer
 
@@ -1202,7 +1076,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-
 // SCUT V-CENTER: INLINE-BLOCK
 // http://davidtheclark.github.io/scut/#v-center_inline-block
 
@@ -1236,7 +1109,6 @@ $scut-rem-base: 16 !default;
   @include scut-vcenter-ib;
 }
 
-
 // SCUT V-CENTER: LINE-HEIGHT
 // http://davidtheclark.github.io/scut/#v-center_line-height
 
@@ -1248,7 +1120,6 @@ $scut-rem-base: 16 !default;
   line-height: $height;
 
 }
-
 // SCUT V-CENTER: TABLE DISPLAY
 // http://davidtheclark.github.io/scut/#v-center_table_display
 
@@ -1269,7 +1140,6 @@ $scut-rem-base: 16 !default;
 %scut-vcenter-td {
   @include scut-vcenter-td;
 }
-
 // SCUT V-CENTER: TRANSFORM
 // http://davidtheclark.github.io/scut/#v-center_transform
 
@@ -1282,55 +1152,6 @@ $scut-rem-base: 16 !default;
 %scut-vcenter-tt {
   @include scut-vcenter-tt;
 }
-
-// BOOKENDS
-// http://davidtheclark.github.io/scut/#bookends
-
-@mixin scut-bookends (
-  $space: 0.5em,
-  $content: ""
-) {
-
-  $content-list: length($content) == 2;
-
-  // If $content is a list or there $space exist,
-  // set some pseudo-element-specific rules.
-  @if $content-list or $space {
-    &:before {
-      @if $content-list {
-        content: nth($content, 1);
-      }
-      @if $space {
-        margin-right: $space;
-      }
-    }
-    &:after {
-      @if $content-list {
-        content: nth($content, 2);
-      }
-      @if $space {
-        margin-left: $space;
-      }
-    }
-  }
-
-  // Then set some rules that apply to both
-  // pseudo-elements.
-  &:before,
-  &:after {
-    display: inline-block;
-
-    @if $content and length($content) == 1 {
-      content: $content;
-    }
-
-    // Any additional styling applies to both.
-    @content;
-
-  }
-
-}
-
 // SCUT CSS CHARACTERS
 // http://davidtheclark.github.io/scut/#characters
 
@@ -1424,7 +1245,14 @@ $scut-bullseye: "\25ce";
 $scut-circle: "\25cf";
 // white circle
 $scut-whitecircle: "\25cb";
-
+// square
+$scut-square: "\25a0";
+// white square
+$scut-whitesquare: "\25a1";
+// small square
+$scut-ssquare: "\25aa";
+// small white square
+$scut-swhitesquare: "\25ab";
 // SCUT FONT-FACE
 // http://davidtheclark.github.io/scut/#font-face
 
@@ -1477,7 +1305,6 @@ $scut-whitecircle: "\25cb";
   }
 
 }
-
 // SCUT HANGING INDENT
 // http://davidtheclark.github.io/scut/#hanging_indent
 
@@ -1497,7 +1324,6 @@ $scut-whitecircle: "\25cb";
 %scut-hanging-indent {
   @include scut-hanging-indent;
 }
-
 // SCUT INDENTED PARAGRAPHS
 // http://davidtheclark.github.io/scut/#indented_paragraphs
 
@@ -1522,7 +1348,6 @@ $scut-whitecircle: "\25cb";
 %scut-indented-ps {
   @include scut-indented-ps;
 }
-
 // SCUT KEY-VALUE
 // http://davidtheclark.github.io/scut/#key-value
 
@@ -1558,7 +1383,6 @@ $scut-whitecircle: "\25cb";
 %scut-key-val {
   @include scut-key-val;
 }
-
 // SCUT LINK: BOTTOM-BORDERED
 // http://davidtheclark.github.io/scut/#link_bottom-bordered
 
@@ -1581,7 +1405,6 @@ $scut-whitecircle: "\25cb";
 %scut-link-bb {
   @include scut-link-bb;
 }
-
 // SCUT REVERSE ITALICS
 // http://davidtheclark.github.io/scut/#reverse-italics
 
@@ -1604,7 +1427,6 @@ $scut-whitecircle: "\25cb";
 %scut-reverse-italics {
   @include scut-reverse-italics;
 }
-
 // SCUT SIDE-LINED
 // http://davidtheclark.github.io/scut/#side-lined
 
@@ -1664,7 +1486,6 @@ $scut-whitecircle: "\25cb";
 %scut-side-lined {
   @include scut-side-lined;
 }
-
 // SCUT TRUNCATE
 // http://davidtheclark.github.io/scut/#truncate
 

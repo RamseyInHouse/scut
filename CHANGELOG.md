@@ -1,3 +1,7 @@
+### 0.10.0
+- Added some squares to characters: `$scut-square`, `$scut-whitesquare`, `$scut-ssquare`, `$scut-swhitesquare`.
+- Removed `scut-color-swap`, `scut-bookends`, and `scut-fonticon-label` because I never ended up using them.
+
 ### 0.9.1
 - Updated `scut-font-face` so users can enter there own `$formats` list, if they don't want to include all font-file-formats.
 

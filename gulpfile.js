@@ -1,4 +1,4 @@
-var currentVersion = '0.9.1';
+var currentVersion = '0.10.0';
 
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
@@ -25,7 +25,7 @@ gulp.task('build', function() {
       // the rest of them
       'src/**/*.scss'
     ])
-    .pipe(concat('_scut-test.scss'))
+    .pipe(concat('_scut.scss'))
     .pipe(header(distBanner))
     .pipe(gulp.dest('./dist/'));
 });
