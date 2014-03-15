@@ -389,8 +389,9 @@ table {
 }
 
 /*
-* Scut, a collection of Sass utilities to ease and improve our implementations of common style-code patterns.
-* v0.9.1
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v0.10.1
 * Docs at http://davidtheclark.github.io/scut
 */
 .hide-visually {
@@ -1081,89 +1082,18 @@ button:focus, .btn:focus, a.btn:focus {
   margin-top: 0.5em;
 }
 
-.eg-color-swap, .eg-selected, .eg-triangle-button {
+.eg-selected, .eg-triangle-button {
   border: 1px solid #002834;
   color: #002834;
   padding: 0.3em 0.5em;
 }
 
-.eg-clearfix-floater, .example--disp--inner .eg-fonticon-label, .eg-list-floated > li, .eg-list-inline > li, .eg-margin, .eg-padding, .eg-absolute, .eg-fixed, .eg-vcenter-lh {
+.eg-clearfix-floater, .eg-list-floated > li, .eg-list-inline > li, .eg-margin, .eg-padding, .eg-absolute, .eg-fixed, .eg-vcenter-lh {
   background-color: #002834;
   color: white;
   padding: 0.3em 0.5em;
 }
 
-/* hidden rules */
-.eg-bookends:not(:first-child) {
-  margin-top: 12px;
-}
-
-/* end hidden rules */
-/* example start */
-.eg-bookends.m-1:before {
-  margin-right: 0.5em;
-}
-.eg-bookends.m-1:after {
-  margin-left: 0.5em;
-}
-.eg-bookends.m-1:before, .eg-bookends.m-1:after {
-  display: inline-block;
-  content: "\2014";
-}
-.eg-bookends.m-2:before {
-  content: "\201c";
-  margin-right: 0;
-}
-.eg-bookends.m-2:after {
-  content: "\201d";
-  margin-left: 0;
-}
-.eg-bookends.m-2:before, .eg-bookends.m-2:after {
-  display: inline-block;
-}
-.eg-bookends.m-3 {
-  font-size: 2em;
-}
-.eg-bookends.m-3:before {
-  content: "\00ab";
-  margin-right: 0.25em;
-}
-.eg-bookends.m-3:after {
-  content: "\00bb";
-  margin-left: 0.25em;
-}
-.eg-bookends.m-3:before, .eg-bookends.m-3:after {
-  display: inline-block;
-  color: #9ae9ff;
-}
-.eg-bookends.m-3:hover, .eg-bookends.m-3:focus {
-  color: #9ae9ff;
-}
-.eg-bookends.m-3:hover:before, .eg-bookends.m-3:hover:after, .eg-bookends.m-3:focus:before, .eg-bookends.m-3:focus:after {
-  display: inline-block;
-  color: #002834;
-}
-.eg-bookends.m-4 {
-  background-color: #002834;
-  color: white;
-  text-align: center;
-}
-.eg-bookends.m-4:before {
-  margin-right: 0.5em;
-}
-.eg-bookends.m-4:after {
-  margin-left: 0.5em;
-}
-.eg-bookends.m-4:before, .eg-bookends.m-4:after {
-  display: inline-block;
-  content: "";
-  height: 2em;
-  width: 2em;
-  background-color: #9ae9ff;
-  vertical-align: middle;
-}
-
-/* example end */
 /* hidden rules */
 .eg-border {
   background-color: #cccccc;
@@ -1390,40 +1320,6 @@ button:focus, .btn:focus, a.btn:focus {
 
 /* example end */
 /* hidden rules */
-/* end hidden rules */
-/* example start */
-.eg-color-swap.m-1 {
-  color: #002834;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 1s;
-  transition-duration: 1s;
-}
-.eg-color-swap.m-1:hover, .eg-color-swap.m-1:focus {
-  color: #9ae9ff;
-}
-.eg-color-swap.m-2 {
-  color: #9ae9ff;
-  background-color: #002834;
-}
-.eg-color-swap.m-2:hover, .eg-color-swap.m-2:focus {
-  color: #002834;
-  background-color: #9ae9ff;
-}
-.eg-color-swap.m-3 {
-  color: white;
-  background-color: #002834;
-  -webkit-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-.eg-color-swap.m-3:hover, .eg-color-swap.m-3:focus {
-  background-color: #9ae9ff;
-}
-
-/* example end */
-/* hidden rules */
 .eg-em-c {
   font-size: 16px;
 }
@@ -1530,109 +1426,6 @@ button:focus, .btn:focus, a.btn:focus {
   top: 0;
   width: 100%;
   height: 100%;
-}
-
-/* example end */
-/* hidden rules */
-/* end hidden rules */
-/* example start */
-@font-face {
-  font-family: "icomoon-stereo";
-  font-weight: normal;
-  font-style: normal;
-  src: url("fonts/icomoon-stereo.eot");
-  src: url("fonts/icomoon-stereo.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon-stereo.woff") format("woff"), url("fonts/icomoon-stereo.ttf") format("truetype"), url("fonts/icomoon-stereo.svg#icomoon-stereo") format("svg");
-}
-
-.eg-fonticon-label.m-1:before {
-  content: "\e004";
-  font-family: "icomoon-stereo";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.25em;
-}
-.eg-fonticon-label.m-1:hover:before, .eg-fonticon-label.m-1:focus:before {
-  content: "\e002";
-}
-.eg-fonticon-label.m-2:before {
-  content: "\e003";
-  font-family: "icomoon-stereo";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.25em;
-  font-size: 2em;
-}
-.eg-fonticon-label.m-2:hover, .eg-fonticon-label.m-2:focus {
-  color: #9ae9ff;
-}
-.eg-fonticon-label.m-3:after {
-  content: "\e001";
-  font-family: "icomoon-stereo";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 1.5em;
-  color: #9ae9ff;
-}
-.eg-fonticon-label.m-3:hover, .eg-fonticon-label.m-3:focus {
-  color: #9ae9ff;
-}
-.eg-fonticon-label.m-3:hover:after, .eg-fonticon-label.m-3:focus:after {
-  color: white;
-}
-
-@-webkit-keyframes rewind {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(-1em);
-    transform: translateX(-1em);
-  }
-}
-
-@keyframes rewind {
-  0% {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  100% {
-    -webkit-transform: translateX(-1em);
-    -ms-transform: translateX(-1em);
-    transform: translateX(-1em);
-  }
-}
-
-.eg-fonticon-label.m-4 {
-  font-size: 2em;
-  padding-left: 2em;
-}
-.eg-fonticon-label.m-4:before {
-  content: "\e000";
-  font-family: "icomoon-stereo";
-  font-style: normal;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.25em;
-  font-size: 2em;
-}
-.eg-fonticon-label.m-4:hover:before, .eg-fonticon-label.m-4:focus:before {
-  -webkit-animation: rewind 1s linear infinite;
-  animation: rewind 1s linear infinite;
 }
 
 /* example end */
