@@ -1,5 +1,6 @@
 var currentVersion = '0.10.1';
 
+var moment = require('moment');
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var replace = require('gulp-replace');
@@ -138,14 +139,23 @@ gulp.task('watch', function() {
 gulp.task('default', ['connect', 'watch']);
 
 // grunt version
-//
+gulp.task('versionNumber', function() {
+  gulp.src([
+      './bower.json',
+      './package.json',
+      './docs/content/data.yml'
+    ], { base: "./" })
+    .pipe(replace(/\"version\": \"(.*)\"/, "\"version\": \"" + currentVersion + "\""))
+    .pipe(gulp.dest("./"));
+  gulp.src('./lib/scut.rb')
+    .pipe(replace(/VERSION = \"(.*)\"/, "VERSION = \"" + currentVersion + "\""))
+    .pipe(replace(/DATE = \"(.*)\"/, "DATE = \"" + moment().format('YYYY-MM-DD') + "\""))
+    .pipe(gulp.dest('./lib/'));
+});
 
 // new version
-gulp.task('gruntVersion', function() {
-  gulp.run('grunt-replace');
-});
 gulp.task('version', [
   'build',
-  'gruntVersion',
+  'versionNumber',
   'assemble'
 ]);

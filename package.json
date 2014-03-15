@@ -19,6 +19,6 @@
     "gulp-connect": "~1.0.5",
     "gulp-newer": "~0.3.0",
     "gulp-htmlmin": "~0.1.2",
-    "grunt-text-replace": "^0.3.11"
+    "moment": "^2.5.1"
   }
 }

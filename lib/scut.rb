@@ -6,5 +6,5 @@ Compass::Frameworks.register('Scut', :stylesheets_directory => stylesheets_dir)
 
 module Scut
   VERSION = "0.10.1"
-  DATE = "2014-03-14"
+  DATE = "2014-03-15"
 end
