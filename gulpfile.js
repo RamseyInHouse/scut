@@ -107,12 +107,15 @@ gulp.task('assemble', function() {
     .pipe(gulp.dest('./docs/dist/'));
 });
 
-// local dev server
-gulp.task('connect', connect.server({
-  root: ['docs/dist'],
-  port: 9000,
-  livereload: true
-}));
+
+// docs tasks
+gulp.task('docs', function(callback) {
+  runSequence(
+    'docStyle',
+    'assemble',
+    callback
+  );
+});
 
 // copy docs dist folder to parallel gh-pages directory
 gulp.task('copyDocs', function() {
@@ -122,11 +125,7 @@ gulp.task('copyDocs', function() {
 
 // watch for changes and run relevant tasks
 gulp.task('watch', function() {
-  gulp.watch(examplesScssSrc, [
-    'processExamples',
-    'assemble',
-    'docStyle'
-  ]);
+  gulp.watch(examplesScssSrc, ['docs']);
   gulp.watch('./docs/dev/scss/*.scss', ['docStyle']);
   gulp.watch([
     './docs/content/**/*.md',
@@ -135,6 +134,13 @@ gulp.task('watch', function() {
   ], ['assemble']);
   gulp.watch('./docs/dev/js/*.js', ['copyJs']);
 });
+
+// local dev server
+gulp.task('connect', connect.server({
+  root: ['docs/dist'],
+  port: 9000,
+  livereload: true
+}));
 
 // develop: watch for changes and make things happen
 gulp.task('default', ['connect', 'watch']);
@@ -159,15 +165,6 @@ gulp.task('version', function(callback) {
   runSequence(
     'build',
     'versionNumber',
-    'assemble',
-    callback
-  );
-});
-
-// docs tasks
-gulp.task('docs', function(callback) {
-  runSequence(
-    'docStyle',
     'assemble',
     callback
   );
