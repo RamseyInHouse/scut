@@ -518,6 +518,14 @@ code {
   color: #6b7072;
   font-family: Courier, "Andale Mono", AndaleMono, monospace;
   font-style: normal;
+  border: 1px solid #b9bcbd;
+  background-color: #f8f8f8;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  border-radius: 3px;
+}
+pre code {
+  background-color: transparent;
 }
 
 a,
