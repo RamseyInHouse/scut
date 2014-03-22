@@ -391,7 +391,7 @@ table {
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.1
+* v0.10.2
 * Docs at http://davidtheclark.github.io/scut
 */
 .hide-visually {
@@ -508,6 +508,12 @@ button::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner {
   padding: 0;
   border: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -1330,6 +1336,51 @@ button:focus, .btn:focus, a.btn:focus {
 .eg-clearfix-floater {
   float: left;
   margin: 1em;
+}
+
+/* example end */
+/* hidden rules */
+.eg-color-swap {
+  padding: 1em;
+  display: inline-block;
+}
+.eg-color-swap + .eg-color-swap {
+  margin-left: 1em;
+}
+
+/* end hidden rules */
+/* example start */
+.eg-color-swap-1 {
+  background: #fff;
+  color: #002834;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+}
+.eg-color-swap-1:hover, .eg-color-swap-1:focus {
+  color: #9ae9ff;
+}
+
+.eg-color-swap-2 {
+  color: #9ae9ff;
+  background-color: #002834;
+}
+.eg-color-swap-2:hover, .eg-color-swap-2:focus {
+  color: #002834;
+  background-color: #9ae9ff;
+}
+
+.eg-color-swap-3 {
+  color: #fff;
+  background-color: #002834;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.eg-color-swap-3:hover, .eg-color-swap-3:focus {
+  background-color: #9ae9ff;
 }
 
 /* example end */
