@@ -1,4 +1,5 @@
 ### 0.10.2
+- Added `scut-reset-media`.
 - Changed `scut-sticky-footer` to `scut-sticky-footer-fixed` in order to add a new sticky footer mixin, `scut-sticky-footer-fluid`.
 - Added `scut-color-swap` back in, because some people liked it.
 

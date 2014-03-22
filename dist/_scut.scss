@@ -419,6 +419,15 @@ $scut-rem-base: 16 !default;
   }
 }
 
+@mixin scut-reset-media {
+  // You want these elements fluid, probably.
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 // Call them all, minus exclusions!
 @mixin scut-reset ($exclude: false) {
   @if not index($exclude, border-box) {
@@ -441,6 +450,9 @@ $scut-rem-base: 16 !default;
   }
   @if not index($exclude, paragraph) {
     @include scut-reset-paragraph;
+  }
+  @if not index($exclude, media) {
+    @include scut-reset-media;
   }
 }
 @mixin scut-selected (
