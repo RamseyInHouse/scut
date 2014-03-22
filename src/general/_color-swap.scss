@@ -1,0 +1,61 @@
+// SCUT COLOR SWAP
+// http://davidtheclark.github.io/scut/#color_swap
+
+@mixin scut-color-swap (
+  $off,
+  $on,
+  $duration: 0,
+  $bg: false
+) {
+
+  $transition-properties: null;
+  $off-is-list: type-of($off) == list;
+  $on-is-list: type-of($on) == list;
+
+  // If $off IS a list,
+  // assign color and background-color.
+  @if $off-is-list {
+    color: nth($off, 1);
+    background-color: nth($off, 2);
+    $transition-properties: background-color, color;
+  }
+
+  // If $off IS NOT a list and $bg is TRUE,
+  // assign background-color.
+  @else if $bg and not $off-is-list {
+    background-color: $off;
+    $transition-properties: background-color;
+  }
+
+  // If $off IS NOT a list and $bg is FALSE,
+  // assign color.
+  @else {
+    color: $off;
+    $transition-properties: color;
+  }
+
+  // Only set-up transition if $duration != 0.
+  @if $duration != 0 {
+    transition-property: $transition-properties;
+    transition-duration: $duration;
+  }
+
+  &:hover,
+  &:focus {
+
+    // $on is treated the same as $off, above.
+    @if $on-is-list {
+      color: nth($on, 1);
+      background-color: nth($on, 2);
+    }
+
+    @else if $bg and not $on-is-list {
+      background-color: $on;
+    }
+
+    @else {
+      color: $on;
+    }
+  }
+
+}

@@ -1,3 +1,6 @@
+### 0.10.2
+- Added `scut-color-swap` back in, because some people liked it.
+
 ### 0.10.1
 - Fixed bug in build process.
 
