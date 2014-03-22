@@ -35,4 +35,4 @@ Then your footer should stick to the bottom of the page, regardless of the heigh
 
 **This mixin should not be invoked within a declaration block &mdash; i.e. don't nest it.** The mixin needs to add rules for a number of elements &mdash; `html`, `body`, the wrapper, and the footer &mdash; so it can't be restricted to the context of a different selector.
 
-<!-- Since an example of this utility requires its own `<html>` and `<body>` elements, **[this example is relegated to Codepen](http://codepen.io/davidtheclark/pen/ExjiF)**. -->
+Since an example of this utility requires its own `<html>` and `<body>` elements, **[this example is relegated to Codepen](http://codepen.io/davidtheclark/pen/qvngp)**.
