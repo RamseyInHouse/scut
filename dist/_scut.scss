@@ -1109,10 +1109,10 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT STICKY FOOTER
+// SCUT STICKY FOOTER FIXED
 // http://davidtheclark.github.io/scut/#sticky_footer
 
-@mixin scut-sticky-footer (
+@mixin scut-sticky-footer-fixed (
   $height,
   $wrapper: ".wrapper",
   $footer: ".scut-sticky"
@@ -1121,6 +1121,8 @@ $scut-rem-base: 16 !default;
   html,
   body {
     height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   #{$wrapper} {
@@ -1131,9 +1133,43 @@ $scut-rem-base: 16 !default;
       display: block;
     }
   }
+
   #{$wrapper}:after,
   #{$footer} {
     height: $height;
+  }
+
+}
+
+// deprecated
+@mixin scut-sticky-footer (
+  $height,
+  $wrapper: ".wrapper",
+  $footer: ".scut-sticky"
+){
+  @include scut-sticky-footer-fixed($height, $wrapper, $footer);
+}
+@mixin scut-sticky-footer-fluid (
+  $wrapper: ".wrapper",
+  $footer: ".scut-sticky"
+) {
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #{$wrapper} {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  #{$footer} {
+    display: table-row;
+    height: 1px;
   }
 
 }

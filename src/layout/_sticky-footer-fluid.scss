@@ -1,0 +1,24 @@
+@mixin scut-sticky-footer-fluid (
+  $wrapper: ".wrapper",
+  $footer: ".scut-sticky"
+) {
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #{$wrapper} {
+    display: table;
+    height: 100%;
+    width: 100%;
+  }
+
+  #{$footer} {
+    display: table-row;
+    height: 1px;
+  }
+
+}

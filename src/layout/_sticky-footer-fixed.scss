@@ -1,7 +1,7 @@
-// SCUT STICKY FOOTER
+// SCUT STICKY FOOTER FIXED
 // http://davidtheclark.github.io/scut/#sticky_footer
 
-@mixin scut-sticky-footer (
+@mixin scut-sticky-footer-fixed (
   $height,
   $wrapper: ".wrapper",
   $footer: ".scut-sticky"
@@ -10,6 +10,8 @@
   html,
   body {
     height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   #{$wrapper} {
@@ -20,9 +22,19 @@
       display: block;
     }
   }
+
   #{$wrapper}:after,
   #{$footer} {
     height: $height;
   }
 
+}
+
+// deprecated
+@mixin scut-sticky-footer (
+  $height,
+  $wrapper: ".wrapper",
+  $footer: ".scut-sticky"
+){
+  @include scut-sticky-footer-fixed($height, $wrapper, $footer);
 }
