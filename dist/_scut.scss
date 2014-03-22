@@ -5,9 +5,6 @@
 * Docs at http://davidtheclark.github.io/scut
 */
 
-// SCUT CLEARFIX
-// http://davidtheclark.github.io/scut/#clearfix
-
 @mixin scut-clearfix {
 
   &:after {
@@ -21,9 +18,6 @@
 %scut-clearfix {
   @include scut-clearfix;
 }
-// SCUT LIST: UNSTYLED
-// http://davidtheclark.github.io/scut/#list_unstyled
-
 @mixin scut-list-unstyled(
   $no-margin: true
 ) {
@@ -41,9 +35,6 @@
 %scut-list-unstyled {
   @include scut-list-unstyled();
 }
-// SCUT LIST: FLOATED
-// http://davidtheclark.github.io/scut/#list_floated
-
 // Depends on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-floated (
@@ -70,9 +61,6 @@
 %scut-list-floated {
   @include scut-list-floated;
 }
-
-// SCUT POSITIONING: COORDINATES
-// http://davidtheclark.github.io/scut/#positioning_coordinates
 
 @function scut-autoOrValue ($val) {
   @if $val == a or $val == auto {
@@ -106,9 +94,6 @@
   }
 
 }
-// SCUT STRIP UNIT
-// http://davidtheclark.github.io/scut/#strip_unit
-
 @function scut-strip-unit (
   $num
 ) {
@@ -116,9 +101,6 @@
   @return $num / ($num * 0 + 1);
 
 }
-// SCUT PIXELS TO EMS
-// http://davidtheclark.github.io/scut/#pixels-to-ems
-
 // Depends on `scut-strip-unit`.
 
 $scut-em-base: 16 !default;
@@ -150,9 +132,6 @@ $scut-em-base: 16 !default;
   }
 
 }
-// SCUT PIXELS TO REMS
-// http://davidtheclark.github.io/scut/#pixels-to-rems
-
 // Depends on `scut-strip-unit`.
 
 $scut-rem-base: 16 !default;
@@ -177,9 +156,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT BORDER
-// http://davidtheclark.github.io/scut/#border
-
 @mixin scut-border (
   $style,
   $sides: n y
@@ -216,9 +192,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT CIRCLE
-// http://davidtheclark.github.io/scut/#circle
-
 @mixin scut-circle (
   $size,
   $color: inherit
@@ -244,9 +217,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT COLOR SWAP
-// http://davidtheclark.github.io/scut/#color_swap
-
 @mixin scut-color-swap (
   $off,
   $on,
@@ -305,9 +275,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT HD BREAKPOINT
-// http://davidtheclark.github.io/scut/#hd_breakpoint
-
 @mixin scut-hd-bp (
   $ratio: 1.3
 ) {
@@ -319,9 +286,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT HIDE VISUALLY
-// http://davidtheclark.github.io/scut/#hide_visually
-
 @mixin scut-hide-visually {
 
   border: 0;
@@ -338,9 +302,6 @@ $scut-rem-base: 16 !default;
 %scut-hide-visually {
   @include scut-hide-visually;
 }
-// SCUT IMAGE REPLACEMENT
-// http://davidtheclark.github.io/scut/#image_replacement
-
 @mixin scut-image-replace {
 
   text-indent: 102%;
@@ -352,9 +313,6 @@ $scut-rem-base: 16 !default;
 %scut-image-replace {
   @include scut-image-replace;
 }
-// SCUT REMS WITH FALLBACK
-// http://davidtheclark.github.io/scut/#rems_with_fallback
-
 // Depends on scut-rem and scut-strip-unit
 
 @mixin scut-rem-fallback (
@@ -373,9 +331,6 @@ $scut-rem-base: 16 !default;
   #{$property}: $rem-vals;
 
 }
-// SCUT RESET
-// http://davidtheclark.github.io/scut/#reset
-
 @mixin scut-reset-border-box {
   // Make everything a border-box, because why not?
   *, *:before, *:after {
@@ -488,9 +443,6 @@ $scut-rem-base: 16 !default;
     @include scut-reset-paragraph;
   }
 }
-// SCUT SELECTED
-// http://davidtheclark.github.io/scut/#selected
-
 @mixin scut-selected (
   $active: false
 ) {
@@ -510,9 +462,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT TRIANGLE
-// http://davidtheclark.github.io/scut/#triangle
-
 @mixin scut-triangle (
   $direction: right,
   $size: 0.75em,
@@ -615,9 +564,6 @@ $scut-rem-base: 16 !default;
 %scut-triangle {
   @include scut-triangle;
 }
-// SCUT CENTER ABSOLUTELY
-// http://davidtheclark.github.io/scut/#center_absolutely
-
 @mixin scut-center-absolutely (
   $dimensions
 ) {
@@ -640,9 +586,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT CENTER BLOCK
-// http://davidtheclark.github.io/scut/#center_block
-
 @mixin scut-center-block (
   $max-width: false
 ) {
@@ -658,9 +601,6 @@ $scut-rem-base: 16 !default;
 %scut-center-block {
   @include scut-center-block;
 }
-
-// SCUT CENTER TRANSFORM
-// http://davidtheclark.github.io/scut/#center_transform
 
 @mixin scut-center-transform (
   $axis: false // or x or y
@@ -709,9 +649,6 @@ $scut-rem-base: 16 !default;
   @include scut-center-transform(y);
 }
 
-// SCUT FILL
-// http://davidtheclark.github.io/scut/#fill
-
 @mixin scut-fill (
   $width-height: false
 ) {
@@ -733,9 +670,6 @@ $scut-rem-base: 16 !default;
 %scut-fill {
   @include scut-fill;
 }
-// SCUT LIST: CUSTOM
-// http://davidtheclark.github.io/scut/#list_custom
-
 @mixin scut-list-custom (
   $content: "\2022",
   $marker-width: 0.75em,
@@ -785,9 +719,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT LIST: DIVIDED
-// http://davidtheclark.github.io/scut/#list_divided
-
 // Depends on `list-floated`, which depends in turn on `list-unstyled` and `clearfix`.
 
 @mixin scut-list-divided (
@@ -843,9 +774,6 @@ $scut-rem-base: 16 !default;
 %scut-list-breadcrumb {
   @include scut-list-divided("/");
 }
-// SCUT LIST: INLINE
-// http://davidtheclark.github.io/scut/#list_inline
-
 // Depends on `list-unstyled`.
 
 @mixin scut-list-inline (
@@ -870,9 +798,6 @@ $scut-rem-base: 16 !default;
 %scut-list-inline {
   @include scut-list-inline;
 }
-// SCUT LIST: PUNCTUATED
-// http://davidtheclark.github.io/scut/#list_punctuated
-
 // Depends on `list-unstyled`.
 
 @mixin scut-list-punctuated (
@@ -895,9 +820,6 @@ $scut-rem-base: 16 !default;
 %scut-list-comma {
   @include scut-list-punctuated;
 }
-// SCUT MARGIN
-// http://davidtheclark.github.io/scut/#margin
-
 @mixin scut-margin (
   $margin
 ) {
@@ -958,9 +880,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT PADDING
-// http://davidtheclark.github.io/scut/#padding
-
 @mixin scut-padding (
   $padding
 ) {
@@ -1020,9 +939,6 @@ $scut-rem-base: 16 !default;
     }
   }
 }
-// SCUT POSITIONING: ABSOLUTE
-// http://davidtheclark.github.io/scut/#positioning_absolute
-
 // Depends on `positioning-coordinates`.
 
 @mixin scut-absolute (
@@ -1037,9 +953,6 @@ $scut-rem-base: 16 !default;
 %scut-absolute {
   @include scut-absolute;
 }
-// SCUT POSITIONING: FIXED
-// http://davidtheclark.github.io/scut/#positioning_fixed
-
 // Depends on `positioning-coordinates`.
 
 @mixin scut-fixed (
@@ -1054,9 +967,6 @@ $scut-rem-base: 16 !default;
 %scut-fixed {
   @include scut-fixed;
 }
-// SCUT POSITIONING: RELATIVE
-// http://davidtheclark.github.io/scut/#positioning_relative
-
 // Depends on `positioning-coordinates`.
 
 @mixin scut-relative (
@@ -1067,9 +977,6 @@ $scut-rem-base: 16 !default;
   @include scut-coords($coordinates);
 
 }
-// SCUT RATIO-BOX
-// http://davidtheclark.github.io/scut/#ratio-box
-
 @mixin scut-ratio-box (
   $ratio: 1/1
 ) {
@@ -1092,9 +999,6 @@ $scut-rem-base: 16 !default;
 %scut-ratio-box {
   @include scut-ratio-box;
 }
-// SCUT SIZE
-// http://davidtheclark.github.io/scut/#size
-
 @mixin scut-size(
   $size
 ) {
@@ -1109,9 +1013,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT STICKY FOOTER FIXED
-// http://davidtheclark.github.io/scut/#sticky_footer
-
 @mixin scut-sticky-footer-fixed (
   $height,
   $wrapper: ".wrapper",
@@ -1173,9 +1074,6 @@ $scut-rem-base: 16 !default;
   }
 
 }
-// SCUT V-CENTER: INLINE-BLOCK
-// http://davidtheclark.github.io/scut/#v-center_inline-block
-
 @mixin scut-vcenter-ib (
   $inner: ".scut-inner"
 ) {
@@ -1206,9 +1104,6 @@ $scut-rem-base: 16 !default;
   @include scut-vcenter-ib;
 }
 
-// SCUT V-CENTER: LINE-HEIGHT
-// http://davidtheclark.github.io/scut/#v-center_line-height
-
 @mixin scut-vcenter-lh (
   $height
 ) {
@@ -1217,9 +1112,6 @@ $scut-rem-base: 16 !default;
   line-height: $height;
 
 }
-// SCUT V-CENTER: TABLE DISPLAY
-// http://davidtheclark.github.io/scut/#v-center_table_display
-
 @mixin scut-vcenter-td (
   $inner: ".scut-inner"
 ) {
@@ -1237,9 +1129,6 @@ $scut-rem-base: 16 !default;
 %scut-vcenter-td {
   @include scut-vcenter-td;
 }
-// SCUT V-CENTER: TRANSFORM
-// http://davidtheclark.github.io/scut/#v-center_transform
-
 // Depends on scut-center-transform
 
 @mixin scut-vcenter-tt () {
@@ -1249,9 +1138,6 @@ $scut-rem-base: 16 !default;
 %scut-vcenter-tt {
   @include scut-vcenter-tt;
 }
-// SCUT CSS CHARACTERS
-// http://davidtheclark.github.io/scut/#characters
-
 // space
 $scut-space: "\0020";
 // non-breaking space
@@ -1350,9 +1236,6 @@ $scut-whitesquare: "\25a1";
 $scut-ssquare: "\25aa";
 // small white square
 $scut-swhitesquare: "\25ab";
-// SCUT FONT-FACE
-// http://davidtheclark.github.io/scut/#font-face
-
 @function main-src($formats, $file-path, $font-family) {
   // Return the list of `src` values, in order, that
   // a good `@font-face` will need, including only
@@ -1402,9 +1285,6 @@ $scut-swhitesquare: "\25ab";
   }
 
 }
-// SCUT HANGING INDENT
-// http://davidtheclark.github.io/scut/#hanging_indent
-
 @mixin scut-hanging-indent (
   $indent: 1em
 ) {
@@ -1421,9 +1301,6 @@ $scut-swhitesquare: "\25ab";
 %scut-hanging-indent {
   @include scut-hanging-indent;
 }
-// SCUT INDENTED PARAGRAPHS
-// http://davidtheclark.github.io/scut/#indented_paragraphs
-
 @mixin scut-indented-ps (
   $indent: 1.5em,
   $no-first-indent: true
@@ -1445,9 +1322,6 @@ $scut-swhitesquare: "\25ab";
 %scut-indented-ps {
   @include scut-indented-ps;
 }
-// SCUT KEY-VALUE
-// http://davidtheclark.github.io/scut/#key-value
-
 @mixin scut-key-val (
   $divider: ":",
   $pad: 0.25em,
@@ -1480,9 +1354,6 @@ $scut-swhitesquare: "\25ab";
 %scut-key-val {
   @include scut-key-val;
 }
-// SCUT LINK: BOTTOM-BORDERED
-// http://davidtheclark.github.io/scut/#link_bottom-bordered
-
 @mixin scut-link-bb (
   $color: inherit,
   $style: solid,
@@ -1502,9 +1373,6 @@ $scut-swhitesquare: "\25ab";
 %scut-link-bb {
   @include scut-link-bb;
 }
-// SCUT REVERSE ITALICS
-// http://davidtheclark.github.io/scut/#reverse-italics
-
 @mixin scut-reverse-italics (
   $elements: false
 ) {
@@ -1524,9 +1392,6 @@ $scut-swhitesquare: "\25ab";
 %scut-reverse-italics {
   @include scut-reverse-italics;
 }
-// SCUT SIDE-LINED
-// http://davidtheclark.github.io/scut/#side-lined
-
 @mixin scut-side-lined (
   $height: 1px,
   $space: 0.5em,
@@ -1583,9 +1448,6 @@ $scut-swhitesquare: "\25ab";
 %scut-side-lined {
   @include scut-side-lined;
 }
-// SCUT TRUNCATE
-// http://davidtheclark.github.io/scut/#truncate
-
 @mixin scut-truncate {
 
   white-space: nowrap;
