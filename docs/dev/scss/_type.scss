@@ -12,6 +12,7 @@ code {
   border-radius: 3px;
   pre & {
     background-color: transparent;
+    @include scut-padding(n 0);
   }
 }
 

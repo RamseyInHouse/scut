@@ -1,3 +1,7 @@
+### 0.10.3
+- Added `scut-reset-figure`.
+- Added `input[type="submit"]` and `input[type="reset"]` to `scut-reset-button`.
+
 ### 0.10.2
 - Added `scut-reset-media`.
 - Changed `scut-sticky-footer` to `scut-sticky-footer-fixed` in order to add a new sticky footer mixin, `scut-sticky-footer-fluid`.

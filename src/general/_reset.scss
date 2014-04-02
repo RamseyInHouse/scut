@@ -54,7 +54,9 @@
 @mixin scut-reset-button {
   // Reset default button styles, which are never used.
   button,
-  input[type="button"] {
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"] {
     background: transparent;
     border: 0;
     color: inherit;
@@ -70,8 +72,8 @@
     -ms-user-select: none;
     user-select: none;
     &::-moz-focus-inner {
-      padding:0;
-      border:0;
+      padding: 0;
+      border: 0;
     }
   }
 }
@@ -92,6 +94,13 @@
   video {
     max-width: 100%;
     height: auto;
+  }
+}
+
+@mixin scut-reset-figure {
+  // Remove default margins:
+  figure {
+    margin: 0;
   }
 }
 
@@ -120,5 +129,8 @@
   }
   @if not index($exclude, media) {
     @include scut-reset-media;
+  }
+  @if not index($exclude, figure) {
+    @include scut-reset-figure;
   }
 }

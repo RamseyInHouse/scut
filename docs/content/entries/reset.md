@@ -22,9 +22,10 @@ The modular reset mixins include the following (*I suggest viewing the source co
 - **semanticize**: make headers (`<h1><h2><h3><h4><h5><h6>`) and `<b>` elements semantic rather than presentational
 - **pointer**: give `cursor: pointer` to clickable form elements (`label`, `selected`, `option`, `button`)
 - **form**: reset `fieldset` and restrict `textarea` to `resize: vertical`
-- **button**: reset default button styles that never get used and nobody seems to like
-- **paragraph**: remove `margin-top` from the `first-of-type` paragraph and `margin-bottom` from the `last-of-type` one.
-- **media**: make `img` and `video` elements fluid-by-default, with `max-width: 100%;` and `height: auto`.
+- **button**: reset default button styles that never get used and nobody seems to like (including `button`, `input[type="button"]`, `input[type="submit"]`, and `input[type="reset"]`)
+- **paragraph**: remove `margin-top` from the `first-of-type` paragraph and `margin-bottom` from the `last-of-type` one
+- **media**: make `img` and `video` elements fluid-by-default, with `max-width: 100%;` and `height: auto`
+- **figure**: remove default margins from `figure`
 
 *These "reset" modules are not meant to serve the same purpose as a big reset/normalizer like the ol' Eric Meyer, the Compass Reset, or Normalize.* Leave that base-level, grand-scheme-of-things resetting to one of those tried-and-true standards. Scut's "reset" modules, in contrast, are opinionated little attacks on specific elements.
 
