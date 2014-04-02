@@ -5,6 +5,6 @@ stylesheets_dir = File.join(base_directory, 'dist')
 Compass::Frameworks.register('Scut', :stylesheets_directory => stylesheets_dir)
 
 module Scut
-  VERSION = "0.10.2"
-  DATE = "2014-03-22"
+  VERSION = "0.10.3"
+  DATE = "2014-04-02"
 end
