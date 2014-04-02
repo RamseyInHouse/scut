@@ -391,7 +391,7 @@ table {
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.2
+* v0.10.3
 * Docs at http://davidtheclark.github.io/scut
 */
 .hide-visually {
@@ -488,7 +488,9 @@ textarea {
 }
 
 button,
-input[type="button"] {
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
   background: transparent;
   border: 0;
   color: inherit;
@@ -505,7 +507,9 @@ input[type="button"] {
   user-select: none;
 }
 button::-moz-focus-inner,
-input[type="button"]::-moz-focus-inner {
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
@@ -514,6 +518,10 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+figure {
+  margin: 0;
 }
 
 body {
@@ -532,6 +540,8 @@ code {
 }
 pre code {
   background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 a,
