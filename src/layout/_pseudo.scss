@@ -1,0 +1,40 @@
+@mixin scut-pseudo (
+  $display,
+  $position,
+  $content: ""
+) {
+
+  content: $content;
+
+  @if ($display != "") {
+    display: $display;
+  }
+
+  @if ($position != "") {
+    position: $position;
+  }
+
+  @content;
+
+}
+
+%scut-pseudo-absolute {
+  @include scut-pseudo(block, absolute);
+}
+
+%scut-pseudo-relative {
+  @include scut-pseudo(block, relative);
+}
+
+%scut-pseudo-block {
+  @include scut-pseudo(block);
+}
+
+%scut-pseudo-inline-block {
+  @include scut-pseudo(inline-block);
+}
+
+// for inline elements
+%scut-pseudo { 
+  @include scut-pseudo;
+}
