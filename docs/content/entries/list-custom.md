@@ -10,14 +10,14 @@ args:
     default: "\"\\2022\" (bullet)"
     comment: |
       A character to mark list items; *or* enter `count` to indicate that you want to use a counter, optionally followed by 1) a string to follow the counter, and 2) a `list-style-type` for the counter. See examples.
-  - variable: $label-width
+  - variable: $marker-width
     default: 0.75em
     comment: |
       A width for the list-item marker-space &mdash; a.k.a the left-margin of the list-item content.
   - variable: $pad
     default: 0
     comment: |
-      Left-padding *to the left of* the list-item marker.
+      Padding *to the left of* the list-item marker.
   - variable: $no-margin
     default: "false"
     comment: If `true`, top and bottom margins will be removed from the list. *Note that the default here is `false`, unlike for the other list mixins.*
