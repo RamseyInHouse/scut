@@ -1735,7 +1735,7 @@ button:focus, .btn:focus, a.btn:focus {
   counter-increment: scutlistcounter;
 }
 .eg-list-custom-4 > li:before {
-  content: counter(scutlistcounter, lower-alpha) ")";
+  content: counter(scutlistcounter,lower-alpha) ")";
   display: block;
   position: absolute;
   top: 0;
