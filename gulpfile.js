@@ -1,4 +1,4 @@
-var currentVersion = '0.10.3';
+var currentVersion = '0.10.4';
 
 var moment = require('moment');
 var gulp = require('gulp');

@@ -1,4 +1,5 @@
 ### 0.10.4
+- No longer remove `outline` from `button` as part of `scut-reset-button`.
 - Added use of selector lists for `scut-vcenter-td` and `scut-vcenter-ib`.
 
 ### 0.10.3
