@@ -2501,6 +2501,11 @@ button:focus, .btn:focus, a.btn:focus {
   margin-top: 1em;
 }
 
+.special-selector-1,
+.special-selector-2 {
+  padding-right: 1em;
+}
+
 /* end hidden rules */
 /* example start */
 .eg-vcenter-ib > p {
@@ -2527,6 +2532,26 @@ button:focus, .btn:focus, a.btn:focus {
   margin-right: -0.25em;
 }
 .eg-vcenter-ib-2 > .eg-vcenter-ib-inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.eg-vcenter-ib-3:before {
+  content: "";
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.eg-vcenter-ib-3 > .special-selector-1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.eg-vcenter-ib-3 > .special-selector-2 {
+  display: inline-block;
+  vertical-align: middle;
+}
+.eg-vcenter-ib-3 > .special-selector-3 {
   display: inline-block;
   vertical-align: middle;
 }
@@ -2563,6 +2588,11 @@ button:focus, .btn:focus, a.btn:focus {
   margin-top: 1em;
 }
 
+.special-selector-1,
+.special-selector-2 {
+  padding-right: 1em;
+}
+
 /* end hidden rules */
 /* example start */
 .eg-vcenter-td-1 {
@@ -2579,6 +2609,23 @@ button:focus, .btn:focus, a.btn:focus {
   height: 12em;
 }
 .eg-vcenter-td-2 > .eg-vcenter-td-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.eg-vcenter-td-3 {
+  display: table;
+  height: 9em;
+}
+.eg-vcenter-td-3 > .special-selector-1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.eg-vcenter-td-3 > .special-selector-2 {
+  display: table-cell;
+  vertical-align: middle;
+}
+.eg-vcenter-td-3 > .special-selector-3 {
   display: table-cell;
   vertical-align: middle;
 }
