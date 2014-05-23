@@ -1,10 +1,130 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>scut-vcenter-lh, a Scut Utility</title><meta name="description" content="scut-vcenter-lh: Vertically center text (or other inline elements) by equalizing an element&#x27;s height and line-height."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="main.css"></head><body><header role="banner" class="site-banner"><div class="banner-main"><a href="index.html" class="site-title-c"><span class="site-title">Scut</span> <span class="site-subtitle">Sass Utilities <span class="site-subtitle-more">for the Frontend Laborer</span></span></a> <a href="#siteNav" class="goto-nav"><span class="hide-visually">navigation</span></a></div><div class="scut-subbanner"><div class="version">v0.10.3 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)</div><ul class="scut-elsewhere-links"><li><a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a></li><li><a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a></li></ul></div></header><div class="site-body"><article role="main" class="site-main entry"><header><h1 class="entry-title">v-center: line-height method</h1><a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v0.10.3/src/layout/_vcenter-lh.scss">view source</a><div class="summary"><p>Vertically center text (or other inline elements) by equalizing an element&#39;s <code>height</code> and <code>line-height</code>.</p></div><dl class="info-list"><dt>use-name</dt><dd><code>scut-vcenter-lh</code></dd><dt>type</dt><dd>mixin only</dd><dt>arguments</dt><dd><ol class="args-list"><li><code>$height</code></li></ol></dd></dl></header><section><p>This method is simple, requires none of the extra <code>&lt;div&gt;</code>&#39;s that make us all second-guess ourselves, and works in many common vertical-centering-situations.</p><p>However, it is also limited. Below I&#39;ll list some caveats &mdash; and if any of them mean this mixin doesn&#39;t fit your situation, try one of the other vertical-centering methods in Scut (<a href="vcenter-ib.html">via inline-block</a>, <a href="vcenter-td.html">via table display</a>, and <a href="vcenter-tt.html">via transform</a>).</p><ul><li>This method only works for inline content (usually text) that <em>will not exceed a single line.</em> So it&#39;s good for buttons and headings with backgrounds and things like that.</li><li>The line-height set by this method will cascade into inner elements, so you have to make sure to override it as needed.</li><li>If your element has a border and <code>box-sizing: border-box</code> this method will be a little off, because the <code>line-height</code> will start <em>beneath</em> the top border but the height will <em>include</em> the top border. To avoid this issue, you can either set <code>box-sizing: content-box</code> or use a different vertical-centering method.</li></ul></section><section id="example"><h2>example</h2><div id="exampleScss"><h3>SCSS</h3><pre><code class="language-scss">.eg-vcenter-lh-1 {
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+      scut-vcenter-lh, a Scut Utility
+    </title>
+    <meta name="description" content="scut-vcenter-lh: Vertically center text (or other inline elements) by equalizing an element&#x27;s height and line-height.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+
+    <header role="banner" class="site-banner">
+      <div class="banner-main">
+  <a href="index.html" class="site-title-c">
+    <span class="site-title">Scut</span>
+    <span class="site-subtitle">
+      Sass Utilities
+      <span class="site-subtitle-more">
+        for the Frontend Laborer
+      </span>
+    </span>
+  </a>
+
+  <a href="#siteNav" class="goto-nav">
+    <span class="hide-visually">navigation</span>
+  </a>
+</div>
+
+<div class="scut-subbanner">
+  <div class="version">
+    v0.10.4 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)
+  </div>
+  <ul class="scut-elsewhere-links">
+    <li>
+      <a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a>
+    </li>
+    <li>
+      <a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a>
+    </li>
+  </ul>
+</div>
+    </header>
+    <div class="site-body">
+      
+
+<article role="main" class="site-main entry">
+
+  <header>
+
+    <h1 class="entry-title">v-center: line-height method</h1>
+
+    <a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v0.10.4/src/layout/_vcenter-lh.scss">
+      view source
+    </a>
+
+    <div class="summary">
+      <p>Vertically center text (or other inline elements) by equalizing an element&#39;s <code>height</code> and <code>line-height</code>.</p>
+
+    </div>
+
+    <dl class="info-list">
+      <dt>use-name</dt>
+      <dd>
+        <code>scut-vcenter-lh</code>
+      </dd>
+
+      
+      <dt>type</dt>
+      <dd>mixin only</dd>
+      
+
+      
+      <dt>arguments</dt>
+      <dd>
+        <ol class="args-list">
+          
+          <li>
+            <code>$height</code>
+            
+            
+          </li>
+          
+        </ol>
+      </dd>
+      
+
+      
+
+      
+
+    </dl>
+
+  </header>
+
+  <section>
+    <p>This method is simple, requires none of the extra <code>&lt;div&gt;</code>&#39;s that make us all second-guess ourselves, and works in many common vertical-centering-situations.</p>
+<p>However, it is also limited. Below I&#39;ll list some caveats &mdash; and if any of them mean this mixin doesn&#39;t fit your situation, try one of the other vertical-centering methods in Scut (<a href="vcenter-ib.html">via inline-block</a>, <a href="vcenter-td.html">via table display</a>, and <a href="vcenter-tt.html">via transform</a>).</p>
+<ul>
+<li>This method only works for inline content (usually text) that <em>will not exceed a single line.</em> So it&#39;s good for buttons and headings with backgrounds and things like that.</li>
+<li>The line-height set by this method will cascade into inner elements, so you have to make sure to override it as needed.</li>
+<li>If your element has a border and <code>box-sizing: border-box</code> this method will be a little off, because the <code>line-height</code> will start <em>beneath</em> the top border but the height will <em>include</em> the top border. To avoid this issue, you can either set <code>box-sizing: content-box</code> or use a different vertical-centering method.</li>
+</ul>
+
+  </section>
+
+  
+  <section id="example">
+    <h2>example</h2>
+    
+    <div id="exampleScss">
+      <h3>SCSS</h3>
+      <pre><code class="language-scss">.eg-vcenter-lh-1 {
   @include scut-vcenter-lh(50px);
 }
 .eg-vcenter-lh-2 {
   @include scut-vcenter-lh(50px);
   font-size: 0.7em;
-}</code></pre></div><div id="exampleCss" class="example-css is-hidden"><h3>compiled CSS</h3><pre><code class="language-css">.eg-vcenter-lh-1 {
+}</code></pre>
+    </div>
+    <div id="exampleCss" class="example-css is-hidden">
+      <h3>compiled CSS</h3>
+      <pre><code class="language-css">.eg-vcenter-lh-1 {
   height: 50px;
   line-height: 50px;
 }
@@ -14,4 +134,346 @@
   line-height: 50px;
   font-size: 0.7em;
 }
-</code></pre></div><h3 id="resultHeading">Result</h3><div class="result"><button class="eg-vcenter-lh eg-vcenter-lh-1">Vertically centered text</button> <button class="eg-vcenter-lh eg-vcenter-lh-2">Same height, smaller font-size</button></div></section></article><nav id="siteNav" role="navigation" class="site-nav"><ul class="home-toc"><li><a href="index.html#about">About</a></li><li><a href="index.html#installation">Installation</a></li><li><a href="index.html#usage">Usage</a></li><li><a href="index.html#contributing">Contributing</a></li></ul><h2 class="nav-title">functions</h2><ul class="nav-list"><li><a class="nav-link" href="em.html">pixels-to-ems</a></li><li><a class="nav-link" href="rem.html">pixels-to-rems</a></li><li><a class="nav-link" href="strip-unit.html">strip unit</a></li></ul><h2 class="nav-title">general</h2><ul class="nav-list"><li><a class="nav-link" href="border.html">border</a></li><li><a class="nav-link" href="circle.html">circle</a></li><li><a class="nav-link" href="color-swap.html">color swap</a></li><li><a class="nav-link" href="hd-bp.html">HD (HiDPI) breakpoint</a></li><li><a class="nav-link" href="hide-visually.html">hide visually</a></li><li><a class="nav-link" href="image-replace.html">image replacement</a></li><li><a class="nav-link" href="rem-fallback.html">REMs with fallback</a></li><li><a class="nav-link" href="reset.html">reset</a></li><li><a class="nav-link" href="selected.html">selected</a></li><li><a class="nav-link" href="triangle.html">triangle</a></li></ul><h2 class="nav-title">layout</h2><ul class="nav-list"><li><a class="nav-link" href="center-absolutely.html">center absolutely</a></li><li><a class="nav-link" href="center-block.html">center block</a></li><li><a class="nav-link" href="center-transform.html">center transform</a></li><li><a class="nav-link" href="clearfix.html">clearfix</a></li><li><a class="nav-link" href="fill.html">fill</a></li><li><a class="nav-link" href="list-custom.html">list: custom</a></li><li><a class="nav-link" href="list-divided.html">list: divided</a></li><li><a class="nav-link" href="list-floated.html">list: floated</a></li><li><a class="nav-link" href="list-inline.html">list: inline</a></li><li><a class="nav-link" href="list-punctuated.html">list: punctuated</a></li><li><a class="nav-link" href="list-unstyled.html">list: unstyled</a></li><li><a class="nav-link" href="margin.html">margin</a></li><li><a class="nav-link" href="padding.html">padding</a></li><li><a class="nav-link" href="positioning-absolute.html">positioning: absolute</a></li><li><a class="nav-link" href="positioning-coords.html">positioning: coordinates</a></li><li><a class="nav-link" href="positioning-fixed.html">positioning: fixed</a></li><li><a class="nav-link" href="positioning-relative.html">positioning: relative</a></li><li><a class="nav-link" href="ratio-box.html">ratio-box</a></li><li><a class="nav-link" href="size.html">size</a></li><li><a class="nav-link" href="sticky-footer-fixed.html">sticky footer, fixed height</a></li><li><a class="nav-link" href="sticky-footer-fluid.html">sticky footer, fluid height</a></li><li><a class="nav-link" href="vcenter-ib.html">v-center: inline-block method</a></li><li><a class="nav-link" href="vcenter-lh.html">v-center: line-height method</a></li><li><a class="nav-link" href="vcenter-td.html">v-center: table display method</a></li><li><a class="nav-link" href="vcenter-tt.html">v-center: transform method</a></li></ul><h2 class="nav-title">typography</h2><ul class="nav-list"><li><a class="nav-link" href="characters.html">characters</a></li><li><a class="nav-link" href="font-face.html">font-face</a></li><li><a class="nav-link" href="hanging-indent.html">hanging indent</a></li><li><a class="nav-link" href="indented-ps.html">indented paragraphs</a></li><li><a class="nav-link" href="key-val.html">key-value punctuation</a></li><li><a class="nav-link" href="link-bb.html">link bottom-bordered</a></li><li><a class="nav-link" href="reverse-italics.html">reverse italics</a></li><li><a class="nav-link" href="side-lined.html">side-lined</a></li><li><a class="nav-link" href="truncate.html">truncate</a></li></ul><a href="#" class="goto-top">back to top</a></nav></div><script src="prism.js"></script><script src="main.js"></script></body></html>
+</code></pre>
+    </div>
+
+    <h3 id="resultHeading">Result</h3>
+    <div class="result">
+<button class="eg-vcenter-lh eg-vcenter-lh-1">Vertically centered text</button>
+<button class="eg-vcenter-lh eg-vcenter-lh-2">Same height, smaller font-size</button>
+</div>
+  </section>
+  
+
+  
+
+</article>
+      <nav id="siteNav" role="navigation" class="site-nav">
+  <ul class="home-toc">
+  <li><a href="index.html#about">About</a></li>
+  <li><a href="index.html#installation">Installation</a></li>
+  <li><a href="index.html#usage">Usage</a></li>
+  <li><a href="index.html#contributing">Contributing</a></li>
+</ul>
+  
+    <h2 class="nav-title">
+      functions
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="em.html">
+          pixels-to-ems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem.html">
+          pixels-to-rems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="strip-unit.html">
+          strip unit
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      general
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="border.html">
+          border
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="circle.html">
+          circle
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="color-swap.html">
+          color swap
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hd-bp.html">
+          HD (HiDPI) breakpoint
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hide-visually.html">
+          hide visually
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="image-replace.html">
+          image replacement
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem-fallback.html">
+          REMs with fallback
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reset.html">
+          reset
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="selected.html">
+          selected
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="triangle.html">
+          triangle
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      layout
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="center-absolutely.html">
+          center absolutely
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-block.html">
+          center block
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-transform.html">
+          center transform
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="clearfix.html">
+          clearfix
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="fill.html">
+          fill
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-custom.html">
+          list: custom
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-divided.html">
+          list: divided
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-floated.html">
+          list: floated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-inline.html">
+          list: inline
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-punctuated.html">
+          list: punctuated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-unstyled.html">
+          list: unstyled
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="margin.html">
+          margin
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="padding.html">
+          padding
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-absolute.html">
+          positioning: absolute
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-coords.html">
+          positioning: coordinates
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-fixed.html">
+          positioning: fixed
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-relative.html">
+          positioning: relative
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="ratio-box.html">
+          ratio-box
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="size.html">
+          size
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fixed.html">
+          sticky footer, fixed height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fluid.html">
+          sticky footer, fluid height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-ib.html">
+          v-center: inline-block method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-lh.html">
+          v-center: line-height method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-td.html">
+          v-center: table display method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-tt.html">
+          v-center: transform method
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      typography
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="characters.html">
+          characters
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="font-face.html">
+          font-face
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hanging-indent.html">
+          hanging indent
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="indented-ps.html">
+          indented paragraphs
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="key-val.html">
+          key-value punctuation
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="link-bb.html">
+          link bottom-bordered
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reverse-italics.html">
+          reverse italics
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="side-lined.html">
+          side-lined
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="truncate.html">
+          truncate
+        </a>
+      </li>
+      
+    </ul>
+  
+  <a href="#" class="goto-top">back to top</a>
+</nav>
+    </div>
+
+  <script src="prism.js"></script>
+  
+  <script src="main.js"></script>
+  
+  </body>
+
+</html>

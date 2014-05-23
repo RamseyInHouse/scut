@@ -391,7 +391,7 @@ table {
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.3
+* v0.10.4
 * Docs at http://davidtheclark.github.io/scut
 */
 .hide-visually {
@@ -496,7 +496,6 @@ input[type="reset"] {
   color: inherit;
   font: inherit;
   margin: 0;
-  outline: none;
   padding: 0;
   width: auto;
   -webkit-appearance: none;
