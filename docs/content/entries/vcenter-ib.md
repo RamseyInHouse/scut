@@ -8,7 +8,7 @@ categories:
 args:
   - variable: $inner
     default: "\".scut-inner\""
-    comment: A CSS selector for the inner element. *Wrap your selector in quotes.*
+    comment: A CSS selector for the inner element. **Can be a single selector or a comma-separated list of selectors.** In either case, *wrap selectors in quotes.*
 references:
   - description: "CSS-Tricks: \"Centering in the Unknown\""
     url: "http://css-tricks.com/centering-in-the-unknown/"
@@ -16,14 +16,20 @@ example:
   show-html: true
   html: |
     <div class="eg-vcenter-ib eg-vcenter-ib-1">
-      <p class="scut-inner">
-        A vertically centered element, with the default classname "scut-inner".
-      </p>
+      <span class="scut-inner">
+        Using the default classname "scut-inner".
+      </span>
     </div>
     <div class="eg-vcenter-ib eg-vcenter-ib-2">
-      <p class="eg-vcenter-ib-inner">
-        A vertically centered element, with its own special classname.
-      </p>
+      <div class="eg-vcenter-ib-inner">
+        Using a special classname.
+      </div>
+    </div>
+    <p>And illustrating the use of a list of distinct selectors ...</p>
+    <div class="eg-vcenter-ib eg-vcenter-ib-3">
+      <div class="special-selector-1">first</div>
+      <div class="special-selector-2">second</div>
+      <div class="special-selector-3">third</div>
     </div>
 ---
 

@@ -812,6 +812,10 @@ $scut-em-base: 16;
     margin-top: 1em;
   }
 }
+.special-selector-1,
+.special-selector-2 {
+  padding-right: 1em;
+}
 /* end hidden rules */
 
 /* example start */
@@ -824,6 +828,10 @@ $scut-em-base: 16;
   }
 .eg-vcenter-ib-2 {
   @include scut-vcenter-ib(".eg-vcenter-ib-inner");
+}
+// illustrating a list of selectors
+.eg-vcenter-ib-3 {
+  @include scut-vcenter-ib(".special-selector-1", ".special-selector-2", ".special-selector-3");
 }
 /* example end */
 
@@ -855,6 +863,10 @@ $scut-em-base: 16;
     margin-top: 1em;
   }
 }
+.special-selector-1,
+.special-selector-2 {
+  padding-right: 1em;
+}
 /* end hidden rules */
 
 /* example start */
@@ -866,5 +878,10 @@ $scut-em-base: 16;
 .eg-vcenter-td-2 {
   @include scut-vcenter-td(".eg-vcenter-td-inner");
   height: 12em;
+}
+// illustrating a list of selectors
+.eg-vcenter-td-3 {
+  @include scut-vcenter-td(".special-selector-1", ".special-selector-2", ".special-selector-3");
+  height: 9em;
 }
 /* example end */

@@ -1099,7 +1099,7 @@ $scut-rem-base: 16 !default;
 
 }
 @mixin scut-vcenter-ib (
-  $inner: ".scut-inner"
+  $inner...
 ) {
 
   // The inner element is vertically centered
@@ -1117,9 +1117,12 @@ $scut-rem-base: 16 !default;
     margin-right: -0.25em;
   }
 
-  & > #{$inner} {
-    display: inline-block;
-    vertical-align: middle;
+  $inner: if(length($inner) == 0, ".scut-inner", $inner);
+  @each $cell-selector in $inner {
+    & > #{$cell-selector} {
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
 }
@@ -1137,14 +1140,17 @@ $scut-rem-base: 16 !default;
 
 }
 @mixin scut-vcenter-td (
-  $inner: ".scut-inner"
+  $inner...
 ) {
 
   display: table;
 
-  & > #{$inner} {
-    display: table-cell;
-    vertical-align: middle;
+  $inner: if(length($inner) == 0, ".scut-inner", $inner);
+  @each $cell-selector in $inner {
+    & > #{$cell-selector} {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 
 }
@@ -1153,6 +1159,7 @@ $scut-rem-base: 16 !default;
 %scut-vcenter-td {
   @include scut-vcenter-td;
 }
+
 // Depends on scut-center-transform
 
 @mixin scut-vcenter-tt () {

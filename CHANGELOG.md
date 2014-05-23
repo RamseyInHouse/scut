@@ -1,3 +1,6 @@
+### 0.10.4
+- Added use of selector lists for `scut-vcenter-td` and `scut-vcenter-ib`.
+
 ### 0.10.3
 - Added `scut-reset-figure`.
 - Added `input[type="submit"]` and `input[type="reset"]` to `scut-reset-button`.
