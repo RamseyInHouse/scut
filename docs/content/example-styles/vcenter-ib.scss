@@ -12,6 +12,10 @@
     margin-top: 1em;
   }
 }
+.special-selector-1,
+.special-selector-2 {
+  padding-right: 1em;
+}
 /* end hidden rules */
 
 /* example start */
@@ -24,5 +28,9 @@
   }
 .eg-vcenter-ib-2 {
   @include scut-vcenter-ib(".eg-vcenter-ib-inner");
+}
+// illustrating a list of selectors
+.eg-vcenter-ib-3 {
+  @include scut-vcenter-ib(".special-selector-1", ".special-selector-2", ".special-selector-3");
 }
 /* example end */

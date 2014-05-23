@@ -1,12 +1,15 @@
 @mixin scut-vcenter-td (
-  $inner: ".scut-inner"
+  $inner...
 ) {
 
   display: table;
 
-  & > #{$inner} {
-    display: table-cell;
-    vertical-align: middle;
+  $inner: if(length($inner) == 0, ".scut-inner", $inner);
+  @each $cell-selector in $inner {
+    & > #{$cell-selector} {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 
 }
