@@ -1,8 +1,12 @@
 @mixin scut-reset-border-box {
   // Make everything a border-box, because why not?
-  *, *:before, *:after {
+  html {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
   }
 }
 
