@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v0.10.4
+* v1.0.0
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -333,9 +333,13 @@ $scut-rem-base: 16 !default;
 }
 @mixin scut-reset-border-box {
   // Make everything a border-box, because why not?
-  *, *:before, *:after {
+  html {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
   }
 }
 
@@ -430,7 +434,7 @@ $scut-rem-base: 16 !default;
 }
 
 @mixin scut-reset-figure {
-  // Remove default margins:
+  // Remove default margins.
   figure {
     margin: 0;
   }
@@ -466,6 +470,7 @@ $scut-rem-base: 16 !default;
     @include scut-reset-figure;
   }
 }
+
 @mixin scut-selected (
   $active: false
 ) {

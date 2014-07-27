@@ -9,6 +9,9 @@ args:
   - variable: $exclude
     default: "false"
     comment: Names of reset modules to exclude.
+references:
+  - description: "CSS-Tricks: \"Inheriting box-sizing Probably Slightly Better Best-Practice\""
+    url: "http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/"
 ---
 
 The master mixin, `scut-reset`, calls them all *minus any that you exclude with the `$exclude` argument`*. Alternately, you could pick and choose yourself, calling only those you need.
@@ -17,7 +20,7 @@ Also, you could *scope* (most of) these resets by nesting them within an element
 
 The modular reset mixins include the following (*I suggest viewing the source code as well, so you know what you're getting into*):
 
-- **border-box**: make everything a `border-box`
+- **border-box**: make everything a `border-box` (by setting `border-box` on `<html>` and `inherit` on everything else &mdash; so that if you have a component that was built to be `content-box`, you can make that switch by simply changing the parent container to `content-box`, and its children will inherit; see the CSS-Tricks reference about this)
 - **antialias**: set `-webkit-font-smoothing: antialiased` on the `body`
 - **semanticize**: make headers (`<h1><h2><h3><h4><h5><h6>`) and `<b>` elements semantic rather than presentational
 - **pointer**: give `cursor: pointer` to clickable form elements (`label`, `selected`, `option`, `button`)
