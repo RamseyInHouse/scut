@@ -445,10 +445,16 @@ table {
   font-style: normal;
 }
 
-*, *:before, *:after {
+html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
