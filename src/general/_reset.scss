@@ -109,31 +109,31 @@
 
 // Call them all, minus exclusions!
 @mixin scut-reset ($exclude: false) {
-  @if not index($exclude, border-box) {
+  @if not(index($exclude, border-box)) {
     @include scut-reset-border-box;
   }
-  @if not index($exclude, antialias) {
+  @if not(index($exclude, antialias)) {
     @include scut-reset-antialias;
   }
-  @if not index($exclude, semanticize) {
+  @if not(index($exclude, semanticize)) {
     @include scut-reset-semanticize;
   }
-  @if not index($exclude, pointer) {
+  @if not(index($exclude, pointer)) {
     @include scut-reset-pointer;
   }
-  @if not index($exclude, form) {
+  @if not(index($exclude, form)) {
     @include scut-reset-form;
   }
-  @if not index($exclude, button) {
+  @if not(index($exclude, button)) {
     @include scut-reset-button;
   }
-  @if not index($exclude, paragraph) {
+  @if not(index($exclude, paragraph)) {
     @include scut-reset-paragraph;
   }
-  @if not index($exclude, media) {
+  @if not(index($exclude, media)) {
     @include scut-reset-media;
   }
-  @if not index($exclude, figure) {
+  @if not(index($exclude, figure)) {
     @include scut-reset-figure;
   }
 }
