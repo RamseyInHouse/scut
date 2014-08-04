@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.0.0
+* v1.0.1
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -238,7 +238,7 @@ $scut-rem-base: 16 !default;
 
   // If $off IS NOT a list and $bg is TRUE,
   // assign background-color.
-  @else if $bg and not $off-is-list {
+  @else if $bg and not($off-is-list) {
     background-color: $off;
     $transition-properties: background-color;
   }
@@ -265,7 +265,7 @@ $scut-rem-base: 16 !default;
       background-color: nth($on, 2);
     }
 
-    @else if $bg and not $on-is-list {
+    @else if $bg and not($on-is-list) {
       background-color: $on;
     }
 
@@ -650,7 +650,7 @@ $scut-rem-base: 16 !default;
 
   $translate-val: null;
 
-  @if not $axis {
+  @if not($axis) {
     $translate-val: translate(-50%, -50%);
   }
   @else if $axis != x {
@@ -784,7 +784,7 @@ $scut-rem-base: 16 !default;
   }
 
   & > li + li:#{$pseudo} {
-    @if not $height {
+    @if not($height) {
       content: $divider;
       display: inline-block;
       @content;

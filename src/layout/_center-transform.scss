@@ -18,7 +18,7 @@
 
   $translate-val: null;
 
-  @if not $axis {
+  @if not($axis) {
     $translate-val: translate(-50%, -50%);
   }
   @else if $axis != x {

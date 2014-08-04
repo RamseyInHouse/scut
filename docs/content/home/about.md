@@ -10,9 +10,9 @@ Or think of it this way: **Scut will help you, the frontend laborer, do your *sc
 
 <a href="{{codepen-url}}" target="_blank" class="btn">Experiment with Scut on Codepen</a>
 
-**BE AWARE:** Scut is in early stages, under active development, *unstable* &mdash; still in [SemVer](http://semver.org/) v0. **Scut is wide, wide open to contributions**, and I will be building on it myself. New features will be added and old features might be improved. So: **if some part of Scut that you had been using suddenly doesn't work, please check this documentation to see what changed.**
+**Scut is now at v1.0.0 &mdash; so should be stable.** It has been around for a little while and used by some number of people, and during that time has undergone very few breaking changes; so it seems like the structure is sound, and I think it's ready to be called "stable." (Of course new non-breaking features will still be added and bugs will be fixed.)
 
-You might also want to <a href="{{github-home}}/blob/master/CHANGELOG.md">have a look at the changelog</a>.
+Still: *if some part of Scut that you had been using suddenly doesn't work, please check this documentation to see what changed.* Also, you might want to <a href="{{github-home}}/blob/master/CHANGELOG.md">have a look at the changelog</a>.
 
 For a thorough introduction to Scut, have a look at [my article, "Introducing Scut," on CSS-Tricks](http://css-tricks.com/introducing-scut-new-sass-utility-library/).
 
