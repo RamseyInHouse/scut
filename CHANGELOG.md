@@ -1,5 +1,5 @@
 ### 1.0.1
-- Adjusted syntax of Sass `@if not` statements so that they will work with Libsass, pending https://github.com/sass/libsass/issues/368
+- Adjusted syntax of Sass `@if not` statements so that they will work in Libsass despite the Libsass bug https://github.com/sass/libsass/issues/368
 
 ### 1.0.0
 - Changed `box-sizing` reset to use inheritance.
