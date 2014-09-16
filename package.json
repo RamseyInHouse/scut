@@ -7,18 +7,19 @@
     "prepublish": "bower install; grunt init"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
     "assemble": "~0.4.11",
-    "gulp": "~3.5.2",
-    "gulp-ruby-sass": "~0.3.1",
-    "gulp-replace": "~0.2.0",
-    "gulp-concat": "~2.1.7",
+    "grunt": "~0.4.1",
+    "gulp": "^3.8.8",
     "gulp-autoprefixer": "0.0.6",
-    "gulp-minify-css": "~0.3.0",
-    "gulp-grunt": "~0.4.1",
+    "gulp-concat": "~2.1.7",
     "gulp-connect": "~1.0.5",
-    "gulp-newer": "~0.3.0",
+    "gulp-grunt": "~0.4.1",
+    "gulp-header": "^1.1.1",
     "gulp-htmlmin": "~0.1.2",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-newer": "~0.3.0",
+    "gulp-replace": "~0.2.0",
+    "gulp-ruby-sass": "~0.3.1",
     "moment": "^2.5.1",
     "run-sequence": "^0.3.6"
   }
