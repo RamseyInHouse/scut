@@ -15,6 +15,9 @@
   body {
     -webkit-font-smoothing: antialiased;
   }
+  *, *:before, *:after {
+    -webkit-font-smoothing: inherit;
+  }
 }
 
 @mixin scut-reset-semanticize {
