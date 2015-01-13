@@ -1,3 +1,6 @@
+### 1.0.2
+- Made all elements inherit `-webkit-font-smoothing` in `scut-reset-antialias`, to target elements that need specific targeting.
+
 ### 1.0.1
 - Adjusted syntax of Sass `@if not` statements so that they will work in Libsass despite the Libsass bug https://github.com/sass/libsass/issues/368
 

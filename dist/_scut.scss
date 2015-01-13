@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.0.1
+* v1.0.2
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -347,6 +347,9 @@ $scut-rem-base: 16 !default;
   // Antialias!
   body {
     -webkit-font-smoothing: antialiased;
+  }
+  *, *:before, *:after {
+    -webkit-font-smoothing: inherit;
   }
 }
 

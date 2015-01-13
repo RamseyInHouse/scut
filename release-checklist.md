@@ -8,6 +8,6 @@ To release:
 - Commit and push.
 - Create a tag: `git tag -a vx.x.x -m "[message]"` . ([See these docs](http://git-scm.com/book/en/Git-Basics-Tagging).)
 - Push the tag: `git push --tags`.
-- Update gh-pages, commit and push it.
+- Update gh-pages with `gulp copyDocs`, commit and push it.
 - Update Codepen.
 - Check.
