@@ -21,7 +21,7 @@ Also, you could *scope* (most of) these resets by nesting them within an element
 The modular reset mixins include the following (*I suggest viewing the source code as well, so you know what you're getting into*):
 
 - **border-box**: make everything a `border-box` (by setting `border-box` on `<html>` and `inherit` on everything else &mdash; so that if you have a component that was built to be `content-box`, you can make that switch by simply changing the parent container to `content-box`, and its children will inherit; see the CSS-Tricks reference about this)
-- **antialias**: set `-webkit-font-smoothing: antialiased` on the `body`
+- **antialias**: set `-webkit-font-smoothing: antialiased` on the everything. (As with `border-box`, it will set the property on `<body>` and `inherit` on everything else.)
 - **semanticize**: make headers (`<h1><h2><h3><h4><h5><h6>`) and `<b>` elements semantic rather than presentational
 - **pointer**: give `cursor: pointer` to clickable form elements (`label`, `selected`, `option`, `button`)
 - **form**: reset `fieldset` and restrict `textarea` to `resize: vertical`
