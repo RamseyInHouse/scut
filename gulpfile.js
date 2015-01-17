@@ -1,29 +1,38 @@
 var currentVersion = '1.0.2';
 
 var moment = require('moment');
+var runSequence = require('run-sequence');
 var gulp = require('gulp');
 var sass = require('gulp-ruby-sass');
 var replace = require('gulp-replace');
 var concat = require('gulp-concat');
 var autoprefixer = require('gulp-autoprefixer');
+var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
 var connect = require('gulp-connect');
 var newer = require('gulp-newer');
 var htmlmin = require('gulp-htmlmin');
 var header = require('gulp-header');
-var runSequence = require('run-sequence');
+
 require('gulp-grunt')(gulp);
 
 // build Scut
-var distBanner = '/*\n* Scut, a collection of Sass utilities\n* to ease and improve our implementations of common style-code patterns.\n* v' + currentVersion + '\n* Docs at http://davidtheclark.github.io/scut\n*/\n\n';
+var distBanner = (
+  '/*\n* Scut, a collection of Sass utilities\n* to ease and ' +
+  'improve our implementations of common style-code patterns.\n* v' +
+  currentVersion + '\n* Docs at http://davidtheclark.github.io/scut\n*/\n\n'
+);
+
 gulp.task('build', function() {
   gulp.src([
+
       // when order matters
       'src/layout/_clearfix.scss',
       'src/layout/_list-unstyled.scss',
       'src/layout/_list-floated.scss',
       'src/layout/_positioning-coords.scss',
       'src/functions/_strip-unit.scss',
+
       // the rest of them
       'src/**/*.scss'
     ])
@@ -75,18 +84,25 @@ gulp.task('processExamples', function() {
 
 });
 
-// compile the main stylesheet
-gulp.task('docStyle', ['processExamples'], function() {
-  gulp.src(['./docs/dev/scss/main.scss'])
-    .pipe(sass({
-      'style': 'expanded'
-    }))
-    .pipe(autoprefixer("last 3 versions", "> 1%", "ie 8"))
-    .pipe(gulp.dest('./docs/dist/'))
-    .pipe(connect.reload());
+// compile the main docs stylesheet
+var exec = require('child_process').exec;
+gulp.task('docStyle', ['processExamples'], function(cb) {
+  // using sass CLI to avoid the current messes of the gulp sass plugins
+  exec('sass --sourcemap=inline ./docs/dev/scss/main.scss ./docs/dist/main.css', function(err) {
+    if (err !== null) { console.log(err); }
+
+    gulp.src('./docs/dist/main.css')
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(autoprefixer('last 3 version', '> 1%', 'ie 8'))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('./docs/dist'))
+      .pipe(connect.reload());
+
+    cb();
+  });
 });
 
-// copy over JS files
+// copy over JS files for docs
 gulp.task('copyJs', function() {
   gulp.src([
       './docs/dev/js/prism.js',
@@ -96,9 +112,9 @@ gulp.task('copyJs', function() {
     .pipe(connect.reload());
 });
 
-// compile via Assemble
-gulp.task('assemble', function() {
-  gulp.run('grunt-assemble');
+// compile markdown to HTML with Assemble
+// (unfortunately only stable as a Grunt task)
+gulp.task('assemble', ['grunt-assemble'], function() {
   gulp.src('./docs/dist/*.html')
     .pipe(htmlmin({
       collapseWhitespace: true,
@@ -107,21 +123,23 @@ gulp.task('assemble', function() {
     .pipe(gulp.dest('./docs/dist/'));
 });
 
+// copy docs dist folder to parallel gh-pages directory
+gulp.task('copyDocs', function() {
+  gulp.src('./docs/dist/*')
+    .pipe(gulp.dest('../gh-pages/'));
+});
+
 
 // docs tasks
 gulp.task('docs', function(callback) {
   runSequence(
     'docStyle',
     'assemble',
+    'copyDocs',
     callback
   );
 });
 
-// copy docs dist folder to parallel gh-pages directory
-gulp.task('copyDocs', function() {
-  gulp.src('./docs/dist/*')
-    .pipe(gulp.dest('../gh-pages/'));
-});
 
 // watch for changes and run relevant tasks
 gulp.task('watch', function() {
@@ -136,16 +154,18 @@ gulp.task('watch', function() {
 });
 
 // local dev server
-gulp.task('connect', connect.server({
-  root: ['docs/dist'],
-  port: 9000,
-  livereload: true
-}));
+gulp.task('connect', function() {
+  connect.server({
+    root: ['docs/dist'],
+    port: 9000,
+    livereload: true
+  });
+});
 
 // develop: watch for changes and make things happen
 gulp.task('default', ['connect', 'watch']);
 
-// grunt version
+// update version numbers etc. in all the right places
 gulp.task('versionNumber', function() {
   gulp.src([
       './bower.json',
@@ -160,12 +180,12 @@ gulp.task('versionNumber', function() {
     .pipe(gulp.dest('./lib/'));
 });
 
-// new version
+// do all the things necessary to build a new version
 gulp.task('version', function(callback) {
   runSequence(
     'build',
     'versionNumber',
-    'assemble',
+    'docs',
     callback
   );
 });
