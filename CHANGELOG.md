@@ -1,3 +1,6 @@
+### 1.1.0
+- Added `woff2` format to `scut-font-face`.
+
 ### 1.0.2
 - Made all elements inherit `-webkit-font-smoothing` in `scut-reset-antialias`, to target elements that need specific targeting.
 
