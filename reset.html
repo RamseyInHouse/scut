@@ -1,7 +1,493 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>scut-reset, a Scut Utility</title><meta name="description" content="scut-reset: A small set of modular resets, each one an independent mixin."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="main.css"></head><body><header role="banner" class="site-banner"><div class="banner-main"><a href="index.html" class="site-title-c"><span class="site-title">Scut</span> <span class="site-subtitle">Sass Utilities <span class="site-subtitle-more">for the Frontend Laborer</span></span></a> <a href="#siteNav" class="goto-nav"><span class="hide-visually">navigation</span></a></div><div class="scut-subbanner"><div class="version">v1.0.2 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)</div><ul class="scut-elsewhere-links"><li><a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a></li><li><a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a></li></ul></div></header><div class="site-body"><article role="main" class="site-main entry"><header><h1 class="entry-title">reset</h1><a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.0.2/src/general/_reset.scss">view source</a><div class="summary"><p>A small set of modular resets, each one an independent mixin.</p></div><dl class="info-list"><dt>use-name</dt><dd><code>scut-reset</code></dd><dt>type</dt><dd>mixin only</dd><dt>arguments</dt><dd><ol class="args-list"><li><code>$exclude</code><dl class="default"><dt>default</dt><dd><code>false</code></dd></dl><div class="args-comment"><p>Names of reset modules to exclude.</p></div></li></ol></dd></dl></header><section><p>The master mixin, <code>scut-reset</code>, calls them all <em>minus any that you exclude with the <code>$exclude</code> argument`</em>. Alternately, you could pick and choose yourself, calling only those you need.</p><p>Also, you could <em>scope</em> (most of) these resets by nesting them within an element. (You can&#39;t really scope <code>antialias</code> because it sets a rule on the <code>body</code> element.)</p><p>The modular reset mixins include the following (<em>I suggest viewing the source code as well, so you know what you&#39;re getting into</em>):</p><ul><li><strong>border-box</strong>: make everything a <code>border-box</code> (by setting <code>border-box</code> on <code>&lt;html&gt;</code> and <code>inherit</code> on everything else &mdash; so that if you have a component that was built to be <code>content-box</code>, you can make that switch by simply changing the parent container to <code>content-box</code>, and its children will inherit; see the CSS-Tricks reference about this)</li><li><strong>antialias</strong>: set <code>-webkit-font-smoothing: antialiased</code> on everything. (As with <code>border-box</code>, it will set the property on <code>&lt;body&gt;</code> and <code>inherit</code> on everything else.)</li><li><strong>semanticize</strong>: make headers (<code>&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;</code>) and <code>&lt;b&gt;</code> elements semantic rather than presentational</li><li><strong>pointer</strong>: give <code>cursor: pointer</code> to clickable form elements (<code>label</code>, <code>selected</code>, <code>option</code>, <code>button</code>)</li><li><strong>form</strong>: reset <code>fieldset</code> and restrict <code>textarea</code> to <code>resize: vertical</code></li><li><strong>button</strong>: reset default button styles that never get used and nobody seems to like (including <code>button</code>, <code>input[type=&quot;button&quot;]</code>, <code>input[type=&quot;submit&quot;]</code>, and <code>input[type=&quot;reset&quot;]</code>)</li><li><strong>paragraph</strong>: remove <code>margin-top</code> from the <code>first-of-type</code> paragraph and <code>margin-bottom</code> from the <code>last-of-type</code> one</li><li><strong>media</strong>: make <code>img</code> and <code>video</code> elements fluid-by-default, with <code>max-width: 100%;</code> and <code>height: auto</code></li><li><strong>figure</strong>: remove default margins from <code>figure</code></li></ul><p><em>These &quot;reset&quot; modules are not meant to serve the same purpose as a big reset/normalizer like the ol&#39; Eric Meyer, the Compass Reset, or Normalize.</em> Leave that base-level, grand-scheme-of-things resetting to one of those tried-and-true standards. Scut&#39;s &quot;reset&quot; modules, in contrast, are opinionated little attacks on specific elements.</p><p>Here&#39;s the reasoning: I&#39;ve found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all the default button styling; and so on. So I decided to start stashing those resets for future projects. That&#39;s what <code>scut-reset</code> is.</p><p>If you want to use <em>all</em> the <code>scut-reset</code> modules, somewhere in your stylesheet (not nested within any other rulesets), do this:</p><pre class="language-scss"><code>@include scut-reset;</code></pre><p>To exclude specific modules, pass their names in a list <em>without commas</em> as the <code>$exclude</code> argument. For example, to avoid the <code>semanticize</code> and <code>paragraph</code> modules:</p><pre class="language-scss"><code>@include scut-reset(semanticize paragraph);</code></pre><p>To instead call <em>only specific modules</em>, use <code>@include scut-reset-[name]</code>. For example:</p><pre class="language-scss"><code>@include scut-reset-paragraph;
-@include scut-reset-button;</code></pre><p>And to scope the rest, just nest. See!</p><pre class="language-scss"><code>// call all the resets but `paragraph`
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+      scut-reset, a Scut Utility
+    </title>
+    <meta name="description" content="scut-reset: A small set of modular resets, each one an independent mixin.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+
+    <header role="banner" class="site-banner">
+      <div class="banner-main">
+  <a href="index.html" class="site-title-c">
+    <span class="site-title">Scut</span>
+    <span class="site-subtitle">
+      Sass Utilities
+      <span class="site-subtitle-more">
+        for the Frontend Laborer
+      </span>
+    </span>
+  </a>
+
+  <a href="#siteNav" class="goto-nav">
+    <span class="hide-visually">navigation</span>
+  </a>
+</div>
+
+<div class="scut-subbanner">
+  <div class="version">
+    v1.1.0 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)
+  </div>
+  <ul class="scut-elsewhere-links">
+    <li>
+      <a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a>
+    </li>
+    <li>
+      <a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a>
+    </li>
+  </ul>
+</div>
+    </header>
+    <div class="site-body">
+      
+
+<article role="main" class="site-main entry">
+
+  <header>
+
+    <h1 class="entry-title">reset</h1>
+
+    <a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.1.0/src/general/_reset.scss">
+      view source
+    </a>
+
+    <div class="summary">
+      <p>A small set of modular resets, each one an independent mixin.</p>
+
+    </div>
+
+    <dl class="info-list">
+      <dt>use-name</dt>
+      <dd>
+        <code>scut-reset</code>
+      </dd>
+
+      
+      <dt>type</dt>
+      <dd>mixin only</dd>
+      
+
+      
+      <dt>arguments</dt>
+      <dd>
+        <ol class="args-list">
+          
+          <li>
+            <code>$exclude</code>
+            
+            <dl class="default">
+              <dt>default</dt>
+              <dd>
+                <code>false</code>
+              </dd>
+            </dl>
+            
+            
+            <div class="args-comment"><p>Names of reset modules to exclude.</p>
+</div>
+            
+          </li>
+          
+        </ol>
+      </dd>
+      
+
+      
+
+      
+
+    </dl>
+
+  </header>
+
+  <section>
+    <p>The master mixin, <code>scut-reset</code>, calls them all <em>minus any that you exclude with the <code>$exclude</code> argument`</em>. Alternately, you could pick and choose yourself, calling only those you need.</p>
+<p>Also, you could <em>scope</em> (most of) these resets by nesting them within an element. (You can&#39;t really scope <code>antialias</code> because it sets a rule on the <code>body</code> element.)</p>
+<p>The modular reset mixins include the following (<em>I suggest viewing the source code as well, so you know what you&#39;re getting into</em>):</p>
+<ul>
+<li><strong>border-box</strong>: make everything a <code>border-box</code> (by setting <code>border-box</code> on <code>&lt;html&gt;</code> and <code>inherit</code> on everything else &mdash; so that if you have a component that was built to be <code>content-box</code>, you can make that switch by simply changing the parent container to <code>content-box</code>, and its children will inherit; see the CSS-Tricks reference about this)</li>
+<li><strong>antialias</strong>: set <code>-webkit-font-smoothing: antialiased</code> on everything. (As with <code>border-box</code>, it will set the property on <code>&lt;body&gt;</code> and <code>inherit</code> on everything else.)</li>
+<li><strong>semanticize</strong>: make headers (<code>&lt;h1&gt;&lt;h2&gt;&lt;h3&gt;&lt;h4&gt;&lt;h5&gt;&lt;h6&gt;</code>) and <code>&lt;b&gt;</code> elements semantic rather than presentational</li>
+<li><strong>pointer</strong>: give <code>cursor: pointer</code> to clickable form elements (<code>label</code>, <code>selected</code>, <code>option</code>, <code>button</code>)</li>
+<li><strong>form</strong>: reset <code>fieldset</code> and restrict <code>textarea</code> to <code>resize: vertical</code></li>
+<li><strong>button</strong>: reset default button styles that never get used and nobody seems to like (including <code>button</code>, <code>input[type=&quot;button&quot;]</code>, <code>input[type=&quot;submit&quot;]</code>, and <code>input[type=&quot;reset&quot;]</code>)</li>
+<li><strong>paragraph</strong>: remove <code>margin-top</code> from the <code>first-of-type</code> paragraph and <code>margin-bottom</code> from the <code>last-of-type</code> one</li>
+<li><strong>media</strong>: make <code>img</code> and <code>video</code> elements fluid-by-default, with <code>max-width: 100%;</code> and <code>height: auto</code></li>
+<li><strong>figure</strong>: remove default margins from <code>figure</code></li>
+</ul>
+<p><em>These &quot;reset&quot; modules are not meant to serve the same purpose as a big reset/normalizer like the ol&#39; Eric Meyer, the Compass Reset, or Normalize.</em> Leave that base-level, grand-scheme-of-things resetting to one of those tried-and-true standards. Scut&#39;s &quot;reset&quot; modules, in contrast, are opinionated little attacks on specific elements.</p>
+<p>Here&#39;s the reasoning: I&#39;ve found myself implementing the same element-specific resets over and over again, project after project &mdash; making headers semantic rather than presentational; removing all the default button styling; and so on. So I decided to start stashing those resets for future projects. That&#39;s what <code>scut-reset</code> is.</p>
+<p>If you want to use <em>all</em> the <code>scut-reset</code> modules, somewhere in your stylesheet (not nested within any other rulesets), do this:</p>
+<pre class="language-scss"><code>@include scut-reset;</code></pre>
+
+<p>To exclude specific modules, pass their names in a list <em>without commas</em> as the <code>$exclude</code> argument. For example, to avoid the <code>semanticize</code> and <code>paragraph</code> modules:</p>
+<pre class="language-scss"><code>@include scut-reset(semanticize paragraph);</code></pre>
+
+<p>To instead call <em>only specific modules</em>, use <code>@include scut-reset-[name]</code>. For example:</p>
+<pre class="language-scss"><code>@include scut-reset-paragraph;
+@include scut-reset-button;</code></pre>
+
+<p>And to scope the rest, just nest. See!</p>
+<pre class="language-scss"><code>// call all the resets but `paragraph`
 @include scut-reset(paragraph);
 // but use `scut-reset-paragraph` within a specific context
 .article-content {
   @include scut-reset-paragraph;
-}</code></pre></section><footer><h2>References</h2><ul class="refs"><li><a href="http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">CSS-Tricks: "Inheriting box-sizing Probably Slightly Better Best-Practice"</a></li></ul></footer></article><nav id="siteNav" role="navigation" class="site-nav"><ul class="home-toc"><li><a href="index.html#about">About</a></li><li><a href="index.html#installation">Installation</a></li><li><a href="index.html#usage">Usage</a></li><li><a href="index.html#contributing">Contributing</a></li></ul><h2 class="nav-title">functions</h2><ul class="nav-list"><li><a class="nav-link" href="em.html">pixels-to-ems</a></li><li><a class="nav-link" href="rem.html">pixels-to-rems</a></li><li><a class="nav-link" href="strip-unit.html">strip unit</a></li></ul><h2 class="nav-title">general</h2><ul class="nav-list"><li><a class="nav-link" href="border.html">border</a></li><li><a class="nav-link" href="circle.html">circle</a></li><li><a class="nav-link" href="color-swap.html">color swap</a></li><li><a class="nav-link" href="hd-bp.html">HD (HiDPI) breakpoint</a></li><li><a class="nav-link" href="hide-visually.html">hide visually</a></li><li><a class="nav-link" href="image-replace.html">image replacement</a></li><li><a class="nav-link" href="rem-fallback.html">REMs with fallback</a></li><li><a class="nav-link" href="reset.html">reset</a></li><li><a class="nav-link" href="selected.html">selected</a></li><li><a class="nav-link" href="triangle.html">triangle</a></li></ul><h2 class="nav-title">layout</h2><ul class="nav-list"><li><a class="nav-link" href="center-absolutely.html">center absolutely</a></li><li><a class="nav-link" href="center-block.html">center block</a></li><li><a class="nav-link" href="center-transform.html">center transform</a></li><li><a class="nav-link" href="clearfix.html">clearfix</a></li><li><a class="nav-link" href="fill.html">fill</a></li><li><a class="nav-link" href="list-custom.html">list: custom</a></li><li><a class="nav-link" href="list-divided.html">list: divided</a></li><li><a class="nav-link" href="list-floated.html">list: floated</a></li><li><a class="nav-link" href="list-inline.html">list: inline</a></li><li><a class="nav-link" href="list-punctuated.html">list: punctuated</a></li><li><a class="nav-link" href="list-unstyled.html">list: unstyled</a></li><li><a class="nav-link" href="margin.html">margin</a></li><li><a class="nav-link" href="padding.html">padding</a></li><li><a class="nav-link" href="positioning-absolute.html">positioning: absolute</a></li><li><a class="nav-link" href="positioning-coords.html">positioning: coordinates</a></li><li><a class="nav-link" href="positioning-fixed.html">positioning: fixed</a></li><li><a class="nav-link" href="positioning-relative.html">positioning: relative</a></li><li><a class="nav-link" href="ratio-box.html">ratio-box</a></li><li><a class="nav-link" href="size.html">size</a></li><li><a class="nav-link" href="sticky-footer-fixed.html">sticky footer, fixed height</a></li><li><a class="nav-link" href="sticky-footer-fluid.html">sticky footer, fluid height</a></li><li><a class="nav-link" href="vcenter-ib.html">v-center: inline-block method</a></li><li><a class="nav-link" href="vcenter-lh.html">v-center: line-height method</a></li><li><a class="nav-link" href="vcenter-td.html">v-center: table display method</a></li><li><a class="nav-link" href="vcenter-tt.html">v-center: transform method</a></li></ul><h2 class="nav-title">typography</h2><ul class="nav-list"><li><a class="nav-link" href="characters.html">characters</a></li><li><a class="nav-link" href="font-face.html">font-face</a></li><li><a class="nav-link" href="hanging-indent.html">hanging indent</a></li><li><a class="nav-link" href="indented-ps.html">indented paragraphs</a></li><li><a class="nav-link" href="key-val.html">key-value punctuation</a></li><li><a class="nav-link" href="link-bb.html">link bottom-bordered</a></li><li><a class="nav-link" href="reverse-italics.html">reverse italics</a></li><li><a class="nav-link" href="side-lined.html">side-lined</a></li><li><a class="nav-link" href="truncate.html">truncate</a></li></ul><a href="#" class="goto-top">back to top</a></nav></div><script src="prism.js"></script><script src="main.js"></script></body></html>
+}</code></pre>
+
+  </section>
+
+  
+
+  
+  <footer>
+    <h2>References</h2>
+    <ul class="refs">
+      
+      <li>
+        <a href="http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/">
+          CSS-Tricks: "Inheriting box-sizing Probably Slightly Better Best-Practice"
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+  
+
+</article>
+      <nav id="siteNav" role="navigation" class="site-nav">
+  <ul class="home-toc">
+  <li><a href="index.html#about">About</a></li>
+  <li><a href="index.html#installation">Installation</a></li>
+  <li><a href="index.html#usage">Usage</a></li>
+  <li><a href="index.html#contributing">Contributing</a></li>
+</ul>
+  
+    <h2 class="nav-title">
+      functions
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="em.html">
+          pixels-to-ems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem.html">
+          pixels-to-rems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="strip-unit.html">
+          strip unit
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      general
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="border.html">
+          border
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="circle.html">
+          circle
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="color-swap.html">
+          color swap
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hd-bp.html">
+          HD (HiDPI) breakpoint
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hide-visually.html">
+          hide visually
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="image-replace.html">
+          image replacement
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem-fallback.html">
+          REMs with fallback
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reset.html">
+          reset
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="selected.html">
+          selected
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="triangle.html">
+          triangle
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      layout
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="center-absolutely.html">
+          center absolutely
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-block.html">
+          center block
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-transform.html">
+          center transform
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="clearfix.html">
+          clearfix
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="fill.html">
+          fill
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-custom.html">
+          list: custom
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-divided.html">
+          list: divided
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-floated.html">
+          list: floated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-inline.html">
+          list: inline
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-punctuated.html">
+          list: punctuated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-unstyled.html">
+          list: unstyled
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="margin.html">
+          margin
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="padding.html">
+          padding
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-absolute.html">
+          positioning: absolute
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-coords.html">
+          positioning: coordinates
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-fixed.html">
+          positioning: fixed
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-relative.html">
+          positioning: relative
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="ratio-box.html">
+          ratio-box
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="size.html">
+          size
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fixed.html">
+          sticky footer, fixed height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fluid.html">
+          sticky footer, fluid height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-ib.html">
+          v-center: inline-block method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-lh.html">
+          v-center: line-height method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-td.html">
+          v-center: table display method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-tt.html">
+          v-center: transform method
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      typography
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="characters.html">
+          characters
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="font-face.html">
+          font-face
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hanging-indent.html">
+          hanging indent
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="indented-ps.html">
+          indented paragraphs
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="key-val.html">
+          key-value punctuation
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="link-bb.html">
+          link bottom-bordered
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reverse-italics.html">
+          reverse italics
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="side-lined.html">
+          side-lined
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="truncate.html">
+          truncate
+        </a>
+      </li>
+      
+    </ul>
+  
+  <a href="#" class="goto-top">back to top</a>
+</nav>
+    </div>
+
+  <script src="prism.js"></script>
+  
+  <script src="main.js"></script>
+  
+  </body>
+
+</html>

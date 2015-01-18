@@ -1,5 +1,528 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>scut-font-face, a Scut Utility</title><meta name="description" content="scut-font-face: Implement cross-browser @font-face with the greatest of ease."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="main.css"></head><body><header role="banner" class="site-banner"><div class="banner-main"><a href="index.html" class="site-title-c"><span class="site-title">Scut</span> <span class="site-subtitle">Sass Utilities <span class="site-subtitle-more">for the Frontend Laborer</span></span></a> <a href="#siteNav" class="goto-nav"><span class="hide-visually">navigation</span></a></div><div class="scut-subbanner"><div class="version">v1.0.2 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)</div><ul class="scut-elsewhere-links"><li><a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a></li><li><a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a></li></ul></div></header><div class="site-body"><article role="main" class="site-main entry"><header><h1 class="entry-title">font-face</h1><a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.0.2/src/typography/_font-face.scss">view source</a><div class="summary"><p>Implement cross-browser <code>@font-face</code> with the greatest of ease.</p></div><dl class="info-list"><dt>use-name</dt><dd><code>scut-font-face</code></dd><dt>type</dt><dd>mixin only</dd><dt>arguments</dt><dd><ol class="args-list"><li><code>$font-family</code><div class="args-comment"><p>A name for the font.</p></div></li><li><code>$file-path</code><div class="args-comment"><p>The relative path to the font&#39;s files, <strong>including the files&#39; common path and name and excluding their extensions</strong>.</p></div></li><li><code>$weight</code><dl class="default"><dt>default</dt><dd><code>normal</code></dd></dl><div class="args-comment"><p>A <code>font-weight</code> value. <strong>This argument is <em>optional</em>: you can just leave it out for your italic non-bold fonts.</strong> See the example below.</p></div></li><li><code>$style</code><dl class="default"><dt>default</dt><dd><code>normal</code></dd></dl><div class="args-comment"><p>A <code>font-style</code> value.</p></div></li><li><code>$formats</code><dl class="default"><dt>default</dt><dd><code>eot woff ttf svg</code></dd></dl><div class="args-comment"><p>The font formats that you would like to include (in case you don&#39;t have them all, or you want to thin out your code for modern browsers, or whatever your private reasons).</p></div></li></ol></dd></dl></header><section><p>The method Scut uses is that advocated by CSS-Tricks and used by Font Squirrel (see references). It solves all kinds of cross-browser issues going all the way back to IE6.</p><p>For example, to implement all varieties of Arvo:</p><pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+      scut-font-face, a Scut Utility
+    </title>
+    <meta name="description" content="scut-font-face: Implement cross-browser @font-face with the greatest of ease.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+  </head>
+
+  <body>
+
+    <header role="banner" class="site-banner">
+      <div class="banner-main">
+  <a href="index.html" class="site-title-c">
+    <span class="site-title">Scut</span>
+    <span class="site-subtitle">
+      Sass Utilities
+      <span class="site-subtitle-more">
+        for the Frontend Laborer
+      </span>
+    </span>
+  </a>
+
+  <a href="#siteNav" class="goto-nav">
+    <span class="hide-visually">navigation</span>
+  </a>
+</div>
+
+<div class="scut-subbanner">
+  <div class="version">
+    v1.1.0 (<a href="https://github.com/davidtheclark/scut/blob/master/CHANGELOG.md">changelog</a>)
+  </div>
+  <ul class="scut-elsewhere-links">
+    <li>
+      <a href="https://github.com/davidtheclark/scut" class="scut-elsewhere-link">Github Repo</a>
+    </li>
+    <li>
+      <a href="http://codepen.io/davidtheclark/pen/FhqGc" class="scut-elsewhere-link">Codepen Playground</a>
+    </li>
+  </ul>
+</div>
+    </header>
+    <div class="site-body">
+      
+
+<article role="main" class="site-main entry">
+
+  <header>
+
+    <h1 class="entry-title">font-face</h1>
+
+    <a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.1.0/src/typography/_font-face.scss">
+      view source
+    </a>
+
+    <div class="summary">
+      <p>Implement cross-browser <code>@font-face</code> with the greatest of ease.</p>
+
+    </div>
+
+    <dl class="info-list">
+      <dt>use-name</dt>
+      <dd>
+        <code>scut-font-face</code>
+      </dd>
+
+      
+      <dt>type</dt>
+      <dd>mixin only</dd>
+      
+
+      
+      <dt>arguments</dt>
+      <dd>
+        <ol class="args-list">
+          
+          <li>
+            <code>$font-family</code>
+            
+            
+            <div class="args-comment"><p>A name for the font.</p>
+</div>
+            
+          </li>
+          
+          <li>
+            <code>$file-path</code>
+            
+            
+            <div class="args-comment"><p>The relative path to the font&#39;s files, <strong>including the files&#39; common path and name and excluding their extensions</strong>.</p>
+</div>
+            
+          </li>
+          
+          <li>
+            <code>$weight</code>
+            
+            <dl class="default">
+              <dt>default</dt>
+              <dd>
+                <code>normal</code>
+              </dd>
+            </dl>
+            
+            
+            <div class="args-comment"><p>A <code>font-weight</code> value. <strong>This argument is <em>optional</em>: you can just leave it out for your italic non-bold fonts.</strong> See the example below.</p>
+</div>
+            
+          </li>
+          
+          <li>
+            <code>$style</code>
+            
+            <dl class="default">
+              <dt>default</dt>
+              <dd>
+                <code>normal</code>
+              </dd>
+            </dl>
+            
+            
+            <div class="args-comment"><p>A <code>font-style</code> value.</p>
+</div>
+            
+          </li>
+          
+          <li>
+            <code>$formats</code>
+            
+            <dl class="default">
+              <dt>default</dt>
+              <dd>
+                <code>eot woff2 woff ttf svg</code>
+              </dd>
+            </dl>
+            
+            
+            <div class="args-comment"><p>The font formats that you would like to include (in case you don&#39;t have them all, or you want to thin out your code for modern browsers, or whatever your private reasons).</p>
+</div>
+            
+          </li>
+          
+        </ol>
+      </dd>
+      
+
+      
+
+      
+
+    </dl>
+
+  </header>
+
+  <section>
+    <p>The method Scut uses is that advocated by CSS-Tricks and used by Font Squirrel (see references). It solves all kinds of cross-browser issues going all the way back to IE6.</p>
+<p>For example, to implement all varieties of Arvo:</p>
+<pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont");
 @include scut-font-face("Arvo", "fonts/arvo-bold-webfont", bold);
 @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", italic);
 // or @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
-@include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre><p>If, for whatever reason, you do not want to include all of the default formats that are required for the far-far-back cross-browser compatibility (<code>eot</code>, <code>woff</code>, <code>ttf</code>, and <code>svg</code>), then include your own <code>$formats</code> list, e.g.:</p><pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont", $formats: woff ttf);</code></pre></section><footer><h2>References</h2><ul class="refs"><li><a href="http://css-tricks.com/snippets/css/using-font-face/">CSS-Tricks: "Using @font-face"</a></li><li><a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">Fontspring: "The New Bulletproof @Font-Face Syntax"</a></li></ul></footer></article><nav id="siteNav" role="navigation" class="site-nav"><ul class="home-toc"><li><a href="index.html#about">About</a></li><li><a href="index.html#installation">Installation</a></li><li><a href="index.html#usage">Usage</a></li><li><a href="index.html#contributing">Contributing</a></li></ul><h2 class="nav-title">functions</h2><ul class="nav-list"><li><a class="nav-link" href="em.html">pixels-to-ems</a></li><li><a class="nav-link" href="rem.html">pixels-to-rems</a></li><li><a class="nav-link" href="strip-unit.html">strip unit</a></li></ul><h2 class="nav-title">general</h2><ul class="nav-list"><li><a class="nav-link" href="border.html">border</a></li><li><a class="nav-link" href="circle.html">circle</a></li><li><a class="nav-link" href="color-swap.html">color swap</a></li><li><a class="nav-link" href="hd-bp.html">HD (HiDPI) breakpoint</a></li><li><a class="nav-link" href="hide-visually.html">hide visually</a></li><li><a class="nav-link" href="image-replace.html">image replacement</a></li><li><a class="nav-link" href="rem-fallback.html">REMs with fallback</a></li><li><a class="nav-link" href="reset.html">reset</a></li><li><a class="nav-link" href="selected.html">selected</a></li><li><a class="nav-link" href="triangle.html">triangle</a></li></ul><h2 class="nav-title">layout</h2><ul class="nav-list"><li><a class="nav-link" href="center-absolutely.html">center absolutely</a></li><li><a class="nav-link" href="center-block.html">center block</a></li><li><a class="nav-link" href="center-transform.html">center transform</a></li><li><a class="nav-link" href="clearfix.html">clearfix</a></li><li><a class="nav-link" href="fill.html">fill</a></li><li><a class="nav-link" href="list-custom.html">list: custom</a></li><li><a class="nav-link" href="list-divided.html">list: divided</a></li><li><a class="nav-link" href="list-floated.html">list: floated</a></li><li><a class="nav-link" href="list-inline.html">list: inline</a></li><li><a class="nav-link" href="list-punctuated.html">list: punctuated</a></li><li><a class="nav-link" href="list-unstyled.html">list: unstyled</a></li><li><a class="nav-link" href="margin.html">margin</a></li><li><a class="nav-link" href="padding.html">padding</a></li><li><a class="nav-link" href="positioning-absolute.html">positioning: absolute</a></li><li><a class="nav-link" href="positioning-coords.html">positioning: coordinates</a></li><li><a class="nav-link" href="positioning-fixed.html">positioning: fixed</a></li><li><a class="nav-link" href="positioning-relative.html">positioning: relative</a></li><li><a class="nav-link" href="ratio-box.html">ratio-box</a></li><li><a class="nav-link" href="size.html">size</a></li><li><a class="nav-link" href="sticky-footer-fixed.html">sticky footer, fixed height</a></li><li><a class="nav-link" href="sticky-footer-fluid.html">sticky footer, fluid height</a></li><li><a class="nav-link" href="vcenter-ib.html">v-center: inline-block method</a></li><li><a class="nav-link" href="vcenter-lh.html">v-center: line-height method</a></li><li><a class="nav-link" href="vcenter-td.html">v-center: table display method</a></li><li><a class="nav-link" href="vcenter-tt.html">v-center: transform method</a></li></ul><h2 class="nav-title">typography</h2><ul class="nav-list"><li><a class="nav-link" href="characters.html">characters</a></li><li><a class="nav-link" href="font-face.html">font-face</a></li><li><a class="nav-link" href="hanging-indent.html">hanging indent</a></li><li><a class="nav-link" href="indented-ps.html">indented paragraphs</a></li><li><a class="nav-link" href="key-val.html">key-value punctuation</a></li><li><a class="nav-link" href="link-bb.html">link bottom-bordered</a></li><li><a class="nav-link" href="reverse-italics.html">reverse italics</a></li><li><a class="nav-link" href="side-lined.html">side-lined</a></li><li><a class="nav-link" href="truncate.html">truncate</a></li></ul><a href="#" class="goto-top">back to top</a></nav></div><script src="prism.js"></script><script src="main.js"></script></body></html>
+@include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre>
+
+<p>If, for whatever reason, you do not want to include all of the default formats that are required for the far-far-back cross-browser compatibility (<code>eot</code>, <code>woff2</code>, <code>woff</code>, <code>ttf</code>, and <code>svg</code>), then include your own <code>$formats</code> list, e.g.:</p>
+<pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont", $formats: woff ttf);</code></pre>
+
+<p>If you have a font but don&#39;t have all the varieties, try Font Squirrel&#39;s <a href="http://www.fontsquirrel.com/tools/webfont-generator">Webfont Generator</a>.</p>
+
+  </section>
+
+  
+
+  
+  <footer>
+    <h2>References</h2>
+    <ul class="refs">
+      
+      <li>
+        <a href="http://css-tricks.com/snippets/css/using-font-face/">
+          CSS-Tricks: "Using @font-face"
+        </a>
+      </li>
+      
+      <li>
+        <a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax">
+          Fontspring: "The New Bulletproof @Font-Face Syntax"
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+  
+
+</article>
+      <nav id="siteNav" role="navigation" class="site-nav">
+  <ul class="home-toc">
+  <li><a href="index.html#about">About</a></li>
+  <li><a href="index.html#installation">Installation</a></li>
+  <li><a href="index.html#usage">Usage</a></li>
+  <li><a href="index.html#contributing">Contributing</a></li>
+</ul>
+  
+    <h2 class="nav-title">
+      functions
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="em.html">
+          pixels-to-ems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem.html">
+          pixels-to-rems
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="strip-unit.html">
+          strip unit
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      general
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="border.html">
+          border
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="circle.html">
+          circle
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="color-swap.html">
+          color swap
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hd-bp.html">
+          HD (HiDPI) breakpoint
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hide-visually.html">
+          hide visually
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="image-replace.html">
+          image replacement
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="rem-fallback.html">
+          REMs with fallback
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reset.html">
+          reset
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="selected.html">
+          selected
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="triangle.html">
+          triangle
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      layout
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="center-absolutely.html">
+          center absolutely
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-block.html">
+          center block
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="center-transform.html">
+          center transform
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="clearfix.html">
+          clearfix
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="fill.html">
+          fill
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-custom.html">
+          list: custom
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-divided.html">
+          list: divided
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-floated.html">
+          list: floated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-inline.html">
+          list: inline
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-punctuated.html">
+          list: punctuated
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="list-unstyled.html">
+          list: unstyled
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="margin.html">
+          margin
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="padding.html">
+          padding
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-absolute.html">
+          positioning: absolute
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-coords.html">
+          positioning: coordinates
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-fixed.html">
+          positioning: fixed
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="positioning-relative.html">
+          positioning: relative
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="ratio-box.html">
+          ratio-box
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="size.html">
+          size
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fixed.html">
+          sticky footer, fixed height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="sticky-footer-fluid.html">
+          sticky footer, fluid height
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-ib.html">
+          v-center: inline-block method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-lh.html">
+          v-center: line-height method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-td.html">
+          v-center: table display method
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="vcenter-tt.html">
+          v-center: transform method
+        </a>
+      </li>
+      
+    </ul>
+  
+    <h2 class="nav-title">
+      typography
+    </h2>
+    <ul class="nav-list">
+      
+      <li>
+        <a class="nav-link" href="characters.html">
+          characters
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="font-face.html">
+          font-face
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="hanging-indent.html">
+          hanging indent
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="indented-ps.html">
+          indented paragraphs
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="key-val.html">
+          key-value punctuation
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="link-bb.html">
+          link bottom-bordered
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="reverse-italics.html">
+          reverse italics
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="side-lined.html">
+          side-lined
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link" href="truncate.html">
+          truncate
+        </a>
+      </li>
+      
+    </ul>
+  
+  <a href="#" class="goto-top">back to top</a>
+</nav>
+    </div>
+
+  <script src="prism.js"></script>
+  
+  <script src="main.js"></script>
+  
+  </body>
+
+</html>
