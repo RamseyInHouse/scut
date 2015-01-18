@@ -7,6 +7,10 @@
     $eot-val: url('#{$file-path}.eot?#iefix') format('embedded-opentype');
     $result: append($result, $eot-val, comma);
   }
+  @if index($formats, woff2) {
+    $woff2-val: url('#{$file-path}.woff2') format('woff2');
+    $result: append($result, $woff2-val, comma);
+  }
   @if index($formats, woff) {
     $woff-val: url('#{$file-path}.woff') format('woff');
     $result: append($result, $woff-val, comma);
@@ -27,7 +31,7 @@
   $file-path,
   $weight: normal,
   $style: normal,
-  $formats: eot woff ttf svg
+  $formats: eot woff2 woff ttf svg
 ) {
 
   @if index('italic' 'oblique', $weight) {
