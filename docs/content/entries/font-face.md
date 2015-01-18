@@ -17,7 +17,7 @@ args:
     default: normal
     comment: A `font-style` value.
   - variable: $formats
-    default: eot woff ttf svg
+    default: eot woff2 woff ttf svg
     comment: "The font formats that you would like to include (in case you don't have them all, or you want to thin out your code for modern browsers, or whatever your private reasons)."
 references:
   - description: "CSS-Tricks: \"Using @font-face\""
@@ -37,3 +37,5 @@ For example, to implement all varieties of Arvo:
 
 If, for whatever reason, you do not want to include all of the default formats that are required for the far-far-back cross-browser compatibility (`eot`, `woff2`, `woff`, `ttf`, and `svg`), then include your own `$formats` list, e.g.:
 <pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont", $formats: woff ttf);</code></pre>
+
+If you have a font but don't have all the varieties, try Font Squirrel's [Webfont Generator](http://www.fontsquirrel.com/tools/webfont-generator).
