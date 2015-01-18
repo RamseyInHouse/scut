@@ -23,7 +23,9 @@
     "test",
     "tests",
     "Gruntfile.coffee",
+    "gulpfile.js",
     "package.json",
+    "npm-debug.log",
     "lib",
     "scut.gemspec",
     "sache.json"

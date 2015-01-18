@@ -1,0 +1,15 @@
+.*
+*.md
+**/.*
+node_modules
+bower_components
+docs
+test
+tests
+Gruntfile.coffee
+gulpfile.js
+bower.json
+lib
+scut.gemspec
+sache.json
+npm-debug.log

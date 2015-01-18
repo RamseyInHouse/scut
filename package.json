@@ -1,10 +1,20 @@
 {
   "name": "scut",
   "version": "1.0.2",
-  "description": "SCSS utilities",
-  "keywords": [],
+  "homepage": "http://davidtheclark.github.io/scut/",
+  "authors": [
+    "David Clark <david.dave.clark@gmail.com>"
+  ],
+  "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns.",
+  "main": "dist/_scut.scss",
+  "keywords": [
+    "SCSS",
+    "Sass",
+    "style"
+  ],
+  "license": "MIT",
   "scripts": {
-    "prepublish": "bower install"
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
