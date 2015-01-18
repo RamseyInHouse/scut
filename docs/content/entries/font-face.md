@@ -35,5 +35,5 @@ For example, to implement all varieties of Arvo:
 // or @include scut-font-face("Arvo", "fonts/arvo-italic-webfont", normal, italic);
 @include scut-font-face("Arvo", "fonts/arvo-bolditalic-webfont", bold, italic);</code></pre>
 
-If, for whatever reason, you do not want to include all of the default formats that are required for the far-far-back cross-browser compatibility (`eot`, `woff`, `ttf`, and `svg`), then include your own `$formats` list, e.g.:
+If, for whatever reason, you do not want to include all of the default formats that are required for the far-far-back cross-browser compatibility (`eot`, `woff2`, `woff`, `ttf`, and `svg`), then include your own `$formats` list, e.g.:
 <pre class="language-scss"><code>@include scut-font-face("Arvo", "fonts/arvo-regular-webfont", $formats: woff ttf);</code></pre>
