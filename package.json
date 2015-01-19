@@ -13,9 +13,6 @@
     "style"
   ],
   "license": "MIT",
-  "scripts": {
-    "postinstall": "bower install"
-  },
   "devDependencies": {
     "assemble": "^0.4.42",
     "grunt": "^0.4.5",
