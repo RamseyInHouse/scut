@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.1.0
+* v1.1.1
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -99,61 +99,6 @@
 ) {
 
   @return $num / ($num * 0 + 1);
-
-}
-// Depends on `scut-strip-unit`.
-
-$scut-em-base: 16 !default;
-
-@function scut-em (
-  $pixels,
-  $base: $scut-em-base
-) {
-
-  // $base could be in em or px (no unit = px).
-  // Adjust accordingly to create a $divisor that
-  // serves as context for $pixels.
-  $multiplier: if(unit($base) == em, 16, 1);
-  $divisor: scut-strip-unit($base) * $multiplier;
-
-  $em-vals: ();
-  @each $val in $pixels {
-    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
-    $em-vals: append($em-vals, $val-in-ems);
-  }
-
-  @if length($em-vals) == 1 {
-    // return a single value instead of a list,
-    // so it can be used in calculations
-    @return nth($em-vals, 1);
-  }
-  @else {
-    @return $em-vals;
-  }
-
-}
-// Depends on `scut-strip-unit`.
-
-$scut-rem-base: 16 !default;
-
-@function scut-rem (
-  $pixels
-) {
-
-  $rem-vals: ();
-  @each $val in $pixels {
-    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
-    $rem-vals: append($rem-vals, $val-in-rems);
-  }
-
-  @if length($rem-vals) == 1 {
-    // return a single value instead of a list,
-    // so it can be used in calculations
-    @return nth($rem-vals, 1);
-  }
-  @else {
-    @return $rem-vals;
-  }
 
 }
 @mixin scut-border (
@@ -594,6 +539,61 @@ $scut-rem-base: 16 !default;
 
 %scut-triangle {
   @include scut-triangle;
+}
+// Depends on `scut-strip-unit`.
+
+$scut-em-base: 16 !default;
+
+@function scut-em (
+  $pixels,
+  $base: $scut-em-base
+) {
+
+  // $base could be in em or px (no unit = px).
+  // Adjust accordingly to create a $divisor that
+  // serves as context for $pixels.
+  $multiplier: if(unit($base) == em, 16, 1);
+  $divisor: scut-strip-unit($base) * $multiplier;
+
+  $em-vals: ();
+  @each $val in $pixels {
+    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
+    $em-vals: append($em-vals, $val-in-ems);
+  }
+
+  @if length($em-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($em-vals, 1);
+  }
+  @else {
+    @return $em-vals;
+  }
+
+}
+// Depends on `scut-strip-unit`.
+
+$scut-rem-base: 16 !default;
+
+@function scut-rem (
+  $pixels
+) {
+
+  $rem-vals: ();
+  @each $val in $pixels {
+    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
+    $rem-vals: append($rem-vals, $val-in-rems);
+  }
+
+  @if length($rem-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($rem-vals, 1);
+  }
+  @else {
+    @return $rem-vals;
+  }
+
 }
 @mixin scut-center-absolutely (
   $dimensions

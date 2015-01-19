@@ -96,4 +96,4 @@ The method I recommend for experimentation and testing is to use [Codepen](http:
 
 ### Documenting
 
-Documentation is compiled using [Assemble](http://assemble.io). The source files are located in `docs/content` and `docs/dev`.
+Documentation is compiled using [Assemble](http://assemble.io). The source files are located in `docs/content` and `docs/dev`. You'll need to `bower install` to get Normalize.
