@@ -1,4 +1,4 @@
-### 1.1.1
+### 1.1.2
 - Changed `scut-reverse-italics` to avoid Sass deprecation warning.
 
 ### 1.1.0
