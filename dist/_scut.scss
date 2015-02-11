@@ -101,6 +101,61 @@
   @return $num / ($num * 0 + 1);
 
 }
+// Depends on `scut-strip-unit`.
+
+$scut-em-base: 16 !default;
+
+@function scut-em (
+  $pixels,
+  $base: $scut-em-base
+) {
+
+  // $base could be in em or px (no unit = px).
+  // Adjust accordingly to create a $divisor that
+  // serves as context for $pixels.
+  $multiplier: if(unit($base) == em, 16, 1);
+  $divisor: scut-strip-unit($base) * $multiplier;
+
+  $em-vals: ();
+  @each $val in $pixels {
+    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
+    $em-vals: append($em-vals, $val-in-ems);
+  }
+
+  @if length($em-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($em-vals, 1);
+  }
+  @else {
+    @return $em-vals;
+  }
+
+}
+// Depends on `scut-strip-unit`.
+
+$scut-rem-base: 16 !default;
+
+@function scut-rem (
+  $pixels
+) {
+
+  $rem-vals: ();
+  @each $val in $pixels {
+    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
+    $rem-vals: append($rem-vals, $val-in-rems);
+  }
+
+  @if length($rem-vals) == 1 {
+    // return a single value instead of a list,
+    // so it can be used in calculations
+    @return nth($rem-vals, 1);
+  }
+  @else {
+    @return $rem-vals;
+  }
+
+}
 @mixin scut-border (
   $style,
   $sides: n y
@@ -539,61 +594,6 @@
 
 %scut-triangle {
   @include scut-triangle;
-}
-// Depends on `scut-strip-unit`.
-
-$scut-em-base: 16 !default;
-
-@function scut-em (
-  $pixels,
-  $base: $scut-em-base
-) {
-
-  // $base could be in em or px (no unit = px).
-  // Adjust accordingly to create a $divisor that
-  // serves as context for $pixels.
-  $multiplier: if(unit($base) == em, 16, 1);
-  $divisor: scut-strip-unit($base) * $multiplier;
-
-  $em-vals: ();
-  @each $val in $pixels {
-    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
-    $em-vals: append($em-vals, $val-in-ems);
-  }
-
-  @if length($em-vals) == 1 {
-    // return a single value instead of a list,
-    // so it can be used in calculations
-    @return nth($em-vals, 1);
-  }
-  @else {
-    @return $em-vals;
-  }
-
-}
-// Depends on `scut-strip-unit`.
-
-$scut-rem-base: 16 !default;
-
-@function scut-rem (
-  $pixels
-) {
-
-  $rem-vals: ();
-  @each $val in $pixels {
-    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
-    $rem-vals: append($rem-vals, $val-in-rems);
-  }
-
-  @if length($rem-vals) == 1 {
-    // return a single value instead of a list,
-    // so it can be used in calculations
-    @return nth($rem-vals, 1);
-  }
-  @else {
-    @return $rem-vals;
-  }
-
 }
 @mixin scut-center-absolutely (
   $dimensions
@@ -1422,7 +1422,9 @@ $scut-swhitesquare: "\25ab";
 
   $element-list: em, cite, i;
   @each $el in $elements {
-    $element-list: append($element-list, unquote($el), comma)
+    @if type_of($el) == 'string' {
+      $element-list: append($element-list, unquote($el), comma);
+    }
   }
 
   font-style: italic;
@@ -1435,6 +1437,7 @@ $scut-swhitesquare: "\25ab";
 %scut-reverse-italics {
   @include scut-reverse-italics;
 }
+
 @mixin scut-side-lined (
   $height: 1px,
   $space: 0.5em,

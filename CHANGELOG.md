@@ -1,3 +1,6 @@
+### 1.1.1
+- Changed `scut-reverse-italics` to avoid Sass deprecation warning.
+
 ### 1.1.0
 - Added `woff2` format to `scut-font-face`.
 

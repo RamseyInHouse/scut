@@ -4,7 +4,9 @@
 
   $element-list: em, cite, i;
   @each $el in $elements {
-    $element-list: append($element-list, unquote($el), comma)
+    @if type_of($el) == 'string' {
+      $element-list: append($element-list, unquote($el), comma);
+    }
   }
 
   font-style: italic;
