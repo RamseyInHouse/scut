@@ -1,16 +1,9 @@
 @mixin scut-reverse-italics (
-  $elements: false
+  $elements: null
 ) {
 
-  $element-list: em, cite, i;
-  @each $el in $elements {
-    @if type_of($el) == 'string' {
-      $element-list: append($element-list, unquote($el), comma);
-    }
-  }
-
   font-style: italic;
-  #{$element-list} {
+  #{join($element-list, $elements)} {
     font-style: normal;
   }
 
