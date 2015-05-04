@@ -2,9 +2,9 @@
   $ratio: 1.3
 ) {
 
-  @media (-o-min-device-pixel-ratio: #{$ratio}/1),
-         (-webkit-min-device-pixel-ratio: #{$ratio}),
-         (min-resolution: #{round(96 * $ratio)}dpi) {
+  @media (-o-min-device-pixel-ratio: ($ratio / 1)),
+         (-webkit-min-device-pixel-ratio: $ratio),
+         (min-resolution: (round(96 * $ratio) * 1dpi)) {
     @content;
   }
 
