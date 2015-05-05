@@ -1,3 +1,7 @@
+### 1.1.3
+- Improvement on `scut-image-replace` (cf. http://codepen.io/HugoGiraudel/pen/jEYWKx/)
+- Some refactoring.
+
 ### 1.1.2
 - Changed `scut-reverse-italics` to avoid Sass deprecation warning.
 
