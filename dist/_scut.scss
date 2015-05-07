@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.1.2
+* v1.1.3
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -279,13 +279,14 @@ $scut-rem-base: 16 !default;
   $ratio: 1.3
 ) {
 
-  @media (-o-min-device-pixel-ratio: #{$ratio}/1),
-         (-webkit-min-device-pixel-ratio: #{$ratio}),
-         (min-resolution: #{round(96 * $ratio)}dpi) {
+  @media (-o-min-device-pixel-ratio: ($ratio / 1)),
+         (-webkit-min-device-pixel-ratio: $ratio),
+         (min-resolution: (round(96 * $ratio) * 1dpi)) {
     @content;
   }
 
 }
+
 @mixin scut-hide-visually {
 
   border: 0;
@@ -307,12 +308,14 @@ $scut-rem-base: 16 !default;
   text-indent: 102%;
   white-space: nowrap;
   overflow: hidden;
+  padding: 0;
 
 }
 
 %scut-image-replace {
   @include scut-image-replace;
 }
+
 // Depends on scut-rem and scut-strip-unit
 
 @mixin scut-rem-fallback (
@@ -334,11 +337,9 @@ $scut-rem-base: 16 !default;
 @mixin scut-reset-border-box {
   // Make everything a border-box, because why not?
   html {
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   *, *:before, *:after {
-    -moz-box-sizing: inherit;
     box-sizing: inherit;
   }
 }
@@ -1417,18 +1418,12 @@ $scut-swhitesquare: "\25ab";
   @include scut-link-bb;
 }
 @mixin scut-reverse-italics (
-  $elements: false
+  $elements: null
 ) {
 
   $element-list: em, cite, i;
-  @each $el in $elements {
-    @if type_of($el) == 'string' {
-      $element-list: append($element-list, unquote($el), comma);
-    }
-  }
-
   font-style: italic;
-  #{$element-list} {
+  #{join($element-list, $elements)} {
     font-style: normal;
   }
 
