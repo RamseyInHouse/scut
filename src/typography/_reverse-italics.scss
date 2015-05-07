@@ -2,6 +2,7 @@
   $elements: null
 ) {
 
+  $element-list: em, cite, i;
   font-style: italic;
   #{join($element-list, $elements)} {
     font-style: normal;
