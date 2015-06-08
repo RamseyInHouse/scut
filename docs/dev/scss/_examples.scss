@@ -16,6 +16,30 @@ $eg-muted: #CCCCCC;
 }
 
 /* hidden rules */
+.eg-absolute-container {
+  border: 5px solid $eg-dark;
+  height: 10em;
+  width: 15em;
+}
+.eg-absolute {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-absolute-container {
+  position: relative;
+}
+.eg-absolute-1 {
+  @include scut-absolute;
+  // or @extend %scut-absolute;
+  }
+.eg-absolute-2 {
+  @include scut-absolute(n 0.5em 1em n);
+}
+/* example end */
+
+/* hidden rules */
 .eg-border {
   background-color: $eg-muted;
   padding: 1em;
@@ -269,6 +293,18 @@ $scut-em-base: 16;
 }
 .eg-fill-3 {
   @include scut-fill(true);
+}
+/* example end */
+
+/* hidden rules */
+.eg-fixed {
+  @extend %eg-dark-btn;
+}
+/* end hidden rules */
+
+/* example start */
+.eg-fixed {
+  @include scut-fixed(n 2em 1em n);
 }
 /* example end */
 
@@ -563,57 +599,6 @@ $scut-em-base: 16;
 /* example end */
 
 /* hidden rules */
-.eg-absolute-container {
-  border: 5px solid $eg-dark;
-  height: 10em;
-  width: 15em;
-}
-.eg-absolute {
-  @extend %eg-dark-btn;
-}
-/* end hidden rules */
-
-/* example start */
-.eg-absolute-container {
-  position: relative;
-}
-.eg-absolute-1 {
-  @include scut-absolute;
-  // or @extend %scut-absolute;
-  }
-.eg-absolute-2 {
-  @include scut-absolute(n 0.5em 1em n);
-}
-/* example end */
-
-/* hidden rules */
-.eg-fixed {
-  @extend %eg-dark-btn;
-}
-/* end hidden rules */
-
-/* example start */
-.eg-fixed {
-  @include scut-fixed(n 2em 1em n);
-}
-/* example end */
-
-/* hidden rules */
-/* end hidden rules */
-
-/* example start */
-.eg-relative-1 {
-  @include scut-relative(0.2em 0.2em n n);
-}
-.eg-relative-2 {
-  @include scut-relative(a a 1em n);
-}
-.eg-relative-3 {
-  @include scut-relative(n n -0.5em 0.2em);
-}
-/* example end */
-
-/* hidden rules */
 .eg-ratio {
   margin-top: 1em;
 }
@@ -644,6 +629,21 @@ $scut-em-base: 16;
   position: absolute;
   top: 0;
   left: 0;
+}
+/* example end */
+
+/* hidden rules */
+/* end hidden rules */
+
+/* example start */
+.eg-relative-1 {
+  @include scut-relative(0.2em 0.2em n n);
+}
+.eg-relative-2 {
+  @include scut-relative(a a 1em n);
+}
+.eg-relative-3 {
+  @include scut-relative(n n -0.5em 0.2em);
 }
 /* example end */
 

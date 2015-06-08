@@ -1,6 +1,6 @@
 ---
-name: "positioning: coordinates"
-slug: positioning-coords
+name: "coordinates"
+slug: coords
 summary: A shorthand for assigning coordinates to an element.
 type: mixin only
 categories:
@@ -12,7 +12,7 @@ args:
       A list: `top`, `right`, `bottom`, and `left` coordinates. `n` abbreviates `null`. `a` is interchangeable with `auto`. See below.
 ---
 
-You *may* want to use this mixin on its own &mdash; but **this mixin's primary purpose is to facilitate the positioning mixins: [`scut-absolute`](positioning-absolute.html), [`scut-relative`](positioning-relative.html), and [`scut-fixed`](positioning-fixed.html)**, which pair your coordinates with a `position` value.
+You *may* want to use this mixin on its own &mdash; but **this mixin's primary purpose is to facilitate the positioning mixins: [`scut-absolute`](absolute.html), [`scut-relative`](relative.html), and [`scut-fixed`](fixed.html)**, which pair your coordinates with a `position` value.
 
 Some guidlines for this mixin and its followers:
 

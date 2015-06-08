@@ -1,6 +1,6 @@
 ---
-name: "positioning: fixed"
-slug: positioning-fixed
+name: "fixed"
+slug: fixed
 summary: Fix an element's position and assign its coordinates, all in one line of SCSS.
 type: mixin, with default-values placeholder
 categories:
@@ -8,7 +8,7 @@ categories:
 args:
   - variable: $coordinates
     default: [0 n n 0]
-    comment: "See information about [`scut-coords`](positioning-coords.html)."
+    comment: "See information about [`scut-coords`](coords.html)."
 example:
   show-html: true
   html: |
