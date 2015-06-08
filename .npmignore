@@ -9,7 +9,8 @@ tests
 Gruntfile.coffee
 gulpfile.js
 bower.json
-lib
+lib/*
+!lib/*.js
 scut.gemspec
 sache.json
 npm-debug.log
