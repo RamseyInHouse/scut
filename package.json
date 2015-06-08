@@ -7,10 +7,14 @@
   ],
   "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns.",
   "main": "dist/_scut.scss",
+  "eyeglass": {
+    "exports": "lib/eyeglass-exports.js"
+  },
   "keywords": [
     "SCSS",
     "Sass",
-    "style"
+    "style",
+    "eyeglass-module"
   ],
   "license": "MIT",
   "repository": {
