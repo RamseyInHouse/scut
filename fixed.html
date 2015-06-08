@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>
-      scut-em, a Scut utility
+      scut-fixed, a Scut utility
     </title>
-    <meta name="description" content="scut-em: Convert pixel-values to em-values.">
+    <meta name="description" content="scut-fixed: Fix an element&#x27;s position and assign its coordinates, all in one line of SCSS.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
   </head>
@@ -52,26 +52,26 @@
 
   <header>
 
-    <h1 class="entry-title">pixels-to-ems</h1>
+    <h1 class="entry-title">fixed</h1>
 
-    <a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.1.3/src/functions/_em.scss">
+    <a class="btn source-btn" href="https://github.com/davidtheclark/scut/blob/v1.1.3/src/layout/_fixed.scss">
       view source
     </a>
 
     <div class="summary">
-      <p>Convert pixel-values to <code>em</code>-values.</p>
+      <p>Fix an element&#39;s position and assign its coordinates, all in one line of SCSS.</p>
 
     </div>
 
     <dl class="info-list">
       <dt>use-name</dt>
       <dd>
-        <code>scut-em</code>
+        <code>scut-fixed</code>
       </dd>
 
       
       <dt>type</dt>
-      <dd>function, with an exposed settings-variable</dd>
+      <dd>mixin, with default-values placeholder</dd>
       
 
       
@@ -80,26 +80,17 @@
         <ol class="args-list">
           
           <li>
-            <code>$pixels</code>
-            
-            
-            <div class="args-comment"><p>The <code>px</code>-value you wish to convert to <code>em</code>s. No <code>px</code> unit necessary (e.g. <code>20</code> is fine, so is <code>20px</code>). <em>Passing a list will result in a list of <code>em</code> values</em> (see examples).</p>
-</div>
-            
-          </li>
-          
-          <li>
-            <code>$base</code>
+            <code>$coordinates</code>
             
             <dl class="default">
               <dt>default</dt>
               <dd>
-                <code>16</code>
+                <code>0 n n 0</code>
               </dd>
             </dl>
             
             
-            <div class="args-comment"><p>A base-value with which to calculate the <code>em</code>-value. If there are no units, it&#39;s interpreted as <em>pixels</em>; but you can use <code>em</code>-values, as well. <strong>The <code>$base</code> default value can be changed for your project by setting your own <code>$scut-em-base</code> variable prior to using this function</strong> (see examples).</p>
+            <div class="args-comment"><p>See information about <a href="coords.html"><code>scut-coords</code></a>.</p>
 </div>
             
           </li>
@@ -117,12 +108,7 @@
   </header>
 
   <section>
-    <p><em>Pass a single value or a list of values.</em></p>
-<p>This function eases the burden on those who build flexible, <code>em</code>-based layouts but still find themselves thinking in pixels or using tools that speak in pixels.</p>
-<p>Unlike other px-to-ems mixins I&#39;ve seen, this one provides flexibility for situations in which the <code>em</code>-value has to be calculated in relation to something other than a default <code>16px font-size</code>.</p>
-<p>If a <code>$base</code> argument is provided, the <code>em</code>-value will be calculated relative to that <code>$base</code> (by default, <code>$base</code> is assumed to be <code>16</code>). If that <code>$base</code> is in pixels, everything should work smoothly, no questions asked. <em>You can also provide a <code>$base</code> in ems</em> &mdash; but this is trickier: it will only work if your <code>em</code>s are not more than one layer deep.</p>
-<p><small>(For example, if your element is the child of a container whose <code>font-size</code> is an <code>em</code>-value other than <code>1em</code>, you can pass the <code>font-size</code> as the <code>$base</code> argument and everything will work fine (see example variations 5 and 6), But if the container has a <code>font-size</code> in <code>em</code>s (not <code>1em</code>), and a child of it has a <code>font-size</code> in <code>em</code>s (also not <code>1em</code>), and you&#39;re adjusting a grandchild ... things will probably go wrong. So, again, I don&#39;t suggest trying to use this function three or more levels deep in <code>em</code>-relativity.)</small></p>
-<p><strong>If you&#39;re worried about these nesting issues and want to use <code>rem</code> units, instead, try the <a href="rem.html"><code>scut-rem</code> function</a> or the <a href="rem-fallback.html"><code>scut-rem-fallback</code> mixin</a>.</strong></p>
+    <p>Notice the example in the bottom right.</p>
 
   </section>
 
@@ -130,116 +116,29 @@
   <section id="example">
     <h2>example</h2>
     
+    <h3>HTML</h3>
+    <pre><code class="language-markup">&lt;div&gt;See the bottom right&lt;/div&gt;&lt;div class=&quot;eg-fixed&quot;&gt;Here&#x27;s your example.&lt;/div&gt;
+</code></pre>
+    
     <div id="exampleScss">
       <h3>SCSS</h3>
-      <pre><code class="language-scss">// first pair
-.eg-em-1 { width: scut-em(150); }
-.eg-em-2 { width: 150px; }
-// second pair
-.eg-em-3,
-.eg-em-4 { font-size: 20px; }
-.eg-em-3 { width: scut-em(250, 20); }
-.eg-em-4 { width: 250px; }
-// third pair
-.eg-em-5,
-.eg-em-6 { font-size: 0.6em; }
-.eg-em-5 { width: scut-em(275, 0.6em); }
-.eg-em-6 { width: 275px; }
-// list and units demonstration
-.eg-em-7 {
-  margin: scut-em(50 30px 0 60);
-  padding: scut-em(50 20px 0)
-}
-// changing the default $scut-em-base value
-// (compare to the second pair, above)
-$scut-em-base: 20;
-.eg-em-8 {
-  font-size: 20px;
-  width: scut-em(250);
+      <pre><code class="language-scss">.eg-fixed {
+  @include scut-fixed(n 2em 1em n);
 }</code></pre>
     </div>
     <div id="exampleCss" class="example-css is-hidden">
       <h3>compiled CSS</h3>
-      <pre><code class="language-css">.eg-em-1 {
-  width: 9.375em;
-}
-
-.eg-em-2 {
-  width: 150px;
-}
-
-.eg-em-3,
-.eg-em-4 {
-  font-size: 20px;
-}
-
-.eg-em-3 {
-  width: 12.5em;
-}
-
-.eg-em-4 {
-  width: 250px;
-}
-
-.eg-em-5,
-.eg-em-6 {
-  font-size: 0.6em;
-}
-
-.eg-em-5 {
-  width: 28.64583em;
-}
-
-.eg-em-6 {
-  width: 275px;
-}
-
-.eg-em-7 {
-  margin: 3.125em 1.875em 0em 3.75em;
-  padding: 3.125em 1.25em 0em;
-}
-
-.eg-em-8 {
-  font-size: 20px;
-  width: 12.5em;
+      <pre><code class="language-css">.eg-fixed {
+  position: fixed;
+  right: 2em;
+  bottom: 1em;
 }
 </code></pre>
     </div>
 
     <h3 id="resultHeading">Result</h3>
-    <div class="result"><div class="eg-em-c">
-  <div class="eg-em eg-em-1">
-    Variation 1: 150px wide, in ems
-  </div>
-
-  <div class="eg-em eg-em-2">
-    Variation 2: 150px wide, in regular pixels (for reference)
-  </div>
-
-  <div class="eg-em eg-em-3">
-    Variation 3: 250px wide, in ems, with a different base size in px
-  </div>
-
-  <div class="eg-em eg-em-4">
-    Variation 4: 250px wide, in pixels, with a different base size in px
-  </div>
-
-  <div class="eg-em eg-em-5">
-    Variation 5: 275px wide, in ems, with a different base size in ems
-  </div>
-
-  <div class="eg-em eg-em-6">
-    Variation 6: 275px wide, in pixels, with a different base size in ems
-  </div>
-
-  <div class="eg-em eg-em-7">
-    Variation 7: Demonstrating a list of values being passed, as well as the option of including or leaving out the px unit.
-  </div>
-
-  <div class="eg-em eg-em-8">
-    Variation 8: You can change the default $scut-em-base value to avoid setting it manually over and over again.
-  </div>
-</div>
+    <div class="result"><div>See the bottom right</div>
+<div class="eg-fixed">Here's your example.</div>
 </div>
   </section>
   
