@@ -15,6 +15,10 @@ Usage should be explained there, as is installation. But I'll explain installati
 - Using Bower: `bower install scut --save-dev`.
 - Downloading the file from [the latest release](https://github.com/davidtheclark/scut/releases).
 - Using Scut as a Compass extension by installing the RubyGem (`gem install scut`) and then performing the usual Compass `require` and `@import` business.
+- Using [node-sass](https://www.npmjs.com/package/node-sass) and [eyeglass](https://www.npmjs.com/package/eyeglass):
+  - `npm install --save-dev scut`
+  - setup render per eyeglass instructions
+  - in sass files: `@import 'scut'`
 
 ## Contributing
 
