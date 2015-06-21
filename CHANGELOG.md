@@ -1,3 +1,6 @@
+### 1.2.0
+- Added [`eyeglass`](https://github.com/sass-eyeglass/eyeglass) support.
+
 ### 1.1.3
 - Improvement on `scut-image-replace` (cf. http://codepen.io/HugoGiraudel/pen/jEYWKx/)
 - Some refactoring.
