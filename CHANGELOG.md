@@ -1,3 +1,6 @@
+### 1.2.1
+- Fixed bug in `vcenter` quoting inner selectors.
+
 ### 1.2.0
 - Added [`eyeglass`](https://github.com/sass-eyeglass/eyeglass) support.
 
