@@ -1127,6 +1127,7 @@ $scut-rem-base: 16 !default;
 
   $inner: if(length($inner) == 0, ".scut-inner", $inner);
   @each $cell-selector in $inner {
+    $cell-selector: unquote($cell-selector);
     & > #{$cell-selector} {
       display: inline-block;
       vertical-align: middle;
@@ -1155,6 +1156,7 @@ $scut-rem-base: 16 !default;
 
   $inner: if(length($inner) == 0, ".scut-inner", $inner);
   @each $cell-selector in $inner {
+    $cell-selector: unquote($cell-selector);
     & > #{$cell-selector} {
       display: table-cell;
       vertical-align: middle;
