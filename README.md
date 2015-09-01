@@ -94,7 +94,7 @@ Here are some guidelines to explain how I've been writing:
 
 ### Experimenting and Testing
 
-The method I recommend for experimentation and testing is to use [Codepen](http://codepen.io/), either starting your own pen from scratch or forking [the Scut Playground](http://codepen.io/davidtheclark/pen/yCadJ) (which imports the latest version of Scut).
+The method I recommend for experimentation and testing is to use [Codepen](http://codepen.io/), either starting your own pen from scratch or forking [the Scut Playground](http://codepen.io/davidtheclark/pen/FhqGc) (which imports the latest version of Scut).
 
 (I have deleted the "tests" directory and tasks from the repository in favor of relying on Codepen.)
 
