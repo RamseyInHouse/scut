@@ -427,6 +427,17 @@ $scut-em-base: 16;
 /* example end */
 
 /* hidden rules */
+/* end hidden rules */
+
+/* example start */
+.eg-link-unstyled {
+  @include scut-link-unstyled;
+  // or @extend %scut-link-unstyled;
+}
+/* example end */
+
+
+/* hidden rules */
 .eg-list-custom {
   margin: 0;
   &:not(:first-child) {
