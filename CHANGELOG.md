@@ -1,6 +1,6 @@
 # Changelog
 
-## Head
+## 1.3.0
 - Added `list-unstyled`.
 
 ## 1.2.1

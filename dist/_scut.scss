@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.2.1
+* v1.3.0
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -702,21 +702,6 @@ $scut-rem-base: 16 !default;
 %scut-fill {
   @include scut-fill;
 }
-// SCUT LINK UNSTYLED
-// http://davidtheclark.github.io/scut/#link-unstyled
-
-// Depends on `scut-strip-unit`.
-@mixin scut-link-unstyled() {
-
-  text-decoration: none;
-  color: inherit;
-
-}
-
-%scut-link-unstyled {
-  @include scut-link-unstyled();
-}
-
 @mixin scut-list-custom (
   $content: "\2022",
   $marker-width: 0.75em,
@@ -1434,6 +1419,20 @@ $scut-swhitesquare: "\25ab";
 %scut-link-bb {
   @include scut-link-bb;
 }
+// SCUT LINK UNSTYLED
+// http://davidtheclark.github.io/scut/#link-unstyled
+
+@mixin scut-link-unstyled() {
+
+  text-decoration: none;
+  color: inherit;
+
+}
+
+%scut-link-unstyled {
+  @include scut-link-unstyled();
+}
+
 @mixin scut-reverse-italics (
   $elements: null
 ) {
