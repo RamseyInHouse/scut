@@ -8,7 +8,8 @@
   "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns.",
   "main": "dist/_scut.scss",
   "eyeglass": {
-    "exports": "lib/eyeglass-exports.js"
+    "exports": "lib/eyeglass-exports.js",
+    "needs": "^0.7.1"
   },
   "keywords": [
     "SCSS",
