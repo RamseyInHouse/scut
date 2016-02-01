@@ -59,9 +59,9 @@
 @mixin scut-reset-button {
   // Reset default button styles, which are never used.
   button,
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"] {
+  [type="button"],
+  [type="submit"],
+  [type="reset"] {
     background: transparent;
     border: 0;
     color: inherit;
