@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.1
+
+- Fixed [`eyeglass`](https://github.com/sass-eyeglass/eyeglass) support.
+- Lowered specificity of `scut-reset-button`
+
 ## 1.3.0
 - Added `list-unstyled`.
 
