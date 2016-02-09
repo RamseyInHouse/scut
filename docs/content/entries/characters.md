@@ -165,3 +165,27 @@ The names of these variables often correspond with HTML character entity referen
   <dd>▫</dd>
   <dd>small white square ("\25ab")</dd>
 </dl>
+<h4>Currency</h4>
+<dl class="characters-list">
+  <dt><code>$scut-currency</code></dt>
+  <dd>¤</dd>
+  <dd>currency ("\00a4")</dd>
+  <dt><code>$scut-cent</code></dt>
+  <dd>¢</dd>
+  <dd>cent ("\00a2")</dd>
+  <dt><code>$scut-dollar</code></dt>
+  <dd>$</dd>
+  <dd>dollar ("\0024")</dd>
+  <dt><code>$scut-pound</code></dt>
+  <dd>£</dd>
+  <dd>pound ("\00a3")</dd>
+  <dt><code>$scut-euro</code></dt>
+  <dd>€</dd>
+  <dd>euro ("\20ac")</dd>
+  <dt><code>$scut-yen</code></dt>
+  <dd>¥</dd>
+  <dd>yen ("\00a5")</dd>
+  <dt><code>$scut-rupee</code></dt>
+  <dd>₹</dd>
+  <dd>rupee ("\20B9")</dd>
+</dl>
