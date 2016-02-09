@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- Added common currencies to scut-characters
+
 ## 1.3.1
 
 - Fixed [`eyeglass`](https://github.com/sass-eyeglass/eyeglass) support.

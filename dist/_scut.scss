@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.3.1
+* v1.4.0
 * Docs at http://davidtheclark.github.io/scut
 */
 
@@ -1277,6 +1277,21 @@ $scut-whitesquare: "\25a1";
 $scut-ssquare: "\25aa";
 // small white square
 $scut-swhitesquare: "\25ab";
+
+// general currency
+$scut-currency: "\00a4";
+// cent
+$scut-cent: "\00a2";
+// dollar
+$scut-dollar: "\0024";
+// pound
+$scut-pound: "\00a3";
+// euro
+$scut-euro: "\20ac";
+// yen
+$scut-yen: "\00a5";
+// rupee
+$scut-rupee: "\20B9";
 @function main-src($formats, $file-path, $font-family) {
   // Return the list of `src` values, in order, that
   // a good `@font-face` will need, including only
