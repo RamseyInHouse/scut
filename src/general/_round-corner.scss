@@ -1,0 +1,15 @@
+@mixin round-corner (
+  $corners: 0 0 0 0
+) {
+
+  $top-left: nth($corners, 1);
+  $top-right: nth($corners, 2);
+  $bottom-right: nth($corners, 3);
+  $bottom-left: nth($corners, 4);
+
+  border-top-left-radius: $top-left;
+  border-top-right-radius: $top-right;
+  border-bottom-right-radius: $bottom-right;
+  border-bottom-left-radius: $bottom-left;
+
+}
