@@ -1,0 +1,14 @@
+// SCUT V-CENTER: TRANSFORM TRANSLATE
+// http://davidtheclark.github.io/scut/#v-center_transform_translate
+
+@mixin scut-vcenter-tt {
+  @include scut-absolute(50% n n 50%);
+  margin: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+%scut-vcenter-tt {
+  @include scut-vcenter-tt;
+}
