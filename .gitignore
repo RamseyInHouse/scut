@@ -9,3 +9,4 @@ docs/content/example-styles/processed
 *.gem
 
 npm-debug.log
+.DS_Store
