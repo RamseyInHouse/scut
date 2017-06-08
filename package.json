@@ -9,7 +9,7 @@
   "main": "dist/_scut.scss",
   "eyeglass": {
     "exports": "lib/eyeglass-exports.js",
-    "needs": "^0.7.1"
+    "needs": "^0.7.1 || ^1"
   },
   "keywords": [
     "SCSS",
