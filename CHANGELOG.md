@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.1
+- Fixed [`slash as division`](https://sass-lang.com/documentation/breaking-changes/slash-div) deprecation.
+
 ## 1.4.0
 
 - Added common currencies to scut-characters
