@@ -10,7 +10,7 @@
     // If user wants to inherit the color,
     // take advantage of the fact that border
     // color defaults to the text color of the element.
-    border-width: $size / 2;
+    border-width: $size * 0.5;
     border-style: solid;
     height: 0;
     width: 0;
