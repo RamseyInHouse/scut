@@ -1,7 +1,9 @@
+@use "sass:math";
+
 @function scut-strip-unit (
   $num
 ) {
 
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 
 }

@@ -27,17 +27,17 @@
   @if ($direction == up) or ($direction == down) {
     // For up and down, width gets two borders but height only one,
     // so divide second border-width value by 2
-    $border-widths: $height ($width / 2);
+    $border-widths: $height ($width * 0.5);
   }
   @else if ($direction == right) or ($direction == left) {
     // For right and left, height gets two borders but width only one,
     // so divide first border-width value by 2
-    $border-widths: ($height / 2) $width;
+    $border-widths: ($height * 0.5) $width;
   }
   @else {
     // For right triangles (the rest), both sides get two borders,
     // so divide both by 2
-    $border-widths: ($height / 2) ($width / 2);
+    $border-widths: ($height * 0.5) ($width * 0.5);
   }
 
   border-width: $border-widths;

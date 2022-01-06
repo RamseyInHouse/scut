@@ -1,4 +1,6 @@
 /* import start */
+@use "sass:math";
+
 @import "../../../dist/scut";
 @import "example-variables";
 /* import end */
@@ -24,11 +26,11 @@
 }
 .eg-ratio-3 {
   width: 15em;
-  @include scut-ratio-box(16/9);
+  @include scut-ratio-box(math.div(16, 9));
 }
 .eg-ratio-4 {
   width: 7em;
-  @include scut-ratio-box(16/9);
+  @include scut-ratio-box(math.div(16, 9));
 }
 .eg-ratio-inner {
   position: absolute;
