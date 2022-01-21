@@ -3,7 +3,9 @@
   "version": "1.4.1",
   "homepage": "http://ramseyinhouse.github.io/scut/",
   "authors": [
-    "David Clark <david.dave.clark@gmail.com>"
+    "David Clark <david.dave.clark@gmail.com>",
+    "Hayden Moritz <hayden.moritz@ramseysolutions.com>",
+    "Jeremy McDuffie <jeremy.mcduffie@ramseysolutions.com>"
   ],
   "description": "A collection of Sass utilities to ease and improve our implementations of common style-code patterns.",
   "main": "dist/_scut.scss",
