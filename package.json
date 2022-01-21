@@ -1,7 +1,7 @@
 {
   "name": "scut",
   "version": "1.4.1",
-  "homepage": "http://davidtheclark.github.io/scut/",
+  "homepage": "http://ramseyinhouse.github.io/scut/",
   "authors": [
     "David Clark <david.dave.clark@gmail.com>"
   ],
@@ -20,7 +20,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davidtheclark/scut"
+    "url": "https://github.com/ramseyinhouse/scut"
   },
   "devDependencies": {
     "assemble": "^0.4.42",
