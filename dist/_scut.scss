@@ -2,7 +2,7 @@
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
 * v1.4.1
-* Docs at http://davidtheclark.github.io/scut
+* Docs at http://ramseyinhouse.github.io/scut
 */
 
 @use "sass:math";
@@ -1437,7 +1437,7 @@ $scut-rupee: "\20B9";
   @include scut-link-bb;
 }
 // SCUT LINK UNSTYLED
-// http://davidtheclark.github.io/scut/#link-unstyled
+// http://ramseyinhouse.github.io/scut/#link-unstyled
 
 @mixin scut-link-unstyled() {
 

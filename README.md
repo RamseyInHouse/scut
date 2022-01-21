@@ -6,14 +6,17 @@ For a prolonged introduction to Scut, [read "Introducing Scut" on CSS-Tricks](ht
 
 If you have any questions about Sass, they are answered [in Sass's fine documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html).
 
+## Ownership
+Scut was originally developed and owned by David Clark ([@DavidTheClark](https://github.com/davidtheclark)). On January 21, 2022, David decided to transfer ownership of this GitHub repository to RamseyInHouse ([@RamseyInHouse](https://github.com/RamseyInHouse)) where it will be maintained and updated for the foreseeable future.
+
 ## Installing and Using
 
-> [Please visit the complete documentation here:<br>http://davidtheclark.github.io/scut/](http://davidtheclark.github.io/scut/)
+> [Please visit the complete documentation here:<br>http://ramseyinhouse.github.io/scut/](https://ramseyinhouse.github.io/scut/)
 
 Usage should be explained there, as is installation. But I'll explain installation here, too, for your convenience. You can install Scut by:
 
 - Using Bower: `bower install scut --save-dev`.
-- Downloading the file from [the latest release](https://github.com/davidtheclark/scut/releases).
+- Downloading the file from [the latest release](https://github.com/ramseyinhouse/scut/releases).
 - Using Scut as a Compass extension by installing the RubyGem (`gem install scut`) and then performing the usual Compass `require` and `@import` business.
 - Using [node-sass](https://www.npmjs.com/package/node-sass) and [eyeglass](https://www.npmjs.com/package/eyeglass):
   - `npm install --save-dev scut`
@@ -71,7 +74,7 @@ Here are some guidelines to explain how I've been writing:
 
 ```scss
 // SCUT PIXELS TO EMS
-// http://davidtheclark.github.io/scut/#pixels-to-ems
+// http://ramseyinhouse.github.io/scut/#pixels-to-ems
 
 // Depends on `scut-strip-unit`.
 ```

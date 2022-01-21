@@ -20,7 +20,7 @@ require('gulp-grunt')(gulp);
 var distBanner = (
   '/*\n* Scut, a collection of Sass utilities\n* to ease and ' +
   'improve our implementations of common style-code patterns.\n* v' +
-  currentVersion + '\n* Docs at http://davidtheclark.github.io/scut\n*/\n\n'
+  currentVersion + '\n* Docs at http://ramseyinhouse.github.io/scut\n*/\n\n'
 );
 
 gulp.task('build', function() {

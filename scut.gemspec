@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Sass utilities for the frontend laborer.}
   s.authors = ["David Clark"]
   s.email = ["david.dave.clark@gmail.com"]
-  s.homepage = "http://davidtheclark.github.io/scut/"
+  s.homepage = "http://ramseyinhouse.github.io/scut/"
   s.license = 'MIT'
 
   # Library Files
