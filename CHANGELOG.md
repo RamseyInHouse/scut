@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.3
+- Fixed missed [`slash as division`](https://sass-lang.com/documentation/breaking-changes/slash-div) deprecation.
+
 ## 1.4.2
 - Updated ownership.
 

@@ -1,7 +1,7 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.4.2
+* v1.4.3
 * Docs at http://ramseyinhouse.github.io/scut
 */
 
@@ -1012,7 +1012,7 @@ $scut-rem-base: 16 !default;
 
 }
 @mixin scut-ratio-box (
-  $ratio: 1/1
+  $ratio: math.div(1, 1)
 ) {
 
   overflow: hidden;
