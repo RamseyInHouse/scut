@@ -1,7 +1,5 @@
 // Depends on `scut-strip-unit`.
 
-@use "sass:math";
-
 $scut-em-base: 16 !default;
 
 @function scut-em (
@@ -17,7 +15,7 @@ $scut-em-base: 16 !default;
 
   $em-vals: ();
   @each $val in $pixels {
-    $val-in-ems: math.div(scut-strip-unit($val), $divisor) * 1em;
+    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
   }
 
