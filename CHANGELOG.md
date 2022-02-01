@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.0
+- Fixed [`slash as division`](https://sass-lang.com/documentation/breaking-changes/slash-div) deprecation. Breaks compatibility with LibSass.
+
 ## 1.4.4
 - Remove math.div for LibSass support.
 
