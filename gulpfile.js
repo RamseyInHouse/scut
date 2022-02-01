@@ -1,4 +1,4 @@
-var currentVersion = '1.4.3';
+var currentVersion = '1.4.4';
 
 var moment = require('moment');
 var runSequence = require('run-sequence');
