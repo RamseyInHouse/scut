@@ -1,9 +1,11 @@
 /*
 * Scut, a collection of Sass utilities
 * to ease and improve our implementations of common style-code patterns.
-* v1.4.4
+* v2.0.0
 * Docs at http://ramseyinhouse.github.io/scut
 */
+
+@use "sass:math";
 
 @mixin scut-clearfix {
 
@@ -98,7 +100,7 @@
   $num
 ) {
 
-  @return $num / ($num * 0 + 1);
+  @return math.div($num, $num * 0 + 1);
 
 }
 // Depends on `scut-strip-unit`.
@@ -118,7 +120,7 @@ $scut-em-base: 16 !default;
 
   $em-vals: ();
   @each $val in $pixels {
-    $val-in-ems: (scut-strip-unit($val) / $divisor) * 1em;
+    $val-in-ems: math.div(scut-strip-unit($val), $divisor) * 1em;
     $em-vals: append($em-vals, $val-in-ems);
   }
 
@@ -142,7 +144,7 @@ $scut-rem-base: 16 !default;
 
   $rem-vals: ();
   @each $val in $pixels {
-    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
+    $val-in-rems: math.div(scut-strip-unit($val), $scut-rem-base) * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
 
@@ -279,7 +281,7 @@ $scut-rem-base: 16 !default;
   $ratio: 1.3
 ) {
 
-  @media (-o-min-device-pixel-ratio: ($ratio / 1)),
+  @media (-o-min-device-pixel-ratio: math.div($ratio, 1)),
          (-webkit-min-device-pixel-ratio: $ratio),
          (min-resolution: (round(96 * $ratio) * 1dpi)) {
     @content;
@@ -1010,7 +1012,7 @@ $scut-rem-base: 16 !default;
 
 }
 @mixin scut-ratio-box (
-  $ratio: 1/1
+  $ratio: math.div(1, 1)
 ) {
 
   overflow: hidden;
@@ -1023,7 +1025,7 @@ $scut-rem-base: 16 !default;
     content: "";
     display: block;
     height: 0;
-    padding-top: (1 / $ratio) * 100%;
+    padding-top: math.div(1, $ratio) * 100%;
   }
 
 }

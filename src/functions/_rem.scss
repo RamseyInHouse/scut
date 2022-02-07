@@ -1,5 +1,7 @@
 // Depends on `scut-strip-unit`.
 
+@use "sass:math";
+
 $scut-rem-base: 16 !default;
 
 @function scut-rem (
@@ -8,7 +10,7 @@ $scut-rem-base: 16 !default;
 
   $rem-vals: ();
   @each $val in $pixels {
-    $val-in-rems: scut-strip-unit($val) / $scut-rem-base * 1rem;
+    $val-in-rems: math.div(scut-strip-unit($val), $scut-rem-base) * 1rem;
     $rem-vals: append($rem-vals, $val-in-rems);
   }
 

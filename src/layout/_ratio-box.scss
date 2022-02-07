@@ -1,5 +1,7 @@
+@use "sass:math";
+
 @mixin scut-ratio-box (
-  $ratio: 1/1
+  $ratio: math.div(1, 1)
 ) {
 
   overflow: hidden;
@@ -12,7 +14,7 @@
     content: "";
     display: block;
     height: 0;
-    padding-top: (1 / $ratio) * 100%;
+    padding-top: math.div(1, $ratio) * 100%;
   }
 
 }
